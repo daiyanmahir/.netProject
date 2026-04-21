@@ -54,7 +54,7 @@ namespace PharmaHealix
 
         private void loginbtn_Click_1(object sender, EventArgs e)
         {
-            /*
+            
             if (enteremailtxt.Text == "" || enteremailtxt.Text == "Enter your email")
             {
                 emailvallbl.Text = "Please enter your email";
@@ -79,7 +79,7 @@ namespace PharmaHealix
                 {
                     emailvallbl.Text = "Wrong Email! Write again";
                     passvallbl.Text = "Wrong password! Write again";
-                }*/
+                }
                 if(enteremailtxt.Text == email && enterpasstxt.Text == pass)
                 {
                     MessageBox.Show("Logged As Patient");
@@ -89,7 +89,7 @@ namespace PharmaHealix
 
                 }
 
-            //}
+            }
            
         }
 

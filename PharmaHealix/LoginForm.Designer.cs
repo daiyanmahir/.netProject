@@ -266,7 +266,7 @@
             this.createaccountpan.Controls.Add(this.label3);
             this.createaccountpan.Controls.Add(this.panel1);
             this.createaccountpan.Controls.Add(this.label4);
-            this.createaccountpan.Location = new System.Drawing.Point(10000, 0);
+            this.createaccountpan.Location = new System.Drawing.Point(0, 0);
             this.createaccountpan.Name = "createaccountpan";
             this.createaccountpan.Size = new System.Drawing.Size(600, 750);
             this.createaccountpan.TabIndex = 8;

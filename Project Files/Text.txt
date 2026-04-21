@@ -1,0 +1,23 @@
+Screen size 1200 750
+Beige 247, 241, 219
+Olive 106, 110, 43
+Logo 180, 161
+Fonts Segoe UI, Sans Serif Collection
+
+Formborder style none= borderless window
+
+passtxt enter Event action code
+
+   private void passtxt_Enter(object sender, EventArgs e)
+   {
+       if (passtxt.Text == "Enter your password")
+       {
+           passtxt.Text = "";
+           passtxt.ForeColor = Color.Black;
+           passtxt.PasswordChar = '*';
+       }
+   }
+
+Button color change:
+properties---> flat appearance--->Mousedownbackcolour means clicking will change color
+                                  Mouseoverbackcolor means moving mouse will change the button color

@@ -113,6 +113,7 @@
             this.headpan.Name = "headpan";
             this.headpan.Size = new System.Drawing.Size(1200, 110);
             this.headpan.TabIndex = 0;
+            this.headpan.Paint += new System.Windows.Forms.PaintEventHandler(this.headpan_Paint);
             // 
             // medilogobtn
             // 
@@ -156,6 +157,7 @@
             this.cartbtn2.TabIndex = 12;
             this.cartbtn2.Text = "Cart";
             this.cartbtn2.UseVisualStyleBackColor = false;
+            this.cartbtn2.Click += new System.EventHandler(this.cartbtn2_Click);
             // 
             // doctorbtn
             // 
@@ -169,6 +171,7 @@
             this.doctorbtn.TabIndex = 10;
             this.doctorbtn.Text = "Doctor ";
             this.doctorbtn.UseVisualStyleBackColor = false;
+            this.doctorbtn.Click += new System.EventHandler(this.doctorbtn_Click);
             // 
             // Exitbtn
             // 
@@ -199,6 +202,7 @@
             this.userpan.Size = new System.Drawing.Size(454, 337);
             this.userpan.TabIndex = 28;
             this.userpan.Visible = false;
+            this.userpan.Paint += new System.Windows.Forms.PaintEventHandler(this.userpan_Paint);
             // 
             // userpanminimizebtn
             // 
@@ -257,6 +261,7 @@
             this.userpanlbl2.Size = new System.Drawing.Size(304, 20);
             this.userpanlbl2.TabIndex = 21;
             this.userpanlbl2.Text = "New here? Create an account to get started";
+            this.userpanlbl2.Click += new System.EventHandler(this.userpanlbl2_Click);
             // 
             // humaniconpan
             // 
@@ -265,6 +270,7 @@
             this.humaniconpan.Name = "humaniconpan";
             this.humaniconpan.Size = new System.Drawing.Size(50, 50);
             this.humaniconpan.TabIndex = 20;
+            this.humaniconpan.Paint += new System.Windows.Forms.PaintEventHandler(this.humaniconpan_Paint);
             // 
             // userpanlbl1
             // 
@@ -277,6 +283,7 @@
             this.userpanlbl1.Size = new System.Drawing.Size(397, 28);
             this.userpanlbl1.TabIndex = 19;
             this.userpanlbl1.Text = "To access your account, please sign in first";
+            this.userpanlbl1.Click += new System.EventHandler(this.userpanlbl1_Click);
             // 
             // patientpan
             // 
@@ -290,6 +297,7 @@
             this.patientpan.Size = new System.Drawing.Size(454, 337);
             this.patientpan.TabIndex = 29;
             this.patientpan.Visible = false;
+            this.patientpan.Paint += new System.Windows.Forms.PaintEventHandler(this.patientpan_Paint);
             // 
             // minimizebtn
             // 
@@ -305,6 +313,7 @@
             this.minimizebtn.TabIndex = 20;
             this.minimizebtn.Text = "-";
             this.minimizebtn.UseVisualStyleBackColor = false;
+            this.minimizebtn.Click += new System.EventHandler(this.minimizebtn_Click);
             // 
             // logoutbtn
             // 
@@ -328,6 +337,7 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(50, 50);
             this.panel7.TabIndex = 20;
+            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // welcomelbl
             // 
@@ -340,6 +350,7 @@
             this.welcomelbl.Size = new System.Drawing.Size(154, 45);
             this.welcomelbl.TabIndex = 19;
             this.welcomelbl.Text = "Welcome";
+            this.welcomelbl.Click += new System.EventHandler(this.welcomelbl_Click);
             // 
             // prescriptionlbl
             // 
@@ -355,6 +366,7 @@
             this.prescriptionlbl.TabIndex = 27;
             this.prescriptionlbl.Text = "     Order with prescription.";
             this.prescriptionlbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.prescriptionlbl.Click += new System.EventHandler(this.prescriptionlbl_Click);
             // 
             // Whatareyoulookinglbl
             // 
@@ -367,6 +379,7 @@
             this.Whatareyoulookinglbl.Size = new System.Drawing.Size(376, 45);
             this.Whatareyoulookinglbl.TabIndex = 22;
             this.Whatareyoulookinglbl.Text = "What are you looking for?";
+            this.Whatareyoulookinglbl.Click += new System.EventHandler(this.Whatareyoulookinglbl_Click);
             // 
             // prescriptionuploadbtn
             // 
@@ -381,6 +394,7 @@
             this.prescriptionuploadbtn.TabIndex = 26;
             this.prescriptionuploadbtn.Text = "Upload Now  >";
             this.prescriptionuploadbtn.UseVisualStyleBackColor = false;
+            this.prescriptionuploadbtn.Click += new System.EventHandler(this.prescriptionuploadbtn_Click);
             // 
             // cartbtn
             // 
@@ -396,6 +410,7 @@
             this.cartbtn.TabIndex = 21;
             this.cartbtn.Text = "       View Cart";
             this.cartbtn.UseVisualStyleBackColor = false;
+            this.cartbtn.Click += new System.EventHandler(this.cartbtn_Click);
             // 
             // searchpan
             // 
@@ -407,6 +422,7 @@
             this.searchpan.Name = "searchpan";
             this.searchpan.Size = new System.Drawing.Size(871, 46);
             this.searchpan.TabIndex = 24;
+            this.searchpan.Paint += new System.Windows.Forms.PaintEventHandler(this.searchpan_Paint);
             // 
             // searchbtn
             // 
@@ -434,6 +450,7 @@
             this.searchtxt.Size = new System.Drawing.Size(638, 21);
             this.searchtxt.TabIndex = 18;
             this.searchtxt.Text = "Search for Medicine";
+            this.searchtxt.TextChanged += new System.EventHandler(this.searchtxt_TextChanged);
             this.searchtxt.Enter += new System.EventHandler(this.searchtxt_Enter);
             // 
             // searchiconpan
@@ -443,6 +460,7 @@
             this.searchiconpan.Name = "searchiconpan";
             this.searchiconpan.Size = new System.Drawing.Size(40, 40);
             this.searchiconpan.TabIndex = 14;
+            this.searchiconpan.Paint += new System.Windows.Forms.PaintEventHandler(this.searchiconpan_Paint);
             // 
             // adpan2
             // 
@@ -454,6 +472,7 @@
             this.adpan2.Name = "adpan2";
             this.adpan2.Size = new System.Drawing.Size(320, 125);
             this.adpan2.TabIndex = 25;
+            this.adpan2.Paint += new System.Windows.Forms.PaintEventHandler(this.adpan2_Paint);
             // 
             // adlbl23
             // 
@@ -466,6 +485,7 @@
             this.adlbl23.Size = new System.Drawing.Size(202, 36);
             this.adlbl23.TabIndex = 18;
             this.adlbl23.Text = "GUEST SESSION";
+            this.adlbl23.Click += new System.EventHandler(this.adlbl23_Click);
             // 
             // adlbl22
             // 
@@ -478,6 +498,7 @@
             this.adlbl22.Size = new System.Drawing.Size(127, 28);
             this.adlbl22.TabIndex = 19;
             this.adlbl22.Text = "Consultation";
+            this.adlbl22.Click += new System.EventHandler(this.adlbl22_Click);
             // 
             // adlbl21
             // 
@@ -490,6 +511,7 @@
             this.adlbl21.Size = new System.Drawing.Size(101, 48);
             this.adlbl21.TabIndex = 18;
             this.adlbl21.Text = "FREE";
+            this.adlbl21.Click += new System.EventHandler(this.adlbl21_Click);
             // 
             // adpan1
             // 
@@ -500,6 +522,7 @@
             this.adpan1.Name = "adpan1";
             this.adpan1.Size = new System.Drawing.Size(320, 125);
             this.adpan1.TabIndex = 23;
+            this.adpan1.Paint += new System.Windows.Forms.PaintEventHandler(this.adpan1_Paint);
             // 
             // adlbl12
             // 
@@ -512,6 +535,7 @@
             this.adlbl12.Size = new System.Drawing.Size(206, 36);
             this.adlbl12.TabIndex = 20;
             this.adlbl12.Text = "CODE: HEALIX10";
+            this.adlbl12.Click += new System.EventHandler(this.adlbl12_Click);
             // 
             // adlbl11
             // 
@@ -524,6 +548,7 @@
             this.adlbl11.Size = new System.Drawing.Size(285, 48);
             this.adlbl11.TabIndex = 16;
             this.adlbl11.Text = "10% DISCOUNT";
+            this.adlbl11.Click += new System.EventHandler(this.adlbl11_Click);
             // 
             // medibackpan
             // 
@@ -535,6 +560,7 @@
             this.medibackpan.Size = new System.Drawing.Size(1200, 640);
             this.medibackpan.TabIndex = 29;
             this.medibackpan.Visible = false;
+            this.medibackpan.Paint += new System.Windows.Forms.PaintEventHandler(this.medibackpan_Paint);
             // 
             // medipan
             // 
@@ -569,6 +595,7 @@
             this.medipan.Name = "medipan";
             this.medipan.Size = new System.Drawing.Size(694, 610);
             this.medipan.TabIndex = 12;
+            this.medipan.Paint += new System.Windows.Forms.PaintEventHandler(this.medipan_Paint);
             // 
             // medinametxt
             // 
@@ -580,6 +607,7 @@
             this.medinametxt.Size = new System.Drawing.Size(360, 55);
             this.medinametxt.TabIndex = 33;
             this.medinametxt.Text = "";
+            this.medinametxt.TextChanged += new System.EventHandler(this.medinametxt_TextChanged);
             // 
             // addtocartbtn
             // 
@@ -595,6 +623,7 @@
             this.addtocartbtn.TabIndex = 13;
             this.addtocartbtn.Text = "       Add to Cart";
             this.addtocartbtn.UseVisualStyleBackColor = false;
+            this.addtocartbtn.Click += new System.EventHandler(this.addtocartbtn_Click);
             // 
             // sideeffectstxt
             // 
@@ -605,6 +634,7 @@
             this.sideeffectstxt.Size = new System.Drawing.Size(482, 33);
             this.sideeffectstxt.TabIndex = 32;
             this.sideeffectstxt.Text = "";
+            this.sideeffectstxt.TextChanged += new System.EventHandler(this.sideeffectstxt_TextChanged);
             // 
             // instructiontxt
             // 
@@ -615,6 +645,7 @@
             this.instructiontxt.Size = new System.Drawing.Size(482, 51);
             this.instructiontxt.TabIndex = 31;
             this.instructiontxt.Text = "";
+            this.instructiontxt.TextChanged += new System.EventHandler(this.instructiontxt_TextChanged);
             // 
             // dosetxt
             // 
@@ -625,6 +656,7 @@
             this.dosetxt.Size = new System.Drawing.Size(355, 33);
             this.dosetxt.TabIndex = 30;
             this.dosetxt.Text = "";
+            this.dosetxt.TextChanged += new System.EventHandler(this.dosetxt_TextChanged);
             // 
             // unitpricetxt
             // 
@@ -635,6 +667,7 @@
             this.unitpricetxt.Size = new System.Drawing.Size(92, 33);
             this.unitpricetxt.TabIndex = 29;
             this.unitpricetxt.Text = "";
+            this.unitpricetxt.TextChanged += new System.EventHandler(this.unitpricetxt_TextChanged);
             // 
             // pricetxt
             // 
@@ -645,6 +678,7 @@
             this.pricetxt.Size = new System.Drawing.Size(92, 33);
             this.pricetxt.TabIndex = 28;
             this.pricetxt.Text = "";
+            this.pricetxt.TextChanged += new System.EventHandler(this.pricetxt_TextChanged);
             // 
             // striptxt
             // 
@@ -655,6 +689,7 @@
             this.striptxt.Size = new System.Drawing.Size(91, 29);
             this.striptxt.TabIndex = 27;
             this.striptxt.Text = "";
+            this.striptxt.TextChanged += new System.EventHandler(this.striptxt_TextChanged);
             // 
             // unitpricelbl
             // 
@@ -669,6 +704,7 @@
             this.unitpricelbl.TabIndex = 26;
             this.unitpricelbl.Text = "Unit Price";
             this.unitpricelbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.unitpricelbl.Click += new System.EventHandler(this.unitpricelbl_Click);
             // 
             // panel5
             // 
@@ -678,6 +714,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1, 80);
             this.panel5.TabIndex = 20;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // panel1
             // 
@@ -687,6 +724,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(694, 1);
             this.panel1.TabIndex = 20;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // sideeffectslbl
             // 
@@ -701,6 +739,7 @@
             this.sideeffectslbl.TabIndex = 25;
             this.sideeffectslbl.Text = "Side Effects";
             this.sideeffectslbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sideeffectslbl.Click += new System.EventHandler(this.sideeffectslbl_Click);
             // 
             // instructionlbl
             // 
@@ -715,6 +754,7 @@
             this.instructionlbl.TabIndex = 24;
             this.instructionlbl.Text = "Instruction";
             this.instructionlbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.instructionlbl.Click += new System.EventHandler(this.instructionlbl_Click);
             // 
             // doselbl
             // 
@@ -729,6 +769,7 @@
             this.doselbl.TabIndex = 23;
             this.doselbl.Text = "Doses";
             this.doselbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.doselbl.Click += new System.EventHandler(this.doselbl_Click);
             // 
             // pricelbl
             // 
@@ -743,6 +784,7 @@
             this.pricelbl.TabIndex = 22;
             this.pricelbl.Text = "Price";
             this.pricelbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.pricelbl.Click += new System.EventHandler(this.pricelbl_Click);
             // 
             // striplbl
             // 
@@ -757,6 +799,7 @@
             this.striplbl.TabIndex = 21;
             this.striplbl.Text = "Strip";
             this.striplbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.striplbl.Click += new System.EventHandler(this.striplbl_Click);
             // 
             // panel4
             // 
@@ -766,6 +809,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(694, 1);
             this.panel4.TabIndex = 20;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // panel3
             // 
@@ -775,6 +819,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(694, 1);
             this.panel3.TabIndex = 20;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // panel2
             // 
@@ -784,6 +829,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(694, 1);
             this.panel2.TabIndex = 19;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // descriptiontxt
             // 
@@ -794,6 +840,7 @@
             this.descriptiontxt.Size = new System.Drawing.Size(361, 59);
             this.descriptiontxt.TabIndex = 18;
             this.descriptiontxt.Text = "";
+            this.descriptiontxt.TextChanged += new System.EventHandler(this.descriptiontxt_TextChanged);
             // 
             // descriptionlbl
             // 
@@ -808,6 +855,7 @@
             this.descriptionlbl.TabIndex = 17;
             this.descriptionlbl.Text = "Description";
             this.descriptionlbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.descriptionlbl.Click += new System.EventHandler(this.descriptionlbl_Click);
             // 
             // categorytxt
             // 
@@ -818,6 +866,7 @@
             this.categorytxt.Size = new System.Drawing.Size(132, 33);
             this.categorytxt.TabIndex = 16;
             this.categorytxt.Text = "";
+            this.categorytxt.TextChanged += new System.EventHandler(this.categorytxt_TextChanged);
             // 
             // medinfolbl
             // 
@@ -830,6 +879,7 @@
             this.medinfolbl.TabIndex = 3;
             this.medinfolbl.Text = "Medicine Info";
             this.medinfolbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.medinfolbl.Click += new System.EventHandler(this.medinfolbl_Click);
             // 
             // mediimagepan
             // 
@@ -838,6 +888,7 @@
             this.mediimagepan.Name = "mediimagepan";
             this.mediimagepan.Size = new System.Drawing.Size(220, 220);
             this.mediimagepan.TabIndex = 14;
+            this.mediimagepan.Paint += new System.Windows.Forms.PaintEventHandler(this.mediimagepan_Paint);
             // 
             // mediinfopan
             // 
@@ -847,6 +898,7 @@
             this.mediinfopan.Name = "mediinfopan";
             this.mediinfopan.Size = new System.Drawing.Size(688, 57);
             this.mediinfopan.TabIndex = 0;
+            this.mediinfopan.Paint += new System.Windows.Forms.PaintEventHandler(this.mediinfopan_Paint);
             // 
             // label1
             // 
@@ -858,6 +910,7 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Medicine Info";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // categorylbl
             // 
@@ -872,6 +925,7 @@
             this.categorylbl.TabIndex = 5;
             this.categorylbl.Text = "Category:";
             this.categorylbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.categorylbl.Click += new System.EventHandler(this.categorylbl_Click);
             // 
             // MainForm
             // 

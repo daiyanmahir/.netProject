@@ -34,5 +34,26 @@ namespace PharmaHealix
             pharmacistpan.Visible = true;
             pharmacistpan.BringToFront();
         }
+
+        private void patientlistbtn_Click(object sender, EventArgs e)
+        {
+            inventorypan.Visible = false;
+            orderpan.Visible = false;
+            patientlistpan.Visible = true;
+        }
+
+        private void orderbtn_Click(object sender, EventArgs e)
+        {
+            inventorypan.Visible = false;
+            patientlistpan.Visible = false;
+            orderpan.Visible = true;
+        }
+
+        private void inventorybtn_Click(object sender, EventArgs e)
+        {
+           patientlistpan.Visible=false;
+            orderpan.Visible=false;
+            inventorypan.Visible = true;
+        }
     }
 }

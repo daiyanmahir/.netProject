@@ -109,7 +109,7 @@
             this.headpan.Controls.Add(this.cartbtn2);
             this.headpan.Controls.Add(this.doctorbtn);
             this.headpan.Controls.Add(this.Exitbtn);
-            this.headpan.Location = new System.Drawing.Point(0, -1);
+            this.headpan.Location = new System.Drawing.Point(0, 0);
             this.headpan.Name = "headpan";
             this.headpan.Size = new System.Drawing.Size(1200, 110);
             this.headpan.TabIndex = 0;

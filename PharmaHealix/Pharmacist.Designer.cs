@@ -81,7 +81,7 @@
             this.Exitbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.Exitbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
             this.Exitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Exitbtn.Location = new System.Drawing.Point(1125, 37);
+            this.Exitbtn.Location = new System.Drawing.Point(1138, 9);
             this.Exitbtn.Name = "Exitbtn";
             this.Exitbtn.Size = new System.Drawing.Size(50, 30);
             this.Exitbtn.TabIndex = 2;
@@ -142,7 +142,7 @@
             this.medilogobtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
             this.medilogobtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.medilogobtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.medilogobtn.Location = new System.Drawing.Point(1, -8);
+            this.medilogobtn.Location = new System.Drawing.Point(1, -19);
             this.medilogobtn.Name = "medilogobtn";
             this.medilogobtn.Size = new System.Drawing.Size(156, 129);
             this.medilogobtn.TabIndex = 20;
@@ -171,7 +171,7 @@
             this.headpan.Controls.Add(this.cartbtn2);
             this.headpan.Controls.Add(this.doctorbtn);
             this.headpan.Controls.Add(this.Exitbtn);
-            this.headpan.Location = new System.Drawing.Point(-11, -28);
+            this.headpan.Location = new System.Drawing.Point(0, 0);
             this.headpan.Name = "headpan";
             this.headpan.Size = new System.Drawing.Size(1200, 110);
             this.headpan.TabIndex = 30;
@@ -183,7 +183,7 @@
             this.pharmacistpan.Controls.Add(this.logoutbtn);
             this.pharmacistpan.Controls.Add(this.panel7);
             this.pharmacistpan.Controls.Add(this.welcomelbl);
-            this.pharmacistpan.Location = new System.Drawing.Point(623, 81);
+            this.pharmacistpan.Location = new System.Drawing.Point(634, 108);
             this.pharmacistpan.Name = "pharmacistpan";
             this.pharmacistpan.Size = new System.Drawing.Size(454, 337);
             this.pharmacistpan.TabIndex = 40;
@@ -244,7 +244,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PharmaHealix.Properties.Resources.BackgroundImage;
-            this.ClientSize = new System.Drawing.Size(1178, 694);
+            this.ClientSize = new System.Drawing.Size(1200, 750);
             this.Controls.Add(this.searchpan);
             this.Controls.Add(this.headpan);
             this.Controls.Add(this.pharmacistpan);
@@ -252,7 +252,6 @@
             this.Name = "Pharmacist";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pharmacist";
-         
             this.searchpan.ResumeLayout(false);
             this.searchpan.PerformLayout();
             this.headpan.ResumeLayout(false);

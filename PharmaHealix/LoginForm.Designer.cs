@@ -332,6 +332,8 @@
             // 
             this.securityquestioncb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.securityquestioncb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.securityquestioncb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.securityquestioncb.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.securityquestioncb.FormattingEnabled = true;
             this.securityquestioncb.Items.AddRange(new object[] {
             "\"Select Question\"",
@@ -340,7 +342,7 @@
             "What is your favorite color?"});
             this.securityquestioncb.Location = new System.Drawing.Point(9, 11);
             this.securityquestioncb.Name = "securityquestioncb";
-            this.securityquestioncb.Size = new System.Drawing.Size(431, 28);
+            this.securityquestioncb.Size = new System.Drawing.Size(431, 30);
             this.securityquestioncb.TabIndex = 29;
             // 
             // panel8

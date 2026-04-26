@@ -20,15 +20,11 @@ namespace PharmaHealix
             InitializeComponent();
             securityquestioncb.SelectedIndex = 0;
 
-
             if (securityquestioncb.SelectedIndex > 0)
             {
                 securityquestioncb.ForeColor = Color.Black; 
             }
-            else
-            {
-                securityquestioncb.ForeColor = Color.Gray; 
-            }
+         
            
             
 

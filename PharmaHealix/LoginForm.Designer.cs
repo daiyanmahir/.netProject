@@ -46,15 +46,21 @@
             this.viewguestbtn = new System.Windows.Forms.Button();
             this.usertxtpan = new System.Windows.Forms.Panel();
             this.passtxtpan = new System.Windows.Forms.Panel();
+            this.hidebtn = new System.Windows.Forms.Button();
             this.createaccountpan = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.createanstxt = new System.Windows.Forms.TextBox();
+            this.cbpan = new System.Windows.Forms.Panel();
+            this.securityquestioncb = new System.Windows.Forms.ComboBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.lastnametxt = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.firstnametxt = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.confirmpasstxt = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.createpanhidebtn = new System.Windows.Forms.Button();
             this.createpasstxt = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.createphonetxt = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.createemailtxt = new System.Windows.Forms.TextBox();
             this.signupbtn = new System.Windows.Forms.Button();
@@ -63,12 +69,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.emailvallbl = new System.Windows.Forms.Label();
             this.passvallbl = new System.Windows.Forms.Label();
-            this.hidebtn = new System.Windows.Forms.Button();
+            this.forgetpasslbl = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.picturepan.SuspendLayout();
             this.usertxtpan.SuspendLayout();
             this.passtxtpan.SuspendLayout();
             this.createaccountpan.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.cbpan.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -257,8 +265,22 @@
             this.passtxtpan.Size = new System.Drawing.Size(445, 50);
             this.passtxtpan.TabIndex = 22;
             // 
+            // hidebtn
+            // 
+            this.hidebtn.FlatAppearance.BorderSize = 0;
+            this.hidebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.hidebtn.Image = ((System.Drawing.Image)(resources.GetObject("hidebtn.Image")));
+            this.hidebtn.Location = new System.Drawing.Point(406, 13);
+            this.hidebtn.Name = "hidebtn";
+            this.hidebtn.Size = new System.Drawing.Size(30, 25);
+            this.hidebtn.TabIndex = 19;
+            this.hidebtn.UseVisualStyleBackColor = true;
+            this.hidebtn.Click += new System.EventHandler(this.hidebtn_Click);
+            // 
             // createaccountpan
             // 
+            this.createaccountpan.Controls.Add(this.panel9);
+            this.createaccountpan.Controls.Add(this.cbpan);
             this.createaccountpan.Controls.Add(this.panel8);
             this.createaccountpan.Controls.Add(this.panel7);
             this.createaccountpan.Controls.Add(this.panel6);
@@ -268,18 +290,65 @@
             this.createaccountpan.Controls.Add(this.label3);
             this.createaccountpan.Controls.Add(this.panel1);
             this.createaccountpan.Controls.Add(this.label4);
-            this.createaccountpan.Location = new System.Drawing.Point(11110, 0);
+            this.createaccountpan.Location = new System.Drawing.Point(0, 0);
             this.createaccountpan.Name = "createaccountpan";
             this.createaccountpan.Size = new System.Drawing.Size(600, 750);
             this.createaccountpan.TabIndex = 8;
             this.createaccountpan.Visible = false;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.White;
+            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel9.Controls.Add(this.createanstxt);
+            this.panel9.Location = new System.Drawing.Point(87, 555);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(445, 50);
+            this.panel9.TabIndex = 27;
+            // 
+            // createanstxt
+            // 
+            this.createanstxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.createanstxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createanstxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.createanstxt.Location = new System.Drawing.Point(14, 15);
+            this.createanstxt.Name = "createanstxt";
+            this.createanstxt.Size = new System.Drawing.Size(392, 21);
+            this.createanstxt.TabIndex = 17;
+            this.createanstxt.Text = "Type your answer";
+            this.createanstxt.Enter += new System.EventHandler(this.createanstxt_Enter);
+            // 
+            // cbpan
+            // 
+            this.cbpan.BackColor = System.Drawing.Color.White;
+            this.cbpan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.cbpan.Controls.Add(this.securityquestioncb);
+            this.cbpan.Location = new System.Drawing.Point(87, 489);
+            this.cbpan.Name = "cbpan";
+            this.cbpan.Size = new System.Drawing.Size(445, 50);
+            this.cbpan.TabIndex = 27;
+            // 
+            // securityquestioncb
+            // 
+            this.securityquestioncb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.securityquestioncb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.securityquestioncb.FormattingEnabled = true;
+            this.securityquestioncb.Items.AddRange(new object[] {
+            "\"Select Question\"",
+            "What is your pet name?",
+            "What is your birthplace? ",
+            "What is your favorite color?"});
+            this.securityquestioncb.Location = new System.Drawing.Point(9, 11);
+            this.securityquestioncb.Name = "securityquestioncb";
+            this.securityquestioncb.Size = new System.Drawing.Size(431, 28);
+            this.securityquestioncb.TabIndex = 29;
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.White;
             this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel8.Controls.Add(this.lastnametxt);
-            this.panel8.Location = new System.Drawing.Point(323, 298);
+            this.panel8.Location = new System.Drawing.Point(326, 287);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(206, 50);
             this.panel8.TabIndex = 28;
@@ -294,13 +363,14 @@
             this.lastnametxt.Size = new System.Drawing.Size(182, 21);
             this.lastnametxt.TabIndex = 17;
             this.lastnametxt.Text = "Last Name";
+            this.lastnametxt.Enter += new System.EventHandler(this.lastnametxt_Enter);
             // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.White;
             this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel7.Controls.Add(this.firstnametxt);
-            this.panel7.Location = new System.Drawing.Point(81, 298);
+            this.panel7.Location = new System.Drawing.Point(87, 287);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(206, 50);
             this.panel7.TabIndex = 27;
@@ -315,55 +385,71 @@
             this.firstnametxt.Size = new System.Drawing.Size(182, 21);
             this.firstnametxt.TabIndex = 17;
             this.firstnametxt.Text = "First Name";
+            this.firstnametxt.Enter += new System.EventHandler(this.firstnametxt_Enter);
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel6.Controls.Add(this.confirmpasstxt);
-            this.panel6.Location = new System.Drawing.Point(84, 561);
+            this.panel6.Controls.Add(this.createpanhidebtn);
+            this.panel6.Controls.Add(this.createpasstxt);
+            this.panel6.Location = new System.Drawing.Point(87, 619);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(445, 50);
             this.panel6.TabIndex = 28;
             // 
-            // confirmpasstxt
+            // createpanhidebtn
             // 
-            this.confirmpasstxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.confirmpasstxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmpasstxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.confirmpasstxt.Location = new System.Drawing.Point(11, 15);
-            this.confirmpasstxt.Name = "confirmpasstxt";
-            this.confirmpasstxt.Size = new System.Drawing.Size(431, 21);
-            this.confirmpasstxt.TabIndex = 18;
-            this.confirmpasstxt.Text = "Confirm your password";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel4.Controls.Add(this.createpasstxt);
-            this.panel4.Location = new System.Drawing.Point(84, 480);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(445, 50);
-            this.panel4.TabIndex = 27;
+            this.createpanhidebtn.FlatAppearance.BorderSize = 0;
+            this.createpanhidebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createpanhidebtn.Image = ((System.Drawing.Image)(resources.GetObject("createpanhidebtn.Image")));
+            this.createpanhidebtn.Location = new System.Drawing.Point(406, 15);
+            this.createpanhidebtn.Name = "createpanhidebtn";
+            this.createpanhidebtn.Size = new System.Drawing.Size(30, 25);
+            this.createpanhidebtn.TabIndex = 30;
+            this.createpanhidebtn.UseVisualStyleBackColor = true;
+            this.createpanhidebtn.Click += new System.EventHandler(this.createpanhidebtn_Click);
             // 
             // createpasstxt
             // 
             this.createpasstxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.createpasstxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createpasstxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.createpasstxt.Location = new System.Drawing.Point(11, 13);
+            this.createpasstxt.Location = new System.Drawing.Point(11, 15);
             this.createpasstxt.Name = "createpasstxt";
-            this.createpasstxt.Size = new System.Drawing.Size(431, 21);
+            this.createpasstxt.Size = new System.Drawing.Size(395, 21);
             this.createpasstxt.TabIndex = 18;
             this.createpasstxt.Text = "Enter your password";
+            this.createpasstxt.Enter += new System.EventHandler(this.createpasstxt_Enter);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel4.Controls.Add(this.createphonetxt);
+            this.panel4.Location = new System.Drawing.Point(87, 422);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(445, 50);
+            this.panel4.TabIndex = 27;
+            // 
+            // createphonetxt
+            // 
+            this.createphonetxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.createphonetxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createphonetxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.createphonetxt.Location = new System.Drawing.Point(11, 13);
+            this.createphonetxt.Name = "createphonetxt";
+            this.createphonetxt.Size = new System.Drawing.Size(395, 21);
+            this.createphonetxt.TabIndex = 18;
+            this.createphonetxt.Text = "Enter your phone number";
+            this.createphonetxt.Enter += new System.EventHandler(this.createphonetxt_Enter);
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel5.Controls.Add(this.createemailtxt);
-            this.panel5.Location = new System.Drawing.Point(84, 389);
+            this.panel5.Location = new System.Drawing.Point(87, 352);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(445, 50);
             this.panel5.TabIndex = 26;
@@ -375,9 +461,10 @@
             this.createemailtxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.createemailtxt.Location = new System.Drawing.Point(14, 15);
             this.createemailtxt.Name = "createemailtxt";
-            this.createemailtxt.Size = new System.Drawing.Size(428, 21);
+            this.createemailtxt.Size = new System.Drawing.Size(392, 21);
             this.createemailtxt.TabIndex = 17;
             this.createemailtxt.Text = "Enter your email";
+            this.createemailtxt.Enter += new System.EventHandler(this.createemailtxt_Enter);
             // 
             // signupbtn
             // 
@@ -387,7 +474,7 @@
             this.signupbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signupbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signupbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.signupbtn.Location = new System.Drawing.Point(84, 666);
+            this.signupbtn.Location = new System.Drawing.Point(84, 686);
             this.signupbtn.Name = "signupbtn";
             this.signupbtn.Size = new System.Drawing.Size(445, 45);
             this.signupbtn.TabIndex = 25;
@@ -399,7 +486,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(230, 223);
+            this.label3.Location = new System.Drawing.Point(230, 217);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(138, 45);
             this.label3.TabIndex = 13;
@@ -408,7 +495,7 @@
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.Location = new System.Drawing.Point(204, 31);
+            this.panel1.Location = new System.Drawing.Point(204, 16);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(180, 139);
             this.panel1.TabIndex = 12;
@@ -418,7 +505,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
-            this.label4.Location = new System.Drawing.Point(91, 173);
+            this.label4.Location = new System.Drawing.Point(91, 165);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(414, 45);
             this.label4.TabIndex = 11;
@@ -444,17 +531,15 @@
             this.passvallbl.Size = new System.Drawing.Size(0, 68);
             this.passvallbl.TabIndex = 24;
             // 
-            // hidebtn
+            // forgetpasslbl
             // 
-            this.hidebtn.FlatAppearance.BorderSize = 0;
-            this.hidebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.hidebtn.Image = ((System.Drawing.Image)(resources.GetObject("hidebtn.Image")));
-            this.hidebtn.Location = new System.Drawing.Point(406, 13);
-            this.hidebtn.Name = "hidebtn";
-            this.hidebtn.Size = new System.Drawing.Size(30, 25);
-            this.hidebtn.TabIndex = 19;
-            this.hidebtn.UseVisualStyleBackColor = true;
-            this.hidebtn.Click += new System.EventHandler(this.hidebtn_Click);
+            this.forgetpasslbl.AutoSize = true;
+            this.forgetpasslbl.Location = new System.Drawing.Point(400, 474);
+            this.forgetpasslbl.Name = "forgetpasslbl";
+            this.forgetpasslbl.Size = new System.Drawing.Size(129, 20);
+            this.forgetpasslbl.TabIndex = 25;
+            this.forgetpasslbl.TabStop = true;
+            this.forgetpasslbl.Text = "Forget Password";
             // 
             // Loginform
             // 
@@ -477,6 +562,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.wlclbl);
+            this.Controls.Add(this.forgetpasslbl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Loginform";
             this.ShowInTaskbar = false;
@@ -490,6 +576,9 @@
             this.passtxtpan.PerformLayout();
             this.createaccountpan.ResumeLayout(false);
             this.createaccountpan.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.cbpan.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -529,7 +618,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox createpasstxt;
+        private System.Windows.Forms.TextBox createphonetxt;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox createemailtxt;
         private System.Windows.Forms.Button signupbtn;
@@ -538,10 +627,16 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox firstnametxt;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox confirmpasstxt;
+        private System.Windows.Forms.TextBox createpasstxt;
         private System.Windows.Forms.Label emailvallbl;
         private System.Windows.Forms.Label passvallbl;
         private System.Windows.Forms.Button hidebtn;
+        private System.Windows.Forms.LinkLabel forgetpasslbl;
+        private System.Windows.Forms.Button createpanhidebtn;
+        private System.Windows.Forms.Panel cbpan;
+        private System.Windows.Forms.ComboBox securityquestioncb;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.TextBox createanstxt;
     }
 }
 

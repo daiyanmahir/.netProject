@@ -13,11 +13,24 @@ namespace PharmaHealix
 {
     public partial class Loginform : Form
     {
-        private string email="daiyan@gmail.com";
-        private string pass = "1234";
+        //private string email="daiyan@gmail.com";
+        //private string pass = "1234";
         public Loginform()
         {
             InitializeComponent();
+            securityquestioncb.SelectedIndex = 0;
+
+
+            if (securityquestioncb.SelectedIndex > 0)
+            {
+                securityquestioncb.ForeColor = Color.Black; 
+            }
+            else
+            {
+                securityquestioncb.ForeColor = Color.Gray; 
+            }
+           
+            
 
 
         }
@@ -125,6 +138,102 @@ namespace PharmaHealix
             {
                 enterpasstxt.PasswordChar = '*';
             }
+
+        }
+
+        private void createpanhidebtn_Click(object sender, EventArgs e)
+        {
+            if (createpasstxt.PasswordChar == '*')
+            {
+                createpasstxt.PasswordChar = '\0';
+            }
+            else
+            {
+                createpasstxt.PasswordChar = '*';
+            }
+        }
+
+        private void firstnametxt_Enter(object sender, EventArgs e)
+        {
+            if (firstnametxt.Text == "First Name")
+            {
+                firstnametxt.Text = "";
+                firstnametxt.ForeColor = Color.Black;
+            }
+
+        }
+        private void lastnametxt_Enter(object sender, EventArgs e)
+        {
+            if (lastnametxt.Text == "Last Name")
+            {
+                lastnametxt.Text = "";
+                lastnametxt.ForeColor = Color.Black;
+            }
+
+        }
+        private void createemailtxt_Enter(object sender, EventArgs e)
+        {
+            if (createemailtxt.Text == "Enter your email")
+            {
+                createemailtxt.Text = "";
+               createemailtxt.ForeColor = Color.Black;
+            }
+
+        }
+        private void createphonetxt_Enter(object sender, EventArgs e)
+        {
+            if (createphonetxt.Text == "Enter your phone number")
+            {
+                createphonetxt.Text = "";
+                createphonetxt.ForeColor = Color.Black;
+            }
+        }
+        private void createanstxt_Enter(object sender, EventArgs e)
+        {
+            if (createanstxt.Text == "Type your answer")
+            {
+                createanstxt.Text = "";
+                createanstxt.ForeColor = Color.Black;
+            }
+
+        }
+        private void createpasstxt_Enter(object sender, EventArgs e)
+        {
+
+            if (createpasstxt.Text == "Enter your password")
+            {
+                createpasstxt.Text = "";
+               createpasstxt.ForeColor = Color.Black;
+                createpasstxt.PasswordChar = '*';
+            }
+
+        }
+       private void Resetcreatepan()
+        {
+
+            securityquestioncb.SelectedIndex = 0;
+            if (securityquestioncb.SelectedIndex > 0)
+            {
+                securityquestioncb.ForeColor = Color.Black;
+            }
+            else
+            {
+                securityquestioncb.ForeColor = Color.Gray;
+            }
+            firstnametxt.Text = "First Name";
+            lastnametxt.Text = "Last Name";
+            createemailtxt.Text = "Enter your email";
+            enterpasstxt.Text = "Enter your password";
+            createanstxt.Text = "Type your answer";
+            createphonetxt.Text = "Enter your phone number";
+
+            firstnametxt.ForeColor = Color.Gray;
+            lastnametxt.ForeColor = Color.Gray;
+            createemailtxt.ForeColor = Color.Gray;
+            createpasstxt.ForeColor = Color.Gray;
+            createphonetxt.ForeColor = Color.Gray;
+            createanstxt.ForeColor = Color.Gray;
+
 
         }
     }

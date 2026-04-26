@@ -52,7 +52,7 @@ namespace PharmaHealix
 
         }
 
-        private void loginbtn_Click_1(object sender, EventArgs e)
+        private void loginbtn_Click(object sender, EventArgs e)
         {
 
             //if (enteremailtxt.Text == "" || enteremailtxt.Text == "Enter your email")
@@ -113,6 +113,19 @@ namespace PharmaHealix
                 enterpasstxt.ForeColor = Color.Black;
                 enterpasstxt.PasswordChar = '*';
             }
+        }
+
+        private void hidebtn_Click(object sender, EventArgs e)
+        {
+            if(enterpasstxt.PasswordChar == '*')
+            {
+                enterpasstxt.PasswordChar = '\0';
+            }
+            else
+            {
+                enterpasstxt.PasswordChar = '*';
+            }
+
         }
     }
 }

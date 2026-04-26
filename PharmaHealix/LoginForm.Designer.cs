@@ -63,6 +63,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.emailvallbl = new System.Windows.Forms.Label();
             this.passvallbl = new System.Windows.Forms.Label();
+            this.hidebtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.picturepan.SuspendLayout();
             this.usertxtpan.SuspendLayout();
@@ -186,7 +187,7 @@
             this.enteremailtxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.enteremailtxt.Location = new System.Drawing.Point(14, 15);
             this.enteremailtxt.Name = "enteremailtxt";
-            this.enteremailtxt.Size = new System.Drawing.Size(428, 21);
+            this.enteremailtxt.Size = new System.Drawing.Size(392, 21);
             this.enteremailtxt.TabIndex = 17;
             this.enteremailtxt.Text = "Enter your Email";
             this.enteremailtxt.Enter += new System.EventHandler(this.enteremailtxt_Enter);
@@ -198,7 +199,7 @@
             this.enterpasstxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.enterpasstxt.Location = new System.Drawing.Point(11, 13);
             this.enterpasstxt.Name = "enterpasstxt";
-            this.enterpasstxt.Size = new System.Drawing.Size(431, 21);
+            this.enterpasstxt.Size = new System.Drawing.Size(395, 21);
             this.enterpasstxt.TabIndex = 18;
             this.enterpasstxt.Text = "Enter your Password";
             this.enterpasstxt.Enter += new System.EventHandler(this.enterpasstxt_Enter);
@@ -217,7 +218,7 @@
             this.loginbtn.TabIndex = 19;
             this.loginbtn.Text = "Login";
             this.loginbtn.UseVisualStyleBackColor = false;
-            this.loginbtn.Click += new System.EventHandler(this.loginbtn_Click_1);
+            this.loginbtn.Click += new System.EventHandler(this.loginbtn_Click);
             // 
             // viewguestbtn
             // 
@@ -249,6 +250,7 @@
             // 
             this.passtxtpan.BackColor = System.Drawing.Color.White;
             this.passtxtpan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.passtxtpan.Controls.Add(this.hidebtn);
             this.passtxtpan.Controls.Add(this.enterpasstxt);
             this.passtxtpan.Location = new System.Drawing.Point(84, 419);
             this.passtxtpan.Name = "passtxtpan";
@@ -266,7 +268,7 @@
             this.createaccountpan.Controls.Add(this.label3);
             this.createaccountpan.Controls.Add(this.panel1);
             this.createaccountpan.Controls.Add(this.label4);
-            this.createaccountpan.Location = new System.Drawing.Point(0, 0);
+            this.createaccountpan.Location = new System.Drawing.Point(11110, 0);
             this.createaccountpan.Name = "createaccountpan";
             this.createaccountpan.Size = new System.Drawing.Size(600, 750);
             this.createaccountpan.TabIndex = 8;
@@ -442,6 +444,18 @@
             this.passvallbl.Size = new System.Drawing.Size(0, 68);
             this.passvallbl.TabIndex = 24;
             // 
+            // hidebtn
+            // 
+            this.hidebtn.FlatAppearance.BorderSize = 0;
+            this.hidebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.hidebtn.Image = ((System.Drawing.Image)(resources.GetObject("hidebtn.Image")));
+            this.hidebtn.Location = new System.Drawing.Point(406, 13);
+            this.hidebtn.Name = "hidebtn";
+            this.hidebtn.Size = new System.Drawing.Size(30, 25);
+            this.hidebtn.TabIndex = 19;
+            this.hidebtn.UseVisualStyleBackColor = true;
+            this.hidebtn.Click += new System.EventHandler(this.hidebtn_Click);
+            // 
             // Loginform
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -527,6 +541,7 @@
         private System.Windows.Forms.TextBox confirmpasstxt;
         private System.Windows.Forms.Label emailvallbl;
         private System.Windows.Forms.Label passvallbl;
+        private System.Windows.Forms.Button hidebtn;
     }
 }
 

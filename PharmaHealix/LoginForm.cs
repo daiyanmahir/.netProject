@@ -13,8 +13,36 @@ namespace PharmaHealix
 {
     public partial class Loginform : Form
     {
-        //private string email="daiyan@gmail.com";
-        //private string pass = "1234";
+        public string CName
+        {
+            get { return createnametxt.Text; }
+            set { value=createnametxt.Text; } 
+        }
+        public string Phone
+        {
+            get { return createphonetxt.Text; }
+            set { value = createphonetxt.Text; }
+        }
+        public string CEmail
+        {
+            get { return createemailtxt.Text; }
+            set { value = createemailtxt.Text; }
+        }
+        public string Address
+        {
+            get { return createaddresstxt.Text; }
+            set { value = createaddresstxt.Text; }
+        }
+        public string Answer
+        {
+            get { return createanstxt.Text; }
+            set { value = createanstxt.Text; }
+        }
+        public string CPass
+        {
+            get { return createpasstxt.Text; }
+            set { value = createpasstxt.Text; }
+        }
         public Loginform()
         {
             InitializeComponent();
@@ -57,7 +85,13 @@ namespace PharmaHealix
 
         private void signupbtn_Click(object sender, EventArgs e)
         {
-            createaccountpan.Hide();
+            if(createnametxt.Text=="Name" || createnametxt.Text == "")
+            {
+
+            }
+                createaccountpan.Hide();
+            Resetcreatepan();
+
 
         }
 
@@ -149,21 +183,21 @@ namespace PharmaHealix
             }
         }
 
-        private void firstnametxt_Enter(object sender, EventArgs e)
+        private void nametxt_Enter(object sender, EventArgs e)
         {
-            if (firstnametxt.Text == "First Name")
+            if (createnametxt.Text == "Name")
             {
-                firstnametxt.Text = "";
-                firstnametxt.ForeColor = Color.Black;
+                createnametxt.Text = "";
+                createnametxt.ForeColor = Color.Black;
             }
 
         }
-        private void lastnametxt_Enter(object sender, EventArgs e)
+        private void createaddresstxt_Enter(object sender, EventArgs e)
         {
-            if (lastnametxt.Text == "Last Name")
+            if (createaddresstxt.Text == "Address")
             {
-                lastnametxt.Text = "";
-                lastnametxt.ForeColor = Color.Black;
+                createaddresstxt.Text = "";
+                createaddresstxt.ForeColor = Color.Black;
             }
 
         }
@@ -178,7 +212,7 @@ namespace PharmaHealix
         }
         private void createphonetxt_Enter(object sender, EventArgs e)
         {
-            if (createphonetxt.Text == "Enter your phone number")
+            if (createphonetxt.Text == "Phone number")
             {
                 createphonetxt.Text = "";
                 createphonetxt.ForeColor = Color.Black;
@@ -216,20 +250,44 @@ namespace PharmaHealix
             {
                 securityquestioncb.ForeColor = Color.Gray;
             }
-            firstnametxt.Text = "First Name";
-            lastnametxt.Text = "Last Name";
+            createnametxt.Text = "Name";
+            createaddresstxt.Text = "Address";
             createemailtxt.Text = "Enter your email";
             enterpasstxt.Text = "Enter your password";
             createanstxt.Text = "Type your answer";
-            createphonetxt.Text = "Enter your phone number";
+            createphonetxt.Text = "Phone number";
 
-            firstnametxt.ForeColor = Color.Gray;
-            lastnametxt.ForeColor = Color.Gray;
+            createnametxt.ForeColor = Color.Gray;
+            createaddresstxt.ForeColor = Color.Gray;
             createemailtxt.ForeColor = Color.Gray;
             createpasstxt.ForeColor = Color.Gray;
             createphonetxt.ForeColor = Color.Gray;
             createanstxt.ForeColor = Color.Gray;
 
+
+        }
+        private void FormValidation()
+        {
+            if (CName == "Name" || CName=="")
+            {
+                createnamepan.Visible = true;
+                return;
+            }
+            if (Address == "Addess" || Address == "")
+            {
+                createaddresspan.Visible = true;
+                return;
+            }
+            if (CEmail == "Addess" || CEmail == "")
+            {
+                createemailpan.Visible = true;
+                return;
+            }
+            if (CPass == "Password" || CPass == "")
+            {
+                createpasspan.Visible = true;
+                return;
+            }
 
         }
     }

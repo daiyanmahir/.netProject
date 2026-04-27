@@ -50,12 +50,12 @@
             this.createaccountpan = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.createanstxt = new System.Windows.Forms.TextBox();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.createaddresstxt = new System.Windows.Forms.TextBox();
             this.cbpan = new System.Windows.Forms.Panel();
             this.securityquestioncb = new System.Windows.Forms.ComboBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.lastnametxt = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.firstnametxt = new System.Windows.Forms.TextBox();
+            this.createnametxt = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.createpanhidebtn = new System.Windows.Forms.Button();
             this.createpasstxt = new System.Windows.Forms.TextBox();
@@ -70,14 +70,21 @@
             this.emailvallbl = new System.Windows.Forms.Label();
             this.passvallbl = new System.Windows.Forms.Label();
             this.forgetpasslbl = new System.Windows.Forms.LinkLabel();
+            this.createphonepan = new System.Windows.Forms.Panel();
+            this.createemailpan = new System.Windows.Forms.Panel();
+            this.createaddresspan = new System.Windows.Forms.Panel();
+            this.createquestionpan = new System.Windows.Forms.Panel();
+            this.createanspan = new System.Windows.Forms.Panel();
+            this.createpasspan = new System.Windows.Forms.Panel();
+            this.createnamepan = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.picturepan.SuspendLayout();
             this.usertxtpan.SuspendLayout();
             this.passtxtpan.SuspendLayout();
             this.createaccountpan.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.cbpan.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.cbpan.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -279,9 +286,16 @@
             // 
             // createaccountpan
             // 
+            this.createaccountpan.Controls.Add(this.createnamepan);
+            this.createaccountpan.Controls.Add(this.createpasspan);
+            this.createaccountpan.Controls.Add(this.createanspan);
+            this.createaccountpan.Controls.Add(this.createquestionpan);
+            this.createaccountpan.Controls.Add(this.createaddresspan);
+            this.createaccountpan.Controls.Add(this.createemailpan);
+            this.createaccountpan.Controls.Add(this.createphonepan);
             this.createaccountpan.Controls.Add(this.panel9);
-            this.createaccountpan.Controls.Add(this.cbpan);
             this.createaccountpan.Controls.Add(this.panel8);
+            this.createaccountpan.Controls.Add(this.cbpan);
             this.createaccountpan.Controls.Add(this.panel7);
             this.createaccountpan.Controls.Add(this.panel6);
             this.createaccountpan.Controls.Add(this.panel4);
@@ -318,6 +332,28 @@
             this.createanstxt.Text = "Type your answer";
             this.createanstxt.Enter += new System.EventHandler(this.createanstxt_Enter);
             // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.White;
+            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel8.Controls.Add(this.createaddresstxt);
+            this.panel8.Location = new System.Drawing.Point(87, 422);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(442, 50);
+            this.panel8.TabIndex = 28;
+            // 
+            // createaddresstxt
+            // 
+            this.createaddresstxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.createaddresstxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createaddresstxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.createaddresstxt.Location = new System.Drawing.Point(14, 15);
+            this.createaddresstxt.Name = "createaddresstxt";
+            this.createaddresstxt.Size = new System.Drawing.Size(419, 21);
+            this.createaddresstxt.TabIndex = 17;
+            this.createaddresstxt.Text = "Address";
+            this.createaddresstxt.Enter += new System.EventHandler(this.createaddresstxt_Enter);
+            // 
             // cbpan
             // 
             this.cbpan.BackColor = System.Drawing.Color.White;
@@ -345,49 +381,27 @@
             this.securityquestioncb.Size = new System.Drawing.Size(431, 30);
             this.securityquestioncb.TabIndex = 29;
             // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.White;
-            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel8.Controls.Add(this.lastnametxt);
-            this.panel8.Location = new System.Drawing.Point(326, 287);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(206, 50);
-            this.panel8.TabIndex = 28;
-            // 
-            // lastnametxt
-            // 
-            this.lastnametxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lastnametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastnametxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.lastnametxt.Location = new System.Drawing.Point(14, 15);
-            this.lastnametxt.Name = "lastnametxt";
-            this.lastnametxt.Size = new System.Drawing.Size(182, 21);
-            this.lastnametxt.TabIndex = 17;
-            this.lastnametxt.Text = "Last Name";
-            this.lastnametxt.Enter += new System.EventHandler(this.lastnametxt_Enter);
-            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.White;
             this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel7.Controls.Add(this.firstnametxt);
+            this.panel7.Controls.Add(this.createnametxt);
             this.panel7.Location = new System.Drawing.Point(87, 287);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(206, 50);
             this.panel7.TabIndex = 27;
             // 
-            // firstnametxt
+            // createnametxt
             // 
-            this.firstnametxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.firstnametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstnametxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.firstnametxt.Location = new System.Drawing.Point(14, 15);
-            this.firstnametxt.Name = "firstnametxt";
-            this.firstnametxt.Size = new System.Drawing.Size(182, 21);
-            this.firstnametxt.TabIndex = 17;
-            this.firstnametxt.Text = "First Name";
-            this.firstnametxt.Enter += new System.EventHandler(this.firstnametxt_Enter);
+            this.createnametxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.createnametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createnametxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.createnametxt.Location = new System.Drawing.Point(14, 15);
+            this.createnametxt.Name = "createnametxt";
+            this.createnametxt.Size = new System.Drawing.Size(182, 21);
+            this.createnametxt.TabIndex = 17;
+            this.createnametxt.Text = "Name";
+            this.createnametxt.Enter += new System.EventHandler(this.nametxt_Enter);
             // 
             // panel6
             // 
@@ -429,9 +443,9 @@
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel4.Controls.Add(this.createphonetxt);
-            this.panel4.Location = new System.Drawing.Point(87, 422);
+            this.panel4.Location = new System.Drawing.Point(333, 284);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(445, 50);
+            this.panel4.Size = new System.Drawing.Size(199, 50);
             this.panel4.TabIndex = 27;
             // 
             // createphonetxt
@@ -441,9 +455,10 @@
             this.createphonetxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.createphonetxt.Location = new System.Drawing.Point(11, 13);
             this.createphonetxt.Name = "createphonetxt";
-            this.createphonetxt.Size = new System.Drawing.Size(395, 21);
+            this.createphonetxt.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.createphonetxt.Size = new System.Drawing.Size(183, 21);
             this.createphonetxt.TabIndex = 18;
-            this.createphonetxt.Text = "Enter your phone number";
+            this.createphonetxt.Text = "Phone number";
             this.createphonetxt.Enter += new System.EventHandler(this.createphonetxt_Enter);
             // 
             // panel5
@@ -543,6 +558,69 @@
             this.forgetpasslbl.TabStop = true;
             this.forgetpasslbl.Text = "Forget Password";
             // 
+            // createphonepan
+            // 
+            this.createphonepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.createphonepan.Location = new System.Drawing.Point(547, 293);
+            this.createphonepan.Name = "createphonepan";
+            this.createphonepan.Size = new System.Drawing.Size(30, 30);
+            this.createphonepan.TabIndex = 29;
+            this.createphonepan.Visible = false;
+            // 
+            // createemailpan
+            // 
+            this.createemailpan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.createemailpan.Location = new System.Drawing.Point(547, 359);
+            this.createemailpan.Name = "createemailpan";
+            this.createemailpan.Size = new System.Drawing.Size(30, 30);
+            this.createemailpan.TabIndex = 30;
+            this.createemailpan.Visible = false;
+            // 
+            // createaddresspan
+            // 
+            this.createaddresspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.createaddresspan.Location = new System.Drawing.Point(547, 432);
+            this.createaddresspan.Name = "createaddresspan";
+            this.createaddresspan.Size = new System.Drawing.Size(30, 30);
+            this.createaddresspan.TabIndex = 30;
+            this.createaddresspan.Visible = false;
+            // 
+            // createquestionpan
+            // 
+            this.createquestionpan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.createquestionpan.Location = new System.Drawing.Point(547, 496);
+            this.createquestionpan.Name = "createquestionpan";
+            this.createquestionpan.Size = new System.Drawing.Size(30, 30);
+            this.createquestionpan.TabIndex = 30;
+            this.createquestionpan.Visible = false;
+            // 
+            // createanspan
+            // 
+            this.createanspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.createanspan.Location = new System.Drawing.Point(547, 561);
+            this.createanspan.Name = "createanspan";
+            this.createanspan.Size = new System.Drawing.Size(30, 30);
+            this.createanspan.TabIndex = 30;
+            this.createanspan.Visible = false;
+            // 
+            // createpasspan
+            // 
+            this.createpasspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.createpasspan.Location = new System.Drawing.Point(547, 629);
+            this.createpasspan.Name = "createpasspan";
+            this.createpasspan.Size = new System.Drawing.Size(30, 30);
+            this.createpasspan.TabIndex = 30;
+            this.createpasspan.Visible = false;
+            // 
+            // createnamepan
+            // 
+            this.createnamepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.createnamepan.Location = new System.Drawing.Point(297, 297);
+            this.createnamepan.Name = "createnamepan";
+            this.createnamepan.Size = new System.Drawing.Size(30, 30);
+            this.createnamepan.TabIndex = 30;
+            this.createnamepan.Visible = false;
+            // 
             // Loginform
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -580,9 +658,9 @@
             this.createaccountpan.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.cbpan.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            this.cbpan.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -625,9 +703,9 @@
         private System.Windows.Forms.TextBox createemailtxt;
         private System.Windows.Forms.Button signupbtn;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox lastnametxt;
+        private System.Windows.Forms.TextBox createaddresstxt;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox firstnametxt;
+        private System.Windows.Forms.TextBox createnametxt;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox createpasstxt;
         private System.Windows.Forms.Label emailvallbl;
@@ -639,6 +717,13 @@
         private System.Windows.Forms.ComboBox securityquestioncb;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.TextBox createanstxt;
+        private System.Windows.Forms.Panel createphonepan;
+        private System.Windows.Forms.Panel createnamepan;
+        private System.Windows.Forms.Panel createpasspan;
+        private System.Windows.Forms.Panel createanspan;
+        private System.Windows.Forms.Panel createquestionpan;
+        private System.Windows.Forms.Panel createaddresspan;
+        private System.Windows.Forms.Panel createemailpan;
     }
 }
 

@@ -16,54 +16,64 @@ namespace PharmaHealix
         public string CName
         {
             get { return createnametxt.Text; }
-            set { value=createnametxt.Text; } 
+            set { createnametxt.Text= value; }
         }
         public string Phone
         {
             get { return createphonetxt.Text; }
-            set { value = createphonetxt.Text; }
+            set { createphonetxt.Text = value; }
         }
-        public string CEmail
+        public string CUsername
         {
-            get { return createemailtxt.Text; }
-            set { value = createemailtxt.Text; }
+            get { return createusernametxt.Text; }
+            set { createusernametxt.Text = value; }
         }
         public string Address
         {
             get { return createaddresstxt.Text; }
-            set { value = createaddresstxt.Text; }
+            set { createaddresstxt.Text = value; }
         }
         public string Answer
         {
             get { return createanstxt.Text; }
-            set { value = createanstxt.Text; }
+            set { createanstxt.Text = value; }
         }
         public string CPass
         {
             get { return createpasstxt.Text; }
-            set { value = createpasstxt.Text; }
+            set {createpasstxt.Text = value; }
         }
-       
-       public Loginform()
+        public int CPassLength()
+        {
+            return createpasstxt.Text.Length;
+        }
+
+        public string EUsername
+        {
+            get { return createusernametxt.Text; }
+            set { createusernametxt.Text = value; }
+        }
+        public string EPass
+        {
+            get { return enterpasstxt.Text; }
+            set { enterpasstxt.Text = value; }
+        }
+
+        public Loginform()
         {
             InitializeComponent();
             securityquestioncb.SelectedIndex = 0;
 
-            if (securityquestioncb.SelectedIndex > 0)
-            {
-                securityquestioncb.ForeColor = Color.Black; 
-            }
+        }
 
-        } 
-      
         public void CreateAcc(bool check)
         {
             if (check)
             {
                 createaccountpan.BringToFront();
-                createaccountpan.Visible=true;
+                createaccountpan.Visible = true;
             }
-            
+
 
         }
 
@@ -83,12 +93,8 @@ namespace PharmaHealix
 
         private void signupbtn_Click(object sender, EventArgs e)
         {
-            if(createnametxt.Text=="Name" || createnametxt.Text == "")
-            {
-
-            }
-                createaccountpan.Hide();
-            Resetcreatepan();
+            FormValidation();
+           
 
 
         }
@@ -133,7 +139,7 @@ namespace PharmaHealix
             //}
             Pharmacist p = new Pharmacist();
             p.Show();
-            this.Hide();   
+            this.Hide();
 
         }
 
@@ -148,17 +154,17 @@ namespace PharmaHealix
 
         private void enterpasstxt_Enter(object sender, EventArgs e)
         {
-            if (enterpasstxt.Text == "Enter your Password")
+            if (createpasstxt.Text == "Enter your password")
             {
-                enterpasstxt.Text = "";
-                enterpasstxt.ForeColor = Color.Black;
-                enterpasstxt.PasswordChar = '*';
+                createpasstxt.Text = "";
+                createpasstxt.ForeColor = Color.Black;
+                createpasstxt.PasswordChar = '*';
             }
         }
 
         private void hidebtn_Click(object sender, EventArgs e)
         {
-            if(enterpasstxt.PasswordChar == '*')
+            if (enterpasstxt.PasswordChar == '*')
             {
                 enterpasstxt.PasswordChar = '\0';
             }
@@ -199,12 +205,12 @@ namespace PharmaHealix
             }
 
         }
-        private void createemailtxt_Enter(object sender, EventArgs e)
+        private void createusernametxt_Enter(object sender, EventArgs e)
         {
-            if (createemailtxt.Text == "Enter your email")
+            if (createusernametxt.Text == "Enter your username")
             {
-                createemailtxt.Text = "";
-               createemailtxt.ForeColor = Color.Black;
+                createusernametxt.Text = "";
+                createusernametxt.ForeColor = Color.Black;
             }
 
         }
@@ -228,323 +234,247 @@ namespace PharmaHealix
         private void createpasstxt_Enter(object sender, EventArgs e)
         {
 
-            if (createpasstxt.Text == "Enter your password")
+            if (createpasstxt.Text == "Enter your password (at least 4 characters)")
             {
                 createpasstxt.Text = "";
-               createpasstxt.ForeColor = Color.Black;
+                createpasstxt.ForeColor = Color.Black;
                 createpasstxt.PasswordChar = '*';
             }
 
         }
-       private void Resetcreatepan()
+        private void Resetcreatepan()
         {
 
+            createaddresspan.Visible = false;
+            createanspan.Visible = false;
+            createusernamepan.Visible = false;
+            createpasspan.Visible = false;
+
             securityquestioncb.SelectedIndex = 0;
-            if (securityquestioncb.SelectedIndex > 0)
-            {
-                securityquestioncb.ForeColor = Color.Black;
-            }
-            else
-            {
-                securityquestioncb.ForeColor = Color.Gray;
-            }
             createnametxt.Text = "Name";
             createaddresstxt.Text = "Address";
-            createemailtxt.Text = "Enter your email";
-            enterpasstxt.Text = "Enter your password";
+            createusernametxt.Text = "Enter your username";
+            enterpasstxt.Text = "Enter your password (at least 4 characters)";
             createanstxt.Text = "Type your answer";
             createphonetxt.Text = "Phone number";
 
             createnametxt.ForeColor = Color.Gray;
             createaddresstxt.ForeColor = Color.Gray;
-            createemailtxt.ForeColor = Color.Gray;
+            createusernametxt.ForeColor = Color.Gray;
             createpasstxt.ForeColor = Color.Gray;
             createphonetxt.ForeColor = Color.Gray;
             createanstxt.ForeColor = Color.Gray;
 
 
         }
+       
         private void FormValidation()
         {
-            if (CName == "Name" || CName=="")
+            //1(4)
+            if (Address == "Address" || Address == "")
             {
-                createnamepan.Visible = true;
-                return;
-            }
-            if(Phone=="Phone number" || Phone == "")
-            {
-                createphonepan.Visible = true;
-                return;
-            }
-                if (Address == "Address" || Address == "")
-            {
-                createaddresspan.Visible = true;
-                return;
-            }
-            if (securityquestioncb.SelectedIndex == 0)
-            {
-                createquestionpan.Visible = true;
-                return;
-            }
-            if(Answer== "Type your answer" || Answer == "")
-            {
-                createquestionpan.Visible = true;
-                return;
+                createaddresspan.Visible = true;   
+                createanspan.Visible = false;
+                createusernamepan.Visible = false;
+                createpasspan.Visible = false;
+
             }
 
-            if (CEmail == "Enter your email" || CEmail == "")
+            if (Answer == "Type your answer" || Answer == "")
             {
-                createemailpan.Visible = true;
-                return;
+                createanspan.Visible = true;
+                createaddresspan.Visible = false;
+                createusernamepan.Visible = false;
+                createpasspan.Visible = false;
+
             }
-            if (CPass == "Password" || CPass == "")
+
+            if (CUsername == "Enter your username" || CUsername == "")
+            {
+                createusernamepan.Visible = true;
+                createaddresspan.Visible = false;
+                createanspan.Visible = false;
+                
+                createpasspan.Visible = false;
+
+            }
+            if (((CPassLength() < 4) || (CPass == "Enter your password (at least 4 characters)" || CPass == "")))
             {
                 createpasspan.Visible = true;
-                return;
-            }
-           
+                createaddresspan.Visible = false;
+                createanspan.Visible = false;
+                createusernamepan.Visible = false;
 
-            if ((CName=="Name" || CName == "") &&
-                (Phone == "Phone number" || Phone == "") &&
-                (Address=="Address"|| Address == "") && (CEmail== "Enter your email"|| CEmail == "") && 
-                (Answer == "Type your answer"|| Answer == "") && (CPass== "Password"|| CPass == "") && 
-                securityquestioncb.SelectedIndex == 0)
+               
+
+            }
+
+            //2(6)
+
+            if ((CUsername == "Enter your username" || CUsername == "") &&
+                (Address == "Address" || Address == ""))
             {
-                createnamepan.Visible = true;
-                createphonepan.Visible = true;
+
                 createaddresspan.Visible = true;
-                createquestionpan.Visible = true;
+                createusernamepan.Visible = true;
+                
+                createanspan.Visible = false;
+                
+                createpasspan.Visible = false;
+
+
+            }
+            if ((CUsername == "Enter your username" || CUsername == "") &&
+                (Answer == "Type your answer" || Answer == ""))
+            {
+
                 createanspan.Visible = true;
-                createemailpan.Visible = true;
+                createusernamepan.Visible = true;
+                
+                createaddresspan.Visible = false;
+                createpasspan.Visible = false;
+
+
+            }
+            if ((CUsername == "Enter your username" || CUsername == "") &&
+                 ((CPassLength() < 4) || (CPass == "Enter your password (at least 4 characters)" || CPass == "")))
+            {
+
+                createusernamepan.Visible = true;
                 createpasspan.Visible = true;
-                return;
+
+                createaddresspan.Visible = false;
+                createanspan.Visible = false;
+                
+
 
             }
-            if ((CName == "Name" || CName == "") &&
-               (Phone == "Phone number" || Phone == "") &&
-               (Address == "Address" || Address == "") && (CEmail == "Enter your email" || CEmail == "") &&
-               (Answer == "Type your answer" || Answer == "") && (CPass == "Password" || CPass == "") &&
-               securityquestioncb.SelectedIndex != 0)
+            if ((Address == "Address" || Address == "") &&
+                (Answer == "Type your answer" || Answer == ""))
             {
-                createnamepan.Visible = true;
-                createphonepan.Visible = true;
+
                 createaddresspan.Visible = true;
-                //createquestionpan.Visible = true;
+
                 createanspan.Visible = true;
-                createemailpan.Visible = true;
+
+                createusernamepan.Visible = false;
+                createpasspan.Visible = false;
+
+
+
+            }
+            if ((Address == "Address" || Address == "") &&
+                ((CPassLength() < 4) || (CPass == "Enter your password (at least 4 characters)" || CPass == "")))
+            {
+
+                createaddresspan.Visible = true;
                 createpasspan.Visible = true;
-                return;
+
+                
+                createanspan.Visible = false;
+                createusernamepan.Visible = false;
+               
+
 
             }
-            if ((CName == "Name" || CName == "") &&
-               (Phone == "Phone number" || Phone == "") &&
-               (Address == "Address" || Address == "") && (CEmail == "Enter your email" || CEmail == "") &&
-               (Answer == "Type your answer" || Answer == "") && (CPass != "") &&
-               securityquestioncb.SelectedIndex == 0)
+            if ((Answer == "Type your answer" || Answer == "") &&
+                ((CPassLength() < 4) || (CPass == "Enter your password (at least 4 characters)" || CPass == "")))
             {
-                createnamepan.Visible = true;
-                createphonepan.Visible = true;
-                createaddresspan.Visible = true;
-                createquestionpan.Visible = true;
-                createanspan.Visible = true;
-                createemailpan.Visible = true;
-                // createpasspan.Visible = true;
-                return;
 
-            }
-            if ((CName == "Name" || CName == "") &&
-               (Phone == "Phone number" || Phone == "") &&
-               (Address == "Address" || Address == "") && (CEmail == "Enter your email" || CEmail == "") &&
-               (Answer != "") && (CPass == "Password" || CPass == "") &&
-               securityquestioncb.SelectedIndex == 0)
-            {
-                createnamepan.Visible = true;
-                createphonepan.Visible = true;
-                createaddresspan.Visible = true;
-                //createquestionpan.Visible = true;
                 createanspan.Visible = true;
-                createemailpan.Visible = true;
                 createpasspan.Visible = true;
-                return;
 
+                createaddresspan.Visible = false;
+              
+                createusernamepan.Visible = false;
+                
             }
-            if ((CName == "Name" || CName == "") &&
-               (Phone == "Phone number" || Phone == "") &&
-               (Address == "Address" || Address == "") && (CEmail != "") &&
-               (Answer == "Type your answer" || Answer == "") && (CPass == "Password" || CPass == "") &&
-               securityquestioncb.SelectedIndex == 0)
+            //3(4)
+            if ((Address == "Address" || Address == "") &&
+                (CUsername == "Enter your username" || CUsername == "") &&
+                (Answer == "Type your answer" || Answer == ""))
             {
-                createnamepan.Visible = true;
-                createphonepan.Visible = true;
+
                 createaddresspan.Visible = true;
-                createquestionpan.Visible = true;
                 createanspan.Visible = true;
-                //createemailpan.Visible = true;
-                createpasspan.Visible = true;
-                return;
+                createusernamepan.Visible = true;
+
+                
+                createpasspan.Visible = false;
 
             }
-            if ((CName == "Name" || CName == "") &&
-               (Phone == "Phone number" || Phone == "") &&
-               (Address != "") && (CEmail == "Enter your email" || CEmail == "") &&
-               (Answer == "Type your answer" || Answer == "") && (CPass == "Password" || CPass == "") &&
-               securityquestioncb.SelectedIndex == 0)
+            if ((Address == "Address" || Address == "") &&
+                (CUsername == "Enter your username" || CUsername == "") &&
+                ((CPassLength() < 4) || (CPass == "Enter your password (at least 4 characters)" || CPass == "")))
             {
-                createnamepan.Visible = true;
-                createphonepan.Visible = true;
-                //createaddresspan.Visible = true;
-                createquestionpan.Visible = true;
-                createanspan.Visible = true;
-                createemailpan.Visible = true;
-                createpasspan.Visible = true;
-                return;
 
-            }
-            if ((CName == "Name" || CName == "") &&
-               (Phone != "") &&
-               (Address == "Address" || Address == "") && (CEmail == "Enter your email" || CEmail == "") &&
-               (Answer == "Type your answer" || Answer == "") && (CPass == "Password" || CPass == "") &&
-               securityquestioncb.SelectedIndex == 0)
-            {
-                createnamepan.Visible = true;
-               // createphonepan.Visible = true;
                 createaddresspan.Visible = true;
-                createquestionpan.Visible = true;
-                createanspan.Visible = true;
-                createemailpan.Visible = true;
+                createusernamepan.Visible = true;
                 createpasspan.Visible = true;
-                return;
+                
+                createanspan.Visible = false;
+               
+
             }
-            if ((CName!= "") &&
-               (Phone == "Phone number" || Phone == "") &&
-               (Address == "Address" || Address == "") && (CEmail == "Enter your email" || CEmail == "") &&
-               (Answer == "Type your answer" || Answer == "") && (CPass == "Password" || CPass == "") &&
-               securityquestioncb.SelectedIndex == 0)
+            if ((Answer == "Type your answer" || Answer == "") &&
+                (CUsername == "Enter your username" || CUsername == "") &&
+                ((CPassLength() < 4) || (CPass == "Enter your password (at least 4 characters)" || CPass == "")))
             {
-                //createnamepan.Visible = true;
-                createphonepan.Visible = true;
-                createaddresspan.Visible = true;
-                createquestionpan.Visible = true;
+
                 createanspan.Visible = true;
-                createemailpan.Visible = true;
+                createusernamepan.Visible = true;
                 createpasspan.Visible = true;
-                return;
+
+                createaddresspan.Visible = false;
+                
+
             }
-            if ((CName == "Name" || CName == "") &&
-               (Phone == "Phone number" || Phone == "") &&
-               (Address == "Address" || Address == "") && (CEmail == "Enter your email" || CEmail == "") &&
-               (Answer == "Type your answer" || Answer == "") && (CPass != "") &&
-               securityquestioncb.SelectedIndex != 0)
+            if ((Answer == "Type your answer" || Answer == "") &&
+                (Address == "Address" || Address == "") &&
+                ((CPassLength() < 4) || (CPass == "Enter your password (at least 4 characters)" || CPass == "")))
             {
-                createnamepan.Visible = true;
-                createphonepan.Visible = true;
+
                 createaddresspan.Visible = true;
-                //createquestionpan.Visible = true;
                 createanspan.Visible = true;
-                createemailpan.Visible = true;
-                //createpasspan.Visible = true;
-                return;
-
-            }
-            if ((CName == "Name" || CName == "") &&
-               (Phone == "Phone number" || Phone == "") &&
-               (Address == "Address" || Address == "") && (CEmail == "Enter your email" || CEmail == "") &&
-               (Answer != "") && (CPass == "Password" || CPass == "") &&
-               securityquestioncb.SelectedIndex != 0)
-            {
-                createnamepan.Visible = true;
-                createphonepan.Visible = true;
-                createaddresspan.Visible = true;
-                //createquestionpan.Visible = true;
-               // createanspan.Visible = true;
-                createemailpan.Visible = true;
                 createpasspan.Visible = true;
-                return;
+
+                
+                createusernamepan.Visible = false;
+                
 
             }
-            if ((CName == "Name" || CName == "") &&
-               (Phone == "Phone number" || Phone == "") &&
-               (Address == "Address" || Address == "") && (CEmail != "") &&
-               (Answer == "Type your answer" || Answer == "") && (CPass == "Password" || CPass == "") &&
-               securityquestioncb.SelectedIndex != 0)
+            //4(1)
+            if ((Address == "Address" || Address == "") &&
+                (CUsername == "Enter your username" || CUsername == "") &&
+                (Answer == "Type your answer" || Answer == "") &&
+                ((CPassLength() < 4) || (CPass == "Enter your password (at least 4 characters)" || CPass == "")))
             {
-                createnamepan.Visible = true;
-                createphonepan.Visible = true;
                 createaddresspan.Visible = true;
-               // createquestionpan.Visible = true;
                 createanspan.Visible = true;
-                //createemailpan.Visible = true;
+                createusernamepan.Visible = true;
                 createpasspan.Visible = true;
-                return;
+               
 
             }
-            if ((CName == "Name" || CName == "") &&
-               (Phone == "Phone number" || Phone == "") &&
-               (Address != "") && (CEmail == "Enter your email" || CEmail == "") &&
-               (Answer == "Type your answer" || Answer == "") && (CPass == "Password" || CPass == "") &&
-               securityquestioncb.SelectedIndex != 0)
+            if ((Address != "Address" && Address != "") &&
+                 (CUsername != "Enter your username" && CUsername != "") &&
+                 (Answer != "Type your answer" && Answer != "") &&
+                 ((CPassLength() > 4) && (CPass != "Enter your password (at least 4 characters)" && CPass != "")))
             {
-                createnamepan.Visible = true;
-                createphonepan.Visible = true;
-                //createaddresspan.Visible = true;
-               // createquestionpan.Visible = true;
-                createanspan.Visible = true;
-                createemailpan.Visible = true;
-                createpasspan.Visible = true;
-                return;
+
+                createaddresspan.Visible = false;
+                createanspan.Visible = false;
+                createusernamepan.Visible = false;
+                createpasspan.Visible = false;
+
+                MessageBox.Show("Signup Successful!");
+                Resetcreatepan();
+                createaccountpan.Hide();
+               
+
+                
 
             }
-            if ((CName == "Name" || CName == "") &&
-               (Phone != "") &&
-               (Address == "Address" || Address == "") && (CEmail == "Enter your email" || CEmail == "") &&
-               (Answer == "Type your answer" || Answer == "") && (CPass == "Password" || CPass == "") &&
-               securityquestioncb.SelectedIndex != 0)
-            {
-                createnamepan.Visible = true;
-                //createphonepan.Visible = true;
-                createaddresspan.Visible = true;
-                //createquestionpan.Visible = true;
-                createanspan.Visible = true;
-                createemailpan.Visible = true;
-                createpasspan.Visible = true;
-                return;
-
-            }
-            if ((CName != "") &&
-               (Phone == "Phone number" || Phone == "") &&
-               (Address == "Address" || Address == "") && (CEmail == "Enter your email" || CEmail == "") &&
-               (Answer == "Type your answer" || Answer == "") && (CPass == "Password" || CPass == "") &&
-               securityquestioncb.SelectedIndex != 0)
-            {
-                //createnamepan.Visible = true;
-                createphonepan.Visible = true;
-                createaddresspan.Visible = true;
-               // createquestionpan.Visible = true;
-                createanspan.Visible = true;
-                createemailpan.Visible = true;
-                createpasspan.Visible = true;
-                return;
-
-            }
-            if ((CName == "Name" || CName == "") &&
-               (Phone == "Phone number" || Phone == "") &&
-               (Address == "Address" || Address == "") && (CEmail == "Enter your email" || CEmail == "") &&
-               (Answer != "") && (CPass != "") &&
-               securityquestioncb.SelectedIndex != 0)
-            {
-                createnamepan.Visible = true;
-                createphonepan.Visible = true;
-                createaddresspan.Visible = true;
-               // createquestionpan.Visible = true;
-               // createanspan.Visible = true;
-                createemailpan.Visible = true;
-              //  createpasspan.Visible = true;
-                return;
-
-            }
-
-
-
         }
     }
 }

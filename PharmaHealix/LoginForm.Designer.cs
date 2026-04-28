@@ -40,7 +40,7 @@
             this.signinlbl = new System.Windows.Forms.Label();
             this.emaillbl = new System.Windows.Forms.Label();
             this.passwordlbl = new System.Windows.Forms.Label();
-            this.enteremailtxt = new System.Windows.Forms.TextBox();
+            this.enterusernametxt = new System.Windows.Forms.TextBox();
             this.enterpasstxt = new System.Windows.Forms.TextBox();
             this.loginbtn = new System.Windows.Forms.Button();
             this.viewguestbtn = new System.Windows.Forms.Button();
@@ -48,6 +48,8 @@
             this.passtxtpan = new System.Windows.Forms.Panel();
             this.hidebtn = new System.Windows.Forms.Button();
             this.createaccountpan = new System.Windows.Forms.Panel();
+            this.createphonepan = new System.Windows.Forms.Panel();
+            this.createnamepan = new System.Windows.Forms.Panel();
             this.createpasspan = new System.Windows.Forms.Panel();
             this.createanspan = new System.Windows.Forms.Panel();
             this.createaddresspan = new System.Windows.Forms.Panel();
@@ -74,6 +76,8 @@
             this.emailvallbl = new System.Windows.Forms.Label();
             this.passvallbl = new System.Windows.Forms.Label();
             this.forgetpasslbl = new System.Windows.Forms.LinkLabel();
+            this.Enteruserpan = new System.Windows.Forms.Panel();
+            this.Enterpasspan = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.picturepan.SuspendLayout();
             this.usertxtpan.SuspendLayout();
@@ -178,9 +182,9 @@
             this.emaillbl.Font = new System.Drawing.Font("Sans Serif Collection", 9.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emaillbl.Location = new System.Drawing.Point(72, 268);
             this.emaillbl.Name = "emaillbl";
-            this.emaillbl.Size = new System.Drawing.Size(80, 68);
+            this.emaillbl.Size = new System.Drawing.Size(126, 68);
             this.emaillbl.TabIndex = 10;
-            this.emaillbl.Text = "Email";
+            this.emaillbl.Text = "Username";
             // 
             // passwordlbl
             // 
@@ -192,17 +196,17 @@
             this.passwordlbl.TabIndex = 14;
             this.passwordlbl.Text = "Password";
             // 
-            // enteremailtxt
+            // enterusernametxt
             // 
-            this.enteremailtxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.enteremailtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enteremailtxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.enteremailtxt.Location = new System.Drawing.Point(14, 15);
-            this.enteremailtxt.Name = "enteremailtxt";
-            this.enteremailtxt.Size = new System.Drawing.Size(392, 21);
-            this.enteremailtxt.TabIndex = 17;
-            this.enteremailtxt.Text = "Enter your Email";
-            this.enteremailtxt.Enter += new System.EventHandler(this.enteremailtxt_Enter);
+            this.enterusernametxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.enterusernametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enterusernametxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.enterusernametxt.Location = new System.Drawing.Point(14, 15);
+            this.enterusernametxt.Name = "enterusernametxt";
+            this.enterusernametxt.Size = new System.Drawing.Size(392, 21);
+            this.enterusernametxt.TabIndex = 17;
+            this.enterusernametxt.Text = "Enter your username";
+            this.enterusernametxt.Enter += new System.EventHandler(this.enterusernametxt_Enter);
             // 
             // enterpasstxt
             // 
@@ -213,7 +217,7 @@
             this.enterpasstxt.Name = "enterpasstxt";
             this.enterpasstxt.Size = new System.Drawing.Size(395, 21);
             this.enterpasstxt.TabIndex = 18;
-            this.enterpasstxt.Text = "Enter your Password";
+            this.enterpasstxt.Text = "Enter your password";
             this.enterpasstxt.Enter += new System.EventHandler(this.enterpasstxt_Enter);
             // 
             // loginbtn
@@ -252,7 +256,7 @@
             // 
             this.usertxtpan.BackColor = System.Drawing.Color.White;
             this.usertxtpan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.usertxtpan.Controls.Add(this.enteremailtxt);
+            this.usertxtpan.Controls.Add(this.enterusernametxt);
             this.usertxtpan.Location = new System.Drawing.Point(84, 324);
             this.usertxtpan.Name = "usertxtpan";
             this.usertxtpan.Size = new System.Drawing.Size(445, 50);
@@ -283,6 +287,8 @@
             // 
             // createaccountpan
             // 
+            this.createaccountpan.Controls.Add(this.createphonepan);
+            this.createaccountpan.Controls.Add(this.createnamepan);
             this.createaccountpan.Controls.Add(this.createpasspan);
             this.createaccountpan.Controls.Add(this.createanspan);
             this.createaccountpan.Controls.Add(this.createaddresspan);
@@ -304,10 +310,28 @@
             this.createaccountpan.TabIndex = 8;
             this.createaccountpan.Visible = false;
             // 
+            // createphonepan
+            // 
+            this.createphonepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.createphonepan.Location = new System.Drawing.Point(547, 294);
+            this.createphonepan.Name = "createphonepan";
+            this.createphonepan.Size = new System.Drawing.Size(30, 30);
+            this.createphonepan.TabIndex = 31;
+            this.createphonepan.Visible = false;
+            // 
+            // createnamepan
+            // 
+            this.createnamepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.createnamepan.Location = new System.Drawing.Point(299, 296);
+            this.createnamepan.Name = "createnamepan";
+            this.createnamepan.Size = new System.Drawing.Size(30, 30);
+            this.createnamepan.TabIndex = 31;
+            this.createnamepan.Visible = false;
+            // 
             // createpasspan
             // 
             this.createpasspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
-            this.createpasspan.Location = new System.Drawing.Point(547, 629);
+            this.createpasspan.Location = new System.Drawing.Point(547, 628);
             this.createpasspan.Name = "createpasspan";
             this.createpasspan.Size = new System.Drawing.Size(30, 30);
             this.createpasspan.TabIndex = 30;
@@ -316,7 +340,7 @@
             // createanspan
             // 
             this.createanspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
-            this.createanspan.Location = new System.Drawing.Point(547, 561);
+            this.createanspan.Location = new System.Drawing.Point(547, 562);
             this.createanspan.Name = "createanspan";
             this.createanspan.Size = new System.Drawing.Size(30, 30);
             this.createanspan.TabIndex = 30;
@@ -379,6 +403,7 @@
             this.createaddresstxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.createaddresstxt.Location = new System.Drawing.Point(14, 15);
             this.createaddresstxt.Name = "createaddresstxt";
+            this.createaddresstxt.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.createaddresstxt.Size = new System.Drawing.Size(419, 21);
             this.createaddresstxt.TabIndex = 17;
             this.createaddresstxt.Text = "Address";
@@ -464,7 +489,7 @@
             this.createpasstxt.Name = "createpasstxt";
             this.createpasstxt.Size = new System.Drawing.Size(395, 21);
             this.createpasstxt.TabIndex = 18;
-            this.createpasstxt.Text = "Enter your password (at least 4 characters)";
+            this.createpasstxt.Text = "Enter your password (at least 5 characters)";
             this.createpasstxt.Enter += new System.EventHandler(this.createpasstxt_Enter);
             // 
             // panel4
@@ -551,7 +576,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
-            this.label4.Location = new System.Drawing.Point(91, 165);
+            this.label4.Location = new System.Drawing.Point(91, 167);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(414, 45);
             this.label4.TabIndex = 11;
@@ -586,6 +611,25 @@
             this.forgetpasslbl.TabIndex = 25;
             this.forgetpasslbl.TabStop = true;
             this.forgetpasslbl.Text = "Forget Password";
+            this.forgetpasslbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.forgetpasslbl_LinkClicked);
+            // 
+            // Enteruserpan
+            // 
+            this.Enteruserpan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.Enteruserpan.Location = new System.Drawing.Point(547, 330);
+            this.Enteruserpan.Name = "Enteruserpan";
+            this.Enteruserpan.Size = new System.Drawing.Size(30, 30);
+            this.Enteruserpan.TabIndex = 32;
+            this.Enteruserpan.Visible = false;
+            // 
+            // Enterpasspan
+            // 
+            this.Enterpasspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.Enterpasspan.Location = new System.Drawing.Point(547, 427);
+            this.Enterpasspan.Name = "Enterpasspan";
+            this.Enterpasspan.Size = new System.Drawing.Size(30, 30);
+            this.Enterpasspan.TabIndex = 32;
+            this.Enterpasspan.Visible = false;
             // 
             // Loginform
             // 
@@ -609,6 +653,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.wlclbl);
             this.Controls.Add(this.forgetpasslbl);
+            this.Controls.Add(this.Enteruserpan);
+            this.Controls.Add(this.Enterpasspan);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Loginform";
             this.ShowInTaskbar = false;
@@ -653,7 +699,7 @@
         private System.Windows.Forms.Label emaillbl;
         private System.Windows.Forms.Button Exitbtn;
         private System.Windows.Forms.Label passwordlbl;
-        private System.Windows.Forms.TextBox enteremailtxt;
+        private System.Windows.Forms.TextBox enterusernametxt;
         private System.Windows.Forms.TextBox enterpasstxt;
         private System.Windows.Forms.Button loginbtn;
         private System.Windows.Forms.Button viewguestbtn;
@@ -687,6 +733,10 @@
         private System.Windows.Forms.Panel createanspan;
         private System.Windows.Forms.Panel createaddresspan;
         private System.Windows.Forms.Panel createusernamepan;
+        private System.Windows.Forms.Panel createphonepan;
+        private System.Windows.Forms.Panel createnamepan;
+        private System.Windows.Forms.Panel Enterpasspan;
+        private System.Windows.Forms.Panel Enteruserpan;
     }
 }
 

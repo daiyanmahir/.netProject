@@ -381,7 +381,7 @@
             this.createanstxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.createanstxt.Location = new System.Drawing.Point(14, 15);
             this.createanstxt.Name = "createanstxt";
-            this.createanstxt.Size = new System.Drawing.Size(392, 21);
+            this.createanstxt.Size = new System.Drawing.Size(426, 21);
             this.createanstxt.TabIndex = 17;
             this.createanstxt.Text = "Type your answer";
             this.createanstxt.Enter += new System.EventHandler(this.createanstxt_Enter);
@@ -532,7 +532,7 @@
             this.createusernametxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.createusernametxt.Location = new System.Drawing.Point(14, 15);
             this.createusernametxt.Name = "createusernametxt";
-            this.createusernametxt.Size = new System.Drawing.Size(392, 21);
+            this.createusernametxt.Size = new System.Drawing.Size(428, 21);
             this.createusernametxt.TabIndex = 17;
             this.createusernametxt.Text = "Enter your username";
             this.createusernametxt.Enter += new System.EventHandler(this.createusernametxt_Enter);
@@ -566,7 +566,7 @@
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.Location = new System.Drawing.Point(204, 16);
+            this.panel1.Location = new System.Drawing.Point(207, 26);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(180, 139);
             this.panel1.TabIndex = 12;

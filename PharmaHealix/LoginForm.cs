@@ -16,7 +16,7 @@ namespace PharmaHealix
         private string CName
         {
             get { return createnametxt.Text; }
-            set { createnametxt.Text= value; }
+            set { createnametxt.Text = value; }
         }
         private string Phone
         {
@@ -41,17 +41,13 @@ namespace PharmaHealix
         private string CPass
         {
             get { return createpasstxt.Text; }
-            set {createpasstxt.Text = value; }
-        }
-        private int CPassLength()
-        {
-            return createpasstxt.Text.Length;
+            set { createpasstxt.Text = value; }
         }
 
         private string EUsername
         {
-            get { return createusernametxt.Text; }
-            set { createusernametxt.Text = value; }
+            get { return enterusernametxt.Text; }
+            set { enterusernametxt.Text = value; }
         }
         private string EPass
         {
@@ -94,7 +90,7 @@ namespace PharmaHealix
         private void signupbtn_Click(object sender, EventArgs e)
         {
             FormValidation();
-           
+
 
 
         }
@@ -102,10 +98,12 @@ namespace PharmaHealix
         private void loginbtn_Click(object sender, EventArgs e)
         {
 
-           
-            Pharmacist p = new Pharmacist();
-            p.Show();
-            this.Hide();
+
+            LoginValidation();
+
+            //Pharmacist p = new Pharmacist();
+            //p.Show();
+            //this.Hide();
 
         }
 
@@ -120,11 +118,11 @@ namespace PharmaHealix
 
         private void enterpasstxt_Enter(object sender, EventArgs e)
         {
-            if (createpasstxt.Text == "Enter your password")
+            if (EPass == "Enter your password")
             {
-                createpasstxt.Text = "";
-                createpasstxt.ForeColor = Color.Black;
-                createpasstxt.PasswordChar = '*';
+                EPass = "";
+                enterpasstxt.ForeColor = Color.Black;
+                enterpasstxt.PasswordChar = '*';
             }
         }
 
@@ -222,7 +220,7 @@ namespace PharmaHealix
             createnametxt.Text = "Name";
             createaddresstxt.Text = "Address";
             createusernametxt.Text = "Enter your username";
-            enterpasstxt.Text = "Enter your password (at least 5 characters)";
+            createpasstxt.Text = "Enter your password (at least 5 characters)";
             createanstxt.Text = "Type your answer";
             createphonetxt.Text = "Phone number";
 
@@ -235,10 +233,10 @@ namespace PharmaHealix
 
 
         }
-       
+
         private void FormValidation()
         {
-          
+
             createphonepan.Visible = false;
             createnamepan.Visible = false;
             createusernamepan.Visible = false;
@@ -253,17 +251,17 @@ namespace PharmaHealix
                 createphonepan.Visible = true;
                 Error = true;
             }
-            if (Name == "" || Name== "Name")
+            if (CName == "" || CName == "Name")
             {
                 createnamepan.Visible = true;
                 Error = true;
             }
-            if (CUsername== "" || CUsername == "Username")
+            if (CUsername == "" || CUsername == "Enter your username")
             {
                 createusernamepan.Visible = true;
                 Error = true;
             }
-            if (Address== "" ||Address == "Address")
+            if (Address == "" || Address == "Address")
             {
                 createaddresspan.Visible = true;
                 Error = true;
@@ -281,10 +279,10 @@ namespace PharmaHealix
                 createpasspan.Visible = true;
                 Error = true;
             }
-            if (CPass.Length < 4)
+            if (CPass.Length < 5)
             {
                 createpasspan.Visible = true;
-                Error=true;
+                Error = true;
                 MessageBox.Show("Password must be more than 5 characters!");
             }
 
@@ -293,12 +291,13 @@ namespace PharmaHealix
                 MessageBox.Show("Please fill all required fields");
                 return;
             }
+            else
+            {
+                MessageBox.Show("Signup Successful!");
 
-            MessageBox.Show("Signup Successful!");
-
-            Resetcreatepan();
-            createaccountpan.Hide();
-
+                Resetcreatepan();
+                createaccountpan.Hide();
+            }
 
 
 
@@ -308,12 +307,12 @@ namespace PharmaHealix
             Enteruserpan.Visible = false;
             Enterpasspan.Visible = false;
             bool Error = false;
-            if(EUsername==""||EUsername== "Enter your username")
+            if (EUsername == "" || EUsername == "Enter your username")
             {
                 Enteruserpan.Visible = true;
                 Error = true;
-            } 
-            if(EPass==""||EPass== "Enter your password")
+            }
+            if (EPass == "" || EPass == "Enter your password")
             {
                 Enterpasspan.Visible = true;
                 Error = true;
@@ -323,6 +322,26 @@ namespace PharmaHealix
                 MessageBox.Show("Please fill all required fields");
                 return;
             }
+            else
+            {
+                MessageBox.Show("Login Successful!");
+                MainForm m = new MainForm("Patient");
+                m.Show();
+
+                LoginformReset();
+                this.Hide();
+            }
+
+
+        }
+        private void LoginformReset()
+        {
+            EUsername = "Enter your username";
+            EPass = "Enter your password";
+
+            enterusernametxt.ForeColor = Color.Gray;
+            enterpasstxt.ForeColor = Color.Gray;
+
 
         }
 
@@ -331,4 +350,4 @@ namespace PharmaHealix
 
         }
     }
-    }
+}

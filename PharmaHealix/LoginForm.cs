@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace PharmaHealix
 {
@@ -293,8 +294,19 @@ namespace PharmaHealix
             }
             else
             {
-                MessageBox.Show("Signup Successful!");
-
+                try
+                {
+                    string query = "Insert into UserTable(Name,Phone,Username,Address,Question,Answer,Password,Role)Values(@0,@1,@2,@3,@4,@5,@6,@7)";
+                    new Db().NonQuery(query, CName, Phone, CUsername, Address, securityquestioncb.Text, Answer, CPass,"Patient");
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Signup Error!"+e.Message);
+                }
+                finally
+                {
+                    MessageBox.Show("Signup Successful!");
+                }
                 Resetcreatepan();
                 createaccountpan.Hide();
             }

@@ -13,11 +13,11 @@ namespace PharmaHealix
         {
 
         }
-        public void NonQuery(string query)
+        public void NonQuery(string query,params Object[] p)
         {
 
             //1. Address
-            string connection = "Data Source=LAPTOP-5SNR2K20\\SQLEXPRESS;Initial Catalog=PharmaHealix;Integrated Security=True;Trust Server Certificate=True;";
+            string connection = "Data Source=LAPTOP-5SNR2K20\\SQLEXPRESS;Initial Catalog=PharmaHealix;Integrated Security=True;";
             //2. Establish Connection
 
             SqlConnection con = new SqlConnection(connection);
@@ -30,12 +30,15 @@ namespace PharmaHealix
 
             SqlCommand cmd = new SqlCommand(query, con);
             //5.Execute Query
+            for (int i = 0; i < p.Length; i++) {
+                cmd.Parameters.AddWithValue("@"+i, p[i]);
+            }
 
             cmd.ExecuteNonQuery();
 
 
             //6.Close Connection
-
+            con.Close();
 
         }
      /*   public void Scalar(string query)
@@ -59,7 +62,7 @@ namespace PharmaHealix
         {
 
             //1 Address
-            string connection = "Data Source=LAPTOP-5SNR2K20\\SQLEXPRESS;Initial Catalog=PharmaHealix;Integrated Security=True;Trust Server Certificate=True;";
+            string connection = "Data Source=LAPTOP-5SN;";
             //2 Establish Connection
 
             SqlConnection con = new SqlConnection(connection);

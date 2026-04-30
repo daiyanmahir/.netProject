@@ -22,21 +22,9 @@ namespace PharmaHealix
             Application.Exit();
         }
 
- 
-
-        private void minimizebtn_Click(object sender, EventArgs e)
-        {
-            pharmacistpan.Hide();
-        }
-
-        private void userbtn_Click(object sender, EventArgs e)
-        {
-            pharmacistpan.Visible = true;
-            pharmacistpan.BringToFront();
-        }
-
         private void patientlistbtn_Click(object sender, EventArgs e)
         {
+            pharmacistprofilepan.Visible = false;
             inventorypan.Visible = false;
             orderpan.Visible = false;
             patientlistpan.Visible = true;
@@ -44,6 +32,7 @@ namespace PharmaHealix
 
         private void orderbtn_Click(object sender, EventArgs e)
         {
+            pharmacistprofilepan.Visible = false;
             inventorypan.Visible = false;
             patientlistpan.Visible = false;
             orderpan.Visible = true;
@@ -51,9 +40,30 @@ namespace PharmaHealix
 
         private void inventorybtn_Click(object sender, EventArgs e)
         {
-           patientlistpan.Visible=false;
+            pharmacistprofilepan.Visible = false;
+            patientlistpan.Visible=false;
             orderpan.Visible=false;
             inventorypan.Visible = true;
+        }
+
+        private void profilebtn_Click(object sender, EventArgs e)
+        {
+            patientlistpan.Visible = false;
+            orderpan.Visible = false;
+            inventorypan.Visible=false;
+            pharmacistprofilepan.Visible=true;
+        }
+
+        private void Exitbtn_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pharmacistlogoutbtn_Click(object sender, EventArgs e)
+        {
+            Loginform l = new Loginform();
+            this.Hide();
+            l.Show();
         }
     }
 }

@@ -607,7 +607,7 @@
             this.forgetpasslbl.AutoSize = true;
             this.forgetpasslbl.Location = new System.Drawing.Point(400, 474);
             this.forgetpasslbl.Name = "forgetpasslbl";
-            this.forgetpasslbl.Size = new System.Drawing.Size(129, 20);
+            this.forgetpasslbl.Size = new System.Drawing.Size(174, 25);
             this.forgetpasslbl.TabIndex = 25;
             this.forgetpasslbl.TabStop = true;
             this.forgetpasslbl.Text = "Forget Password";

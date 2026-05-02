@@ -45,7 +45,7 @@
             this.minimizebtn = new System.Windows.Forms.Button();
             this.logoutbtn = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.welcomelbl = new System.Windows.Forms.Label();
+            this.userpannamelbl = new System.Windows.Forms.Label();
             this.prescriptionlbl = new System.Windows.Forms.Label();
             this.Whatareyoulookinglbl = new System.Windows.Forms.Label();
             this.prescriptionuploadbtn = new System.Windows.Forms.Button();
@@ -90,6 +90,8 @@
             this.mediinfopan = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.categorylbl = new System.Windows.Forms.Label();
+            this.userpanemaillabl = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.headpan.SuspendLayout();
             this.userpan.SuspendLayout();
             this.patientpan.SuspendLayout();
@@ -281,10 +283,12 @@
             // patientpan
             // 
             this.patientpan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
+            this.patientpan.Controls.Add(this.label2);
+            this.patientpan.Controls.Add(this.userpanemaillabl);
             this.patientpan.Controls.Add(this.minimizebtn);
             this.patientpan.Controls.Add(this.logoutbtn);
             this.patientpan.Controls.Add(this.panel7);
-            this.patientpan.Controls.Add(this.welcomelbl);
+            this.patientpan.Controls.Add(this.userpannamelbl);
             this.patientpan.Location = new System.Drawing.Point(634, 108);
             this.patientpan.Name = "patientpan";
             this.patientpan.Size = new System.Drawing.Size(454, 337);
@@ -313,7 +317,7 @@
             this.logoutbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logoutbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.logoutbtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.logoutbtn.Location = new System.Drawing.Point(156, 200);
+            this.logoutbtn.Location = new System.Drawing.Point(148, 249);
             this.logoutbtn.Name = "logoutbtn";
             this.logoutbtn.Size = new System.Drawing.Size(156, 40);
             this.logoutbtn.TabIndex = 21;
@@ -324,22 +328,23 @@
             // panel7
             // 
             this.panel7.BackgroundImage = global::PharmaHealix.Properties.Resources.Humanicon;
-            this.panel7.Location = new System.Drawing.Point(204, 16);
+            this.panel7.Location = new System.Drawing.Point(210, 16);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(50, 50);
             this.panel7.TabIndex = 20;
             // 
-            // welcomelbl
+            // userpannamelbl
             // 
-            this.welcomelbl.AutoSize = true;
-            this.welcomelbl.BackColor = System.Drawing.Color.Transparent;
-            this.welcomelbl.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
-            this.welcomelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(20)))));
-            this.welcomelbl.Location = new System.Drawing.Point(158, 76);
-            this.welcomelbl.Name = "welcomelbl";
-            this.welcomelbl.Size = new System.Drawing.Size(154, 45);
-            this.welcomelbl.TabIndex = 19;
-            this.welcomelbl.Text = "Welcome";
+            this.userpannamelbl.AutoSize = true;
+            this.userpannamelbl.BackColor = System.Drawing.Color.Transparent;
+            this.userpannamelbl.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            this.userpannamelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(20)))));
+            this.userpannamelbl.Location = new System.Drawing.Point(177, 77);
+            this.userpannamelbl.Name = "userpannamelbl";
+            this.userpannamelbl.Size = new System.Drawing.Size(107, 45);
+            this.userpannamelbl.TabIndex = 19;
+            this.userpannamelbl.Text = "Name";
+            this.userpannamelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // prescriptionlbl
             // 
@@ -530,7 +535,7 @@
             this.medibackpan.AutoScroll = true;
             this.medibackpan.BackgroundImage = global::PharmaHealix.Properties.Resources.BackgroundImage;
             this.medibackpan.Controls.Add(this.medipan);
-            this.medibackpan.Location = new System.Drawing.Point(0, 110);
+            this.medibackpan.Location = new System.Drawing.Point(1110, 110);
             this.medibackpan.Name = "medibackpan";
             this.medibackpan.Size = new System.Drawing.Size(1200, 640);
             this.medibackpan.TabIndex = 29;
@@ -879,6 +884,30 @@
             this.categorylbl.Text = "Category:";
             this.categorylbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // userpanemaillabl
+            // 
+            this.userpanemaillabl.AutoSize = true;
+            this.userpanemaillabl.BackColor = System.Drawing.Color.Transparent;
+            this.userpanemaillabl.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
+            this.userpanemaillabl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(20)))));
+            this.userpanemaillabl.Location = new System.Drawing.Point(178, 137);
+            this.userpanemaillabl.Name = "userpanemaillabl";
+            this.userpanemaillabl.Size = new System.Drawing.Size(106, 21);
+            this.userpanemaillabl.TabIndex = 22;
+            this.userpanemaillabl.Text = "emailaddress";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(20)))));
+            this.label2.Location = new System.Drawing.Point(144, 181);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(169, 21);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Account Type: Patient";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -886,17 +915,17 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
             this.BackgroundImage = global::PharmaHealix.Properties.Resources.BackgroundImage;
             this.ClientSize = new System.Drawing.Size(1200, 750);
-            this.Controls.Add(this.prescriptionuploadbtn);
             this.Controls.Add(this.cartbtn);
             this.Controls.Add(this.headpan);
             this.Controls.Add(this.medibackpan);
-            this.Controls.Add(this.userpan);
             this.Controls.Add(this.patientpan);
             this.Controls.Add(this.prescriptionlbl);
             this.Controls.Add(this.Whatareyoulookinglbl);
             this.Controls.Add(this.searchpan);
             this.Controls.Add(this.adpan2);
             this.Controls.Add(this.adpan1);
+            this.Controls.Add(this.prescriptionuploadbtn);
+            this.Controls.Add(this.userpan);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -981,8 +1010,10 @@
         private System.Windows.Forms.Button minimizebtn;
         private System.Windows.Forms.Button logoutbtn;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label welcomelbl;
+        private System.Windows.Forms.Label userpannamelbl;
         private System.Windows.Forms.Label userpanlbl2;
         private System.Windows.Forms.Button createaccountbtn;
+        private System.Windows.Forms.Label userpanemaillabl;
+        private System.Windows.Forms.Label label2;
     }
 }

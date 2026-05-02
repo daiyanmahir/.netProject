@@ -13,7 +13,8 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 namespace PharmaHealix
 {
     public partial class Loginform : Form
-    {
+    { 
+        //Properties
         private string CName
         {
             get { return createnametxt.Text; }
@@ -56,13 +57,14 @@ namespace PharmaHealix
             set { enterpasstxt.Text = value; }
         }
 
+        //Constructor 
         public Loginform()
         {
             InitializeComponent();
             securityquestioncb.SelectedIndex = 0;
 
         }
-
+        //Methods
         public void CreateAcc(bool check)
         {
             if (check)
@@ -73,7 +75,166 @@ namespace PharmaHealix
 
 
         }
+        private void Resetcreatepan()
+        {
 
+            createphonepan.Visible = false;
+            createnamepan.Visible = false;
+            createusernamepan.Visible = false;
+            createaddresspan.Visible = false;
+            createanspan.Visible = false;
+            createpasspan.Visible = false;
+
+            securityquestioncb.SelectedIndex = 0;
+            createnametxt.Text = "Name";
+            createaddresstxt.Text = "Address";
+            createusernametxt.Text = "enter your username";
+            createpasstxt.Text = "Enter your password (at least 5 characters)";
+            createanstxt.Text = "Type your answer";
+            createphonetxt.Text = "Phone number";
+
+            createnametxt.ForeColor = Color.Gray;
+            createaddresstxt.ForeColor = Color.Gray;
+            createusernametxt.ForeColor = Color.Gray;
+            createpasstxt.ForeColor = Color.Gray;
+            createphonetxt.ForeColor = Color.Gray;
+            createanstxt.ForeColor = Color.Gray;
+
+
+        }
+
+        private void FormValidation()
+        {
+
+            createphonepan.Visible = false;
+            createnamepan.Visible = false;
+            createusernamepan.Visible = false;
+            createaddresspan.Visible = false;
+            createanspan.Visible = false;
+            createpasspan.Visible = false;
+
+            bool Error = false;
+
+            if (Phone == "" || Phone == "Phone number")
+            {
+                createphonepan.Visible = true;
+                Error = true;
+            }
+            if (CName == "" || CName == "Name")
+            {
+                createnamepan.Visible = true;
+                Error = true;
+            }
+            if (CUsername == "" || CUsername == "enter your username")
+            {
+               
+                createusernamepan.Visible = true;
+                Error = true;
+            }
+            if (CUsername != "" && CUsername != "enter your username")
+            {
+                string query = "SELECT COUNT(*) FROM UserTable WHERE Username = @0";
+                int count = Convert.ToInt32(new Db().Scalar(query, CUsername));
+                if (count > 0)
+                {
+                    MessageBox.Show("Username Must be Unique!");
+                    createusernamepan.Visible = true;
+                    Error = true;
+                }
+            }
+            if (Address == "" || Address == "Address")
+            {
+                createaddresspan.Visible = true;
+                Error = true;
+            }
+
+
+            if (Answer == "" || Answer == "Type your answer")
+            {
+                createanspan.Visible = true;
+                Error = true;
+            }
+
+            if (CPass == "" || CPass == "Enter your password (at least 5 characters)")
+            {
+                createpasspan.Visible = true;
+                Error = true;
+            }
+            if (CPass.Length < 5)
+            {
+                createpasspan.Visible = true;
+                Error = true;
+                MessageBox.Show("Password must be more than 5 characters!");
+            }
+
+            if (Error)
+            {
+                MessageBox.Show("Please fill all required fields");
+                return;
+            }
+            else
+            {
+                try
+                {
+                    string query = "Insert into UserTable(Name,Phone,Username,Address,Question,Answer,Password,Role)Values(@0,@1,@2,@3,@4,@5,@6,@7)";
+                    new Db().NonQuery(query, CName, Phone, CUsername, Address, securityquestioncb.Text, Answer, CPass, "Patient");
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Signup Error!" + e.Message);
+                }
+
+                MessageBox.Show("Signup Successful!");
+                Resetcreatepan();
+                createaccountpan.Hide();
+            }
+
+
+
+        }
+        private void LoginValidation()
+        {
+            Enteruserpan.Visible = false;
+            Enterpasspan.Visible = false;
+            bool Error = false;
+            if (EUsername == "" || EUsername == "enter your username")
+            {
+                Enteruserpan.Visible = true;
+                Error = true;
+            }
+            if (EPass == "" || EPass == "Enter your password")
+            {
+                Enterpasspan.Visible = true;
+                Error = true;
+            }
+            if (Error)
+            {
+                MessageBox.Show("Please fill all required fields");
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Login Successful!");
+                MainForm m = new MainForm("Patient");
+                m.Show();
+
+                LoginformReset();
+                this.Hide();
+            }
+
+
+        }
+        private void LoginformReset()
+        {
+            EUsername = "Enter your username";
+            EPass = "Enter your password";
+
+            enterusernametxt.ForeColor = Color.Gray;
+            enterpasstxt.ForeColor = Color.Gray;
+
+
+        }
+        //Events  
         private void Exitbtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -110,7 +271,7 @@ namespace PharmaHealix
 
         private void enterusernametxt_Enter(object sender, EventArgs e)
         {
-            if (enterusernametxt.Text == "Enter your username")
+            if (enterusernametxt.Text == "enter your username")
             {
                 enterusernametxt.Text = "";
                 enterusernametxt.ForeColor = Color.Black;
@@ -172,7 +333,7 @@ namespace PharmaHealix
         }
         private void createusernametxt_Enter(object sender, EventArgs e)
         {
-            if (createusernametxt.Text == "Enter your username")
+            if (createusernametxt.Text == "enter your username")
             {
                 createusernametxt.Text = "";
                 createusernametxt.ForeColor = Color.Black;
@@ -207,155 +368,7 @@ namespace PharmaHealix
             }
 
         }
-        private void Resetcreatepan()
-        {
-
-            createphonepan.Visible = false;
-            createnamepan.Visible = false;
-            createusernamepan.Visible = false;
-            createaddresspan.Visible = false;
-            createanspan.Visible = false;
-            createpasspan.Visible = false;
-
-            securityquestioncb.SelectedIndex = 0;
-            createnametxt.Text = "Name";
-            createaddresstxt.Text = "Address";
-            createusernametxt.Text = "Enter your username";
-            createpasstxt.Text = "Enter your password (at least 5 characters)";
-            createanstxt.Text = "Type your answer";
-            createphonetxt.Text = "Phone number";
-
-            createnametxt.ForeColor = Color.Gray;
-            createaddresstxt.ForeColor = Color.Gray;
-            createusernametxt.ForeColor = Color.Gray;
-            createpasstxt.ForeColor = Color.Gray;
-            createphonetxt.ForeColor = Color.Gray;
-            createanstxt.ForeColor = Color.Gray;
-
-
-        }
-
-        private void FormValidation()
-        {
-
-            createphonepan.Visible = false;
-            createnamepan.Visible = false;
-            createusernamepan.Visible = false;
-            createaddresspan.Visible = false;
-            createanspan.Visible = false;
-            createpasspan.Visible = false;
-
-            bool Error = false;
-
-            if (Phone == "" || Phone == "Phone number")
-            {
-                createphonepan.Visible = true;
-                Error = true;
-            }
-            if (CName == "" || CName == "Name")
-            {
-                createnamepan.Visible = true;
-                Error = true;
-            }
-            if (CUsername == "" || CUsername == "Enter your username")
-            {
-                createusernamepan.Visible = true;
-                Error = true;
-            }
-            if (Address == "" || Address == "Address")
-            {
-                createaddresspan.Visible = true;
-                Error = true;
-            }
-
-
-            if (Answer == "" || Answer == "Type your answer")
-            {
-                createanspan.Visible = true;
-                Error = true;
-            }
-
-            if (CPass == "" || CPass == "Enter your password (at least 5 characters)")
-            {
-                createpasspan.Visible = true;
-                Error = true;
-            }
-            if (CPass.Length < 5)
-            {
-                createpasspan.Visible = true;
-                Error = true;
-                MessageBox.Show("Password must be more than 5 characters!");
-            }
-
-            if (Error)
-            {
-                MessageBox.Show("Please fill all required fields");
-                return;
-            }
-            else
-            {
-                try
-                {
-                    string query = "Insert into UserTable(Name,Phone,Username,Address,Question,Answer,Password,Role)Values(@0,@1,@2,@3,@4,@5,@6,@7)";
-                    new Db().NonQuery(query, CName, Phone, CUsername, Address, securityquestioncb.Text, Answer, CPass,"Patient");
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show("Signup Error!"+e.Message);
-                }
-                finally
-                {
-                    MessageBox.Show("Signup Successful!");
-                }
-                Resetcreatepan();
-                createaccountpan.Hide();
-            }
-
-
-
-        }
-        private void LoginValidation()
-        {
-            Enteruserpan.Visible = false;
-            Enterpasspan.Visible = false;
-            bool Error = false;
-            if (EUsername == "" || EUsername == "Enter your username")
-            {
-                Enteruserpan.Visible = true;
-                Error = true;
-            }
-            if (EPass == "" || EPass == "Enter your password")
-            {
-                Enterpasspan.Visible = true;
-                Error = true;
-            }
-            if (Error)
-            {
-                MessageBox.Show("Please fill all required fields");
-                return;
-            }
-            else
-            {
-                MessageBox.Show("Login Successful!");
-                MainForm m = new MainForm("Patient");
-                m.Show();
-
-                LoginformReset();
-                this.Hide();
-            }
-
-
-        }
-        private void LoginformReset()
-        {
-            EUsername = "Enter your username";
-            EPass = "Enter your password";
-
-            enterusernametxt.ForeColor = Color.Gray;
-            enterpasstxt.ForeColor = Color.Gray;
-
-
-        }
+     
 
         private void forgetpasslbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

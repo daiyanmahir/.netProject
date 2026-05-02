@@ -199,13 +199,14 @@
             // enterusernametxt
             // 
             this.enterusernametxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.enterusernametxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.enterusernametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enterusernametxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.enterusernametxt.Location = new System.Drawing.Point(14, 15);
             this.enterusernametxt.Name = "enterusernametxt";
             this.enterusernametxt.Size = new System.Drawing.Size(392, 21);
             this.enterusernametxt.TabIndex = 17;
-            this.enterusernametxt.Text = "Enter your username";
+            this.enterusernametxt.Text = "enter your username";
             this.enterusernametxt.Enter += new System.EventHandler(this.enterusernametxt_Enter);
             // 
             // enterpasstxt
@@ -278,7 +279,7 @@
             this.hidebtn.FlatAppearance.BorderSize = 0;
             this.hidebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.hidebtn.Image = ((System.Drawing.Image)(resources.GetObject("hidebtn.Image")));
-            this.hidebtn.Location = new System.Drawing.Point(406, 13);
+            this.hidebtn.Location = new System.Drawing.Point(406, 14);
             this.hidebtn.Name = "hidebtn";
             this.hidebtn.Size = new System.Drawing.Size(30, 25);
             this.hidebtn.TabIndex = 19;
@@ -404,7 +405,7 @@
             this.createaddresstxt.Location = new System.Drawing.Point(14, 15);
             this.createaddresstxt.Name = "createaddresstxt";
             this.createaddresstxt.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.createaddresstxt.Size = new System.Drawing.Size(419, 21);
+            this.createaddresstxt.Size = new System.Drawing.Size(426, 21);
             this.createaddresstxt.TabIndex = 17;
             this.createaddresstxt.Text = "Address";
             this.createaddresstxt.Enter += new System.EventHandler(this.createaddresstxt_Enter);
@@ -452,7 +453,7 @@
             this.createnametxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.createnametxt.Location = new System.Drawing.Point(14, 15);
             this.createnametxt.Name = "createnametxt";
-            this.createnametxt.Size = new System.Drawing.Size(182, 21);
+            this.createnametxt.Size = new System.Drawing.Size(189, 21);
             this.createnametxt.TabIndex = 17;
             this.createnametxt.Text = "Name";
             this.createnametxt.Enter += new System.EventHandler(this.nametxt_Enter);
@@ -473,7 +474,7 @@
             this.createpanhidebtn.FlatAppearance.BorderSize = 0;
             this.createpanhidebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createpanhidebtn.Image = ((System.Drawing.Image)(resources.GetObject("createpanhidebtn.Image")));
-            this.createpanhidebtn.Location = new System.Drawing.Point(406, 15);
+            this.createpanhidebtn.Location = new System.Drawing.Point(406, 12);
             this.createpanhidebtn.Name = "createpanhidebtn";
             this.createpanhidebtn.Size = new System.Drawing.Size(30, 25);
             this.createpanhidebtn.TabIndex = 30;
@@ -528,13 +529,14 @@
             // createusernametxt
             // 
             this.createusernametxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.createusernametxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.createusernametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createusernametxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.createusernametxt.Location = new System.Drawing.Point(14, 15);
             this.createusernametxt.Name = "createusernametxt";
-            this.createusernametxt.Size = new System.Drawing.Size(428, 21);
+            this.createusernametxt.Size = new System.Drawing.Size(404, 21);
             this.createusernametxt.TabIndex = 17;
-            this.createusernametxt.Text = "Enter your username";
+            this.createusernametxt.Text = "enter your username";
             this.createusernametxt.Enter += new System.EventHandler(this.createusernametxt_Enter);
             // 
             // signupbtn
@@ -607,7 +609,7 @@
             this.forgetpasslbl.AutoSize = true;
             this.forgetpasslbl.Location = new System.Drawing.Point(400, 474);
             this.forgetpasslbl.Name = "forgetpasslbl";
-            this.forgetpasslbl.Size = new System.Drawing.Size(174, 25);
+            this.forgetpasslbl.Size = new System.Drawing.Size(129, 20);
             this.forgetpasslbl.TabIndex = 25;
             this.forgetpasslbl.TabStop = true;
             this.forgetpasslbl.Text = "Forget Password";

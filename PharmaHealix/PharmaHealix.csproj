@@ -104,6 +104,9 @@
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Doctor.resx">
+      <DependentUpon>Doctor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +181,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Crossicon..png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackgroundImage1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medical-history_10299499.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_medical-history_10299499.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_follower_6234792.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_capsule_16305123.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_medicine_11109007.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prescription_3000124.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_prescription_3000124.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_document_8656345.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

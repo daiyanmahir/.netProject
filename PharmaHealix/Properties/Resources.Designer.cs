@@ -103,6 +103,16 @@ namespace PharmaHealix.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BackgroundImage1 {
+            get {
+                object obj = ResourceManager.GetObject("BackgroundImage1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cartlogo {
             get {
                 object obj = ResourceManager.GetObject("Cartlogo", resourceCulture);
@@ -153,6 +163,16 @@ namespace PharmaHealix.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap medical_history_10299499 {
+            get {
+                object obj = ResourceManager.GetObject("medical-history_10299499", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap papericon {
             get {
                 object obj = ResourceManager.GetObject("papericon", resourceCulture);
@@ -176,6 +196,76 @@ namespace PharmaHealix.Properties {
         internal static System.Drawing.Bitmap PharmaHealixLogo {
             get {
                 object obj = ResourceManager.GetObject("PharmaHealixLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap prescription_3000124 {
+            get {
+                object obj = ResourceManager.GetObject("prescription_3000124", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rsz_capsule_16305123 {
+            get {
+                object obj = ResourceManager.GetObject("rsz_capsule_16305123", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rsz_document_8656345 {
+            get {
+                object obj = ResourceManager.GetObject("rsz_document_8656345", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rsz_follower_6234792 {
+            get {
+                object obj = ResourceManager.GetObject("rsz_follower_6234792", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rsz_medical_history_10299499 {
+            get {
+                object obj = ResourceManager.GetObject("rsz_medical-history_10299499", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rsz_medicine_11109007 {
+            get {
+                object obj = ResourceManager.GetObject("rsz_medicine_11109007", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rsz_prescription_3000124 {
+            get {
+                object obj = ResourceManager.GetObject("rsz_prescription_3000124", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

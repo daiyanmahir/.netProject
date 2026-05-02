@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace PharmaHealix
 {
@@ -13,7 +14,7 @@ namespace PharmaHealix
         {
 
         }
-        public void NonQuery(string query,params Object[] p)
+        public void NonQuery(string query,params object[] p)
         {
 
             //1. Address
@@ -41,23 +42,45 @@ namespace PharmaHealix
             con.Close();
 
         }
-     /*   public void Scalar(string query)
+        public object Scalar(string query,params Object[] p)
         {
 
             //1 Address
-            string connection = "Data Source=LAPTOP-5SNR2K20\\SQLEXPRESS;Initial Catalog=PharmaHealix;Integrated Security=True;Trust Server Certificate=True;";
+            string connection = "Data Source=LAPTOP-5SNR2K20\\SQLEXPRESS;Initial Catalog=PharmaHealix;Integrated Security=True;";
             //2 Establish Connection
 
             SqlConnection con = new SqlConnection(connection);
 
-            //3.Open Connection
+            try
+            {
+                //3.Open Connection
 
-            con.Open();
+                con.Open();
 
-            //4.Prepare Query
-            SqlCommand cmd = new SqlCommand(query, con);
-            //5.Execute Query
+                //4.Prepare Query
+                SqlCommand cmd = new SqlCommand(query, con);
+                for (int i = 0; i < p.Length; i++)
+                {
+                    cmd.Parameters.AddWithValue("@" + i, p[i]);
+                }
+
+                //5.Execute Query
+
+                return cmd.ExecuteScalar();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("An Error Occurred" + e.Message);
+                return null;
+            }
+            finally
+            {
+                //6.Close Connection
+                con.Close();
+
+            }
         }
+        /*
         public void Reader(string query)
         {
 

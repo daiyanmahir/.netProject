@@ -42,6 +42,8 @@
             this.humaniconpan = new System.Windows.Forms.Panel();
             this.userpanlbl1 = new System.Windows.Forms.Label();
             this.patientpan = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.userpanemaillabl = new System.Windows.Forms.Label();
             this.minimizebtn = new System.Windows.Forms.Button();
             this.logoutbtn = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -90,8 +92,6 @@
             this.mediinfopan = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.categorylbl = new System.Windows.Forms.Label();
-            this.userpanemaillabl = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.headpan.SuspendLayout();
             this.userpan.SuspendLayout();
             this.patientpan.SuspendLayout();
@@ -294,6 +294,30 @@
             this.patientpan.Size = new System.Drawing.Size(454, 337);
             this.patientpan.TabIndex = 29;
             this.patientpan.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(20)))));
+            this.label2.Location = new System.Drawing.Point(144, 181);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(169, 21);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Account Type: Patient";
+            // 
+            // userpanemaillabl
+            // 
+            this.userpanemaillabl.AutoSize = true;
+            this.userpanemaillabl.BackColor = System.Drawing.Color.Transparent;
+            this.userpanemaillabl.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
+            this.userpanemaillabl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(20)))));
+            this.userpanemaillabl.Location = new System.Drawing.Point(178, 137);
+            this.userpanemaillabl.Name = "userpanemaillabl";
+            this.userpanemaillabl.Size = new System.Drawing.Size(106, 21);
+            this.userpanemaillabl.TabIndex = 22;
+            this.userpanemaillabl.Text = "emailaddress";
             // 
             // minimizebtn
             // 
@@ -884,34 +908,9 @@
             this.categorylbl.Text = "Category:";
             this.categorylbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // userpanemaillabl
-            // 
-            this.userpanemaillabl.AutoSize = true;
-            this.userpanemaillabl.BackColor = System.Drawing.Color.Transparent;
-            this.userpanemaillabl.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
-            this.userpanemaillabl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(20)))));
-            this.userpanemaillabl.Location = new System.Drawing.Point(178, 137);
-            this.userpanemaillabl.Name = "userpanemaillabl";
-            this.userpanemaillabl.Size = new System.Drawing.Size(106, 21);
-            this.userpanemaillabl.TabIndex = 22;
-            this.userpanemaillabl.Text = "emailaddress";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(20)))));
-            this.label2.Location = new System.Drawing.Point(144, 181);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 21);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Account Type: Patient";
-            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
             this.BackgroundImage = global::PharmaHealix.Properties.Resources.BackgroundImage;
             this.ClientSize = new System.Drawing.Size(1200, 750);

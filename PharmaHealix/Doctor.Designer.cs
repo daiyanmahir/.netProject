@@ -200,11 +200,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PharmaHealix.Properties.Resources.BackgroundImage1;
-            this.ClientSize = new System.Drawing.Size(784, 448);
+            this.ClientSize = new System.Drawing.Size(944, 561);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(0, 72);
             this.Name = "Doctor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Doctor";
             this.Load += new System.EventHandler(this.Doctor_Load);
             this.panel1.ResumeLayout(false);

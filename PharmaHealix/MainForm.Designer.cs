@@ -559,7 +559,7 @@
             this.medibackpan.AutoScroll = true;
             this.medibackpan.BackgroundImage = global::PharmaHealix.Properties.Resources.BackgroundImage;
             this.medibackpan.Controls.Add(this.medipan);
-            this.medibackpan.Location = new System.Drawing.Point(1110, 110);
+            this.medibackpan.Location = new System.Drawing.Point(0, 110);
             this.medibackpan.Name = "medibackpan";
             this.medibackpan.Size = new System.Drawing.Size(1200, 640);
             this.medibackpan.TabIndex = 29;
@@ -917,7 +917,6 @@
             this.Controls.Add(this.cartbtn);
             this.Controls.Add(this.headpan);
             this.Controls.Add(this.medibackpan);
-            this.Controls.Add(this.patientpan);
             this.Controls.Add(this.prescriptionlbl);
             this.Controls.Add(this.Whatareyoulookinglbl);
             this.Controls.Add(this.searchpan);
@@ -925,6 +924,7 @@
             this.Controls.Add(this.adpan1);
             this.Controls.Add(this.prescriptionuploadbtn);
             this.Controls.Add(this.userpan);
+            this.Controls.Add(this.patientpan);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

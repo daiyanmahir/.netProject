@@ -13,7 +13,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 namespace PharmaHealix
 {
     public partial class Loginform : Form
-    { 
+    {
         //Properties
         private string CName
         {
@@ -114,22 +114,68 @@ namespace PharmaHealix
             createpasspan.Visible = false;
 
             bool Error = false;
+            bool Flag = false;
 
             if (Phone == "" || Phone == "Phone number")
             {
                 createphonepan.Visible = true;
                 Error = true;
             }
+
+            bool PDigits = true;
+
+            foreach (char c in Phone)
+            {
+                if (!char.IsDigit(c))
+                {
+                    PDigits = false;
+                    break;
+                }
+            }
+
+            if (!PDigits || Phone.Length != 11 || !Phone.StartsWith("01"))
+            {
+                createphonepan.Visible = true;
+                Flag = true;
+            }
             if (CName == "" || CName == "Name")
             {
                 createnamepan.Visible = true;
                 Error = true;
             }
+            if (CName != "" && CName != "Name")
+            {
+                foreach (char c in CName)
+                {
+                    if (char.IsDigit(c))
+                    {
+                        createnamepan.Visible = true;
+                        Flag = true;
+                        break;
+                    }
+                }
+            }
             if (CUsername == "" || CUsername == "enter your username")
             {
-               
+
                 createusernamepan.Visible = true;
                 Error = true;
+            }
+            bool UDigits = true;
+
+            foreach (char c in CUsername)
+            {
+                if (!char.IsDigit(c))
+                {
+                    UDigits = false;
+                    break;
+                }
+            }
+
+            if (CUsername.Length < 4 || UDigits)
+            {
+                createusernamepan.Visible = true;
+                Flag = true;
             }
             if (CUsername != "" && CUsername != "enter your username")
             {
@@ -137,9 +183,8 @@ namespace PharmaHealix
                 int count = Convert.ToInt32(new Db().Scalar(query, CUsername));
                 if (count > 0)
                 {
-                    MessageBox.Show("Username Must be Unique!");
                     createusernamepan.Visible = true;
-                    Error = true;
+                    Flag = true;
                 }
             }
             if (Address == "" || Address == "Address")
@@ -160,11 +205,10 @@ namespace PharmaHealix
                 createpasspan.Visible = true;
                 Error = true;
             }
-            if (CPass.Length < 5)
+            else if (CPass.Length < 5)
             {
                 createpasspan.Visible = true;
-                Error = true;
-                MessageBox.Show("Password must be more than 5 characters!");
+                Flag = true;
             }
 
             if (Error)
@@ -172,17 +216,23 @@ namespace PharmaHealix
                 MessageBox.Show("Please fill all required fields");
                 return;
             }
+            else if (Flag)
+            {
+                MessageBox.Show(
+                                "Fix the following:\n" +
+                                "-> Username: 4+ chars, not only numbers, must be unique\n" +
+                                "-> Password: at least 5 characters\n" +
+                                "-> Name: letters only (no numbers)\n" +
+                                "-> Phone (11 digits, starts with 01)"
+                                );
+            }
             else
             {
-                try
-                {
-                    string query = "Insert into UserTable(Name,Phone,Username,Address,Question,Answer,Password,Role)Values(@0,@1,@2,@3,@4,@5,@6,@7)";
-                    new Db().NonQuery(query, CName, Phone, CUsername, Address, securityquestioncb.Text, Answer, CPass, "Patient");
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show("Signup Error!" + e.Message);
-                }
+
+                string query = "Insert into UserTable(Name,Phone,Username,Address,Question,Answer,Password,Role)Values(@0,@1,@2,@3,@4,@5,@6,@7)";
+                new Db().NonQuery(query, CName, Phone, CUsername, Address, securityquestioncb.Text, Answer, CPass, "Patient");
+
+
 
                 MessageBox.Show("Signup Successful!");
                 Resetcreatepan();
@@ -228,7 +278,6 @@ namespace PharmaHealix
         {
             EUsername = "Enter your username";
             EPass = "Enter your password";
-
             enterusernametxt.ForeColor = Color.Gray;
             enterpasstxt.ForeColor = Color.Gray;
 
@@ -253,16 +302,11 @@ namespace PharmaHealix
         {
             FormValidation();
 
-
-
         }
 
         private void loginbtn_Click(object sender, EventArgs e)
         {
-
-
             LoginValidation();
-
             //Pharmacist p = new Pharmacist();
             //p.Show();
             //this.Hide();
@@ -368,7 +412,7 @@ namespace PharmaHealix
             }
 
         }
-     
+
 
         private void forgetpasslbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

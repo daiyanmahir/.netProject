@@ -77,7 +77,7 @@
             // 
             pharmacistprofilephonetxt.ForeColor = System.Drawing.Color.Black;
             pharmacistprofilephonetxt.Location = new System.Drawing.Point(492, 442);
-            pharmacistprofilephonetxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            pharmacistprofilephonetxt.Margin = new System.Windows.Forms.Padding(2);
             pharmacistprofilephonetxt.Name = "pharmacistprofilephonetxt";
             pharmacistprofilephonetxt.Size = new System.Drawing.Size(389, 41);
             pharmacistprofilephonetxt.TabIndex = 10;
@@ -92,7 +92,7 @@
             this.sidepan.Controls.Add(this.orderbtn);
             this.sidepan.Controls.Add(this.patientlistbtn);
             this.sidepan.Location = new System.Drawing.Point(0, 0);
-            this.sidepan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sidepan.Margin = new System.Windows.Forms.Padding(2);
             this.sidepan.Name = "sidepan";
             this.sidepan.Size = new System.Drawing.Size(244, 752);
             this.sidepan.TabIndex = 41;
@@ -102,7 +102,7 @@
             this.pharmacistlogoutbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
             this.pharmacistlogoutbtn.Font = new System.Drawing.Font("Stencil", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pharmacistlogoutbtn.Location = new System.Drawing.Point(26, 565);
-            this.pharmacistlogoutbtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pharmacistlogoutbtn.Margin = new System.Windows.Forms.Padding(2);
             this.pharmacistlogoutbtn.Name = "pharmacistlogoutbtn";
             this.pharmacistlogoutbtn.Size = new System.Drawing.Size(188, 50);
             this.pharmacistlogoutbtn.TabIndex = 24;
@@ -115,7 +115,7 @@
             this.profilebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
             this.profilebtn.Font = new System.Drawing.Font("Stencil", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profilebtn.Location = new System.Drawing.Point(26, 245);
-            this.profilebtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.profilebtn.Margin = new System.Windows.Forms.Padding(2);
             this.profilebtn.Name = "profilebtn";
             this.profilebtn.Size = new System.Drawing.Size(188, 50);
             this.profilebtn.TabIndex = 23;
@@ -142,7 +142,7 @@
             this.inventorybtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
             this.inventorybtn.Font = new System.Drawing.Font("Stencil", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inventorybtn.Location = new System.Drawing.Point(26, 485);
-            this.inventorybtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.inventorybtn.Margin = new System.Windows.Forms.Padding(2);
             this.inventorybtn.Name = "inventorybtn";
             this.inventorybtn.Size = new System.Drawing.Size(188, 50);
             this.inventorybtn.TabIndex = 2;
@@ -155,7 +155,7 @@
             this.orderbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
             this.orderbtn.Font = new System.Drawing.Font("Stencil", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orderbtn.Location = new System.Drawing.Point(26, 405);
-            this.orderbtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.orderbtn.Margin = new System.Windows.Forms.Padding(2);
             this.orderbtn.Name = "orderbtn";
             this.orderbtn.Size = new System.Drawing.Size(188, 50);
             this.orderbtn.TabIndex = 1;
@@ -168,7 +168,7 @@
             this.patientlistbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
             this.patientlistbtn.Font = new System.Drawing.Font("Stencil", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.patientlistbtn.Location = new System.Drawing.Point(26, 325);
-            this.patientlistbtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.patientlistbtn.Margin = new System.Windows.Forms.Padding(2);
             this.patientlistbtn.Name = "patientlistbtn";
             this.patientlistbtn.Size = new System.Drawing.Size(188, 50);
             this.patientlistbtn.TabIndex = 0;
@@ -181,7 +181,7 @@
             this.patientlistpan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
             this.patientlistpan.Controls.Add(this.patientlisttoppan);
             this.patientlistpan.Location = new System.Drawing.Point(244, 0);
-            this.patientlistpan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.patientlistpan.Margin = new System.Windows.Forms.Padding(2);
             this.patientlistpan.Name = "patientlistpan";
             this.patientlistpan.Size = new System.Drawing.Size(956, 750);
             this.patientlistpan.TabIndex = 42;
@@ -192,7 +192,7 @@
             this.patientlisttoppan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
             this.patientlisttoppan.Controls.Add(this.patientlisttoplbl);
             this.patientlisttoppan.Location = new System.Drawing.Point(0, 0);
-            this.patientlisttoppan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.patientlisttoppan.Margin = new System.Windows.Forms.Padding(2);
             this.patientlisttoppan.Name = "patientlisttoppan";
             this.patientlisttoppan.Size = new System.Drawing.Size(1012, 110);
             this.patientlisttoppan.TabIndex = 1;
@@ -214,7 +214,7 @@
             this.orderpan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
             this.orderpan.Controls.Add(this.ordertoppan);
             this.orderpan.Location = new System.Drawing.Point(244, 0);
-            this.orderpan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.orderpan.Margin = new System.Windows.Forms.Padding(2);
             this.orderpan.Name = "orderpan";
             this.orderpan.Size = new System.Drawing.Size(956, 750);
             this.orderpan.TabIndex = 43;
@@ -225,7 +225,7 @@
             this.ordertoppan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
             this.ordertoppan.Controls.Add(this.ordertoplbl);
             this.ordertoppan.Location = new System.Drawing.Point(0, 0);
-            this.ordertoppan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ordertoppan.Margin = new System.Windows.Forms.Padding(2);
             this.ordertoppan.Name = "ordertoppan";
             this.ordertoppan.Size = new System.Drawing.Size(1012, 110);
             this.ordertoppan.TabIndex = 1;
@@ -247,7 +247,7 @@
             this.inventorypan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
             this.inventorypan.Controls.Add(this.inventorytoppan);
             this.inventorypan.Location = new System.Drawing.Point(244, 0);
-            this.inventorypan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.inventorypan.Margin = new System.Windows.Forms.Padding(2);
             this.inventorypan.Name = "inventorypan";
             this.inventorypan.Size = new System.Drawing.Size(956, 750);
             this.inventorypan.TabIndex = 44;
@@ -258,7 +258,7 @@
             this.inventorytoppan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
             this.inventorytoppan.Controls.Add(this.inventorytoplbl);
             this.inventorytoppan.Location = new System.Drawing.Point(0, 0);
-            this.inventorytoppan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.inventorytoppan.Margin = new System.Windows.Forms.Padding(2);
             this.inventorytoppan.Name = "inventorytoppan";
             this.inventorytoppan.Size = new System.Drawing.Size(956, 110);
             this.inventorytoppan.TabIndex = 0;
@@ -292,7 +292,7 @@
             this.pharmacistprofilepan.Controls.Add(this.pharmacistprofiletoppan);
             this.pharmacistprofilepan.Font = new System.Drawing.Font("Stencil", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pharmacistprofilepan.Location = new System.Drawing.Point(244, 0);
-            this.pharmacistprofilepan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pharmacistprofilepan.Margin = new System.Windows.Forms.Padding(2);
             this.pharmacistprofilepan.Name = "pharmacistprofilepan";
             this.pharmacistprofilepan.Size = new System.Drawing.Size(956, 750);
             this.pharmacistprofilepan.TabIndex = 45;
@@ -303,7 +303,7 @@
             this.pharmacistprofileupdatebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
             this.pharmacistprofileupdatebtn.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pharmacistprofileupdatebtn.Location = new System.Drawing.Point(640, 591);
-            this.pharmacistprofileupdatebtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pharmacistprofileupdatebtn.Margin = new System.Windows.Forms.Padding(2);
             this.pharmacistprofileupdatebtn.Name = "pharmacistprofileupdatebtn";
             this.pharmacistprofileupdatebtn.Size = new System.Drawing.Size(121, 50);
             this.pharmacistprofileupdatebtn.TabIndex = 13;
@@ -314,7 +314,7 @@
             // 
             this.pharmacistprofileaddtxt.ForeColor = System.Drawing.Color.Black;
             this.pharmacistprofileaddtxt.Location = new System.Drawing.Point(492, 524);
-            this.pharmacistprofileaddtxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pharmacistprofileaddtxt.Margin = new System.Windows.Forms.Padding(2);
             this.pharmacistprofileaddtxt.Name = "pharmacistprofileaddtxt";
             this.pharmacistprofileaddtxt.Size = new System.Drawing.Size(389, 41);
             this.pharmacistprofileaddtxt.TabIndex = 12;
@@ -345,7 +345,7 @@
             // 
             this.pharmacistprofilepasstxt.ForeColor = System.Drawing.Color.Black;
             this.pharmacistprofilepasstxt.Location = new System.Drawing.Point(492, 357);
-            this.pharmacistprofilepasstxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pharmacistprofilepasstxt.Margin = new System.Windows.Forms.Padding(2);
             this.pharmacistprofilepasstxt.Name = "pharmacistprofilepasstxt";
             this.pharmacistprofilepasstxt.Size = new System.Drawing.Size(389, 41);
             this.pharmacistprofilepasstxt.TabIndex = 8;
@@ -365,7 +365,7 @@
             // 
             this.pharmacistprofileusernametxt.ForeColor = System.Drawing.Color.Black;
             this.pharmacistprofileusernametxt.Location = new System.Drawing.Point(492, 266);
-            this.pharmacistprofileusernametxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pharmacistprofileusernametxt.Margin = new System.Windows.Forms.Padding(2);
             this.pharmacistprofileusernametxt.Name = "pharmacistprofileusernametxt";
             this.pharmacistprofileusernametxt.Size = new System.Drawing.Size(389, 41);
             this.pharmacistprofileusernametxt.TabIndex = 6;
@@ -385,7 +385,7 @@
             // 
             this.pharmacistprofilenametxt.ForeColor = System.Drawing.Color.Black;
             this.pharmacistprofilenametxt.Location = new System.Drawing.Point(492, 174);
-            this.pharmacistprofilenametxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pharmacistprofilenametxt.Margin = new System.Windows.Forms.Padding(2);
             this.pharmacistprofilenametxt.Name = "pharmacistprofilenametxt";
             this.pharmacistprofilenametxt.Size = new System.Drawing.Size(389, 41);
             this.pharmacistprofilenametxt.TabIndex = 4;
@@ -405,7 +405,7 @@
             // 
             this.pharamcistprofilepb.Image = global::PharmaHealix.Properties.Resources.Humanicon;
             this.pharamcistprofilepb.Location = new System.Drawing.Point(100, 245);
-            this.pharamcistprofilepb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pharamcistprofilepb.Margin = new System.Windows.Forms.Padding(2);
             this.pharamcistprofilepb.Name = "pharamcistprofilepb";
             this.pharamcistprofilepb.Size = new System.Drawing.Size(283, 307);
             this.pharamcistprofilepb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -417,9 +417,9 @@
             this.pharmacistprofiletoppan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
             this.pharmacistprofiletoppan.Controls.Add(this.pharamcistprofiletoplbl);
             this.pharmacistprofiletoppan.Location = new System.Drawing.Point(0, 0);
-            this.pharmacistprofiletoppan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pharmacistprofiletoppan.Margin = new System.Windows.Forms.Padding(2);
             this.pharmacistprofiletoppan.Name = "pharmacistprofiletoppan";
-            this.pharmacistprofiletoppan.Size = new System.Drawing.Size(956, 110);
+            this.pharmacistprofiletoppan.Size = new System.Drawing.Size(1200, 110);
             this.pharmacistprofiletoppan.TabIndex = 1;
             // 
             // pharamcistprofiletoplbl
@@ -442,7 +442,7 @@
             this.Exitbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
             this.Exitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Exitbtn.Location = new System.Drawing.Point(1143, 15);
-            this.Exitbtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Exitbtn.Margin = new System.Windows.Forms.Padding(2);
             this.Exitbtn.Name = "Exitbtn";
             this.Exitbtn.Size = new System.Drawing.Size(38, 24);
             this.Exitbtn.TabIndex = 46;

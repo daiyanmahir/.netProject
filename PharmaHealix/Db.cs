@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -9,38 +10,49 @@ using System.Windows;
 namespace PharmaHealix
 {
     internal sealed class Db
-    {  
+    {
+        //1. Address
+        string connection = "Data Source=LAPTOP-5SNR2K20\\SQLEXPRESS;Initial Catalog=PharmaHealix;Integrated Security=True;";
         public Db() 
         {
 
         }
         public void NonQuery(string query,params object[] p)
         {
-
-            //1. Address
-            string connection = "Data Source=LAPTOP-5SNR2K20\\SQLEXPRESS;Initial Catalog=PharmaHealix;Integrated Security=True;";
             //2. Establish Connection
 
             SqlConnection con = new SqlConnection(connection);
 
-            //3. Open Connection
+            try
+            {
+                
 
-            con.Open();
+                //3. Open Connection
 
-            //4.Prepare Query
+                con.Open();
 
-            SqlCommand cmd = new SqlCommand(query, con);
-            //5.Execute Query
-            for (int i = 0; i < p.Length; i++) {
-                cmd.Parameters.AddWithValue("@"+i, p[i]);
+                //4.Prepare Query
+
+                SqlCommand cmd = new SqlCommand(query, con);
+                //5.Execute Query
+                for (int i = 0; i < p.Length; i++)
+                {
+                    cmd.Parameters.AddWithValue("@" + i, p[i]);
+                }
+
+                cmd.ExecuteNonQuery();
+
             }
+            catch (Exception e)
+            {
+                MessageBox.Show("An Error Occurred" + e.Message);
 
-            cmd.ExecuteNonQuery();
-
-
-            //6.Close Connection
-            con.Close();
-
+            }
+            finally
+            {
+                //6.Close Connection
+                con.Close();
+            }
         }
         public object Scalar(string query,params Object[] p)
         {
@@ -68,6 +80,7 @@ namespace PharmaHealix
 
                 return cmd.ExecuteScalar();
             }
+     
             catch (Exception e)
             {
                 MessageBox.Show("An Error Occurred" + e.Message);
@@ -79,6 +92,8 @@ namespace PharmaHealix
                 con.Close();
 
             }
+
+
         }
         /*
         public void Reader(string query)

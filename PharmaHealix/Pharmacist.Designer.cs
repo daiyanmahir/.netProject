@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TextBox pharmacistprofilephonetxt;
             this.patientlistpan = new System.Windows.Forms.Panel();
             this.patientlisttoppan = new System.Windows.Forms.Panel();
             this.patientlisttoplbl = new System.Windows.Forms.Label();
@@ -39,38 +38,45 @@
             this.inventorytoppan = new System.Windows.Forms.Panel();
             this.inventorytoplbl = new System.Windows.Forms.Label();
             this.pharmacistprofilepan = new System.Windows.Forms.Panel();
-            this.answertxt = new System.Windows.Forms.TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.pharmacistprofileaddtxt = new System.Windows.Forms.TextBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pharmacistprofilepasstxt = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pharmacistprofileusernametxt = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pharmacistprofilenametxt = new System.Windows.Forms.TextBox();
+            this.errorphonepan = new System.Windows.Forms.Panel();
+            this.erroranspan = new System.Windows.Forms.Panel();
+            this.erroraddpan = new System.Windows.Forms.Panel();
+            this.errorpasspan = new System.Windows.Forms.Panel();
+            this.errorusernamepan = new System.Windows.Forms.Panel();
+            this.errorpharmacistnamepan = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pharmacistanswertxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.securityquestionlbl = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pharmacistprofileupdatebtn = new System.Windows.Forms.Button();
-            this.pharmacistprofileaddtxt = new System.Windows.Forms.TextBox();
             this.pharmacistprofileaddresslbl = new System.Windows.Forms.Label();
             this.pharmacistprofilephonelbl = new System.Windows.Forms.Label();
-            this.pharmacistprofilepasstxt = new System.Windows.Forms.TextBox();
             this.pharmacistprofilepasslbl = new System.Windows.Forms.Label();
-            this.pharmacistprofileusernametxt = new System.Windows.Forms.TextBox();
             this.pharmacistprofileusernamelbl = new System.Windows.Forms.Label();
-            this.pharmacistprofilenametxt = new System.Windows.Forms.TextBox();
             this.pharmacistprofilenamelbl = new System.Windows.Forms.Label();
             this.pharmacistprofiletoppan = new System.Windows.Forms.Panel();
             this.pharamcistprofiletoplbl = new System.Windows.Forms.Label();
             this.Exitbtn = new System.Windows.Forms.Button();
             this.orderbtn = new System.Windows.Forms.Button();
             this.inventorybtn = new System.Windows.Forms.Button();
-            this.medilogobtn = new System.Windows.Forms.Button();
             this.pharmacistlogoutbtn = new System.Windows.Forms.Button();
             this.sidepan = new System.Windows.Forms.Panel();
             this.profilebtn = new System.Windows.Forms.Button();
             this.patientlistbtn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.errornamepan = new System.Windows.Forms.Panel();
-            this.errorusernamepan = new System.Windows.Forms.Panel();
-            this.errorpasspan = new System.Windows.Forms.Panel();
-            this.erroraddpan = new System.Windows.Forms.Panel();
-            this.erroranspan = new System.Windows.Forms.Panel();
-            this.errorphonepan = new System.Windows.Forms.Panel();
-            pharmacistprofilephonetxt = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.medilogobtn = new System.Windows.Forms.Button();
+            this.pharmacistphonetxt = new System.Windows.Forms.TextBox();
             this.patientlistpan.SuspendLayout();
             this.patientlisttoppan.SuspendLayout();
             this.orderpan.SuspendLayout();
@@ -78,19 +84,17 @@
             this.inventorypan.SuspendLayout();
             this.inventorytoppan.SuspendLayout();
             this.pharmacistprofilepan.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pharmacistprofiletoppan.SuspendLayout();
             this.sidepan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pharmacistprofilephonetxt
-            // 
-            pharmacistprofilephonetxt.ForeColor = System.Drawing.Color.Black;
-            pharmacistprofilephonetxt.Location = new System.Drawing.Point(62, 645);
-            pharmacistprofilephonetxt.Margin = new System.Windows.Forms.Padding(2);
-            pharmacistprofilephonetxt.Name = "pharmacistprofilephonetxt";
-            pharmacistprofilephonetxt.Size = new System.Drawing.Size(389, 41);
-            pharmacistprofilephonetxt.TabIndex = 10;
             // 
             // patientlistpan
             // 
@@ -117,7 +121,7 @@
             // 
             this.patientlisttoplbl.AutoSize = true;
             this.patientlisttoplbl.Font = new System.Drawing.Font("Stencil", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patientlisttoplbl.Location = new System.Drawing.Point(436, 30);
+            this.patientlisttoplbl.Location = new System.Drawing.Point(278, 20);
             this.patientlisttoplbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.patientlisttoplbl.Name = "patientlisttoplbl";
             this.patientlisttoplbl.Size = new System.Drawing.Size(399, 67);
@@ -150,7 +154,7 @@
             // 
             this.ordertoplbl.AutoSize = true;
             this.ordertoplbl.Font = new System.Drawing.Font("Stencil", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ordertoplbl.Location = new System.Drawing.Point(436, 30);
+            this.ordertoplbl.Location = new System.Drawing.Point(382, 20);
             this.ordertoplbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ordertoplbl.Name = "ordertoplbl";
             this.ordertoplbl.Size = new System.Drawing.Size(217, 67);
@@ -183,7 +187,7 @@
             // 
             this.inventorytoplbl.AutoSize = true;
             this.inventorytoplbl.Font = new System.Drawing.Font("Stencil", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inventorytoplbl.Location = new System.Drawing.Point(412, 30);
+            this.inventorytoplbl.Location = new System.Drawing.Point(322, 20);
             this.inventorytoplbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.inventorytoplbl.Name = "inventorytoplbl";
             this.inventorytoplbl.Size = new System.Drawing.Size(344, 67);
@@ -194,27 +198,27 @@
             // pharmacistprofilepan
             // 
             this.pharmacistprofilepan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
+            this.pharmacistprofilepan.Controls.Add(this.panel5);
+            this.pharmacistprofilepan.Controls.Add(this.panel6);
+            this.pharmacistprofilepan.Controls.Add(this.panel7);
+            this.pharmacistprofilepan.Controls.Add(this.panel4);
+            this.pharmacistprofilepan.Controls.Add(this.panel3);
+            this.pharmacistprofilepan.Controls.Add(this.panel2);
             this.pharmacistprofilepan.Controls.Add(this.errorphonepan);
             this.pharmacistprofilepan.Controls.Add(this.erroranspan);
             this.pharmacistprofilepan.Controls.Add(this.erroraddpan);
             this.pharmacistprofilepan.Controls.Add(this.errorpasspan);
             this.pharmacistprofilepan.Controls.Add(this.errorusernamepan);
-            this.pharmacistprofilepan.Controls.Add(this.errornamepan);
+            this.pharmacistprofilepan.Controls.Add(this.errorpharmacistnamepan);
             this.pharmacistprofilepan.Controls.Add(this.pictureBox1);
-            this.pharmacistprofilepan.Controls.Add(this.answertxt);
             this.pharmacistprofilepan.Controls.Add(this.label1);
             this.pharmacistprofilepan.Controls.Add(this.securityquestionlbl);
             this.pharmacistprofilepan.Controls.Add(this.comboBox1);
             this.pharmacistprofilepan.Controls.Add(this.pharmacistprofileupdatebtn);
-            this.pharmacistprofilepan.Controls.Add(this.pharmacistprofileaddtxt);
             this.pharmacistprofilepan.Controls.Add(this.pharmacistprofileaddresslbl);
-            this.pharmacistprofilepan.Controls.Add(pharmacistprofilephonetxt);
             this.pharmacistprofilepan.Controls.Add(this.pharmacistprofilephonelbl);
-            this.pharmacistprofilepan.Controls.Add(this.pharmacistprofilepasstxt);
             this.pharmacistprofilepan.Controls.Add(this.pharmacistprofilepasslbl);
-            this.pharmacistprofilepan.Controls.Add(this.pharmacistprofileusernametxt);
             this.pharmacistprofilepan.Controls.Add(this.pharmacistprofileusernamelbl);
-            this.pharmacistprofilepan.Controls.Add(this.pharmacistprofilenametxt);
             this.pharmacistprofilepan.Controls.Add(this.pharmacistprofilenamelbl);
             this.pharmacistprofilepan.Controls.Add(this.pharmacistprofiletoppan);
             this.pharmacistprofilepan.Font = new System.Drawing.Font("Stencil", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -225,20 +229,196 @@
             this.pharmacistprofilepan.TabIndex = 45;
             this.pharmacistprofilepan.Visible = false;
             // 
-            // answertxt
+            // panel5
             // 
-            this.answertxt.ForeColor = System.Drawing.Color.Black;
-            this.answertxt.Location = new System.Drawing.Point(63, 565);
-            this.answertxt.Margin = new System.Windows.Forms.Padding(2);
-            this.answertxt.Name = "answertxt";
-            this.answertxt.Size = new System.Drawing.Size(389, 41);
-            this.answertxt.TabIndex = 17;
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.pharmacistphonetxt);
+            this.panel5.Location = new System.Drawing.Point(525, 157);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(370, 54);
+            this.panel5.TabIndex = 37;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.Controls.Add(this.pharmacistprofileaddtxt);
+            this.panel6.Location = new System.Drawing.Point(96, 436);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(370, 54);
+            this.panel6.TabIndex = 37;
+            // 
+            // pharmacistprofileaddtxt
+            // 
+            this.pharmacistprofileaddtxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pharmacistprofileaddtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pharmacistprofileaddtxt.ForeColor = System.Drawing.Color.DarkGray;
+            this.pharmacistprofileaddtxt.Location = new System.Drawing.Point(6, 16);
+            this.pharmacistprofileaddtxt.Margin = new System.Windows.Forms.Padding(2);
+            this.pharmacistprofileaddtxt.Name = "pharmacistprofileaddtxt";
+            this.pharmacistprofileaddtxt.Size = new System.Drawing.Size(360, 23);
+            this.pharmacistprofileaddtxt.TabIndex = 12;
+            this.pharmacistprofileaddtxt.Text = "Enter Address";
+            this.pharmacistprofileaddtxt.Enter += new System.EventHandler(this.pharmacistprofileaddtxt_Enter);
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.Controls.Add(this.pharmacistanswertxt);
+            this.panel7.Location = new System.Drawing.Point(525, 351);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(370, 54);
+            this.panel7.TabIndex = 37;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.pharmacistprofilepasstxt);
+            this.panel4.Location = new System.Drawing.Point(525, 261);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(370, 54);
+            this.panel4.TabIndex = 36;
+            // 
+            // pharmacistprofilepasstxt
+            // 
+            this.pharmacistprofilepasstxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pharmacistprofilepasstxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pharmacistprofilepasstxt.ForeColor = System.Drawing.Color.DarkGray;
+            this.pharmacistprofilepasstxt.Location = new System.Drawing.Point(6, 16);
+            this.pharmacistprofilepasstxt.Margin = new System.Windows.Forms.Padding(2);
+            this.pharmacistprofilepasstxt.Name = "pharmacistprofilepasstxt";
+            this.pharmacistprofilepasstxt.Size = new System.Drawing.Size(360, 23);
+            this.pharmacistprofilepasstxt.TabIndex = 8;
+            this.pharmacistprofilepasstxt.Text = "Enter Password";
+            this.pharmacistprofilepasstxt.Enter += new System.EventHandler(this.pharmacistprofilepasstxt_Enter);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.pharmacistprofileusernametxt);
+            this.panel3.Location = new System.Drawing.Point(96, 261);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(370, 54);
+            this.panel3.TabIndex = 35;
+            // 
+            // pharmacistprofileusernametxt
+            // 
+            this.pharmacistprofileusernametxt.BackColor = System.Drawing.Color.White;
+            this.pharmacistprofileusernametxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pharmacistprofileusernametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pharmacistprofileusernametxt.ForeColor = System.Drawing.Color.DarkGray;
+            this.pharmacistprofileusernametxt.Location = new System.Drawing.Point(6, 16);
+            this.pharmacistprofileusernametxt.Margin = new System.Windows.Forms.Padding(2);
+            this.pharmacistprofileusernametxt.Name = "pharmacistprofileusernametxt";
+            this.pharmacistprofileusernametxt.Size = new System.Drawing.Size(360, 23);
+            this.pharmacistprofileusernametxt.TabIndex = 6;
+            this.pharmacistprofileusernametxt.Text = "Enter Username";
+            this.pharmacistprofileusernametxt.Enter += new System.EventHandler(this.pharmacistprofileusernametxt_Enter);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.pharmacistprofilenametxt);
+            this.panel2.Location = new System.Drawing.Point(96, 157);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(370, 54);
+            this.panel2.TabIndex = 34;
+            // 
+            // pharmacistprofilenametxt
+            // 
+            this.pharmacistprofilenametxt.BackColor = System.Drawing.Color.White;
+            this.pharmacistprofilenametxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pharmacistprofilenametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pharmacistprofilenametxt.ForeColor = System.Drawing.Color.DarkGray;
+            this.pharmacistprofilenametxt.Location = new System.Drawing.Point(6, 16);
+            this.pharmacistprofilenametxt.Margin = new System.Windows.Forms.Padding(2);
+            this.pharmacistprofilenametxt.Name = "pharmacistprofilenametxt";
+            this.pharmacistprofilenametxt.Size = new System.Drawing.Size(360, 23);
+            this.pharmacistprofilenametxt.TabIndex = 4;
+            this.pharmacistprofilenametxt.Text = "Enter Name";
+            this.pharmacistprofilenametxt.Enter += new System.EventHandler(this.pharmacistprofilenametxt_Enter);
+            // 
+            // errorphonepan
+            // 
+            this.errorphonepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.errorphonepan.Location = new System.Drawing.Point(899, 173);
+            this.errorphonepan.Name = "errorphonepan";
+            this.errorphonepan.Size = new System.Drawing.Size(30, 30);
+            this.errorphonepan.TabIndex = 33;
+            this.errorphonepan.Visible = false;
+            // 
+            // erroranspan
+            // 
+            this.erroranspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.erroranspan.Location = new System.Drawing.Point(899, 360);
+            this.erroranspan.Name = "erroranspan";
+            this.erroranspan.Size = new System.Drawing.Size(30, 30);
+            this.erroranspan.TabIndex = 33;
+            this.erroranspan.Visible = false;
+            // 
+            // erroraddpan
+            // 
+            this.erroraddpan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.erroraddpan.Location = new System.Drawing.Point(473, 452);
+            this.erroraddpan.Name = "erroraddpan";
+            this.erroraddpan.Size = new System.Drawing.Size(30, 30);
+            this.erroraddpan.TabIndex = 33;
+            this.erroraddpan.Visible = false;
+            // 
+            // errorpasspan
+            // 
+            this.errorpasspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.errorpasspan.Location = new System.Drawing.Point(899, 277);
+            this.errorpasspan.Name = "errorpasspan";
+            this.errorpasspan.Size = new System.Drawing.Size(30, 30);
+            this.errorpasspan.TabIndex = 33;
+            this.errorpasspan.Visible = false;
+            // 
+            // errorusernamepan
+            // 
+            this.errorusernamepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.errorusernamepan.Location = new System.Drawing.Point(472, 277);
+            this.errorusernamepan.Name = "errorusernamepan";
+            this.errorusernamepan.Size = new System.Drawing.Size(30, 30);
+            this.errorusernamepan.TabIndex = 33;
+            this.errorusernamepan.Visible = false;
+            // 
+            // errorpharmacistnamepan
+            // 
+            this.errorpharmacistnamepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.errorpharmacistnamepan.Location = new System.Drawing.Point(472, 173);
+            this.errorpharmacistnamepan.Name = "errorpharmacistnamepan";
+            this.errorpharmacistnamepan.Size = new System.Drawing.Size(30, 30);
+            this.errorpharmacistnamepan.TabIndex = 32;
+            this.errorpharmacistnamepan.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PharmaHealix.Properties.Resources.Humanicon;
+            this.pictureBox1.Location = new System.Drawing.Point(615, 428);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(228, 200);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pharmacistanswertxt
+            // 
+            this.pharmacistanswertxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pharmacistanswertxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pharmacistanswertxt.ForeColor = System.Drawing.Color.DarkGray;
+            this.pharmacistanswertxt.Location = new System.Drawing.Point(6, 16);
+            this.pharmacistanswertxt.Margin = new System.Windows.Forms.Padding(2);
+            this.pharmacistanswertxt.Name = "pharmacistanswertxt";
+            this.pharmacistanswertxt.Size = new System.Drawing.Size(360, 23);
+            this.pharmacistanswertxt.TabIndex = 17;
+            this.pharmacistanswertxt.Text = "Enter Answer";
+            this.pharmacistanswertxt.Enter += new System.EventHandler(this.pharmacistanswertxt_Enter);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(57, 534);
+            this.label1.Location = new System.Drawing.Point(520, 318);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(123, 29);
@@ -249,7 +429,7 @@
             // 
             this.securityquestionlbl.AutoSize = true;
             this.securityquestionlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.securityquestionlbl.Location = new System.Drawing.Point(57, 458);
+            this.securityquestionlbl.Location = new System.Drawing.Point(88, 318);
             this.securityquestionlbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.securityquestionlbl.Name = "securityquestionlbl";
             this.securityquestionlbl.Size = new System.Drawing.Size(273, 29);
@@ -258,21 +438,22 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "What is your favourite color?",
             "What is your birthplace?",
             "What is your pet name?"});
-            this.comboBox1.Location = new System.Drawing.Point(62, 490);
+            this.comboBox1.Location = new System.Drawing.Point(96, 351);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(391, 41);
+            this.comboBox1.Size = new System.Drawing.Size(370, 37);
             this.comboBox1.TabIndex = 14;
             // 
             // pharmacistprofileupdatebtn
             // 
-            this.pharmacistprofileupdatebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
+            this.pharmacistprofileupdatebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
             this.pharmacistprofileupdatebtn.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistprofileupdatebtn.Location = new System.Drawing.Point(688, 458);
+            this.pharmacistprofileupdatebtn.Location = new System.Drawing.Point(673, 647);
             this.pharmacistprofileupdatebtn.Margin = new System.Windows.Forms.Padding(2);
             this.pharmacistprofileupdatebtn.Name = "pharmacistprofileupdatebtn";
             this.pharmacistprofileupdatebtn.Size = new System.Drawing.Size(116, 67);
@@ -280,20 +461,11 @@
             this.pharmacistprofileupdatebtn.Text = "UPDATE";
             this.pharmacistprofileupdatebtn.UseVisualStyleBackColor = false;
             // 
-            // pharmacistprofileaddtxt
-            // 
-            this.pharmacistprofileaddtxt.ForeColor = System.Drawing.Color.Black;
-            this.pharmacistprofileaddtxt.Location = new System.Drawing.Point(62, 414);
-            this.pharmacistprofileaddtxt.Margin = new System.Windows.Forms.Padding(2);
-            this.pharmacistprofileaddtxt.Name = "pharmacistprofileaddtxt";
-            this.pharmacistprofileaddtxt.Size = new System.Drawing.Size(389, 41);
-            this.pharmacistprofileaddtxt.TabIndex = 12;
-            // 
             // pharmacistprofileaddresslbl
             // 
             this.pharmacistprofileaddresslbl.AutoSize = true;
             this.pharmacistprofileaddresslbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistprofileaddresslbl.Location = new System.Drawing.Point(61, 383);
+            this.pharmacistprofileaddresslbl.Location = new System.Drawing.Point(91, 404);
             this.pharmacistprofileaddresslbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pharmacistprofileaddresslbl.Name = "pharmacistprofileaddresslbl";
             this.pharmacistprofileaddresslbl.Size = new System.Drawing.Size(133, 29);
@@ -304,67 +476,40 @@
             // 
             this.pharmacistprofilephonelbl.AutoSize = true;
             this.pharmacistprofilephonelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistprofilephonelbl.Location = new System.Drawing.Point(57, 608);
+            this.pharmacistprofilephonelbl.Location = new System.Drawing.Point(520, 125);
             this.pharmacistprofilephonelbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pharmacistprofilephonelbl.Name = "pharmacistprofilephonelbl";
             this.pharmacistprofilephonelbl.Size = new System.Drawing.Size(215, 29);
             this.pharmacistprofilephonelbl.TabIndex = 9;
             this.pharmacistprofilephonelbl.Text = "PHONE NUMBER:";
             // 
-            // pharmacistprofilepasstxt
-            // 
-            this.pharmacistprofilepasstxt.ForeColor = System.Drawing.Color.Black;
-            this.pharmacistprofilepasstxt.Location = new System.Drawing.Point(62, 334);
-            this.pharmacistprofilepasstxt.Margin = new System.Windows.Forms.Padding(2);
-            this.pharmacistprofilepasstxt.Name = "pharmacistprofilepasstxt";
-            this.pharmacistprofilepasstxt.Size = new System.Drawing.Size(389, 41);
-            this.pharmacistprofilepasstxt.TabIndex = 8;
-            // 
             // pharmacistprofilepasslbl
             // 
             this.pharmacistprofilepasslbl.AutoSize = true;
             this.pharmacistprofilepasslbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistprofilepasslbl.Location = new System.Drawing.Point(61, 297);
+            this.pharmacistprofilepasslbl.Location = new System.Drawing.Point(520, 229);
             this.pharmacistprofilepasslbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pharmacistprofilepasslbl.Name = "pharmacistprofilepasslbl";
             this.pharmacistprofilepasslbl.Size = new System.Drawing.Size(157, 29);
             this.pharmacistprofilepasslbl.TabIndex = 7;
             this.pharmacistprofilepasslbl.Text = "PASSWORD:";
             // 
-            // pharmacistprofileusernametxt
-            // 
-            this.pharmacistprofileusernametxt.ForeColor = System.Drawing.Color.Black;
-            this.pharmacistprofileusernametxt.Location = new System.Drawing.Point(63, 254);
-            this.pharmacistprofileusernametxt.Margin = new System.Windows.Forms.Padding(2);
-            this.pharmacistprofileusernametxt.Name = "pharmacistprofileusernametxt";
-            this.pharmacistprofileusernametxt.Size = new System.Drawing.Size(389, 41);
-            this.pharmacistprofileusernametxt.TabIndex = 6;
-            // 
             // pharmacistprofileusernamelbl
             // 
             this.pharmacistprofileusernamelbl.AutoSize = true;
             this.pharmacistprofileusernamelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistprofileusernamelbl.Location = new System.Drawing.Point(59, 219);
+            this.pharmacistprofileusernamelbl.Location = new System.Drawing.Point(88, 229);
             this.pharmacistprofileusernamelbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pharmacistprofileusernamelbl.Name = "pharmacistprofileusernamelbl";
             this.pharmacistprofileusernamelbl.Size = new System.Drawing.Size(154, 29);
             this.pharmacistprofileusernamelbl.TabIndex = 5;
             this.pharmacistprofileusernamelbl.Text = "USERNAME:";
             // 
-            // pharmacistprofilenametxt
-            // 
-            this.pharmacistprofilenametxt.ForeColor = System.Drawing.Color.Black;
-            this.pharmacistprofilenametxt.Location = new System.Drawing.Point(62, 173);
-            this.pharmacistprofilenametxt.Margin = new System.Windows.Forms.Padding(2);
-            this.pharmacistprofilenametxt.Name = "pharmacistprofilenametxt";
-            this.pharmacistprofilenametxt.Size = new System.Drawing.Size(389, 41);
-            this.pharmacistprofilenametxt.TabIndex = 4;
-            // 
             // pharmacistprofilenamelbl
             // 
             this.pharmacistprofilenamelbl.AutoSize = true;
             this.pharmacistprofilenamelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistprofilenamelbl.Location = new System.Drawing.Point(58, 141);
+            this.pharmacistprofilenamelbl.Location = new System.Drawing.Point(91, 125);
             this.pharmacistprofilenamelbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pharmacistprofilenamelbl.Name = "pharmacistprofilenamelbl";
             this.pharmacistprofilenamelbl.Size = new System.Drawing.Size(88, 29);
@@ -385,7 +530,7 @@
             // 
             this.pharamcistprofiletoplbl.AutoSize = true;
             this.pharamcistprofiletoplbl.Font = new System.Drawing.Font("Stencil", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharamcistprofiletoplbl.Location = new System.Drawing.Point(412, 30);
+            this.pharamcistprofiletoplbl.Location = new System.Drawing.Point(348, 20);
             this.pharamcistprofiletoplbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pharamcistprofiletoplbl.Name = "pharamcistprofiletoplbl";
             this.pharamcistprofiletoplbl.Size = new System.Drawing.Size(264, 67);
@@ -413,7 +558,7 @@
             // 
             this.orderbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
             this.orderbtn.Font = new System.Drawing.Font("Stencil", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderbtn.Location = new System.Drawing.Point(26, 405);
+            this.orderbtn.Location = new System.Drawing.Point(27, 260);
             this.orderbtn.Margin = new System.Windows.Forms.Padding(2);
             this.orderbtn.Name = "orderbtn";
             this.orderbtn.Size = new System.Drawing.Size(188, 50);
@@ -426,7 +571,7 @@
             // 
             this.inventorybtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
             this.inventorybtn.Font = new System.Drawing.Font("Stencil", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inventorybtn.Location = new System.Drawing.Point(26, 485);
+            this.inventorybtn.Location = new System.Drawing.Point(27, 340);
             this.inventorybtn.Margin = new System.Windows.Forms.Padding(2);
             this.inventorybtn.Name = "inventorybtn";
             this.inventorybtn.Size = new System.Drawing.Size(188, 50);
@@ -435,25 +580,11 @@
             this.inventorybtn.UseVisualStyleBackColor = false;
             this.inventorybtn.Click += new System.EventHandler(this.inventorybtn_Click);
             // 
-            // medilogobtn
-            // 
-            this.medilogobtn.BackColor = System.Drawing.Color.Transparent;
-            this.medilogobtn.BackgroundImage = global::PharmaHealix.Properties.Resources.PharmaHealixLogo;
-            this.medilogobtn.FlatAppearance.BorderSize = 0;
-            this.medilogobtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
-            this.medilogobtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.medilogobtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.medilogobtn.Location = new System.Drawing.Point(26, 0);
-            this.medilogobtn.Name = "medilogobtn";
-            this.medilogobtn.Size = new System.Drawing.Size(156, 129);
-            this.medilogobtn.TabIndex = 21;
-            this.medilogobtn.UseVisualStyleBackColor = false;
-            // 
             // pharmacistlogoutbtn
             // 
             this.pharmacistlogoutbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
             this.pharmacistlogoutbtn.Font = new System.Drawing.Font("Stencil", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistlogoutbtn.Location = new System.Drawing.Point(26, 565);
+            this.pharmacistlogoutbtn.Location = new System.Drawing.Point(27, 420);
             this.pharmacistlogoutbtn.Margin = new System.Windows.Forms.Padding(2);
             this.pharmacistlogoutbtn.Name = "pharmacistlogoutbtn";
             this.pharmacistlogoutbtn.Size = new System.Drawing.Size(188, 50);
@@ -464,17 +595,16 @@
             // 
             // sidepan
             // 
-            this.sidepan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
+            this.sidepan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(88)))), ((int)(((byte)(35)))));
             this.sidepan.Controls.Add(this.pharmacistlogoutbtn);
             this.sidepan.Controls.Add(this.profilebtn);
-            this.sidepan.Controls.Add(this.medilogobtn);
             this.sidepan.Controls.Add(this.inventorybtn);
             this.sidepan.Controls.Add(this.orderbtn);
             this.sidepan.Controls.Add(this.patientlistbtn);
-            this.sidepan.Location = new System.Drawing.Point(0, 0);
+            this.sidepan.Location = new System.Drawing.Point(0, 108);
             this.sidepan.Margin = new System.Windows.Forms.Padding(2);
             this.sidepan.Name = "sidepan";
-            this.sidepan.Size = new System.Drawing.Size(244, 752);
+            this.sidepan.Size = new System.Drawing.Size(244, 644);
             this.sidepan.TabIndex = 41;
             // 
             // profilebtn
@@ -482,7 +612,7 @@
             this.profilebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
             this.profilebtn.Font = new System.Drawing.Font("Stencil", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profilebtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.profilebtn.Location = new System.Drawing.Point(26, 245);
+            this.profilebtn.Location = new System.Drawing.Point(27, 100);
             this.profilebtn.Margin = new System.Windows.Forms.Padding(2);
             this.profilebtn.Name = "profilebtn";
             this.profilebtn.Size = new System.Drawing.Size(188, 50);
@@ -495,7 +625,7 @@
             // 
             this.patientlistbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
             this.patientlistbtn.Font = new System.Drawing.Font("Stencil", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patientlistbtn.Location = new System.Drawing.Point(26, 325);
+            this.patientlistbtn.Location = new System.Drawing.Point(27, 180);
             this.patientlistbtn.Margin = new System.Windows.Forms.Padding(2);
             this.patientlistbtn.Name = "patientlistbtn";
             this.patientlistbtn.Size = new System.Drawing.Size(188, 50);
@@ -504,75 +634,49 @@
             this.patientlistbtn.UseVisualStyleBackColor = false;
             this.patientlistbtn.Click += new System.EventHandler(this.patientlistbtn_Click);
             // 
-            // pictureBox1
+            // panel1
             // 
-            this.pictureBox1.Image = global::PharmaHealix.Properties.Resources.Humanicon;
-            this.pictureBox1.Location = new System.Drawing.Point(655, 254);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(184, 166);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
+            this.panel1.Controls.Add(this.medilogobtn);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(244, 110);
+            this.panel1.TabIndex = 47;
             // 
-            // errornamepan
+            // medilogobtn
             // 
-            this.errornamepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
-            this.errornamepan.Location = new System.Drawing.Point(456, 173);
-            this.errornamepan.Name = "errornamepan";
-            this.errornamepan.Size = new System.Drawing.Size(30, 30);
-            this.errornamepan.TabIndex = 32;
-            this.errornamepan.Visible = false;
+            this.medilogobtn.BackColor = System.Drawing.Color.Transparent;
+            this.medilogobtn.BackgroundImage = global::PharmaHealix.Properties.Resources.PharmaHealixLogo;
+            this.medilogobtn.FlatAppearance.BorderSize = 0;
+            this.medilogobtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
+            this.medilogobtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.medilogobtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.medilogobtn.Location = new System.Drawing.Point(45, -9);
+            this.medilogobtn.Name = "medilogobtn";
+            this.medilogobtn.Size = new System.Drawing.Size(156, 129);
+            this.medilogobtn.TabIndex = 22;
+            this.medilogobtn.UseVisualStyleBackColor = false;
             // 
-            // errorusernamepan
+            // pharmacistphonetxt
             // 
-            this.errorusernamepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
-            this.errorusernamepan.Location = new System.Drawing.Point(457, 265);
-            this.errorusernamepan.Name = "errorusernamepan";
-            this.errorusernamepan.Size = new System.Drawing.Size(30, 30);
-            this.errorusernamepan.TabIndex = 33;
-            this.errorusernamepan.Visible = false;
-            // 
-            // errorpasspan
-            // 
-            this.errorpasspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
-            this.errorpasspan.Location = new System.Drawing.Point(457, 345);
-            this.errorpasspan.Name = "errorpasspan";
-            this.errorpasspan.Size = new System.Drawing.Size(30, 30);
-            this.errorpasspan.TabIndex = 33;
-            this.errorpasspan.Visible = false;
-            // 
-            // erroraddpan
-            // 
-            this.erroraddpan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
-            this.erroraddpan.Location = new System.Drawing.Point(457, 425);
-            this.erroraddpan.Name = "erroraddpan";
-            this.erroraddpan.Size = new System.Drawing.Size(30, 30);
-            this.erroraddpan.TabIndex = 33;
-            this.erroraddpan.Visible = false;
-            // 
-            // erroranspan
-            // 
-            this.erroranspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
-            this.erroranspan.Location = new System.Drawing.Point(457, 576);
-            this.erroranspan.Name = "erroranspan";
-            this.erroranspan.Size = new System.Drawing.Size(30, 30);
-            this.erroranspan.TabIndex = 33;
-            this.erroranspan.Visible = false;
-            // 
-            // errorphonepan
-            // 
-            this.errorphonepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
-            this.errorphonepan.Location = new System.Drawing.Point(457, 656);
-            this.errorphonepan.Name = "errorphonepan";
-            this.errorphonepan.Size = new System.Drawing.Size(30, 30);
-            this.errorphonepan.TabIndex = 33;
-            this.errorphonepan.Visible = false;
+            this.pharmacistphonetxt.BackColor = System.Drawing.Color.White;
+            this.pharmacistphonetxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pharmacistphonetxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pharmacistphonetxt.ForeColor = System.Drawing.Color.DarkGray;
+            this.pharmacistphonetxt.Location = new System.Drawing.Point(5, 16);
+            this.pharmacistphonetxt.Margin = new System.Windows.Forms.Padding(2);
+            this.pharmacistphonetxt.Name = "pharmacistphonetxt";
+            this.pharmacistphonetxt.Size = new System.Drawing.Size(360, 23);
+            this.pharmacistphonetxt.TabIndex = 5;
+            this.pharmacistphonetxt.Text = "Enter Phone Number";
+            this.pharmacistphonetxt.Enter += new System.EventHandler(this.pharmacistphonetxt_Enter);
             // 
             // Pharmacist
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::PharmaHealix.Properties.Resources.BackgroundImage;
             this.ClientSize = new System.Drawing.Size(1200, 750);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.Exitbtn);
             this.Controls.Add(this.pharmacistprofilepan);
             this.Controls.Add(this.inventorypan);
@@ -595,10 +699,23 @@
             this.inventorytoppan.PerformLayout();
             this.pharmacistprofilepan.ResumeLayout(false);
             this.pharmacistprofilepan.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pharmacistprofiletoppan.ResumeLayout(false);
             this.pharmacistprofiletoppan.PerformLayout();
             this.sidepan.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -629,13 +746,12 @@
         private System.Windows.Forms.Button Exitbtn;
         private System.Windows.Forms.Button orderbtn;
         private System.Windows.Forms.Button inventorybtn;
-        private System.Windows.Forms.Button medilogobtn;
         private System.Windows.Forms.Button pharmacistlogoutbtn;
         private System.Windows.Forms.Panel sidepan;
         private System.Windows.Forms.Button profilebtn;
         private System.Windows.Forms.Button patientlistbtn;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox answertxt;
+        private System.Windows.Forms.TextBox pharmacistanswertxt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label securityquestionlbl;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -644,6 +760,15 @@
         private System.Windows.Forms.Panel erroraddpan;
         private System.Windows.Forms.Panel errorpasspan;
         private System.Windows.Forms.Panel errorusernamepan;
-        private System.Windows.Forms.Panel errornamepan;
+        private System.Windows.Forms.Panel errorpharmacistnamepan;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button medilogobtn;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox pharmacistphonetxt;
     }
 }

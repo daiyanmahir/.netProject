@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Doctor));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.checkappbtn = new System.Windows.Forms.Button();
+            this.cancelappbtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.reportsbtn = new System.Windows.Forms.Button();
             this.medbtn = new System.Windows.Forms.Button();
@@ -46,6 +48,8 @@
             this.headpan = new System.Windows.Forms.Panel();
             this.medilogobtn = new System.Windows.Forms.Button();
             this.Exitbtn = new System.Windows.Forms.Button();
+            this.tabcheckapp = new System.Windows.Forms.TabPage();
+            this.tabcancelapp = new System.Windows.Forms.TabPage();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPrescription.SuspendLayout();
@@ -56,6 +60,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.checkappbtn);
+            this.panel1.Controls.Add(this.cancelappbtn);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.reportsbtn);
             this.panel1.Controls.Add(this.medbtn);
@@ -65,6 +71,40 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(341, 651);
             this.panel1.TabIndex = 0;
+            // 
+            // checkappbtn
+            // 
+            this.checkappbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSlateGray;
+            this.checkappbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.checkappbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkappbtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkappbtn.Image = global::PharmaHealix.Properties.Resources.rsz_planning_8169817;
+            this.checkappbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.checkappbtn.Location = new System.Drawing.Point(12, 394);
+            this.checkappbtn.Name = "checkappbtn";
+            this.checkappbtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.checkappbtn.Size = new System.Drawing.Size(305, 43);
+            this.checkappbtn.TabIndex = 6;
+            this.checkappbtn.Text = "      Check Appointments";
+            this.checkappbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.checkappbtn.UseVisualStyleBackColor = true;
+            // 
+            // cancelappbtn
+            // 
+            this.cancelappbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSlateGray;
+            this.cancelappbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.cancelappbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelappbtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelappbtn.Image = global::PharmaHealix.Properties.Resources.rsz_1calendar_12212473;
+            this.cancelappbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cancelappbtn.Location = new System.Drawing.Point(12, 453);
+            this.cancelappbtn.Name = "cancelappbtn";
+            this.cancelappbtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.cancelappbtn.Size = new System.Drawing.Size(305, 43);
+            this.cancelappbtn.TabIndex = 5;
+            this.cancelappbtn.Text = "      Cancel Appointments";
+            this.cancelappbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cancelappbtn.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -156,7 +196,9 @@
             this.tabControl1.Controls.Add(this.tabRecords);
             this.tabControl1.Controls.Add(this.tabAvailability);
             this.tabControl1.Controls.Add(this.tabReports);
-            this.tabControl1.ItemSize = new System.Drawing.Size(0, 1);
+            this.tabControl1.Controls.Add(this.tabcheckapp);
+            this.tabControl1.Controls.Add(this.tabcancelapp);
+            this.tabControl1.ItemSize = new System.Drawing.Size(30, 15);
             this.tabControl1.Location = new System.Drawing.Point(343, 110);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -168,10 +210,10 @@
             // 
             this.tabPrescription.BackColor = System.Drawing.Color.Transparent;
             this.tabPrescription.Controls.Add(this.tabControl2);
-            this.tabPrescription.Location = new System.Drawing.Point(4, 5);
+            this.tabPrescription.Location = new System.Drawing.Point(4, 19);
             this.tabPrescription.Name = "tabPrescription";
             this.tabPrescription.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPrescription.Size = new System.Drawing.Size(847, 629);
+            this.tabPrescription.Size = new System.Drawing.Size(847, 615);
             this.tabPrescription.TabIndex = 0;
             this.tabPrescription.Text = "Prescription";
             // 
@@ -208,30 +250,30 @@
             // tabRecords
             // 
             this.tabRecords.BackColor = System.Drawing.Color.Transparent;
-            this.tabRecords.Location = new System.Drawing.Point(4, 5);
+            this.tabRecords.Location = new System.Drawing.Point(4, 19);
             this.tabRecords.Name = "tabRecords";
             this.tabRecords.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRecords.Size = new System.Drawing.Size(522, 415);
+            this.tabRecords.Size = new System.Drawing.Size(847, 615);
             this.tabRecords.TabIndex = 1;
             this.tabRecords.Text = "Records";
             // 
             // tabAvailability
             // 
             this.tabAvailability.BackColor = System.Drawing.Color.Transparent;
-            this.tabAvailability.Location = new System.Drawing.Point(4, 5);
+            this.tabAvailability.Location = new System.Drawing.Point(4, 19);
             this.tabAvailability.Name = "tabAvailability";
             this.tabAvailability.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAvailability.Size = new System.Drawing.Size(522, 415);
+            this.tabAvailability.Size = new System.Drawing.Size(847, 615);
             this.tabAvailability.TabIndex = 2;
             this.tabAvailability.Text = "Availability";
             // 
             // tabReports
             // 
             this.tabReports.BackColor = System.Drawing.Color.Transparent;
-            this.tabReports.Location = new System.Drawing.Point(4, 5);
+            this.tabReports.Location = new System.Drawing.Point(4, 19);
             this.tabReports.Name = "tabReports";
             this.tabReports.Padding = new System.Windows.Forms.Padding(3);
-            this.tabReports.Size = new System.Drawing.Size(522, 415);
+            this.tabReports.Size = new System.Drawing.Size(847, 615);
             this.tabReports.TabIndex = 3;
             this.tabReports.Text = "Reports";
             // 
@@ -273,6 +315,26 @@
             this.Exitbtn.TabIndex = 2;
             this.Exitbtn.Text = "X";
             this.Exitbtn.UseVisualStyleBackColor = false;
+            // 
+            // tabcheckapp
+            // 
+            this.tabcheckapp.Location = new System.Drawing.Point(4, 19);
+            this.tabcheckapp.Name = "tabcheckapp";
+            this.tabcheckapp.Padding = new System.Windows.Forms.Padding(3);
+            this.tabcheckapp.Size = new System.Drawing.Size(847, 615);
+            this.tabcheckapp.TabIndex = 4;
+            this.tabcheckapp.Text = "Check Appointment";
+            this.tabcheckapp.UseVisualStyleBackColor = true;
+            // 
+            // tabcancelapp
+            // 
+            this.tabcancelapp.Location = new System.Drawing.Point(4, 19);
+            this.tabcancelapp.Name = "tabcancelapp";
+            this.tabcancelapp.Padding = new System.Windows.Forms.Padding(3);
+            this.tabcancelapp.Size = new System.Drawing.Size(847, 615);
+            this.tabcancelapp.TabIndex = 5;
+            this.tabcancelapp.Text = "Cancel Appointments";
+            this.tabcancelapp.UseVisualStyleBackColor = true;
             // 
             // Doctor
             // 
@@ -317,5 +379,9 @@
         private System.Windows.Forms.Panel headpan;
         private System.Windows.Forms.Button medilogobtn;
         private System.Windows.Forms.Button Exitbtn;
+        private System.Windows.Forms.Button checkappbtn;
+        private System.Windows.Forms.Button cancelappbtn;
+        private System.Windows.Forms.TabPage tabcheckapp;
+        private System.Windows.Forms.TabPage tabcancelapp;
     }
 }

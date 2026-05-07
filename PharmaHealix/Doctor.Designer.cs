@@ -50,11 +50,44 @@
             this.Exitbtn = new System.Windows.Forms.Button();
             this.tabcheckapp = new System.Windows.Forms.TabPage();
             this.tabcancelapp = new System.Windows.Forms.TabPage();
+            this.gbPatientInfo = new System.Windows.Forms.GroupBox();
+            this.pnamelbl = new System.Windows.Forms.Label();
+            this.txtSelectedName = new System.Windows.Forms.TextBox();
+            this.idlbl = new System.Windows.Forms.Label();
+            this.txtSelectedID = new System.Windows.Forms.TextBox();
+            this.datelbl = new System.Windows.Forms.Label();
+            this.txtCurrentDate = new System.Windows.Forms.DateTimePicker();
+            this.gbMedicationEntry = new System.Windows.Forms.GroupBox();
+            this.Selectmelbl = new System.Windows.Forms.Label();
+            this.cbMedicineList = new System.Windows.Forms.ComboBox();
+            this.Dosagelbl = new System.Windows.Forms.Label();
+            this.txtDosage = new System.Windows.Forms.TextBox();
+            this.Frequencylbl = new System.Windows.Forms.Label();
+            this.txtFrequency = new System.Windows.Forms.TextBox();
+            this.Quantitylbl = new System.Windows.Forms.Label();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
+            this.Routelbl = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.DiagnosisLBL = new System.Windows.Forms.Label();
+            this.txtDiagnosisContext = new System.Windows.Forms.TextBox();
+            this.gbUsageInstructions = new System.Windows.Forms.GroupBox();
+            this.rtbUsageInstructions = new System.Windows.Forms.RichTextBox();
+            this.gbPharmacistNote = new System.Windows.Forms.GroupBox();
+            this.rtbPharmacistNote = new System.Windows.Forms.RichTextBox();
+            this.lblStockStatus = new System.Windows.Forms.Label();
+            this.dialbl = new System.Windows.Forms.Label();
+            this.txtPrimaryDiagnosis = new System.Windows.Forms.TextBox();
+            this.btnSaveDraft = new System.Windows.Forms.Button();
+            this.btnSendPrescription = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPrescription.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.headpan.SuspendLayout();
+            this.gbPatientInfo.SuspendLayout();
+            this.gbMedicationEntry.SuspendLayout();
+            this.gbUsageInstructions.SuspendLayout();
+            this.gbPharmacistNote.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -209,6 +242,12 @@
             // tabPrescription
             // 
             this.tabPrescription.BackColor = System.Drawing.Color.Transparent;
+            this.tabPrescription.Controls.Add(this.btnSendPrescription);
+            this.tabPrescription.Controls.Add(this.btnSaveDraft);
+            this.tabPrescription.Controls.Add(this.gbPharmacistNote);
+            this.tabPrescription.Controls.Add(this.gbUsageInstructions);
+            this.tabPrescription.Controls.Add(this.gbMedicationEntry);
+            this.tabPrescription.Controls.Add(this.gbPatientInfo);
             this.tabPrescription.Controls.Add(this.tabControl2);
             this.tabPrescription.Location = new System.Drawing.Point(4, 19);
             this.tabPrescription.Name = "tabPrescription";
@@ -336,6 +375,299 @@
             this.tabcancelapp.Text = "Cancel Appointments";
             this.tabcancelapp.UseVisualStyleBackColor = true;
             // 
+            // gbPatientInfo
+            // 
+            this.gbPatientInfo.Controls.Add(this.txtPrimaryDiagnosis);
+            this.gbPatientInfo.Controls.Add(this.dialbl);
+            this.gbPatientInfo.Controls.Add(this.txtCurrentDate);
+            this.gbPatientInfo.Controls.Add(this.datelbl);
+            this.gbPatientInfo.Controls.Add(this.txtSelectedID);
+            this.gbPatientInfo.Controls.Add(this.idlbl);
+            this.gbPatientInfo.Controls.Add(this.txtSelectedName);
+            this.gbPatientInfo.Controls.Add(this.pnamelbl);
+            this.gbPatientInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbPatientInfo.Location = new System.Drawing.Point(6, 15);
+            this.gbPatientInfo.Name = "gbPatientInfo";
+            this.gbPatientInfo.Size = new System.Drawing.Size(835, 118);
+            this.gbPatientInfo.TabIndex = 1;
+            this.gbPatientInfo.TabStop = false;
+            this.gbPatientInfo.Text = "1. Current Patient";
+            // 
+            // pnamelbl
+            // 
+            this.pnamelbl.AutoSize = true;
+            this.pnamelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnamelbl.Location = new System.Drawing.Point(32, 44);
+            this.pnamelbl.Name = "pnamelbl";
+            this.pnamelbl.Size = new System.Drawing.Size(109, 20);
+            this.pnamelbl.TabIndex = 0;
+            this.pnamelbl.Text = "Patient Name:";
+            // 
+            // txtSelectedName
+            // 
+            this.txtSelectedName.Location = new System.Drawing.Point(147, 40);
+            this.txtSelectedName.Name = "txtSelectedName";
+            this.txtSelectedName.ReadOnly = true;
+            this.txtSelectedName.Size = new System.Drawing.Size(100, 28);
+            this.txtSelectedName.TabIndex = 1;
+            // 
+            // idlbl
+            // 
+            this.idlbl.AutoSize = true;
+            this.idlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idlbl.Location = new System.Drawing.Point(284, 45);
+            this.idlbl.Name = "idlbl";
+            this.idlbl.Size = new System.Drawing.Size(84, 20);
+            this.idlbl.TabIndex = 2;
+            this.idlbl.Text = "Patient ID:";
+            // 
+            // txtSelectedID
+            // 
+            this.txtSelectedID.Location = new System.Drawing.Point(387, 40);
+            this.txtSelectedID.Name = "txtSelectedID";
+            this.txtSelectedID.ReadOnly = true;
+            this.txtSelectedID.Size = new System.Drawing.Size(100, 28);
+            this.txtSelectedID.TabIndex = 3;
+            // 
+            // datelbl
+            // 
+            this.datelbl.AutoSize = true;
+            this.datelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datelbl.Location = new System.Drawing.Point(566, 44);
+            this.datelbl.Name = "datelbl";
+            this.datelbl.Size = new System.Drawing.Size(48, 20);
+            this.datelbl.TabIndex = 4;
+            this.datelbl.Text = "Date:";
+            // 
+            // txtCurrentDate
+            // 
+            this.txtCurrentDate.Enabled = false;
+            this.txtCurrentDate.Location = new System.Drawing.Point(629, 37);
+            this.txtCurrentDate.Name = "txtCurrentDate";
+            this.txtCurrentDate.Size = new System.Drawing.Size(200, 28);
+            this.txtCurrentDate.TabIndex = 5;
+            // 
+            // gbMedicationEntry
+            // 
+            this.gbMedicationEntry.Controls.Add(this.lblStockStatus);
+            this.gbMedicationEntry.Controls.Add(this.txtDiagnosisContext);
+            this.gbMedicationEntry.Controls.Add(this.DiagnosisLBL);
+            this.gbMedicationEntry.Controls.Add(this.comboBox2);
+            this.gbMedicationEntry.Controls.Add(this.Routelbl);
+            this.gbMedicationEntry.Controls.Add(this.txtQuantity);
+            this.gbMedicationEntry.Controls.Add(this.Quantitylbl);
+            this.gbMedicationEntry.Controls.Add(this.txtFrequency);
+            this.gbMedicationEntry.Controls.Add(this.Frequencylbl);
+            this.gbMedicationEntry.Controls.Add(this.txtDosage);
+            this.gbMedicationEntry.Controls.Add(this.Dosagelbl);
+            this.gbMedicationEntry.Controls.Add(this.cbMedicineList);
+            this.gbMedicationEntry.Controls.Add(this.Selectmelbl);
+            this.gbMedicationEntry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbMedicationEntry.Location = new System.Drawing.Point(6, 139);
+            this.gbMedicationEntry.Name = "gbMedicationEntry";
+            this.gbMedicationEntry.Size = new System.Drawing.Size(461, 432);
+            this.gbMedicationEntry.TabIndex = 2;
+            this.gbMedicationEntry.TabStop = false;
+            this.gbMedicationEntry.Text = "2. Prescribe Medication";
+            // 
+            // Selectmelbl
+            // 
+            this.Selectmelbl.AutoSize = true;
+            this.Selectmelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Selectmelbl.Location = new System.Drawing.Point(7, 58);
+            this.Selectmelbl.Name = "Selectmelbl";
+            this.Selectmelbl.Size = new System.Drawing.Size(125, 20);
+            this.Selectmelbl.TabIndex = 0;
+            this.Selectmelbl.Text = "Select Medicine:";
+            // 
+            // cbMedicineList
+            // 
+            this.cbMedicineList.FormattingEnabled = true;
+            this.cbMedicineList.Location = new System.Drawing.Point(139, 58);
+            this.cbMedicineList.Name = "cbMedicineList";
+            this.cbMedicineList.Size = new System.Drawing.Size(121, 30);
+            this.cbMedicineList.TabIndex = 1;
+            // 
+            // Dosagelbl
+            // 
+            this.Dosagelbl.AutoSize = true;
+            this.Dosagelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dosagelbl.Location = new System.Drawing.Point(7, 118);
+            this.Dosagelbl.Name = "Dosagelbl";
+            this.Dosagelbl.Size = new System.Drawing.Size(166, 20);
+            this.Dosagelbl.TabIndex = 2;
+            this.Dosagelbl.Text = "Dosage (e.g., 500mg):";
+            // 
+            // txtDosage
+            // 
+            this.txtDosage.Location = new System.Drawing.Point(190, 118);
+            this.txtDosage.Name = "txtDosage";
+            this.txtDosage.Size = new System.Drawing.Size(100, 28);
+            this.txtDosage.TabIndex = 3;
+            // 
+            // Frequencylbl
+            // 
+            this.Frequencylbl.AutoSize = true;
+            this.Frequencylbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frequencylbl.Location = new System.Drawing.Point(7, 177);
+            this.Frequencylbl.Name = "Frequencylbl";
+            this.Frequencylbl.Size = new System.Drawing.Size(187, 20);
+            this.Frequencylbl.TabIndex = 4;
+            this.Frequencylbl.Text = "Frequency (e.g., 2x daily):";
+            // 
+            // txtFrequency
+            // 
+            this.txtFrequency.Location = new System.Drawing.Point(200, 177);
+            this.txtFrequency.Name = "txtFrequency";
+            this.txtFrequency.Size = new System.Drawing.Size(100, 28);
+            this.txtFrequency.TabIndex = 5;
+            // 
+            // Quantitylbl
+            // 
+            this.Quantitylbl.AutoSize = true;
+            this.Quantitylbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Quantitylbl.Location = new System.Drawing.Point(7, 236);
+            this.Quantitylbl.Name = "Quantitylbl";
+            this.Quantitylbl.Size = new System.Drawing.Size(72, 20);
+            this.Quantitylbl.TabIndex = 6;
+            this.Quantitylbl.Text = "Quantity:";
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Location = new System.Drawing.Point(94, 236);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(100, 28);
+            this.txtQuantity.TabIndex = 7;
+            // 
+            // Routelbl
+            // 
+            this.Routelbl.AutoSize = true;
+            this.Routelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Routelbl.Location = new System.Drawing.Point(7, 295);
+            this.Routelbl.Name = "Routelbl";
+            this.Routelbl.Size = new System.Drawing.Size(134, 20);
+            this.Routelbl.TabIndex = 8;
+            this.Routelbl.Text = "Route (e.g., Oral):";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "ORAL",
+            "NOSE",
+            "INJECT",
+            "EAR",
+            "EYE"});
+            this.comboBox2.Location = new System.Drawing.Point(147, 290);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 30);
+            this.comboBox2.TabIndex = 9;
+            // 
+            // DiagnosisLBL
+            // 
+            this.DiagnosisLBL.AutoSize = true;
+            this.DiagnosisLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DiagnosisLBL.Location = new System.Drawing.Point(7, 362);
+            this.DiagnosisLBL.Name = "DiagnosisLBL";
+            this.DiagnosisLBL.Size = new System.Drawing.Size(165, 20);
+            this.DiagnosisLBL.TabIndex = 10;
+            this.DiagnosisLBL.Text = "Diagnosis Related To:";
+            // 
+            // txtDiagnosisContext
+            // 
+            this.txtDiagnosisContext.Location = new System.Drawing.Point(178, 362);
+            this.txtDiagnosisContext.Name = "txtDiagnosisContext";
+            this.txtDiagnosisContext.Size = new System.Drawing.Size(100, 28);
+            this.txtDiagnosisContext.TabIndex = 11;
+            // 
+            // gbUsageInstructions
+            // 
+            this.gbUsageInstructions.Controls.Add(this.rtbUsageInstructions);
+            this.gbUsageInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbUsageInstructions.Location = new System.Drawing.Point(489, 139);
+            this.gbUsageInstructions.Name = "gbUsageInstructions";
+            this.gbUsageInstructions.Size = new System.Drawing.Size(352, 197);
+            this.gbUsageInstructions.TabIndex = 3;
+            this.gbUsageInstructions.TabStop = false;
+            this.gbUsageInstructions.Text = "3. Patient Usage Instructions";
+            // 
+            // rtbUsageInstructions
+            // 
+            this.rtbUsageInstructions.Location = new System.Drawing.Point(6, 40);
+            this.rtbUsageInstructions.Name = "rtbUsageInstructions";
+            this.rtbUsageInstructions.Size = new System.Drawing.Size(340, 151);
+            this.rtbUsageInstructions.TabIndex = 0;
+            this.rtbUsageInstructions.Text = "";
+            // 
+            // gbPharmacistNote
+            // 
+            this.gbPharmacistNote.Controls.Add(this.rtbPharmacistNote);
+            this.gbPharmacistNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbPharmacistNote.Location = new System.Drawing.Point(489, 354);
+            this.gbPharmacistNote.Name = "gbPharmacistNote";
+            this.gbPharmacistNote.Size = new System.Drawing.Size(352, 155);
+            this.gbPharmacistNote.TabIndex = 4;
+            this.gbPharmacistNote.TabStop = false;
+            this.gbPharmacistNote.Text = "4. Note to Pharmacist";
+            // 
+            // rtbPharmacistNote
+            // 
+            this.rtbPharmacistNote.Location = new System.Drawing.Point(7, 28);
+            this.rtbPharmacistNote.Name = "rtbPharmacistNote";
+            this.rtbPharmacistNote.Size = new System.Drawing.Size(339, 121);
+            this.rtbPharmacistNote.TabIndex = 0;
+            this.rtbPharmacistNote.Text = "";
+            // 
+            // lblStockStatus
+            // 
+            this.lblStockStatus.AutoSize = true;
+            this.lblStockStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStockStatus.Location = new System.Drawing.Point(309, 58);
+            this.lblStockStatus.Name = "lblStockStatus";
+            this.lblStockStatus.Size = new System.Drawing.Size(132, 20);
+            this.lblStockStatus.TabIndex = 12;
+            this.lblStockStatus.Text = "Availability Status";
+            // 
+            // dialbl
+            // 
+            this.dialbl.AutoSize = true;
+            this.dialbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dialbl.Location = new System.Drawing.Point(32, 80);
+            this.dialbl.Name = "dialbl";
+            this.dialbl.Size = new System.Drawing.Size(139, 20);
+            this.dialbl.TabIndex = 6;
+            this.dialbl.Text = "Primary Diagnosis:";
+            // 
+            // txtPrimaryDiagnosis
+            // 
+            this.txtPrimaryDiagnosis.Location = new System.Drawing.Point(178, 80);
+            this.txtPrimaryDiagnosis.Name = "txtPrimaryDiagnosis";
+            this.txtPrimaryDiagnosis.ReadOnly = true;
+            this.txtPrimaryDiagnosis.Size = new System.Drawing.Size(100, 28);
+            this.txtPrimaryDiagnosis.TabIndex = 7;
+            // 
+            // btnSaveDraft
+            // 
+            this.btnSaveDraft.BackColor = System.Drawing.Color.Beige;
+            this.btnSaveDraft.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveDraft.Location = new System.Drawing.Point(507, 532);
+            this.btnSaveDraft.Name = "btnSaveDraft";
+            this.btnSaveDraft.Size = new System.Drawing.Size(97, 30);
+            this.btnSaveDraft.TabIndex = 5;
+            this.btnSaveDraft.Text = "Save Draft";
+            this.btnSaveDraft.UseVisualStyleBackColor = false;
+            // 
+            // btnSendPrescription
+            // 
+            this.btnSendPrescription.BackColor = System.Drawing.Color.White;
+            this.btnSendPrescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSendPrescription.Location = new System.Drawing.Point(668, 532);
+            this.btnSendPrescription.Name = "btnSendPrescription";
+            this.btnSendPrescription.Size = new System.Drawing.Size(145, 30);
+            this.btnSendPrescription.TabIndex = 6;
+            this.btnSendPrescription.Text = "Send Prescription";
+            this.btnSendPrescription.UseVisualStyleBackColor = false;
+            // 
             // Doctor
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -356,6 +688,12 @@
             this.tabPrescription.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.headpan.ResumeLayout(false);
+            this.gbPatientInfo.ResumeLayout(false);
+            this.gbPatientInfo.PerformLayout();
+            this.gbMedicationEntry.ResumeLayout(false);
+            this.gbMedicationEntry.PerformLayout();
+            this.gbUsageInstructions.ResumeLayout(false);
+            this.gbPharmacistNote.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -383,5 +721,34 @@
         private System.Windows.Forms.Button cancelappbtn;
         private System.Windows.Forms.TabPage tabcheckapp;
         private System.Windows.Forms.TabPage tabcancelapp;
+        private System.Windows.Forms.GroupBox gbPatientInfo;
+        private System.Windows.Forms.Label pnamelbl;
+        private System.Windows.Forms.TextBox txtSelectedName;
+        private System.Windows.Forms.TextBox txtSelectedID;
+        private System.Windows.Forms.Label idlbl;
+        private System.Windows.Forms.Label datelbl;
+        private System.Windows.Forms.DateTimePicker txtCurrentDate;
+        private System.Windows.Forms.GroupBox gbMedicationEntry;
+        private System.Windows.Forms.Label Selectmelbl;
+        private System.Windows.Forms.Label Quantitylbl;
+        private System.Windows.Forms.TextBox txtFrequency;
+        private System.Windows.Forms.Label Frequencylbl;
+        private System.Windows.Forms.TextBox txtDosage;
+        private System.Windows.Forms.Label Dosagelbl;
+        private System.Windows.Forms.ComboBox cbMedicineList;
+        private System.Windows.Forms.TextBox txtDiagnosisContext;
+        private System.Windows.Forms.Label DiagnosisLBL;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label Routelbl;
+        private System.Windows.Forms.TextBox txtQuantity;
+        private System.Windows.Forms.GroupBox gbUsageInstructions;
+        private System.Windows.Forms.RichTextBox rtbUsageInstructions;
+        private System.Windows.Forms.GroupBox gbPharmacistNote;
+        private System.Windows.Forms.RichTextBox rtbPharmacistNote;
+        private System.Windows.Forms.Label lblStockStatus;
+        private System.Windows.Forms.TextBox txtPrimaryDiagnosis;
+        private System.Windows.Forms.Label dialbl;
+        private System.Windows.Forms.Button btnSendPrescription;
+        private System.Windows.Forms.Button btnSaveDraft;
     }
 }

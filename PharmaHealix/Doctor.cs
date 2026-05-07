@@ -47,5 +47,10 @@ namespace PharmaHealix
         {
             tabControl1.SelectedTab = tabAvailability;
         }
+
+        private void headpan_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

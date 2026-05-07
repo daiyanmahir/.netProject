@@ -37,16 +37,20 @@
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPrescription = new System.Windows.Forms.TabPage();
-            this.tabRecords = new System.Windows.Forms.TabPage();
-            this.tabAvailability = new System.Windows.Forms.TabPage();
-            this.tabReports = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabRecords = new System.Windows.Forms.TabPage();
+            this.tabAvailability = new System.Windows.Forms.TabPage();
+            this.tabReports = new System.Windows.Forms.TabPage();
+            this.headpan = new System.Windows.Forms.Panel();
+            this.medilogobtn = new System.Windows.Forms.Button();
+            this.Exitbtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPrescription.SuspendLayout();
             this.tabControl2.SuspendLayout();
+            this.headpan.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -57,9 +61,9 @@
             this.panel1.Controls.Add(this.medbtn);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 110);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(236, 447);
+            this.panel1.Size = new System.Drawing.Size(341, 651);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -84,7 +88,7 @@
             this.reportsbtn.Location = new System.Drawing.Point(12, 335);
             this.reportsbtn.Name = "reportsbtn";
             this.reportsbtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.reportsbtn.Size = new System.Drawing.Size(212, 43);
+            this.reportsbtn.Size = new System.Drawing.Size(305, 43);
             this.reportsbtn.TabIndex = 4;
             this.reportsbtn.Text = "       Reports";
             this.reportsbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -102,7 +106,7 @@
             this.medbtn.Location = new System.Drawing.Point(12, 276);
             this.medbtn.Name = "medbtn";
             this.medbtn.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.medbtn.Size = new System.Drawing.Size(212, 43);
+            this.medbtn.Size = new System.Drawing.Size(305, 43);
             this.medbtn.TabIndex = 3;
             this.medbtn.Text = "       Medicine Availability";
             this.medbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -120,7 +124,7 @@
             this.button2.Location = new System.Drawing.Point(12, 216);
             this.button2.Name = "button2";
             this.button2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(212, 43);
+            this.button2.Size = new System.Drawing.Size(305, 43);
             this.button2.TabIndex = 2;
             this.button2.Text = "       Patient Records";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -138,7 +142,7 @@
             this.button1.Location = new System.Drawing.Point(12, 158);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(212, 43);
+            this.button1.Size = new System.Drawing.Size(305, 43);
             this.button1.TabIndex = 1;
             this.button1.Text = "        Create Prescription";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -153,10 +157,10 @@
             this.tabControl1.Controls.Add(this.tabAvailability);
             this.tabControl1.Controls.Add(this.tabReports);
             this.tabControl1.ItemSize = new System.Drawing.Size(0, 1);
-            this.tabControl1.Location = new System.Drawing.Point(242, 12);
+            this.tabControl1.Location = new System.Drawing.Point(343, 110);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(530, 424);
+            this.tabControl1.Size = new System.Drawing.Size(855, 638);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 1;
             // 
@@ -167,9 +171,39 @@
             this.tabPrescription.Location = new System.Drawing.Point(4, 5);
             this.tabPrescription.Name = "tabPrescription";
             this.tabPrescription.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPrescription.Size = new System.Drawing.Size(522, 415);
+            this.tabPrescription.Size = new System.Drawing.Size(847, 629);
             this.tabPrescription.TabIndex = 0;
             this.tabPrescription.Text = "Prescription";
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabPage1);
+            this.tabControl2.Controls.Add(this.tabPage2);
+            this.tabControl2.Location = new System.Drawing.Point(489, 93);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(0, 0);
+            this.tabControl2.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(0, 0);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(0, 0);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabRecords
             // 
@@ -201,41 +235,51 @@
             this.tabReports.TabIndex = 3;
             this.tabReports.Text = "Reports";
             // 
-            // tabControl2
+            // headpan
             // 
-            this.tabControl2.Controls.Add(this.tabPage1);
-            this.tabControl2.Controls.Add(this.tabPage2);
-            this.tabControl2.Location = new System.Drawing.Point(489, 93);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(0, 0);
-            this.tabControl2.TabIndex = 0;
+            this.headpan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
+            this.headpan.Controls.Add(this.medilogobtn);
+            this.headpan.Controls.Add(this.Exitbtn);
+            this.headpan.Location = new System.Drawing.Point(0, 0);
+            this.headpan.Name = "headpan";
+            this.headpan.Size = new System.Drawing.Size(1200, 110);
+            this.headpan.TabIndex = 2;
+            this.headpan.Paint += new System.Windows.Forms.PaintEventHandler(this.headpan_Paint);
             // 
-            // tabPage1
+            // medilogobtn
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(0, 0);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.medilogobtn.BackColor = System.Drawing.Color.Transparent;
+            this.medilogobtn.BackgroundImage = global::PharmaHealix.Properties.Resources.PharmaHealixLogo;
+            this.medilogobtn.FlatAppearance.BorderSize = 0;
+            this.medilogobtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
+            this.medilogobtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.medilogobtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.medilogobtn.Location = new System.Drawing.Point(1, -19);
+            this.medilogobtn.Name = "medilogobtn";
+            this.medilogobtn.Size = new System.Drawing.Size(156, 129);
+            this.medilogobtn.TabIndex = 20;
+            this.medilogobtn.UseVisualStyleBackColor = false;
             // 
-            // tabPage2
+            // Exitbtn
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(192, 74);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.Exitbtn.BackColor = System.Drawing.Color.White;
+            this.Exitbtn.FlatAppearance.BorderSize = 0;
+            this.Exitbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.Exitbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
+            this.Exitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Exitbtn.Location = new System.Drawing.Point(1138, 9);
+            this.Exitbtn.Name = "Exitbtn";
+            this.Exitbtn.Size = new System.Drawing.Size(50, 30);
+            this.Exitbtn.TabIndex = 2;
+            this.Exitbtn.Text = "X";
+            this.Exitbtn.UseVisualStyleBackColor = false;
             // 
             // Doctor
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::PharmaHealix.Properties.Resources.BackgroundImage1;
             this.ClientSize = new System.Drawing.Size(1200, 750);
+            this.Controls.Add(this.headpan);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -249,6 +293,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPrescription.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
+            this.headpan.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -269,5 +314,8 @@
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Panel headpan;
+        private System.Windows.Forms.Button medilogobtn;
+        private System.Windows.Forms.Button Exitbtn;
     }
 }

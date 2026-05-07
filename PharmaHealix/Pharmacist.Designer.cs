@@ -198,6 +198,7 @@
             // pharmacistprofilepan
             // 
             this.pharmacistprofilepan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
+            this.pharmacistprofilepan.BackgroundImage = global::PharmaHealix.Properties.Resources.BackgroundImage;
             this.pharmacistprofilepan.Controls.Add(this.panel5);
             this.pharmacistprofilepan.Controls.Add(this.panel6);
             this.pharmacistprofilepan.Controls.Add(this.panel7);
@@ -340,7 +341,7 @@
             // errorphonepan
             // 
             this.errorphonepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
-            this.errorphonepan.Location = new System.Drawing.Point(899, 173);
+            this.errorphonepan.Location = new System.Drawing.Point(899, 168);
             this.errorphonepan.Name = "errorphonepan";
             this.errorphonepan.Size = new System.Drawing.Size(30, 30);
             this.errorphonepan.TabIndex = 33;
@@ -349,7 +350,7 @@
             // erroranspan
             // 
             this.erroranspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
-            this.erroranspan.Location = new System.Drawing.Point(899, 360);
+            this.erroranspan.Location = new System.Drawing.Point(899, 364);
             this.erroranspan.Name = "erroranspan";
             this.erroranspan.Size = new System.Drawing.Size(30, 30);
             this.erroranspan.TabIndex = 33;
@@ -358,7 +359,7 @@
             // erroraddpan
             // 
             this.erroraddpan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
-            this.erroraddpan.Location = new System.Drawing.Point(473, 452);
+            this.erroraddpan.Location = new System.Drawing.Point(473, 448);
             this.erroraddpan.Name = "erroraddpan";
             this.erroraddpan.Size = new System.Drawing.Size(30, 30);
             this.erroraddpan.TabIndex = 33;
@@ -367,7 +368,7 @@
             // errorpasspan
             // 
             this.errorpasspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
-            this.errorpasspan.Location = new System.Drawing.Point(899, 277);
+            this.errorpasspan.Location = new System.Drawing.Point(899, 272);
             this.errorpasspan.Name = "errorpasspan";
             this.errorpasspan.Size = new System.Drawing.Size(30, 30);
             this.errorpasspan.TabIndex = 33;
@@ -376,7 +377,7 @@
             // errorusernamepan
             // 
             this.errorusernamepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
-            this.errorusernamepan.Location = new System.Drawing.Point(472, 277);
+            this.errorusernamepan.Location = new System.Drawing.Point(472, 273);
             this.errorusernamepan.Name = "errorusernamepan";
             this.errorusernamepan.Size = new System.Drawing.Size(30, 30);
             this.errorusernamepan.TabIndex = 33;
@@ -385,7 +386,7 @@
             // errorpharmacistnamepan
             // 
             this.errorpharmacistnamepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
-            this.errorpharmacistnamepan.Location = new System.Drawing.Point(472, 173);
+            this.errorpharmacistnamepan.Location = new System.Drawing.Point(472, 168);
             this.errorpharmacistnamepan.Name = "errorpharmacistnamepan";
             this.errorpharmacistnamepan.Size = new System.Drawing.Size(30, 30);
             this.errorpharmacistnamepan.TabIndex = 32;

@@ -79,6 +79,27 @@
             this.headpan = new System.Windows.Forms.Panel();
             this.medilogobtn = new System.Windows.Forms.Button();
             this.Exitbtn = new System.Windows.Forms.Button();
+            this.gbSearch = new System.Windows.Forms.GroupBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.snamelbl = new System.Windows.Forms.Label();
+            this.txtSearchPatient = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnClearSearch = new System.Windows.Forms.Button();
+            this.gbDirectory = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gbPatientDetails = new System.Windows.Forms.GroupBox();
+            this.fnamelbl = new System.Windows.Forms.Label();
+            this.txtPatientName = new System.Windows.Forms.TextBox();
+            this.patientidlbl = new System.Windows.Forms.Label();
+            this.txtPatientID = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtContact = new System.Windows.Forms.TextBox();
+            this.mhslbl = new System.Windows.Forms.Label();
+            this.rtbMedicalHistory = new System.Windows.Forms.RichTextBox();
+            this.gbDiagnosisHistory = new System.Windows.Forms.GroupBox();
+            this.rtbHistoryNotes = new System.Windows.Forms.RichTextBox();
+            this.btnUpdateRecord = new System.Windows.Forms.Button();
+            this.btnRemoveRecord = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPrescription.SuspendLayout();
@@ -87,7 +108,13 @@
             this.gbMedicationEntry.SuspendLayout();
             this.gbPatientInfo.SuspendLayout();
             this.tabControl2.SuspendLayout();
+            this.tabRecords.SuspendLayout();
             this.headpan.SuspendLayout();
+            this.gbSearch.SuspendLayout();
+            this.gbDirectory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.gbPatientDetails.SuspendLayout();
+            this.gbDiagnosisHistory.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -582,6 +609,12 @@
             // tabRecords
             // 
             this.tabRecords.BackColor = System.Drawing.Color.Transparent;
+            this.tabRecords.Controls.Add(this.btnRemoveRecord);
+            this.tabRecords.Controls.Add(this.btnUpdateRecord);
+            this.tabRecords.Controls.Add(this.gbDiagnosisHistory);
+            this.tabRecords.Controls.Add(this.gbPatientDetails);
+            this.tabRecords.Controls.Add(this.gbDirectory);
+            this.tabRecords.Controls.Add(this.gbSearch);
             this.tabRecords.Location = new System.Drawing.Point(4, 19);
             this.tabRecords.Name = "tabRecords";
             this.tabRecords.Padding = new System.Windows.Forms.Padding(3);
@@ -668,6 +701,210 @@
             this.Exitbtn.Text = "X";
             this.Exitbtn.UseVisualStyleBackColor = false;
             // 
+            // gbSearch
+            // 
+            this.gbSearch.Controls.Add(this.btnClearSearch);
+            this.gbSearch.Controls.Add(this.btnSearch);
+            this.gbSearch.Controls.Add(this.txtSearchPatient);
+            this.gbSearch.Controls.Add(this.snamelbl);
+            this.gbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbSearch.Location = new System.Drawing.Point(6, 3);
+            this.gbSearch.Name = "gbSearch";
+            this.gbSearch.Size = new System.Drawing.Size(529, 83);
+            this.gbSearch.TabIndex = 0;
+            this.gbSearch.TabStop = false;
+            this.gbSearch.Text = "1. Search Patient Directory";
+            // 
+            // snamelbl
+            // 
+            this.snamelbl.AutoSize = true;
+            this.snamelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.snamelbl.Location = new System.Drawing.Point(6, 33);
+            this.snamelbl.Name = "snamelbl";
+            this.snamelbl.Size = new System.Drawing.Size(151, 20);
+            this.snamelbl.TabIndex = 0;
+            this.snamelbl.Text = "Search by Name/ID:";
+            // 
+            // txtSearchPatient
+            // 
+            this.txtSearchPatient.Location = new System.Drawing.Point(163, 33);
+            this.txtSearchPatient.Name = "txtSearchPatient";
+            this.txtSearchPatient.Size = new System.Drawing.Size(100, 28);
+            this.txtSearchPatient.TabIndex = 1;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.Olive;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(269, 27);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(94, 34);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            // 
+            // btnClearSearch
+            // 
+            this.btnClearSearch.BackColor = System.Drawing.Color.Olive;
+            this.btnClearSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearSearch.Location = new System.Drawing.Point(369, 26);
+            this.btnClearSearch.Name = "btnClearSearch";
+            this.btnClearSearch.Size = new System.Drawing.Size(141, 34);
+            this.btnClearSearch.TabIndex = 3;
+            this.btnClearSearch.Text = "Clear Search";
+            this.btnClearSearch.UseVisualStyleBackColor = false;
+            // 
+            // gbDirectory
+            // 
+            this.gbDirectory.Controls.Add(this.dataGridView1);
+            this.gbDirectory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbDirectory.Location = new System.Drawing.Point(7, 92);
+            this.gbDirectory.Name = "gbDirectory";
+            this.gbDirectory.Size = new System.Drawing.Size(528, 385);
+            this.gbDirectory.TabIndex = 1;
+            this.gbDirectory.TabStop = false;
+            this.gbDirectory.Text = "2. Assigned Patients";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 27);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(516, 342);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // gbPatientDetails
+            // 
+            this.gbPatientDetails.Controls.Add(this.rtbMedicalHistory);
+            this.gbPatientDetails.Controls.Add(this.mhslbl);
+            this.gbPatientDetails.Controls.Add(this.txtContact);
+            this.gbPatientDetails.Controls.Add(this.label2);
+            this.gbPatientDetails.Controls.Add(this.txtPatientID);
+            this.gbPatientDetails.Controls.Add(this.patientidlbl);
+            this.gbPatientDetails.Controls.Add(this.txtPatientName);
+            this.gbPatientDetails.Controls.Add(this.fnamelbl);
+            this.gbPatientDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbPatientDetails.Location = new System.Drawing.Point(541, 6);
+            this.gbPatientDetails.Name = "gbPatientDetails";
+            this.gbPatientDetails.Size = new System.Drawing.Size(300, 334);
+            this.gbPatientDetails.TabIndex = 2;
+            this.gbPatientDetails.TabStop = false;
+            this.gbPatientDetails.Text = "3. Update Patient Information";
+            // 
+            // fnamelbl
+            // 
+            this.fnamelbl.AutoSize = true;
+            this.fnamelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fnamelbl.Location = new System.Drawing.Point(7, 37);
+            this.fnamelbl.Name = "fnamelbl";
+            this.fnamelbl.Size = new System.Drawing.Size(84, 20);
+            this.fnamelbl.TabIndex = 0;
+            this.fnamelbl.Text = "Full Name:";
+            // 
+            // txtPatientName
+            // 
+            this.txtPatientName.Location = new System.Drawing.Point(142, 37);
+            this.txtPatientName.Name = "txtPatientName";
+            this.txtPatientName.Size = new System.Drawing.Size(100, 28);
+            this.txtPatientName.TabIndex = 1;
+            // 
+            // patientidlbl
+            // 
+            this.patientidlbl.AutoSize = true;
+            this.patientidlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patientidlbl.Location = new System.Drawing.Point(7, 95);
+            this.patientidlbl.Name = "patientidlbl";
+            this.patientidlbl.Size = new System.Drawing.Size(84, 20);
+            this.patientidlbl.TabIndex = 2;
+            this.patientidlbl.Text = "Patient ID:";
+            // 
+            // txtPatientID
+            // 
+            this.txtPatientID.Location = new System.Drawing.Point(142, 95);
+            this.txtPatientID.Name = "txtPatientID";
+            this.txtPatientID.ReadOnly = true;
+            this.txtPatientID.Size = new System.Drawing.Size(100, 28);
+            this.txtPatientID.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(7, 156);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(129, 20);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Contact Number:";
+            // 
+            // txtContact
+            // 
+            this.txtContact.Location = new System.Drawing.Point(142, 156);
+            this.txtContact.Name = "txtContact";
+            this.txtContact.Size = new System.Drawing.Size(100, 28);
+            this.txtContact.TabIndex = 5;
+            // 
+            // mhslbl
+            // 
+            this.mhslbl.AutoSize = true;
+            this.mhslbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mhslbl.Location = new System.Drawing.Point(7, 206);
+            this.mhslbl.Name = "mhslbl";
+            this.mhslbl.Size = new System.Drawing.Size(191, 20);
+            this.mhslbl.TabIndex = 6;
+            this.mhslbl.Text = "Medical History Summary:";
+            // 
+            // rtbMedicalHistory
+            // 
+            this.rtbMedicalHistory.Location = new System.Drawing.Point(11, 230);
+            this.rtbMedicalHistory.Name = "rtbMedicalHistory";
+            this.rtbMedicalHistory.Size = new System.Drawing.Size(283, 96);
+            this.rtbMedicalHistory.TabIndex = 7;
+            this.rtbMedicalHistory.Text = "";
+            // 
+            // gbDiagnosisHistory
+            // 
+            this.gbDiagnosisHistory.Controls.Add(this.rtbHistoryNotes);
+            this.gbDiagnosisHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbDiagnosisHistory.Location = new System.Drawing.Point(541, 347);
+            this.gbDiagnosisHistory.Name = "gbDiagnosisHistory";
+            this.gbDiagnosisHistory.Size = new System.Drawing.Size(300, 207);
+            this.gbDiagnosisHistory.TabIndex = 3;
+            this.gbDiagnosisHistory.TabStop = false;
+            this.gbDiagnosisHistory.Text = "4. Diagnosis Notes, History";
+            // 
+            // rtbHistoryNotes
+            // 
+            this.rtbHistoryNotes.Location = new System.Drawing.Point(9, 28);
+            this.rtbHistoryNotes.Name = "rtbHistoryNotes";
+            this.rtbHistoryNotes.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.rtbHistoryNotes.Size = new System.Drawing.Size(283, 173);
+            this.rtbHistoryNotes.TabIndex = 8;
+            this.rtbHistoryNotes.Text = "";
+            // 
+            // btnUpdateRecord
+            // 
+            this.btnUpdateRecord.BackColor = System.Drawing.Color.Olive;
+            this.btnUpdateRecord.Location = new System.Drawing.Point(41, 524);
+            this.btnUpdateRecord.Name = "btnUpdateRecord";
+            this.btnUpdateRecord.Size = new System.Drawing.Size(170, 39);
+            this.btnUpdateRecord.TabIndex = 4;
+            this.btnUpdateRecord.Text = "Save Changes";
+            this.btnUpdateRecord.UseVisualStyleBackColor = false;
+            // 
+            // btnRemoveRecord
+            // 
+            this.btnRemoveRecord.BackColor = System.Drawing.Color.Olive;
+            this.btnRemoveRecord.Location = new System.Drawing.Point(263, 524);
+            this.btnRemoveRecord.Name = "btnRemoveRecord";
+            this.btnRemoveRecord.Size = new System.Drawing.Size(195, 39);
+            this.btnRemoveRecord.TabIndex = 5;
+            this.btnRemoveRecord.Text = "Remove From My List";
+            this.btnRemoveRecord.UseVisualStyleBackColor = false;
+            // 
             // Doctor
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -693,7 +930,15 @@
             this.gbPatientInfo.ResumeLayout(false);
             this.gbPatientInfo.PerformLayout();
             this.tabControl2.ResumeLayout(false);
+            this.tabRecords.ResumeLayout(false);
             this.headpan.ResumeLayout(false);
+            this.gbSearch.ResumeLayout(false);
+            this.gbSearch.PerformLayout();
+            this.gbDirectory.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.gbPatientDetails.ResumeLayout(false);
+            this.gbPatientDetails.PerformLayout();
+            this.gbDiagnosisHistory.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -750,5 +995,26 @@
         private System.Windows.Forms.Label dialbl;
         private System.Windows.Forms.Button btnSendPrescription;
         private System.Windows.Forms.Button btnSaveDraft;
+        private System.Windows.Forms.GroupBox gbSearch;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtSearchPatient;
+        private System.Windows.Forms.Label snamelbl;
+        private System.Windows.Forms.GroupBox gbDirectory;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnClearSearch;
+        private System.Windows.Forms.GroupBox gbPatientDetails;
+        private System.Windows.Forms.Label mhslbl;
+        private System.Windows.Forms.TextBox txtContact;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtPatientID;
+        private System.Windows.Forms.Label patientidlbl;
+        private System.Windows.Forms.TextBox txtPatientName;
+        private System.Windows.Forms.Label fnamelbl;
+        private System.Windows.Forms.GroupBox gbDiagnosisHistory;
+        private System.Windows.Forms.RichTextBox rtbHistoryNotes;
+        private System.Windows.Forms.RichTextBox rtbMedicalHistory;
+        private System.Windows.Forms.Button btnUpdateRecord;
+        private System.Windows.Forms.Button btnRemoveRecord;
     }
 }

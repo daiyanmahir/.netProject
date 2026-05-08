@@ -172,11 +172,29 @@
     <Compile Include="Doctor.Designer.cs">
       <DependentUpon>Doctor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin.cs">
+    <Compile Include="AdminUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin.Designer.cs">
-      <DependentUpon>Admin.cs</DependentUpon>
+    <Compile Include="AdminUserForm.Designer.cs">
+      <DependentUpon>AdminUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPatientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPatientForm.Designer.cs">
+      <DependentUpon>AdminPatientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminInventoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminInventoryForm.Designer.cs">
+      <DependentUpon>AdminInventoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminAppointmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminAppointmentForm.Designer.cs">
+      <DependentUpon>AdminAppointmentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -198,11 +216,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdminAppointmentForm.resx">
+      <DependentUpon>AdminAppointmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminInventoryForm.resx">
+      <DependentUpon>AdminInventoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPatientForm.resx">
+      <DependentUpon>AdminPatientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminUserForm.resx">
+      <DependentUpon>AdminUserForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateAccount.resx">
       <DependentUpon>CreateAccount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin.resx">
-      <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctor.resx">
       <DependentUpon>Doctor.cs</DependentUpon>

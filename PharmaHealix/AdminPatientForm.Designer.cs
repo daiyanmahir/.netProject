@@ -89,12 +89,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1178, 644);
+            this.ClientSize = new System.Drawing.Size(1178, 694);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnAppointment);
             this.Controls.Add(this.btnInventory);
             this.Controls.Add(this.btnPatient);
             this.Controls.Add(this.btnUser);
+            this.Location = new System.Drawing.Point(0, 72);
             this.Name = "AdminPatientForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin - Patients";

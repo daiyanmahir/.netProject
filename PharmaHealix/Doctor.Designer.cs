@@ -758,9 +758,9 @@
             // 
             this.gbDirectory.Controls.Add(this.dataGridView1);
             this.gbDirectory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbDirectory.Location = new System.Drawing.Point(7, 92);
+            this.gbDirectory.Location = new System.Drawing.Point(7, 101);
             this.gbDirectory.Name = "gbDirectory";
-            this.gbDirectory.Size = new System.Drawing.Size(528, 385);
+            this.gbDirectory.Size = new System.Drawing.Size(528, 389);
             this.gbDirectory.TabIndex = 1;
             this.gbDirectory.TabStop = false;
             this.gbDirectory.Text = "2. Assigned Patients";
@@ -774,7 +774,7 @@
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(516, 342);
+            this.dataGridView1.Size = new System.Drawing.Size(516, 343);
             this.dataGridView1.TabIndex = 0;
             // 
             // gbPatientDetails
@@ -869,7 +869,7 @@
             // 
             this.gbDiagnosisHistory.Controls.Add(this.rtbHistoryNotes);
             this.gbDiagnosisHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbDiagnosisHistory.Location = new System.Drawing.Point(541, 347);
+            this.gbDiagnosisHistory.Location = new System.Drawing.Point(541, 356);
             this.gbDiagnosisHistory.Name = "gbDiagnosisHistory";
             this.gbDiagnosisHistory.Size = new System.Drawing.Size(300, 207);
             this.gbDiagnosisHistory.TabIndex = 3;

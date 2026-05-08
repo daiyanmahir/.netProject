@@ -52,5 +52,10 @@ namespace PharmaHealix
         {
 
         }
+
+        private void tabAvailability_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

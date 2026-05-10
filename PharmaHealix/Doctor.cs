@@ -57,5 +57,10 @@ namespace PharmaHealix
         {
 
         }
+
+        private void dgvAppointments_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

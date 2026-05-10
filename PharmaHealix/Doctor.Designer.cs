@@ -93,30 +93,28 @@
             this.txtSearchPatient = new System.Windows.Forms.TextBox();
             this.snamelbl = new System.Windows.Forms.Label();
             this.tabAvailability = new System.Windows.Forms.TabPage();
-            this.tabReports = new System.Windows.Forms.TabPage();
+            this.btnSwitchToPrescription = new System.Windows.Forms.Button();
+            this.btnRefreshStock = new System.Windows.Forms.Button();
+            this.gbMedInfo = new System.Windows.Forms.GroupBox();
+            this.txtLocation = new System.Windows.Forms.TextBox();
+            this.txtStrength = new System.Windows.Forms.TextBox();
+            this.Shelflbl = new System.Windows.Forms.Label();
+            this.Strengthlbl = new System.Windows.Forms.Label();
+            this.txtGenericName = new System.Windows.Forms.TextBox();
+            this.genericlbl = new System.Windows.Forms.Label();
+            this.gbStockView = new System.Windows.Forms.GroupBox();
+            this.dgvInventory = new System.Windows.Forms.DataGridView();
+            this.gbInventorySearch = new System.Windows.Forms.GroupBox();
+            this.btnStockSearch = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.categorylbl = new System.Windows.Forms.Label();
+            this.txtSearchMedicine = new System.Windows.Forms.TextBox();
+            this.snilbl = new System.Windows.Forms.Label();
             this.tabcheckapp = new System.Windows.Forms.TabPage();
-            this.tabcancelapp = new System.Windows.Forms.TabPage();
             this.headpan = new System.Windows.Forms.Panel();
             this.medilogobtn = new System.Windows.Forms.Button();
             this.Exitbtn = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.gbInventorySearch = new System.Windows.Forms.GroupBox();
-            this.snilbl = new System.Windows.Forms.Label();
-            this.txtSearchMedicine = new System.Windows.Forms.TextBox();
-            this.categorylbl = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnStockSearch = new System.Windows.Forms.Button();
-            this.gbStockView = new System.Windows.Forms.GroupBox();
-            this.dgvInventory = new System.Windows.Forms.DataGridView();
-            this.gbMedInfo = new System.Windows.Forms.GroupBox();
-            this.genericlbl = new System.Windows.Forms.Label();
-            this.txtGenericName = new System.Windows.Forms.TextBox();
-            this.Strengthlbl = new System.Windows.Forms.Label();
-            this.Shelflbl = new System.Windows.Forms.Label();
-            this.txtStrength = new System.Windows.Forms.TextBox();
-            this.txtLocation = new System.Windows.Forms.TextBox();
-            this.btnRefreshStock = new System.Windows.Forms.Button();
-            this.btnSwitchToPrescription = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPrescription.SuspendLayout();
@@ -132,11 +130,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbSearch.SuspendLayout();
             this.tabAvailability.SuspendLayout();
-            this.headpan.SuspendLayout();
-            this.gbInventorySearch.SuspendLayout();
+            this.gbMedInfo.SuspendLayout();
             this.gbStockView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
-            this.gbMedInfo.SuspendLayout();
+            this.gbInventorySearch.SuspendLayout();
+            this.headpan.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -277,9 +275,7 @@
             this.tabControl1.Controls.Add(this.tabPrescription);
             this.tabControl1.Controls.Add(this.tabRecords);
             this.tabControl1.Controls.Add(this.tabAvailability);
-            this.tabControl1.Controls.Add(this.tabReports);
             this.tabControl1.Controls.Add(this.tabcheckapp);
-            this.tabControl1.Controls.Add(this.tabcancelapp);
             this.tabControl1.ItemSize = new System.Drawing.Size(30, 15);
             this.tabControl1.Location = new System.Drawing.Point(343, 110);
             this.tabControl1.Name = "tabControl1";
@@ -864,15 +860,183 @@
             this.tabAvailability.Text = "Availability";
             this.tabAvailability.Click += new System.EventHandler(this.tabAvailability_Click);
             // 
-            // tabReports
+            // btnSwitchToPrescription
             // 
-            this.tabReports.BackColor = System.Drawing.Color.Transparent;
-            this.tabReports.Location = new System.Drawing.Point(4, 19);
-            this.tabReports.Name = "tabReports";
-            this.tabReports.Padding = new System.Windows.Forms.Padding(3);
-            this.tabReports.Size = new System.Drawing.Size(847, 615);
-            this.tabReports.TabIndex = 3;
-            this.tabReports.Text = "Reports";
+            this.btnSwitchToPrescription.BackColor = System.Drawing.Color.Olive;
+            this.btnSwitchToPrescription.Location = new System.Drawing.Point(287, 522);
+            this.btnSwitchToPrescription.Name = "btnSwitchToPrescription";
+            this.btnSwitchToPrescription.Size = new System.Drawing.Size(245, 45);
+            this.btnSwitchToPrescription.TabIndex = 4;
+            this.btnSwitchToPrescription.Text = "Prescribe Selected";
+            this.btnSwitchToPrescription.UseVisualStyleBackColor = false;
+            // 
+            // btnRefreshStock
+            // 
+            this.btnRefreshStock.BackColor = System.Drawing.Color.Olive;
+            this.btnRefreshStock.Location = new System.Drawing.Point(46, 522);
+            this.btnRefreshStock.Name = "btnRefreshStock";
+            this.btnRefreshStock.Size = new System.Drawing.Size(194, 45);
+            this.btnRefreshStock.TabIndex = 3;
+            this.btnRefreshStock.Text = "Refresh Stock List";
+            this.btnRefreshStock.UseVisualStyleBackColor = false;
+            // 
+            // gbMedInfo
+            // 
+            this.gbMedInfo.Controls.Add(this.txtLocation);
+            this.gbMedInfo.Controls.Add(this.txtStrength);
+            this.gbMedInfo.Controls.Add(this.Shelflbl);
+            this.gbMedInfo.Controls.Add(this.Strengthlbl);
+            this.gbMedInfo.Controls.Add(this.txtGenericName);
+            this.gbMedInfo.Controls.Add(this.genericlbl);
+            this.gbMedInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbMedInfo.Location = new System.Drawing.Point(523, 125);
+            this.gbMedInfo.Name = "gbMedInfo";
+            this.gbMedInfo.Size = new System.Drawing.Size(318, 352);
+            this.gbMedInfo.TabIndex = 2;
+            this.gbMedInfo.TabStop = false;
+            this.gbMedInfo.Text = "3. Selected Medicine Details";
+            // 
+            // txtLocation
+            // 
+            this.txtLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLocation.Location = new System.Drawing.Point(142, 163);
+            this.txtLocation.Name = "txtLocation";
+            this.txtLocation.ReadOnly = true;
+            this.txtLocation.Size = new System.Drawing.Size(100, 26);
+            this.txtLocation.TabIndex = 5;
+            // 
+            // txtStrength
+            // 
+            this.txtStrength.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStrength.Location = new System.Drawing.Point(142, 105);
+            this.txtStrength.Name = "txtStrength";
+            this.txtStrength.ReadOnly = true;
+            this.txtStrength.Size = new System.Drawing.Size(100, 26);
+            this.txtStrength.TabIndex = 4;
+            // 
+            // Shelflbl
+            // 
+            this.Shelflbl.AutoSize = true;
+            this.Shelflbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Shelflbl.Location = new System.Drawing.Point(6, 169);
+            this.Shelflbl.Name = "Shelflbl";
+            this.Shelflbl.Size = new System.Drawing.Size(115, 20);
+            this.Shelflbl.TabIndex = 3;
+            this.Shelflbl.Text = "Shelf Location:";
+            // 
+            // Strengthlbl
+            // 
+            this.Strengthlbl.AutoSize = true;
+            this.Strengthlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Strengthlbl.Location = new System.Drawing.Point(6, 105);
+            this.Strengthlbl.Name = "Strengthlbl";
+            this.Strengthlbl.Size = new System.Drawing.Size(75, 20);
+            this.Strengthlbl.TabIndex = 2;
+            this.Strengthlbl.Text = "Strength:";
+            // 
+            // txtGenericName
+            // 
+            this.txtGenericName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGenericName.Location = new System.Drawing.Point(142, 40);
+            this.txtGenericName.Name = "txtGenericName";
+            this.txtGenericName.ReadOnly = true;
+            this.txtGenericName.Size = new System.Drawing.Size(100, 26);
+            this.txtGenericName.TabIndex = 1;
+            // 
+            // genericlbl
+            // 
+            this.genericlbl.AutoSize = true;
+            this.genericlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genericlbl.Location = new System.Drawing.Point(6, 40);
+            this.genericlbl.Name = "genericlbl";
+            this.genericlbl.Size = new System.Drawing.Size(115, 20);
+            this.genericlbl.TabIndex = 0;
+            this.genericlbl.Text = "Generic Name:";
+            // 
+            // gbStockView
+            // 
+            this.gbStockView.Controls.Add(this.dgvInventory);
+            this.gbStockView.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbStockView.Location = new System.Drawing.Point(7, 125);
+            this.gbStockView.Name = "gbStockView";
+            this.gbStockView.Size = new System.Drawing.Size(510, 352);
+            this.gbStockView.TabIndex = 1;
+            this.gbStockView.TabStop = false;
+            this.gbStockView.Text = "2. Current Medicine Availability";
+            // 
+            // dgvInventory
+            // 
+            this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInventory.Location = new System.Drawing.Point(10, 40);
+            this.dgvInventory.Name = "dgvInventory";
+            this.dgvInventory.RowHeadersWidth = 62;
+            this.dgvInventory.RowTemplate.Height = 28;
+            this.dgvInventory.Size = new System.Drawing.Size(483, 292);
+            this.dgvInventory.TabIndex = 0;
+            // 
+            // gbInventorySearch
+            // 
+            this.gbInventorySearch.Controls.Add(this.btnStockSearch);
+            this.gbInventorySearch.Controls.Add(this.comboBox1);
+            this.gbInventorySearch.Controls.Add(this.categorylbl);
+            this.gbInventorySearch.Controls.Add(this.txtSearchMedicine);
+            this.gbInventorySearch.Controls.Add(this.snilbl);
+            this.gbInventorySearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbInventorySearch.Location = new System.Drawing.Point(7, 7);
+            this.gbInventorySearch.Name = "gbInventorySearch";
+            this.gbInventorySearch.Size = new System.Drawing.Size(834, 100);
+            this.gbInventorySearch.TabIndex = 0;
+            this.gbInventorySearch.TabStop = false;
+            this.gbInventorySearch.Text = "1. Search Medicine Stock";
+            // 
+            // btnStockSearch
+            // 
+            this.btnStockSearch.BackColor = System.Drawing.Color.Olive;
+            this.btnStockSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStockSearch.Location = new System.Drawing.Point(647, 34);
+            this.btnStockSearch.Name = "btnStockSearch";
+            this.btnStockSearch.Size = new System.Drawing.Size(149, 40);
+            this.btnStockSearch.TabIndex = 4;
+            this.btnStockSearch.Text = "Stock Search";
+            this.btnStockSearch.UseVisualStyleBackColor = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Antibiotics",
+            "Analgesics"});
+            this.comboBox1.Location = new System.Drawing.Point(370, 37);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(230, 30);
+            this.comboBox1.TabIndex = 3;
+            // 
+            // categorylbl
+            // 
+            this.categorylbl.AutoSize = true;
+            this.categorylbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categorylbl.Location = new System.Drawing.Point(276, 39);
+            this.categorylbl.Name = "categorylbl";
+            this.categorylbl.Size = new System.Drawing.Size(77, 20);
+            this.categorylbl.TabIndex = 2;
+            this.categorylbl.Text = "Category:";
+            // 
+            // txtSearchMedicine
+            // 
+            this.txtSearchMedicine.Location = new System.Drawing.Point(144, 39);
+            this.txtSearchMedicine.Name = "txtSearchMedicine";
+            this.txtSearchMedicine.Size = new System.Drawing.Size(100, 28);
+            this.txtSearchMedicine.TabIndex = 1;
+            // 
+            // snilbl
+            // 
+            this.snilbl.AutoSize = true;
+            this.snilbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.snilbl.Location = new System.Drawing.Point(6, 39);
+            this.snilbl.Name = "snilbl";
+            this.snilbl.Size = new System.Drawing.Size(131, 20);
+            this.snilbl.TabIndex = 0;
+            this.snilbl.Text = "Search Name/ID:";
             // 
             // tabcheckapp
             // 
@@ -883,16 +1047,6 @@
             this.tabcheckapp.TabIndex = 4;
             this.tabcheckapp.Text = "Check Appointment";
             this.tabcheckapp.UseVisualStyleBackColor = true;
-            // 
-            // tabcancelapp
-            // 
-            this.tabcancelapp.Location = new System.Drawing.Point(4, 19);
-            this.tabcancelapp.Name = "tabcancelapp";
-            this.tabcancelapp.Padding = new System.Windows.Forms.Padding(3);
-            this.tabcancelapp.Size = new System.Drawing.Size(847, 615);
-            this.tabcancelapp.TabIndex = 5;
-            this.tabcancelapp.Text = "Cancel Appointments";
-            this.tabcancelapp.UseVisualStyleBackColor = true;
             // 
             // headpan
             // 
@@ -933,184 +1087,6 @@
             this.Exitbtn.Text = "X";
             this.Exitbtn.UseVisualStyleBackColor = false;
             // 
-            // gbInventorySearch
-            // 
-            this.gbInventorySearch.Controls.Add(this.btnStockSearch);
-            this.gbInventorySearch.Controls.Add(this.comboBox1);
-            this.gbInventorySearch.Controls.Add(this.categorylbl);
-            this.gbInventorySearch.Controls.Add(this.txtSearchMedicine);
-            this.gbInventorySearch.Controls.Add(this.snilbl);
-            this.gbInventorySearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbInventorySearch.Location = new System.Drawing.Point(7, 7);
-            this.gbInventorySearch.Name = "gbInventorySearch";
-            this.gbInventorySearch.Size = new System.Drawing.Size(834, 100);
-            this.gbInventorySearch.TabIndex = 0;
-            this.gbInventorySearch.TabStop = false;
-            this.gbInventorySearch.Text = "1. Search Medicine Stock";
-            // 
-            // snilbl
-            // 
-            this.snilbl.AutoSize = true;
-            this.snilbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.snilbl.Location = new System.Drawing.Point(6, 39);
-            this.snilbl.Name = "snilbl";
-            this.snilbl.Size = new System.Drawing.Size(131, 20);
-            this.snilbl.TabIndex = 0;
-            this.snilbl.Text = "Search Name/ID:";
-            // 
-            // txtSearchMedicine
-            // 
-            this.txtSearchMedicine.Location = new System.Drawing.Point(144, 39);
-            this.txtSearchMedicine.Name = "txtSearchMedicine";
-            this.txtSearchMedicine.Size = new System.Drawing.Size(100, 28);
-            this.txtSearchMedicine.TabIndex = 1;
-            // 
-            // categorylbl
-            // 
-            this.categorylbl.AutoSize = true;
-            this.categorylbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.categorylbl.Location = new System.Drawing.Point(276, 39);
-            this.categorylbl.Name = "categorylbl";
-            this.categorylbl.Size = new System.Drawing.Size(77, 20);
-            this.categorylbl.TabIndex = 2;
-            this.categorylbl.Text = "Category:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Antibiotics",
-            "Analgesics"});
-            this.comboBox1.Location = new System.Drawing.Point(370, 37);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(230, 30);
-            this.comboBox1.TabIndex = 3;
-            // 
-            // btnStockSearch
-            // 
-            this.btnStockSearch.BackColor = System.Drawing.Color.Olive;
-            this.btnStockSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStockSearch.Location = new System.Drawing.Point(647, 34);
-            this.btnStockSearch.Name = "btnStockSearch";
-            this.btnStockSearch.Size = new System.Drawing.Size(149, 40);
-            this.btnStockSearch.TabIndex = 4;
-            this.btnStockSearch.Text = "Stock Search";
-            this.btnStockSearch.UseVisualStyleBackColor = false;
-            // 
-            // gbStockView
-            // 
-            this.gbStockView.Controls.Add(this.dgvInventory);
-            this.gbStockView.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbStockView.Location = new System.Drawing.Point(7, 125);
-            this.gbStockView.Name = "gbStockView";
-            this.gbStockView.Size = new System.Drawing.Size(510, 352);
-            this.gbStockView.TabIndex = 1;
-            this.gbStockView.TabStop = false;
-            this.gbStockView.Text = "2. Current Medicine Availability";
-            // 
-            // dgvInventory
-            // 
-            this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInventory.Location = new System.Drawing.Point(10, 40);
-            this.dgvInventory.Name = "dgvInventory";
-            this.dgvInventory.RowHeadersWidth = 62;
-            this.dgvInventory.RowTemplate.Height = 28;
-            this.dgvInventory.Size = new System.Drawing.Size(483, 292);
-            this.dgvInventory.TabIndex = 0;
-            // 
-            // gbMedInfo
-            // 
-            this.gbMedInfo.Controls.Add(this.txtLocation);
-            this.gbMedInfo.Controls.Add(this.txtStrength);
-            this.gbMedInfo.Controls.Add(this.Shelflbl);
-            this.gbMedInfo.Controls.Add(this.Strengthlbl);
-            this.gbMedInfo.Controls.Add(this.txtGenericName);
-            this.gbMedInfo.Controls.Add(this.genericlbl);
-            this.gbMedInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbMedInfo.Location = new System.Drawing.Point(523, 125);
-            this.gbMedInfo.Name = "gbMedInfo";
-            this.gbMedInfo.Size = new System.Drawing.Size(318, 352);
-            this.gbMedInfo.TabIndex = 2;
-            this.gbMedInfo.TabStop = false;
-            this.gbMedInfo.Text = "3. Selected Medicine Details";
-            // 
-            // genericlbl
-            // 
-            this.genericlbl.AutoSize = true;
-            this.genericlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.genericlbl.Location = new System.Drawing.Point(6, 40);
-            this.genericlbl.Name = "genericlbl";
-            this.genericlbl.Size = new System.Drawing.Size(115, 20);
-            this.genericlbl.TabIndex = 0;
-            this.genericlbl.Text = "Generic Name:";
-            // 
-            // txtGenericName
-            // 
-            this.txtGenericName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGenericName.Location = new System.Drawing.Point(142, 40);
-            this.txtGenericName.Name = "txtGenericName";
-            this.txtGenericName.ReadOnly = true;
-            this.txtGenericName.Size = new System.Drawing.Size(100, 26);
-            this.txtGenericName.TabIndex = 1;
-            // 
-            // Strengthlbl
-            // 
-            this.Strengthlbl.AutoSize = true;
-            this.Strengthlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Strengthlbl.Location = new System.Drawing.Point(6, 105);
-            this.Strengthlbl.Name = "Strengthlbl";
-            this.Strengthlbl.Size = new System.Drawing.Size(75, 20);
-            this.Strengthlbl.TabIndex = 2;
-            this.Strengthlbl.Text = "Strength:";
-            // 
-            // Shelflbl
-            // 
-            this.Shelflbl.AutoSize = true;
-            this.Shelflbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Shelflbl.Location = new System.Drawing.Point(6, 169);
-            this.Shelflbl.Name = "Shelflbl";
-            this.Shelflbl.Size = new System.Drawing.Size(115, 20);
-            this.Shelflbl.TabIndex = 3;
-            this.Shelflbl.Text = "Shelf Location:";
-            // 
-            // txtStrength
-            // 
-            this.txtStrength.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStrength.Location = new System.Drawing.Point(142, 105);
-            this.txtStrength.Name = "txtStrength";
-            this.txtStrength.ReadOnly = true;
-            this.txtStrength.Size = new System.Drawing.Size(100, 26);
-            this.txtStrength.TabIndex = 4;
-            // 
-            // txtLocation
-            // 
-            this.txtLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLocation.Location = new System.Drawing.Point(142, 163);
-            this.txtLocation.Name = "txtLocation";
-            this.txtLocation.ReadOnly = true;
-            this.txtLocation.Size = new System.Drawing.Size(100, 26);
-            this.txtLocation.TabIndex = 5;
-            // 
-            // btnRefreshStock
-            // 
-            this.btnRefreshStock.BackColor = System.Drawing.Color.Olive;
-            this.btnRefreshStock.Location = new System.Drawing.Point(46, 522);
-            this.btnRefreshStock.Name = "btnRefreshStock";
-            this.btnRefreshStock.Size = new System.Drawing.Size(194, 45);
-            this.btnRefreshStock.TabIndex = 3;
-            this.btnRefreshStock.Text = "Refresh Stock List";
-            this.btnRefreshStock.UseVisualStyleBackColor = false;
-            // 
-            // btnSwitchToPrescription
-            // 
-            this.btnSwitchToPrescription.BackColor = System.Drawing.Color.Olive;
-            this.btnSwitchToPrescription.Location = new System.Drawing.Point(287, 522);
-            this.btnSwitchToPrescription.Name = "btnSwitchToPrescription";
-            this.btnSwitchToPrescription.Size = new System.Drawing.Size(245, 45);
-            this.btnSwitchToPrescription.TabIndex = 4;
-            this.btnSwitchToPrescription.Text = "Prescribe Selected";
-            this.btnSwitchToPrescription.UseVisualStyleBackColor = false;
-            // 
             // Doctor
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1145,13 +1121,13 @@
             this.gbSearch.ResumeLayout(false);
             this.gbSearch.PerformLayout();
             this.tabAvailability.ResumeLayout(false);
-            this.headpan.ResumeLayout(false);
-            this.gbInventorySearch.ResumeLayout(false);
-            this.gbInventorySearch.PerformLayout();
-            this.gbStockView.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             this.gbMedInfo.ResumeLayout(false);
             this.gbMedInfo.PerformLayout();
+            this.gbStockView.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
+            this.gbInventorySearch.ResumeLayout(false);
+            this.gbInventorySearch.PerformLayout();
+            this.headpan.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1168,7 +1144,6 @@
         private System.Windows.Forms.TabPage tabPrescription;
         private System.Windows.Forms.TabPage tabRecords;
         private System.Windows.Forms.TabPage tabAvailability;
-        private System.Windows.Forms.TabPage tabReports;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -1178,7 +1153,6 @@
         private System.Windows.Forms.Button checkappbtn;
         private System.Windows.Forms.Button cancelappbtn;
         private System.Windows.Forms.TabPage tabcheckapp;
-        private System.Windows.Forms.TabPage tabcancelapp;
         private System.Windows.Forms.GroupBox gbPatientInfo;
         private System.Windows.Forms.Label pnamelbl;
         private System.Windows.Forms.TextBox txtSelectedName;

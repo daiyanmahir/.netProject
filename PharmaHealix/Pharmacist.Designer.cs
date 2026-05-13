@@ -39,9 +39,11 @@
             this.inventorytoplbl = new System.Windows.Forms.Label();
             this.pharmacistprofilepan = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.pharmacistphonetxt = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pharmacistprofileaddtxt = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.pharmacistanswertxt = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pharmacistprofilepasstxt = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -55,7 +57,6 @@
             this.errorusernamepan = new System.Windows.Forms.Panel();
             this.errorpharmacistnamepan = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pharmacistanswertxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.securityquestionlbl = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -76,7 +77,9 @@
             this.patientlistbtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.medilogobtn = new System.Windows.Forms.Button();
-            this.pharmacistphonetxt = new System.Windows.Forms.TextBox();
+            this.phprdgv = new System.Windows.Forms.DataGridView();
+            this.preslbl = new System.Windows.Forms.Label();
+            this.phprrtb = new System.Windows.Forms.RichTextBox();
             this.patientlistpan.SuspendLayout();
             this.patientlisttoppan.SuspendLayout();
             this.orderpan.SuspendLayout();
@@ -94,11 +97,15 @@
             this.pharmacistprofiletoppan.SuspendLayout();
             this.sidepan.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.phprdgv)).BeginInit();
             this.SuspendLayout();
             // 
             // patientlistpan
             // 
             this.patientlistpan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
+            this.patientlistpan.Controls.Add(this.phprrtb);
+            this.patientlistpan.Controls.Add(this.preslbl);
+            this.patientlistpan.Controls.Add(this.phprdgv);
             this.patientlistpan.Controls.Add(this.patientlisttoppan);
             this.patientlistpan.Location = new System.Drawing.Point(244, 0);
             this.patientlistpan.Margin = new System.Windows.Forms.Padding(2);
@@ -133,7 +140,7 @@
             // 
             this.orderpan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
             this.orderpan.Controls.Add(this.ordertoppan);
-            this.orderpan.Location = new System.Drawing.Point(244, 0);
+            this.orderpan.Location = new System.Drawing.Point(10000, 0);
             this.orderpan.Margin = new System.Windows.Forms.Padding(2);
             this.orderpan.Name = "orderpan";
             this.orderpan.Size = new System.Drawing.Size(956, 750);
@@ -166,7 +173,7 @@
             // 
             this.inventorypan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
             this.inventorypan.Controls.Add(this.inventorytoppan);
-            this.inventorypan.Location = new System.Drawing.Point(244, 0);
+            this.inventorypan.Location = new System.Drawing.Point(10000, 0);
             this.inventorypan.Margin = new System.Windows.Forms.Padding(2);
             this.inventorypan.Name = "inventorypan";
             this.inventorypan.Size = new System.Drawing.Size(956, 750);
@@ -223,7 +230,7 @@
             this.pharmacistprofilepan.Controls.Add(this.pharmacistprofilenamelbl);
             this.pharmacistprofilepan.Controls.Add(this.pharmacistprofiletoppan);
             this.pharmacistprofilepan.Font = new System.Drawing.Font("Stencil", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistprofilepan.Location = new System.Drawing.Point(244, 0);
+            this.pharmacistprofilepan.Location = new System.Drawing.Point(10000, 0);
             this.pharmacistprofilepan.Margin = new System.Windows.Forms.Padding(2);
             this.pharmacistprofilepan.Name = "pharmacistprofilepan";
             this.pharmacistprofilepan.Size = new System.Drawing.Size(956, 750);
@@ -238,6 +245,20 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(370, 54);
             this.panel5.TabIndex = 37;
+            // 
+            // pharmacistphonetxt
+            // 
+            this.pharmacistphonetxt.BackColor = System.Drawing.Color.White;
+            this.pharmacistphonetxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pharmacistphonetxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pharmacistphonetxt.ForeColor = System.Drawing.Color.DarkGray;
+            this.pharmacistphonetxt.Location = new System.Drawing.Point(5, 16);
+            this.pharmacistphonetxt.Margin = new System.Windows.Forms.Padding(2);
+            this.pharmacistphonetxt.Name = "pharmacistphonetxt";
+            this.pharmacistphonetxt.Size = new System.Drawing.Size(360, 23);
+            this.pharmacistphonetxt.TabIndex = 5;
+            this.pharmacistphonetxt.Text = "Enter Phone Number";
+            this.pharmacistphonetxt.Enter += new System.EventHandler(this.pharmacistphonetxt_Enter);
             // 
             // panel6
             // 
@@ -269,6 +290,19 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(370, 54);
             this.panel7.TabIndex = 37;
+            // 
+            // pharmacistanswertxt
+            // 
+            this.pharmacistanswertxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pharmacistanswertxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pharmacistanswertxt.ForeColor = System.Drawing.Color.DarkGray;
+            this.pharmacistanswertxt.Location = new System.Drawing.Point(6, 16);
+            this.pharmacistanswertxt.Margin = new System.Windows.Forms.Padding(2);
+            this.pharmacistanswertxt.Name = "pharmacistanswertxt";
+            this.pharmacistanswertxt.Size = new System.Drawing.Size(360, 23);
+            this.pharmacistanswertxt.TabIndex = 17;
+            this.pharmacistanswertxt.Text = "Enter Answer";
+            this.pharmacistanswertxt.Enter += new System.EventHandler(this.pharmacistanswertxt_Enter);
             // 
             // panel4
             // 
@@ -401,19 +435,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
-            // 
-            // pharmacistanswertxt
-            // 
-            this.pharmacistanswertxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pharmacistanswertxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistanswertxt.ForeColor = System.Drawing.Color.DarkGray;
-            this.pharmacistanswertxt.Location = new System.Drawing.Point(6, 16);
-            this.pharmacistanswertxt.Margin = new System.Windows.Forms.Padding(2);
-            this.pharmacistanswertxt.Name = "pharmacistanswertxt";
-            this.pharmacistanswertxt.Size = new System.Drawing.Size(360, 23);
-            this.pharmacistanswertxt.TabIndex = 17;
-            this.pharmacistanswertxt.Text = "Enter Answer";
-            this.pharmacistanswertxt.Enter += new System.EventHandler(this.pharmacistanswertxt_Enter);
             // 
             // label1
             // 
@@ -658,19 +679,34 @@
             this.medilogobtn.TabIndex = 22;
             this.medilogobtn.UseVisualStyleBackColor = false;
             // 
-            // pharmacistphonetxt
+            // phprdgv
             // 
-            this.pharmacistphonetxt.BackColor = System.Drawing.Color.White;
-            this.pharmacistphonetxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pharmacistphonetxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistphonetxt.ForeColor = System.Drawing.Color.DarkGray;
-            this.pharmacistphonetxt.Location = new System.Drawing.Point(5, 16);
-            this.pharmacistphonetxt.Margin = new System.Windows.Forms.Padding(2);
-            this.pharmacistphonetxt.Name = "pharmacistphonetxt";
-            this.pharmacistphonetxt.Size = new System.Drawing.Size(360, 23);
-            this.pharmacistphonetxt.TabIndex = 5;
-            this.pharmacistphonetxt.Text = "Enter Phone Number";
-            this.pharmacistphonetxt.Enter += new System.EventHandler(this.pharmacistphonetxt_Enter);
+            this.phprdgv.AllowUserToOrderColumns = true;
+            this.phprdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.phprdgv.Location = new System.Drawing.Point(42, 142);
+            this.phprdgv.Name = "phprdgv";
+            this.phprdgv.RowHeadersWidth = 62;
+            this.phprdgv.RowTemplate.Height = 28;
+            this.phprdgv.Size = new System.Drawing.Size(879, 348);
+            this.phprdgv.TabIndex = 2;
+            // 
+            // preslbl
+            // 
+            this.preslbl.AutoSize = true;
+            this.preslbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.preslbl.Location = new System.Drawing.Point(37, 503);
+            this.preslbl.Name = "preslbl";
+            this.preslbl.Size = new System.Drawing.Size(148, 29);
+            this.preslbl.TabIndex = 3;
+            this.preslbl.Text = "Prescription:";
+            // 
+            // phprrtb
+            // 
+            this.phprrtb.Location = new System.Drawing.Point(42, 535);
+            this.phprrtb.Name = "phprrtb";
+            this.phprrtb.Size = new System.Drawing.Size(879, 192);
+            this.phprrtb.TabIndex = 4;
+            this.phprrtb.Text = "";
             // 
             // Pharmacist
             // 
@@ -690,6 +726,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pharmacist";
             this.patientlistpan.ResumeLayout(false);
+            this.patientlistpan.PerformLayout();
             this.patientlisttoppan.ResumeLayout(false);
             this.patientlisttoppan.PerformLayout();
             this.orderpan.ResumeLayout(false);
@@ -717,6 +754,7 @@
             this.pharmacistprofiletoppan.PerformLayout();
             this.sidepan.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.phprdgv)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -771,5 +809,8 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox pharmacistphonetxt;
+        private System.Windows.Forms.Label preslbl;
+        private System.Windows.Forms.DataGridView phprdgv;
+        private System.Windows.Forms.RichTextBox phprrtb;
     }
 }

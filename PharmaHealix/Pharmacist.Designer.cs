@@ -140,7 +140,7 @@
             // 
             this.orderpan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
             this.orderpan.Controls.Add(this.ordertoppan);
-            this.orderpan.Location = new System.Drawing.Point(10000, 0);
+            this.orderpan.Location = new System.Drawing.Point(244, 0);
             this.orderpan.Margin = new System.Windows.Forms.Padding(2);
             this.orderpan.Name = "orderpan";
             this.orderpan.Size = new System.Drawing.Size(956, 750);
@@ -173,7 +173,7 @@
             // 
             this.inventorypan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
             this.inventorypan.Controls.Add(this.inventorytoppan);
-            this.inventorypan.Location = new System.Drawing.Point(10000, 0);
+            this.inventorypan.Location = new System.Drawing.Point(244, 0);
             this.inventorypan.Margin = new System.Windows.Forms.Padding(2);
             this.inventorypan.Name = "inventorypan";
             this.inventorypan.Size = new System.Drawing.Size(956, 750);
@@ -230,7 +230,7 @@
             this.pharmacistprofilepan.Controls.Add(this.pharmacistprofilenamelbl);
             this.pharmacistprofilepan.Controls.Add(this.pharmacistprofiletoppan);
             this.pharmacistprofilepan.Font = new System.Drawing.Font("Stencil", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistprofilepan.Location = new System.Drawing.Point(10000, 0);
+            this.pharmacistprofilepan.Location = new System.Drawing.Point(244, 0);
             this.pharmacistprofilepan.Margin = new System.Windows.Forms.Padding(2);
             this.pharmacistprofilepan.Name = "pharmacistprofilepan";
             this.pharmacistprofilepan.Size = new System.Drawing.Size(956, 750);

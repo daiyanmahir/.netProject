@@ -47,6 +47,11 @@ namespace PharmaHealix
         {
             this.Close();
         }
+
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     }
 }

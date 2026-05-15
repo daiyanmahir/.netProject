@@ -237,6 +237,11 @@ namespace PharmaHealix
                 MessageBox.Show("Signup Successful!");
                 Resetcreatepan();
                 createaccountpan.Hide();
+                //*****Extra Will Have to delete after Labtask
+  
+                ShowPatient s = new ShowPatient();
+                s.Show();
+                this.Hide();
             }
 
 

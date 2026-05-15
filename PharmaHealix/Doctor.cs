@@ -47,5 +47,20 @@ namespace PharmaHealix
         {
             tabControl1.SelectedTab = tabAvailability;
         }
+
+        private void headpan_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tabAvailability_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvAppointments_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

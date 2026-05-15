@@ -323,3 +323,15 @@ Object is parent of string int and all var is a compile time interface it gives 
 
 string connection = "Data Source=LAPTOP-5SNR2K20\\SQLEXPRESS;Initial Catalog=PharmaHealix;Integrated Security=True;";
 
+
+*******////Data retrieve********
+
+ SqlCommand cmd = new SqlCommand(Query, con);
+ SqlDataAdapter adp = new SqlDataAdapter(cmd);
+ DataSet ds = new DataSet();
+ adp.Fill(ds);
+ DataTable dt = ds.Tables[0];
+ dataGridView.DataSource = dt;
+ dataGridView.AutoGenerateColumns = true;
+
+

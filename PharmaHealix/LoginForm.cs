@@ -239,9 +239,9 @@ namespace PharmaHealix
                 createaccountpan.Hide();
                 //*****Extra Will Have to delete after Labtask
   
-                ShowPatient s = new ShowPatient();
-                s.Show();
-                this.Hide();
+             //   ShowPatient s = new ShowPatient();
+              //  s.Show();
+              //  this.Hide();
             }
 
 

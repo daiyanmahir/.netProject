@@ -222,9 +222,6 @@
     <EmbeddedResource Include="AdminUserForm.resx">
       <DependentUpon>AdminUserForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateAccount.resx">
-      <DependentUpon>CreateAccount.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Doctor.resx">
       <DependentUpon>Doctor.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,9 +244,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ShowPatient.resx">
-      <DependentUpon>ShowPatient.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

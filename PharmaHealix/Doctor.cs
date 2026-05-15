@@ -35,7 +35,7 @@ namespace PharmaHealix
 
         private void reportsbtn_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedTab = tabReports;
+            //tabControl1.SelectedTab = tabReports;
         }
 
         private void button1_Click(object sender, EventArgs e)

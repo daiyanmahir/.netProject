@@ -36,9 +36,21 @@
             this.patientlisttoppan = new System.Windows.Forms.Panel();
             this.patientlisttoplbl = new System.Windows.Forms.Label();
             this.orderpan = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.phorderrtb = new System.Windows.Forms.RichTextBox();
+            this.phordclearbtn = new System.Windows.Forms.Button();
+            this.phordaddbtn = new System.Windows.Forms.Button();
+            this.phordquantitytb = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.phordmedicinetb = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ordertoppan = new System.Windows.Forms.Panel();
             this.ordertoplbl = new System.Windows.Forms.Label();
             this.inventorypan = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.phinvstocktb = new System.Windows.Forms.TextBox();
+            this.phinvupdatebtn = new System.Windows.Forms.Button();
             this.phinvremovebtn = new System.Windows.Forms.Button();
             this.phinvaddbtn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -61,6 +73,10 @@
             this.inventorytoppan = new System.Windows.Forms.Panel();
             this.inventorytoplbl = new System.Windows.Forms.Label();
             this.pharmacistprofilepan = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.phsalarytb = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -102,31 +118,18 @@
             this.patientlistbtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.medilogobtn = new System.Windows.Forms.Button();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.phsalarytb = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.phinvupdatebtn = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label9 = new System.Windows.Forms.Label();
-            this.phordmedicinetb = new System.Windows.Forms.TextBox();
-            this.phordquantitytb = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.phordaddbtn = new System.Windows.Forms.Button();
-            this.phordclearbtn = new System.Windows.Forms.Button();
-            this.phorderrtb = new System.Windows.Forms.RichTextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.phinvstocktb = new System.Windows.Forms.TextBox();
             this.patientlistpan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phprdgv)).BeginInit();
             this.patientlisttoppan.SuspendLayout();
             this.orderpan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.ordertoppan.SuspendLayout();
             this.inventorypan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phinvdgv)).BeginInit();
             this.inventorytoppan.SuspendLayout();
             this.pharmacistprofilepan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -137,9 +140,6 @@
             this.pharmacistprofiletoppan.SuspendLayout();
             this.sidepan.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // patientlistpan
@@ -198,11 +198,11 @@
             // patientlisttoplbl
             // 
             this.patientlisttoplbl.AutoSize = true;
-            this.patientlisttoplbl.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patientlisttoplbl.Font = new System.Drawing.Font("Trebuchet MS", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.patientlisttoplbl.Location = new System.Drawing.Point(278, 20);
             this.patientlisttoplbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.patientlisttoplbl.Name = "patientlisttoplbl";
-            this.patientlisttoplbl.Size = new System.Drawing.Size(388, 74);
+            this.patientlisttoplbl.Size = new System.Drawing.Size(367, 70);
             this.patientlisttoplbl.TabIndex = 0;
             this.patientlisttoplbl.Text = "PRESCIPTION";
             this.patientlisttoplbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -227,6 +227,84 @@
             this.orderpan.TabIndex = 43;
             this.orderpan.Visible = false;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(25, 426);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(49, 20);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Order";
+            // 
+            // phorderrtb
+            // 
+            this.phorderrtb.Location = new System.Drawing.Point(34, 460);
+            this.phorderrtb.Name = "phorderrtb";
+            this.phorderrtb.Size = new System.Drawing.Size(900, 213);
+            this.phorderrtb.TabIndex = 9;
+            this.phorderrtb.Text = "";
+            // 
+            // phordclearbtn
+            // 
+            this.phordclearbtn.Location = new System.Drawing.Point(494, 384);
+            this.phordclearbtn.Name = "phordclearbtn";
+            this.phordclearbtn.Size = new System.Drawing.Size(84, 40);
+            this.phordclearbtn.TabIndex = 8;
+            this.phordclearbtn.Text = "Clear";
+            this.phordclearbtn.UseVisualStyleBackColor = true;
+            // 
+            // phordaddbtn
+            // 
+            this.phordaddbtn.Location = new System.Drawing.Point(395, 384);
+            this.phordaddbtn.Name = "phordaddbtn";
+            this.phordaddbtn.Size = new System.Drawing.Size(84, 40);
+            this.phordaddbtn.TabIndex = 7;
+            this.phordaddbtn.Text = "Add";
+            this.phordaddbtn.UseVisualStyleBackColor = true;
+            // 
+            // phordquantitytb
+            // 
+            this.phordquantitytb.Location = new System.Drawing.Point(572, 329);
+            this.phordquantitytb.Name = "phordquantitytb";
+            this.phordquantitytb.Size = new System.Drawing.Size(362, 26);
+            this.phordquantitytb.TabIndex = 6;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(567, 303);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(68, 20);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "Quantity";
+            // 
+            // phordmedicinetb
+            // 
+            this.phordmedicinetb.Location = new System.Drawing.Point(30, 327);
+            this.phordmedicinetb.Name = "phordmedicinetb";
+            this.phordmedicinetb.Size = new System.Drawing.Size(362, 26);
+            this.phordmedicinetb.TabIndex = 4;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(25, 301);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(72, 20);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Medicine";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(26, 142);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 33;
+            this.dataGridView1.Size = new System.Drawing.Size(911, 150);
+            this.dataGridView1.TabIndex = 2;
+            // 
             // ordertoppan
             // 
             this.ordertoppan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
@@ -240,11 +318,11 @@
             // ordertoplbl
             // 
             this.ordertoplbl.AutoSize = true;
-            this.ordertoplbl.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ordertoplbl.Font = new System.Drawing.Font("Trebuchet MS", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ordertoplbl.Location = new System.Drawing.Point(382, 20);
             this.ordertoplbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ordertoplbl.Name = "ordertoplbl";
-            this.ordertoplbl.Size = new System.Drawing.Size(219, 74);
+            this.ordertoplbl.Size = new System.Drawing.Size(205, 70);
             this.ordertoplbl.TabIndex = 0;
             this.ordertoplbl.Text = "ORDER";
             this.ordertoplbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -281,6 +359,34 @@
             this.inventorypan.Size = new System.Drawing.Size(956, 750);
             this.inventorypan.TabIndex = 44;
             this.inventorypan.Visible = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(544, 395);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(79, 29);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "Stock:";
+            // 
+            // phinvstocktb
+            // 
+            this.phinvstocktb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phinvstocktb.Location = new System.Drawing.Point(544, 430);
+            this.phinvstocktb.Name = "phinvstocktb";
+            this.phinvstocktb.Size = new System.Drawing.Size(324, 32);
+            this.phinvstocktb.TabIndex = 21;
+            // 
+            // phinvupdatebtn
+            // 
+            this.phinvupdatebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
+            this.phinvupdatebtn.Location = new System.Drawing.Point(413, 657);
+            this.phinvupdatebtn.Name = "phinvupdatebtn";
+            this.phinvupdatebtn.Size = new System.Drawing.Size(134, 47);
+            this.phinvupdatebtn.TabIndex = 20;
+            this.phinvupdatebtn.Text = "UPDATE";
+            this.phinvupdatebtn.UseVisualStyleBackColor = false;
             // 
             // phinvremovebtn
             // 
@@ -470,11 +576,11 @@
             // inventorytoplbl
             // 
             this.inventorytoplbl.AutoSize = true;
-            this.inventorytoplbl.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inventorytoplbl.Font = new System.Drawing.Font("Trebuchet MS", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inventorytoplbl.Location = new System.Drawing.Point(322, 20);
             this.inventorytoplbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.inventorytoplbl.Name = "inventorytoplbl";
-            this.inventorytoplbl.Size = new System.Drawing.Size(348, 74);
+            this.inventorytoplbl.Size = new System.Drawing.Size(321, 70);
             this.inventorytoplbl.TabIndex = 0;
             this.inventorytoplbl.Text = "INVENTORY";
             this.inventorytoplbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -514,6 +620,49 @@
             this.pharmacistprofilepan.Size = new System.Drawing.Size(956, 750);
             this.pharmacistprofilepan.TabIndex = 45;
             this.pharmacistprofilepan.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(18, 115);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(73, 96);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 42;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.White;
+            this.panel11.Controls.Add(this.phsalarytb);
+            this.panel11.Location = new System.Drawing.Point(96, 564);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(370, 54);
+            this.panel11.TabIndex = 40;
+            // 
+            // phsalarytb
+            // 
+            this.phsalarytb.BackColor = System.Drawing.Color.White;
+            this.phsalarytb.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.phsalarytb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phsalarytb.ForeColor = System.Drawing.Color.White;
+            this.phsalarytb.Location = new System.Drawing.Point(6, 16);
+            this.phsalarytb.Margin = new System.Windows.Forms.Padding(2);
+            this.phsalarytb.Name = "phsalarytb";
+            this.phsalarytb.ReadOnly = true;
+            this.phsalarytb.Size = new System.Drawing.Size(360, 23);
+            this.phsalarytb.TabIndex = 12;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(88, 532);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 28);
+            this.label3.TabIndex = 39;
+            this.label3.Text = "Salary:";
             // 
             // panel10
             // 
@@ -828,12 +977,12 @@
             // pharamcistprofiletoplbl
             // 
             this.pharamcistprofiletoplbl.AutoSize = true;
-            this.pharamcistprofiletoplbl.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pharamcistprofiletoplbl.Font = new System.Drawing.Font("Trebuchet MS", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pharamcistprofiletoplbl.ForeColor = System.Drawing.Color.Black;
-            this.pharamcistprofiletoplbl.Location = new System.Drawing.Point(393, 20);
+            this.pharamcistprofiletoplbl.Location = new System.Drawing.Point(387, 20);
             this.pharamcistprofiletoplbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pharamcistprofiletoplbl.Name = "pharamcistprofiletoplbl";
-            this.pharamcistprofiletoplbl.Size = new System.Drawing.Size(208, 65);
+            this.pharamcistprofiletoplbl.Size = new System.Drawing.Size(248, 70);
             this.pharamcistprofiletoplbl.TabIndex = 0;
             this.pharamcistprofiletoplbl.Text = "PROFILE";
             this.pharamcistprofiletoplbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -975,155 +1124,6 @@
             this.medilogobtn.TabIndex = 22;
             this.medilogobtn.UseVisualStyleBackColor = false;
             // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.White;
-            this.panel11.Controls.Add(this.phsalarytb);
-            this.panel11.Location = new System.Drawing.Point(96, 564);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(370, 54);
-            this.panel11.TabIndex = 40;
-            // 
-            // phsalarytb
-            // 
-            this.phsalarytb.BackColor = System.Drawing.Color.White;
-            this.phsalarytb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.phsalarytb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phsalarytb.ForeColor = System.Drawing.Color.White;
-            this.phsalarytb.Location = new System.Drawing.Point(6, 16);
-            this.phsalarytb.Margin = new System.Windows.Forms.Padding(2);
-            this.phsalarytb.Name = "phsalarytb";
-            this.phsalarytb.ReadOnly = true;
-            this.phsalarytb.Size = new System.Drawing.Size(360, 23);
-            this.phsalarytb.TabIndex = 12;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(88, 532);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 28);
-            this.label3.TabIndex = 39;
-            this.label3.Text = "Salary:";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(18, 115);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(73, 96);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 42;
-            this.pictureBox1.TabStop = false;
-            // 
-            // phinvupdatebtn
-            // 
-            this.phinvupdatebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
-            this.phinvupdatebtn.Location = new System.Drawing.Point(413, 657);
-            this.phinvupdatebtn.Name = "phinvupdatebtn";
-            this.phinvupdatebtn.Size = new System.Drawing.Size(134, 47);
-            this.phinvupdatebtn.TabIndex = 20;
-            this.phinvupdatebtn.Text = "UPDATE";
-            this.phinvupdatebtn.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 142);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(911, 150);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(25, 301);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(99, 25);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "Medicine";
-            // 
-            // phordmedicinetb
-            // 
-            this.phordmedicinetb.Location = new System.Drawing.Point(30, 327);
-            this.phordmedicinetb.Name = "phordmedicinetb";
-            this.phordmedicinetb.Size = new System.Drawing.Size(362, 31);
-            this.phordmedicinetb.TabIndex = 4;
-            // 
-            // phordquantitytb
-            // 
-            this.phordquantitytb.Location = new System.Drawing.Point(572, 329);
-            this.phordquantitytb.Name = "phordquantitytb";
-            this.phordquantitytb.Size = new System.Drawing.Size(362, 31);
-            this.phordquantitytb.TabIndex = 6;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(567, 303);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(92, 25);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "Quantity";
-            // 
-            // phordaddbtn
-            // 
-            this.phordaddbtn.Location = new System.Drawing.Point(395, 384);
-            this.phordaddbtn.Name = "phordaddbtn";
-            this.phordaddbtn.Size = new System.Drawing.Size(84, 40);
-            this.phordaddbtn.TabIndex = 7;
-            this.phordaddbtn.Text = "Add";
-            this.phordaddbtn.UseVisualStyleBackColor = true;
-            // 
-            // phordclearbtn
-            // 
-            this.phordclearbtn.Location = new System.Drawing.Point(494, 384);
-            this.phordclearbtn.Name = "phordclearbtn";
-            this.phordclearbtn.Size = new System.Drawing.Size(84, 40);
-            this.phordclearbtn.TabIndex = 8;
-            this.phordclearbtn.Text = "Clear";
-            this.phordclearbtn.UseVisualStyleBackColor = true;
-            // 
-            // phorderrtb
-            // 
-            this.phorderrtb.Location = new System.Drawing.Point(34, 460);
-            this.phorderrtb.Name = "phorderrtb";
-            this.phorderrtb.Size = new System.Drawing.Size(900, 213);
-            this.phorderrtb.TabIndex = 9;
-            this.phorderrtb.Text = "";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(25, 426);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(66, 25);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "Order";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(544, 395);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(79, 29);
-            this.label12.TabIndex = 22;
-            this.label12.Text = "Stock:";
-            // 
-            // phinvstocktb
-            // 
-            this.phinvstocktb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phinvstocktb.Location = new System.Drawing.Point(544, 430);
-            this.phinvstocktb.Name = "phinvstocktb";
-            this.phinvstocktb.Size = new System.Drawing.Size(324, 32);
-            this.phinvstocktb.TabIndex = 21;
-            // 
             // Pharmacist
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1148,6 +1148,7 @@
             this.patientlisttoppan.PerformLayout();
             this.orderpan.ResumeLayout(false);
             this.orderpan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ordertoppan.ResumeLayout(false);
             this.ordertoppan.PerformLayout();
             this.inventorypan.ResumeLayout(false);
@@ -1157,6 +1158,9 @@
             this.inventorytoppan.PerformLayout();
             this.pharmacistprofilepan.ResumeLayout(false);
             this.pharmacistprofilepan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -1174,10 +1178,6 @@
             this.pharmacistprofiletoppan.PerformLayout();
             this.sidepan.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

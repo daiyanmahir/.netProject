@@ -233,6 +233,16 @@ namespace PharmaHealix.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PharmaHealixLogo3 {
+            get {
+                object obj = ResourceManager.GetObject("PharmaHealixLogo3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap prescription_3000124 {
             get {
                 object obj = ResourceManager.GetObject("prescription_3000124", resourceCulture);

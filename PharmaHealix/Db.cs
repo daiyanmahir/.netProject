@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace PharmaHealix
         {
 
         }
-        public void NonQuery(string query,params object[] p)
+        public void NonQuery(string query,params Object[] p)
         {
             //2. Establish Connection
 
@@ -57,8 +58,6 @@ namespace PharmaHealix
         public object Scalar(string query,params Object[] p)
         {
 
-            //1 Address
-            string connection = "Data Source=LAPTOP-5SNR2K20\\SQLEXPRESS;Initial Catalog=PharmaHealix;Integrated Security=True;";
             //2 Establish Connection
 
             SqlConnection con = new SqlConnection(connection);
@@ -95,25 +94,43 @@ namespace PharmaHealix
 
 
         }
-        /*
-        public void Reader(string query)
+
+        public DataTable Reader(string query, params object[] p)
         {
-
-            //1 Address
-            string connection = "Data Source=LAPTOP-5SN;";
-            //2 Establish Connection
-
+            //2. Establish Connection
             SqlConnection con = new SqlConnection(connection);
 
-            //3.Open Connection
+            try
+            {
+                //3. Open Connection
+                con.Open();
 
-            con.Open();
+                //4. Prepare Connection
+                SqlCommand cmd = new SqlCommand(query, con);
 
-            //4.Prepare Query
-            SqlCommand cmd = new SqlCommand(query, con);
-            //5.Execute Query
+                for (int i = 0; i < p.Length; i++)
+                {
+                    cmd.Parameters.AddWithValue("@" + i, p[i]);
+                }
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+
+                adp.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("An Error Occurred"+e.Message);
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
         }
-     */
 
     }
 

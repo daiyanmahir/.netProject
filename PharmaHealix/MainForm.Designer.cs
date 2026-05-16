@@ -28,12 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.headpan = new System.Windows.Forms.Panel();
             this.medilogobtn = new System.Windows.Forms.Button();
             this.userbtn = new System.Windows.Forms.Button();
             this.cartbtn2 = new System.Windows.Forms.Button();
             this.doctorbtn = new System.Windows.Forms.Button();
             this.Exitbtn = new System.Windows.Forms.Button();
+            this.editpan = new System.Windows.Forms.Panel();
+            this.editpanminimizebtn = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.editpansavebtn = new System.Windows.Forms.Button();
+            this.editphonepan = new System.Windows.Forms.Panel();
+            this.editnamepan = new System.Windows.Forms.Panel();
+            this.editpasspan = new System.Windows.Forms.Panel();
+            this.editanspan = new System.Windows.Forms.Panel();
+            this.editaddresspan = new System.Windows.Forms.Panel();
+            this.editusernamepan = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.editanstxt = new System.Windows.Forms.TextBox();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.editaddresstxt = new System.Windows.Forms.TextBox();
+            this.cbpan = new System.Windows.Forms.Panel();
+            this.editsecurityquestioncb = new System.Windows.Forms.ComboBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.editnametxt = new System.Windows.Forms.TextBox();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.editpanhidebtn = new System.Windows.Forms.Button();
+            this.editpasstxt = new System.Windows.Forms.TextBox();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.editphonetxt = new System.Windows.Forms.TextBox();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.editusernametxt = new System.Windows.Forms.TextBox();
             this.userpan = new System.Windows.Forms.Panel();
             this.userpanminimizebtn = new System.Windows.Forms.Button();
             this.createaccountbtn = new System.Windows.Forms.Button();
@@ -42,12 +74,10 @@
             this.humaniconpan = new System.Windows.Forms.Panel();
             this.userpanlbl1 = new System.Windows.Forms.Label();
             this.patientpan = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.userpanemaillabl = new System.Windows.Forms.Label();
+            this.editprofilebtn = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.minimizebtn = new System.Windows.Forms.Button();
             this.logoutbtn = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.userpannamelbl = new System.Windows.Forms.Label();
             this.prescriptionlbl = new System.Windows.Forms.Label();
             this.Whatareyoulookinglbl = new System.Windows.Forms.Label();
             this.prescriptionuploadbtn = new System.Windows.Forms.Button();
@@ -56,13 +86,6 @@
             this.searchbtn = new System.Windows.Forms.Button();
             this.searchtxt = new System.Windows.Forms.TextBox();
             this.searchiconpan = new System.Windows.Forms.Panel();
-            this.adpan2 = new System.Windows.Forms.Panel();
-            this.adlbl23 = new System.Windows.Forms.Label();
-            this.adlbl22 = new System.Windows.Forms.Label();
-            this.adlbl21 = new System.Windows.Forms.Label();
-            this.adpan1 = new System.Windows.Forms.Panel();
-            this.adlbl12 = new System.Windows.Forms.Label();
-            this.adlbl11 = new System.Windows.Forms.Label();
             this.medibackpan = new System.Windows.Forms.Panel();
             this.medipan = new System.Windows.Forms.Panel();
             this.medinametxt = new System.Windows.Forms.RichTextBox();
@@ -93,11 +116,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.categorylbl = new System.Windows.Forms.Label();
             this.headpan.SuspendLayout();
+            this.editpan.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.cbpan.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel12.SuspendLayout();
             this.userpan.SuspendLayout();
             this.patientpan.SuspendLayout();
             this.searchpan.SuspendLayout();
-            this.adpan2.SuspendLayout();
-            this.adpan1.SuspendLayout();
             this.medibackpan.SuspendLayout();
             this.medipan.SuspendLayout();
             this.mediinfopan.SuspendLayout();
@@ -186,6 +215,354 @@
             this.Exitbtn.Text = "X";
             this.Exitbtn.UseVisualStyleBackColor = false;
             this.Exitbtn.Click += new System.EventHandler(this.Exitbtn_Click);
+            // 
+            // editpan
+            // 
+            this.editpan.Controls.Add(this.editpanminimizebtn);
+            this.editpan.Controls.Add(this.label8);
+            this.editpan.Controls.Add(this.label7);
+            this.editpan.Controls.Add(this.label6);
+            this.editpan.Controls.Add(this.label5);
+            this.editpan.Controls.Add(this.label4);
+            this.editpan.Controls.Add(this.label3);
+            this.editpan.Controls.Add(this.label2);
+            this.editpan.Controls.Add(this.editpansavebtn);
+            this.editpan.Controls.Add(this.editphonepan);
+            this.editpan.Controls.Add(this.editnamepan);
+            this.editpan.Controls.Add(this.editpasspan);
+            this.editpan.Controls.Add(this.editanspan);
+            this.editpan.Controls.Add(this.editaddresspan);
+            this.editpan.Controls.Add(this.editusernamepan);
+            this.editpan.Controls.Add(this.panel9);
+            this.editpan.Controls.Add(this.panel8);
+            this.editpan.Controls.Add(this.cbpan);
+            this.editpan.Controls.Add(this.panel7);
+            this.editpan.Controls.Add(this.panel10);
+            this.editpan.Controls.Add(this.panel11);
+            this.editpan.Controls.Add(this.panel12);
+            this.editpan.Location = new System.Drawing.Point(190, 111);
+            this.editpan.Name = "editpan";
+            this.editpan.Size = new System.Drawing.Size(832, 640);
+            this.editpan.TabIndex = 19;
+            this.editpan.Visible = false;
+            // 
+            // editpanminimizebtn
+            // 
+            this.editpanminimizebtn.BackColor = System.Drawing.Color.White;
+            this.editpanminimizebtn.FlatAppearance.BorderSize = 0;
+            this.editpanminimizebtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.editpanminimizebtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
+            this.editpanminimizebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editpanminimizebtn.Font = new System.Drawing.Font("Showcard Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editpanminimizebtn.Location = new System.Drawing.Point(775, 5);
+            this.editpanminimizebtn.Name = "editpanminimizebtn";
+            this.editpanminimizebtn.Size = new System.Drawing.Size(50, 29);
+            this.editpanminimizebtn.TabIndex = 52;
+            this.editpanminimizebtn.Text = "-";
+            this.editpanminimizebtn.UseVisualStyleBackColor = false;
+            this.editpanminimizebtn.Click += new System.EventHandler(this.editpanminimizebtn_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label8.Location = new System.Drawing.Point(172, 471);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(84, 20);
+            this.label8.TabIndex = 51;
+            this.label8.Text = "Password*";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label7.Location = new System.Drawing.Point(172, 388);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(68, 20);
+            this.label7.TabIndex = 50;
+            this.label7.Text = "Answer*";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label6.Location = new System.Drawing.Point(171, 306);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(140, 20);
+            this.label6.TabIndex = 49;
+            this.label6.Text = "Security Question*";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label5.Location = new System.Drawing.Point(171, 222);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(74, 20);
+            this.label5.TabIndex = 48;
+            this.label5.Text = "Address*";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label4.Location = new System.Drawing.Point(171, 133);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 20);
+            this.label4.TabIndex = 47;
+            this.label4.Text = "Username*";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label3.Location = new System.Drawing.Point(460, 41);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(121, 20);
+            this.label3.TabIndex = 46;
+            this.label3.Text = "Phone Number*";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label2.Location = new System.Drawing.Point(171, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 20);
+            this.label2.TabIndex = 45;
+            this.label2.Text = "Name*";
+            // 
+            // editpansavebtn
+            // 
+            this.editpansavebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
+            this.editpansavebtn.FlatAppearance.BorderSize = 0;
+            this.editpansavebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editpansavebtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.editpansavebtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.editpansavebtn.Location = new System.Drawing.Point(343, 586);
+            this.editpansavebtn.Name = "editpansavebtn";
+            this.editpansavebtn.Size = new System.Drawing.Size(156, 40);
+            this.editpansavebtn.TabIndex = 30;
+            this.editpansavebtn.Text = "Save";
+            this.editpansavebtn.UseVisualStyleBackColor = false;
+            this.editpansavebtn.Click += new System.EventHandler(this.editpansavebtn_Click);
+            // 
+            // editphonepan
+            // 
+            this.editphonepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.editphonepan.Location = new System.Drawing.Point(679, 74);
+            this.editphonepan.Name = "editphonepan";
+            this.editphonepan.Size = new System.Drawing.Size(30, 30);
+            this.editphonepan.TabIndex = 43;
+            this.editphonepan.Visible = false;
+            // 
+            // editnamepan
+            // 
+            this.editnamepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.editnamepan.Location = new System.Drawing.Point(388, 74);
+            this.editnamepan.Name = "editnamepan";
+            this.editnamepan.Size = new System.Drawing.Size(30, 30);
+            this.editnamepan.TabIndex = 44;
+            this.editnamepan.Visible = false;
+            // 
+            // editpasspan
+            // 
+            this.editpasspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.editpasspan.Location = new System.Drawing.Point(677, 505);
+            this.editpasspan.Name = "editpasspan";
+            this.editpasspan.Size = new System.Drawing.Size(30, 30);
+            this.editpasspan.TabIndex = 39;
+            this.editpasspan.Visible = false;
+            // 
+            // editanspan
+            // 
+            this.editanspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.editanspan.Location = new System.Drawing.Point(677, 418);
+            this.editanspan.Name = "editanspan";
+            this.editanspan.Size = new System.Drawing.Size(30, 30);
+            this.editanspan.TabIndex = 40;
+            this.editanspan.Visible = false;
+            // 
+            // editaddresspan
+            // 
+            this.editaddresspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.editaddresspan.Location = new System.Drawing.Point(677, 255);
+            this.editaddresspan.Name = "editaddresspan";
+            this.editaddresspan.Size = new System.Drawing.Size(30, 30);
+            this.editaddresspan.TabIndex = 41;
+            this.editaddresspan.Visible = false;
+            // 
+            // editusernamepan
+            // 
+            this.editusernamepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.editusernamepan.Location = new System.Drawing.Point(679, 166);
+            this.editusernamepan.Name = "editusernamepan";
+            this.editusernamepan.Size = new System.Drawing.Size(30, 30);
+            this.editusernamepan.TabIndex = 42;
+            this.editusernamepan.Visible = false;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.White;
+            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel9.Controls.Add(this.editanstxt);
+            this.panel9.Location = new System.Drawing.Point(167, 411);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(487, 50);
+            this.panel9.TabIndex = 33;
+            // 
+            // editanstxt
+            // 
+            this.editanstxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.editanstxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editanstxt.ForeColor = System.Drawing.Color.Black;
+            this.editanstxt.Location = new System.Drawing.Point(14, 15);
+            this.editanstxt.Name = "editanstxt";
+            this.editanstxt.Size = new System.Drawing.Size(467, 21);
+            this.editanstxt.TabIndex = 17;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.White;
+            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel8.Controls.Add(this.editaddresstxt);
+            this.panel8.Location = new System.Drawing.Point(167, 245);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(487, 50);
+            this.panel8.TabIndex = 37;
+            // 
+            // editaddresstxt
+            // 
+            this.editaddresstxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.editaddresstxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editaddresstxt.ForeColor = System.Drawing.Color.Black;
+            this.editaddresstxt.Location = new System.Drawing.Point(14, 15);
+            this.editaddresstxt.Name = "editaddresstxt";
+            this.editaddresstxt.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.editaddresstxt.Size = new System.Drawing.Size(470, 21);
+            this.editaddresstxt.TabIndex = 17;
+            // 
+            // cbpan
+            // 
+            this.cbpan.BackColor = System.Drawing.Color.White;
+            this.cbpan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.cbpan.Controls.Add(this.editsecurityquestioncb);
+            this.cbpan.Location = new System.Drawing.Point(167, 329);
+            this.cbpan.Name = "cbpan";
+            this.cbpan.Size = new System.Drawing.Size(487, 50);
+            this.cbpan.TabIndex = 34;
+            // 
+            // editsecurityquestioncb
+            // 
+            this.editsecurityquestioncb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.editsecurityquestioncb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editsecurityquestioncb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.editsecurityquestioncb.ForeColor = System.Drawing.Color.Black;
+            this.editsecurityquestioncb.FormattingEnabled = true;
+            this.editsecurityquestioncb.Items.AddRange(new object[] {
+            "What is your pet name?",
+            "What is your birthplace? ",
+            "What is your favorite color?"});
+            this.editsecurityquestioncb.Location = new System.Drawing.Point(9, 11);
+            this.editsecurityquestioncb.Name = "editsecurityquestioncb";
+            this.editsecurityquestioncb.Size = new System.Drawing.Size(473, 30);
+            this.editsecurityquestioncb.TabIndex = 29;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel7.Controls.Add(this.editnametxt);
+            this.panel7.Location = new System.Drawing.Point(167, 65);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(206, 50);
+            this.panel7.TabIndex = 35;
+            // 
+            // editnametxt
+            // 
+            this.editnametxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.editnametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editnametxt.ForeColor = System.Drawing.Color.Black;
+            this.editnametxt.Location = new System.Drawing.Point(14, 15);
+            this.editnametxt.Name = "editnametxt";
+            this.editnametxt.Size = new System.Drawing.Size(189, 21);
+            this.editnametxt.TabIndex = 17;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.White;
+            this.panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel10.Controls.Add(this.editpanhidebtn);
+            this.panel10.Controls.Add(this.editpasstxt);
+            this.panel10.Location = new System.Drawing.Point(167, 496);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(487, 50);
+            this.panel10.TabIndex = 38;
+            // 
+            // editpanhidebtn
+            // 
+            this.editpanhidebtn.FlatAppearance.BorderSize = 0;
+            this.editpanhidebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editpanhidebtn.Image = ((System.Drawing.Image)(resources.GetObject("editpanhidebtn.Image")));
+            this.editpanhidebtn.Location = new System.Drawing.Point(451, 12);
+            this.editpanhidebtn.Name = "editpanhidebtn";
+            this.editpanhidebtn.Size = new System.Drawing.Size(30, 25);
+            this.editpanhidebtn.TabIndex = 30;
+            this.editpanhidebtn.UseVisualStyleBackColor = true;
+            this.editpanhidebtn.Click += new System.EventHandler(this.editpanhidebtn_Click);
+            // 
+            // editpasstxt
+            // 
+            this.editpasstxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.editpasstxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editpasstxt.ForeColor = System.Drawing.Color.Black;
+            this.editpasstxt.Location = new System.Drawing.Point(11, 15);
+            this.editpasstxt.Name = "editpasstxt";
+            this.editpasstxt.PasswordChar = '*';
+            this.editpasstxt.Size = new System.Drawing.Size(434, 21);
+            this.editpasstxt.TabIndex = 18;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.White;
+            this.panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel11.Controls.Add(this.editphonetxt);
+            this.panel11.Location = new System.Drawing.Point(455, 65);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(199, 50);
+            this.panel11.TabIndex = 36;
+            // 
+            // editphonetxt
+            // 
+            this.editphonetxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.editphonetxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editphonetxt.ForeColor = System.Drawing.Color.Black;
+            this.editphonetxt.Location = new System.Drawing.Point(11, 13);
+            this.editphonetxt.Name = "editphonetxt";
+            this.editphonetxt.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.editphonetxt.Size = new System.Drawing.Size(183, 21);
+            this.editphonetxt.TabIndex = 18;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.White;
+            this.panel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel12.Controls.Add(this.editusernametxt);
+            this.panel12.Location = new System.Drawing.Point(167, 157);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(487, 50);
+            this.panel12.TabIndex = 32;
+            // 
+            // editusernametxt
+            // 
+            this.editusernametxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.editusernametxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.editusernametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editusernametxt.ForeColor = System.Drawing.Color.Black;
+            this.editusernametxt.Location = new System.Drawing.Point(14, 15);
+            this.editusernametxt.Name = "editusernametxt";
+            this.editusernametxt.Size = new System.Drawing.Size(467, 21);
+            this.editusernametxt.TabIndex = 17;
             // 
             // userpan
             // 
@@ -283,41 +660,38 @@
             // patientpan
             // 
             this.patientpan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
-            this.patientpan.Controls.Add(this.label2);
-            this.patientpan.Controls.Add(this.userpanemaillabl);
+            this.patientpan.Controls.Add(this.editprofilebtn);
+            this.patientpan.Controls.Add(this.panel6);
             this.patientpan.Controls.Add(this.minimizebtn);
             this.patientpan.Controls.Add(this.logoutbtn);
-            this.patientpan.Controls.Add(this.panel7);
-            this.patientpan.Controls.Add(this.userpannamelbl);
-            this.patientpan.Location = new System.Drawing.Point(634, 108);
+            this.patientpan.Location = new System.Drawing.Point(634, 110);
             this.patientpan.Name = "patientpan";
             this.patientpan.Size = new System.Drawing.Size(454, 337);
             this.patientpan.TabIndex = 29;
             this.patientpan.Visible = false;
             // 
-            // label2
+            // editprofilebtn
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(20)))));
-            this.label2.Location = new System.Drawing.Point(144, 181);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 21);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Account Type: Patient";
+            this.editprofilebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
+            this.editprofilebtn.FlatAppearance.BorderSize = 0;
+            this.editprofilebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editprofilebtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.editprofilebtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.editprofilebtn.Location = new System.Drawing.Point(56, 248);
+            this.editprofilebtn.Name = "editprofilebtn";
+            this.editprofilebtn.Size = new System.Drawing.Size(156, 40);
+            this.editprofilebtn.TabIndex = 25;
+            this.editprofilebtn.Text = "Edit Profile";
+            this.editprofilebtn.UseVisualStyleBackColor = false;
+            this.editprofilebtn.Click += new System.EventHandler(this.editprofilebtn_Click);
             // 
-            // userpanemaillabl
+            // panel6
             // 
-            this.userpanemaillabl.AutoSize = true;
-            this.userpanemaillabl.BackColor = System.Drawing.Color.Transparent;
-            this.userpanemaillabl.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
-            this.userpanemaillabl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(20)))));
-            this.userpanemaillabl.Location = new System.Drawing.Point(178, 137);
-            this.userpanemaillabl.Name = "userpanemaillabl";
-            this.userpanemaillabl.Size = new System.Drawing.Size(106, 21);
-            this.userpanemaillabl.TabIndex = 22;
-            this.userpanemaillabl.Text = "emailaddress";
+            this.panel6.BackgroundImage = global::PharmaHealix.Properties.Resources.PharmaHealixLogo3;
+            this.panel6.Location = new System.Drawing.Point(132, 13);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(200, 207);
+            this.panel6.TabIndex = 24;
             // 
             // minimizebtn
             // 
@@ -333,6 +707,7 @@
             this.minimizebtn.TabIndex = 20;
             this.minimizebtn.Text = "-";
             this.minimizebtn.UseVisualStyleBackColor = false;
+            this.minimizebtn.Click += new System.EventHandler(this.minimizebtn_Click);
             // 
             // logoutbtn
             // 
@@ -341,34 +716,13 @@
             this.logoutbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logoutbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.logoutbtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.logoutbtn.Location = new System.Drawing.Point(148, 249);
+            this.logoutbtn.Location = new System.Drawing.Point(264, 248);
             this.logoutbtn.Name = "logoutbtn";
             this.logoutbtn.Size = new System.Drawing.Size(156, 40);
             this.logoutbtn.TabIndex = 21;
             this.logoutbtn.Text = "Log Out";
             this.logoutbtn.UseVisualStyleBackColor = false;
             this.logoutbtn.Click += new System.EventHandler(this.logoutbtn_Click_1);
-            // 
-            // panel7
-            // 
-            this.panel7.BackgroundImage = global::PharmaHealix.Properties.Resources.Humanicon;
-            this.panel7.Location = new System.Drawing.Point(210, 16);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(50, 50);
-            this.panel7.TabIndex = 20;
-            // 
-            // userpannamelbl
-            // 
-            this.userpannamelbl.AutoSize = true;
-            this.userpannamelbl.BackColor = System.Drawing.Color.Transparent;
-            this.userpannamelbl.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
-            this.userpannamelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(20)))));
-            this.userpannamelbl.Location = new System.Drawing.Point(177, 77);
-            this.userpannamelbl.Name = "userpannamelbl";
-            this.userpannamelbl.Size = new System.Drawing.Size(107, 45);
-            this.userpannamelbl.TabIndex = 19;
-            this.userpannamelbl.Text = "Name";
-            this.userpannamelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // prescriptionlbl
             // 
@@ -472,87 +826,6 @@
             this.searchiconpan.Name = "searchiconpan";
             this.searchiconpan.Size = new System.Drawing.Size(40, 40);
             this.searchiconpan.TabIndex = 14;
-            // 
-            // adpan2
-            // 
-            this.adpan2.BackgroundImage = global::PharmaHealix.Properties.Resources.Ad_panel11;
-            this.adpan2.Controls.Add(this.adlbl23);
-            this.adpan2.Controls.Add(this.adlbl22);
-            this.adpan2.Controls.Add(this.adlbl21);
-            this.adpan2.Location = new System.Drawing.Point(618, 623);
-            this.adpan2.Name = "adpan2";
-            this.adpan2.Size = new System.Drawing.Size(320, 125);
-            this.adpan2.TabIndex = 25;
-            // 
-            // adlbl23
-            // 
-            this.adlbl23.AutoSize = true;
-            this.adlbl23.BackColor = System.Drawing.Color.Transparent;
-            this.adlbl23.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.adlbl23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(20)))));
-            this.adlbl23.Location = new System.Drawing.Point(26, 59);
-            this.adlbl23.Name = "adlbl23";
-            this.adlbl23.Size = new System.Drawing.Size(202, 36);
-            this.adlbl23.TabIndex = 18;
-            this.adlbl23.Text = "GUEST SESSION";
-            // 
-            // adlbl22
-            // 
-            this.adlbl22.AutoSize = true;
-            this.adlbl22.BackColor = System.Drawing.Color.Transparent;
-            this.adlbl22.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.adlbl22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(20)))));
-            this.adlbl22.Location = new System.Drawing.Point(116, 20);
-            this.adlbl22.Name = "adlbl22";
-            this.adlbl22.Size = new System.Drawing.Size(127, 28);
-            this.adlbl22.TabIndex = 19;
-            this.adlbl22.Text = "Consultation";
-            // 
-            // adlbl21
-            // 
-            this.adlbl21.AutoSize = true;
-            this.adlbl21.BackColor = System.Drawing.Color.Transparent;
-            this.adlbl21.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adlbl21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(20)))));
-            this.adlbl21.Location = new System.Drawing.Point(25, 4);
-            this.adlbl21.Name = "adlbl21";
-            this.adlbl21.Size = new System.Drawing.Size(101, 48);
-            this.adlbl21.TabIndex = 18;
-            this.adlbl21.Text = "FREE";
-            // 
-            // adpan1
-            // 
-            this.adpan1.BackgroundImage = global::PharmaHealix.Properties.Resources.Ad_panel11;
-            this.adpan1.Controls.Add(this.adlbl12);
-            this.adpan1.Controls.Add(this.adlbl11);
-            this.adpan1.Location = new System.Drawing.Point(226, 623);
-            this.adpan1.Name = "adpan1";
-            this.adpan1.Size = new System.Drawing.Size(320, 125);
-            this.adpan1.TabIndex = 23;
-            // 
-            // adlbl12
-            // 
-            this.adlbl12.AutoSize = true;
-            this.adlbl12.BackColor = System.Drawing.Color.Transparent;
-            this.adlbl12.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.adlbl12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(20)))));
-            this.adlbl12.Location = new System.Drawing.Point(18, 58);
-            this.adlbl12.Name = "adlbl12";
-            this.adlbl12.Size = new System.Drawing.Size(206, 36);
-            this.adlbl12.TabIndex = 20;
-            this.adlbl12.Text = "CODE: HEALIX10";
-            // 
-            // adlbl11
-            // 
-            this.adlbl11.AutoSize = true;
-            this.adlbl11.BackColor = System.Drawing.Color.Transparent;
-            this.adlbl11.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adlbl11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(20)))));
-            this.adlbl11.Location = new System.Drawing.Point(15, 3);
-            this.adlbl11.Name = "adlbl11";
-            this.adlbl11.Size = new System.Drawing.Size(285, 48);
-            this.adlbl11.TabIndex = 16;
-            this.adlbl11.Text = "10% DISCOUNT";
             // 
             // medibackpan
             // 
@@ -914,32 +1187,41 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
             this.BackgroundImage = global::PharmaHealix.Properties.Resources.BackgroundImage;
             this.ClientSize = new System.Drawing.Size(1200, 750);
-            this.Controls.Add(this.cartbtn);
-            this.Controls.Add(this.headpan);
-            this.Controls.Add(this.medibackpan);
-            this.Controls.Add(this.prescriptionlbl);
-            this.Controls.Add(this.Whatareyoulookinglbl);
-            this.Controls.Add(this.searchpan);
-            this.Controls.Add(this.adpan2);
-            this.Controls.Add(this.adpan1);
-            this.Controls.Add(this.prescriptionuploadbtn);
-            this.Controls.Add(this.userpan);
+            this.Controls.Add(this.editpan);
             this.Controls.Add(this.patientpan);
+            this.Controls.Add(this.medibackpan);
+            this.Controls.Add(this.headpan);
+            this.Controls.Add(this.cartbtn);
+            this.Controls.Add(this.userpan);
+            this.Controls.Add(this.Whatareyoulookinglbl);
+            this.Controls.Add(this.prescriptionuploadbtn);
+            this.Controls.Add(this.prescriptionlbl);
+            this.Controls.Add(this.searchpan);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.headpan.ResumeLayout(false);
+            this.editpan.ResumeLayout(false);
+            this.editpan.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.cbpan.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
             this.userpan.ResumeLayout(false);
             this.userpan.PerformLayout();
             this.patientpan.ResumeLayout(false);
-            this.patientpan.PerformLayout();
             this.searchpan.ResumeLayout(false);
             this.searchpan.PerformLayout();
-            this.adpan2.ResumeLayout(false);
-            this.adpan2.PerformLayout();
-            this.adpan1.ResumeLayout(false);
-            this.adpan1.PerformLayout();
             this.medibackpan.ResumeLayout(false);
             this.medipan.ResumeLayout(false);
             this.mediinfopan.ResumeLayout(false);
@@ -969,13 +1251,6 @@
         private System.Windows.Forms.Button searchbtn;
         private System.Windows.Forms.TextBox searchtxt;
         private System.Windows.Forms.Panel searchiconpan;
-        private System.Windows.Forms.Panel adpan2;
-        private System.Windows.Forms.Label adlbl23;
-        private System.Windows.Forms.Label adlbl22;
-        private System.Windows.Forms.Label adlbl21;
-        private System.Windows.Forms.Panel adpan1;
-        private System.Windows.Forms.Label adlbl12;
-        private System.Windows.Forms.Label adlbl11;
         private System.Windows.Forms.Panel medibackpan;
         private System.Windows.Forms.Panel medipan;
         private System.Windows.Forms.RichTextBox medinametxt;
@@ -1008,11 +1283,40 @@
         private System.Windows.Forms.Panel patientpan;
         private System.Windows.Forms.Button minimizebtn;
         private System.Windows.Forms.Button logoutbtn;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label userpannamelbl;
         private System.Windows.Forms.Label userpanlbl2;
         private System.Windows.Forms.Button createaccountbtn;
-        private System.Windows.Forms.Label userpanemaillabl;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel editpan;
+        private System.Windows.Forms.Panel editphonepan;
+        private System.Windows.Forms.Panel editnamepan;
+        private System.Windows.Forms.Panel editpasspan;
+        private System.Windows.Forms.Panel editanspan;
+        private System.Windows.Forms.Panel editaddresspan;
+        private System.Windows.Forms.Panel editusernamepan;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.TextBox editanstxt;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.TextBox editaddresstxt;
+        private System.Windows.Forms.Panel cbpan;
+        private System.Windows.Forms.ComboBox editsecurityquestioncb;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.TextBox editnametxt;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Button editpanhidebtn;
+        private System.Windows.Forms.TextBox editpasstxt;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.TextBox editphonetxt;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.TextBox editusernametxt;
+        private System.Windows.Forms.Button editpansavebtn;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button editpanminimizebtn;
+        private System.Windows.Forms.Button editprofilebtn;
     }
 }

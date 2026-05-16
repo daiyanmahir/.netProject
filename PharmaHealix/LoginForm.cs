@@ -233,15 +233,8 @@ namespace PharmaHealix
                 new Db().NonQuery(query, CName, Phone, CUsername, Address, securityquestioncb.Text, Answer, CPass, "Patient");
 
 
-
                 MessageBox.Show("Signup Successful!");
                 Resetcreatepan();
-                createaccountpan.Hide();
-                //*****Extra Will Have to delete after Labtask
-  
-             //   ShowPatient s = new ShowPatient();
-              //  s.Show();
-              //  this.Hide();
             }
 
 
@@ -269,10 +262,46 @@ namespace PharmaHealix
             }
             else
             {
-                MessageBox.Show("Login Successful!");
-                MainForm m = new MainForm("Patient");
-                m.Show();
+                    
+                string q1 = "SELECT COUNT(*) FROM UserTable WHERE Username = @0 AND Password = @1";
+                int count = Convert.ToInt32(new Db().Scalar(q1, EUsername,EPass));
+                if (count >0)
+                {
+                    string q2 = "SELECT Role FROM UserTable WHERE Username = @0";
+                    string role = Convert.ToString(new Db().Scalar(q2, EUsername));
+                    if (role == "Patient")
+                    {
+                        MessageBox.Show("Login Successful!");
+                        MainForm m = new MainForm(role,EUsername);
+                        m.Show();
+                    }
+                    else if (role == "Doctor")
+                    {
+                        MessageBox.Show("Login Successful!");
+                        Doctor d = new Doctor();
+                        d.Show();
+                       
+                    }
+                    else if(role == "Pharmacist")
+                    {
+                        MessageBox.Show("Login Successful!");
+                        Pharmacist p = new Pharmacist();
+                        p.Show();
+                    }
+                    else if (role == "Admin")
+                    {
+                        MessageBox.Show("Login Successful!");
+                        AdminUserForm a = new AdminUserForm();
+                        a.Show();
+                    }
 
+                }
+                else
+                {
+                    MessageBox.Show("Wrong Username or Password");
+                    return;
+
+                }
                 LoginformReset();
                 this.Hide();
             }
@@ -296,7 +325,7 @@ namespace PharmaHealix
 
         private void viewguestbtn_Click(object sender, EventArgs e)
         {
-            MainForm guestdashboard = new MainForm("Guest");
+            MainForm guestdashboard = new MainForm("Guest","");
             guestdashboard.Show();
             this.Hide();
 
@@ -312,9 +341,6 @@ namespace PharmaHealix
         private void loginbtn_Click(object sender, EventArgs e)
         {
             LoginValidation();
-            //Pharmacist p = new Pharmacist();
-            //p.Show();
-            //this.Hide();
 
         }
 

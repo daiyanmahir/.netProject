@@ -37,8 +37,6 @@
             this.patientlisttoplbl = new System.Windows.Forms.Label();
             this.orderpan = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.phorderrtb = new System.Windows.Forms.RichTextBox();
-            this.phordclearbtn = new System.Windows.Forms.Button();
             this.phordaddbtn = new System.Windows.Forms.Button();
             this.phordquantitytb = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -118,6 +116,9 @@
             this.patientlistbtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.medilogobtn = new System.Windows.Forms.Button();
+            this.phordcartdgv = new System.Windows.Forms.DataGridView();
+            this.phordconfirmbtn = new System.Windows.Forms.Button();
+            this.phordremovebtn = new System.Windows.Forms.Button();
             this.patientlistpan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phprdgv)).BeginInit();
             this.patientlisttoppan.SuspendLayout();
@@ -140,6 +141,7 @@
             this.pharmacistprofiletoppan.SuspendLayout();
             this.sidepan.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.phordcartdgv)).BeginInit();
             this.SuspendLayout();
             // 
             // patientlistpan
@@ -210,9 +212,10 @@
             // orderpan
             // 
             this.orderpan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
+            this.orderpan.Controls.Add(this.phordremovebtn);
+            this.orderpan.Controls.Add(this.phordconfirmbtn);
+            this.orderpan.Controls.Add(this.phordcartdgv);
             this.orderpan.Controls.Add(this.label11);
-            this.orderpan.Controls.Add(this.phorderrtb);
-            this.orderpan.Controls.Add(this.phordclearbtn);
             this.orderpan.Controls.Add(this.phordaddbtn);
             this.orderpan.Controls.Add(this.phordquantitytb);
             this.orderpan.Controls.Add(this.label10);
@@ -230,34 +233,19 @@
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(25, 426);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(49, 20);
+            this.label11.Size = new System.Drawing.Size(110, 25);
             this.label11.TabIndex = 10;
-            this.label11.Text = "Order";
-            // 
-            // phorderrtb
-            // 
-            this.phorderrtb.Location = new System.Drawing.Point(34, 460);
-            this.phorderrtb.Name = "phorderrtb";
-            this.phorderrtb.Size = new System.Drawing.Size(900, 213);
-            this.phorderrtb.TabIndex = 9;
-            this.phorderrtb.Text = "";
-            // 
-            // phordclearbtn
-            // 
-            this.phordclearbtn.Location = new System.Drawing.Point(494, 384);
-            this.phordclearbtn.Name = "phordclearbtn";
-            this.phordclearbtn.Size = new System.Drawing.Size(84, 40);
-            this.phordclearbtn.TabIndex = 8;
-            this.phordclearbtn.Text = "Clear";
-            this.phordclearbtn.UseVisualStyleBackColor = true;
+            this.label11.Text = "Order Cart:";
             // 
             // phordaddbtn
             // 
-            this.phordaddbtn.Location = new System.Drawing.Point(395, 384);
+            this.phordaddbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phordaddbtn.Location = new System.Drawing.Point(406, 309);
             this.phordaddbtn.Name = "phordaddbtn";
-            this.phordaddbtn.Size = new System.Drawing.Size(84, 40);
+            this.phordaddbtn.Size = new System.Drawing.Size(151, 44);
             this.phordaddbtn.TabIndex = 7;
             this.phordaddbtn.Text = "Add";
             this.phordaddbtn.UseVisualStyleBackColor = true;
@@ -272,9 +260,10 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(567, 303);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(68, 20);
+            this.label10.Size = new System.Drawing.Size(85, 25);
             this.label10.TabIndex = 5;
             this.label10.Text = "Quantity";
             // 
@@ -288,9 +277,10 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(25, 301);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 20);
+            this.label9.Size = new System.Drawing.Size(91, 25);
             this.label9.TabIndex = 3;
             this.label9.Text = "Medicine";
             // 
@@ -588,6 +578,7 @@
             // pharmacistprofilepan
             // 
             this.pharmacistprofilepan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
+            this.pharmacistprofilepan.BackgroundImage = global::PharmaHealix.Properties.Resources.BackgroundImage;
             this.pharmacistprofilepan.Controls.Add(this.pictureBox1);
             this.pharmacistprofilepan.Controls.Add(this.panel11);
             this.pharmacistprofilepan.Controls.Add(this.label3);
@@ -624,9 +615,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(18, 115);
+            this.pictureBox1.Location = new System.Drawing.Point(399, 120);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(73, 96);
+            this.pictureBox1.Size = new System.Drawing.Size(180, 180);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 42;
             this.pictureBox1.TabStop = false;
@@ -635,7 +626,7 @@
             // 
             this.panel11.BackColor = System.Drawing.Color.White;
             this.panel11.Controls.Add(this.phsalarytb);
-            this.panel11.Location = new System.Drawing.Point(96, 564);
+            this.panel11.Location = new System.Drawing.Point(96, 600);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(370, 54);
             this.panel11.TabIndex = 40;
@@ -657,7 +648,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(88, 532);
+            this.label3.Location = new System.Drawing.Point(88, 570);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 28);
@@ -668,7 +659,7 @@
             // 
             this.panel10.BackColor = System.Drawing.Color.White;
             this.panel10.Controls.Add(this.comboBox1);
-            this.panel10.Location = new System.Drawing.Point(527, 564);
+            this.panel10.Location = new System.Drawing.Point(527, 600);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(373, 52);
             this.panel10.TabIndex = 38;
@@ -690,7 +681,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.Controls.Add(this.pharmacistphonetxt);
-            this.panel5.Location = new System.Drawing.Point(527, 215);
+            this.panel5.Location = new System.Drawing.Point(527, 335);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(370, 54);
             this.panel5.TabIndex = 37;
@@ -713,7 +704,7 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.Controls.Add(this.pharmacistprofileaddtxt);
-            this.panel6.Location = new System.Drawing.Point(96, 444);
+            this.panel6.Location = new System.Drawing.Point(96, 510);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(370, 54);
             this.panel6.TabIndex = 37;
@@ -735,7 +726,7 @@
             // 
             this.panel7.BackColor = System.Drawing.Color.White;
             this.panel7.Controls.Add(this.pharmacistanswertxt);
-            this.panel7.Location = new System.Drawing.Point(527, 444);
+            this.panel7.Location = new System.Drawing.Point(527, 510);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(370, 54);
             this.panel7.TabIndex = 37;
@@ -757,7 +748,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.pharmacistprofilepasstxt);
-            this.panel4.Location = new System.Drawing.Point(527, 327);
+            this.panel4.Location = new System.Drawing.Point(527, 420);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(370, 54);
             this.panel4.TabIndex = 36;
@@ -779,7 +770,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.pharmacistprofileusernametxt);
-            this.panel3.Location = new System.Drawing.Point(96, 327);
+            this.panel3.Location = new System.Drawing.Point(96, 420);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(370, 54);
             this.panel3.TabIndex = 35;
@@ -802,7 +793,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.pharmacistprofilenametxt);
-            this.panel2.Location = new System.Drawing.Point(96, 215);
+            this.panel2.Location = new System.Drawing.Point(96, 335);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(370, 54);
             this.panel2.TabIndex = 34;
@@ -824,7 +815,7 @@
             // errorphonepan
             // 
             this.errorphonepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
-            this.errorphonepan.Location = new System.Drawing.Point(901, 226);
+            this.errorphonepan.Location = new System.Drawing.Point(901, 348);
             this.errorphonepan.Name = "errorphonepan";
             this.errorphonepan.Size = new System.Drawing.Size(30, 30);
             this.errorphonepan.TabIndex = 33;
@@ -833,7 +824,7 @@
             // erroranspan
             // 
             this.erroranspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
-            this.erroranspan.Location = new System.Drawing.Point(901, 459);
+            this.erroranspan.Location = new System.Drawing.Point(901, 522);
             this.erroranspan.Name = "erroranspan";
             this.erroranspan.Size = new System.Drawing.Size(30, 30);
             this.erroranspan.TabIndex = 33;
@@ -842,7 +833,7 @@
             // erroraddpan
             // 
             this.erroraddpan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
-            this.erroraddpan.Location = new System.Drawing.Point(472, 459);
+            this.erroraddpan.Location = new System.Drawing.Point(472, 522);
             this.erroraddpan.Name = "erroraddpan";
             this.erroraddpan.Size = new System.Drawing.Size(30, 30);
             this.erroraddpan.TabIndex = 33;
@@ -851,7 +842,7 @@
             // errorpasspan
             // 
             this.errorpasspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
-            this.errorpasspan.Location = new System.Drawing.Point(901, 339);
+            this.errorpasspan.Location = new System.Drawing.Point(901, 432);
             this.errorpasspan.Name = "errorpasspan";
             this.errorpasspan.Size = new System.Drawing.Size(30, 30);
             this.errorpasspan.TabIndex = 33;
@@ -860,7 +851,7 @@
             // errorusernamepan
             // 
             this.errorusernamepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
-            this.errorusernamepan.Location = new System.Drawing.Point(472, 339);
+            this.errorusernamepan.Location = new System.Drawing.Point(472, 432);
             this.errorusernamepan.Name = "errorusernamepan";
             this.errorusernamepan.Size = new System.Drawing.Size(30, 30);
             this.errorusernamepan.TabIndex = 33;
@@ -869,7 +860,7 @@
             // errorpharmacistnamepan
             // 
             this.errorpharmacistnamepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
-            this.errorpharmacistnamepan.Location = new System.Drawing.Point(472, 226);
+            this.errorpharmacistnamepan.Location = new System.Drawing.Point(472, 348);
             this.errorpharmacistnamepan.Name = "errorpharmacistnamepan";
             this.errorpharmacistnamepan.Size = new System.Drawing.Size(30, 30);
             this.errorpharmacistnamepan.TabIndex = 32;
@@ -879,7 +870,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(522, 413);
+            this.label1.Location = new System.Drawing.Point(522, 480);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 28);
@@ -890,7 +881,7 @@
             // 
             this.securityquestionlbl.AutoSize = true;
             this.securityquestionlbl.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.securityquestionlbl.Location = new System.Drawing.Point(522, 532);
+            this.securityquestionlbl.Location = new System.Drawing.Point(522, 570);
             this.securityquestionlbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.securityquestionlbl.Name = "securityquestionlbl";
             this.securityquestionlbl.Size = new System.Drawing.Size(178, 28);
@@ -901,7 +892,7 @@
             // 
             this.pharmacistprofileupdatebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
             this.pharmacistprofileupdatebtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistprofileupdatebtn.Location = new System.Drawing.Point(439, 660);
+            this.pharmacistprofileupdatebtn.Location = new System.Drawing.Point(431, 671);
             this.pharmacistprofileupdatebtn.Margin = new System.Windows.Forms.Padding(2);
             this.pharmacistprofileupdatebtn.Name = "pharmacistprofileupdatebtn";
             this.pharmacistprofileupdatebtn.Size = new System.Drawing.Size(116, 67);
@@ -913,7 +904,7 @@
             // 
             this.pharmacistprofileaddresslbl.AutoSize = true;
             this.pharmacistprofileaddresslbl.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistprofileaddresslbl.Location = new System.Drawing.Point(88, 413);
+            this.pharmacistprofileaddresslbl.Location = new System.Drawing.Point(88, 480);
             this.pharmacistprofileaddresslbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pharmacistprofileaddresslbl.Name = "pharmacistprofileaddresslbl";
             this.pharmacistprofileaddresslbl.Size = new System.Drawing.Size(90, 28);
@@ -924,7 +915,7 @@
             // 
             this.pharmacistprofilephonelbl.AutoSize = true;
             this.pharmacistprofilephonelbl.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistprofilephonelbl.Location = new System.Drawing.Point(522, 183);
+            this.pharmacistprofilephonelbl.Location = new System.Drawing.Point(522, 305);
             this.pharmacistprofilephonelbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pharmacistprofilephonelbl.Name = "pharmacistprofilephonelbl";
             this.pharmacistprofilephonelbl.Size = new System.Drawing.Size(158, 28);
@@ -935,7 +926,7 @@
             // 
             this.pharmacistprofilepasslbl.AutoSize = true;
             this.pharmacistprofilepasslbl.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistprofilepasslbl.Location = new System.Drawing.Point(522, 295);
+            this.pharmacistprofilepasslbl.Location = new System.Drawing.Point(522, 390);
             this.pharmacistprofilepasslbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pharmacistprofilepasslbl.Name = "pharmacistprofilepasslbl";
             this.pharmacistprofilepasslbl.Size = new System.Drawing.Size(102, 28);
@@ -946,7 +937,7 @@
             // 
             this.pharmacistprofileusernamelbl.AutoSize = true;
             this.pharmacistprofileusernamelbl.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistprofileusernamelbl.Location = new System.Drawing.Point(88, 295);
+            this.pharmacistprofileusernamelbl.Location = new System.Drawing.Point(88, 390);
             this.pharmacistprofileusernamelbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pharmacistprofileusernamelbl.Name = "pharmacistprofileusernamelbl";
             this.pharmacistprofileusernamelbl.Size = new System.Drawing.Size(109, 28);
@@ -957,7 +948,7 @@
             // 
             this.pharmacistprofilenamelbl.AutoSize = true;
             this.pharmacistprofilenamelbl.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistprofilenamelbl.Location = new System.Drawing.Point(91, 183);
+            this.pharmacistprofilenamelbl.Location = new System.Drawing.Point(91, 305);
             this.pharmacistprofilenamelbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pharmacistprofilenamelbl.Name = "pharmacistprofilenamelbl";
             this.pharmacistprofilenamelbl.Size = new System.Drawing.Size(71, 28);
@@ -1071,7 +1062,7 @@
             this.panel8.BackColor = System.Drawing.Color.Black;
             this.panel8.Location = new System.Drawing.Point(234, 3);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(10, 650);
+            this.panel8.Size = new System.Drawing.Size(8, 650);
             this.panel8.TabIndex = 25;
             // 
             // profilebtn
@@ -1123,6 +1114,37 @@
             this.medilogobtn.Size = new System.Drawing.Size(156, 129);
             this.medilogobtn.TabIndex = 22;
             this.medilogobtn.UseVisualStyleBackColor = false;
+            // 
+            // phordcartdgv
+            // 
+            this.phordcartdgv.AllowUserToOrderColumns = true;
+            this.phordcartdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.phordcartdgv.Location = new System.Drawing.Point(26, 466);
+            this.phordcartdgv.Name = "phordcartdgv";
+            this.phordcartdgv.RowHeadersWidth = 62;
+            this.phordcartdgv.RowTemplate.Height = 28;
+            this.phordcartdgv.Size = new System.Drawing.Size(908, 206);
+            this.phordcartdgv.TabIndex = 11;
+            // 
+            // phordconfirmbtn
+            // 
+            this.phordconfirmbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phordconfirmbtn.Location = new System.Drawing.Point(406, 683);
+            this.phordconfirmbtn.Name = "phordconfirmbtn";
+            this.phordconfirmbtn.Size = new System.Drawing.Size(151, 44);
+            this.phordconfirmbtn.TabIndex = 12;
+            this.phordconfirmbtn.Text = "Confirm";
+            this.phordconfirmbtn.UseVisualStyleBackColor = true;
+            // 
+            // phordremovebtn
+            // 
+            this.phordremovebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phordremovebtn.Location = new System.Drawing.Point(406, 359);
+            this.phordremovebtn.Name = "phordremovebtn";
+            this.phordremovebtn.Size = new System.Drawing.Size(151, 44);
+            this.phordremovebtn.TabIndex = 13;
+            this.phordremovebtn.Text = "Remove";
+            this.phordremovebtn.UseVisualStyleBackColor = true;
             // 
             // Pharmacist
             // 
@@ -1178,6 +1200,7 @@
             this.pharmacistprofiletoppan.PerformLayout();
             this.sidepan.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.phordcartdgv)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1267,10 +1290,11 @@
         private System.Windows.Forms.TextBox phordquantitytb;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.RichTextBox phorderrtb;
-        private System.Windows.Forms.Button phordclearbtn;
         private System.Windows.Forms.Button phordaddbtn;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox phinvstocktb;
+        private System.Windows.Forms.DataGridView phordcartdgv;
+        private System.Windows.Forms.Button phordconfirmbtn;
+        private System.Windows.Forms.Button phordremovebtn;
     }
 }

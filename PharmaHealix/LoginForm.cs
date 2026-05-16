@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -55,6 +56,21 @@ namespace PharmaHealix
         {
             get { return enterpasstxt.Text; }
             set { enterpasstxt.Text = value; }
+        }
+        private string FPass
+        {
+            get { return fpasstxt.Text; }
+            set { fpasstxt.Text = value; }
+        }
+        private string FUsername
+        {
+            get { return fusernametxt.Text; }
+            set { fusernametxt.Text = value; }
+        }
+        private string FAns
+        {
+            get { return fanstxt.Text; }
+            set { fanstxt.Text = value; }
         }
 
         //Constructor 
@@ -447,7 +463,119 @@ namespace PharmaHealix
 
         private void forgetpasslbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            forgetpasspan.Visible = true;
+            forgetpasspan.BringToFront();
 
+          
+        }
+
+        private void fcrossbtn_Click(object sender, EventArgs e)
+        {
+            forgetpasspan.Hide();
+            // reset pan
+            fpasspan.Visible = false;
+
+
+            fusernametxt.Text = "enter your username";
+            fpasstxt.Text = "Enter your password (at least 5 characters)";
+            fanstxt.Text = "Type your answer";
+
+
+            fusernametxt.ForeColor = Color.Gray;
+            fpasstxt.ForeColor = Color.Gray;
+            fanstxt.ForeColor = Color.Gray;
+        }
+
+        private void changepassbtn_Click(object sender, EventArgs e)
+        {
+            fpasspan.Visible = false;
+
+            string q1 = "SELECT COUNT(*) FROM UserTable WHERE Username = @0 and Question=@1 and Answer=@2";
+            int count = Convert.ToInt32(new Db().Scalar(q1, FUsername, fsecurityquestioncb.Text, FAns));
+            if (count > 0)
+            {
+                bool flag = false;
+                if (FPass == "" || FPass == "Enter your password (at least 5 characters)")
+                {
+                    fpasspan.Visible = true;
+                    flag = true;
+                }
+                else if (FPass.Length < 5)
+                {
+                    fpasspan.Visible = true;
+                    flag = true;
+                }
+                if (flag)
+                {
+                    MessageBox.Show("Password: at least 5 characters");
+                    return;
+                }
+                else
+                {
+                    string query = "UPDATE UserTable SET Password = @0";
+                    new Db().NonQuery(query, FPass);
+                    MessageBox.Show("Password reset successful. You can now log in.");
+
+                    forgetpasspan.Hide();
+                    // reset pan
+                    fpasspan.Visible = false;
+
+
+                    fusernametxt.Text = "enter your username";
+                    fpasstxt.Text = "Enter your password (at least 5 characters)";
+                    fanstxt.Text = "Type your answer";
+
+
+                    fusernametxt.ForeColor = Color.Gray;
+                    fpasstxt.ForeColor = Color.Gray;
+                    fanstxt.ForeColor = Color.Gray;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid credentials. Please try again.");
+                return;
+            }
+
+        }
+        private void fusernametxt_Enter(object sender, EventArgs e)
+        {
+            if (fusernametxt.Text == "enter your username")
+            {
+                fusernametxt.Text = "";
+                fusernametxt.ForeColor = Color.Black;
+            }
+        }
+
+        private void fpasstxt_Enter(object sender, EventArgs e)
+        {
+            if (fpasstxt.Text == "Enter your password (at least 5 characters)")
+            {
+                fpasstxt.Text = "";
+                fpasstxt.ForeColor = Color.Black;
+                fpasstxt.PasswordChar = '*';
+            }
+        }
+        private void fanstxt_Enter(object sender, EventArgs e)
+        {
+            if (fanstxt.Text == "Type your answer")
+            {
+                fanstxt.Text = "";
+                fanstxt.ForeColor = Color.Black;
+            }
+
+        }
+
+        private void fhidebtn_Click(object sender, EventArgs e)
+        {
+            if (fpasstxt.PasswordChar == '*')
+            {
+                fpasstxt.PasswordChar = '\0';
+            }
+            else
+            {
+                fpasstxt.PasswordChar = '*';
+            }
         }
     }
 }

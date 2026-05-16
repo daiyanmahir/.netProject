@@ -36,6 +36,7 @@
             this.doctorbtn = new System.Windows.Forms.Button();
             this.Exitbtn = new System.Windows.Forms.Button();
             this.editpan = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.editpanminimizebtn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -218,6 +219,7 @@
             // 
             // editpan
             // 
+            this.editpan.Controls.Add(this.label9);
             this.editpan.Controls.Add(this.editpanminimizebtn);
             this.editpan.Controls.Add(this.label8);
             this.editpan.Controls.Add(this.label7);
@@ -246,6 +248,17 @@
             this.editpan.TabIndex = 19;
             this.editpan.Visible = false;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Castellar", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(300, 7);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(274, 46);
+            this.label9.TabIndex = 53;
+            this.label9.Text = "My Profile";
+            // 
             // editpanminimizebtn
             // 
             this.editpanminimizebtn.BackColor = System.Drawing.Color.White;
@@ -266,7 +279,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label8.Location = new System.Drawing.Point(172, 471);
+            this.label8.Location = new System.Drawing.Point(172, 491);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(84, 20);
             this.label8.TabIndex = 51;
@@ -276,7 +289,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label7.Location = new System.Drawing.Point(172, 388);
+            this.label7.Location = new System.Drawing.Point(172, 408);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 20);
             this.label7.TabIndex = 50;
@@ -286,7 +299,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label6.Location = new System.Drawing.Point(171, 306);
+            this.label6.Location = new System.Drawing.Point(171, 326);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(140, 20);
             this.label6.TabIndex = 49;
@@ -296,7 +309,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label5.Location = new System.Drawing.Point(171, 222);
+            this.label5.Location = new System.Drawing.Point(171, 242);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 20);
             this.label5.TabIndex = 48;
@@ -306,7 +319,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label4.Location = new System.Drawing.Point(171, 133);
+            this.label4.Location = new System.Drawing.Point(171, 153);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 20);
             this.label4.TabIndex = 47;
@@ -316,7 +329,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label3.Location = new System.Drawing.Point(460, 41);
+            this.label3.Location = new System.Drawing.Point(460, 61);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(121, 20);
             this.label3.TabIndex = 46;
@@ -326,7 +339,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label2.Location = new System.Drawing.Point(171, 40);
+            this.label2.Location = new System.Drawing.Point(171, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 20);
             this.label2.TabIndex = 45;
@@ -350,7 +363,7 @@
             // editphonepan
             // 
             this.editphonepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
-            this.editphonepan.Location = new System.Drawing.Point(679, 74);
+            this.editphonepan.Location = new System.Drawing.Point(676, 94);
             this.editphonepan.Name = "editphonepan";
             this.editphonepan.Size = new System.Drawing.Size(30, 30);
             this.editphonepan.TabIndex = 43;
@@ -359,7 +372,7 @@
             // editnamepan
             // 
             this.editnamepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
-            this.editnamepan.Location = new System.Drawing.Point(388, 74);
+            this.editnamepan.Location = new System.Drawing.Point(392, 94);
             this.editnamepan.Name = "editnamepan";
             this.editnamepan.Size = new System.Drawing.Size(30, 30);
             this.editnamepan.TabIndex = 44;
@@ -368,7 +381,7 @@
             // editpasspan
             // 
             this.editpasspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
-            this.editpasspan.Location = new System.Drawing.Point(677, 505);
+            this.editpasspan.Location = new System.Drawing.Point(674, 525);
             this.editpasspan.Name = "editpasspan";
             this.editpasspan.Size = new System.Drawing.Size(30, 30);
             this.editpasspan.TabIndex = 39;
@@ -377,7 +390,7 @@
             // editanspan
             // 
             this.editanspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
-            this.editanspan.Location = new System.Drawing.Point(677, 418);
+            this.editanspan.Location = new System.Drawing.Point(674, 438);
             this.editanspan.Name = "editanspan";
             this.editanspan.Size = new System.Drawing.Size(30, 30);
             this.editanspan.TabIndex = 40;
@@ -386,7 +399,7 @@
             // editaddresspan
             // 
             this.editaddresspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
-            this.editaddresspan.Location = new System.Drawing.Point(677, 255);
+            this.editaddresspan.Location = new System.Drawing.Point(674, 275);
             this.editaddresspan.Name = "editaddresspan";
             this.editaddresspan.Size = new System.Drawing.Size(30, 30);
             this.editaddresspan.TabIndex = 41;
@@ -395,7 +408,7 @@
             // editusernamepan
             // 
             this.editusernamepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
-            this.editusernamepan.Location = new System.Drawing.Point(679, 166);
+            this.editusernamepan.Location = new System.Drawing.Point(676, 186);
             this.editusernamepan.Name = "editusernamepan";
             this.editusernamepan.Size = new System.Drawing.Size(30, 30);
             this.editusernamepan.TabIndex = 42;
@@ -406,7 +419,7 @@
             this.panel9.BackColor = System.Drawing.Color.White;
             this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel9.Controls.Add(this.editanstxt);
-            this.panel9.Location = new System.Drawing.Point(167, 411);
+            this.panel9.Location = new System.Drawing.Point(167, 431);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(487, 50);
             this.panel9.TabIndex = 33;
@@ -426,7 +439,7 @@
             this.panel8.BackColor = System.Drawing.Color.White;
             this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel8.Controls.Add(this.editaddresstxt);
-            this.panel8.Location = new System.Drawing.Point(167, 245);
+            this.panel8.Location = new System.Drawing.Point(167, 265);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(487, 50);
             this.panel8.TabIndex = 37;
@@ -447,7 +460,7 @@
             this.cbpan.BackColor = System.Drawing.Color.White;
             this.cbpan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.cbpan.Controls.Add(this.editsecurityquestioncb);
-            this.cbpan.Location = new System.Drawing.Point(167, 329);
+            this.cbpan.Location = new System.Drawing.Point(167, 349);
             this.cbpan.Name = "cbpan";
             this.cbpan.Size = new System.Drawing.Size(487, 50);
             this.cbpan.TabIndex = 34;
@@ -473,7 +486,7 @@
             this.panel7.BackColor = System.Drawing.Color.White;
             this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel7.Controls.Add(this.editnametxt);
-            this.panel7.Location = new System.Drawing.Point(167, 65);
+            this.panel7.Location = new System.Drawing.Point(167, 85);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(206, 50);
             this.panel7.TabIndex = 35;
@@ -494,7 +507,7 @@
             this.panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel10.Controls.Add(this.editpanhidebtn);
             this.panel10.Controls.Add(this.editpasstxt);
-            this.panel10.Location = new System.Drawing.Point(167, 496);
+            this.panel10.Location = new System.Drawing.Point(167, 516);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(487, 50);
             this.panel10.TabIndex = 38;
@@ -527,7 +540,7 @@
             this.panel11.BackColor = System.Drawing.Color.White;
             this.panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel11.Controls.Add(this.editphonetxt);
-            this.panel11.Location = new System.Drawing.Point(455, 65);
+            this.panel11.Location = new System.Drawing.Point(455, 85);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(199, 50);
             this.panel11.TabIndex = 36;
@@ -548,7 +561,7 @@
             this.panel12.BackColor = System.Drawing.Color.White;
             this.panel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel12.Controls.Add(this.editusernametxt);
-            this.panel12.Location = new System.Drawing.Point(167, 157);
+            this.panel12.Location = new System.Drawing.Point(167, 177);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(487, 50);
             this.panel12.TabIndex = 32;
@@ -1318,5 +1331,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button editpanminimizebtn;
         private System.Windows.Forms.Button editprofilebtn;
+        private System.Windows.Forms.Label label9;
     }
 }

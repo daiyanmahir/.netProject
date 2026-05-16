@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Loginform));
-            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.wlclbl = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -78,7 +77,24 @@
             this.forgetpasslbl = new System.Windows.Forms.LinkLabel();
             this.Enteruserpan = new System.Windows.Forms.Panel();
             this.Enterpasspan = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
+            this.forgetpasspan = new System.Windows.Forms.Panel();
+            this.fcrossbtn = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.changepassbtn = new System.Windows.Forms.Button();
+            this.fpasspan = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.fanstxt = new System.Windows.Forms.TextBox();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.fsecurityquestioncb = new System.Windows.Forms.ComboBox();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.fhidebtn = new System.Windows.Forms.Button();
+            this.fpasstxt = new System.Windows.Forms.TextBox();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.fusernametxt = new System.Windows.Forms.TextBox();
             this.picturepan.SuspendLayout();
             this.usertxtpan.SuspendLayout();
             this.passtxtpan.SuspendLayout();
@@ -90,12 +106,12 @@
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.forgetpasspan.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel16.SuspendLayout();
+            this.panel17.SuspendLayout();
+            this.panel18.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // fileSystemWatcher1
-            // 
-            this.fileSystemWatcher1.EnableRaisingEvents = true;
-            this.fileSystemWatcher1.SynchronizingObject = this;
             // 
             // wlclbl
             // 
@@ -305,7 +321,7 @@
             this.createaccountpan.Controls.Add(this.label3);
             this.createaccountpan.Controls.Add(this.panel1);
             this.createaccountpan.Controls.Add(this.label4);
-            this.createaccountpan.Location = new System.Drawing.Point(0, 0);
+            this.createaccountpan.Location = new System.Drawing.Point(1110, 0);
             this.createaccountpan.Name = "createaccountpan";
             this.createaccountpan.Size = new System.Drawing.Size(600, 750);
             this.createaccountpan.TabIndex = 8;
@@ -633,11 +649,233 @@
             this.Enterpasspan.TabIndex = 32;
             this.Enterpasspan.Visible = false;
             // 
+            // forgetpasspan
+            // 
+            this.forgetpasspan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
+            this.forgetpasspan.Controls.Add(this.fcrossbtn);
+            this.forgetpasspan.Controls.Add(this.label8);
+            this.forgetpasspan.Controls.Add(this.label7);
+            this.forgetpasspan.Controls.Add(this.label6);
+            this.forgetpasspan.Controls.Add(this.label5);
+            this.forgetpasspan.Controls.Add(this.label1);
+            this.forgetpasspan.Controls.Add(this.changepassbtn);
+            this.forgetpasspan.Controls.Add(this.fpasspan);
+            this.forgetpasspan.Controls.Add(this.panel14);
+            this.forgetpasspan.Controls.Add(this.panel16);
+            this.forgetpasspan.Controls.Add(this.panel17);
+            this.forgetpasspan.Controls.Add(this.panel18);
+            this.forgetpasspan.Location = new System.Drawing.Point(8, 217);
+            this.forgetpasspan.Name = "forgetpasspan";
+            this.forgetpasspan.Size = new System.Drawing.Size(587, 526);
+            this.forgetpasspan.TabIndex = 0;
+            this.forgetpasspan.Visible = false;
+            // 
+            // fcrossbtn
+            // 
+            this.fcrossbtn.BackColor = System.Drawing.Color.White;
+            this.fcrossbtn.FlatAppearance.BorderSize = 0;
+            this.fcrossbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.fcrossbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
+            this.fcrossbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.fcrossbtn.Location = new System.Drawing.Point(534, 5);
+            this.fcrossbtn.Name = "fcrossbtn";
+            this.fcrossbtn.Size = new System.Drawing.Size(50, 30);
+            this.fcrossbtn.TabIndex = 33;
+            this.fcrossbtn.Text = "X";
+            this.fcrossbtn.UseVisualStyleBackColor = false;
+            this.fcrossbtn.Click += new System.EventHandler(this.fcrossbtn_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(51, 352);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(149, 20);
+            this.label8.TabIndex = 43;
+            this.label8.Text = "Type your password";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(52, 262);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(168, 20);
+            this.label7.TabIndex = 42;
+            this.label7.Text = "What was your answer";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(51, 167);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(211, 20);
+            this.label6.TabIndex = 41;
+            this.label6.Text = "Select your security question";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(52, 79);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(152, 20);
+            this.label5.TabIndex = 40;
+            this.label5.Text = "Type your username";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(124, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(329, 45);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Reset Your Password";
+            // 
+            // changepassbtn
+            // 
+            this.changepassbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
+            this.changepassbtn.FlatAppearance.BorderSize = 0;
+            this.changepassbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.AliceBlue;
+            this.changepassbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.changepassbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changepassbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.changepassbtn.Location = new System.Drawing.Point(47, 451);
+            this.changepassbtn.Name = "changepassbtn";
+            this.changepassbtn.Size = new System.Drawing.Size(445, 45);
+            this.changepassbtn.TabIndex = 32;
+            this.changepassbtn.Text = "Confirm";
+            this.changepassbtn.UseVisualStyleBackColor = false;
+            this.changepassbtn.Click += new System.EventHandler(this.changepassbtn_Click);
+            // 
+            // fpasspan
+            // 
+            this.fpasspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.fpasspan.Location = new System.Drawing.Point(507, 384);
+            this.fpasspan.Name = "fpasspan";
+            this.fpasspan.Size = new System.Drawing.Size(30, 30);
+            this.fpasspan.TabIndex = 36;
+            this.fpasspan.Visible = false;
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.White;
+            this.panel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel14.Controls.Add(this.fanstxt);
+            this.panel14.Location = new System.Drawing.Point(47, 285);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(445, 50);
+            this.panel14.TabIndex = 32;
+            // 
+            // fanstxt
+            // 
+            this.fanstxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.fanstxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fanstxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.fanstxt.Location = new System.Drawing.Point(14, 15);
+            this.fanstxt.Name = "fanstxt";
+            this.fanstxt.Size = new System.Drawing.Size(426, 21);
+            this.fanstxt.TabIndex = 17;
+            this.fanstxt.Text = "Type your answer";
+            this.fanstxt.Enter += new System.EventHandler(this.fanstxt_Enter);
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.White;
+            this.panel16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel16.Controls.Add(this.fsecurityquestioncb);
+            this.panel16.Location = new System.Drawing.Point(47, 193);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(445, 50);
+            this.panel16.TabIndex = 33;
+            // 
+            // fsecurityquestioncb
+            // 
+            this.fsecurityquestioncb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.fsecurityquestioncb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.fsecurityquestioncb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.fsecurityquestioncb.ForeColor = System.Drawing.Color.Black;
+            this.fsecurityquestioncb.FormattingEnabled = true;
+            this.fsecurityquestioncb.Items.AddRange(new object[] {
+            "What is your pet name?",
+            "What is your birthplace? ",
+            "What is your favorite color?"});
+            this.fsecurityquestioncb.Location = new System.Drawing.Point(9, 11);
+            this.fsecurityquestioncb.Name = "fsecurityquestioncb";
+            this.fsecurityquestioncb.Size = new System.Drawing.Size(431, 30);
+            this.fsecurityquestioncb.TabIndex = 29;
+            // 
+            // panel17
+            // 
+            this.panel17.BackColor = System.Drawing.Color.White;
+            this.panel17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel17.Controls.Add(this.fhidebtn);
+            this.panel17.Controls.Add(this.fpasstxt);
+            this.panel17.Location = new System.Drawing.Point(47, 375);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(445, 50);
+            this.panel17.TabIndex = 35;
+            // 
+            // fhidebtn
+            // 
+            this.fhidebtn.FlatAppearance.BorderSize = 0;
+            this.fhidebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.fhidebtn.Image = ((System.Drawing.Image)(resources.GetObject("fhidebtn.Image")));
+            this.fhidebtn.Location = new System.Drawing.Point(406, 12);
+            this.fhidebtn.Name = "fhidebtn";
+            this.fhidebtn.Size = new System.Drawing.Size(30, 25);
+            this.fhidebtn.TabIndex = 30;
+            this.fhidebtn.UseVisualStyleBackColor = true;
+            this.fhidebtn.Click += new System.EventHandler(this.fhidebtn_Click);
+            // 
+            // fpasstxt
+            // 
+            this.fpasstxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.fpasstxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fpasstxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.fpasstxt.Location = new System.Drawing.Point(11, 15);
+            this.fpasstxt.Name = "fpasstxt";
+            this.fpasstxt.Size = new System.Drawing.Size(395, 21);
+            this.fpasstxt.TabIndex = 18;
+            this.fpasstxt.Text = "Enter your password (at least 5 characters)";
+            this.fpasstxt.Enter += new System.EventHandler(this.fpasstxt_Enter);
+            // 
+            // panel18
+            // 
+            this.panel18.BackColor = System.Drawing.Color.White;
+            this.panel18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel18.Controls.Add(this.fusernametxt);
+            this.panel18.Location = new System.Drawing.Point(47, 105);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(445, 50);
+            this.panel18.TabIndex = 31;
+            // 
+            // fusernametxt
+            // 
+            this.fusernametxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.fusernametxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.fusernametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fusernametxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.fusernametxt.Location = new System.Drawing.Point(14, 15);
+            this.fusernametxt.Name = "fusernametxt";
+            this.fusernametxt.Size = new System.Drawing.Size(404, 21);
+            this.fusernametxt.TabIndex = 17;
+            this.fusernametxt.Text = "enter your username";
+            this.fusernametxt.Enter += new System.EventHandler(this.fusernametxt_Enter);
+            // 
             // Loginform
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
             this.ClientSize = new System.Drawing.Size(1200, 750);
+            this.Controls.Add(this.forgetpasspan);
             this.Controls.Add(this.createaccountpan);
             this.Controls.Add(this.passtxtpan);
             this.Controls.Add(this.usertxtpan);
@@ -662,7 +900,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pharma Healix";
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.picturepan.ResumeLayout(false);
             this.usertxtpan.ResumeLayout(false);
             this.usertxtpan.PerformLayout();
@@ -683,14 +920,21 @@
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.forgetpasspan.ResumeLayout(false);
+            this.forgetpasspan.PerformLayout();
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
+            this.panel16.ResumeLayout(false);
+            this.panel17.ResumeLayout(false);
+            this.panel17.PerformLayout();
+            this.panel18.ResumeLayout(false);
+            this.panel18.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.Label wlclbl;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
@@ -739,6 +983,24 @@
         private System.Windows.Forms.Panel createnamepan;
         private System.Windows.Forms.Panel Enterpasspan;
         private System.Windows.Forms.Panel Enteruserpan;
+        private System.Windows.Forms.Panel forgetpasspan;
+        private System.Windows.Forms.Panel fpasspan;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.TextBox fanstxt;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.ComboBox fsecurityquestioncb;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.Button fhidebtn;
+        private System.Windows.Forms.TextBox fpasstxt;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.TextBox fusernametxt;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button changepassbtn;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button fcrossbtn;
     }
 }
 

@@ -28,133 +28,208 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnUser = new System.Windows.Forms.Button();
-            this.btnPatient = new System.Windows.Forms.Button();
+            this.dgvPatients = new System.Windows.Forms.DataGridView();
+            this.btnShow = new System.Windows.Forms.Button();
+            this.pnlHeader = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.panelMenu = new System.Windows.Forms.Panel();
+            this.picLogo = new System.Windows.Forms.PictureBox();
+            this.btnDoctor = new System.Windows.Forms.Button();
+            this.btnPharmacist = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnAppointment = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.btnShow = new System.Windows.Forms.Button();
-            this.dgvPatients = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatients)).BeginInit();
+            this.pnlHeader.SuspendLayout();
+            this.panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnUser
-            // 
-            this.btnUser.Location = new System.Drawing.Point(30, 80);
-            this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(150, 45);
-            this.btnUser.TabIndex = 1;
-            this.btnUser.Text = "User";
-            this.btnUser.UseVisualStyleBackColor = true;
-            this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
-            // 
-            // btnPatient
-            // 
-            this.btnPatient.Location = new System.Drawing.Point(30, 140);
-            this.btnPatient.Name = "btnPatient";
-            this.btnPatient.Size = new System.Drawing.Size(150, 45);
-            this.btnPatient.TabIndex = 2;
-            this.btnPatient.Text = "Patient";
-            this.btnPatient.UseVisualStyleBackColor = true;
-            this.btnPatient.Click += new System.EventHandler(this.btnPatient_Click);
-            // 
-            // btnInventory
-            // 
-            this.btnInventory.Location = new System.Drawing.Point(30, 200);
-            this.btnInventory.Name = "btnInventory";
-            this.btnInventory.Size = new System.Drawing.Size(150, 45);
-            this.btnInventory.TabIndex = 3;
-            this.btnInventory.Text = "Inventory";
-            this.btnInventory.UseVisualStyleBackColor = true;
-            this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
-            // 
-            // btnAppointment
-            // 
-            this.btnAppointment.Location = new System.Drawing.Point(30, 260);
-            this.btnAppointment.Name = "btnAppointment";
-            this.btnAppointment.Size = new System.Drawing.Size(150, 45);
-            this.btnAppointment.TabIndex = 4;
-            this.btnAppointment.Text = "Appointment";
-            this.btnAppointment.UseVisualStyleBackColor = true;
-            this.btnAppointment.Click += new System.EventHandler(this.btnAppointment_Click);
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Location = new System.Drawing.Point(30, 450);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(150, 45);
-            this.btnLogout.TabIndex = 5;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(250, 30);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(494, 48);
-            this.lblTitle.TabIndex = 6;
-            this.lblTitle.Text = "Admin Patient Management";
-            // 
-            // btnShow
-            // 
-            this.btnShow.Location = new System.Drawing.Point(250, 100);
-            this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(120, 40);
-            this.btnShow.TabIndex = 7;
-            this.btnShow.Text = "Show";
-            this.btnShow.UseVisualStyleBackColor = true;
             // 
             // dgvPatients
             // 
             this.dgvPatients.AllowUserToAddRows = false;
             this.dgvPatients.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPatients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPatients.Location = new System.Drawing.Point(250, 180);
+            this.dgvPatients.Location = new System.Drawing.Point(374, 301);
             this.dgvPatients.MultiSelect = false;
             this.dgvPatients.Name = "dgvPatients";
             this.dgvPatients.ReadOnly = true;
             this.dgvPatients.RowHeadersWidth = 62;
             this.dgvPatients.RowTemplate.Height = 28;
             this.dgvPatients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPatients.Size = new System.Drawing.Size(850, 430);
+            this.dgvPatients.Size = new System.Drawing.Size(400, 200);
             this.dgvPatients.TabIndex = 8;
+            // 
+            // btnShow
+            // 
+            this.btnShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(99)))), ((int)(((byte)(35)))));
+            this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShow.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShow.ForeColor = System.Drawing.Color.White;
+            this.btnShow.Location = new System.Drawing.Point(364, 170);
+            this.btnShow.Name = "btnShow";
+            this.btnShow.Size = new System.Drawing.Size(120, 40);
+            this.btnShow.TabIndex = 23;
+            this.btnShow.Text = "Show";
+            this.btnShow.UseVisualStyleBackColor = false;
+            // 
+            // pnlHeader
+            // 
+            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(99)))), ((int)(((byte)(35)))));
+            this.pnlHeader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlHeader.Controls.Add(this.lblTitle);
+            this.pnlHeader.Location = new System.Drawing.Point(250, 0);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(950, 110);
+            this.pnlHeader.TabIndex = 31;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.Black;
+            this.lblTitle.Location = new System.Drawing.Point(150, 20);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(698, 60);
+            this.lblTitle.TabIndex = 5;
+            this.lblTitle.Text = "ADMIN PATIENT MANAGEMENT";
+            // 
+            // panelMenu
+            // 
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(99)))), ((int)(((byte)(35)))));
+            this.panelMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelMenu.Controls.Add(this.picLogo);
+            this.panelMenu.Controls.Add(this.btnDoctor);
+            this.panelMenu.Controls.Add(this.btnPharmacist);
+            this.panelMenu.Controls.Add(this.btnInventory);
+            this.panelMenu.Controls.Add(this.btnAppointment);
+            this.panelMenu.Controls.Add(this.btnLogout);
+            this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(250, 700);
+            this.panelMenu.TabIndex = 32;
+            // 
+            // picLogo
+            // 
+            this.picLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picLogo.Image = global::PharmaHealix.Properties.Resources.PharmaHealixLogo2;
+            this.picLogo.Location = new System.Drawing.Point(60, 30);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(120, 80);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 5;
+            this.picLogo.TabStop = false;
+            // 
+            // btnDoctor
+            // 
+            this.btnDoctor.BackColor = System.Drawing.Color.White;
+            this.btnDoctor.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnDoctor.FlatAppearance.BorderSize = 2;
+            this.btnDoctor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDoctor.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoctor.ForeColor = System.Drawing.Color.Black;
+            this.btnDoctor.Location = new System.Drawing.Point(35, 180);
+            this.btnDoctor.Name = "btnDoctor";
+            this.btnDoctor.Size = new System.Drawing.Size(180, 45);
+            this.btnDoctor.TabIndex = 0;
+            this.btnDoctor.Text = "Doctor";
+            this.btnDoctor.UseVisualStyleBackColor = false;
+            this.btnDoctor.Click += new System.EventHandler(this.btnDoctor_Click);
+            // 
+            // btnPharmacist
+            // 
+            this.btnPharmacist.BackColor = System.Drawing.Color.White;
+            this.btnPharmacist.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnPharmacist.FlatAppearance.BorderSize = 2;
+            this.btnPharmacist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPharmacist.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.btnPharmacist.Location = new System.Drawing.Point(35, 240);
+            this.btnPharmacist.Name = "btnPharmacist";
+            this.btnPharmacist.Size = new System.Drawing.Size(180, 45);
+            this.btnPharmacist.TabIndex = 1;
+            this.btnPharmacist.Text = "Pharmacist";
+            this.btnPharmacist.UseVisualStyleBackColor = false;
+            this.btnPharmacist.Click += new System.EventHandler(this.btnPharmacist_Click);
+            // 
+            // btnInventory
+            // 
+            this.btnInventory.BackColor = System.Drawing.Color.White;
+            this.btnInventory.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnInventory.FlatAppearance.BorderSize = 2;
+            this.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInventory.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.btnInventory.Location = new System.Drawing.Point(35, 300);
+            this.btnInventory.Name = "btnInventory";
+            this.btnInventory.Size = new System.Drawing.Size(180, 45);
+            this.btnInventory.TabIndex = 2;
+            this.btnInventory.Text = "Inventory";
+            this.btnInventory.UseVisualStyleBackColor = false;
+            this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click_1);
+            // 
+            // btnAppointment
+            // 
+            this.btnAppointment.BackColor = System.Drawing.Color.White;
+            this.btnAppointment.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAppointment.FlatAppearance.BorderSize = 2;
+            this.btnAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAppointment.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.btnAppointment.Location = new System.Drawing.Point(35, 360);
+            this.btnAppointment.Name = "btnAppointment";
+            this.btnAppointment.Size = new System.Drawing.Size(180, 45);
+            this.btnAppointment.TabIndex = 3;
+            this.btnAppointment.Text = "Appointment";
+            this.btnAppointment.UseVisualStyleBackColor = false;
+            this.btnAppointment.Click += new System.EventHandler(this.btnAppointment_Click_1);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.White;
+            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnLogout.FlatAppearance.BorderSize = 2;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.btnLogout.Location = new System.Drawing.Point(35, 560);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(180, 45);
+            this.btnLogout.TabIndex = 4;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click_1);
             // 
             // AdminPatientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::PharmaHealix.Properties.Resources.BackgroundImage5;
             this.ClientSize = new System.Drawing.Size(1178, 694);
-            this.Controls.Add(this.dgvPatients);
+            this.Controls.Add(this.panelMenu);
+            this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.btnShow);
-            this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.btnLogout);
-            this.Controls.Add(this.btnAppointment);
-            this.Controls.Add(this.btnInventory);
-            this.Controls.Add(this.btnPatient);
-            this.Controls.Add(this.btnUser);
+            this.Controls.Add(this.dgvPatients);
             this.Location = new System.Drawing.Point(0, 72);
             this.Name = "AdminPatientForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin - Patients";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatients)).EndInit();
+            this.pnlHeader.ResumeLayout(false);
+            this.pnlHeader.PerformLayout();
+            this.panelMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnUser;
-        private System.Windows.Forms.Button btnPatient;
+        private System.Windows.Forms.DataGridView dgvPatients;
+        private System.Windows.Forms.Button btnShow;
+        private System.Windows.Forms.Panel pnlHeader;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Panel panelMenu;
+        private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.Button btnDoctor;
+        private System.Windows.Forms.Button btnPharmacist;
         private System.Windows.Forms.Button btnInventory;
         private System.Windows.Forms.Button btnAppointment;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Button btnShow;
-        private System.Windows.Forms.DataGridView dgvPatients;
     }
 }

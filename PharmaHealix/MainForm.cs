@@ -18,7 +18,8 @@ namespace PharmaHealix
     public partial class MainForm : Form
     {
 
-        private string user, username,doctor,appointmentdate,appointmenttime;
+        private string user, username,doctor,appointmenttime;
+        private DateTime appointmentdate;
         
 
 
@@ -340,7 +341,8 @@ namespace PharmaHealix
 
             int count = Convert.ToInt32(new Db().Scalar(r,"Doctor"));
             DataTable dt2=new Db().Reader(q, "Doctor");
-            for(int i = 0; i < count; i++)
+            appdoctorcb.Items.Clear();
+            for (int i = 0; i < count; i++)
             {
                 appdoctorcb.Items.Add(Convert.ToString(dt2.Rows[i]["Name"]));
             }
@@ -351,11 +353,75 @@ namespace PharmaHealix
         private void setappointmentbtn_Click(object sender, EventArgs e)
         {
             doctor = appdoctorcb.Text;
-            //appointment
+            appointmentdate = appdateTimePicker.Value;
+            appointmenttime=apptimecb.Text;
+
+            bool flag=false;
+            if (doctor == "")
+            {
+                flag = true;
+            }
+            if(appointmenttime == "")
+            {
+                flag = true;
+            }
+            if (flag)
+            {
+                MessageBox.Show("Doctor or Appointment Time not selected!");
+                return;
+            }
+            else {
+                string m = "Select username from usertable where name=@0";
+                string du = Convert.ToString(new Db().Scalar(m, doctor));
+                string p = "Select DoctorId from DoctorTable where username=@0";
+                int did = Convert.ToInt32(new Db().Scalar(p, du));
+
+
+                string q = "SELECT COUNT(*) FROM AppointmentTable WHERE DoctorId=@0 and AppointmentDate=@1 and AppointmentTime=@2 ";
+                int count = Convert.ToInt32(new Db().Scalar(q, did, appointmentdate, appointmenttime));
+                if (count > 0)
+                {
+                    MessageBox.Show("No Appointments Available At This Time!");
+                    return;
+                }
+                else if (appointmentdate < DateTime.Today)
+                {
+                    MessageBox.Show("Invalid Date");
+                    return;
+                }
+                else
+                {
+                    string r = "Insert Into AppointmentTable(PatientUsername,DoctorID,AppointmentDate,AppointmentTime,Status) Values(@0,@1,@2,@3,@4)";
+                    new Db().NonQuery(r, username, did, appointmentdate, appointmenttime, "Pending");
+
+                    MessageBox.Show("Appointment Requested!\n" +
+                        "Fee-->1200Tk");
+                    //Reset
+
+                    appdoctorcb.SelectedIndex = -1;
+                    apptimecb.SelectedIndex = -1;
+                    appdateTimePicker.Value = DateTime.Today;
+
+                    appointmentdate = DateTime.Today;
+                    appointmenttime = "";
+                    doctor = "";
+
+                }
+            }
         }
 
         private void cancelbtn_Click(object sender, EventArgs e)
         {
+            //Reset
+            appointmentpan.Hide();
+     
+            appdoctorcb.SelectedIndex = -1;
+            apptimecb.SelectedIndex = -1;
+            appdateTimePicker.Value = DateTime.Today;
+
+            appointmentdate = DateTime.Today;
+            appointmenttime = "";
+            doctor = "";
 
         }
     }

@@ -117,11 +117,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.categorylbl = new System.Windows.Forms.Label();
             this.appointmentpan = new System.Windows.Forms.Panel();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.appdateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.cancelbtn = new System.Windows.Forms.Button();
             this.setappointmentbtn = new System.Windows.Forms.Button();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.apptimecb = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
@@ -138,7 +140,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.patientlbl = new System.Windows.Forms.Label();
             this.appointmentlbl = new System.Windows.Forms.Label();
-            this.cancelbtn = new System.Windows.Forms.Button();
             this.headpan.SuspendLayout();
             this.editpan.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -155,6 +156,7 @@
             this.medipan.SuspendLayout();
             this.mediinfopan.SuspendLayout();
             this.appointmentpan.SuspendLayout();
+            this.panel18.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -1226,11 +1228,11 @@
             // 
             // appointmentpan
             // 
+            this.appointmentpan.Controls.Add(this.panel18);
             this.appointmentpan.Controls.Add(this.cancelbtn);
             this.appointmentpan.Controls.Add(this.setappointmentbtn);
             this.appointmentpan.Controls.Add(this.panel17);
             this.appointmentpan.Controls.Add(this.label16);
-            this.appointmentpan.Controls.Add(this.dateTimePicker1);
             this.appointmentpan.Controls.Add(this.label15);
             this.appointmentpan.Controls.Add(this.label14);
             this.appointmentpan.Controls.Add(this.panel16);
@@ -1248,6 +1250,38 @@
             this.appointmentpan.Size = new System.Drawing.Size(1200, 640);
             this.appointmentpan.TabIndex = 34;
             this.appointmentpan.Visible = false;
+            // 
+            // panel18
+            // 
+            this.panel18.BackColor = System.Drawing.Color.White;
+            this.panel18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel18.Controls.Add(this.appdateTimePicker);
+            this.panel18.Location = new System.Drawing.Point(713, 291);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(360, 50);
+            this.panel18.TabIndex = 35;
+            // 
+            // appdateTimePicker
+            // 
+            this.appdateTimePicker.Location = new System.Drawing.Point(0, 12);
+            this.appdateTimePicker.Name = "appdateTimePicker";
+            this.appdateTimePicker.Size = new System.Drawing.Size(360, 26);
+            this.appdateTimePicker.TabIndex = 43;
+            // 
+            // cancelbtn
+            // 
+            this.cancelbtn.BackColor = System.Drawing.Color.Red;
+            this.cancelbtn.FlatAppearance.BorderSize = 0;
+            this.cancelbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cancelbtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.cancelbtn.Location = new System.Drawing.Point(385, 525);
+            this.cancelbtn.Name = "cancelbtn";
+            this.cancelbtn.Size = new System.Drawing.Size(156, 40);
+            this.cancelbtn.TabIndex = 46;
+            this.cancelbtn.Text = "Cancel";
+            this.cancelbtn.UseVisualStyleBackColor = false;
+            this.cancelbtn.Click += new System.EventHandler(this.cancelbtn_Click);
             // 
             // setappointmentbtn
             // 
@@ -1268,20 +1302,20 @@
             // 
             this.panel17.BackColor = System.Drawing.Color.White;
             this.panel17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel17.Controls.Add(this.comboBox1);
+            this.panel17.Controls.Add(this.apptimecb);
             this.panel17.Location = new System.Drawing.Point(713, 390);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(360, 50);
             this.panel17.TabIndex = 41;
             // 
-            // comboBox1
+            // apptimecb
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.comboBox1.ForeColor = System.Drawing.Color.Black;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.apptimecb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.apptimecb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.apptimecb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.apptimecb.ForeColor = System.Drawing.Color.Black;
+            this.apptimecb.FormattingEnabled = true;
+            this.apptimecb.Items.AddRange(new object[] {
             "09:00 AM",
             "09:30 AM",
             "10:00 AM",
@@ -1298,10 +1332,10 @@
             "04:00 PM",
             "04:30 PM",
             "05:00 PM"});
-            this.comboBox1.Location = new System.Drawing.Point(9, 11);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(348, 30);
-            this.comboBox1.TabIndex = 29;
+            this.apptimecb.Location = new System.Drawing.Point(9, 11);
+            this.apptimecb.Name = "apptimecb";
+            this.apptimecb.Size = new System.Drawing.Size(348, 30);
+            this.apptimecb.TabIndex = 29;
             // 
             // label16
             // 
@@ -1311,13 +1345,6 @@
             this.label16.Size = new System.Drawing.Size(138, 20);
             this.label16.TabIndex = 44;
             this.label16.Text = "Appointment Time";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(713, 294);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(360, 26);
-            this.dateTimePicker1.TabIndex = 43;
             // 
             // label15
             // 
@@ -1485,21 +1512,6 @@
             this.appointmentlbl.TabIndex = 0;
             this.appointmentlbl.Text = "Add New Appointment";
             // 
-            // cancelbtn
-            // 
-            this.cancelbtn.BackColor = System.Drawing.Color.Red;
-            this.cancelbtn.FlatAppearance.BorderSize = 0;
-            this.cancelbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.cancelbtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.cancelbtn.Location = new System.Drawing.Point(385, 525);
-            this.cancelbtn.Name = "cancelbtn";
-            this.cancelbtn.Size = new System.Drawing.Size(156, 40);
-            this.cancelbtn.TabIndex = 46;
-            this.cancelbtn.Text = "Cancel";
-            this.cancelbtn.UseVisualStyleBackColor = false;
-            this.cancelbtn.Click += new System.EventHandler(this.cancelbtn_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1546,6 +1558,7 @@
             this.mediinfopan.ResumeLayout(false);
             this.appointmentpan.ResumeLayout(false);
             this.appointmentpan.PerformLayout();
+            this.panel18.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
@@ -1666,10 +1679,11 @@
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.ComboBox appdoctorcb;
         private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox apptimecb;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker appdateTimePicker;
         private System.Windows.Forms.Button setappointmentbtn;
         private System.Windows.Forms.Button cancelbtn;
+        private System.Windows.Forms.Panel panel18;
     }
 }

@@ -100,5 +100,10 @@ namespace PharmaHealix
         {
             Application.Exit();
         }
+
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

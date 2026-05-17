@@ -31,6 +31,7 @@
             this.dgvPatients = new System.Windows.Forms.DataGridView();
             this.btnShow = new System.Windows.Forms.Button();
             this.pnlHeader = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.picLogo = new System.Windows.Forms.PictureBox();
@@ -39,7 +40,6 @@
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnAppointment = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatients)).BeginInit();
             this.pnlHeader.SuspendLayout();
             this.panelMenu.SuspendLayout();
@@ -50,15 +50,16 @@
             // 
             this.dgvPatients.AllowUserToAddRows = false;
             this.dgvPatients.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPatients.BackgroundColor = System.Drawing.Color.White;
             this.dgvPatients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPatients.Location = new System.Drawing.Point(374, 301);
+            this.dgvPatients.Location = new System.Drawing.Point(364, 268);
             this.dgvPatients.MultiSelect = false;
             this.dgvPatients.Name = "dgvPatients";
             this.dgvPatients.ReadOnly = true;
             this.dgvPatients.RowHeadersWidth = 62;
             this.dgvPatients.RowTemplate.Height = 28;
             this.dgvPatients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPatients.Size = new System.Drawing.Size(400, 200);
+            this.dgvPatients.Size = new System.Drawing.Size(708, 300);
             this.dgvPatients.TabIndex = 8;
             // 
             // btnShow
@@ -69,7 +70,7 @@
             this.btnShow.ForeColor = System.Drawing.Color.White;
             this.btnShow.Location = new System.Drawing.Point(364, 170);
             this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(120, 40);
+            this.btnShow.Size = new System.Drawing.Size(120, 50);
             this.btnShow.TabIndex = 23;
             this.btnShow.Text = "Show";
             this.btnShow.UseVisualStyleBackColor = false;
@@ -84,6 +85,20 @@
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(950, 110);
             this.pnlHeader.TabIndex = 31;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.White;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.Black;
+            this.btnExit.Location = new System.Drawing.Point(870, 11);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(35, 35);
+            this.btnExit.TabIndex = 6;
+            this.btnExit.Text = "X";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // lblTitle
             // 
@@ -130,9 +145,9 @@
             this.btnDoctor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDoctor.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDoctor.ForeColor = System.Drawing.Color.Black;
-            this.btnDoctor.Location = new System.Drawing.Point(35, 180);
+            this.btnDoctor.Location = new System.Drawing.Point(40, 180);
             this.btnDoctor.Name = "btnDoctor";
-            this.btnDoctor.Size = new System.Drawing.Size(180, 45);
+            this.btnDoctor.Size = new System.Drawing.Size(170, 50);
             this.btnDoctor.TabIndex = 0;
             this.btnDoctor.Text = "Doctor";
             this.btnDoctor.UseVisualStyleBackColor = false;
@@ -145,9 +160,9 @@
             this.btnPharmacist.FlatAppearance.BorderSize = 2;
             this.btnPharmacist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPharmacist.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnPharmacist.Location = new System.Drawing.Point(35, 240);
+            this.btnPharmacist.Location = new System.Drawing.Point(40, 250);
             this.btnPharmacist.Name = "btnPharmacist";
-            this.btnPharmacist.Size = new System.Drawing.Size(180, 45);
+            this.btnPharmacist.Size = new System.Drawing.Size(170, 50);
             this.btnPharmacist.TabIndex = 1;
             this.btnPharmacist.Text = "Pharmacist";
             this.btnPharmacist.UseVisualStyleBackColor = false;
@@ -160,9 +175,9 @@
             this.btnInventory.FlatAppearance.BorderSize = 2;
             this.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventory.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnInventory.Location = new System.Drawing.Point(35, 300);
+            this.btnInventory.Location = new System.Drawing.Point(40, 390);
             this.btnInventory.Name = "btnInventory";
-            this.btnInventory.Size = new System.Drawing.Size(180, 45);
+            this.btnInventory.Size = new System.Drawing.Size(170, 50);
             this.btnInventory.TabIndex = 2;
             this.btnInventory.Text = "Inventory";
             this.btnInventory.UseVisualStyleBackColor = false;
@@ -175,9 +190,9 @@
             this.btnAppointment.FlatAppearance.BorderSize = 2;
             this.btnAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAppointment.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnAppointment.Location = new System.Drawing.Point(35, 360);
+            this.btnAppointment.Location = new System.Drawing.Point(40, 320);
             this.btnAppointment.Name = "btnAppointment";
-            this.btnAppointment.Size = new System.Drawing.Size(180, 45);
+            this.btnAppointment.Size = new System.Drawing.Size(170, 50);
             this.btnAppointment.TabIndex = 3;
             this.btnAppointment.Text = "Appointment";
             this.btnAppointment.UseVisualStyleBackColor = false;
@@ -190,26 +205,13 @@
             this.btnLogout.FlatAppearance.BorderSize = 2;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnLogout.Location = new System.Drawing.Point(35, 560);
+            this.btnLogout.Location = new System.Drawing.Point(40, 560);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(180, 45);
+            this.btnLogout.Size = new System.Drawing.Size(170, 50);
             this.btnLogout.TabIndex = 4;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click_1);
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.White;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.Color.Black;
-            this.btnExit.Location = new System.Drawing.Point(870, 11);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(35, 35);
-            this.btnExit.TabIndex = 6;
-            this.btnExit.Text = "X";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // AdminPatientForm
             // 

@@ -102,6 +102,11 @@ namespace PharmaHealix
             login.Show();
             this.Hide();
         }
+
+        private void txtMedicineId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     }
 

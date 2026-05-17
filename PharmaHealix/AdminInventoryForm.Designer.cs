@@ -44,12 +44,12 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlHeader = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
             this.btnShow = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -61,7 +61,7 @@
             this.lblMedicineId.AutoSize = true;
             this.lblMedicineId.BackColor = System.Drawing.Color.Transparent;
             this.lblMedicineId.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMedicineId.Location = new System.Drawing.Point(250, 120);
+            this.lblMedicineId.Location = new System.Drawing.Point(330, 170);
             this.lblMedicineId.Name = "lblMedicineId";
             this.lblMedicineId.Size = new System.Drawing.Size(126, 28);
             this.lblMedicineId.TabIndex = 8;
@@ -72,7 +72,7 @@
             this.lblMedicineName.AutoSize = true;
             this.lblMedicineName.BackColor = System.Drawing.Color.Transparent;
             this.lblMedicineName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMedicineName.Location = new System.Drawing.Point(250, 170);
+            this.lblMedicineName.Location = new System.Drawing.Point(330, 223);
             this.lblMedicineName.Name = "lblMedicineName";
             this.lblMedicineName.Size = new System.Drawing.Size(161, 28);
             this.lblMedicineName.TabIndex = 9;
@@ -83,7 +83,7 @@
             this.lblExpiryDate.AutoSize = true;
             this.lblExpiryDate.BackColor = System.Drawing.Color.Transparent;
             this.lblExpiryDate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExpiryDate.Location = new System.Drawing.Point(250, 220);
+            this.lblExpiryDate.Location = new System.Drawing.Point(330, 273);
             this.lblExpiryDate.Name = "lblExpiryDate";
             this.lblExpiryDate.Size = new System.Drawing.Size(123, 28);
             this.lblExpiryDate.TabIndex = 10;
@@ -91,14 +91,15 @@
             // 
             // txtMedicineId
             // 
-            this.txtMedicineId.Location = new System.Drawing.Point(417, 122);
+            this.txtMedicineId.Location = new System.Drawing.Point(497, 174);
             this.txtMedicineId.Name = "txtMedicineId";
             this.txtMedicineId.Size = new System.Drawing.Size(250, 26);
             this.txtMedicineId.TabIndex = 11;
+            this.txtMedicineId.TextChanged += new System.EventHandler(this.txtMedicineId_TextChanged);
             // 
             // txtMedicineName
             // 
-            this.txtMedicineName.Location = new System.Drawing.Point(417, 170);
+            this.txtMedicineName.Location = new System.Drawing.Point(497, 227);
             this.txtMedicineName.Name = "txtMedicineName";
             this.txtMedicineName.Size = new System.Drawing.Size(250, 26);
             this.txtMedicineName.TabIndex = 12;
@@ -106,7 +107,7 @@
             // dtpExpiryDate
             // 
             this.dtpExpiryDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpExpiryDate.Location = new System.Drawing.Point(417, 220);
+            this.dtpExpiryDate.Location = new System.Drawing.Point(497, 275);
             this.dtpExpiryDate.Name = "dtpExpiryDate";
             this.dtpExpiryDate.Size = new System.Drawing.Size(250, 26);
             this.dtpExpiryDate.TabIndex = 13;
@@ -115,15 +116,16 @@
             // 
             this.dgvInventory.AllowUserToAddRows = false;
             this.dgvInventory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvInventory.BackgroundColor = System.Drawing.Color.White;
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInventory.Location = new System.Drawing.Point(430, 450);
+            this.dgvInventory.Location = new System.Drawing.Point(317, 452);
             this.dgvInventory.MultiSelect = false;
             this.dgvInventory.Name = "dgvInventory";
             this.dgvInventory.ReadOnly = true;
             this.dgvInventory.RowHeadersWidth = 62;
             this.dgvInventory.RowTemplate.Height = 28;
             this.dgvInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInventory.Size = new System.Drawing.Size(850, 250);
+            this.dgvInventory.Size = new System.Drawing.Size(761, 230);
             this.dgvInventory.TabIndex = 19;
             this.dgvInventory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventory_CellContentClick);
             // 
@@ -161,9 +163,9 @@
             this.btnDoctor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDoctor.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDoctor.ForeColor = System.Drawing.Color.Black;
-            this.btnDoctor.Location = new System.Drawing.Point(35, 180);
+            this.btnDoctor.Location = new System.Drawing.Point(40, 180);
             this.btnDoctor.Name = "btnDoctor";
-            this.btnDoctor.Size = new System.Drawing.Size(180, 45);
+            this.btnDoctor.Size = new System.Drawing.Size(170, 50);
             this.btnDoctor.TabIndex = 0;
             this.btnDoctor.Text = "Doctor";
             this.btnDoctor.UseVisualStyleBackColor = false;
@@ -176,9 +178,9 @@
             this.btnPharmacist.FlatAppearance.BorderSize = 2;
             this.btnPharmacist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPharmacist.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnPharmacist.Location = new System.Drawing.Point(35, 240);
+            this.btnPharmacist.Location = new System.Drawing.Point(40, 250);
             this.btnPharmacist.Name = "btnPharmacist";
-            this.btnPharmacist.Size = new System.Drawing.Size(180, 45);
+            this.btnPharmacist.Size = new System.Drawing.Size(170, 50);
             this.btnPharmacist.TabIndex = 1;
             this.btnPharmacist.Text = "Pharmacist";
             this.btnPharmacist.UseVisualStyleBackColor = false;
@@ -191,9 +193,9 @@
             this.btnPatient.FlatAppearance.BorderSize = 2;
             this.btnPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPatient.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnPatient.Location = new System.Drawing.Point(35, 300);
+            this.btnPatient.Location = new System.Drawing.Point(40, 320);
             this.btnPatient.Name = "btnPatient";
-            this.btnPatient.Size = new System.Drawing.Size(180, 45);
+            this.btnPatient.Size = new System.Drawing.Size(170, 50);
             this.btnPatient.TabIndex = 2;
             this.btnPatient.Text = "Patient";
             this.btnPatient.UseVisualStyleBackColor = false;
@@ -206,9 +208,9 @@
             this.btnAppointment.FlatAppearance.BorderSize = 2;
             this.btnAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAppointment.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnAppointment.Location = new System.Drawing.Point(35, 360);
+            this.btnAppointment.Location = new System.Drawing.Point(40, 390);
             this.btnAppointment.Name = "btnAppointment";
-            this.btnAppointment.Size = new System.Drawing.Size(180, 45);
+            this.btnAppointment.Size = new System.Drawing.Size(170, 50);
             this.btnAppointment.TabIndex = 3;
             this.btnAppointment.Text = "Appointment";
             this.btnAppointment.UseVisualStyleBackColor = false;
@@ -221,9 +223,9 @@
             this.btnLogout.FlatAppearance.BorderSize = 2;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnLogout.Location = new System.Drawing.Point(35, 560);
+            this.btnLogout.Location = new System.Drawing.Point(40, 560);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(180, 45);
+            this.btnLogout.Size = new System.Drawing.Size(170, 50);
             this.btnLogout.TabIndex = 4;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
@@ -252,13 +254,25 @@
             this.pnlHeader.Size = new System.Drawing.Size(950, 110);
             this.pnlHeader.TabIndex = 30;
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.White;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.Black;
+            this.btnExit.Location = new System.Drawing.Point(880, 11);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(35, 35);
+            this.btnExit.TabIndex = 8;
+            this.btnExit.Text = "X";
+            this.btnExit.UseVisualStyleBackColor = false;
+            // 
             // btnShow
             // 
             this.btnShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(99)))), ((int)(((byte)(35)))));
             this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShow.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShow.ForeColor = System.Drawing.Color.White;
-            this.btnShow.Location = new System.Drawing.Point(775, 120);
+            this.btnShow.Location = new System.Drawing.Point(929, 158);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(120, 40);
             this.btnShow.TabIndex = 53;
@@ -271,7 +285,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(775, 183);
+            this.btnAdd.Location = new System.Drawing.Point(929, 213);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(120, 40);
             this.btnAdd.TabIndex = 54;
@@ -284,7 +298,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(775, 246);
+            this.btnUpdate.Location = new System.Drawing.Point(929, 273);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(120, 40);
             this.btnUpdate.TabIndex = 55;
@@ -297,7 +311,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(775, 306);
+            this.btnDelete.Location = new System.Drawing.Point(929, 331);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(120, 40);
             this.btnDelete.TabIndex = 56;
@@ -310,24 +324,12 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(775, 366);
+            this.btnClear.Location = new System.Drawing.Point(929, 391);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(120, 40);
             this.btnClear.TabIndex = 57;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.White;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.Color.Black;
-            this.btnExit.Location = new System.Drawing.Point(880, 11);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(35, 35);
-            this.btnExit.TabIndex = 8;
-            this.btnExit.Text = "X";
-            this.btnExit.UseVisualStyleBackColor = false;
             // 
             // AdminInventoryForm
             // 

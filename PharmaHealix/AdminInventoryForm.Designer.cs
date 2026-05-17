@@ -59,9 +59,10 @@
             // 
             this.lblMedicineId.AutoSize = true;
             this.lblMedicineId.BackColor = System.Drawing.Color.Transparent;
+            this.lblMedicineId.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMedicineId.Location = new System.Drawing.Point(250, 120);
             this.lblMedicineId.Name = "lblMedicineId";
-            this.lblMedicineId.Size = new System.Drawing.Size(93, 20);
+            this.lblMedicineId.Size = new System.Drawing.Size(126, 28);
             this.lblMedicineId.TabIndex = 8;
             this.lblMedicineId.Text = "Medicine ID";
             // 
@@ -69,9 +70,10 @@
             // 
             this.lblMedicineName.AutoSize = true;
             this.lblMedicineName.BackColor = System.Drawing.Color.Transparent;
+            this.lblMedicineName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMedicineName.Location = new System.Drawing.Point(250, 170);
             this.lblMedicineName.Name = "lblMedicineName";
-            this.lblMedicineName.Size = new System.Drawing.Size(118, 20);
+            this.lblMedicineName.Size = new System.Drawing.Size(161, 28);
             this.lblMedicineName.TabIndex = 9;
             this.lblMedicineName.Text = "Medicine Name";
             // 
@@ -79,22 +81,23 @@
             // 
             this.lblExpiryDate.AutoSize = true;
             this.lblExpiryDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblExpiryDate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExpiryDate.Location = new System.Drawing.Point(250, 220);
             this.lblExpiryDate.Name = "lblExpiryDate";
-            this.lblExpiryDate.Size = new System.Drawing.Size(90, 20);
+            this.lblExpiryDate.Size = new System.Drawing.Size(123, 28);
             this.lblExpiryDate.TabIndex = 10;
             this.lblExpiryDate.Text = "Expiry Date";
             // 
             // txtMedicineId
             // 
-            this.txtMedicineId.Location = new System.Drawing.Point(400, 120);
+            this.txtMedicineId.Location = new System.Drawing.Point(417, 122);
             this.txtMedicineId.Name = "txtMedicineId";
             this.txtMedicineId.Size = new System.Drawing.Size(250, 26);
             this.txtMedicineId.TabIndex = 11;
             // 
             // txtMedicineName
             // 
-            this.txtMedicineName.Location = new System.Drawing.Point(400, 170);
+            this.txtMedicineName.Location = new System.Drawing.Point(417, 170);
             this.txtMedicineName.Name = "txtMedicineName";
             this.txtMedicineName.Size = new System.Drawing.Size(250, 26);
             this.txtMedicineName.TabIndex = 12;
@@ -102,7 +105,7 @@
             // dtpExpiryDate
             // 
             this.dtpExpiryDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpExpiryDate.Location = new System.Drawing.Point(400, 220);
+            this.dtpExpiryDate.Location = new System.Drawing.Point(417, 220);
             this.dtpExpiryDate.Name = "dtpExpiryDate";
             this.dtpExpiryDate.Size = new System.Drawing.Size(250, 26);
             this.dtpExpiryDate.TabIndex = 13;

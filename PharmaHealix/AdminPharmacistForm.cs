@@ -61,5 +61,10 @@ namespace PharmaHealix
             login.Show();
             this.Hide();
         }
+
+        private void lblPharmacistID_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

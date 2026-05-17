@@ -203,6 +203,7 @@
             this.lblPharmacistID.Size = new System.Drawing.Size(33, 28);
             this.lblPharmacistID.TabIndex = 31;
             this.lblPharmacistID.Text = "ID";
+            this.lblPharmacistID.Click += new System.EventHandler(this.lblPharmacistID_Click);
             // 
             // lblPharmacistName
             // 

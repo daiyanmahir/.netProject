@@ -18,8 +18,9 @@ namespace PharmaHealix
     public partial class MainForm : Form
     {
 
-        private string user;
-        private string username;
+        private string user, username,doctor,appointmentdate,appointmenttime;
+        
+
 
 
         private string EName
@@ -322,6 +323,40 @@ namespace PharmaHealix
             {
                 editpasstxt.PasswordChar = '*';
             }
+        }
+
+        private void appointmentbtn_Click(object sender, EventArgs e)
+        {
+            appointmentpan.Visible = true;
+            appointmentpan.BringToFront();
+            string p = "select name, phone, address from UserTable where username=@0";
+            DataTable dt = new Db().Reader(p, username);
+            appnametxt.Text = Convert.ToString(dt.Rows[0]["Name"]);
+            appphonetxt.Text = Convert.ToString(dt.Rows[0]["Phone"]);
+            appaddresstxt.Text = Convert.ToString(dt.Rows[0]["Address"]);
+
+            string q = "select name from UserTable where role=@0";
+            string r = "SELECT COUNT(*) FROM UserTable WHERE role=@0";
+
+            int count = Convert.ToInt32(new Db().Scalar(r,"Doctor"));
+            DataTable dt2=new Db().Reader(q, "Doctor");
+            for(int i = 0; i < count; i++)
+            {
+                appdoctorcb.Items.Add(Convert.ToString(dt2.Rows[i]["Name"]));
+            }
+
+            
+        }
+        
+        private void setappointmentbtn_Click(object sender, EventArgs e)
+        {
+            doctor = appdoctorcb.Text;
+            //appointment
+        }
+
+        private void cancelbtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
     

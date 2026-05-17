@@ -13,7 +13,7 @@ namespace PharmaHealix
     internal sealed class Db
     {
         //1. Address
-        string connection = "Data Source=LAPTOP-5SNR2K20\\SQLEXPRESS;Initial Catalog=PharmaHealix;Integrated Security=True;";
+         string connection = "Data Source=LAPTOP-5SNR2K20\\SQLEXPRESS;Initial Catalog=PharmaHealix;Integrated Security=True;";
         public Db() 
         {
 

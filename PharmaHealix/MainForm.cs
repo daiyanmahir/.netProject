@@ -71,8 +71,12 @@ namespace PharmaHealix
         private void medilogobtn_Click(object sender, EventArgs e)
         {
             medibackpan.Hide();
-            
-              
+            searchtxt.Text ="Search for Medicine";
+            searchtxt.ForeColor = Color.Gray;
+
+
+
+
         }
 
         private void createaccountbtn_Click(object sender, EventArgs e)
@@ -105,12 +109,51 @@ namespace PharmaHealix
 
         }
 
-       
+
 
         private void searchbtn_Click(object sender, EventArgs e)
         {
-            medibackpan.Visible = true;
-            medibackpan.BringToFront();
+            String search = searchtxt.Text;
+            if (search == "" || search == "Search for Medicine")
+            {
+                MessageBox.Show("Please enter a medicine name to search.");
+                return;
+            }
+            else
+            {
+                string q = "Select count(*) from medicinetable where Medicinename=@0";
+                int count = Convert.ToInt32(new Db().Scalar(q, search));
+                if (count > 0)
+                {
+                    string r = "SELECT * FROM MedicineTable WHERE MedicineName = @0";
+
+                    DataTable dt = new Db().Reader(r, search);
+                    medibackpan.Visible = true;
+                    medibackpan.BringToFront();
+                    medinametxt.Text = dt.Rows[0]["MedicineName"].ToString();
+                    categorytxt.Text = dt.Rows[0]["Category"].ToString();
+                    descriptiontxt.Text = dt.Rows[0]["Description"].ToString();
+                    striptxt.Text = dt.Rows[0]["StripPrice"].ToString();
+                    unitpricetxt.Text= dt.Rows[0]["UnitPrice"].ToString();
+                    pricetxt.Text = dt.Rows[0]["UnitPrice"].ToString();
+                    dosetxt.Text = dt.Rows[0]["Dose"].ToString();
+                    instructiontxt.Text = dt.Rows[0]["Instruction"].ToString();
+                    sideeffectstxt.Text = dt.Rows[0]["SideEffect"].ToString();
+                    if (dt.Rows[0]["Image"]!= DBNull.Value) {
+                        mediimagepan.BackgroundImage = Image.FromFile(dt.Rows[0]["Image"].ToString());
+                    }
+                    else
+                    {
+                        mediimagepan.BackgroundImage = null;
+                    }
+                }
+
+                else
+                {
+                    MessageBox.Show("Medicine Not Found!");
+                    medibackpan.Visible = false;
+                }
+            }
         }
 
         private void logoutbtn_Click_1(object sender, EventArgs e)
@@ -326,6 +369,11 @@ namespace PharmaHealix
             }
         }
 
+        private void appsearchbtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void appointmentbtn_Click(object sender, EventArgs e)
         {
             appointmentpan.Visible = true;
@@ -353,7 +401,7 @@ namespace PharmaHealix
         private void setappointmentbtn_Click(object sender, EventArgs e)
         {
             doctor = appdoctorcb.Text;
-            appointmentdate = appdateTimePicker.Value;
+            appointmentdate = appdateTimePicker.Value.Date;
             appointmenttime=apptimecb.Text;
 
             bool flag=false;

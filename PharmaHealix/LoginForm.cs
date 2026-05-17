@@ -307,7 +307,7 @@ namespace PharmaHealix
                     else if (role == "Admin")
                     {
                         MessageBox.Show("Login Successful!");
-                        AdminUserForm a = new AdminUserForm();
+                        AdminDoctorForm a = new AdminDoctorForm();
                         a.Show();
                     }
 
@@ -576,6 +576,11 @@ namespace PharmaHealix
             {
                 fpasstxt.PasswordChar = '*';
             }
+        }
+
+        private void fusernametxt_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

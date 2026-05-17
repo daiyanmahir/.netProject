@@ -63,6 +63,8 @@ namespace PharmaHealix
             inventorypan.Visible = false;
             orderpan.Visible = false;
             patientlistpan.Visible = true;
+            RefreshPrescriptionGrid();
+            phprrtb.Clear();
         }
 
         private void orderbtn_Click(object sender, EventArgs e)
@@ -79,6 +81,8 @@ namespace PharmaHealix
             patientlistpan.Visible = false;
             orderpan.Visible = false;
             inventorypan.Visible = true;
+            RefreshInventoryGrid();
+            ClearInventoryFields();
         }
 
         private void profilebtn_Click(object sender, EventArgs e)
@@ -250,7 +254,173 @@ namespace PharmaHealix
             pharmacistanswertxt.Text = Convert.ToString(dt.Rows[0]["Answer"]);
 
         }
-        
-         
+        //INVENTORY
+        private void RefreshInventoryGrid()
+        {
+            // Fetches all records from the MedicineTable to populate the DataGridView
+            string query = "SELECT MedicineID, MedicineName, Category, Description, StripPrice, UnitPrice, Dose, SideEffect, Stock, ExpireDate FROM MedicineTable";
+            DataTable dt = new Db().Reader(query);
+
+            if (dt != null)
+            {
+                phinvdgv.DataSource = dt;
+            }
+        }
+
+        private void ClearInventoryFields()
+        {
+            // Resets all text boxes to empty strings
+            phinvmnametb.Clear();
+            phinvcategorytb.Clear();
+            phinvspricetb.Clear();
+            phinvupricetb.Clear();
+            phinvstocktb.Clear();
+            phinvdosetb.Clear();
+            phinvdescriptiontb.Clear();
+            phinvsideetb.Clear();
+            phinvexpirydtp.Value = DateTime.Now;
+        }
+
+        private void phinvaddbtn_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(phinvmnametb.Text) || string.IsNullOrWhiteSpace(phinvcategorytb.Text))
+            {
+                MessageBox.Show("Please fill out at least the Medicine Name and Category.");
+                return;
+            }
+
+            // Parse values carefully to prevent string-to-number exceptions
+            decimal.TryParse(phinvspricetb.Text, out decimal stripPrice);
+            decimal.TryParse(phinvupricetb.Text, out decimal unitPrice);
+            int.TryParse(phinvstocktb.Text, out int stock);
+
+            string query = "INSERT INTO MedicineTable (MedicineName, Category, Description, StripPrice, UnitPrice, Dose, SideEffect, Stock, ExpireDate) " +
+                           "VALUES (@0, @1, @2, @3, @4, @5, @6, @7, @8)";
+
+            new Db().NonQuery(query,
+                phinvmnametb.Text,
+                phinvcategorytb.Text,
+                phinvdescriptiontb.Text,
+                stripPrice,
+                unitPrice,
+                phinvdosetb.Text,
+                phinvsideetb.Text,
+                stock,
+                phinvexpirydtp.Value.Date
+            );
+
+            MessageBox.Show("Medicine added successfully!");
+            RefreshInventoryGrid();
+            ClearInventoryFields();
+        }
+
+        private void phinvdgv_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Ensure the row index clicked belongs to actual data rows
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = phinvdgv.Rows[e.RowIndex];
+
+                // Map column data back to your form inputs
+                phinvmnametb.Text = Convert.ToString(row.Cells["MedicineName"].Value);
+                phinvcategorytb.Text = Convert.ToString(row.Cells["Category"].Value);
+                phinvdescriptiontb.Text = Convert.ToString(row.Cells["Description"].Value);
+                phinvspricetb.Text = Convert.ToString(row.Cells["StripPrice"].Value);
+                phinvupricetb.Text = Convert.ToString(row.Cells["UnitPrice"].Value);
+                phinvdosetb.Text = Convert.ToString(row.Cells["Dose"].Value);
+                phinvsideetb.Text = Convert.ToString(row.Cells["SideEffect"].Value);
+                phinvstocktb.Text = Convert.ToString(row.Cells["Stock"].Value);
+
+                // Date handling block
+                if (row.Cells["ExpireDate"].Value != DBNull.Value && row.Cells["ExpireDate"].Value != null)
+                {
+                    phinvexpirydtp.Value = Convert.ToDateTime(row.Cells["ExpireDate"].Value);
+                }
+                else
+                {
+                    phinvexpirydtp.Value = DateTime.Now;
+                }
+            }
+        }
+
+        private void phinvupdatebtn_Click(object sender, EventArgs e)
+        {
+            if (phinvdgv.CurrentRow == null)
+            {
+                MessageBox.Show("Please click a medicine row from the table to update first.");
+                return;
+            }
+
+            var currentRow = phinvdgv.CurrentRow;
+            int medicineId = Convert.ToInt32(currentRow.Cells["MedicineID"].Value);
+
+            decimal.TryParse(phinvspricetb.Text, out decimal stripPrice);
+            decimal.TryParse(phinvupricetb.Text, out decimal unitPrice);
+            int.TryParse(phinvstocktb.Text, out int stock);
+
+            string query = "UPDATE MedicineTable SET MedicineName = @0, Category = @1, Description = @2, StripPrice = @3, " +
+                           "UnitPrice = @4, Dose = @5, SideEffect = @6, Stock = @7, ExpireDate = @8 WHERE MedicineID = @9";
+
+            new Db().NonQuery(query,
+                phinvmnametb.Text,
+                phinvcategorytb.Text,
+                phinvdescriptiontb.Text,
+                stripPrice,
+                unitPrice,
+                phinvdosetb.Text,
+                phinvsideetb.Text,
+                stock,
+                phinvexpirydtp.Value.Date,
+                medicineId
+            );
+
+            MessageBox.Show("Medicine updated successfully!");
+            RefreshInventoryGrid();
+            ClearInventoryFields();
+        }
+
+        private void phinvremovebtn_Click(object sender, EventArgs e)
+        {
+           
+            if (phinvdgv.CurrentRow == null)
+            {
+                MessageBox.Show("Please click a medicine row from the table to delete.");
+                return;
+            }
+
+            var currentRow = phinvdgv.CurrentRow;
+            int medicineId = Convert.ToInt32(currentRow.Cells["MedicineID"].Value);
+
+            string query = "DELETE FROM MedicineTable WHERE MedicineID = @0";
+            new Db().NonQuery(query, medicineId);
+
+            MessageBox.Show("Medicine removed successfully!");
+            RefreshInventoryGrid();
+            ClearInventoryFields();
+        }
+
+        //PRESCRIPTION
+
+        private void RefreshPrescriptionGrid()
+        {
+            string query = "SELECT PrescriptionID, AppointmentID, DoctorID, PatientUsername, PrescriptionText, PrescriptionDate FROM PrescriptionTable";
+            DataTable dt = new Db().Reader(query);
+
+            if (dt != null)
+            {
+                phprdgv.DataSource = dt;
+            }
+        }
+
+        private void phprdgv_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = phprdgv.Rows[e.RowIndex];
+
+               
+                phprrtb.Text = Convert.ToString(row.Cells["PrescriptionText"].Value);
+            }
+        }
     }
 }

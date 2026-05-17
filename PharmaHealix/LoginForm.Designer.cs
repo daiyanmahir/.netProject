@@ -868,6 +868,7 @@
             this.fusernametxt.Size = new System.Drawing.Size(404, 21);
             this.fusernametxt.TabIndex = 17;
             this.fusernametxt.Text = "enter your username";
+            this.fusernametxt.TextChanged += new System.EventHandler(this.fusernametxt_TextChanged);
             this.fusernametxt.Enter += new System.EventHandler(this.fusernametxt_Enter);
             // 
             // Loginform

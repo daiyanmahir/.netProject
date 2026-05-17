@@ -19,7 +19,7 @@ namespace PharmaHealix
 
         private void btnUser_Click(object sender, EventArgs e)
         {
-            AdminUserForm form = new AdminUserForm();
+            AdminDoctorForm form = new AdminDoctorForm();
             form.Show();
             this.Hide();
         }
@@ -31,10 +31,7 @@ namespace PharmaHealix
             this.Hide();
         }
 
-        private void btnInventory_Click(object sender, EventArgs e)
-        {
-            // Already on Inventory page
-        }
+       
 
         private void btnAppointment_Click(object sender, EventArgs e)
         {
@@ -64,6 +61,46 @@ namespace PharmaHealix
             txtMedicineName.Clear();
 
             dtpExpiryDate.Value = DateTime.Now;
+        }
+
+        private void btnDoctor_Click(object sender, EventArgs e)
+        {
+            AdminDoctorForm doctorForm = new AdminDoctorForm();
+            doctorForm.Show();
+            this.Hide();
+        }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPharmacist_Click(object sender, EventArgs e)
+        {
+            AdminPharmacistForm pharmacistForm = new AdminPharmacistForm();
+            pharmacistForm.Show();
+            this.Hide();
+        }
+
+        private void btnPatient_Click_1(object sender, EventArgs e)
+        {
+            AdminPatientForm patientForm = new AdminPatientForm();
+            patientForm.Show();
+            this.Hide();
+        }
+
+        private void btnAppointment_Click_1(object sender, EventArgs e)
+        {
+            AdminAppointmentForm appointmentForm = new AdminAppointmentForm();
+            appointmentForm.Show();
+            this.Hide();
+        }
+
+        private void btnLogout_Click_1(object sender, EventArgs e)
+        {
+            Loginform login = new Loginform();
+            login.Show();
+            this.Hide();
         }
     }
     }

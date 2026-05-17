@@ -102,6 +102,7 @@
             this.errorpharmacistnamepan = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.securityquestionlbl = new System.Windows.Forms.Label();
+            this.pharmacistprofileupdatebtn = new System.Windows.Forms.Button();
             this.pharmacistprofileaddresslbl = new System.Windows.Forms.Label();
             this.pharmacistprofilephonelbl = new System.Windows.Forms.Label();
             this.pharmacistprofilepasslbl = new System.Windows.Forms.Label();
@@ -119,7 +120,6 @@
             this.patientlistbtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.medilogobtn = new System.Windows.Forms.Button();
-            this.pharmacistprofileupdatebtn = new System.Windows.Forms.Button();
             this.patientlistpan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phprdgv)).BeginInit();
             this.patientlisttoppan.SuspendLayout();
@@ -188,6 +188,7 @@
             this.phprdgv.RowTemplate.Height = 28;
             this.phprdgv.Size = new System.Drawing.Size(879, 348);
             this.phprdgv.TabIndex = 2;
+            this.phprdgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.phprdgv_CellClick);
             // 
             // patientlisttoppan
             // 
@@ -437,6 +438,7 @@
             // phinvupdatebtn
             // 
             this.phinvupdatebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
+            this.phinvupdatebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.phinvupdatebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phinvupdatebtn.ForeColor = System.Drawing.Color.White;
             this.phinvupdatebtn.Location = new System.Drawing.Point(413, 657);
@@ -445,10 +447,12 @@
             this.phinvupdatebtn.TabIndex = 20;
             this.phinvupdatebtn.Text = "UPDATE";
             this.phinvupdatebtn.UseVisualStyleBackColor = false;
+            this.phinvupdatebtn.Click += new System.EventHandler(this.phinvupdatebtn_Click);
             // 
             // phinvremovebtn
             // 
             this.phinvremovebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
+            this.phinvremovebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.phinvremovebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phinvremovebtn.ForeColor = System.Drawing.Color.White;
             this.phinvremovebtn.Location = new System.Drawing.Point(621, 657);
@@ -457,10 +461,12 @@
             this.phinvremovebtn.TabIndex = 19;
             this.phinvremovebtn.Text = "REMOVE";
             this.phinvremovebtn.UseVisualStyleBackColor = false;
+            this.phinvremovebtn.Click += new System.EventHandler(this.phinvremovebtn_Click);
             // 
             // phinvaddbtn
             // 
             this.phinvaddbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
+            this.phinvaddbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.phinvaddbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phinvaddbtn.ForeColor = System.Drawing.Color.White;
             this.phinvaddbtn.Location = new System.Drawing.Point(201, 657);
@@ -469,6 +475,7 @@
             this.phinvaddbtn.TabIndex = 18;
             this.phinvaddbtn.Text = "ADD";
             this.phinvaddbtn.UseVisualStyleBackColor = false;
+            this.phinvaddbtn.Click += new System.EventHandler(this.phinvaddbtn_Click);
             // 
             // label8
             // 
@@ -616,6 +623,7 @@
             this.phinvdgv.RowTemplate.Height = 33;
             this.phinvdgv.Size = new System.Drawing.Size(879, 177);
             this.phinvdgv.TabIndex = 1;
+            this.phinvdgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.phinvdgv_CellClick);
             // 
             // inventorytoppan
             // 
@@ -701,7 +709,7 @@
             this.phsalarytb.BackColor = System.Drawing.Color.White;
             this.phsalarytb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.phsalarytb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phsalarytb.ForeColor = System.Drawing.Color.White;
+            this.phsalarytb.ForeColor = System.Drawing.Color.Black;
             this.phsalarytb.Location = new System.Drawing.Point(6, 16);
             this.phsalarytb.Margin = new System.Windows.Forms.Padding(2);
             this.phsalarytb.Name = "phsalarytb";
@@ -757,7 +765,7 @@
             this.pharmacistphonetxt.BackColor = System.Drawing.Color.White;
             this.pharmacistphonetxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pharmacistphonetxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistphonetxt.ForeColor = System.Drawing.Color.DarkGray;
+            this.pharmacistphonetxt.ForeColor = System.Drawing.Color.Black;
             this.pharmacistphonetxt.Location = new System.Drawing.Point(5, 16);
             this.pharmacistphonetxt.Margin = new System.Windows.Forms.Padding(2);
             this.pharmacistphonetxt.Name = "pharmacistphonetxt";
@@ -777,7 +785,7 @@
             // 
             this.pharmacistprofileaddtxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pharmacistprofileaddtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistprofileaddtxt.ForeColor = System.Drawing.Color.DarkGray;
+            this.pharmacistprofileaddtxt.ForeColor = System.Drawing.Color.Black;
             this.pharmacistprofileaddtxt.Location = new System.Drawing.Point(6, 16);
             this.pharmacistprofileaddtxt.Margin = new System.Windows.Forms.Padding(2);
             this.pharmacistprofileaddtxt.Name = "pharmacistprofileaddtxt";
@@ -797,7 +805,7 @@
             // 
             this.pharmacistanswertxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pharmacistanswertxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistanswertxt.ForeColor = System.Drawing.Color.DarkGray;
+            this.pharmacistanswertxt.ForeColor = System.Drawing.Color.Black;
             this.pharmacistanswertxt.Location = new System.Drawing.Point(6, 16);
             this.pharmacistanswertxt.Margin = new System.Windows.Forms.Padding(2);
             this.pharmacistanswertxt.Name = "pharmacistanswertxt";
@@ -817,7 +825,7 @@
             // 
             this.pharmacistprofilepasstxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pharmacistprofilepasstxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistprofilepasstxt.ForeColor = System.Drawing.Color.DarkGray;
+            this.pharmacistprofilepasstxt.ForeColor = System.Drawing.Color.Black;
             this.pharmacistprofilepasstxt.Location = new System.Drawing.Point(6, 16);
             this.pharmacistprofilepasstxt.Margin = new System.Windows.Forms.Padding(2);
             this.pharmacistprofilepasstxt.Name = "pharmacistprofilepasstxt";
@@ -838,7 +846,7 @@
             this.pharmacistprofileusernametxt.BackColor = System.Drawing.Color.White;
             this.pharmacistprofileusernametxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pharmacistprofileusernametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistprofileusernametxt.ForeColor = System.Drawing.Color.DarkGray;
+            this.pharmacistprofileusernametxt.ForeColor = System.Drawing.Color.Black;
             this.pharmacistprofileusernametxt.Location = new System.Drawing.Point(6, 16);
             this.pharmacistprofileusernametxt.Margin = new System.Windows.Forms.Padding(2);
             this.pharmacistprofileusernametxt.Name = "pharmacistprofileusernametxt";
@@ -859,7 +867,7 @@
             this.pharmacistprofilenametxt.BackColor = System.Drawing.Color.White;
             this.pharmacistprofilenametxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pharmacistprofilenametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistprofilenametxt.ForeColor = System.Drawing.Color.DarkGray;
+            this.pharmacistprofilenametxt.ForeColor = System.Drawing.Color.Black;
             this.pharmacistprofilenametxt.Location = new System.Drawing.Point(6, 16);
             this.pharmacistprofilenametxt.Margin = new System.Windows.Forms.Padding(2);
             this.pharmacistprofilenametxt.Name = "pharmacistprofilenametxt";
@@ -943,6 +951,22 @@
             this.securityquestionlbl.Size = new System.Drawing.Size(178, 28);
             this.securityquestionlbl.TabIndex = 15;
             this.securityquestionlbl.Text = "Security Question:";
+            // 
+            // pharmacistprofileupdatebtn
+            // 
+            this.pharmacistprofileupdatebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
+            this.pharmacistprofileupdatebtn.FlatAppearance.BorderSize = 0;
+            this.pharmacistprofileupdatebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pharmacistprofileupdatebtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pharmacistprofileupdatebtn.ForeColor = System.Drawing.Color.White;
+            this.pharmacistprofileupdatebtn.Location = new System.Drawing.Point(431, 671);
+            this.pharmacistprofileupdatebtn.Margin = new System.Windows.Forms.Padding(2);
+            this.pharmacistprofileupdatebtn.Name = "pharmacistprofileupdatebtn";
+            this.pharmacistprofileupdatebtn.Size = new System.Drawing.Size(116, 67);
+            this.pharmacistprofileupdatebtn.TabIndex = 13;
+            this.pharmacistprofileupdatebtn.Text = "UPDATE";
+            this.pharmacistprofileupdatebtn.UseVisualStyleBackColor = false;
+            this.pharmacistprofileupdatebtn.Click += new System.EventHandler(this.pharmacistprofileupdatebtn_Click);
             // 
             // pharmacistprofileaddresslbl
             // 
@@ -1034,7 +1058,7 @@
             this.Exitbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.Exitbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
             this.Exitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Exitbtn.Location = new System.Drawing.Point(1143, 15);
+            this.Exitbtn.Location = new System.Drawing.Point(1153, 11);
             this.Exitbtn.Margin = new System.Windows.Forms.Padding(2);
             this.Exitbtn.Name = "Exitbtn";
             this.Exitbtn.Size = new System.Drawing.Size(38, 24);
@@ -1154,22 +1178,6 @@
             this.medilogobtn.Size = new System.Drawing.Size(156, 129);
             this.medilogobtn.TabIndex = 22;
             this.medilogobtn.UseVisualStyleBackColor = false;
-            // 
-            // pharmacistprofileupdatebtn
-            // 
-            this.pharmacistprofileupdatebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
-            this.pharmacistprofileupdatebtn.FlatAppearance.BorderSize = 0;
-            this.pharmacistprofileupdatebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pharmacistprofileupdatebtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistprofileupdatebtn.ForeColor = System.Drawing.Color.White;
-            this.pharmacistprofileupdatebtn.Location = new System.Drawing.Point(431, 671);
-            this.pharmacistprofileupdatebtn.Margin = new System.Windows.Forms.Padding(2);
-            this.pharmacistprofileupdatebtn.Name = "pharmacistprofileupdatebtn";
-            this.pharmacistprofileupdatebtn.Size = new System.Drawing.Size(116, 67);
-            this.pharmacistprofileupdatebtn.TabIndex = 13;
-            this.pharmacistprofileupdatebtn.Text = "UPDATE";
-            this.pharmacistprofileupdatebtn.UseVisualStyleBackColor = false;
-            this.pharmacistprofileupdatebtn.Click += new System.EventHandler(this.pharmacistprofileupdatebtn_Click);
             // 
             // Pharmacist
             // 

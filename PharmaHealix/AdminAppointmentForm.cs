@@ -19,7 +19,7 @@ namespace PharmaHealix
 
         private void btnUser_Click(object sender, EventArgs e)
         {
-            AdminUserForm form = new AdminUserForm();
+            AdminDoctorForm form = new AdminDoctorForm();
             form.Show();
             this.Hide();
         }
@@ -38,10 +38,7 @@ namespace PharmaHealix
             this.Hide();
         }
 
-        private void btnAppointment_Click(object sender, EventArgs e)
-        {
-            // Already on Appointment page
-        }
+       
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
@@ -49,6 +46,46 @@ namespace PharmaHealix
         }
 
         private void btnShow_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDoctor_Click(object sender, EventArgs e)
+        {
+            AdminDoctorForm doctorForm = new AdminDoctorForm();
+            doctorForm.Show();
+            this.Hide();
+        }
+
+        private void btnPharmacist_Click(object sender, EventArgs e)
+        {
+            AdminPharmacistForm pharmacistForm = new AdminPharmacistForm();
+            pharmacistForm.Show();
+            this.Hide();
+        }
+
+        private void btnPatient_Click_1(object sender, EventArgs e)
+        {
+            AdminPatientForm patientForm = new AdminPatientForm();
+            patientForm.Show();
+            this.Hide();
+        }
+
+        private void btnInventory_Click_1(object sender, EventArgs e)
+        {
+            AdminInventoryForm inventoryForm = new AdminInventoryForm();
+            inventoryForm.Show();
+            this.Hide();
+        }
+
+        private void btnLogout_Click_1(object sender, EventArgs e)
+        {
+            Loginform login = new Loginform();
+            login.Show();
+            this.Hide();
+        }
+
+        private void AdminAppointmentForm_Load(object sender, EventArgs e)
         {
 
         }

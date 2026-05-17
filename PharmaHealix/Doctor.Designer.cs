@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Doctor));
             this.panel1 = new System.Windows.Forms.Panel();
             this.checkappbtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.reportsbtn = new System.Windows.Forms.Button();
             this.medbtn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -110,23 +108,23 @@
             this.txtSearchMedicine = new System.Windows.Forms.TextBox();
             this.snilbl = new System.Windows.Forms.Label();
             this.tabcheckapp = new System.Windows.Forms.TabPage();
+            this.gbApptActions = new System.Windows.Forms.GroupBox();
+            this.btnCancelAppt = new System.Windows.Forms.Button();
+            this.btnStartConsultation = new System.Windows.Forms.Button();
+            this.txtReason = new System.Windows.Forms.TextBox();
+            this.Reasonlbl = new System.Windows.Forms.Label();
+            this.gbApptQueue = new System.Windows.Forms.GroupBox();
+            this.dgvAppointments = new System.Windows.Forms.DataGridView();
+            this.gbApptFilter = new System.Windows.Forms.GroupBox();
+            this.btnRefreshAppts = new System.Windows.Forms.Button();
+            this.lblApptCount = new System.Windows.Forms.Label();
+            this.Dailytlbl = new System.Windows.Forms.Label();
+            this.dtpFilterDate = new System.Windows.Forms.DateTimePicker();
+            this.Viewlbl = new System.Windows.Forms.Label();
             this.headpan = new System.Windows.Forms.Panel();
             this.medilogobtn = new System.Windows.Forms.Button();
             this.Exitbtn = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.gbApptFilter = new System.Windows.Forms.GroupBox();
-            this.Viewlbl = new System.Windows.Forms.Label();
-            this.dtpFilterDate = new System.Windows.Forms.DateTimePicker();
-            this.Dailytlbl = new System.Windows.Forms.Label();
-            this.lblApptCount = new System.Windows.Forms.Label();
-            this.btnRefreshAppts = new System.Windows.Forms.Button();
-            this.gbApptQueue = new System.Windows.Forms.GroupBox();
-            this.dgvAppointments = new System.Windows.Forms.DataGridView();
-            this.gbApptActions = new System.Windows.Forms.GroupBox();
-            this.Reasonlbl = new System.Windows.Forms.Label();
-            this.txtReason = new System.Windows.Forms.TextBox();
-            this.btnStartConsultation = new System.Windows.Forms.Button();
-            this.btnCancelAppt = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPrescription.SuspendLayout();
@@ -147,11 +145,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.gbInventorySearch.SuspendLayout();
             this.tabcheckapp.SuspendLayout();
-            this.headpan.SuspendLayout();
-            this.gbApptFilter.SuspendLayout();
+            this.gbApptActions.SuspendLayout();
             this.gbApptQueue.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
-            this.gbApptActions.SuspendLayout();
+            this.gbApptFilter.SuspendLayout();
+            this.headpan.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -159,7 +157,6 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.checkappbtn);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.reportsbtn);
             this.panel1.Controls.Add(this.medbtn);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
@@ -176,7 +173,7 @@
             this.checkappbtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkappbtn.Image = global::PharmaHealix.Properties.Resources.rsz_planning_8169817;
             this.checkappbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.checkappbtn.Location = new System.Drawing.Point(12, 394);
+            this.checkappbtn.Location = new System.Drawing.Point(12, 335);
             this.checkappbtn.Name = "checkappbtn";
             this.checkappbtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.checkappbtn.Size = new System.Drawing.Size(305, 43);
@@ -195,24 +192,6 @@
             this.label1.Size = new System.Drawing.Size(267, 47);
             this.label1.TabIndex = 1;
             this.label1.Text = "Doctor Menu";
-            // 
-            // reportsbtn
-            // 
-            this.reportsbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSlateGray;
-            this.reportsbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.reportsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reportsbtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reportsbtn.Image = ((System.Drawing.Image)(resources.GetObject("reportsbtn.Image")));
-            this.reportsbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.reportsbtn.Location = new System.Drawing.Point(12, 335);
-            this.reportsbtn.Name = "reportsbtn";
-            this.reportsbtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.reportsbtn.Size = new System.Drawing.Size(305, 43);
-            this.reportsbtn.TabIndex = 4;
-            this.reportsbtn.Text = "       Reports";
-            this.reportsbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.reportsbtn.UseVisualStyleBackColor = true;
-            this.reportsbtn.Click += new System.EventHandler(this.reportsbtn_Click);
             // 
             // medbtn
             // 
@@ -1050,6 +1029,144 @@
             this.tabcheckapp.Text = "Check Appointment";
             this.tabcheckapp.UseVisualStyleBackColor = true;
             // 
+            // gbApptActions
+            // 
+            this.gbApptActions.Controls.Add(this.btnCancelAppt);
+            this.gbApptActions.Controls.Add(this.btnStartConsultation);
+            this.gbApptActions.Controls.Add(this.txtReason);
+            this.gbApptActions.Controls.Add(this.Reasonlbl);
+            this.gbApptActions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbApptActions.Location = new System.Drawing.Point(7, 438);
+            this.gbApptActions.Name = "gbApptActions";
+            this.gbApptActions.Size = new System.Drawing.Size(834, 162);
+            this.gbApptActions.TabIndex = 2;
+            this.gbApptActions.TabStop = false;
+            this.gbApptActions.Text = "3. Manage Selected Appointment";
+            // 
+            // btnCancelAppt
+            // 
+            this.btnCancelAppt.BackColor = System.Drawing.Color.IndianRed;
+            this.btnCancelAppt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelAppt.Location = new System.Drawing.Point(371, 98);
+            this.btnCancelAppt.Name = "btnCancelAppt";
+            this.btnCancelAppt.Size = new System.Drawing.Size(275, 41);
+            this.btnCancelAppt.TabIndex = 6;
+            this.btnCancelAppt.Text = "Cancel Appointment";
+            this.btnCancelAppt.UseVisualStyleBackColor = false;
+            // 
+            // btnStartConsultation
+            // 
+            this.btnStartConsultation.BackColor = System.Drawing.Color.Olive;
+            this.btnStartConsultation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStartConsultation.Location = new System.Drawing.Point(21, 98);
+            this.btnStartConsultation.Name = "btnStartConsultation";
+            this.btnStartConsultation.Size = new System.Drawing.Size(275, 41);
+            this.btnStartConsultation.TabIndex = 5;
+            this.btnStartConsultation.Text = "Start Consultation";
+            this.btnStartConsultation.UseVisualStyleBackColor = false;
+            // 
+            // txtReason
+            // 
+            this.txtReason.Location = new System.Drawing.Point(165, 51);
+            this.txtReason.Name = "txtReason";
+            this.txtReason.ReadOnly = true;
+            this.txtReason.Size = new System.Drawing.Size(390, 28);
+            this.txtReason.TabIndex = 2;
+            // 
+            // Reasonlbl
+            // 
+            this.Reasonlbl.AutoSize = true;
+            this.Reasonlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Reasonlbl.Location = new System.Drawing.Point(17, 51);
+            this.Reasonlbl.Name = "Reasonlbl";
+            this.Reasonlbl.Size = new System.Drawing.Size(126, 20);
+            this.Reasonlbl.TabIndex = 1;
+            this.Reasonlbl.Text = "Reason for Visit:";
+            // 
+            // gbApptQueue
+            // 
+            this.gbApptQueue.Controls.Add(this.dgvAppointments);
+            this.gbApptQueue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbApptQueue.Location = new System.Drawing.Point(7, 127);
+            this.gbApptQueue.Name = "gbApptQueue";
+            this.gbApptQueue.Size = new System.Drawing.Size(834, 304);
+            this.gbApptQueue.TabIndex = 1;
+            this.gbApptQueue.TabStop = false;
+            this.gbApptQueue.Text = "2. Patient Schedule";
+            // 
+            // dgvAppointments
+            // 
+            this.dgvAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAppointments.Location = new System.Drawing.Point(7, 28);
+            this.dgvAppointments.Name = "dgvAppointments";
+            this.dgvAppointments.RowHeadersWidth = 62;
+            this.dgvAppointments.RowTemplate.Height = 28;
+            this.dgvAppointments.Size = new System.Drawing.Size(821, 263);
+            this.dgvAppointments.TabIndex = 0;
+            this.dgvAppointments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAppointments_CellContentClick);
+            // 
+            // gbApptFilter
+            // 
+            this.gbApptFilter.Controls.Add(this.btnRefreshAppts);
+            this.gbApptFilter.Controls.Add(this.lblApptCount);
+            this.gbApptFilter.Controls.Add(this.Dailytlbl);
+            this.gbApptFilter.Controls.Add(this.dtpFilterDate);
+            this.gbApptFilter.Controls.Add(this.Viewlbl);
+            this.gbApptFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbApptFilter.Location = new System.Drawing.Point(7, 7);
+            this.gbApptFilter.Name = "gbApptFilter";
+            this.gbApptFilter.Size = new System.Drawing.Size(834, 100);
+            this.gbApptFilter.TabIndex = 0;
+            this.gbApptFilter.TabStop = false;
+            this.gbApptFilter.Text = "1. Select Appointment Date";
+            // 
+            // btnRefreshAppts
+            // 
+            this.btnRefreshAppts.BackColor = System.Drawing.Color.Olive;
+            this.btnRefreshAppts.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefreshAppts.Location = new System.Drawing.Point(598, 29);
+            this.btnRefreshAppts.Name = "btnRefreshAppts";
+            this.btnRefreshAppts.Size = new System.Drawing.Size(201, 41);
+            this.btnRefreshAppts.TabIndex = 4;
+            this.btnRefreshAppts.Text = "View Schedule";
+            this.btnRefreshAppts.UseVisualStyleBackColor = false;
+            // 
+            // lblApptCount
+            // 
+            this.lblApptCount.AutoSize = true;
+            this.lblApptCount.Location = new System.Drawing.Point(503, 40);
+            this.lblApptCount.Name = "lblApptCount";
+            this.lblApptCount.Size = new System.Drawing.Size(21, 22);
+            this.lblApptCount.TabIndex = 3;
+            this.lblApptCount.Text = "0";
+            // 
+            // Dailytlbl
+            // 
+            this.Dailytlbl.AutoSize = true;
+            this.Dailytlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dailytlbl.Location = new System.Drawing.Point(402, 42);
+            this.Dailytlbl.Name = "Dailytlbl";
+            this.Dailytlbl.Size = new System.Drawing.Size(86, 20);
+            this.Dailytlbl.TabIndex = 2;
+            this.Dailytlbl.Text = "Daily Total:";
+            // 
+            // dtpFilterDate
+            // 
+            this.dtpFilterDate.Location = new System.Drawing.Point(125, 42);
+            this.dtpFilterDate.Name = "dtpFilterDate";
+            this.dtpFilterDate.Size = new System.Drawing.Size(200, 28);
+            this.dtpFilterDate.TabIndex = 1;
+            // 
+            // Viewlbl
+            // 
+            this.Viewlbl.AutoSize = true;
+            this.Viewlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Viewlbl.Location = new System.Drawing.Point(17, 42);
+            this.Viewlbl.Name = "Viewlbl";
+            this.Viewlbl.Size = new System.Drawing.Size(86, 20);
+            this.Viewlbl.TabIndex = 0;
+            this.Viewlbl.Text = "View Date:";
+            // 
             // headpan
             // 
             this.headpan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
@@ -1088,144 +1205,6 @@
             this.Exitbtn.TabIndex = 2;
             this.Exitbtn.Text = "X";
             this.Exitbtn.UseVisualStyleBackColor = false;
-            // 
-            // gbApptFilter
-            // 
-            this.gbApptFilter.Controls.Add(this.btnRefreshAppts);
-            this.gbApptFilter.Controls.Add(this.lblApptCount);
-            this.gbApptFilter.Controls.Add(this.Dailytlbl);
-            this.gbApptFilter.Controls.Add(this.dtpFilterDate);
-            this.gbApptFilter.Controls.Add(this.Viewlbl);
-            this.gbApptFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbApptFilter.Location = new System.Drawing.Point(7, 7);
-            this.gbApptFilter.Name = "gbApptFilter";
-            this.gbApptFilter.Size = new System.Drawing.Size(834, 100);
-            this.gbApptFilter.TabIndex = 0;
-            this.gbApptFilter.TabStop = false;
-            this.gbApptFilter.Text = "1. Select Appointment Date";
-            // 
-            // Viewlbl
-            // 
-            this.Viewlbl.AutoSize = true;
-            this.Viewlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Viewlbl.Location = new System.Drawing.Point(17, 42);
-            this.Viewlbl.Name = "Viewlbl";
-            this.Viewlbl.Size = new System.Drawing.Size(86, 20);
-            this.Viewlbl.TabIndex = 0;
-            this.Viewlbl.Text = "View Date:";
-            // 
-            // dtpFilterDate
-            // 
-            this.dtpFilterDate.Location = new System.Drawing.Point(125, 42);
-            this.dtpFilterDate.Name = "dtpFilterDate";
-            this.dtpFilterDate.Size = new System.Drawing.Size(200, 28);
-            this.dtpFilterDate.TabIndex = 1;
-            // 
-            // Dailytlbl
-            // 
-            this.Dailytlbl.AutoSize = true;
-            this.Dailytlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dailytlbl.Location = new System.Drawing.Point(402, 42);
-            this.Dailytlbl.Name = "Dailytlbl";
-            this.Dailytlbl.Size = new System.Drawing.Size(86, 20);
-            this.Dailytlbl.TabIndex = 2;
-            this.Dailytlbl.Text = "Daily Total:";
-            // 
-            // lblApptCount
-            // 
-            this.lblApptCount.AutoSize = true;
-            this.lblApptCount.Location = new System.Drawing.Point(503, 40);
-            this.lblApptCount.Name = "lblApptCount";
-            this.lblApptCount.Size = new System.Drawing.Size(21, 22);
-            this.lblApptCount.TabIndex = 3;
-            this.lblApptCount.Text = "0";
-            // 
-            // btnRefreshAppts
-            // 
-            this.btnRefreshAppts.BackColor = System.Drawing.Color.Olive;
-            this.btnRefreshAppts.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefreshAppts.Location = new System.Drawing.Point(598, 29);
-            this.btnRefreshAppts.Name = "btnRefreshAppts";
-            this.btnRefreshAppts.Size = new System.Drawing.Size(201, 41);
-            this.btnRefreshAppts.TabIndex = 4;
-            this.btnRefreshAppts.Text = "View Schedule";
-            this.btnRefreshAppts.UseVisualStyleBackColor = false;
-            // 
-            // gbApptQueue
-            // 
-            this.gbApptQueue.Controls.Add(this.dgvAppointments);
-            this.gbApptQueue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbApptQueue.Location = new System.Drawing.Point(7, 127);
-            this.gbApptQueue.Name = "gbApptQueue";
-            this.gbApptQueue.Size = new System.Drawing.Size(834, 304);
-            this.gbApptQueue.TabIndex = 1;
-            this.gbApptQueue.TabStop = false;
-            this.gbApptQueue.Text = "2. Patient Schedule";
-            // 
-            // dgvAppointments
-            // 
-            this.dgvAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAppointments.Location = new System.Drawing.Point(7, 28);
-            this.dgvAppointments.Name = "dgvAppointments";
-            this.dgvAppointments.RowHeadersWidth = 62;
-            this.dgvAppointments.RowTemplate.Height = 28;
-            this.dgvAppointments.Size = new System.Drawing.Size(821, 263);
-            this.dgvAppointments.TabIndex = 0;
-            this.dgvAppointments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAppointments_CellContentClick);
-            // 
-            // gbApptActions
-            // 
-            this.gbApptActions.Controls.Add(this.btnCancelAppt);
-            this.gbApptActions.Controls.Add(this.btnStartConsultation);
-            this.gbApptActions.Controls.Add(this.txtReason);
-            this.gbApptActions.Controls.Add(this.Reasonlbl);
-            this.gbApptActions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbApptActions.Location = new System.Drawing.Point(7, 438);
-            this.gbApptActions.Name = "gbApptActions";
-            this.gbApptActions.Size = new System.Drawing.Size(834, 162);
-            this.gbApptActions.TabIndex = 2;
-            this.gbApptActions.TabStop = false;
-            this.gbApptActions.Text = "3. Manage Selected Appointment";
-            // 
-            // Reasonlbl
-            // 
-            this.Reasonlbl.AutoSize = true;
-            this.Reasonlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Reasonlbl.Location = new System.Drawing.Point(17, 51);
-            this.Reasonlbl.Name = "Reasonlbl";
-            this.Reasonlbl.Size = new System.Drawing.Size(126, 20);
-            this.Reasonlbl.TabIndex = 1;
-            this.Reasonlbl.Text = "Reason for Visit:";
-            // 
-            // txtReason
-            // 
-            this.txtReason.Location = new System.Drawing.Point(165, 51);
-            this.txtReason.Name = "txtReason";
-            this.txtReason.ReadOnly = true;
-            this.txtReason.Size = new System.Drawing.Size(390, 28);
-            this.txtReason.TabIndex = 2;
-            // 
-            // btnStartConsultation
-            // 
-            this.btnStartConsultation.BackColor = System.Drawing.Color.Olive;
-            this.btnStartConsultation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartConsultation.Location = new System.Drawing.Point(21, 98);
-            this.btnStartConsultation.Name = "btnStartConsultation";
-            this.btnStartConsultation.Size = new System.Drawing.Size(275, 41);
-            this.btnStartConsultation.TabIndex = 5;
-            this.btnStartConsultation.Text = "Start Consultation";
-            this.btnStartConsultation.UseVisualStyleBackColor = false;
-            // 
-            // btnCancelAppt
-            // 
-            this.btnCancelAppt.BackColor = System.Drawing.Color.IndianRed;
-            this.btnCancelAppt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelAppt.Location = new System.Drawing.Point(371, 98);
-            this.btnCancelAppt.Name = "btnCancelAppt";
-            this.btnCancelAppt.Size = new System.Drawing.Size(275, 41);
-            this.btnCancelAppt.TabIndex = 6;
-            this.btnCancelAppt.Text = "Cancel Appointment";
-            this.btnCancelAppt.UseVisualStyleBackColor = false;
             // 
             // Doctor
             // 
@@ -1268,13 +1247,13 @@
             this.gbInventorySearch.ResumeLayout(false);
             this.gbInventorySearch.PerformLayout();
             this.tabcheckapp.ResumeLayout(false);
-            this.headpan.ResumeLayout(false);
-            this.gbApptFilter.ResumeLayout(false);
-            this.gbApptFilter.PerformLayout();
-            this.gbApptQueue.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).EndInit();
             this.gbApptActions.ResumeLayout(false);
             this.gbApptActions.PerformLayout();
+            this.gbApptQueue.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).EndInit();
+            this.gbApptFilter.ResumeLayout(false);
+            this.gbApptFilter.PerformLayout();
+            this.headpan.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1283,7 +1262,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button reportsbtn;
         private System.Windows.Forms.Button medbtn;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;

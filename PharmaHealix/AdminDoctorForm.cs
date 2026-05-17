@@ -10,42 +10,41 @@ using System.Windows.Forms;
 
 namespace PharmaHealix
 {
-    public partial class AdminUserForm : Form
+    public partial class AdminDoctorForm : Form
     {
-        public AdminUserForm()
+        public AdminDoctorForm()
         {
             InitializeComponent();
         }
 
-        private void btnUser_Click(object sender, EventArgs e)
-        {
-            // Already on User page
-        }
+        
 
         private void btnPatient_Click(object sender, EventArgs e)
         {
-            AdminPatientForm form = new AdminPatientForm();
-            form.Show();
+            AdminPatientForm patientForm = new AdminPatientForm();
+            patientForm.Show();
             this.Hide();
         }
 
         private void btnInventory_Click(object sender, EventArgs e)
         {
-            AdminPatientForm form = new AdminPatientForm();
-            form.Show();
+            AdminInventoryForm inventoryForm = new AdminInventoryForm();
+            inventoryForm.Show();
             this.Hide();
         }
 
         private void btnAppointment_Click(object sender, EventArgs e)
         {
-            AdminAppointmentForm form = new AdminAppointmentForm();
-            form.Show();
+            AdminAppointmentForm appointmentForm = new AdminAppointmentForm();
+            appointmentForm.Show();
             this.Hide();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Loginform login = new Loginform();
+            login.Show();
+            this.Hide();
         }
 
         private void AdminUserForm_Load(object sender, EventArgs e)
@@ -55,23 +54,44 @@ namespace PharmaHealix
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtId.Clear();
-            txtName.Clear();
-            txtEmail.Clear();
+            txtDoctorID.Clear();
+            txtDoctorName.Clear();
+            
 
             cmbDepartment.SelectedIndex = -1;
 
             chkMBBS.Checked = false;
             chkFCPS.Checked = false;
             chkMD.Checked = false;
-            chkBPharm.Checked = false;
-
+            
             rdoMale.Checked = false;
             rdoFemale.Checked = false;
-            rdoOther.Checked = false;
+            
         }
 
         private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlHeader_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void chkMD_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPharmacist_Click(object sender, EventArgs e)
+        {
+            AdminPharmacistForm pharmacistForm = new AdminPharmacistForm();
+            pharmacistForm.Show();
+            this.Hide();
+        }
+
+        private void txtDoctorID_TextChanged(object sender, EventArgs e)
         {
 
         }

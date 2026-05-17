@@ -166,11 +166,11 @@
     <Compile Include="Doctor.Designer.cs">
       <DependentUpon>Doctor.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminUserForm.cs">
+    <Compile Include="AdminDoctorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminUserForm.Designer.cs">
-      <DependentUpon>AdminUserForm.cs</DependentUpon>
+    <Compile Include="AdminDoctorForm.Designer.cs">
+      <DependentUpon>AdminDoctorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminPatientForm.cs">
       <SubType>Form</SubType>
@@ -189,6 +189,12 @@
     </Compile>
     <Compile Include="AdminAppointmentForm.Designer.cs">
       <DependentUpon>AdminAppointmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPharmacistForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPharmacistForm.Designer.cs">
+      <DependentUpon>AdminPharmacistForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -219,8 +225,11 @@
     <EmbeddedResource Include="AdminPatientForm.resx">
       <DependentUpon>AdminPatientForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminUserForm.resx">
-      <DependentUpon>AdminUserForm.cs</DependentUpon>
+    <EmbeddedResource Include="AdminDoctorForm.resx">
+      <DependentUpon>AdminDoctorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPharmacistForm.resx">
+      <DependentUpon>AdminPharmacistForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctor.resx">
       <DependentUpon>Doctor.cs</DependentUpon>
@@ -342,6 +351,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\PharmaHealixLogo3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackgroundImage3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackgroundImage4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackgroundImage5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackgroundImage6.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Data.SqlClient.SNI.6.0.2\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('packages\Microsoft.Data.SqlClient.SNI.6.0.2\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />

@@ -124,20 +124,26 @@
   <data name="Cartlogo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cartlogo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Ad panel1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ad panel1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Login background pic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Login background pic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rsz_document_8656345" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_document_8656345.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rsz_planning_8169817" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rsz_planning_8169817.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Searchicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Searchicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BackgroundImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BackgroundImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PharmaHealixLogo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PharmaHealixLogo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="rsz_planning_8169817" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rsz_planning_8169817.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rsz_capsule_16305123" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rsz_capsule_16305123.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rsz_follower_6234792" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_follower_6234792.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,14 +157,14 @@
   <data name="Ad panel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ad panel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Crossicon." type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Crossicon..png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="rsz_1calendar_12212473" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_1calendar_12212473.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="prescription_3000124" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\prescription_3000124.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BackgroundImage5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BackgroundImage5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="papericon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\papericon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,8 +172,14 @@
   <data name="medical-history_10299499" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\medical-history_10299499.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rsz_medical-history_10299499" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rsz_medical-history_10299499.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="rsz_prescription_3000124" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rsz_prescription_3000124.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BackgroundImage3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BackgroundImage3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Crossicon." type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Crossicon..png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PharmaHealixLogo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PharmaHealixLogo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,17 +187,20 @@
   <data name="BackgroundImage2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BackgroundImage2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="PharmaHealixLogo3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PharmaHealixLogo3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BackgroundImage1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BackgroundImage1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Ad panel1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Ad panel1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="rsz_medical-history_10299499" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rsz_medical-history_10299499.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rsz_capsule_16305123" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rsz_capsule_16305123.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PharmaHealixLogo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PharmaHealixLogo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rsz_prescription_3000124" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rsz_prescription_3000124.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BackgroundImage4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BackgroundImage4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Humanicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Humanicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,13 +208,10 @@
   <data name="Ad panel11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ad panel11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Searchicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Searchicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="papericon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\papericon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PharmaHealixLogo3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PharmaHealixLogo3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BackgroundImage6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BackgroundImage6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

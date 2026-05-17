@@ -140,6 +140,13 @@
             this.label10 = new System.Windows.Forms.Label();
             this.patientlbl = new System.Windows.Forms.Label();
             this.appointmentlbl = new System.Windows.Forms.Label();
+            this.appointmenthistorypan = new System.Windows.Forms.Panel();
+            this.viewappointmenthistorylbl = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.appdataGridView = new System.Windows.Forms.DataGridView();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.appsearchtxt = new System.Windows.Forms.TextBox();
+            this.appsearchbtn = new System.Windows.Forms.Button();
             this.headpan.SuspendLayout();
             this.editpan.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -162,6 +169,8 @@
             this.panel13.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
+            this.appointmenthistorypan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.appdataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // headpan
@@ -924,7 +933,7 @@
             this.medinametxt.Location = new System.Drawing.Point(248, 65);
             this.medinametxt.Name = "medinametxt";
             this.medinametxt.ReadOnly = true;
-            this.medinametxt.Size = new System.Drawing.Size(360, 55);
+            this.medinametxt.Size = new System.Drawing.Size(412, 55);
             this.medinametxt.TabIndex = 33;
             this.medinametxt.Text = "";
             // 
@@ -946,20 +955,22 @@
             // sideeffectstxt
             // 
             this.sideeffectstxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.sideeffectstxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.sideeffectstxt.Location = new System.Drawing.Point(126, 506);
             this.sideeffectstxt.Name = "sideeffectstxt";
             this.sideeffectstxt.ReadOnly = true;
-            this.sideeffectstxt.Size = new System.Drawing.Size(482, 43);
+            this.sideeffectstxt.Size = new System.Drawing.Size(534, 43);
             this.sideeffectstxt.TabIndex = 32;
             this.sideeffectstxt.Text = "";
             // 
             // instructiontxt
             // 
             this.instructiontxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.instructiontxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.instructiontxt.Location = new System.Drawing.Point(126, 431);
             this.instructiontxt.Name = "instructiontxt";
             this.instructiontxt.ReadOnly = true;
-            this.instructiontxt.Size = new System.Drawing.Size(482, 37);
+            this.instructiontxt.Size = new System.Drawing.Size(537, 37);
             this.instructiontxt.TabIndex = 31;
             this.instructiontxt.Text = "";
             // 
@@ -1143,7 +1154,7 @@
             this.descriptiontxt.Location = new System.Drawing.Point(247, 222);
             this.descriptiontxt.Name = "descriptiontxt";
             this.descriptiontxt.ReadOnly = true;
-            this.descriptiontxt.Size = new System.Drawing.Size(361, 59);
+            this.descriptiontxt.Size = new System.Drawing.Size(413, 59);
             this.descriptiontxt.TabIndex = 18;
             this.descriptiontxt.Text = "";
             // 
@@ -1164,11 +1175,11 @@
             // categorytxt
             // 
             this.categorytxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.categorytxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.categorytxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.categorytxt.Location = new System.Drawing.Point(336, 133);
             this.categorytxt.Name = "categorytxt";
             this.categorytxt.ReadOnly = true;
-            this.categorytxt.Size = new System.Drawing.Size(132, 26);
+            this.categorytxt.Size = new System.Drawing.Size(253, 34);
             this.categorytxt.TabIndex = 16;
             this.categorytxt.Text = "";
             // 
@@ -1186,6 +1197,7 @@
             // 
             // mediimagepan
             // 
+            this.mediimagepan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.mediimagepan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.mediimagepan.Location = new System.Drawing.Point(6, 63);
             this.mediimagepan.Name = "mediimagepan";
@@ -1219,7 +1231,7 @@
             this.categorylbl.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categorylbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
             this.categorylbl.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.categorylbl.Location = new System.Drawing.Point(243, 126);
+            this.categorylbl.Location = new System.Drawing.Point(243, 129);
             this.categorylbl.Name = "categorylbl";
             this.categorylbl.Size = new System.Drawing.Size(92, 33);
             this.categorylbl.TabIndex = 5;
@@ -1512,15 +1524,91 @@
             this.appointmentlbl.TabIndex = 0;
             this.appointmentlbl.Text = "Add New Appointment";
             // 
+            // appointmenthistorypan
+            // 
+            this.appointmenthistorypan.Controls.Add(this.appsearchbtn);
+            this.appointmenthistorypan.Controls.Add(this.appsearchtxt);
+            this.appointmenthistorypan.Controls.Add(this.richTextBox1);
+            this.appointmenthistorypan.Controls.Add(this.appdataGridView);
+            this.appointmenthistorypan.Controls.Add(this.label17);
+            this.appointmenthistorypan.Controls.Add(this.viewappointmenthistorylbl);
+            this.appointmenthistorypan.Location = new System.Drawing.Point(0, 110);
+            this.appointmenthistorypan.Name = "appointmenthistorypan";
+            this.appointmenthistorypan.Size = new System.Drawing.Size(1200, 640);
+            this.appointmenthistorypan.TabIndex = 13;
+            this.appointmenthistorypan.Visible = false;
+            // 
+            // viewappointmenthistorylbl
+            // 
+            this.viewappointmenthistorylbl.AutoSize = true;
+            this.viewappointmenthistorylbl.Font = new System.Drawing.Font("MV Boli", 20F);
+            this.viewappointmenthistorylbl.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.viewappointmenthistorylbl.Location = new System.Drawing.Point(284, 5);
+            this.viewappointmenthistorylbl.Name = "viewappointmenthistorylbl";
+            this.viewappointmenthistorylbl.Size = new System.Drawing.Size(635, 52);
+            this.viewappointmenthistorylbl.TabIndex = 0;
+            this.viewappointmenthistorylbl.Text = "View Your Appointment History";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label17.Location = new System.Drawing.Point(318, 86);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(245, 22);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "Search Using Appointment ID";
+            // 
+            // appdataGridView
+            // 
+            this.appdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.appdataGridView.Location = new System.Drawing.Point(321, 185);
+            this.appdataGridView.Name = "appdataGridView";
+            this.appdataGridView.RowHeadersWidth = 62;
+            this.appdataGridView.RowTemplate.Height = 28;
+            this.appdataGridView.Size = new System.Drawing.Size(567, 334);
+            this.appdataGridView.TabIndex = 3;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(322, 123);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(458, 40);
+            this.richTextBox1.TabIndex = 4;
+            this.richTextBox1.Text = "";
+            // 
+            // appsearchtxt
+            // 
+            this.appsearchtxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.appsearchtxt.Location = new System.Drawing.Point(330, 134);
+            this.appsearchtxt.Name = "appsearchtxt";
+            this.appsearchtxt.Size = new System.Drawing.Size(441, 19);
+            this.appsearchtxt.TabIndex = 5;
+            // 
+            // appsearchbtn
+            // 
+            this.appsearchbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
+            this.appsearchbtn.FlatAppearance.BorderSize = 0;
+            this.appsearchbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.AliceBlue;
+            this.appsearchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.appsearchbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.appsearchbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.appsearchbtn.Location = new System.Drawing.Point(779, 123);
+            this.appsearchbtn.Name = "appsearchbtn";
+            this.appsearchbtn.Size = new System.Drawing.Size(107, 39);
+            this.appsearchbtn.TabIndex = 26;
+            this.appsearchbtn.Text = "Sign up";
+            this.appsearchbtn.UseVisualStyleBackColor = false;
+            this.appsearchbtn.Click += new System.EventHandler(this.appsearchbtn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
             this.BackgroundImage = global::PharmaHealix.Properties.Resources.BackgroundImage;
             this.ClientSize = new System.Drawing.Size(1200, 750);
-            this.Controls.Add(this.appointmentpan);
+            this.Controls.Add(this.appointmenthistorypan);
             this.Controls.Add(this.medibackpan);
-            this.Controls.Add(this.editpan);
             this.Controls.Add(this.patientpan);
             this.Controls.Add(this.headpan);
             this.Controls.Add(this.userpan);
@@ -1528,6 +1616,8 @@
             this.Controls.Add(this.Whatareyoulookinglbl);
             this.Controls.Add(this.textlbl);
             this.Controls.Add(this.cartbtn);
+            this.Controls.Add(this.appointmentpan);
+            this.Controls.Add(this.editpan);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1567,6 +1657,9 @@
             this.panel14.PerformLayout();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
+            this.appointmenthistorypan.ResumeLayout(false);
+            this.appointmenthistorypan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.appdataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1685,5 +1778,12 @@
         private System.Windows.Forms.Button setappointmentbtn;
         private System.Windows.Forms.Button cancelbtn;
         private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Panel appointmenthistorypan;
+        private System.Windows.Forms.Label viewappointmenthistorylbl;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.DataGridView appdataGridView;
+        private System.Windows.Forms.TextBox appsearchtxt;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button appsearchbtn;
     }
 }

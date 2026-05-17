@@ -64,6 +64,7 @@
             this.txtFavoriteColor = new System.Windows.Forms.TextBox();
             this.txtPetName = new System.Windows.Forms.TextBox();
             this.txtBirthPlace = new System.Windows.Forms.TextBox();
+            this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoctor)).BeginInit();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -135,7 +136,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblTitle.Location = new System.Drawing.Point(150, 20);
+            this.lblTitle.Location = new System.Drawing.Point(134, 20);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(700, 60);
             this.lblTitle.TabIndex = 5;
@@ -414,9 +415,9 @@
             // 
             this.picLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picLogo.Image = global::PharmaHealix.Properties.Resources.PharmaHealixLogo2;
-            this.picLogo.Location = new System.Drawing.Point(60, 30);
+            this.picLogo.Location = new System.Drawing.Point(32, 20);
             this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(120, 80);
+            this.picLogo.Size = new System.Drawing.Size(183, 128);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLogo.TabIndex = 5;
             this.picLogo.TabStop = false;
@@ -425,6 +426,7 @@
             // 
             this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(99)))), ((int)(((byte)(35)))));
             this.pnlHeader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlHeader.Controls.Add(this.btnExit);
             this.pnlHeader.Controls.Add(this.lblTitle);
             this.pnlHeader.Location = new System.Drawing.Point(250, 0);
             this.pnlHeader.Name = "pnlHeader";
@@ -512,6 +514,19 @@
             this.txtBirthPlace.Size = new System.Drawing.Size(140, 37);
             this.txtBirthPlace.TabIndex = 37;
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.White;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.Black;
+            this.btnExit.Location = new System.Drawing.Point(880, 11);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(35, 35);
+            this.btnExit.TabIndex = 38;
+            this.btnExit.Text = "X";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // AdminDoctorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -548,7 +563,7 @@
             this.Controls.Add(this.lblDepartment);
             this.Controls.Add(this.lblDoctorName);
             this.Controls.Add(this.lblDoctorID);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(0, 72);
             this.MaximizeBox = false;
             this.Name = "AdminDoctorForm";
@@ -602,5 +617,6 @@
         private System.Windows.Forms.TextBox txtPetName;
         private System.Windows.Forms.TextBox txtBirthPlace;
         private System.Windows.Forms.Button btnPharmacist;
+        private System.Windows.Forms.Button btnExit;
     }
 }

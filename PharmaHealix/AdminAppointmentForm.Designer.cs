@@ -39,6 +39,7 @@
             this.btnPatient = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
             this.pnlHeader.SuspendLayout();
             this.panelMenu.SuspendLayout();
@@ -64,6 +65,7 @@
             // 
             this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(99)))), ((int)(((byte)(35)))));
             this.pnlHeader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlHeader.Controls.Add(this.btnExit);
             this.pnlHeader.Controls.Add(this.lblTitle);
             this.pnlHeader.Location = new System.Drawing.Point(250, 0);
             this.pnlHeader.Name = "pnlHeader";
@@ -75,7 +77,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblTitle.Location = new System.Drawing.Point(150, 20);
+            this.lblTitle.Location = new System.Drawing.Point(46, 20);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(841, 60);
             this.lblTitle.TabIndex = 5;
@@ -113,9 +115,9 @@
             // 
             this.picLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picLogo.Image = global::PharmaHealix.Properties.Resources.PharmaHealixLogo2;
-            this.picLogo.Location = new System.Drawing.Point(60, 30);
+            this.picLogo.Location = new System.Drawing.Point(35, 20);
             this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(120, 80);
+            this.picLogo.Size = new System.Drawing.Size(183, 128);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLogo.TabIndex = 5;
             this.picLogo.TabStop = false;
@@ -196,6 +198,19 @@
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click_1);
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.White;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.Black;
+            this.btnExit.Location = new System.Drawing.Point(880, 11);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(35, 35);
+            this.btnExit.TabIndex = 39;
+            this.btnExit.Text = "X";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // AdminAppointmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -206,6 +221,7 @@
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.dgvAppointments);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(0, 72);
             this.Name = "AdminAppointmentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -232,5 +248,6 @@
         private System.Windows.Forms.Button btnPatient;
         private System.Windows.Forms.Button btnInventory;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnExit;
     }
 }

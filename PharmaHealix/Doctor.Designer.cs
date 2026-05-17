@@ -44,9 +44,9 @@
             this.rtbUsageInstructions = new System.Windows.Forms.RichTextBox();
             this.gbMedicationEntry = new System.Windows.Forms.GroupBox();
             this.lblStockStatus = new System.Windows.Forms.Label();
-            this.txtDiagnosisContext = new System.Windows.Forms.TextBox();
+            this.txtDiagnosis = new System.Windows.Forms.TextBox();
             this.DiagnosisLBL = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbRoute = new System.Windows.Forms.ComboBox();
             this.Routelbl = new System.Windows.Forms.Label();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.Quantitylbl = new System.Windows.Forms.Label();
@@ -125,6 +125,12 @@
             this.medilogobtn = new System.Windows.Forms.Button();
             this.Exitbtn = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.lblMedicineError = new System.Windows.Forms.Label();
+            this.lblFrequencyError = new System.Windows.Forms.Label();
+            this.lblDosageError = new System.Windows.Forms.Label();
+            this.lblQuantityError = new System.Windows.Forms.Label();
+            this.lblRouteError = new System.Windows.Forms.Label();
+            this.lblDiagnosisError = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPrescription.SuspendLayout();
@@ -289,6 +295,7 @@
             this.btnSendPrescription.TabIndex = 6;
             this.btnSendPrescription.Text = "Send Prescription";
             this.btnSendPrescription.UseVisualStyleBackColor = false;
+            this.btnSendPrescription.Click += new System.EventHandler(this.btnSendPrescription_Click);
             // 
             // btnSaveDraft
             // 
@@ -341,10 +348,16 @@
             // 
             // gbMedicationEntry
             // 
+            this.gbMedicationEntry.Controls.Add(this.lblDiagnosisError);
+            this.gbMedicationEntry.Controls.Add(this.lblRouteError);
+            this.gbMedicationEntry.Controls.Add(this.lblQuantityError);
+            this.gbMedicationEntry.Controls.Add(this.lblDosageError);
+            this.gbMedicationEntry.Controls.Add(this.lblFrequencyError);
+            this.gbMedicationEntry.Controls.Add(this.lblMedicineError);
             this.gbMedicationEntry.Controls.Add(this.lblStockStatus);
-            this.gbMedicationEntry.Controls.Add(this.txtDiagnosisContext);
+            this.gbMedicationEntry.Controls.Add(this.txtDiagnosis);
             this.gbMedicationEntry.Controls.Add(this.DiagnosisLBL);
-            this.gbMedicationEntry.Controls.Add(this.comboBox2);
+            this.gbMedicationEntry.Controls.Add(this.cbRoute);
             this.gbMedicationEntry.Controls.Add(this.Routelbl);
             this.gbMedicationEntry.Controls.Add(this.txtQuantity);
             this.gbMedicationEntry.Controls.Add(this.Quantitylbl);
@@ -372,12 +385,12 @@
             this.lblStockStatus.TabIndex = 12;
             this.lblStockStatus.Text = "Availability Status";
             // 
-            // txtDiagnosisContext
+            // txtDiagnosis
             // 
-            this.txtDiagnosisContext.Location = new System.Drawing.Point(199, 354);
-            this.txtDiagnosisContext.Name = "txtDiagnosisContext";
-            this.txtDiagnosisContext.Size = new System.Drawing.Size(100, 28);
-            this.txtDiagnosisContext.TabIndex = 11;
+            this.txtDiagnosis.Location = new System.Drawing.Point(199, 354);
+            this.txtDiagnosis.Name = "txtDiagnosis";
+            this.txtDiagnosis.Size = new System.Drawing.Size(100, 28);
+            this.txtDiagnosis.TabIndex = 11;
             // 
             // DiagnosisLBL
             // 
@@ -389,19 +402,19 @@
             this.DiagnosisLBL.TabIndex = 10;
             this.DiagnosisLBL.Text = "Diagnosis Related To:";
             // 
-            // comboBox2
+            // cbRoute
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbRoute.FormattingEnabled = true;
+            this.cbRoute.Items.AddRange(new object[] {
             "ORAL",
             "NOSE",
             "INJECT",
             "EAR",
             "EYE"});
-            this.comboBox2.Location = new System.Drawing.Point(199, 285);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 30);
-            this.comboBox2.TabIndex = 9;
+            this.cbRoute.Location = new System.Drawing.Point(199, 285);
+            this.cbRoute.Name = "cbRoute";
+            this.cbRoute.Size = new System.Drawing.Size(121, 30);
+            this.cbRoute.TabIndex = 9;
             // 
             // Routelbl
             // 
@@ -1206,6 +1219,78 @@
             this.Exitbtn.Text = "X";
             this.Exitbtn.UseVisualStyleBackColor = false;
             // 
+            // lblMedicineError
+            // 
+            this.lblMedicineError.AutoSize = true;
+            this.lblMedicineError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMedicineError.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblMedicineError.Location = new System.Drawing.Point(197, 98);
+            this.lblMedicineError.Name = "lblMedicineError";
+            this.lblMedicineError.Size = new System.Drawing.Size(75, 17);
+            this.lblMedicineError.TabIndex = 13;
+            this.lblMedicineError.Text = "* Required";
+            this.lblMedicineError.Visible = false;
+            // 
+            // lblFrequencyError
+            // 
+            this.lblFrequencyError.AutoSize = true;
+            this.lblFrequencyError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFrequencyError.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblFrequencyError.Location = new System.Drawing.Point(193, 208);
+            this.lblFrequencyError.Name = "lblFrequencyError";
+            this.lblFrequencyError.Size = new System.Drawing.Size(75, 17);
+            this.lblFrequencyError.TabIndex = 14;
+            this.lblFrequencyError.Text = "* Required";
+            this.lblFrequencyError.Visible = false;
+            // 
+            // lblDosageError
+            // 
+            this.lblDosageError.AutoSize = true;
+            this.lblDosageError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDosageError.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblDosageError.Location = new System.Drawing.Point(197, 149);
+            this.lblDosageError.Name = "lblDosageError";
+            this.lblDosageError.Size = new System.Drawing.Size(75, 17);
+            this.lblDosageError.TabIndex = 15;
+            this.lblDosageError.Text = "* Required";
+            this.lblDosageError.Visible = false;
+            // 
+            // lblQuantityError
+            // 
+            this.lblQuantityError.AutoSize = true;
+            this.lblQuantityError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantityError.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblQuantityError.Location = new System.Drawing.Point(193, 265);
+            this.lblQuantityError.Name = "lblQuantityError";
+            this.lblQuantityError.Size = new System.Drawing.Size(75, 17);
+            this.lblQuantityError.TabIndex = 16;
+            this.lblQuantityError.Text = "* Required";
+            this.lblQuantityError.Visible = false;
+            // 
+            // lblRouteError
+            // 
+            this.lblRouteError.AutoSize = true;
+            this.lblRouteError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRouteError.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblRouteError.Location = new System.Drawing.Point(193, 318);
+            this.lblRouteError.Name = "lblRouteError";
+            this.lblRouteError.Size = new System.Drawing.Size(75, 17);
+            this.lblRouteError.TabIndex = 17;
+            this.lblRouteError.Text = "* Required";
+            this.lblRouteError.Visible = false;
+            // 
+            // lblDiagnosisError
+            // 
+            this.lblDiagnosisError.AutoSize = true;
+            this.lblDiagnosisError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiagnosisError.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblDiagnosisError.Location = new System.Drawing.Point(197, 385);
+            this.lblDiagnosisError.Name = "lblDiagnosisError";
+            this.lblDiagnosisError.Size = new System.Drawing.Size(75, 17);
+            this.lblDiagnosisError.TabIndex = 18;
+            this.lblDiagnosisError.Text = "* Required";
+            this.lblDiagnosisError.Visible = false;
+            // 
             // Doctor
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1292,9 +1377,9 @@
         private System.Windows.Forms.TextBox txtDosage;
         private System.Windows.Forms.Label Dosagelbl;
         private System.Windows.Forms.ComboBox cbMedicineList;
-        private System.Windows.Forms.TextBox txtDiagnosisContext;
+        private System.Windows.Forms.TextBox txtDiagnosis;
         private System.Windows.Forms.Label DiagnosisLBL;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbRoute;
         private System.Windows.Forms.Label Routelbl;
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.GroupBox gbUsageInstructions;
@@ -1357,5 +1442,11 @@
         private System.Windows.Forms.Button btnStartConsultation;
         private System.Windows.Forms.TextBox txtReason;
         private System.Windows.Forms.Label Reasonlbl;
+        private System.Windows.Forms.Label lblMedicineError;
+        private System.Windows.Forms.Label lblDiagnosisError;
+        private System.Windows.Forms.Label lblRouteError;
+        private System.Windows.Forms.Label lblQuantityError;
+        private System.Windows.Forms.Label lblDosageError;
+        private System.Windows.Forms.Label lblFrequencyError;
     }
 }

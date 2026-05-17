@@ -73,6 +73,8 @@ namespace PharmaHealix
             inventorypan.Visible = false;
             patientlistpan.Visible = false;
             orderpan.Visible = true;
+
+            InitializeOrderPage();
         }
 
         private void inventorybtn_Click(object sender, EventArgs e)
@@ -420,6 +422,187 @@ namespace PharmaHealix
 
                
                 phprrtb.Text = Convert.ToString(row.Cells["PrescriptionText"].Value);
+            }
+        }
+
+
+        //ORDER
+        private DataTable cartTable = new DataTable();
+
+        private void InitializeOrderPage()
+        {
+            // 1. Load available medicines into the top grid
+            string query = "SELECT MedicineID, MedicineName, Category, UnitPrice, Stock FROM MedicineTable";
+            DataTable dt = new Db().Reader(query);
+            if (dt != null) phordmeddgv.DataSource = dt;
+
+            // 2. Build the structural columns for your custom Cart Table
+            if (cartTable.Columns.Count == 0)
+            {
+                cartTable.Columns.Add("MedicineID", typeof(int));
+                cartTable.Columns.Add("Medicine Name", typeof(string));
+                cartTable.Columns.Add("Quantity", typeof(int));
+                cartTable.Columns.Add("Price", typeof(decimal)); // Quantity * UnitPrice
+            }
+
+            // Bind the shopping cart schema directly to your bottom DataGridView
+            phordcartdgv.DataSource = cartTable;
+            UpdateGrandTotal();
+        }
+
+        private void UpdateGrandTotal()
+        {
+            decimal totalSum = 0;
+            foreach (DataRow row in cartTable.Rows)
+            {
+                totalSum += Convert.ToDecimal(row["Price"]);
+            }
+            phordtotaltb.Text = totalSum.ToString("0.00"); 
+        }
+
+        private void phordmeddgv_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = phordmeddgv.Rows[e.RowIndex];
+                phordmedicinetb.Text = Convert.ToString(row.Cells["MedicineName"].Value); 
+                numericUpDown1.Value = 1; 
+            }
+        }
+
+        private void phordaddbtn_Click(object sender, EventArgs e)
+        {
+            if (phordmeddgv.CurrentRow == null || numericUpDown1.Value <= 0)
+            {
+                MessageBox.Show("Please select a valid medicine and quantity.");
+                return;
+            }
+
+            var selectedRow = phordmeddgv.CurrentRow;
+            int medId = Convert.ToInt32(selectedRow.Cells["MedicineID"].Value);
+            string medName = Convert.ToString(selectedRow.Cells["MedicineName"].Value);
+            decimal unitPrice = Convert.ToDecimal(selectedRow.Cells["UnitPrice"].Value);
+            int availableStock = Convert.ToInt32(selectedRow.Cells["Stock"].Value);
+            int requestedQty = Convert.ToInt32(numericUpDown1.Value);
+
+          
+            if (requestedQty > availableStock)
+            {
+                MessageBox.Show($"Inadequate inventory stock! Only {availableStock} items remaining.");
+                return;
+            }
+
+           
+            decimal linePrice = requestedQty * unitPrice;
+
+            // Optional optimization: If item exists in cart, update quantity instead of appending duplicate row
+            foreach (DataRow row in cartTable.Rows)
+            {
+                if (Convert.ToInt32(row["MedicineID"]) == medId)
+                {
+                    int newQty = Convert.ToInt32(row["Quantity"]) + requestedQty;
+                    if (newQty > availableStock) { MessageBox.Show("Combined cart quantity exceeds stock!"); return; }
+                    row["Quantity"] = newQty;
+                    row["Price"] = newQty * unitPrice;
+                    UpdateGrandTotal();
+                    return;
+                }
+            }
+
+            
+            cartTable.Rows.Add(medId, medName, requestedQty, linePrice);
+            UpdateGrandTotal();
+        }
+
+        private void phordremovebtn_Click(object sender, EventArgs e)
+        {
+            if (phordcartdgv.CurrentRow == null)
+            {
+                MessageBox.Show("Please select an item row inside the Order Cart to remove.");
+                return;
+            }
+
+            int selectedIndex = phordcartdgv.CurrentRow.Index;
+            cartTable.Rows[selectedIndex].Delete();
+            
+            UpdateGrandTotal();
+        }
+
+        private void phordconfirmbtn_Click(object sender, EventArgs e)
+        {
+            if (cartTable.Rows.Count == 0)
+            {
+                MessageBox.Show("Your shopping cart is completely empty.");
+                return;
+            }
+
+            // 2. Read the dynamic text directly from your new input control
+            string patientUser = patientusernametb.Text.Trim();
+
+            // 3. Validation Check: Make sure they didn't leave the patient username field blank
+            if (patientUser == "")
+            {
+                MessageBox.Show("Please enter a Patient Username before confirming the order.");
+                return;
+            }
+
+            Db db = new Db();
+
+            // 4. Boolean Validation: Verify this username actually exists in your UserTable
+            string checkUserQuery = "SELECT COUNT(*) FROM UserTable WHERE Username = @0";
+            bool userExists = Convert.ToInt32(db.Scalar(checkUserQuery, patientUser)) > 0;
+
+            if (!userExists)
+            {
+                MessageBox.Show("Patient Username not available!");
+                return;
+            }
+
+            decimal totalAmt = Convert.ToDecimal(phordtotaltb.Text);
+            DateTime today = DateTime.Today;
+
+            try
+            {
+                // 5. Create the Master Ticket in OrderTable
+                string insertOrderQuery = "INSERT INTO OrderTable (PatientUsername, OrderDate, TotalAmount, Status) VALUES (@0, @1, @2, @3)";
+                db.NonQuery(insertOrderQuery, patientUser, today, totalAmt, "Processed");
+
+                // 6. Fetch the newly created auto-identity ID safely
+                object identityResult = db.Scalar("SELECT TOP 1 OrderID FROM OrderTable ORDER BY OrderID DESC");
+                if (identityResult == null) throw new Exception("Could not retrieve the newly generated Order ID.");
+                int newOrderId = Convert.ToInt32(identityResult);
+
+                // 7. Loop through the cart table data to insert detailed lines and deduct inventory stock
+                foreach (DataRow row in cartTable.Rows)
+                {
+                    int medId = Convert.ToInt32(row["MedicineID"]);
+                    int qty = Convert.ToInt32(row["Quantity"]);
+                    decimal price = Convert.ToDecimal(row["Price"]);
+                    decimal uPrice = price / qty;
+
+                    // Save row entry data lines into OrderDetailsTable
+                    string insertDetailsQuery = "INSERT INTO OrderDetailsTable (OrderID, MedicineID, Quantity, UnitPrice) VALUES (@0, @1, @2, @3)";
+                    db.NonQuery(insertDetailsQuery, newOrderId, medId, qty, uPrice);
+
+                    // Deduct purchased items directly from stock numbers
+                    string updateStockQuery = "UPDATE MedicineTable SET Stock = Stock - @0 WHERE MedicineID = @1";
+                    db.NonQuery(updateStockQuery, qty, medId);
+                }
+
+                MessageBox.Show("Order processed and saved successfully!");
+
+                // 8. Clean up interface inputs back to default configuration states
+                cartTable.Clear();
+                phordmedicinetb.Clear();
+                patientusernametb.Clear(); 
+                numericUpDown1.Value = 0;
+                phordtotaltb.Text = "0.00";
+
+                InitializeOrderPage(); 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to save transaction: " + ex.Message);
             }
         }
     }

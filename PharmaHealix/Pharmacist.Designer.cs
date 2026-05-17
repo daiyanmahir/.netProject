@@ -47,7 +47,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.phordmedicinetb = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.phordmeddgv = new System.Windows.Forms.DataGridView();
             this.ordertoppan = new System.Windows.Forms.Panel();
             this.ordertoplbl = new System.Windows.Forms.Label();
             this.inventorypan = new System.Windows.Forms.Panel();
@@ -120,13 +120,15 @@
             this.patientlistbtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.medilogobtn = new System.Windows.Forms.Button();
+            this.patientusernametb = new System.Windows.Forms.TextBox();
+            this.patientlbl = new System.Windows.Forms.Label();
             this.patientlistpan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phprdgv)).BeginInit();
             this.patientlisttoppan.SuspendLayout();
             this.orderpan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phordcartdgv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phordmeddgv)).BeginInit();
             this.ordertoppan.SuspendLayout();
             this.inventorypan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phinvdgv)).BeginInit();
@@ -215,6 +217,8 @@
             // orderpan
             // 
             this.orderpan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
+            this.orderpan.Controls.Add(this.patientusernametb);
+            this.orderpan.Controls.Add(this.patientlbl);
             this.orderpan.Controls.Add(this.numericUpDown1);
             this.orderpan.Controls.Add(this.phordtotaltb);
             this.orderpan.Controls.Add(this.label13);
@@ -226,7 +230,7 @@
             this.orderpan.Controls.Add(this.label10);
             this.orderpan.Controls.Add(this.phordmedicinetb);
             this.orderpan.Controls.Add(this.label9);
-            this.orderpan.Controls.Add(this.dataGridView1);
+            this.orderpan.Controls.Add(this.phordmeddgv);
             this.orderpan.Controls.Add(this.ordertoppan);
             this.orderpan.Location = new System.Drawing.Point(244, 0);
             this.orderpan.Margin = new System.Windows.Forms.Padding(2);
@@ -263,6 +267,7 @@
             // phordremovebtn
             // 
             this.phordremovebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
+            this.phordremovebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.phordremovebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phordremovebtn.ForeColor = System.Drawing.Color.White;
             this.phordremovebtn.Location = new System.Drawing.Point(406, 359);
@@ -271,10 +276,12 @@
             this.phordremovebtn.TabIndex = 13;
             this.phordremovebtn.Text = "Remove";
             this.phordremovebtn.UseVisualStyleBackColor = false;
+            this.phordremovebtn.Click += new System.EventHandler(this.phordremovebtn_Click);
             // 
             // phordconfirmbtn
             // 
             this.phordconfirmbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
+            this.phordconfirmbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.phordconfirmbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phordconfirmbtn.ForeColor = System.Drawing.Color.White;
             this.phordconfirmbtn.Location = new System.Drawing.Point(711, 671);
@@ -283,6 +290,7 @@
             this.phordconfirmbtn.TabIndex = 12;
             this.phordconfirmbtn.Text = "Confirm";
             this.phordconfirmbtn.UseVisualStyleBackColor = false;
+            this.phordconfirmbtn.Click += new System.EventHandler(this.phordconfirmbtn_Click);
             // 
             // phordcartdgv
             // 
@@ -308,6 +316,7 @@
             // phordaddbtn
             // 
             this.phordaddbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
+            this.phordaddbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.phordaddbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phordaddbtn.ForeColor = System.Drawing.Color.White;
             this.phordaddbtn.Location = new System.Drawing.Point(406, 309);
@@ -316,6 +325,7 @@
             this.phordaddbtn.TabIndex = 7;
             this.phordaddbtn.Text = "Add";
             this.phordaddbtn.UseVisualStyleBackColor = false;
+            this.phordaddbtn.Click += new System.EventHandler(this.phordaddbtn_Click);
             // 
             // label10
             // 
@@ -344,16 +354,17 @@
             this.label9.TabIndex = 3;
             this.label9.Text = "Medicine";
             // 
-            // dataGridView1
+            // phordmeddgv
             // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 142);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(911, 150);
-            this.dataGridView1.TabIndex = 2;
+            this.phordmeddgv.AllowUserToOrderColumns = true;
+            this.phordmeddgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.phordmeddgv.Location = new System.Drawing.Point(26, 142);
+            this.phordmeddgv.Name = "phordmeddgv";
+            this.phordmeddgv.RowHeadersWidth = 62;
+            this.phordmeddgv.RowTemplate.Height = 33;
+            this.phordmeddgv.Size = new System.Drawing.Size(911, 150);
+            this.phordmeddgv.TabIndex = 2;
+            this.phordmeddgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.phordmeddgv_CellClick);
             // 
             // ordertoppan
             // 
@@ -403,7 +414,7 @@
             this.inventorypan.Controls.Add(this.phinvmnametb);
             this.inventorypan.Controls.Add(this.phinvdgv);
             this.inventorypan.Controls.Add(this.inventorytoppan);
-            this.inventorypan.Location = new System.Drawing.Point(244, 0);
+            this.inventorypan.Location = new System.Drawing.Point(10000, 0);
             this.inventorypan.Margin = new System.Windows.Forms.Padding(2);
             this.inventorypan.Name = "inventorypan";
             this.inventorypan.Size = new System.Drawing.Size(956, 750);
@@ -677,7 +688,7 @@
             this.pharmacistprofilepan.Controls.Add(this.pharmacistprofilenamelbl);
             this.pharmacistprofilepan.Controls.Add(this.pharmacistprofiletoppan);
             this.pharmacistprofilepan.Font = new System.Drawing.Font("Stencil", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistprofilepan.Location = new System.Drawing.Point(244, 0);
+            this.pharmacistprofilepan.Location = new System.Drawing.Point(10000, 0);
             this.pharmacistprofilepan.Margin = new System.Windows.Forms.Padding(2);
             this.pharmacistprofilepan.Name = "pharmacistprofilepan";
             this.pharmacistprofilepan.Size = new System.Drawing.Size(956, 750);
@@ -1179,6 +1190,23 @@
             this.medilogobtn.TabIndex = 22;
             this.medilogobtn.UseVisualStyleBackColor = false;
             // 
+            // patientusernametb
+            // 
+            this.patientusernametb.Location = new System.Drawing.Point(572, 390);
+            this.patientusernametb.Name = "patientusernametb";
+            this.patientusernametb.Size = new System.Drawing.Size(362, 26);
+            this.patientusernametb.TabIndex = 18;
+            // 
+            // patientlbl
+            // 
+            this.patientlbl.AutoSize = true;
+            this.patientlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patientlbl.Location = new System.Drawing.Point(567, 364);
+            this.patientlbl.Name = "patientlbl";
+            this.patientlbl.Size = new System.Drawing.Size(173, 25);
+            this.patientlbl.TabIndex = 17;
+            this.patientlbl.Text = "Patient Username:";
+            // 
             // Pharmacist
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1205,7 +1233,7 @@
             this.orderpan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phordcartdgv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phordmeddgv)).EndInit();
             this.ordertoppan.ResumeLayout(false);
             this.ordertoppan.PerformLayout();
             this.inventorypan.ResumeLayout(false);
@@ -1316,7 +1344,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox phordmedicinetb;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView phordmeddgv;
         private System.Windows.Forms.Button phinvupdatebtn;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -1331,5 +1359,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DateTimePicker phinvexpirydtp;
         private System.Windows.Forms.Button pharmacistprofileupdatebtn;
+        private System.Windows.Forms.TextBox patientusernametb;
+        private System.Windows.Forms.Label patientlbl;
     }
 }

@@ -8,11 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
+
 
 namespace PharmaHealix
 {
     public partial class Doctor : Form
     {
+        private string selectedAppointmentID = "";
+        private string selectedPatientUsername = "";
         public Doctor()
         {
             InitializeComponent();
@@ -33,8 +37,6 @@ namespace PharmaHealix
             tabControl1.SelectedTab = tabRecords;
         }
 
-
-
         private void button1_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tabPrescription;
@@ -44,24 +46,26 @@ namespace PharmaHealix
         {
             tabControl1.SelectedTab = tabAvailability;
         }
-
         private void headpan_Paint(object sender, PaintEventArgs e)
+
         {
 
         }
 
         private void tabAvailability_Click(object sender, EventArgs e)
+
         {
 
         }
 
         private void dgvAppointments_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
         {
 
         }
-
         private void btnSendPrescription_Click(object sender, EventArgs e)
         {
+            // 1. Reset all Error Labels
             lblMedicineError.Visible = false;
             lblDosageError.Visible = false;
             lblFrequencyError.Visible = false;
@@ -69,56 +73,274 @@ namespace PharmaHealix
             lblRouteError.Visible = false;
             lblDiagnosisError.Visible = false;
 
-            // Create a flag tracking if the entire form is valid
+            // Integrity check: Verify if a patient record is mapped in the text parameters
+            if (string.IsNullOrWhiteSpace(txtSelectedID.Text) || string.IsNullOrWhiteSpace(txtSelectedName.Text))
+            {
+                MessageBox.Show("No active patient selected! Please select a patient from the 'Check Appointments' tab first.", "Execution Blocked", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             bool isValid = true;
 
-            // 2. Validate Medicine Dropdown Selection
-            if (cbMedicineList.SelectedIndex == -1)
+            // 2. Form Validations
+            if (string.IsNullOrWhiteSpace(txtMedicineName.Text))
             {
                 lblMedicineError.Visible = true;
                 isValid = false;
             }
-
-            // 3. Validate Dosage Text
             if (string.IsNullOrWhiteSpace(txtDosage.Text))
             {
                 lblDosageError.Visible = true;
                 isValid = false;
             }
-
-            // 4. Validate Frequency Text
             if (string.IsNullOrWhiteSpace(txtFrequency.Text))
             {
                 lblFrequencyError.Visible = true;
                 isValid = false;
             }
 
-            // 5. Validate Quantity (Must be a valid positive integer)
             if (!int.TryParse(txtQuantity.Text, out int qty) || qty <= 0)
             {
                 lblQuantityError.Visible = true;
                 isValid = false;
             }
 
-            // 6. Validate Route Dropdown Selection
             if (cbRoute.SelectedIndex == -1)
             {
                 lblRouteError.Visible = true;
                 isValid = false;
             }
-
-            // 7. Validate Diagnosis Field
             if (string.IsNullOrWhiteSpace(txtDiagnosis.Text))
             {
                 lblDiagnosisError.Visible = true;
                 isValid = false;
             }
-
-            // 8. Block execution if any validation checks failed
             if (!isValid)
             {
-                return; // Stops right here, leaving the red error labels visible for the doctor to fix
+                return; // Halt if validation rules failed
+            }
+
+            // 3. Handle Optional Content Elements Safely
+            string usageInstructions = string.IsNullOrWhiteSpace(rtbUsageInstructions.Text) ? "None" : rtbUsageInstructions.Text.Trim();
+            string pharmacistNotes = string.IsNullOrWhiteSpace(rtbPharmacistNote.Text) ? "None" : rtbPharmacistNote.Text.Trim();
+
+            // 4. Build Comma-Separated Prescription Text Block
+            // Pattern order layout: Diagnosis, Medicine, Dosage, Frequency, Quantity, Route, Instructions, Notes
+            string commaSeparatedPrescriptionText = $"{txtDiagnosis.Text.Trim()}, {txtMedicineName.Text.Trim()}, {txtDosage.Text.Trim()}, {txtFrequency.Text.Trim()}, {qty}, {cbRoute.SelectedItem}, {usageInstructions}, {pharmacistNotes}";
+
+            // 5. Database Queries setup (Insert Prescription Record and Update Appointment Workflow Node)
+            string insertPrescriptionQuery = @"INSERT INTO PrescriptionTable (AppointmentID, DoctorID, PatientUsername, PrescriptionText, PrescriptionDate) 
+                                               VALUES (@AppointmentID, @DoctorID, @PatientUsername, @PrescriptionText, GETDATE())";
+            string updateStatusQuery = @"UPDATE AppointmentTable 
+                                         SET Status = 'Complete' 
+                                         WHERE AppointmentID = @AppointmentID";
+
+            using (SqlConnection conn = new SqlConnection(new Db().connection))
+            {
+                try
+                {
+                    conn.Open();
+
+                    // Start a transaction scope bound layout to update both modules safely as a solid unit
+                    using (SqlTransaction transaction = conn.BeginTransaction())
+                    {
+                        try
+                        {
+                            // FIX: Convert txtSelectedID (which contains the validated ID) instead of the empty txtPatientID text box
+                            int currentAppointmentID = Convert.ToInt32(txtSelectedID.Text.Trim());
+
+                            // A. Execute Prescription Table Insert
+                            using (SqlCommand insertCmd = new SqlCommand(insertPrescriptionQuery, conn, transaction))
+                            {
+                                insertCmd.Parameters.AddWithValue("@AppointmentID", currentAppointmentID);
+                                insertCmd.Parameters.AddWithValue("@DoctorID", 5); // Default query identity index placeholder
+                                insertCmd.Parameters.AddWithValue("@PatientUsername", txtSelectedName.Text.Trim()); // FIX: Use txtSelectedName
+                                insertCmd.Parameters.AddWithValue("@PrescriptionText", commaSeparatedPrescriptionText);
+                                insertCmd.ExecuteNonQuery();
+                            }
+
+                            // B. Execute Appointment Table Status Field Update
+                            using (SqlCommand updateCmd = new SqlCommand(updateStatusQuery, conn, transaction))
+                            {
+                                updateCmd.Parameters.AddWithValue("@AppointmentID", currentAppointmentID);
+                                updateCmd.ExecuteNonQuery();
+                            }
+
+                            // Commit data modifications together safely if execution pipeline passes cleanly
+                            transaction.Commit();
+
+                            MessageBox.Show("Prescription successfully saved and appointment status updated to 'Complete'!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            // 6. Reset Form Fields Cleanly for next workflow node task
+                            ClearPrescriptionForm();
+
+                            // Instantly refresh the schedule view display data grid panel live
+                            btnRefreshAppts_Click(sender, e);
+                        }
+                        catch (Exception ex)
+                        {
+                            // Roll back changes if any step fails
+                            transaction.Rollback();
+                            throw new Exception("Transaction processing execution failed. Reverting structural updates. Details: " + ex.Message);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Database Processing Error: " + ex.Message, "Execution Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
+        private void ClearPrescriptionForm()
+        {
+            txtPatientID.Clear();
+            txtPatientName.Clear();
+            txtDiagnosis.Clear();
+            txtDosage.Clear();
+            txtFrequency.Clear();
+            txtQuantity.Clear();
+            rtbUsageInstructions.Clear();
+            rtbPharmacistNote.Clear();
+            txtMedicineName.Clear();
+            cbRoute.SelectedIndex = -1;
+            // Re-sync date parameters state
+            txtCurrentDate.Value = DateTime.Today;
+            // Clean active field references
+            selectedAppointmentID = "";
+            selectedPatientUsername = "";
+
+        }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void checkappbtn_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabAppointments;
+        }
+        private void Exitbtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult confirmResult = MessageBox.Show(
+            "Are you sure you want to log out of the PharmaHealix system?",
+            "Confirm Logout",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question
+            );
+            if (confirmResult == DialogResult.Yes)
+            {
+                Loginform loginScreen = new Loginform();
+                loginScreen.Show();
+                this.Close();
+            }
+        }
+        private void btnRefreshAppts_Click(object sender, EventArgs e)
+        {
+            // Format selected picker date to match standard database storage layout (yyyy-MM-dd)
+            string selectedDate = dtpFilterDate.Value.ToString("yyyy-MM-dd");
+            // SQL Query to pull matching rows. (DoctorID is filtered dynamically)
+            string query = @"SELECT AppointmentID, PatientUsername, AppointmentTime, Status 
+                             FROM AppointmentTable 
+                             WHERE AppointmentDate = @AppointmentDate AND DoctorID = 5";
+            // Calls your centralized class connection string cleanly
+            using (SqlConnection conn = new SqlConnection(new Db().connection))
+            {
+
+                try
+                {
+                    conn.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                    adapter.SelectCommand.Parameters.AddWithValue("@AppointmentDate", selectedDate);
+
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    // Binds data directly to your central schedule grid panel
+                    dgvPatientSchedule.DataSource = dt;
+                    // Compute and update the daily counter text dashboard
+                    lblApptCount.Text = dt.Rows.Count.ToString();
+                    // Optional layout cleanup: Strech columns to fill the UI box cleanly
+                    if (dgvPatientSchedule.Columns.Count > 0)
+                    {
+                        dgvPatientSchedule.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading schedule: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private void dgvPatientSchedule_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Validate that the user clicked a valid data row, not the column header line
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvPatientSchedule.Rows[e.RowIndex];
+                // Safely extract column strings into our state fields
+                selectedAppointmentID = row.Cells["AppointmentID"].Value.ToString();
+                selectedPatientUsername = row.Cells["PatientUsername"].Value.ToString();
+                // Reason for Visit logic override: Column doesn't exist yet in database tables
+                // txtReason.Text = row.Cells["ReasonOfVisit"].Value.ToString();
+                txtReason.Text = "Reason column not assigned in database table yet.";
+            }
+        }
+        private void btnStartConsultation_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(selectedAppointmentID))
+            {
+                MessageBox.Show("Please select a patient from the schedule list first.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // 1. Shift UI viewport directly to the prescription creation tab workspace
+            tabControl1.SelectedTab = tabPrescription;
+
+            // 2. Automatically populate target text inputs with active tracking details
+            txtSelectedName.Text = selectedPatientUsername;
+            txtSelectedID.Text = selectedAppointmentID;
+
+            // Clear temporary selection strings cleanly
+            txtReason.Clear();
+        }
+        private void btnCancelAppt_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(selectedAppointmentID))
+            {
+                MessageBox.Show("Please select an appointment record row first.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            DialogResult confirm = MessageBox.Show("Are you sure you want to cancel this appointment tracking entry?", "Confirm Action", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.No) return;
+            string updateQuery = "UPDATE AppointmentTable SET Status = 'Cancelled' WHERE AppointmentID = @AppointmentID";
+            using (SqlConnection conn = new SqlConnection(new Db().connection))
+            {
+                try
+                {
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(updateQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@AppointmentID", selectedAppointmentID);
+                        cmd.ExecuteNonQuery();
+                    }
+                    MessageBox.Show("Appointment tracking record updated to 'Cancelled'.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Instantly refresh the schedule view display panel live
+                    btnRefreshAppts_Click(sender, e);
+                    // Reset tracking state variable fields
+                    selectedAppointmentID = "";
+                    selectedPatientUsername = "";
+                    txtReason.Clear();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to save tracking adjustments: " + ex.Message, "Execution Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
     }
 }

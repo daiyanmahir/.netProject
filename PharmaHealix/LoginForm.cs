@@ -301,7 +301,7 @@ namespace PharmaHealix
                     else if(role == "Pharmacist")
                     {
                         MessageBox.Show("Login Successful!");
-                        Pharmacist p = new Pharmacist();
+                        Pharmacist p = new Pharmacist(EUsername);
                         p.Show();
                     }
                     else if (role == "Admin")

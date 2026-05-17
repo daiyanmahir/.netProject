@@ -36,6 +36,9 @@
             this.patientlisttoppan = new System.Windows.Forms.Panel();
             this.patientlisttoplbl = new System.Windows.Forms.Label();
             this.orderpan = new System.Windows.Forms.Panel();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.phordtotaltb = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.phordremovebtn = new System.Windows.Forms.Button();
             this.phordconfirmbtn = new System.Windows.Forms.Button();
             this.phordcartdgv = new System.Windows.Forms.DataGridView();
@@ -48,6 +51,7 @@
             this.ordertoppan = new System.Windows.Forms.Panel();
             this.ordertoplbl = new System.Windows.Forms.Label();
             this.inventorypan = new System.Windows.Forms.Panel();
+            this.phinvexpirydtp = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.phinvstocktb = new System.Windows.Forms.TextBox();
             this.phinvupdatebtn = new System.Windows.Forms.Button();
@@ -116,14 +120,11 @@
             this.patientlistbtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.medilogobtn = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.phordtotaltb = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.phinvexpirydtp = new System.Windows.Forms.DateTimePicker();
             this.patientlistpan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phprdgv)).BeginInit();
             this.patientlisttoppan.SuspendLayout();
             this.orderpan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phordcartdgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.ordertoppan.SuspendLayout();
@@ -143,7 +144,6 @@
             this.pharmacistprofiletoppan.SuspendLayout();
             this.sidepan.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // patientlistpan
@@ -233,6 +233,31 @@
             this.orderpan.Size = new System.Drawing.Size(956, 750);
             this.orderpan.TabIndex = 43;
             this.orderpan.Visible = false;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(572, 327);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(362, 26);
+            this.numericUpDown1.TabIndex = 16;
+            // 
+            // phordtotaltb
+            // 
+            this.phordtotaltb.Location = new System.Drawing.Point(30, 671);
+            this.phordtotaltb.Name = "phordtotaltb";
+            this.phordtotaltb.ReadOnly = true;
+            this.phordtotaltb.Size = new System.Drawing.Size(130, 26);
+            this.phordtotaltb.TabIndex = 15;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(25, 640);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(135, 25);
+            this.label13.TabIndex = 14;
+            this.label13.Text = "Total Amount:";
             // 
             // phordremovebtn
             // 
@@ -383,6 +408,13 @@
             this.inventorypan.Size = new System.Drawing.Size(956, 750);
             this.inventorypan.TabIndex = 44;
             this.inventorypan.Visible = false;
+            // 
+            // phinvexpirydtp
+            // 
+            this.phinvexpirydtp.Location = new System.Drawing.Point(544, 519);
+            this.phinvexpirydtp.Name = "phinvexpirydtp";
+            this.phinvexpirydtp.Size = new System.Drawing.Size(324, 26);
+            this.phinvexpirydtp.TabIndex = 23;
             // 
             // label12
             // 
@@ -924,6 +956,7 @@
             this.pharmacistprofileupdatebtn.TabIndex = 13;
             this.pharmacistprofileupdatebtn.Text = "UPDATE";
             this.pharmacistprofileupdatebtn.UseVisualStyleBackColor = false;
+            this.pharmacistprofileupdatebtn.Click += new System.EventHandler(this.pharmacistprofileupdatebtn_Click);
             // 
             // pharmacistprofileaddresslbl
             // 
@@ -1136,38 +1169,6 @@
             this.medilogobtn.TabIndex = 22;
             this.medilogobtn.UseVisualStyleBackColor = false;
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(25, 640);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(135, 25);
-            this.label13.TabIndex = 14;
-            this.label13.Text = "Total Amount:";
-            // 
-            // phordtotaltb
-            // 
-            this.phordtotaltb.Location = new System.Drawing.Point(30, 671);
-            this.phordtotaltb.Name = "phordtotaltb";
-            this.phordtotaltb.ReadOnly = true;
-            this.phordtotaltb.Size = new System.Drawing.Size(130, 26);
-            this.phordtotaltb.TabIndex = 15;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(572, 327);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(362, 26);
-            this.numericUpDown1.TabIndex = 16;
-            // 
-            // phinvexpirydtp
-            // 
-            this.phinvexpirydtp.Location = new System.Drawing.Point(544, 519);
-            this.phinvexpirydtp.Name = "phinvexpirydtp";
-            this.phinvexpirydtp.Size = new System.Drawing.Size(324, 26);
-            this.phinvexpirydtp.TabIndex = 23;
-            // 
             // Pharmacist
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1192,6 +1193,7 @@
             this.patientlisttoppan.PerformLayout();
             this.orderpan.ResumeLayout(false);
             this.orderpan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phordcartdgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ordertoppan.ResumeLayout(false);
@@ -1223,7 +1225,6 @@
             this.pharmacistprofiletoppan.PerformLayout();
             this.sidepan.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }

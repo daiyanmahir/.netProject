@@ -56,6 +56,7 @@
             this.btnPharmacist = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.pnlHeader = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
             this.lblFees = new System.Windows.Forms.Label();
             this.lblFavoriteColor = new System.Windows.Forms.Label();
             this.lblPetName = new System.Windows.Forms.Label();
@@ -64,7 +65,6 @@
             this.txtFavoriteColor = new System.Windows.Forms.TextBox();
             this.txtPetName = new System.Windows.Forms.TextBox();
             this.txtBirthPlace = new System.Windows.Forms.TextBox();
-            this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoctor)).BeginInit();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -78,9 +78,9 @@
             this.btnPatient.FlatAppearance.BorderSize = 2;
             this.btnPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPatient.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnPatient.Location = new System.Drawing.Point(35, 240);
+            this.btnPatient.Location = new System.Drawing.Point(40, 250);
             this.btnPatient.Name = "btnPatient";
-            this.btnPatient.Size = new System.Drawing.Size(180, 45);
+            this.btnPatient.Size = new System.Drawing.Size(170, 50);
             this.btnPatient.TabIndex = 1;
             this.btnPatient.Text = "Patient";
             this.btnPatient.UseVisualStyleBackColor = false;
@@ -93,9 +93,9 @@
             this.btnInventory.FlatAppearance.BorderSize = 2;
             this.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventory.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnInventory.Location = new System.Drawing.Point(35, 300);
+            this.btnInventory.Location = new System.Drawing.Point(40, 390);
             this.btnInventory.Name = "btnInventory";
-            this.btnInventory.Size = new System.Drawing.Size(180, 45);
+            this.btnInventory.Size = new System.Drawing.Size(170, 50);
             this.btnInventory.TabIndex = 2;
             this.btnInventory.Text = "Inventory";
             this.btnInventory.UseVisualStyleBackColor = false;
@@ -108,9 +108,9 @@
             this.btnAppointment.FlatAppearance.BorderSize = 2;
             this.btnAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAppointment.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnAppointment.Location = new System.Drawing.Point(35, 360);
+            this.btnAppointment.Location = new System.Drawing.Point(40, 320);
             this.btnAppointment.Name = "btnAppointment";
-            this.btnAppointment.Size = new System.Drawing.Size(180, 45);
+            this.btnAppointment.Size = new System.Drawing.Size(170, 50);
             this.btnAppointment.TabIndex = 3;
             this.btnAppointment.Text = "Appointment";
             this.btnAppointment.UseVisualStyleBackColor = false;
@@ -123,9 +123,9 @@
             this.btnLogout.FlatAppearance.BorderSize = 2;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnLogout.Location = new System.Drawing.Point(35, 560);
+            this.btnLogout.Location = new System.Drawing.Point(40, 560);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(180, 45);
+            this.btnLogout.Size = new System.Drawing.Size(170, 50);
             this.btnLogout.TabIndex = 4;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
@@ -170,7 +170,7 @@
             this.lblDepartment.AutoSize = true;
             this.lblDepartment.BackColor = System.Drawing.Color.Transparent;
             this.lblDepartment.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDepartment.Location = new System.Drawing.Point(300, 280);
+            this.lblDepartment.Location = new System.Drawing.Point(300, 276);
             this.lblDepartment.Name = "lblDepartment";
             this.lblDepartment.Size = new System.Drawing.Size(127, 28);
             this.lblDepartment.TabIndex = 9;
@@ -181,7 +181,7 @@
             this.lblDgree.AutoSize = true;
             this.lblDgree.BackColor = System.Drawing.Color.Transparent;
             this.lblDgree.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDgree.Location = new System.Drawing.Point(300, 330);
+            this.lblDgree.Location = new System.Drawing.Point(300, 321);
             this.lblDgree.Name = "lblDgree";
             this.lblDgree.Size = new System.Drawing.Size(80, 28);
             this.lblDgree.TabIndex = 10;
@@ -192,7 +192,7 @@
             this.lblGender.AutoSize = true;
             this.lblGender.BackColor = System.Drawing.Color.Transparent;
             this.lblGender.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(300, 380);
+            this.lblGender.Location = new System.Drawing.Point(300, 375);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(80, 28);
             this.lblGender.TabIndex = 11;
@@ -202,7 +202,7 @@
             // 
             this.txtDoctorID.BackColor = System.Drawing.Color.White;
             this.txtDoctorID.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDoctorID.Location = new System.Drawing.Point(430, 130);
+            this.txtDoctorID.Location = new System.Drawing.Point(430, 126);
             this.txtDoctorID.Name = "txtDoctorID";
             this.txtDoctorID.Size = new System.Drawing.Size(250, 37);
             this.txtDoctorID.TabIndex = 12;
@@ -212,7 +212,7 @@
             // 
             this.txtDoctorName.BackColor = System.Drawing.Color.White;
             this.txtDoctorName.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDoctorName.Location = new System.Drawing.Point(430, 180);
+            this.txtDoctorName.Location = new System.Drawing.Point(430, 176);
             this.txtDoctorName.Name = "txtDoctorName";
             this.txtDoctorName.Size = new System.Drawing.Size(250, 37);
             this.txtDoctorName.TabIndex = 13;
@@ -235,7 +235,7 @@
             "ENT",
             "",
             "Pediatrics"});
-            this.cmbDepartment.Location = new System.Drawing.Point(430, 280);
+            this.cmbDepartment.Location = new System.Drawing.Point(430, 276);
             this.cmbDepartment.Name = "cmbDepartment";
             this.cmbDepartment.Size = new System.Drawing.Size(250, 28);
             this.cmbDepartment.TabIndex = 15;
@@ -244,7 +244,7 @@
             // 
             this.chkMBBS.AutoSize = true;
             this.chkMBBS.BackColor = System.Drawing.Color.Transparent;
-            this.chkMBBS.Location = new System.Drawing.Point(430, 330);
+            this.chkMBBS.Location = new System.Drawing.Point(430, 327);
             this.chkMBBS.Name = "chkMBBS";
             this.chkMBBS.Size = new System.Drawing.Size(81, 24);
             this.chkMBBS.TabIndex = 16;
@@ -255,7 +255,7 @@
             // 
             this.chkFCPS.AutoSize = true;
             this.chkFCPS.BackColor = System.Drawing.Color.Transparent;
-            this.chkFCPS.Location = new System.Drawing.Point(510, 330);
+            this.chkFCPS.Location = new System.Drawing.Point(510, 327);
             this.chkFCPS.Name = "chkFCPS";
             this.chkFCPS.Size = new System.Drawing.Size(77, 24);
             this.chkFCPS.TabIndex = 17;
@@ -266,7 +266,7 @@
             // 
             this.chkMD.AutoSize = true;
             this.chkMD.BackColor = System.Drawing.Color.Transparent;
-            this.chkMD.Location = new System.Drawing.Point(590, 330);
+            this.chkMD.Location = new System.Drawing.Point(593, 327);
             this.chkMD.Name = "chkMD";
             this.chkMD.Size = new System.Drawing.Size(60, 24);
             this.chkMD.TabIndex = 18;
@@ -278,7 +278,7 @@
             // 
             this.rdoFemale.AutoSize = true;
             this.rdoFemale.BackColor = System.Drawing.Color.Transparent;
-            this.rdoFemale.Location = new System.Drawing.Point(500, 380);
+            this.rdoFemale.Location = new System.Drawing.Point(504, 379);
             this.rdoFemale.Name = "rdoFemale";
             this.rdoFemale.Size = new System.Drawing.Size(87, 24);
             this.rdoFemale.TabIndex = 1;
@@ -290,7 +290,7 @@
             // 
             this.rdoMale.AutoSize = true;
             this.rdoMale.BackColor = System.Drawing.Color.Transparent;
-            this.rdoMale.Location = new System.Drawing.Point(430, 380);
+            this.rdoMale.Location = new System.Drawing.Point(430, 379);
             this.rdoMale.Name = "rdoMale";
             this.rdoMale.Size = new System.Drawing.Size(68, 24);
             this.rdoMale.TabIndex = 0;
@@ -304,12 +304,13 @@
             this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShow.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShow.ForeColor = System.Drawing.Color.White;
-            this.btnShow.Location = new System.Drawing.Point(810, 130);
+            this.btnShow.Location = new System.Drawing.Point(952, 149);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(120, 40);
             this.btnShow.TabIndex = 22;
             this.btnShow.Text = "Show";
             this.btnShow.UseVisualStyleBackColor = false;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // btnAdd
             // 
@@ -317,7 +318,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(810, 180);
+            this.btnAdd.Location = new System.Drawing.Point(952, 208);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(120, 40);
             this.btnAdd.TabIndex = 23;
@@ -330,7 +331,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(810, 230);
+            this.btnUpdate.Location = new System.Drawing.Point(952, 266);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(120, 40);
             this.btnUpdate.TabIndex = 24;
@@ -343,7 +344,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(810, 280);
+            this.btnDelete.Location = new System.Drawing.Point(952, 321);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(120, 40);
             this.btnDelete.TabIndex = 25;
@@ -356,7 +357,7 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(810, 330);
+            this.btnClear.Location = new System.Drawing.Point(952, 375);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(120, 40);
             this.btnClear.TabIndex = 26;
@@ -371,14 +372,14 @@
             this.dgvDoctor.BackgroundColor = System.Drawing.Color.White;
             this.dgvDoctor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDoctor.GridColor = System.Drawing.Color.LightGray;
-            this.dgvDoctor.Location = new System.Drawing.Point(579, 482);
+            this.dgvDoctor.Location = new System.Drawing.Point(612, 442);
             this.dgvDoctor.MultiSelect = false;
             this.dgvDoctor.Name = "dgvDoctor";
             this.dgvDoctor.ReadOnly = true;
             this.dgvDoctor.RowHeadersWidth = 62;
             this.dgvDoctor.RowTemplate.Height = 28;
             this.dgvDoctor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDoctor.Size = new System.Drawing.Size(400, 200);
+            this.dgvDoctor.Size = new System.Drawing.Size(507, 228);
             this.dgvDoctor.TabIndex = 27;
             // 
             // panelMenu
@@ -403,9 +404,9 @@
             this.btnPharmacist.FlatAppearance.BorderSize = 2;
             this.btnPharmacist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPharmacist.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnPharmacist.Location = new System.Drawing.Point(35, 180);
+            this.btnPharmacist.Location = new System.Drawing.Point(40, 180);
             this.btnPharmacist.Name = "btnPharmacist";
-            this.btnPharmacist.Size = new System.Drawing.Size(180, 45);
+            this.btnPharmacist.Size = new System.Drawing.Size(170, 50);
             this.btnPharmacist.TabIndex = 38;
             this.btnPharmacist.Text = "Pharmacist";
             this.btnPharmacist.UseVisualStyleBackColor = false;
@@ -434,6 +435,20 @@
             this.pnlHeader.TabIndex = 29;
             this.pnlHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlHeader_Paint);
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.White;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.Black;
+            this.btnExit.Location = new System.Drawing.Point(880, 11);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(35, 35);
+            this.btnExit.TabIndex = 38;
+            this.btnExit.Text = "X";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // lblFees
             // 
             this.lblFees.AutoSize = true;
@@ -450,7 +465,7 @@
             this.lblFavoriteColor.AutoSize = true;
             this.lblFavoriteColor.BackColor = System.Drawing.Color.Transparent;
             this.lblFavoriteColor.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFavoriteColor.Location = new System.Drawing.Point(300, 467);
+            this.lblFavoriteColor.Location = new System.Drawing.Point(300, 426);
             this.lblFavoriteColor.Name = "lblFavoriteColor";
             this.lblFavoriteColor.Size = new System.Drawing.Size(136, 28);
             this.lblFavoriteColor.TabIndex = 31;
@@ -461,7 +476,7 @@
             this.lblPetName.AutoSize = true;
             this.lblPetName.BackColor = System.Drawing.Color.Transparent;
             this.lblPetName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPetName.Location = new System.Drawing.Point(300, 523);
+            this.lblPetName.Location = new System.Drawing.Point(300, 482);
             this.lblPetName.Name = "lblPetName";
             this.lblPetName.Size = new System.Drawing.Size(104, 28);
             this.lblPetName.TabIndex = 32;
@@ -472,7 +487,7 @@
             this.lblBirthPlace.AutoSize = true;
             this.lblBirthPlace.BackColor = System.Drawing.Color.Transparent;
             this.lblBirthPlace.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBirthPlace.Location = new System.Drawing.Point(300, 578);
+            this.lblBirthPlace.Location = new System.Drawing.Point(300, 532);
             this.lblBirthPlace.Name = "lblBirthPlace";
             this.lblBirthPlace.Size = new System.Drawing.Size(116, 28);
             this.lblBirthPlace.TabIndex = 33;
@@ -482,7 +497,7 @@
             // 
             this.txtFees.BackColor = System.Drawing.Color.White;
             this.txtFees.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFees.Location = new System.Drawing.Point(430, 230);
+            this.txtFees.Location = new System.Drawing.Point(430, 226);
             this.txtFees.Name = "txtFees";
             this.txtFees.Size = new System.Drawing.Size(250, 37);
             this.txtFees.TabIndex = 34;
@@ -491,7 +506,7 @@
             // 
             this.txtFavoriteColor.BackColor = System.Drawing.Color.White;
             this.txtFavoriteColor.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFavoriteColor.Location = new System.Drawing.Point(430, 467);
+            this.txtFavoriteColor.Location = new System.Drawing.Point(430, 422);
             this.txtFavoriteColor.Name = "txtFavoriteColor";
             this.txtFavoriteColor.Size = new System.Drawing.Size(140, 37);
             this.txtFavoriteColor.TabIndex = 35;
@@ -500,7 +515,7 @@
             // 
             this.txtPetName.BackColor = System.Drawing.Color.White;
             this.txtPetName.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPetName.Location = new System.Drawing.Point(430, 523);
+            this.txtPetName.Location = new System.Drawing.Point(430, 478);
             this.txtPetName.Name = "txtPetName";
             this.txtPetName.Size = new System.Drawing.Size(140, 37);
             this.txtPetName.TabIndex = 36;
@@ -509,23 +524,10 @@
             // 
             this.txtBirthPlace.BackColor = System.Drawing.Color.White;
             this.txtBirthPlace.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBirthPlace.Location = new System.Drawing.Point(430, 592);
+            this.txtBirthPlace.Location = new System.Drawing.Point(433, 528);
             this.txtBirthPlace.Name = "txtBirthPlace";
             this.txtBirthPlace.Size = new System.Drawing.Size(140, 37);
             this.txtBirthPlace.TabIndex = 37;
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.White;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.Color.Black;
-            this.btnExit.Location = new System.Drawing.Point(880, 11);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(35, 35);
-            this.btnExit.TabIndex = 38;
-            this.btnExit.Text = "X";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // AdminDoctorForm
             // 

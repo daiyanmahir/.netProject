@@ -512,8 +512,8 @@ namespace PharmaHealix
                 }
                 else
                 {
-                    string query = "UPDATE UserTable SET Password = @0";
-                    new Db().NonQuery(query, FPass);
+                    string query = "UPDATE UserTable SET Password = @1 where Username=@0";
+                    new Db().NonQuery(query,FUsername, FPass);
                     MessageBox.Show("Password reset successful. You can now log in.");
 
                     forgetpasspan.Hide();

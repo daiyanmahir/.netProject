@@ -32,8 +32,8 @@
             this.headpan = new System.Windows.Forms.Panel();
             this.medilogobtn = new System.Windows.Forms.Button();
             this.userbtn = new System.Windows.Forms.Button();
-            this.cartbtn2 = new System.Windows.Forms.Button();
-            this.doctorbtn = new System.Windows.Forms.Button();
+            this.orderhistorybtn = new System.Windows.Forms.Button();
+            this.appointmenhistorytbtn = new System.Windows.Forms.Button();
             this.Exitbtn = new System.Windows.Forms.Button();
             this.editpan = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
@@ -81,7 +81,6 @@
             this.logoutbtn = new System.Windows.Forms.Button();
             this.prescriptionlbl = new System.Windows.Forms.Label();
             this.Whatareyoulookinglbl = new System.Windows.Forms.Label();
-            this.prescriptionuploadbtn = new System.Windows.Forms.Button();
             this.cartbtn = new System.Windows.Forms.Button();
             this.searchpan = new System.Windows.Forms.Panel();
             this.searchbtn = new System.Windows.Forms.Button();
@@ -116,6 +115,7 @@
             this.mediinfopan = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.categorylbl = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.headpan.SuspendLayout();
             this.editpan.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -136,10 +136,11 @@
             // headpan
             // 
             this.headpan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
+            this.headpan.Controls.Add(this.button1);
             this.headpan.Controls.Add(this.medilogobtn);
             this.headpan.Controls.Add(this.userbtn);
-            this.headpan.Controls.Add(this.cartbtn2);
-            this.headpan.Controls.Add(this.doctorbtn);
+            this.headpan.Controls.Add(this.orderhistorybtn);
+            this.headpan.Controls.Add(this.appointmenhistorytbtn);
             this.headpan.Controls.Add(this.Exitbtn);
             this.headpan.Location = new System.Drawing.Point(0, 0);
             this.headpan.Name = "headpan";
@@ -176,31 +177,31 @@
             this.userbtn.UseVisualStyleBackColor = false;
             this.userbtn.Click += new System.EventHandler(this.userbtn_Click);
             // 
-            // cartbtn2
+            // orderhistorybtn
             // 
-            this.cartbtn2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
-            this.cartbtn2.FlatAppearance.BorderSize = 0;
-            this.cartbtn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cartbtn2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.cartbtn2.Location = new System.Drawing.Point(937, 65);
-            this.cartbtn2.Name = "cartbtn2";
-            this.cartbtn2.Size = new System.Drawing.Size(81, 40);
-            this.cartbtn2.TabIndex = 12;
-            this.cartbtn2.Text = "Cart";
-            this.cartbtn2.UseVisualStyleBackColor = false;
+            this.orderhistorybtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
+            this.orderhistorybtn.FlatAppearance.BorderSize = 0;
+            this.orderhistorybtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.orderhistorybtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.orderhistorybtn.Location = new System.Drawing.Point(898, 68);
+            this.orderhistorybtn.Name = "orderhistorybtn";
+            this.orderhistorybtn.Size = new System.Drawing.Size(120, 40);
+            this.orderhistorybtn.TabIndex = 12;
+            this.orderhistorybtn.Text = "Order History";
+            this.orderhistorybtn.UseVisualStyleBackColor = false;
             // 
-            // doctorbtn
+            // appointmenhistorytbtn
             // 
-            this.doctorbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
-            this.doctorbtn.FlatAppearance.BorderSize = 0;
-            this.doctorbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.doctorbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.doctorbtn.Location = new System.Drawing.Point(850, 65);
-            this.doctorbtn.Name = "doctorbtn";
-            this.doctorbtn.Size = new System.Drawing.Size(81, 40);
-            this.doctorbtn.TabIndex = 10;
-            this.doctorbtn.Text = "Doctor ";
-            this.doctorbtn.UseVisualStyleBackColor = false;
+            this.appointmenhistorytbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
+            this.appointmenhistorytbtn.FlatAppearance.BorderSize = 0;
+            this.appointmenhistorytbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.appointmenhistorytbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.appointmenhistorytbtn.Location = new System.Drawing.Point(709, 68);
+            this.appointmenhistorytbtn.Name = "appointmenhistorytbtn";
+            this.appointmenhistorytbtn.Size = new System.Drawing.Size(177, 40);
+            this.appointmenhistorytbtn.TabIndex = 10;
+            this.appointmenhistorytbtn.Text = "Appointment History";
+            this.appointmenhistorytbtn.UseVisualStyleBackColor = false;
             // 
             // Exitbtn
             // 
@@ -745,11 +746,11 @@
             this.prescriptionlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
             this.prescriptionlbl.Image = global::PharmaHealix.Properties.Resources.papericon1;
             this.prescriptionlbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.prescriptionlbl.Location = new System.Drawing.Point(749, 208);
+            this.prescriptionlbl.Location = new System.Drawing.Point(604, 106);
             this.prescriptionlbl.Name = "prescriptionlbl";
-            this.prescriptionlbl.Size = new System.Drawing.Size(211, 22);
+            this.prescriptionlbl.Size = new System.Drawing.Size(469, 22);
             this.prescriptionlbl.TabIndex = 27;
-            this.prescriptionlbl.Text = "     Order with prescription.";
+            this.prescriptionlbl.Text = "    Find your required healthcare products and medicines below.";
             this.prescriptionlbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // Whatareyoulookinglbl
@@ -763,20 +764,6 @@
             this.Whatareyoulookinglbl.Size = new System.Drawing.Size(376, 45);
             this.Whatareyoulookinglbl.TabIndex = 22;
             this.Whatareyoulookinglbl.Text = "What are you looking for?";
-            // 
-            // prescriptionuploadbtn
-            // 
-            this.prescriptionuploadbtn.BackColor = System.Drawing.Color.Transparent;
-            this.prescriptionuploadbtn.FlatAppearance.BorderSize = 0;
-            this.prescriptionuploadbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.prescriptionuploadbtn.Font = new System.Drawing.Font("Trebuchet MS", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prescriptionuploadbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
-            this.prescriptionuploadbtn.Location = new System.Drawing.Point(954, 199);
-            this.prescriptionuploadbtn.Name = "prescriptionuploadbtn";
-            this.prescriptionuploadbtn.Size = new System.Drawing.Size(134, 40);
-            this.prescriptionuploadbtn.TabIndex = 26;
-            this.prescriptionuploadbtn.Text = "Upload Now  >";
-            this.prescriptionuploadbtn.UseVisualStyleBackColor = false;
             // 
             // cartbtn
             // 
@@ -845,6 +832,7 @@
             this.medibackpan.AutoScroll = true;
             this.medibackpan.BackgroundImage = global::PharmaHealix.Properties.Resources.BackgroundImage;
             this.medibackpan.Controls.Add(this.medipan);
+            this.medibackpan.Controls.Add(this.prescriptionlbl);
             this.medibackpan.Location = new System.Drawing.Point(0, 110);
             this.medibackpan.Name = "medibackpan";
             this.medibackpan.Size = new System.Drawing.Size(1200, 640);
@@ -1194,22 +1182,33 @@
             this.categorylbl.Text = "Category:";
             this.categorylbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(578, 68);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(123, 40);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Appointment";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
             this.BackgroundImage = global::PharmaHealix.Properties.Resources.BackgroundImage;
             this.ClientSize = new System.Drawing.Size(1200, 750);
+            this.Controls.Add(this.Whatareyoulookinglbl);
+            this.Controls.Add(this.searchpan);
+            this.Controls.Add(this.medibackpan);
             this.Controls.Add(this.editpan);
             this.Controls.Add(this.patientpan);
-            this.Controls.Add(this.medibackpan);
             this.Controls.Add(this.headpan);
             this.Controls.Add(this.cartbtn);
             this.Controls.Add(this.userpan);
-            this.Controls.Add(this.Whatareyoulookinglbl);
-            this.Controls.Add(this.prescriptionuploadbtn);
-            this.Controls.Add(this.prescriptionlbl);
-            this.Controls.Add(this.searchpan);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1236,6 +1235,7 @@
             this.searchpan.ResumeLayout(false);
             this.searchpan.PerformLayout();
             this.medibackpan.ResumeLayout(false);
+            this.medibackpan.PerformLayout();
             this.medipan.ResumeLayout(false);
             this.mediinfopan.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1247,8 +1247,8 @@
 
         private System.Windows.Forms.Panel headpan;
         private System.Windows.Forms.Button Exitbtn;
-        private System.Windows.Forms.Button doctorbtn;
-        private System.Windows.Forms.Button cartbtn2;
+        private System.Windows.Forms.Button appointmenhistorytbtn;
+        private System.Windows.Forms.Button orderhistorybtn;
         private System.Windows.Forms.Button userbtn;
         private System.Windows.Forms.Button medilogobtn;
         private System.Windows.Forms.Panel userpan;
@@ -1258,7 +1258,6 @@
         private System.Windows.Forms.Label userpanlbl1;
         private System.Windows.Forms.Label prescriptionlbl;
         private System.Windows.Forms.Label Whatareyoulookinglbl;
-        private System.Windows.Forms.Button prescriptionuploadbtn;
         private System.Windows.Forms.Button cartbtn;
         private System.Windows.Forms.Panel searchpan;
         private System.Windows.Forms.Button searchbtn;
@@ -1332,5 +1331,6 @@
         private System.Windows.Forms.Button editpanminimizebtn;
         private System.Windows.Forms.Button editprofilebtn;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button1;
     }
 }

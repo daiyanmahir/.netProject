@@ -269,9 +269,9 @@ namespace PharmaHealix
             else
             {
 
-                string query = "UPDATE UserTable SET Name = @0, Phone = @1, Username = @2, Address = @3, Question = @4, Answer = @5, Password = @6 WHERE Username = @2";
-                new Db().NonQuery(query, EName, EPhone, EUsername, EAddress, editsecurityquestioncb.Text, EAnswer, EPass);
-
+                string query = "UPDATE UserTable SET Name = @0, Phone = @1, Username = @2, Address = @3, Question = @4, Answer = @5, Password = @6 WHERE Username = @7";
+                new Db().NonQuery(query, EName, EPhone, EUsername, EAddress, editsecurityquestioncb.Text, EAnswer, EPass,username);
+                username = EUsername;
 
                 MessageBox.Show("Update Successful!");
                 editprofile();

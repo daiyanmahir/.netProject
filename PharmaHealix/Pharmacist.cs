@@ -87,6 +87,7 @@ namespace PharmaHealix
             orderpan.Visible = false;
             inventorypan.Visible = false;
             pharmacistprofilepan.Visible = true;
+            editprofile();
         }
 
         private void Exitbtn_Click_1(object sender, EventArgs e)
@@ -101,11 +102,9 @@ namespace PharmaHealix
             l.Show();
         }
 
-
-        /* Pharmacist profile update
-
         private void pharmacistprofileupdatebtn_Click(object sender, EventArgs e)
         {
+
             errorphonepan.Visible = false;
             errorpharmacistnamepan.Visible = false;
             errorusernamepan.Visible = false;
@@ -229,8 +228,9 @@ namespace PharmaHealix
             else
             {
 
-                string query = "UPDATE UserTable SET Name = @0, Phone = @1, Username = @2, Address = @3, Question = @4, Answer = @5, Password = @6 WHERE Username = @2";
-                new Db().NonQuery(query, PhName, PhPhone, PhUsername, PhAddress, comboBox1.Text, PhAnswer, PhPass);
+                string query = "UPDATE UserTable SET Name = @0, Phone = @1, Username = @2, Address = @3, Question = @4, Answer = @5, Password = @6 WHERE Username = @7";
+                new Db().NonQuery(query, PhName, PhPhone, PhUsername, PhAddress, comboBox1.Text, PhAnswer, PhPass,username);
+                username = PhUsername;
 
 
                 MessageBox.Show("Update Successful!");
@@ -251,6 +251,6 @@ namespace PharmaHealix
 
         }
         
-         */
+         
     }
 }

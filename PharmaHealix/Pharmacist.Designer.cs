@@ -102,7 +102,6 @@
             this.errorpharmacistnamepan = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.securityquestionlbl = new System.Windows.Forms.Label();
-            this.pharmacistprofileupdatebtn = new System.Windows.Forms.Button();
             this.pharmacistprofileaddresslbl = new System.Windows.Forms.Label();
             this.pharmacistprofilephonelbl = new System.Windows.Forms.Label();
             this.pharmacistprofilepasslbl = new System.Windows.Forms.Label();
@@ -120,6 +119,7 @@
             this.patientlistbtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.medilogobtn = new System.Windows.Forms.Button();
+            this.pharmacistprofileupdatebtn = new System.Windows.Forms.Button();
             this.patientlistpan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phprdgv)).BeginInit();
             this.patientlisttoppan.SuspendLayout();
@@ -944,20 +944,6 @@
             this.securityquestionlbl.TabIndex = 15;
             this.securityquestionlbl.Text = "Security Question:";
             // 
-            // pharmacistprofileupdatebtn
-            // 
-            this.pharmacistprofileupdatebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
-            this.pharmacistprofileupdatebtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistprofileupdatebtn.ForeColor = System.Drawing.Color.White;
-            this.pharmacistprofileupdatebtn.Location = new System.Drawing.Point(431, 671);
-            this.pharmacistprofileupdatebtn.Margin = new System.Windows.Forms.Padding(2);
-            this.pharmacistprofileupdatebtn.Name = "pharmacistprofileupdatebtn";
-            this.pharmacistprofileupdatebtn.Size = new System.Drawing.Size(116, 67);
-            this.pharmacistprofileupdatebtn.TabIndex = 13;
-            this.pharmacistprofileupdatebtn.Text = "UPDATE";
-            this.pharmacistprofileupdatebtn.UseVisualStyleBackColor = false;
-            this.pharmacistprofileupdatebtn.Click += new System.EventHandler(this.pharmacistprofileupdatebtn_Click);
-            // 
             // pharmacistprofileaddresslbl
             // 
             this.pharmacistprofileaddresslbl.AutoSize = true;
@@ -1169,6 +1155,22 @@
             this.medilogobtn.TabIndex = 22;
             this.medilogobtn.UseVisualStyleBackColor = false;
             // 
+            // pharmacistprofileupdatebtn
+            // 
+            this.pharmacistprofileupdatebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
+            this.pharmacistprofileupdatebtn.FlatAppearance.BorderSize = 0;
+            this.pharmacistprofileupdatebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pharmacistprofileupdatebtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pharmacistprofileupdatebtn.ForeColor = System.Drawing.Color.White;
+            this.pharmacistprofileupdatebtn.Location = new System.Drawing.Point(431, 671);
+            this.pharmacistprofileupdatebtn.Margin = new System.Windows.Forms.Padding(2);
+            this.pharmacistprofileupdatebtn.Name = "pharmacistprofileupdatebtn";
+            this.pharmacistprofileupdatebtn.Size = new System.Drawing.Size(116, 67);
+            this.pharmacistprofileupdatebtn.TabIndex = 13;
+            this.pharmacistprofileupdatebtn.Text = "UPDATE";
+            this.pharmacistprofileupdatebtn.UseVisualStyleBackColor = false;
+            this.pharmacistprofileupdatebtn.Click += new System.EventHandler(this.pharmacistprofileupdatebtn_Click);
+            // 
             // Pharmacist
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1251,7 +1253,6 @@
         private System.Windows.Forms.TextBox pharmacistprofileusernametxt;
         private System.Windows.Forms.Label pharmacistprofileusernamelbl;
         private System.Windows.Forms.TextBox pharmacistprofilenametxt;
-        private System.Windows.Forms.Button pharmacistprofileupdatebtn;
         private System.Windows.Forms.Button Exitbtn;
         private System.Windows.Forms.Button orderbtn;
         private System.Windows.Forms.Button inventorybtn;
@@ -1321,5 +1322,6 @@
         private System.Windows.Forms.TextBox phordtotaltb;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DateTimePicker phinvexpirydtp;
+        private System.Windows.Forms.Button pharmacistprofileupdatebtn;
     }
 }

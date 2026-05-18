@@ -215,7 +215,7 @@
             this.lblPharmacistName.AutoSize = true;
             this.lblPharmacistName.BackColor = System.Drawing.Color.Transparent;
             this.lblPharmacistName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPharmacistName.Location = new System.Drawing.Point(293, 177);
+            this.lblPharmacistName.Location = new System.Drawing.Point(296, 139);
             this.lblPharmacistName.Name = "lblPharmacistName";
             this.lblPharmacistName.Size = new System.Drawing.Size(68, 28);
             this.lblPharmacistName.TabIndex = 32;
@@ -237,7 +237,7 @@
             this.Salary.AutoSize = true;
             this.Salary.BackColor = System.Drawing.Color.Transparent;
             this.Salary.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Salary.Location = new System.Drawing.Point(293, 379);
+            this.Salary.Location = new System.Drawing.Point(296, 375);
             this.Salary.Name = "Salary";
             this.Salary.Size = new System.Drawing.Size(71, 28);
             this.Salary.TabIndex = 35;
@@ -247,7 +247,7 @@
             // 
             this.txtName.BackColor = System.Drawing.Color.White;
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(429, 173);
+            this.txtName.Location = new System.Drawing.Point(429, 135);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(250, 37);
             this.txtName.TabIndex = 40;
@@ -256,7 +256,7 @@
             // 
             this.txtSalary.BackColor = System.Drawing.Color.White;
             this.txtSalary.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSalary.Location = new System.Drawing.Point(429, 375);
+            this.txtSalary.Location = new System.Drawing.Point(429, 371);
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.Size = new System.Drawing.Size(250, 37);
             this.txtSalary.TabIndex = 41;
@@ -371,14 +371,13 @@
             this.dgvPharmacist.Size = new System.Drawing.Size(448, 341);
             this.dgvPharmacist.TabIndex = 57;
             this.dgvPharmacist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPharmacist_CellClick);
-            
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.BackColor = System.Drawing.Color.Transparent;
             this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(293, 222);
+            this.lblUsername.Location = new System.Drawing.Point(296, 198);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(106, 28);
             this.lblUsername.TabIndex = 58;
@@ -389,7 +388,7 @@
             this.lblPhone.AutoSize = true;
             this.lblPhone.BackColor = System.Drawing.Color.Transparent;
             this.lblPhone.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.Location = new System.Drawing.Point(293, 273);
+            this.lblPhone.Location = new System.Drawing.Point(296, 251);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(71, 28);
             this.lblPhone.TabIndex = 59;
@@ -400,7 +399,7 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(293, 328);
+            this.lblPassword.Location = new System.Drawing.Point(296, 314);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(101, 28);
             this.lblPassword.TabIndex = 60;
@@ -444,7 +443,7 @@
             this.txtUsername.BackColor = System.Drawing.Color.White;
             this.txtUsername.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(429, 218);
+            this.txtUsername.Location = new System.Drawing.Point(429, 194);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(250, 37);
             this.txtUsername.TabIndex = 64;
@@ -453,7 +452,7 @@
             // 
             this.txtPhone.BackColor = System.Drawing.Color.White;
             this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(429, 269);
+            this.txtPhone.Location = new System.Drawing.Point(429, 247);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(250, 37);
             this.txtPhone.TabIndex = 65;
@@ -462,7 +461,7 @@
             // 
             this.txtPassword.BackColor = System.Drawing.Color.White;
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(429, 324);
+            this.txtPassword.Location = new System.Drawing.Point(429, 310);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(250, 37);
             this.txtPassword.TabIndex = 66;

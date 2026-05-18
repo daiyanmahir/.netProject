@@ -311,7 +311,12 @@ namespace PharmaHealix
 
             int stock = Convert.ToInt32(txtStock.Text);
 
-            string query = "Insert into MedicineTable(MedicineName,Category,Description,StripPrice,UnitPrice,Dose,SideEffect,Stock,ExpireDate,Image) values('" + txtMedicineName.Text + "','" + txtCategory.Text + "','" + rtxtDescription.Text + "'," + stripPrice + "," + unitPrice + ",'" + rtxtDose.Text + "','" + rtxtSideEffect.Text + "'," + stock + ",'" + dtpExpireDate.Value.ToString("yyyy-MM-dd") + "','" + txtImage.Text + "')";
+
+
+            string imagename = txtImage.Text.Replace("'", "''");
+
+            string query = "Insert into MedicineTable(MedicineName,Category,Description,StripPrice,UnitPrice,Dose,SideEffect,Stock,ExpireDate,Image) values('" + txtMedicineName.Text.Replace("'", "''") + "','" + txtCategory.Text.Replace("'", "''") + "','" + rtxtDescription.Text.Replace("'", "''") + "'," + stripPrice + "," + unitPrice + ",'" + rtxtDose.Text.Replace("'", "''") + "','" + rtxtSideEffect.Text.Replace("'", "''") + "'," + stock + ",'" + dtpExpireDate.Value.ToString("yyyy-MM-dd") + "','" + imagename + "')";
+
             SqlCommand cmd = new SqlCommand(query, conn);
 
             cmd.ExecuteNonQuery();
@@ -348,7 +353,9 @@ namespace PharmaHealix
 
             int stock = Convert.ToInt32(txtStock.Text);
 
-            string query = "Update MedicineTable set MedicineName='" + txtMedicineName.Text + "', Category='" + txtCategory.Text + "', Description='" + rtxtDescription.Text + "', StripPrice=" + stripPrice + ", UnitPrice=" + unitPrice + ", Dose='" + rtxtDose.Text + "', SideEffect='" + rtxtSideEffect.Text + "', Stock=" + stock + ", ExpireDate='" + dtpExpireDate.Value.ToString("yyyy-MM-dd") + "', Image='" + txtImage.Text + "' where MedicineName='" + txtMedicineName.Text + "'";
+
+            string query = "Update MedicineTable set MedicineName='" + txtMedicineName.Text.Replace("'", "''") + "', Category='" + txtCategory.Text.Replace("'", "''") + "', Description='" + rtxtDescription.Text.Replace("'", "''") + "', StripPrice=" + stripPrice + ", UnitPrice=" + unitPrice + ", Dose='" + rtxtDose.Text.Replace("'", "''") + "', SideEffect='" + rtxtSideEffect.Text.Replace("'", "''") + "', Stock=" + stock + ", ExpireDate='" + dtpExpireDate.Value.ToString("yyyy-MM-dd") + "', Image='" + txtImage.Text.Replace("'", "''") + "' where MedicineName='" + txtMedicineName.Text.Replace("'", "''") + "'";
+
 
             SqlCommand cmd = new SqlCommand(query, conn);
 
@@ -402,8 +409,10 @@ namespace PharmaHealix
 
             dtpExpireDate.Value = DateTime.Now;
 
-            txtImage.Text = "";
+           
         }
+
+        
     }
     }
 

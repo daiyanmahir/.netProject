@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminInventoryForm));
-            this.lblMedicineId = new System.Windows.Forms.Label();
             this.lblMedicineName = new System.Windows.Forms.Label();
             this.lblExpireDate = new System.Windows.Forms.Label();
-            this.txtMedicineID = new System.Windows.Forms.TextBox();
             this.txtMedicineName = new System.Windows.Forms.TextBox();
             this.dtpExpireDate = new System.Windows.Forms.DateTimePicker();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
@@ -66,25 +64,12 @@
             this.rtxtDescription = new System.Windows.Forms.RichTextBox();
             this.rtxtDose = new System.Windows.Forms.RichTextBox();
             this.rtxtSideEffect = new System.Windows.Forms.RichTextBox();
-            this.picMedicine = new System.Windows.Forms.PictureBox();
-            this.btnBrowse = new System.Windows.Forms.Button();
+            this.txtImage = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.pnlHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMedicine)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblMedicineId
-            // 
-            this.lblMedicineId.AutoSize = true;
-            this.lblMedicineId.BackColor = System.Drawing.Color.Transparent;
-            this.lblMedicineId.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMedicineId.Location = new System.Drawing.Point(274, 131);
-            this.lblMedicineId.Name = "lblMedicineId";
-            this.lblMedicineId.Size = new System.Drawing.Size(126, 28);
-            this.lblMedicineId.TabIndex = 8;
-            this.lblMedicineId.Text = "Medicine ID";
             // 
             // lblMedicineName
             // 
@@ -107,15 +92,6 @@
             this.lblExpireDate.Size = new System.Drawing.Size(122, 28);
             this.lblExpireDate.TabIndex = 10;
             this.lblExpireDate.Text = "Expire Date";
-            // 
-            // txtMedicineID
-            // 
-            this.txtMedicineID.Location = new System.Drawing.Point(442, 135);
-            this.txtMedicineID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtMedicineID.Name = "txtMedicineID";
-            this.txtMedicineID.Size = new System.Drawing.Size(151, 26);
-            this.txtMedicineID.TabIndex = 11;
-            this.txtMedicineID.TextChanged += new System.EventHandler(this.txtMedicineId_TextChanged);
             // 
             // txtMedicineName
             // 
@@ -456,7 +432,7 @@
             this.lblImage.AutoSize = true;
             this.lblImage.BackColor = System.Drawing.Color.Transparent;
             this.lblImage.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblImage.Location = new System.Drawing.Point(659, 122);
+            this.lblImage.Location = new System.Drawing.Point(274, 122);
             this.lblImage.Name = "lblImage";
             this.lblImage.Size = new System.Drawing.Size(70, 28);
             this.lblImage.TabIndex = 65;
@@ -527,30 +503,13 @@
             this.rtxtSideEffect.TabIndex = 72;
             this.rtxtSideEffect.Text = "";
             // 
-            // picMedicine
+            // txtImage
             // 
-            this.picMedicine.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picMedicine.Location = new System.Drawing.Point(637, 152);
-            this.picMedicine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.picMedicine.Name = "picMedicine";
-            this.picMedicine.Size = new System.Drawing.Size(120, 120);
-            this.picMedicine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picMedicine.TabIndex = 73;
-            this.picMedicine.TabStop = false;
-            // 
-            // btnBrowse
-            // 
-            this.btnBrowse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(99)))), ((int)(((byte)(35)))));
-            this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBrowse.Font = new System.Drawing.Font("Microsoft Himalaya", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBrowse.ForeColor = System.Drawing.Color.White;
-            this.btnBrowse.Location = new System.Drawing.Point(637, 283);
-            this.btnBrowse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(120, 33);
-            this.btnBrowse.TabIndex = 74;
-            this.btnBrowse.Text = "Browse Image";
-            this.btnBrowse.UseVisualStyleBackColor = false;
+            this.txtImage.Location = new System.Drawing.Point(444, 126);
+            this.txtImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtImage.Name = "txtImage";
+            this.txtImage.Size = new System.Drawing.Size(151, 26);
+            this.txtImage.TabIndex = 75;
             // 
             // AdminInventoryForm
             // 
@@ -558,8 +517,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PharmaHealix.Properties.Resources.BackgroundImage4;
             this.ClientSize = new System.Drawing.Size(1178, 694);
-            this.Controls.Add(this.btnBrowse);
-            this.Controls.Add(this.picMedicine);
+            this.Controls.Add(this.txtImage);
             this.Controls.Add(this.rtxtSideEffect);
             this.Controls.Add(this.rtxtDose);
             this.Controls.Add(this.rtxtDescription);
@@ -585,10 +543,8 @@
             this.Controls.Add(this.dgvInventory);
             this.Controls.Add(this.dtpExpireDate);
             this.Controls.Add(this.txtMedicineName);
-            this.Controls.Add(this.txtMedicineID);
             this.Controls.Add(this.lblExpireDate);
             this.Controls.Add(this.lblMedicineName);
-            this.Controls.Add(this.lblMedicineId);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(0, 72);
@@ -601,17 +557,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMedicine)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label lblMedicineId;
         private System.Windows.Forms.Label lblMedicineName;
         private System.Windows.Forms.Label lblExpireDate;
-        private System.Windows.Forms.TextBox txtMedicineID;
         private System.Windows.Forms.TextBox txtMedicineName;
         private System.Windows.Forms.DateTimePicker dtpExpireDate;
         private System.Windows.Forms.DataGridView dgvInventory;
@@ -645,7 +598,6 @@
         private System.Windows.Forms.RichTextBox rtxtDescription;
         private System.Windows.Forms.RichTextBox rtxtDose;
         private System.Windows.Forms.RichTextBox rtxtSideEffect;
-        private System.Windows.Forms.PictureBox picMedicine;
-        private System.Windows.Forms.Button btnBrowse;
+        private System.Windows.Forms.TextBox txtImage;
     }
 }

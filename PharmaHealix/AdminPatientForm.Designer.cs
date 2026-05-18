@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvPatients = new System.Windows.Forms.DataGridView();
+            this.dgvPatient = new System.Windows.Forms.DataGridView();
             this.btnShow = new System.Windows.Forms.Button();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
@@ -40,27 +40,26 @@
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnAppointment = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPatients)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPatient)).BeginInit();
             this.pnlHeader.SuspendLayout();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvPatients
+            // dgvPatient
             // 
-            this.dgvPatients.AllowUserToAddRows = false;
-            this.dgvPatients.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPatients.BackgroundColor = System.Drawing.Color.White;
-            this.dgvPatients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPatients.Location = new System.Drawing.Point(364, 268);
-            this.dgvPatients.MultiSelect = false;
-            this.dgvPatients.Name = "dgvPatients";
-            this.dgvPatients.ReadOnly = true;
-            this.dgvPatients.RowHeadersWidth = 62;
-            this.dgvPatients.RowTemplate.Height = 28;
-            this.dgvPatients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPatients.Size = new System.Drawing.Size(708, 300);
-            this.dgvPatients.TabIndex = 8;
+            this.dgvPatient.AllowUserToAddRows = false;
+            this.dgvPatient.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPatient.Location = new System.Drawing.Point(364, 268);
+            this.dgvPatient.MultiSelect = false;
+            this.dgvPatient.Name = "dgvPatient";
+            this.dgvPatient.ReadOnly = true;
+            this.dgvPatient.RowHeadersWidth = 62;
+            this.dgvPatient.RowTemplate.Height = 28;
+            this.dgvPatient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPatient.Size = new System.Drawing.Size(708, 300);
+            this.dgvPatient.TabIndex = 8;
             // 
             // btnShow
             // 
@@ -74,6 +73,7 @@
             this.btnShow.TabIndex = 23;
             this.btnShow.Text = "Show";
             this.btnShow.UseVisualStyleBackColor = false;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // pnlHeader
             // 
@@ -221,13 +221,13 @@
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.btnShow);
-            this.Controls.Add(this.dgvPatients);
+            this.Controls.Add(this.dgvPatient);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(0, 72);
             this.Name = "AdminPatientForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin - Patients";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPatients)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPatient)).EndInit();
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             this.panelMenu.ResumeLayout(false);
@@ -237,7 +237,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dgvPatients;
+        private System.Windows.Forms.DataGridView dgvPatient;
         private System.Windows.Forms.Button btnShow;
         private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.Label lblTitle;

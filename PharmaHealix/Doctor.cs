@@ -17,9 +17,14 @@ namespace PharmaHealix
     {
         private string selectedAppointmentID = "";
         private string selectedPatientUsername = "";
-        public Doctor()
+        private Db database = new Db();
+
+        private string currentDoctorId;
+
+        public Doctor(string doctorId)
         {
             InitializeComponent();
+            this.currentDoctorId = doctorId;
         }
 
         private void Doctor_Load(object sender, EventArgs e)
@@ -31,6 +36,8 @@ namespace PharmaHealix
                 tab.BackColor = Color.Transparent; // Sets each page to transparent
             }
         }
+
+        
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -153,7 +160,7 @@ namespace PharmaHealix
                             using (SqlCommand insertCmd = new SqlCommand(insertPrescriptionQuery, conn, transaction))
                             {
                                 insertCmd.Parameters.AddWithValue("@AppointmentID", currentAppointmentID);
-                                insertCmd.Parameters.AddWithValue("@DoctorID", 5); // Default query identity index placeholder
+                                insertCmd.Parameters.AddWithValue("@DoctorID", currentDoctorId); // Default query identity index placeholder
                                 insertCmd.Parameters.AddWithValue("@PatientUsername", txtSelectedName.Text.Trim()); // FIX: Use txtSelectedName
                                 insertCmd.Parameters.AddWithValue("@PrescriptionText", commaSeparatedPrescriptionText);
                                 insertCmd.ExecuteNonQuery();
@@ -241,28 +248,28 @@ namespace PharmaHealix
         {
             // Format selected picker date to match standard database storage layout (yyyy-MM-dd)
             string selectedDate = dtpFilterDate.Value.ToString("yyyy-MM-dd");
-            // SQL Query to pull matching rows. (DoctorID is filtered dynamically)
+
+            // DYNAMIC UPDATE: Replaced 'DoctorID = 5' with parameterized '@DoctorID' filter logic
             string query = @"SELECT AppointmentID, PatientUsername, AppointmentTime, Status 
                              FROM AppointmentTable 
-                             WHERE AppointmentDate = @AppointmentDate AND DoctorID = 5";
-            // Calls your centralized class connection string cleanly
+                             WHERE AppointmentDate = @AppointmentDate AND DoctorID = @DoctorID";
+
             using (SqlConnection conn = new SqlConnection(new Db().connection))
             {
-
                 try
                 {
                     conn.Open();
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
                     adapter.SelectCommand.Parameters.AddWithValue("@AppointmentDate", selectedDate);
+                    adapter.SelectCommand.Parameters.AddWithValue("@DoctorID", currentDoctorId); // Dynamic bound input value
 
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
 
                     // Binds data directly to your central schedule grid panel
                     dgvPatientSchedule.DataSource = dt;
-                    // Compute and update the daily counter text dashboard
                     lblApptCount.Text = dt.Rows.Count.ToString();
-                    // Optional layout cleanup: Strech columns to fill the UI box cleanly
+
                     if (dgvPatientSchedule.Columns.Count > 0)
                     {
                         dgvPatientSchedule.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -342,5 +349,190 @@ namespace PharmaHealix
             }
         }
 
+
+
+
+
+
+        // =========================================================================
+        // 3. MEDICINE AVAILABILITY MODULE LOGIC (UPDATED WITH dgvInventory)
+        // =========================================================================
+
+        
+        private void LoadMedicineStock(string searchToken)
+        {
+            // Pull overview metrics from MedicineTable
+            string medicineQuery = @"SELECT MedicineID, MedicineName, Category, Stock, UnitPrice 
+                                     FROM MedicineTable";
+
+            // If a search keyword is provided, append a SQL LIKE condition filter
+            if (!string.IsNullOrWhiteSpace(searchToken))
+            {
+                medicineQuery += " WHERE MedicineName LIKE @SearchToken OR MedicineID LIKE @SearchToken";
+            }
+
+            using (SqlConnection conn = new SqlConnection(new Db().connection))
+            {
+                try
+                {
+                    conn.Open();
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(medicineQuery, conn))
+                    {
+                        if (!string.IsNullOrWhiteSpace(searchToken))
+                        {
+                            adapter.SelectCommand.Parameters.AddWithValue("@SearchToken", "%" + searchToken.Trim() + "%");
+                        }
+
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+
+                        // SUCCESS: Data bound directly to your renamed dgvInventory
+                        dgvInventory.DataSource = dt;
+
+                        if (dgvInventory.Columns.Count > 0)
+                        {
+                            dgvInventory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading inventory database: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnStockSearch_Click(object sender, EventArgs e)
+        {
+            // Reads the string typed into your search input text box directly
+            LoadMedicineStock(txtSearchMedicine.Text);
+        }
+
+        private void dgvInventory_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verify selection point row index is a valid data line item
+            if (e.RowIndex >= 0)
+            {
+                // Safely grab the selected MedicineID row cell item entry from dgvInventory
+                string selectedMedID = dgvInventory.Rows[e.RowIndex].Cells["MedicineID"].Value.ToString();
+
+                // Build a precise query target to retrieve description and side effects fields
+                string detailQuery = "SELECT MedicineName, Description, SideEffect FROM MedicineTable WHERE MedicineID = @MedicineID";
+
+                using (SqlConnection conn = new SqlConnection(new Db().connection))
+                {
+                    try
+                    {
+                        conn.Open();
+                        using (SqlCommand cmd = new SqlCommand(detailQuery, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@MedicineID", selectedMedID);
+
+                            using (SqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    // Populate text elements live on the screen layout details panel
+                                    txtGenericName.Text = reader["MedicineName"].ToString();
+                                    rtbDescription.Text = reader["Description"].ToString();
+                                    rtbSideEffects.Text = reader["SideEffect"].ToString();
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error pulling descriptive payload data details: " + ex.Message, "Execution Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+
+
+
+
+
+        private void LoadPrescriptionData(string searchName = "")
+        {
+            // 1. Fixed the square bracket attribute typo here
+            // Connects the PrescriptionTable to the UserTable to fetch the readable Full Name
+            string query = @"
+        SELECT 
+            p.PrescriptionID AS [Prescription ID],
+            u.Name AS [Patient Name],
+            p.PatientUsername AS [Patient Username],
+            p.AppointmentID AS [Appointment ID],
+            p.PrescriptionText AS [Prescription Details],
+            p.PrescriptionDate AS [Date Prescribed]
+        FROM PrescriptionTable p
+        INNER JOIN UserTable u ON p.PatientUsername = u.Username
+        WHERE p.DoctorID = @DoctorID";
+
+            if (!string.IsNullOrEmpty(searchName))
+            {
+                query += " AND u.Name LIKE @SearchName";
+            }
+
+            query += " ORDER BY p.PrescriptionDate DESC";
+
+           
+
+            using (SqlConnection conn = new SqlConnection(new Db().connection))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@DoctorID", currentDoctorId);
+                    if (!string.IsNullOrEmpty(searchName))
+                    {
+                        cmd.Parameters.AddWithValue("@SearchName", "%" + searchName.Trim() + "%");
+                    }
+
+                    try
+                    {
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+
+                        dataGridView1.DataSource = dt;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error displaying patient records: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
+
+                if (selectedRow.Cells["Patient Name"].Value != null)
+                {
+                    txtPatientName.Text = selectedRow.Cells["Patient Name"].Value.ToString();
+                    txtPatientID.Text = selectedRow.Cells["Patient Username"].Value.ToString();
+                    rtbMedicalHistory.Text = selectedRow.Cells["Prescription Details"].Value.ToString();
+                }
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string searchTerm = txtSearchPatient.Text.Trim();
+            LoadPrescriptionData(searchTerm);
+        }
+
+        private void btnClearSearch_Click(object sender, EventArgs e)
+        {
+            txtSearchPatient.Clear();
+            txtPatientName.Clear();
+            txtPatientID.Clear();
+            rtbMedicalHistory.Clear();
+
+            dataGridView1.ClearSelection();
+            LoadPrescriptionData();
+        }
     }
 }

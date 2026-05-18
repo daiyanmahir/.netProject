@@ -294,7 +294,13 @@ namespace PharmaHealix
                     else if (role == "Doctor")
                     {
                         MessageBox.Show("Login Successful!");
-                        Doctor d = new Doctor();
+                        // 1. Write a query to find the DoctorID linked to this logged-in username
+                        string q3 = "SELECT DoctorID FROM DoctorTable WHERE Username = @0";
+                        string doctorId = Convert.ToString(new Db().Scalar(q3, EUsername));
+
+                        // 2. Pass the doctorId directly into the updated Doctor form constructor
+                        //Doctor d = new Doctor(doctorId);
+                        Doctor d = new Doctor(doctorId);
                         d.Show();
                        
                     }

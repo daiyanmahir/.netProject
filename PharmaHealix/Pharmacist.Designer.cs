@@ -129,6 +129,13 @@
             this.patientlistbtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.medilogobtn = new System.Windows.Forms.Button();
+            this.requestbtn = new System.Windows.Forms.Button();
+            this.requestpan = new System.Windows.Forms.Panel();
+            this.requestdgv = new System.Windows.Forms.DataGridView();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.approvebtn = new System.Windows.Forms.Button();
+            this.rejectbtn = new System.Windows.Forms.Button();
             this.patientlistpan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phprdgv)).BeginInit();
             this.patientlisttoppan.SuspendLayout();
@@ -153,6 +160,9 @@
             this.pharmacistprofiletoppan.SuspendLayout();
             this.sidepan.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.requestpan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.requestdgv)).BeginInit();
+            this.panel12.SuspendLayout();
             this.SuspendLayout();
             // 
             // patientlistpan
@@ -1207,7 +1217,7 @@
             // 
             this.pharmacistlogoutbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
             this.pharmacistlogoutbtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistlogoutbtn.Location = new System.Drawing.Point(27, 420);
+            this.pharmacistlogoutbtn.Location = new System.Drawing.Point(27, 500);
             this.pharmacistlogoutbtn.Margin = new System.Windows.Forms.Padding(2);
             this.pharmacistlogoutbtn.Name = "pharmacistlogoutbtn";
             this.pharmacistlogoutbtn.Size = new System.Drawing.Size(188, 50);
@@ -1219,6 +1229,7 @@
             // sidepan
             // 
             this.sidepan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(88)))), ((int)(((byte)(35)))));
+            this.sidepan.Controls.Add(this.requestbtn);
             this.sidepan.Controls.Add(this.panel8);
             this.sidepan.Controls.Add(this.pharmacistlogoutbtn);
             this.sidepan.Controls.Add(this.profilebtn);
@@ -1289,11 +1300,101 @@
             this.medilogobtn.TabIndex = 22;
             this.medilogobtn.UseVisualStyleBackColor = false;
             // 
+            // requestbtn
+            // 
+            this.requestbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
+            this.requestbtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.requestbtn.Location = new System.Drawing.Point(27, 420);
+            this.requestbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.requestbtn.Name = "requestbtn";
+            this.requestbtn.Size = new System.Drawing.Size(188, 50);
+            this.requestbtn.TabIndex = 26;
+            this.requestbtn.Text = "Requests";
+            this.requestbtn.UseVisualStyleBackColor = false;
+            this.requestbtn.Click += new System.EventHandler(this.requestbtn_Click);
+            // 
+            // requestpan
+            // 
+            this.requestpan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
+            this.requestpan.Controls.Add(this.rejectbtn);
+            this.requestpan.Controls.Add(this.approvebtn);
+            this.requestpan.Controls.Add(this.requestdgv);
+            this.requestpan.Controls.Add(this.panel12);
+            this.requestpan.Location = new System.Drawing.Point(244, 0);
+            this.requestpan.Margin = new System.Windows.Forms.Padding(2);
+            this.requestpan.Name = "requestpan";
+            this.requestpan.Size = new System.Drawing.Size(956, 750);
+            this.requestpan.TabIndex = 48;
+            this.requestpan.Visible = false;
+            // 
+            // requestdgv
+            // 
+            this.requestdgv.AllowUserToOrderColumns = true;
+            this.requestdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.requestdgv.Location = new System.Drawing.Point(51, 142);
+            this.requestdgv.Name = "requestdgv";
+            this.requestdgv.RowHeadersWidth = 62;
+            this.requestdgv.RowTemplate.Height = 28;
+            this.requestdgv.Size = new System.Drawing.Size(879, 348);
+            this.requestdgv.TabIndex = 2;
+            this.requestdgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.requestdgv_CellClick);
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
+            this.panel12.Controls.Add(this.label16);
+            this.panel12.Location = new System.Drawing.Point(0, 0);
+            this.panel12.Margin = new System.Windows.Forms.Padding(2);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(1012, 110);
+            this.panel12.TabIndex = 1;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Trebuchet MS", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(364, 20);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(298, 70);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "REQUESTS";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // approvebtn
+            // 
+            this.approvebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
+            this.approvebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.approvebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.approvebtn.ForeColor = System.Drawing.Color.White;
+            this.approvebtn.Location = new System.Drawing.Point(200, 585);
+            this.approvebtn.Name = "approvebtn";
+            this.approvebtn.Size = new System.Drawing.Size(223, 56);
+            this.approvebtn.TabIndex = 13;
+            this.approvebtn.Text = "Approve";
+            this.approvebtn.UseVisualStyleBackColor = false;
+            this.approvebtn.Click += new System.EventHandler(this.approvebtn_Click);
+            // 
+            // rejectbtn
+            // 
+            this.rejectbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
+            this.rejectbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rejectbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rejectbtn.ForeColor = System.Drawing.Color.White;
+            this.rejectbtn.Location = new System.Drawing.Point(553, 585);
+            this.rejectbtn.Name = "rejectbtn";
+            this.rejectbtn.Size = new System.Drawing.Size(223, 56);
+            this.rejectbtn.TabIndex = 14;
+            this.rejectbtn.Text = "Reject";
+            this.rejectbtn.UseVisualStyleBackColor = false;
+            this.rejectbtn.Click += new System.EventHandler(this.rejectbtn_Click);
+            // 
             // Pharmacist
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::PharmaHealix.Properties.Resources.BackgroundImage;
             this.ClientSize = new System.Drawing.Size(1200, 750);
+            this.Controls.Add(this.requestpan);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Exitbtn);
             this.Controls.Add(this.pharmacistprofilepan);
@@ -1345,6 +1446,10 @@
             this.pharmacistprofiletoppan.PerformLayout();
             this.sidepan.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.requestpan.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.requestdgv)).EndInit();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1450,5 +1555,12 @@
         private System.Windows.Forms.TextBox searchmedtb;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button searchmedbtn;
+        private System.Windows.Forms.Button requestbtn;
+        private System.Windows.Forms.Panel requestpan;
+        private System.Windows.Forms.Button rejectbtn;
+        private System.Windows.Forms.Button approvebtn;
+        private System.Windows.Forms.DataGridView requestdgv;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Label label16;
     }
 }

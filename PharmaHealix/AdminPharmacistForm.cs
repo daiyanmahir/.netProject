@@ -16,7 +16,7 @@ namespace PharmaHealix
     {
         Db db = new Db();
 
-        
+        int id;
 
         public AdminPharmacistForm()
         {
@@ -321,7 +321,7 @@ namespace PharmaHealix
 
             conn.Open();
 
-            string query1 = "Update UserTable set Name='" + txtName.Text + "', Phone='" + txtPhone.Text + "', Address='" + rtxtAddress.Text + "', Question='" + cmbQuestion.Text + "', Answer='" + txtAnswer.Text + "', Password='" + txtPassword.Text + "' where Username='" + txtUsername.Text + "'";
+            string query1 = "Update UserTable set Name='" + txtName.Text + "', Phone='" + txtPhone.Text + "', Address='" + rtxtAddress.Text + "', Question='" + cmbQuestion.Text + "', Answer='" + txtAnswer.Text + "', Password='" + txtPassword.Text + "' where Username='" + txtUsername.Text + "' AND Role='Pharmacist'";
 
             SqlCommand cmd1 = new SqlCommand(query1, conn);
 
@@ -364,13 +364,28 @@ namespace PharmaHealix
 
             conn.Open();
 
-            string query1 = "Delete from StaffTable where Username='" + txtUsername.Text + "'";
+            string query1 = "Delete from UserTable where Username='" + txtUsername.Text + "' AND Role='Pharmacist'";
+
 
             SqlCommand cmd1 = new SqlCommand(query1, conn);
 
             cmd1.ExecuteNonQuery();
 
-            string query2 = "Delete from UserTable where Username='" + txtUsername.Text + "'";
+            string gender = "";
+
+            if (rdoMale.Checked)
+            {
+                gender = "Male";
+            }
+
+            if (rdoFemale.Checked)
+            {
+                gender = "Female";
+            }
+
+            decimal salary = Convert.ToDecimal(txtSalary.Text);
+
+            string query2 = "Update StaffTable set Gender='" + gender + "', Salary=" + salary + " where StaffID=" + id;
 
             SqlCommand cmd2 = new SqlCommand(query2, conn);
 

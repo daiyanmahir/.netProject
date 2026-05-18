@@ -15,8 +15,8 @@ namespace PharmaHealix
     {
         Db db = new Db();
 
-        
 
+        int id;
 
         public AdminDoctorForm()
         {
@@ -121,7 +121,6 @@ namespace PharmaHealix
             conn.Open();
 
             string query = "select UserTable.Name, UserTable.Phone, UserTable.Username, UserTable.Address, UserTable.Question, UserTable.Answer, UserTable.Password, DoctorTable.DoctorID, DoctorTable.Gender, DoctorTable.Speciality, DoctorTable.Fee from UserTable inner join DoctorTable on UserTable.Username = DoctorTable.Username where UserTable.Role='Doctor'";
-             
 
             SqlCommand cmd = new SqlCommand(query, conn);
 
@@ -136,6 +135,8 @@ namespace PharmaHealix
             dgvDoctor.DataSource = dt;
 
             dgvDoctor.AutoGenerateColumns = true;
+
+            dgvDoctor.Columns["DoctorID"].Visible = false;
 
             conn.Close();
         }
@@ -406,11 +407,15 @@ namespace PharmaHealix
                 return;
             }
 
-
-
             SqlConnection conn = new SqlConnection(db.connection);
 
             conn.Open();
+
+            string query1 = "Update UserTable set Name='" + txtName.Text + "', Phone='" + txtPhone.Text + "', Address='" + rtxtAddress.Text + "', Question='" + cmbQuestion.Text + "', Answer='" + txtAnswer.Text + "', Password='" + txtPassword.Text + "' where Username='" + txtUsername.Text + "' AND Role='Doctor'";
+
+            SqlCommand cmd1 = new SqlCommand(query1, conn);
+
+            cmd1.ExecuteNonQuery();
 
             string gender = "";
 
@@ -428,39 +433,22 @@ namespace PharmaHealix
 
             if (cbMBBS.Checked)
             {
-                speciality = "MBBS";
+                speciality += "MBBS ";
             }
 
             if (cbFCPS.Checked)
             {
-                speciality += " FCPS";
+                speciality += "FCPS ";
             }
 
             if (cbMD.Checked)
             {
-                speciality += " MD";
+                speciality += "MD";
             }
 
-            string query1 = "Update UserTable set Name='" + txtName.Text + "', Phone='" + txtPhone.Text + "', Address='" + rtxtAddress.Text + "', Question='" + cmbQuestion.Text + "', Answer='" + txtAnswer.Text + "', Password='" + txtPassword.Text + "' where Username='" + txtUsername.Text + "'";
+            decimal fee = Convert.ToDecimal(txtFee.Text);
 
-            SqlCommand cmd1 = new SqlCommand(query1, conn);
-
-            cmd1.ExecuteNonQuery();
-
-             
-
-            decimal fee;
-
-            if (decimal.TryParse(txtFee.Text, out fee) == false)
-            {
-                MessageBox.Show("Fee Must Be Number");
-                return;
-            }
-
-
-
-            string query2 = "Update DoctorTable set Gender='" + gender + "', Speciality='" + speciality + "', Fee=" + fee + " where Username='" + txtUsername.Text + "'";
-
+            string query2 = "Update DoctorTable set Gender='" + gender + "', Speciality='" + speciality + "', Fee=" + fee + " where DoctorID=" + id;
 
             SqlCommand cmd2 = new SqlCommand(query2, conn);
 
@@ -470,7 +458,10 @@ namespace PharmaHealix
 
             MessageBox.Show("Doctor Updated");
 
-            btnShow.PerformClick();
+
+
+
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -503,6 +494,16 @@ namespace PharmaHealix
 
             
 
+            
+        }
+
+        private void dgvDoctor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
             txtName.Text = dgvDoctor.Rows[e.RowIndex].Cells[0].Value.ToString();
 
             txtPhone.Text = dgvDoctor.Rows[e.RowIndex].Cells[1].Value.ToString();
@@ -516,6 +517,8 @@ namespace PharmaHealix
             txtAnswer.Text = dgvDoctor.Rows[e.RowIndex].Cells[5].Value.ToString();
 
             txtPassword.Text = dgvDoctor.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+            id = Convert.ToInt32(dgvDoctor.Rows[e.RowIndex].Cells[7].Value);
 
             string gender = dgvDoctor.Rows[e.RowIndex].Cells[8].Value.ToString();
 
@@ -531,26 +534,14 @@ namespace PharmaHealix
 
             string speciality = dgvDoctor.Rows[e.RowIndex].Cells[9].Value.ToString();
 
-            if (speciality.Contains("MBBS"))
-            {
-                cbMBBS.Checked = true;
-            }
+            cbMBBS.Checked = speciality.Contains("MBBS");
 
-            if (speciality.Contains("FCPS"))
-            {
-                cbFCPS.Checked = true;
-            }
+            cbFCPS.Checked = speciality.Contains("FCPS");
 
-            if (speciality.Contains("MD"))
-            {
-                cbMD.Checked = true;
-            }
+            cbMD.Checked = speciality.Contains("MD");
 
             txtFee.Text = dgvDoctor.Rows[e.RowIndex].Cells[10].Value.ToString();
-
         }
-
-        
     }
     }
 

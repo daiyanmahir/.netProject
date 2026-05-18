@@ -117,6 +117,9 @@
             this.mediimagepan = new System.Windows.Forms.Panel();
             this.categorylbl = new System.Windows.Forms.Label();
             this.appointmentpan = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.appdesignationtxt = new System.Windows.Forms.TextBox();
             this.panel18 = new System.Windows.Forms.Panel();
             this.appdateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.cancelbtn = new System.Windows.Forms.Button();
@@ -153,11 +156,12 @@
             this.cartdataGridView = new System.Windows.Forms.DataGridView();
             this.viewcartlbl = new System.Windows.Forms.Label();
             this.orderhistorypan = new System.Windows.Forms.Panel();
+            this.ordersearchtxt = new System.Windows.Forms.TextBox();
+            this.ordersearchbtn = new System.Windows.Forms.Button();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.orderhistorydataGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.appdesignationtxt = new System.Windows.Forms.TextBox();
             this.headpan.SuspendLayout();
             this.editpan.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -174,6 +178,7 @@
             this.medipan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown)).BeginInit();
             this.appointmentpan.SuspendLayout();
+            this.panel19.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -186,7 +191,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cartdataGridView)).BeginInit();
             this.orderhistorypan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.orderhistorydataGridView)).BeginInit();
-            this.panel19.SuspendLayout();
             this.SuspendLayout();
             // 
             // headpan
@@ -220,7 +224,7 @@
             // medilogobtn
             // 
             this.medilogobtn.BackColor = System.Drawing.Color.Transparent;
-            this.medilogobtn.BackgroundImage = global::PharmaHealix.Properties.Resources.PharmaHealixLogo;
+            this.medilogobtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("medilogobtn.BackgroundImage")));
             this.medilogobtn.FlatAppearance.BorderSize = 0;
             this.medilogobtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
             this.medilogobtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -235,7 +239,7 @@
             // userbtn
             // 
             this.userbtn.BackColor = System.Drawing.Color.Transparent;
-            this.userbtn.BackgroundImage = global::PharmaHealix.Properties.Resources.Humanicon;
+            this.userbtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userbtn.BackgroundImage")));
             this.userbtn.FlatAppearance.BorderSize = 0;
             this.userbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.userbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -435,7 +439,7 @@
             // 
             // editphonepan
             // 
-            this.editphonepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.editphonepan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editphonepan.BackgroundImage")));
             this.editphonepan.Location = new System.Drawing.Point(676, 94);
             this.editphonepan.Name = "editphonepan";
             this.editphonepan.Size = new System.Drawing.Size(30, 30);
@@ -444,7 +448,7 @@
             // 
             // editnamepan
             // 
-            this.editnamepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.editnamepan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editnamepan.BackgroundImage")));
             this.editnamepan.Location = new System.Drawing.Point(392, 94);
             this.editnamepan.Name = "editnamepan";
             this.editnamepan.Size = new System.Drawing.Size(30, 30);
@@ -453,7 +457,7 @@
             // 
             // editpasspan
             // 
-            this.editpasspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.editpasspan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editpasspan.BackgroundImage")));
             this.editpasspan.Location = new System.Drawing.Point(674, 525);
             this.editpasspan.Name = "editpasspan";
             this.editpasspan.Size = new System.Drawing.Size(30, 30);
@@ -462,7 +466,7 @@
             // 
             // editanspan
             // 
-            this.editanspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.editanspan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editanspan.BackgroundImage")));
             this.editanspan.Location = new System.Drawing.Point(674, 438);
             this.editanspan.Name = "editanspan";
             this.editanspan.Size = new System.Drawing.Size(30, 30);
@@ -471,7 +475,7 @@
             // 
             // editaddresspan
             // 
-            this.editaddresspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.editaddresspan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editaddresspan.BackgroundImage")));
             this.editaddresspan.Location = new System.Drawing.Point(674, 275);
             this.editaddresspan.Name = "editaddresspan";
             this.editaddresspan.Size = new System.Drawing.Size(30, 30);
@@ -480,7 +484,7 @@
             // 
             // editusernamepan
             // 
-            this.editusernamepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.editusernamepan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editusernamepan.BackgroundImage")));
             this.editusernamepan.Location = new System.Drawing.Point(676, 186);
             this.editusernamepan.Name = "editusernamepan";
             this.editusernamepan.Size = new System.Drawing.Size(30, 30);
@@ -725,7 +729,7 @@
             // 
             // humaniconpan
             // 
-            this.humaniconpan.BackgroundImage = global::PharmaHealix.Properties.Resources.Humanicon;
+            this.humaniconpan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("humaniconpan.BackgroundImage")));
             this.humaniconpan.Location = new System.Drawing.Point(204, 16);
             this.humaniconpan.Name = "humaniconpan";
             this.humaniconpan.Size = new System.Drawing.Size(50, 50);
@@ -773,7 +777,7 @@
             // 
             // panel6
             // 
-            this.panel6.BackgroundImage = global::PharmaHealix.Properties.Resources.PharmaHealixLogo3;
+            this.panel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel6.BackgroundImage")));
             this.panel6.Location = new System.Drawing.Point(132, 13);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(200, 207);
@@ -816,7 +820,7 @@
             this.textlbl.BackColor = System.Drawing.Color.Transparent;
             this.textlbl.Font = new System.Drawing.Font("Trebuchet MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
-            this.textlbl.Image = global::PharmaHealix.Properties.Resources.papericon1;
+            this.textlbl.Image = ((System.Drawing.Image)(resources.GetObject("textlbl.Image")));
             this.textlbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.textlbl.Location = new System.Drawing.Point(604, 216);
             this.textlbl.Name = "textlbl";
@@ -843,7 +847,7 @@
             this.cartbtn.FlatAppearance.BorderSize = 0;
             this.cartbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cartbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.cartbtn.Image = global::PharmaHealix.Properties.Resources.Cartlogo1;
+            this.cartbtn.Image = ((System.Drawing.Image)(resources.GetObject("cartbtn.Image")));
             this.cartbtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.cartbtn.Location = new System.Drawing.Point(999, 678);
             this.cartbtn.Name = "cartbtn";
@@ -894,7 +898,7 @@
             // 
             // searchiconpan
             // 
-            this.searchiconpan.BackgroundImage = global::PharmaHealix.Properties.Resources.Searchicon;
+            this.searchiconpan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchiconpan.BackgroundImage")));
             this.searchiconpan.Location = new System.Drawing.Point(21, 4);
             this.searchiconpan.Name = "searchiconpan";
             this.searchiconpan.Size = new System.Drawing.Size(40, 40);
@@ -903,7 +907,7 @@
             // medibackpan
             // 
             this.medibackpan.AutoScroll = true;
-            this.medibackpan.BackgroundImage = global::PharmaHealix.Properties.Resources.BackgroundImage;
+            this.medibackpan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("medibackpan.BackgroundImage")));
             this.medibackpan.Controls.Add(this.medipan);
             this.medibackpan.Location = new System.Drawing.Point(0, 110);
             this.medibackpan.Name = "medibackpan";
@@ -995,7 +999,7 @@
             this.addtocartbtn.FlatAppearance.BorderSize = 0;
             this.addtocartbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addtocartbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.addtocartbtn.Image = global::PharmaHealix.Properties.Resources.Cartlogo1;
+            this.addtocartbtn.Image = ((System.Drawing.Image)(resources.GetObject("addtocartbtn.Image")));
             this.addtocartbtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.addtocartbtn.Location = new System.Drawing.Point(504, 555);
             this.addtocartbtn.Name = "addtocartbtn";
@@ -1298,6 +1302,38 @@
             this.appointmentpan.TabIndex = 34;
             this.appointmentpan.Visible = false;
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(717, 231);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(76, 20);
+            this.label18.TabIndex = 48;
+            this.label18.Text = "Speciality";
+            // 
+            // panel19
+            // 
+            this.panel19.BackColor = System.Drawing.Color.White;
+            this.panel19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel19.Controls.Add(this.appdesignationtxt);
+            this.panel19.Location = new System.Drawing.Point(713, 254);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(360, 50);
+            this.panel19.TabIndex = 47;
+            // 
+            // appdesignationtxt
+            // 
+            this.appdesignationtxt.BackColor = System.Drawing.Color.White;
+            this.appdesignationtxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.appdesignationtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.appdesignationtxt.ForeColor = System.Drawing.Color.Black;
+            this.appdesignationtxt.Location = new System.Drawing.Point(11, 13);
+            this.appdesignationtxt.Name = "appdesignationtxt";
+            this.appdesignationtxt.ReadOnly = true;
+            this.appdesignationtxt.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.appdesignationtxt.Size = new System.Drawing.Size(346, 21);
+            this.appdesignationtxt.TabIndex = 18;
+            // 
             // panel18
             // 
             this.panel18.BackColor = System.Drawing.Color.White;
@@ -1594,7 +1630,7 @@
             this.appsearchbtn.Name = "appsearchbtn";
             this.appsearchbtn.Size = new System.Drawing.Size(107, 39);
             this.appsearchbtn.TabIndex = 26;
-            this.appsearchbtn.Text = "Sign up";
+            this.appsearchbtn.Text = "Search";
             this.appsearchbtn.UseVisualStyleBackColor = false;
             this.appsearchbtn.Click += new System.EventHandler(this.appsearchbtn_Click);
             // 
@@ -1715,6 +1751,10 @@
             // 
             // orderhistorypan
             // 
+            this.orderhistorypan.Controls.Add(this.ordersearchtxt);
+            this.orderhistorypan.Controls.Add(this.ordersearchbtn);
+            this.orderhistorypan.Controls.Add(this.richTextBox3);
+            this.orderhistorypan.Controls.Add(this.label19);
             this.orderhistorypan.Controls.Add(this.orderhistorydataGridView);
             this.orderhistorypan.Controls.Add(this.label1);
             this.orderhistorypan.Location = new System.Drawing.Point(0, 110);
@@ -1723,13 +1763,57 @@
             this.orderhistorypan.TabIndex = 38;
             this.orderhistorypan.Visible = false;
             // 
+            // ordersearchtxt
+            // 
+            this.ordersearchtxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ordersearchtxt.Location = new System.Drawing.Point(147, 115);
+            this.ordersearchtxt.Name = "ordersearchtxt";
+            this.ordersearchtxt.Size = new System.Drawing.Size(795, 19);
+            this.ordersearchtxt.TabIndex = 31;
+            // 
+            // ordersearchbtn
+            // 
+            this.ordersearchbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
+            this.ordersearchbtn.FlatAppearance.BorderSize = 0;
+            this.ordersearchbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.AliceBlue;
+            this.ordersearchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ordersearchbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.ordersearchbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ordersearchbtn.Location = new System.Drawing.Point(945, 104);
+            this.ordersearchbtn.Name = "ordersearchbtn";
+            this.ordersearchbtn.Size = new System.Drawing.Size(107, 39);
+            this.ordersearchbtn.TabIndex = 30;
+            this.ordersearchbtn.Text = "Search";
+            this.ordersearchbtn.UseVisualStyleBackColor = false;
+            this.ordersearchbtn.Click += new System.EventHandler(this.ordersearchbtn_Click);
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.BackColor = System.Drawing.Color.White;
+            this.richTextBox3.Location = new System.Drawing.Point(140, 105);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.ReadOnly = true;
+            this.richTextBox3.Size = new System.Drawing.Size(806, 40);
+            this.richTextBox3.TabIndex = 28;
+            this.richTextBox3.Text = "";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label19.Location = new System.Drawing.Point(139, 74);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(245, 22);
+            this.label19.TabIndex = 27;
+            this.label19.Text = "Search Using Appointment ID";
+            // 
             // orderhistorydataGridView
             // 
             this.orderhistorydataGridView.AllowUserToAddRows = false;
             this.orderhistorydataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.orderhistorydataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.orderhistorydataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.orderhistorydataGridView.Location = new System.Drawing.Point(140, 145);
+            this.orderhistorydataGridView.Location = new System.Drawing.Point(140, 167);
             this.orderhistorydataGridView.Name = "orderhistorydataGridView";
             this.orderhistorydataGridView.ReadOnly = true;
             this.orderhistorydataGridView.RowHeadersVisible = false;
@@ -1750,45 +1834,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Order List";
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(717, 231);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(76, 20);
-            this.label18.TabIndex = 48;
-            this.label18.Text = "Speciality";
-            // 
-            // panel19
-            // 
-            this.panel19.BackColor = System.Drawing.Color.White;
-            this.panel19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel19.Controls.Add(this.appdesignationtxt);
-            this.panel19.Location = new System.Drawing.Point(713, 254);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(360, 50);
-            this.panel19.TabIndex = 47;
-            // 
-            // appdesignationtxt
-            // 
-            this.appdesignationtxt.BackColor = System.Drawing.Color.White;
-            this.appdesignationtxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.appdesignationtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.appdesignationtxt.ForeColor = System.Drawing.Color.Black;
-            this.appdesignationtxt.Location = new System.Drawing.Point(11, 13);
-            this.appdesignationtxt.Name = "appdesignationtxt";
-            this.appdesignationtxt.ReadOnly = true;
-            this.appdesignationtxt.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.appdesignationtxt.Size = new System.Drawing.Size(346, 21);
-            this.appdesignationtxt.TabIndex = 18;
-            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
-            this.BackgroundImage = global::PharmaHealix.Properties.Resources.BackgroundImage;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1200, 750);
-            this.Controls.Add(this.appointmentpan);
+            this.Controls.Add(this.orderhistorypan);
             this.Controls.Add(this.patientpan);
             this.Controls.Add(this.headpan);
             this.Controls.Add(this.userpan);
@@ -1796,12 +1848,13 @@
             this.Controls.Add(this.Whatareyoulookinglbl);
             this.Controls.Add(this.textlbl);
             this.Controls.Add(this.editpan);
-            this.Controls.Add(this.appointmenthistorypan);
-            this.Controls.Add(this.cartbtn);
-            this.Controls.Add(this.orderhistorypan);
             this.Controls.Add(this.viewcartpan);
             this.Controls.Add(this.medibackpan);
+            this.Controls.Add(this.appointmentpan);
+            this.Controls.Add(this.appointmenthistorypan);
+            this.Controls.Add(this.cartbtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
@@ -1831,6 +1884,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown)).EndInit();
             this.appointmentpan.ResumeLayout(false);
             this.appointmentpan.PerformLayout();
+            this.panel19.ResumeLayout(false);
+            this.panel19.PerformLayout();
             this.panel18.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
@@ -1849,8 +1904,6 @@
             this.orderhistorypan.ResumeLayout(false);
             this.orderhistorypan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.orderhistorydataGridView)).EndInit();
-            this.panel19.ResumeLayout(false);
-            this.panel19.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1987,5 +2040,9 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.TextBox appdesignationtxt;
+        private System.Windows.Forms.Button ordersearchbtn;
+        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox ordersearchtxt;
     }
 }

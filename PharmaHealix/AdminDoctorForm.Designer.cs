@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDoctorForm));
             this.btnPatient = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnAppointment = new System.Windows.Forms.Button();
@@ -505,6 +506,7 @@
             // txtUsername
             // 
             this.txtUsername.BackColor = System.Drawing.Color.White;
+            this.txtUsername.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(409, 192);
             this.txtUsername.Name = "txtUsername";
@@ -587,6 +589,7 @@
             this.Controls.Add(this.lblSpeciality);
             this.Controls.Add(this.lblName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(0, 72);
             this.MaximizeBox = false;
             this.Name = "AdminDoctorForm";

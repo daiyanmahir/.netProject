@@ -18,9 +18,9 @@ namespace PharmaHealix
     public partial class MainForm : Form
     {
 
-        private string user, username,doctor,appointmenttime;
+        private string user, username, doctor, appointmenttime;
         private DateTime appointmentdate;
-        
+
         private string EName
         {
             get { return editnametxt.Text; }
@@ -52,12 +52,12 @@ namespace PharmaHealix
             set { editpasstxt.Text = value; }
         }
 
-        public MainForm(string s,string n)
+        public MainForm(string s, string n)
         {
-            this.user=s;
-            this.username=n;
+            this.user = s;
+            this.username = n;
             InitializeComponent();
-            
+
 
         }
 
@@ -68,12 +68,15 @@ namespace PharmaHealix
         private void medilogobtn_Click(object sender, EventArgs e)
         {
             medibackpan.Hide();
-            searchtxt.Text ="Search for Medicine";
+            searchtxt.Text = "Search for Medicine";
             searchtxt.ForeColor = Color.Gray;
             appointmenthistorypan.Hide();
+            appsearchtxt.Text = "";
             numericUpDown.Value = 1;
             viewcartpan.Hide();
             orderhistorypan.Hide();
+            ordersearchtxt.Text = "";
+            appointmentpan.Hide();
 
         }
 
@@ -90,12 +93,12 @@ namespace PharmaHealix
             if (user == "Guest")
             {
                 userpan.Visible = false;
-                
+
             }
             else if (user == "Patient")
             {
                 patientpan.Visible = false;
-               
+
             }
         }
 
@@ -130,12 +133,12 @@ namespace PharmaHealix
                     categorytxt.Text = dt.Rows[0]["Category"].ToString();
                     descriptiontxt.Text = dt.Rows[0]["Description"].ToString();
                     striptxt.Text = dt.Rows[0]["StripPrice"].ToString();
-                    unitpricetxt.Text= dt.Rows[0]["UnitPrice"].ToString();
+                    unitpricetxt.Text = dt.Rows[0]["UnitPrice"].ToString();
                     pricetxt.Text = dt.Rows[0]["UnitPrice"].ToString();
                     dosetxt.Text = dt.Rows[0]["Dose"].ToString();
                     instructiontxt.Text = dt.Rows[0]["Instruction"].ToString();
                     sideeffectstxt.Text = dt.Rows[0]["SideEffect"].ToString();
-                    if (dt.Rows[0]["Image"]!= DBNull.Value) {
+                    if (dt.Rows[0]["Image"] != DBNull.Value) {
                         mediimagepan.BackgroundImage = Image.FromFile(dt.Rows[0]["Image"].ToString());
                     }
                     else
@@ -161,8 +164,8 @@ namespace PharmaHealix
         }
 
         private void userbtn_Click(object sender, EventArgs e)
-        {  
-        
+        {
+
             if (user == "Patient")
             {
                 patientpan.Visible = true;
@@ -179,7 +182,7 @@ namespace PharmaHealix
 
         private void searchtxt_Enter(object sender, EventArgs e)
         {
-            if(searchtxt.Text=="Search for Medicine")
+            if (searchtxt.Text == "Search for Medicine")
             {
                 searchtxt.Text = "";
                 searchtxt.ForeColor = Color.Black;
@@ -258,7 +261,7 @@ namespace PharmaHealix
                 editusernamepan.Visible = true;
                 Flag = true;
             }
-            if (EUsername != "" && EUsername!=username)
+            if (EUsername != "" && EUsername != username)
             {
                 string query = "SELECT COUNT(*) FROM UserTable WHERE Username = @0";
                 int count = Convert.ToInt32(new Db().Scalar(query, EUsername));
@@ -311,7 +314,7 @@ namespace PharmaHealix
             {
 
                 string query = "UPDATE UserTable SET Name = @0, Phone = @1, Username = @2, Address = @3, Question = @4, Answer = @5, Password = @6 WHERE Username = @7";
-                new Db().NonQuery(query, EName, EPhone, EUsername, EAddress, editsecurityquestioncb.Text, EAnswer, EPass,username);
+                new Db().NonQuery(query, EName, EPhone, EUsername, EAddress, editsecurityquestioncb.Text, EAnswer, EPass, username);
                 username = EUsername;
 
                 MessageBox.Show("Update Successful!");
@@ -323,7 +326,7 @@ namespace PharmaHealix
 
         private void editpanminimizebtn_Click(object sender, EventArgs e)
         {
-           editpan.Visible=false;
+            editpan.Visible = false;
         }
 
 
@@ -370,20 +373,23 @@ namespace PharmaHealix
             string searchId = appsearchtxt.Text;
             string s = "Select count(*) From AppointmentTable where AppointmentID=@0";
             int count = Convert.ToInt32(new Db().Scalar(s, searchId));
-            if (count>0) {
+            if (count > 0) {
                 string q =
                             "SELECT A.AppointmentID, " +
-                            "U.Name AS [Doctor Name], " +
-                            "A.AppointmentDate AS [Date], " +
-                            "A.AppointmentTime AS [Time], " +
+                            "U.Name as [Doctor Name], " +
+                            "A.AppointmentDate as [Date], " +
+                            "A.AppointmentTime as [Time], " +
+                            "P.PrescriptionText as[Prescription], " +
+                            "P.PrescriptionDate as [Prescription Date], " +
                             "A.Status " +
-                            "FROM AppointmentTable A, DoctorTable D, UserTable U " +
-                            "WHERE A.DoctorID = D.DoctorID " +
+                            "From AppointmentTable A, DoctorTable D, UserTable U, PrescriptionTable P " +
+                            "Where A.DoctorID = D.DoctorID " +
                             "And D.Username = U.Username " +
+                            "And A.AppointmentID=P.AppointmentID " +
                             "And A.PatientUsername = @0 " +
                             "And A.AppointmentID=@1";
 
-                DataTable apphistorytable = new Db().Reader(q, username,searchId);
+                DataTable apphistorytable = new Db().Reader(q, username, searchId);
                 appdataGridView.DataSource = apphistorytable;
                 appdataGridView.AutoGenerateColumns = true;
             }
@@ -395,7 +401,7 @@ namespace PharmaHealix
             }
         }
 
-      
+
         private void appointmenhistorytbtn_Click(object sender, EventArgs e)
         {
             if (user == "Patient")
@@ -407,10 +413,13 @@ namespace PharmaHealix
                             "U.Name as [Doctor Name], " +
                             "A.AppointmentDate as [Date], " +
                             "A.AppointmentTime as [Time], " +
+                            "P.PrescriptionText as[Prescription], " +
+                            "P.PrescriptionDate as [Prescription Date], " +
                             "A.Status " +
-                            "From AppointmentTable A, DoctorTable D, UserTable U " +
+                            "From AppointmentTable A, DoctorTable D, UserTable U, PrescriptionTable P " +
                             "Where A.DoctorID = D.DoctorID " +
                             "And D.Username = U.Username " +
+                            "And A.AppointmentID=P.AppointmentID " +
                             "And A.PatientUsername = @0";
 
                 DataTable apphistorytable = new Db().Reader(q, username);
@@ -421,7 +430,7 @@ namespace PharmaHealix
             {
                 MessageBox.Show("Please Sign in First!");
             }
-            
+
 
         }
 
@@ -505,15 +514,15 @@ namespace PharmaHealix
         private void orderbtn_Click(object sender, EventArgs e)
         {
             string countQ = "Select COUNT(*) MedicineID From CartTable Where PatientUsername=@0";
-            int count=Convert.ToInt32(new Db().Scalar(countQ,username));
+            int count = Convert.ToInt32(new Db().Scalar(countQ, username));
             if (count > 0)
             {
                 //Order Table Insertion
 
-                                string q = "Select SUM(C.Quantity * M.UnitPrice) " +
-                                           "From CartTable C, MedicineTable M " +
-                                           "Where C.MedicineId = M.MedicineId " +
-                                           "And C.PatientUsername = @0";
+                string q = "Select SUM(C.Quantity * M.UnitPrice) " +
+                           "From CartTable C, MedicineTable M " +
+                           "Where C.MedicineId = M.MedicineId " +
+                           "And C.PatientUsername = @0";
 
                 int total = Convert.ToInt32(new Db().Scalar(q, username));
                 string s = "Insert Into OrderTable(PatientUsername,OrderDate,TotalAmount,Status) values(@0,@1,@2,@3)";
@@ -525,14 +534,14 @@ namespace PharmaHealix
                 //error
                 int orderId = Convert.ToInt32(new Db().Scalar(OID, username));
 
-                               string cart = "Select C.CartId, " +
-                                             "M.MedicineID, " +
-                                             "M.MedicineName, " +
-                                             "C.Quantity, " +
-                                             "M.UnitPrice AS [UnitPrice] " +
-                                             "From CartTable C, MedicineTable M " +
-                                             "Where C.MedicineId = M.MedicineId " +
-                                             "And C.PatientUsername = @0";
+                string cart = "Select C.CartId, " +
+                              "M.MedicineID, " +
+                              "M.MedicineName, " +
+                              "C.Quantity, " +
+                              "M.UnitPrice AS [UnitPrice] " +
+                              "From CartTable C, MedicineTable M " +
+                              "Where C.MedicineId = M.MedicineId " +
+                              "And C.PatientUsername = @0";
                 DataTable cartdt = new Db().Reader(cart, username);
 
                 for (int i = 0; i < cartdt.Rows.Count; i++)
@@ -647,24 +656,55 @@ namespace PharmaHealix
 
         private void appdoctorcb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (appdoctorcb.SelectedIndex != -1 && appdoctorcb.SelectedValue != null)
+            if (appdoctorcb.SelectedIndex != -1)
             {
 
-                string d = Convert.ToString(appdoctorcb.SelectedValue);
+                string d = appdoctorcb.Text;
 
                 string m = "Select username From usertable where name=@0";
-                string du = Convert.ToString(new Db().Scalar(m, doctor));
+                string du = Convert.ToString(new Db().Scalar(m, d));
                 string p = "Select DoctorId From DoctorTable where username=@0";
                 int did = Convert.ToInt32(new Db().Scalar(p, du));
                 string query = "Select Speciality From DoctorTable where DoctorID = @0";
-                string speacility = Convert.ToString(new Db().Scalar(query, did));
-                appdesignationtxt.Text = speacility;
+                string speciality = Convert.ToString(new Db().Scalar(query, did));
+                appdesignationtxt.Text = speciality;
             }
             else
             {
                 appdesignationtxt.Text = "";
             }
 
+        }
+        //***********************
+        private void ordersearchbtn_Click(object sender, EventArgs e)
+        {
+            string searchId = ordersearchtxt.Text;
+            string s = "Select count(*) From OrderTable where OrderID=@0";
+            int count = Convert.ToInt32(new Db().Scalar(s, searchId));
+            if (count > 0)
+            {
+                string q = "Select O.OrderID as [Order ID], " +
+                   "O.OrderDate as [Date], " +
+                   "M.MedicineName as [Medicine Name], " +
+                   "D.Quantity as [Quantity], " +
+                   "(D.Quantity * D.UnitPrice) as [Total Price], " +
+                   "O.Status as [Status] " +
+                   "From OrderTable O, OrderDetailsTable D, MedicineTable M " +
+                   "Where O.OrderID = D.OrderID " +
+                   "And D.MedicineID = M.MedicineID " +
+                   "And O.PatientUsername = @0 " +
+                   "And O.OrderId=@1";
+
+                DataTable dt = new Db().Reader(q, username,searchId);
+                orderhistorydataGridView.DataSource = dt;
+                orderhistorydataGridView.AutoGenerateColumns = true;
+            }
+            else
+            {
+                orderhistorydataGridView.DataSource = null;
+                MessageBox.Show("The Order ID entered is not Found!");
+                return;
+            }
         }
 
         private void appointmentbtn_Click(object sender, EventArgs e)

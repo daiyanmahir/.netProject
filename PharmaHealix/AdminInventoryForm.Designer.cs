@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminInventoryForm));
             this.lblMedicineId = new System.Windows.Forms.Label();
             this.lblMedicineName = new System.Windows.Forms.Label();
             this.lblExpireDate = new System.Windows.Forms.Label();
@@ -589,6 +590,7 @@
             this.Controls.Add(this.lblMedicineName);
             this.Controls.Add(this.lblMedicineId);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(0, 72);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AdminInventoryForm";

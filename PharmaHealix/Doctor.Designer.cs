@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Doctor));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.checkappbtn = new System.Windows.Forms.Button();
@@ -1111,7 +1112,7 @@
             // medilogobtn
             // 
             this.medilogobtn.BackColor = System.Drawing.Color.Transparent;
-            this.medilogobtn.BackgroundImage = global::PharmaHealix.Properties.Resources.PharmaHealixLogo;
+            this.medilogobtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("medilogobtn.BackgroundImage")));
             this.medilogobtn.FlatAppearance.BorderSize = 0;
             this.medilogobtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
             this.medilogobtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1146,6 +1147,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(0, 72);
             this.Name = "Doctor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

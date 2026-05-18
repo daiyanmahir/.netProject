@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPatientForm));
             this.dgvPatient = new System.Windows.Forms.DataGridView();
             this.btnShow = new System.Windows.Forms.Button();
             this.pnlHeader = new System.Windows.Forms.Panel();
@@ -223,6 +224,7 @@
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.dgvPatient);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(0, 72);
             this.Name = "AdminPatientForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

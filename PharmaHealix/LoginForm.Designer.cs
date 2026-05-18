@@ -329,7 +329,7 @@
             // 
             // createphonepan
             // 
-            this.createphonepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.createphonepan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("createphonepan.BackgroundImage")));
             this.createphonepan.Location = new System.Drawing.Point(547, 294);
             this.createphonepan.Name = "createphonepan";
             this.createphonepan.Size = new System.Drawing.Size(30, 30);
@@ -338,7 +338,7 @@
             // 
             // createnamepan
             // 
-            this.createnamepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.createnamepan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("createnamepan.BackgroundImage")));
             this.createnamepan.Location = new System.Drawing.Point(299, 296);
             this.createnamepan.Name = "createnamepan";
             this.createnamepan.Size = new System.Drawing.Size(30, 30);
@@ -347,7 +347,7 @@
             // 
             // createpasspan
             // 
-            this.createpasspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.createpasspan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("createpasspan.BackgroundImage")));
             this.createpasspan.Location = new System.Drawing.Point(547, 628);
             this.createpasspan.Name = "createpasspan";
             this.createpasspan.Size = new System.Drawing.Size(30, 30);
@@ -356,7 +356,7 @@
             // 
             // createanspan
             // 
-            this.createanspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.createanspan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("createanspan.BackgroundImage")));
             this.createanspan.Location = new System.Drawing.Point(547, 562);
             this.createanspan.Name = "createanspan";
             this.createanspan.Size = new System.Drawing.Size(30, 30);
@@ -365,7 +365,7 @@
             // 
             // createaddresspan
             // 
-            this.createaddresspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.createaddresspan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("createaddresspan.BackgroundImage")));
             this.createaddresspan.Location = new System.Drawing.Point(547, 432);
             this.createaddresspan.Name = "createaddresspan";
             this.createaddresspan.Size = new System.Drawing.Size(30, 30);
@@ -374,7 +374,7 @@
             // 
             // createusernamepan
             // 
-            this.createusernamepan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.createusernamepan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("createusernamepan.BackgroundImage")));
             this.createusernamepan.Location = new System.Drawing.Point(547, 359);
             this.createusernamepan.Name = "createusernamepan";
             this.createusernamepan.Size = new System.Drawing.Size(30, 30);
@@ -633,7 +633,7 @@
             // 
             // Enteruserpan
             // 
-            this.Enteruserpan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.Enteruserpan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Enteruserpan.BackgroundImage")));
             this.Enteruserpan.Location = new System.Drawing.Point(547, 330);
             this.Enteruserpan.Name = "Enteruserpan";
             this.Enteruserpan.Size = new System.Drawing.Size(30, 30);
@@ -642,7 +642,7 @@
             // 
             // Enterpasspan
             // 
-            this.Enterpasspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.Enterpasspan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Enterpasspan.BackgroundImage")));
             this.Enterpasspan.Location = new System.Drawing.Point(547, 427);
             this.Enterpasspan.Name = "Enterpasspan";
             this.Enterpasspan.Size = new System.Drawing.Size(30, 30);
@@ -757,7 +757,7 @@
             // 
             // fpasspan
             // 
-            this.fpasspan.BackgroundImage = global::PharmaHealix.Properties.Resources.Crossicon_;
+            this.fpasspan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("fpasspan.BackgroundImage")));
             this.fpasspan.Location = new System.Drawing.Point(507, 384);
             this.fpasspan.Name = "fpasspan";
             this.fpasspan.Size = new System.Drawing.Size(30, 30);
@@ -897,6 +897,7 @@
             this.Controls.Add(this.Enteruserpan);
             this.Controls.Add(this.Enterpasspan);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Loginform";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

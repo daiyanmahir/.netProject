@@ -142,10 +142,6 @@ namespace PharmaHealix
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(db.connection);
-
-            conn.Open();
-
             string gender = "";
 
             if (rdoMale.Checked)
@@ -157,6 +153,51 @@ namespace PharmaHealix
             {
                 gender = "Female";
             }
+
+
+            if (txtName.Text == "" ||
+                txtUsername.Text == "" ||
+                txtPhone.Text == "" ||
+                txtPassword.Text == "" ||
+                txtFee.Text == "" ||
+                txtAnswer.Text == "" ||
+                rtxtAddress.Text == "")
+            {
+                MessageBox.Show("Please Fill All Information");
+                return;
+            }
+
+
+            if (rdoMale.Checked == false && rdoFemale.Checked == false)
+            {
+                MessageBox.Show("Please Select Gender");
+                return;
+            }
+
+
+            if (cbMBBS.Checked == false && cbFCPS.Checked == false && cbMD.Checked == false)
+
+
+            {
+                MessageBox.Show("Please Select Degree");
+                return;
+            }
+
+
+            if (cmbQuestion.Text == "")
+            {
+                MessageBox.Show("Please Select Question");
+                return;
+            }
+
+
+
+
+            SqlConnection conn = new SqlConnection(db.connection);
+
+            conn.Open();
+
+            
 
             string speciality = "";
 
@@ -303,7 +344,18 @@ namespace PharmaHealix
 
             cmd1.ExecuteNonQuery();
 
-            decimal fee = Convert.ToDecimal(txtFee.Text);
+             
+
+            decimal fee;
+
+            if (decimal.TryParse(txtFee.Text, out fee) == false)
+            {
+                MessageBox.Show("Fee Must Be Number");
+                return;
+            }
+
+           
+
 
             string query2 = "Update DoctorTable set Gender='" + gender + "', Speciality='" + speciality + "', Fee=" + fee + " where DoctorID=" + id;
 

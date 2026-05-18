@@ -411,7 +411,7 @@
             this.lblStock.AutoSize = true;
             this.lblStock.BackColor = System.Drawing.Color.Transparent;
             this.lblStock.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStock.Location = new System.Drawing.Point(274, 337);
+            this.lblStock.Location = new System.Drawing.Point(274, 343);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(64, 28);
             this.lblStock.TabIndex = 61;

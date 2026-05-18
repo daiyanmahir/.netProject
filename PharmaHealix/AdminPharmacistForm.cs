@@ -132,7 +132,7 @@ namespace PharmaHealix
                 return;
             }
 
-            decimal salary;
+           /* decimal salary;
 
             if (!decimal.TryParse(txtSalary.Text, out salary))
             {
@@ -140,7 +140,7 @@ namespace PharmaHealix
 
                 return;
             }
-
+           */
 
             SqlConnection conn = new SqlConnection(db.connection);
 

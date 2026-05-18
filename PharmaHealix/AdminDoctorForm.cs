@@ -15,7 +15,7 @@ namespace PharmaHealix
     {
         Db db = new Db();
 
-        int id;
+        
 
 
         public AdminDoctorForm()
@@ -142,43 +142,100 @@ namespace PharmaHealix
 
         private bool DoctorValidation()
         {
-            if (txtName.Text == "" ||
-                txtUsername.Text == "" ||
-                txtPhone.Text == "" ||
-                txtPassword.Text == "" ||
-                txtFee.Text == "" ||
-                txtAnswer.Text == "" ||
-                rtxtAddress.Text == "")
+            bool Error = false;
+
+            if (txtName.Text == "")
             {
-                MessageBox.Show("Please Fill All Information");
-                return false;
+                MessageBox.Show("Please Enter Name");
+                Error = true;
             }
 
-            if (rdoMale.Checked == false && rdoFemale.Checked == false)
+            else if (txtName.Text.Any(char.IsDigit))
+            {
+                MessageBox.Show("Name Cannot Contain Numbers");
+                Error = true;
+            }
+
+            else if (txtUsername.Text == "")
+            {
+                MessageBox.Show("Please Enter Username");
+                Error = true;
+            }
+
+            else if (txtPhone.Text == "")
+            {
+                MessageBox.Show("Please Enter Phone Number");
+                Error = true;
+            }
+
+            else if (txtPhone.Text.Length != 11)
+            {
+                MessageBox.Show("Phone Number Must Be 11 Digits");
+                Error = true;
+            }
+
+            else if (txtPhone.Text.StartsWith("01") == false)
+            {
+                MessageBox.Show("Phone Number Must Start With 01");
+                Error = true;
+            }
+
+            else if (txtPhone.Text.Any(char.IsLetter))
+            {
+                MessageBox.Show("Phone Number Must Contain Only Numbers");
+                Error = true;
+            }
+
+            else if (txtPassword.Text == "")
+            {
+                MessageBox.Show("Please Enter Password");
+                Error = true;
+            }
+
+            else if (txtPassword.Text.Length < 5)
+            {
+                MessageBox.Show("Password Must Be At Least 5 Characters");
+                Error = true;
+            }
+
+            else if (rdoMale.Checked == false && rdoFemale.Checked == false)
             {
                 MessageBox.Show("Please Select Gender");
-                return false;
+                Error = true;
             }
 
-            if (cbMBBS.Checked == false &&
-                cbFCPS.Checked == false &&
-                cbMD.Checked == false)
+            else if (cbMBBS.Checked == false &&
+                     cbFCPS.Checked == false &&
+                     cbMD.Checked == false)
             {
-                MessageBox.Show("Please Select Degree");
-                return false;
+                MessageBox.Show("Please Select Speciality");
+                Error = true;
             }
 
-            if (cmbQuestion.Text == "")
+            else if (cmbQuestion.Text == "")
             {
                 MessageBox.Show("Please Select Question");
-                return false;
+                Error = true;
             }
 
-            decimal fee;
-
-            if (decimal.TryParse(txtFee.Text, out fee) == false)
+            else if (txtAnswer.Text == "")
             {
-                MessageBox.Show("Fee Must Be Number");
+                MessageBox.Show("Please Enter Answer");
+                Error = true;
+            }
+
+            else if (rtxtAddress.Text == "")
+            {
+                MessageBox.Show("Please Enter Address");
+                Error = true;
+            }
+
+
+
+            
+
+            if (Error)
+            {
                 return false;
             }
 
@@ -202,6 +259,30 @@ namespace PharmaHealix
                 gender = "Female";
             }
 
+            if (DoctorValidation() == false)
+            {
+                return;
+            }
+
+
+            SqlConnection checkconn = new SqlConnection(db.connection);
+
+            checkconn.Open();
+
+            string checkquery = "select count(*) from UserTable where Username='" + txtUsername.Text + "'";
+
+            SqlCommand checkcmd = new SqlCommand(checkquery, checkconn);
+
+            int count = Convert.ToInt32(checkcmd.ExecuteScalar());
+
+            checkconn.Close();
+
+            if (count > 0)
+            {
+                MessageBox.Show("Username Already Exists");
+                return;
+            }
+
 
 
             SqlConnection conn = new SqlConnection(db.connection);
@@ -209,10 +290,10 @@ namespace PharmaHealix
             conn.Open();
 
 
-            if (DoctorValidation() == false)
+            /*if (DoctorValidation() == false)
             {
                 return;
-            }
+            }*/
 
 
             string speciality = "";
@@ -267,7 +348,7 @@ namespace PharmaHealix
             cmbQuestion.SelectedIndex = -1;
         }
 
-        private void dgvDoctor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        /*private void dgvDoctor_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             id = Convert.ToInt32(dgvDoctor.Rows[e.RowIndex].Cells[7].Value);
 
@@ -315,7 +396,7 @@ namespace PharmaHealix
             }
 
             txtFee.Text = dgvDoctor.Rows[e.RowIndex].Cells[10].Value.ToString();
-        }
+        }*/
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -376,10 +457,10 @@ namespace PharmaHealix
                 return;
             }
 
-           
 
 
-            string query2 = "Update DoctorTable set Gender='" + gender + "', Speciality='" + speciality + "', Fee=" + fee + " where DoctorID=" + id;
+            string query2 = "Update DoctorTable set Gender='" + gender + "', Speciality='" + speciality + "', Fee=" + fee + " where Username='" + txtUsername.Text + "'";
+
 
             SqlCommand cmd2 = new SqlCommand(query2, conn);
 
@@ -398,7 +479,7 @@ namespace PharmaHealix
 
             conn.Open();
 
-            string query1 = "Delete from DoctorTable where DoctorID=" + id;
+            string query1 = "Delete from DoctorTable where Username='" + txtUsername.Text + "'";
 
             SqlCommand cmd1 = new SqlCommand(query1, conn);
 
@@ -416,6 +497,60 @@ namespace PharmaHealix
 
             btnShow.PerformClick();
         }
+
+        private void dgvDoctor_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            
+
+            txtName.Text = dgvDoctor.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+            txtPhone.Text = dgvDoctor.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+            txtUsername.Text = dgvDoctor.Rows[e.RowIndex].Cells[2].Value.ToString();
+
+            rtxtAddress.Text = dgvDoctor.Rows[e.RowIndex].Cells[3].Value.ToString();
+
+            cmbQuestion.Text = dgvDoctor.Rows[e.RowIndex].Cells[4].Value.ToString();
+
+            txtAnswer.Text = dgvDoctor.Rows[e.RowIndex].Cells[5].Value.ToString();
+
+            txtPassword.Text = dgvDoctor.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+            string gender = dgvDoctor.Rows[e.RowIndex].Cells[8].Value.ToString();
+
+            if (gender == "Male")
+            {
+                rdoMale.Checked = true;
+            }
+
+            if (gender == "Female")
+            {
+                rdoFemale.Checked = true;
+            }
+
+            string speciality = dgvDoctor.Rows[e.RowIndex].Cells[9].Value.ToString();
+
+            if (speciality.Contains("MBBS"))
+            {
+                cbMBBS.Checked = true;
+            }
+
+            if (speciality.Contains("FCPS"))
+            {
+                cbFCPS.Checked = true;
+            }
+
+            if (speciality.Contains("MD"))
+            {
+                cbMD.Checked = true;
+            }
+
+            txtFee.Text = dgvDoctor.Rows[e.RowIndex].Cells[10].Value.ToString();
+
+        }
+
+        
     }
     }
 

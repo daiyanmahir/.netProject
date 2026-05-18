@@ -346,7 +346,8 @@
             this.dgvDoctor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDoctor.Size = new System.Drawing.Size(454, 323);
             this.dgvDoctor.TabIndex = 27;
-            this.dgvDoctor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDoctor_CellContentClick);
+            this.dgvDoctor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDoctor_CellClick);
+            
             // 
             // panelMenu
             // 

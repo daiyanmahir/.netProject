@@ -15,12 +15,123 @@ namespace PharmaHealix
     {
         Db db = new Db();
 
-        int id;
+        
 
         public AdminInventoryForm()
         {
             InitializeComponent();
         }
+
+
+        private bool InventoryValidation()
+        {
+            bool Error = false;
+
+            if (txtMedicineName.Text == "")
+            {
+                MessageBox.Show("Please Enter Medicine Name");
+                Error = true;
+            }
+
+            else if (txtMedicineName.Text.Any(char.IsDigit))
+            {
+                MessageBox.Show("Medicine Name Cannot Contain Numbers");
+                Error = true;
+            }
+
+            else if (txtCategory.Text == "")
+            {
+                MessageBox.Show("Please Enter Category");
+                Error = true;
+            }
+
+            else if (rtxtDescription.Text == "")
+            {
+                MessageBox.Show("Please Enter Description");
+                Error = true;
+            }
+
+            else if (txtStripPrice.Text == "")
+            {
+                MessageBox.Show("Please Enter Strip Price");
+                Error = true;
+            }
+
+            else if (txtUnitPrice.Text == "")
+            {
+                MessageBox.Show("Please Enter Unit Price");
+                Error = true;
+            }
+
+            else if (txtStock.Text == "")
+            {
+                MessageBox.Show("Please Enter Stock");
+                Error = true;
+            }
+
+            else if (rtxtDose.Text == "")
+            {
+                MessageBox.Show("Please Enter Dose");
+                Error = true;
+            }
+
+            else if (rtxtSideEffect.Text == "")
+            {
+                MessageBox.Show("Please Enter Side Effect");
+                Error = true;
+            }
+
+            decimal stripPrice;
+
+            if (decimal.TryParse(txtStripPrice.Text, out stripPrice) == false)
+            {
+                MessageBox.Show("Strip Price Must Be Number");
+                Error = true;
+            }
+
+            decimal unitPrice;
+
+            if (decimal.TryParse(txtUnitPrice.Text, out unitPrice) == false)
+            {
+                MessageBox.Show("Unit Price Must Be Number");
+                Error = true;
+            }
+
+            int stock;
+
+            if (int.TryParse(txtStock.Text, out stock) == false)
+            {
+                MessageBox.Show("Stock Must Be Number");
+                Error = true;
+            }
+
+            else if (stock < 0)
+            {
+                MessageBox.Show("Stock Cannot Be Negative");
+                Error = true;
+            }
+
+            else if (stripPrice < 0 || unitPrice < 0)
+            {
+                MessageBox.Show("Price Cannot Be Negative");
+                Error = true;
+            }
+
+            else if (dtpExpireDate.Value.Date <= DateTime.Now.Date)
+            {
+                MessageBox.Show("Expire Date Must Be Future Date");
+                Error = true;
+            }
+
+            if (Error)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+
 
         private void btnUser_Click(object sender, EventArgs e)
         {
@@ -57,9 +168,12 @@ namespace PharmaHealix
 
         private void dgvInventory_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            id = Convert.ToInt32(dgvInventory.Rows[e.RowIndex].Cells[0].Value);
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
 
-            txtMedicineID.Text = dgvInventory.Rows[e.RowIndex].Cells[0].Value.ToString();
+
 
             txtMedicineName.Text = dgvInventory.Rows[e.RowIndex].Cells[1].Value.ToString();
 
@@ -82,7 +196,7 @@ namespace PharmaHealix
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtMedicineID.Clear();
+           
             txtMedicineName.Clear();
 
             dtpExpireDate.Value = DateTime.Now;
@@ -160,6 +274,33 @@ namespace PharmaHealix
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (InventoryValidation() == false)
+            {
+                return;
+            }
+
+            SqlConnection checkconn = new SqlConnection(db.connection);
+
+            checkconn.Open();
+
+            string checkquery = "select count(*) from MedicineTable where MedicineName='" + txtMedicineName.Text + "'";
+
+            SqlCommand checkcmd = new SqlCommand(checkquery, checkconn);
+
+            int count = Convert.ToInt32(checkcmd.ExecuteScalar());
+
+            checkconn.Close();
+
+            if (count > 0)
+            {
+                MessageBox.Show("Medicine Already Exists");
+                return;
+            }
+
+
+
+
+
             SqlConnection conn = new SqlConnection(db.connection);
 
             conn.Open();
@@ -170,8 +311,7 @@ namespace PharmaHealix
 
             int stock = Convert.ToInt32(txtStock.Text);
 
-            string query = "Insert into MedicineTable(MedicineName,Category,Description,StripPrice,UnitPrice,Dose,SideEffect,Stock,ExpireDate,Image) values('" + txtMedicineName.Text + "','" + txtCategory.Text + "','" + rtxtDescription.Text + "'," + stripPrice + "," + unitPrice + ",'" + rtxtDose.Text + "','" + rtxtSideEffect.Text + "'," + stock + ",'" + dtpExpireDate.Value.ToString("yyyy-MM-dd") + "','')";
-
+            string query = "Insert into MedicineTable(MedicineName,Category,Description,StripPrice,UnitPrice,Dose,SideEffect,Stock,ExpireDate,Image) values('" + txtMedicineName.Text + "','" + txtCategory.Text + "','" + rtxtDescription.Text + "'," + stripPrice + "," + unitPrice + ",'" + rtxtDose.Text + "','" + rtxtSideEffect.Text + "'," + stock + ",'" + dtpExpireDate.Value.ToString("yyyy-MM-dd") + "','" + txtImage.Text + "')";
             SqlCommand cmd = new SqlCommand(query, conn);
 
             cmd.ExecuteNonQuery();
@@ -190,6 +330,14 @@ namespace PharmaHealix
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+
+            if (InventoryValidation() == false)
+            {
+                return;
+            }
+
+
+
             SqlConnection conn = new SqlConnection(db.connection);
 
             conn.Open();
@@ -200,7 +348,7 @@ namespace PharmaHealix
 
             int stock = Convert.ToInt32(txtStock.Text);
 
-            string query = "Update MedicineTable set MedicineName='" + txtMedicineName.Text + "', Category='" + txtCategory.Text + "', Description='" + rtxtDescription.Text + "', StripPrice=" + stripPrice + ", UnitPrice=" + unitPrice + ", Dose='" + rtxtDose.Text + "', SideEffect='" + rtxtSideEffect.Text + "', Stock=" + stock + ", ExpireDate='" + dtpExpireDate.Value.ToString("yyyy-MM-dd") + "' where MedicineID=" + id;
+            string query = "Update MedicineTable set MedicineName='" + txtMedicineName.Text + "', Category='" + txtCategory.Text + "', Description='" + rtxtDescription.Text + "', StripPrice=" + stripPrice + ", UnitPrice=" + unitPrice + ", Dose='" + rtxtDose.Text + "', SideEffect='" + rtxtSideEffect.Text + "', Stock=" + stock + ", ExpireDate='" + dtpExpireDate.Value.ToString("yyyy-MM-dd") + "', Image='" + txtImage.Text + "' where MedicineName='" + txtMedicineName.Text + "'";
 
             SqlCommand cmd = new SqlCommand(query, conn);
 
@@ -219,7 +367,7 @@ namespace PharmaHealix
 
             conn.Open();
 
-            string query = "Delete from MedicineTable where MedicineID=" + id;
+            string query = "Delete from MedicineTable where MedicineName='" + txtMedicineName.Text + "'";
 
             SqlCommand cmd = new SqlCommand(query, conn);
 
@@ -234,7 +382,7 @@ namespace PharmaHealix
 
         private void btnClear_Click_1(object sender, EventArgs e)
         {
-            txtMedicineID.Text = "";
+           
 
             txtMedicineName.Text = "";
 
@@ -254,7 +402,7 @@ namespace PharmaHealix
 
             dtpExpireDate.Value = DateTime.Now;
 
-            picMedicine.Image = null;
+            txtImage.Text = "";
         }
     }
     }

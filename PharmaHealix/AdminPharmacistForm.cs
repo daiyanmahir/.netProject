@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace PharmaHealix
 {
@@ -15,13 +16,119 @@ namespace PharmaHealix
     {
         Db db = new Db();
 
-        int id;
+        
 
         public AdminPharmacistForm()
         {
             InitializeComponent();
 
 
+        }
+
+
+        private bool PharmacistValidation()
+        {
+            bool Error = false;
+
+            if (txtName.Text == "")
+            {
+                MessageBox.Show("Please Enter Name");
+                Error = true;
+            }
+
+            else if (txtName.Text.Any(char.IsDigit))
+            {
+                MessageBox.Show("Name Cannot Contain Numbers");
+                Error = true;
+            }
+
+            else if (txtUsername.Text == "")
+            {
+                MessageBox.Show("Please Enter Username");
+                Error = true;
+            }
+
+            else if (txtPhone.Text == "")
+            {
+                MessageBox.Show("Please Enter Phone Number");
+                Error = true;
+            }
+
+            else if (txtPhone.Text.Any(char.IsLetter))
+            {
+                MessageBox.Show("Phone Number Must Contain Only Numbers");
+                Error = true;
+            }
+
+            else if (txtPhone.Text.Length != 11)
+            {
+                MessageBox.Show("Phone Number Must Be 11 Digits");
+                Error = true;
+            }
+
+            else if (txtPhone.Text.StartsWith("01") == false)
+            {
+                MessageBox.Show("Phone Number Must Start With 01");
+                Error = true;
+            }
+
+            else if (txtPassword.Text == "")
+            {
+                MessageBox.Show("Please Enter Password");
+                Error = true;
+            }
+
+            else if (txtPassword.Text.Length < 5)
+            {
+                MessageBox.Show("Password Must Be At Least 5 Characters");
+                Error = true;
+            }
+
+            else if (txtSalary.Text == "")
+            {
+                MessageBox.Show("Please Enter Salary");
+                Error = true;
+            }
+
+            else if (rdoMale.Checked == false && rdoFemale.Checked == false)
+            {
+                MessageBox.Show("Please Select Gender");
+                Error = true;
+            }
+
+            else if (cmbQuestion.Text == "")
+            {
+                MessageBox.Show("Please Select Question");
+                Error = true;
+            }
+
+            else if (txtAnswer.Text == "")
+            {
+                MessageBox.Show("Please Enter Answer");
+                Error = true;
+            }
+
+            else if (rtxtAddress.Text == "")
+            {
+                MessageBox.Show("Please Enter Address");
+                Error = true;
+            }
+
+            decimal salary;
+
+            if (decimal.TryParse(txtSalary.Text, out salary) == false)
+            {
+                MessageBox.Show("Salary Must Be Number");
+                Error = true;
+            }
+
+           
+            if (Error)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         private void btnPharmacist_Click(object sender, EventArgs e)
@@ -104,8 +211,36 @@ namespace PharmaHealix
             conn.Close();
         }
 
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
+
+            if (PharmacistValidation() == false)
+            {
+                return;
+            }
+
+
+            SqlConnection checkconn = new SqlConnection(db.connection);
+
+            checkconn.Open();
+
+            string checkquery = "select count(*) from UserTable where Username='" + txtUsername.Text + "'";
+
+            SqlCommand checkcmd = new SqlCommand(checkquery, checkconn);
+
+            int count = Convert.ToInt32(checkcmd.ExecuteScalar());
+
+            checkconn.Close();
+
+            if (count > 0)
+            {
+                MessageBox.Show("Username Already Exists");
+                return;
+            }
+
+
+
             string gender = "";
 
             if (rdoMale.Checked)
@@ -118,30 +253,8 @@ namespace PharmaHealix
                 gender = "Female";
             }
 
-            if (txtName.Text == "" ||
-                txtUsername.Text == "" ||
-                txtPhone.Text == "" ||
-                txtPassword.Text == "" ||
-                txtSalary.Text == "" ||
-                cmbQuestion.Text == "" ||
-                txtAnswer.Text == "" ||
-                rtxtAddress.Text == "")
-            {
-                MessageBox.Show("Please Fill All Information");
-
-                return;
-            }
-
-           /* decimal salary;
-
-            if (!decimal.TryParse(txtSalary.Text, out salary))
-            {
-                MessageBox.Show("Salary Must Be Number");
-
-                return;
-            }
-           */
-
+           
+           
             SqlConnection conn = new SqlConnection(db.connection);
 
             conn.Open();
@@ -163,7 +276,7 @@ namespace PharmaHealix
 
             MessageBox.Show("Pharmacist Added");
 
-            txtStaffID.Text = "";
+           
             txtName.Text = "";
             txtUsername.Text = "";
             txtPhone.Text = "";
@@ -178,44 +291,19 @@ namespace PharmaHealix
             rdoFemale.Checked = false;
 
         }
-
-        private void dgvPharmacist_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            id = Convert.ToInt32(dgvPharmacist.Rows[e.RowIndex].Cells[7].Value);
-
-            txtName.Text = dgvPharmacist.Rows[e.RowIndex].Cells[0].Value.ToString();
-
-            txtPhone.Text = dgvPharmacist.Rows[e.RowIndex].Cells[1].Value.ToString();
-
-            txtUsername.Text = dgvPharmacist.Rows[e.RowIndex].Cells[2].Value.ToString();
-
-            rtxtAddress.Text = dgvPharmacist.Rows[e.RowIndex].Cells[3].Value.ToString();
-
-            cmbQuestion.Text = dgvPharmacist.Rows[e.RowIndex].Cells[4].Value.ToString();
-
-            txtAnswer.Text = dgvPharmacist.Rows[e.RowIndex].Cells[5].Value.ToString();
-
-            txtPassword.Text = dgvPharmacist.Rows[e.RowIndex].Cells[6].Value.ToString();
-
-            txtStaffID.Text = dgvPharmacist.Rows[e.RowIndex].Cells[7].Value.ToString();
-
-            string gender = dgvPharmacist.Rows[e.RowIndex].Cells[8].Value.ToString();
-
-            if (gender == "Male")
-            {
-                rdoMale.Checked = true;
-            }
-
-            if (gender == "Female")
-            {
-                rdoFemale.Checked = true;
-            }
-
-            txtSalary.Text = dgvPharmacist.Rows[e.RowIndex].Cells[9].Value.ToString();
-        }
+ 
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+
+            if (PharmacistValidation() == false)
+            {
+                return;
+            }
+
+
+
+
             string gender = "";
 
             if (rdoMale.Checked)
@@ -239,7 +327,7 @@ namespace PharmaHealix
 
             cmd1.ExecuteNonQuery();
 
-            string query2 = "Update StaffTable set Gender='" + gender + "', Salary='" + txtSalary.Text + "' where StaffID=" + id;
+            string query2 = "Update StaffTable set Gender='" + gender + "', Salary='" + txtSalary.Text + "' where Username='" + txtUsername.Text + "'";
 
             SqlCommand cmd2 = new SqlCommand(query2, conn);
 
@@ -276,7 +364,7 @@ namespace PharmaHealix
 
             conn.Open();
 
-            string query1 = "Delete from StaffTable where StaffID=" + id;
+            string query1 = "Delete from StaffTable where Username='" + txtUsername.Text + "'";
 
             SqlCommand cmd1 = new SqlCommand(query1, conn);
 
@@ -292,7 +380,7 @@ namespace PharmaHealix
 
             MessageBox.Show("Pharmacist Deleted");
 
-            txtStaffID.Text = "";
+            
             txtName.Text = "";
             txtUsername.Text = "";
             txtPhone.Text = "";
@@ -330,7 +418,7 @@ namespace PharmaHealix
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtStaffID.Text = "";
+           
             txtName.Text = "";
             txtUsername.Text = "";
             txtPhone.Text = "";
@@ -344,6 +432,45 @@ namespace PharmaHealix
 
             rdoMale.Checked = false;
             rdoFemale.Checked = false;
+        }
+
+        private void dgvPharmacist_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            txtName.Text = dgvPharmacist.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+            txtPhone.Text = dgvPharmacist.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+            txtUsername.Text = dgvPharmacist.Rows[e.RowIndex].Cells[2].Value.ToString();
+
+            rtxtAddress.Text = dgvPharmacist.Rows[e.RowIndex].Cells[3].Value.ToString();
+
+            cmbQuestion.Text = dgvPharmacist.Rows[e.RowIndex].Cells[4].Value.ToString();
+
+            txtAnswer.Text = dgvPharmacist.Rows[e.RowIndex].Cells[5].Value.ToString();
+
+            txtPassword.Text = dgvPharmacist.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+
+
+            string gender = dgvPharmacist.Rows[e.RowIndex].Cells[8].Value.ToString();
+
+            if (gender == "Male")
+            {
+                rdoMale.Checked = true;
+            }
+
+            if (gender == "Female")
+            {
+                rdoFemale.Checked = true;
+            }
+
+            txtSalary.Text = dgvPharmacist.Rows[e.RowIndex].Cells[9].Value.ToString();
+
         }
     }
 }

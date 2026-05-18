@@ -42,7 +42,7 @@ namespace PharmaHealix
             this.Hide();
         }
 
-       
+
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
@@ -131,41 +131,65 @@ namespace PharmaHealix
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+
             SqlConnection conn = new SqlConnection(db.connection);
 
             conn.Open();
 
-            string query = "Delete from AppointmentTable where AppointmentID=" + id;
+            string statusquery = "select Status from AppointmentTable where AppointmentID=" + id;
 
-            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlCommand statuscmd = new SqlCommand(statusquery, conn);
 
-            cmd.ExecuteNonQuery();
-
-            conn.Close();
-
-            MessageBox.Show("Appointment Deleted");
-
-            string showquery = "select * from AppointmentTable";
-
-            conn.Open();
-
-            SqlCommand showcmd = new SqlCommand(showquery, conn);
-
-            SqlDataAdapter adp = new SqlDataAdapter(showcmd);
-
-            DataSet ds = new DataSet();
-
-            adp.Fill(ds);
-
-            DataTable dt = ds.Tables[0];
-
-            dgvAppointment.DataSource = dt;
-
-            dgvAppointment.AutoGenerateColumns = true;
+            string status = statuscmd.ExecuteScalar().ToString();
 
             conn.Close();
+
+            if (status != "Pending")
+            {
+                MessageBox.Show("Only Pending Appointments Can Be Deleted");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("Are You Sure?", "Delete", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                conn.Open();
+
+                string query = "Delete from AppointmentTable where AppointmentID=" + id;
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+
+                MessageBox.Show("Appointment Deleted");
+
+                string showquery = "select * from AppointmentTable";
+
+                conn.Open();
+
+                SqlCommand showcmd = new SqlCommand(showquery, conn);
+
+                SqlDataAdapter adp = new SqlDataAdapter(showcmd);
+
+                DataSet ds = new DataSet();
+
+                adp.Fill(ds);
+
+                DataTable dt = ds.Tables[0];
+
+                dgvAppointment.DataSource = dt;
+
+                dgvAppointment.AutoGenerateColumns = true;
+
+                conn.Close();
+
+            }
         }
     }
-    }
+}
+
     
 

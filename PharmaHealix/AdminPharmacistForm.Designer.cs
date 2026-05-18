@@ -39,11 +39,9 @@
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnAppointment = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.lblStaffID = new System.Windows.Forms.Label();
             this.lblPharmacistName = new System.Windows.Forms.Label();
             this.lblGender = new System.Windows.Forms.Label();
             this.Salary = new System.Windows.Forms.Label();
-            this.txtStaffID = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtSalary = new System.Windows.Forms.TextBox();
             this.rdoMale = new System.Windows.Forms.RadioButton();
@@ -212,18 +210,6 @@
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // lblStaffID
-            // 
-            this.lblStaffID.AutoSize = true;
-            this.lblStaffID.BackColor = System.Drawing.Color.Transparent;
-            this.lblStaffID.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaffID.Location = new System.Drawing.Point(293, 131);
-            this.lblStaffID.Name = "lblStaffID";
-            this.lblStaffID.Size = new System.Drawing.Size(85, 28);
-            this.lblStaffID.TabIndex = 31;
-            this.lblStaffID.Text = "Staff ID";
-            this.lblStaffID.Click += new System.EventHandler(this.lblPharmacistID_Click);
-            // 
             // lblPharmacistName
             // 
             this.lblPharmacistName.AutoSize = true;
@@ -256,15 +242,6 @@
             this.Salary.Size = new System.Drawing.Size(71, 28);
             this.Salary.TabIndex = 35;
             this.Salary.Text = "Salary";
-            // 
-            // txtStaffID
-            // 
-            this.txtStaffID.BackColor = System.Drawing.Color.White;
-            this.txtStaffID.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStaffID.Location = new System.Drawing.Point(429, 127);
-            this.txtStaffID.Name = "txtStaffID";
-            this.txtStaffID.Size = new System.Drawing.Size(250, 37);
-            this.txtStaffID.TabIndex = 39;
             // 
             // txtName
             // 
@@ -393,7 +370,8 @@
             this.dgvPharmacist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPharmacist.Size = new System.Drawing.Size(448, 341);
             this.dgvPharmacist.TabIndex = 57;
-            this.dgvPharmacist.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPharmacist_CellContentClick);
+            this.dgvPharmacist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPharmacist_CellClick);
+            
             // 
             // lblUsername
             // 
@@ -464,6 +442,7 @@
             // txtUsername
             // 
             this.txtUsername.BackColor = System.Drawing.Color.White;
+            this.txtUsername.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(429, 218);
             this.txtUsername.Name = "txtUsername";
@@ -551,11 +530,9 @@
             this.Controls.Add(this.rdoMale);
             this.Controls.Add(this.txtSalary);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.txtStaffID);
             this.Controls.Add(this.Salary);
             this.Controls.Add(this.lblGender);
             this.Controls.Add(this.lblPharmacistName);
-            this.Controls.Add(this.lblStaffID);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.pnlHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -585,11 +562,9 @@
         private System.Windows.Forms.Button btnInventory;
         private System.Windows.Forms.Button btnAppointment;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Label lblStaffID;
         private System.Windows.Forms.Label lblPharmacistName;
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.Label Salary;
-        private System.Windows.Forms.TextBox txtStaffID;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtSalary;
         private System.Windows.Forms.RadioButton rdoMale;

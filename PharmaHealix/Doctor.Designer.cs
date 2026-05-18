@@ -72,6 +72,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabRecords = new System.Windows.Forms.TabPage();
+            this.btnClearSearch = new System.Windows.Forms.Button();
             this.gbPatientDetails = new System.Windows.Forms.GroupBox();
             this.rtbMedicalHistory = new System.Windows.Forms.RichTextBox();
             this.mhslbl = new System.Windows.Forms.Label();
@@ -82,12 +83,13 @@
             this.gbDirectory = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.gbSearch = new System.Windows.Forms.GroupBox();
-            this.btnClearSearch = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearchPatient = new System.Windows.Forms.TextBox();
             this.snamelbl = new System.Windows.Forms.Label();
             this.tabAvailability = new System.Windows.Forms.TabPage();
             this.gbMedInfo = new System.Windows.Forms.GroupBox();
+            this.rtbSideEffects = new System.Windows.Forms.RichTextBox();
+            this.rtbDescription = new System.Windows.Forms.RichTextBox();
             this.Shelflbl = new System.Windows.Forms.Label();
             this.Strengthlbl = new System.Windows.Forms.Label();
             this.txtGenericName = new System.Windows.Forms.TextBox();
@@ -102,8 +104,6 @@
             this.gbApptActions = new System.Windows.Forms.GroupBox();
             this.btnCancelAppt = new System.Windows.Forms.Button();
             this.btnStartConsultation = new System.Windows.Forms.Button();
-            this.txtReason = new System.Windows.Forms.TextBox();
-            this.Reasonlbl = new System.Windows.Forms.Label();
             this.gbApptQueue = new System.Windows.Forms.GroupBox();
             this.dgvPatientSchedule = new System.Windows.Forms.DataGridView();
             this.gbApptFilter = new System.Windows.Forms.GroupBox();
@@ -116,8 +116,6 @@
             this.medilogobtn = new System.Windows.Forms.Button();
             this.Exitbtn = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.rtbDescription = new System.Windows.Forms.RichTextBox();
-            this.rtbSideEffects = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPrescription.SuspendLayout();
@@ -662,6 +660,18 @@
             this.tabRecords.TabIndex = 1;
             this.tabRecords.Text = "Records";
             // 
+            // btnClearSearch
+            // 
+            this.btnClearSearch.BackColor = System.Drawing.Color.Olive;
+            this.btnClearSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearSearch.Location = new System.Drawing.Point(324, 536);
+            this.btnClearSearch.Name = "btnClearSearch";
+            this.btnClearSearch.Size = new System.Drawing.Size(211, 37);
+            this.btnClearSearch.TabIndex = 3;
+            this.btnClearSearch.Text = "Clear Search";
+            this.btnClearSearch.UseVisualStyleBackColor = false;
+            this.btnClearSearch.Click += new System.EventHandler(this.btnClearSearch_Click);
+            // 
             // gbPatientDetails
             // 
             this.gbPatientDetails.Controls.Add(this.rtbMedicalHistory);
@@ -770,18 +780,6 @@
             this.gbSearch.TabStop = false;
             this.gbSearch.Text = "1. Search Patient Directory";
             // 
-            // btnClearSearch
-            // 
-            this.btnClearSearch.BackColor = System.Drawing.Color.Olive;
-            this.btnClearSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearSearch.Location = new System.Drawing.Point(324, 536);
-            this.btnClearSearch.Name = "btnClearSearch";
-            this.btnClearSearch.Size = new System.Drawing.Size(211, 37);
-            this.btnClearSearch.TabIndex = 3;
-            this.btnClearSearch.Text = "Clear Search";
-            this.btnClearSearch.UseVisualStyleBackColor = false;
-            this.btnClearSearch.Click += new System.EventHandler(this.btnClearSearch_Click);
-            // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.Olive;
@@ -840,6 +838,24 @@
             this.gbMedInfo.TabIndex = 2;
             this.gbMedInfo.TabStop = false;
             this.gbMedInfo.Text = "3. Selected Medicine Details";
+            // 
+            // rtbSideEffects
+            // 
+            this.rtbSideEffects.Location = new System.Drawing.Point(142, 236);
+            this.rtbSideEffects.Name = "rtbSideEffects";
+            this.rtbSideEffects.ReadOnly = true;
+            this.rtbSideEffects.Size = new System.Drawing.Size(170, 96);
+            this.rtbSideEffects.TabIndex = 7;
+            this.rtbSideEffects.Text = "";
+            // 
+            // rtbDescription
+            // 
+            this.rtbDescription.Location = new System.Drawing.Point(142, 105);
+            this.rtbDescription.Name = "rtbDescription";
+            this.rtbDescription.ReadOnly = true;
+            this.rtbDescription.Size = new System.Drawing.Size(170, 96);
+            this.rtbDescription.TabIndex = 6;
+            this.rtbDescription.Text = "";
             // 
             // Shelflbl
             // 
@@ -962,8 +978,6 @@
             // 
             this.gbApptActions.Controls.Add(this.btnCancelAppt);
             this.gbApptActions.Controls.Add(this.btnStartConsultation);
-            this.gbApptActions.Controls.Add(this.txtReason);
-            this.gbApptActions.Controls.Add(this.Reasonlbl);
             this.gbApptActions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbApptActions.Location = new System.Drawing.Point(7, 438);
             this.gbApptActions.Name = "gbApptActions";
@@ -976,7 +990,7 @@
             // 
             this.btnCancelAppt.BackColor = System.Drawing.Color.IndianRed;
             this.btnCancelAppt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelAppt.Location = new System.Drawing.Point(371, 98);
+            this.btnCancelAppt.Location = new System.Drawing.Point(432, 70);
             this.btnCancelAppt.Name = "btnCancelAppt";
             this.btnCancelAppt.Size = new System.Drawing.Size(275, 41);
             this.btnCancelAppt.TabIndex = 6;
@@ -988,31 +1002,13 @@
             // 
             this.btnStartConsultation.BackColor = System.Drawing.Color.Olive;
             this.btnStartConsultation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartConsultation.Location = new System.Drawing.Point(21, 98);
+            this.btnStartConsultation.Location = new System.Drawing.Point(33, 70);
             this.btnStartConsultation.Name = "btnStartConsultation";
             this.btnStartConsultation.Size = new System.Drawing.Size(275, 41);
             this.btnStartConsultation.TabIndex = 5;
             this.btnStartConsultation.Text = "Start Consultation";
             this.btnStartConsultation.UseVisualStyleBackColor = false;
             this.btnStartConsultation.Click += new System.EventHandler(this.btnStartConsultation_Click);
-            // 
-            // txtReason
-            // 
-            this.txtReason.Location = new System.Drawing.Point(165, 51);
-            this.txtReason.Name = "txtReason";
-            this.txtReason.ReadOnly = true;
-            this.txtReason.Size = new System.Drawing.Size(390, 28);
-            this.txtReason.TabIndex = 2;
-            // 
-            // Reasonlbl
-            // 
-            this.Reasonlbl.AutoSize = true;
-            this.Reasonlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Reasonlbl.Location = new System.Drawing.Point(17, 51);
-            this.Reasonlbl.Name = "Reasonlbl";
-            this.Reasonlbl.Size = new System.Drawing.Size(126, 20);
-            this.Reasonlbl.TabIndex = 1;
-            this.Reasonlbl.Text = "Reason for Visit:";
             // 
             // gbApptQueue
             // 
@@ -1141,24 +1137,6 @@
             this.Exitbtn.UseVisualStyleBackColor = false;
             this.Exitbtn.Click += new System.EventHandler(this.Exitbtn_Click);
             // 
-            // rtbDescription
-            // 
-            this.rtbDescription.Location = new System.Drawing.Point(142, 105);
-            this.rtbDescription.Name = "rtbDescription";
-            this.rtbDescription.ReadOnly = true;
-            this.rtbDescription.Size = new System.Drawing.Size(170, 96);
-            this.rtbDescription.TabIndex = 6;
-            this.rtbDescription.Text = "";
-            // 
-            // rtbSideEffects
-            // 
-            this.rtbSideEffects.Location = new System.Drawing.Point(142, 236);
-            this.rtbSideEffects.Name = "rtbSideEffects";
-            this.rtbSideEffects.ReadOnly = true;
-            this.rtbSideEffects.Size = new System.Drawing.Size(170, 96);
-            this.rtbSideEffects.TabIndex = 7;
-            this.rtbSideEffects.Text = "";
-            // 
             // Doctor
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1200,7 +1178,6 @@
             this.gbInventorySearch.PerformLayout();
             this.tabAppointments.ResumeLayout(false);
             this.gbApptActions.ResumeLayout(false);
-            this.gbApptActions.PerformLayout();
             this.gbApptQueue.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatientSchedule)).EndInit();
             this.gbApptFilter.ResumeLayout(false);
@@ -1290,8 +1267,6 @@
         private System.Windows.Forms.GroupBox gbApptActions;
         private System.Windows.Forms.Button btnCancelAppt;
         private System.Windows.Forms.Button btnStartConsultation;
-        private System.Windows.Forms.TextBox txtReason;
-        private System.Windows.Forms.Label Reasonlbl;
         private System.Windows.Forms.Label lblMedicineError;
         private System.Windows.Forms.Label lblDiagnosisError;
         private System.Windows.Forms.Label lblRouteError;

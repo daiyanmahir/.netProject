@@ -33,7 +33,7 @@ namespace PharmaHealix
 
             foreach (TabPage tab in tabControl1.TabPages)
             {
-                tab.BackColor = Color.Transparent; // Sets each page to transparent
+                tab.BackColor = Color.Transparent; 
             }
         }
 
@@ -72,7 +72,7 @@ namespace PharmaHealix
         }
         private void btnSendPrescription_Click(object sender, EventArgs e)
         {
-            // 1. Reset all Error Labels
+            
             lblMedicineError.Visible = false;
             lblDosageError.Visible = false;
             lblFrequencyError.Visible = false;
@@ -80,7 +80,7 @@ namespace PharmaHealix
             lblRouteError.Visible = false;
             lblDiagnosisError.Visible = false;
 
-            // Integrity check: Verify if a patient record is mapped in the text parameters
+            
             if (string.IsNullOrWhiteSpace(txtSelectedID.Text) || string.IsNullOrWhiteSpace(txtSelectedName.Text))
             {
                 MessageBox.Show("No active patient selected! Please select a patient from the 'Check Appointments' tab first.", "Execution Blocked", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -89,7 +89,7 @@ namespace PharmaHealix
 
             bool isValid = true;
 
-            // 2. Form Validations
+
             if (string.IsNullOrWhiteSpace(txtMedicineName.Text))
             {
                 lblMedicineError.Visible = true;
@@ -124,39 +124,34 @@ namespace PharmaHealix
             }
             if (!isValid)
             {
-                return; // Halt if validation rules failed
+                return; 
             }
 
-            // 3. Handle Optional Content Elements Safely
+            
             string usageInstructions = string.IsNullOrWhiteSpace(rtbUsageInstructions.Text) ? "None" : rtbUsageInstructions.Text.Trim();
             string pharmacistNotes = string.IsNullOrWhiteSpace(rtbPharmacistNote.Text) ? "None" : rtbPharmacistNote.Text.Trim();
 
-            // 4. Build Comma-Separated Prescription Text Block
-            // Pattern order layout: Diagnosis, Medicine, Dosage, Frequency, Quantity, Route, Instructions, Notes
+            
             string commaSeparatedPrescriptionText = $"{txtDiagnosis.Text.Trim()}, {txtMedicineName.Text.Trim()}, {txtDosage.Text.Trim()}, {txtFrequency.Text.Trim()}, {qty}, {cbRoute.SelectedItem}, {usageInstructions}, {pharmacistNotes}";
 
-            // 5. Database Queries setup (Insert Prescription Record and Update Appointment Workflow Node)
             string insertPrescriptionQuery = @"INSERT INTO PrescriptionTable (AppointmentID, DoctorID, PatientUsername, PrescriptionText, PrescriptionDate) 
                                                VALUES (@AppointmentID, @DoctorID, @PatientUsername, @PrescriptionText, GETDATE())";
             string updateStatusQuery = @"UPDATE AppointmentTable 
                                          SET Status = 'Complete' 
                                          WHERE AppointmentID = @AppointmentID";
-
             using (SqlConnection conn = new SqlConnection(new Db().connection))
             {
                 try
                 {
                     conn.Open();
 
-                    // Start a transaction scope bound layout to update both modules safely as a solid unit
                     using (SqlTransaction transaction = conn.BeginTransaction())
                     {
                         try
                         {
-                            // FIX: Convert txtSelectedID (which contains the validated ID) instead of the empty txtPatientID text box
+                            
                             int currentAppointmentID = Convert.ToInt32(txtSelectedID.Text.Trim());
 
-                            // A. Execute Prescription Table Insert
                             using (SqlCommand insertCmd = new SqlCommand(insertPrescriptionQuery, conn, transaction))
                             {
                                 insertCmd.Parameters.AddWithValue("@AppointmentID", currentAppointmentID);
@@ -166,27 +161,21 @@ namespace PharmaHealix
                                 insertCmd.ExecuteNonQuery();
                             }
 
-                            // B. Execute Appointment Table Status Field Update
                             using (SqlCommand updateCmd = new SqlCommand(updateStatusQuery, conn, transaction))
                             {
                                 updateCmd.Parameters.AddWithValue("@AppointmentID", currentAppointmentID);
                                 updateCmd.ExecuteNonQuery();
                             }
 
-                            // Commit data modifications together safely if execution pipeline passes cleanly
                             transaction.Commit();
-
                             MessageBox.Show("Prescription successfully saved and appointment status updated to 'Complete'!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            // 6. Reset Form Fields Cleanly for next workflow node task
                             ClearPrescriptionForm();
 
-                            // Instantly refresh the schedule view display data grid panel live
                             btnRefreshAppts_Click(sender, e);
                         }
                         catch (Exception ex)
-                        {
-                            // Roll back changes if any step fails
+                        { 
                             transaction.Rollback();
                             throw new Exception("Transaction processing execution failed. Reverting structural updates. Details: " + ex.Message);
                         }
@@ -210,9 +199,7 @@ namespace PharmaHealix
             rtbPharmacistNote.Clear();
             txtMedicineName.Clear();
             cbRoute.SelectedIndex = -1;
-            // Re-sync date parameters state
             txtCurrentDate.Value = DateTime.Today;
-            // Clean active field references
             selectedAppointmentID = "";
             selectedPatientUsername = "";
 
@@ -246,10 +233,8 @@ namespace PharmaHealix
         }
         private void btnRefreshAppts_Click(object sender, EventArgs e)
         {
-            // Format selected picker date to match standard database storage layout (yyyy-MM-dd)
             string selectedDate = dtpFilterDate.Value.ToString("yyyy-MM-dd");
 
-            // DYNAMIC UPDATE: Replaced 'DoctorID = 5' with parameterized '@DoctorID' filter logic
             string query = @"SELECT AppointmentID, PatientUsername, AppointmentTime, Status 
                              FROM AppointmentTable 
                              WHERE AppointmentDate = @AppointmentDate AND DoctorID = @DoctorID";
@@ -261,12 +246,11 @@ namespace PharmaHealix
                     conn.Open();
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
                     adapter.SelectCommand.Parameters.AddWithValue("@AppointmentDate", selectedDate);
-                    adapter.SelectCommand.Parameters.AddWithValue("@DoctorID", currentDoctorId); // Dynamic bound input value
+                    adapter.SelectCommand.Parameters.AddWithValue("@DoctorID", currentDoctorId);
 
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
 
-                    // Binds data directly to your central schedule grid panel
                     dgvPatientSchedule.DataSource = dt;
                     lblApptCount.Text = dt.Rows.Count.ToString();
 
@@ -283,16 +267,14 @@ namespace PharmaHealix
         }
         private void dgvPatientSchedule_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Validate that the user clicked a valid data row, not the column header line
+           
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgvPatientSchedule.Rows[e.RowIndex];
-                // Safely extract column strings into our state fields
+                
                 selectedAppointmentID = row.Cells["AppointmentID"].Value.ToString();
-                selectedPatientUsername = row.Cells["PatientUsername"].Value.ToString();
-                // Reason for Visit logic override: Column doesn't exist yet in database tables
-                // txtReason.Text = row.Cells["ReasonOfVisit"].Value.ToString();
-                txtReason.Text = "Reason column not assigned in database table yet.";
+                selectedPatientUsername = row.Cells["PatientUsername"].Value.ToString();  
+                
             }
         }
         private void btnStartConsultation_Click(object sender, EventArgs e)
@@ -303,15 +285,11 @@ namespace PharmaHealix
                 return;
             }
 
-            // 1. Shift UI viewport directly to the prescription creation tab workspace
             tabControl1.SelectedTab = tabPrescription;
 
-            // 2. Automatically populate target text inputs with active tracking details
             txtSelectedName.Text = selectedPatientUsername;
             txtSelectedID.Text = selectedAppointmentID;
 
-            // Clear temporary selection strings cleanly
-            txtReason.Clear();
         }
         private void btnCancelAppt_Click(object sender, EventArgs e)
         {
@@ -335,12 +313,9 @@ namespace PharmaHealix
                         cmd.ExecuteNonQuery();
                     }
                     MessageBox.Show("Appointment tracking record updated to 'Cancelled'.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    // Instantly refresh the schedule view display panel live
                     btnRefreshAppts_Click(sender, e);
-                    // Reset tracking state variable fields
                     selectedAppointmentID = "";
                     selectedPatientUsername = "";
-                    txtReason.Clear();
                 }
                 catch (Exception ex)
                 {
@@ -353,19 +328,12 @@ namespace PharmaHealix
 
 
 
-
-        // =========================================================================
-        // 3. MEDICINE AVAILABILITY MODULE LOGIC (UPDATED WITH dgvInventory)
-        // =========================================================================
-
         
         private void LoadMedicineStock(string searchToken)
         {
-            // Pull overview metrics from MedicineTable
             string medicineQuery = @"SELECT MedicineID, MedicineName, Category, Stock, UnitPrice 
                                      FROM MedicineTable";
 
-            // If a search keyword is provided, append a SQL LIKE condition filter
             if (!string.IsNullOrWhiteSpace(searchToken))
             {
                 medicineQuery += " WHERE MedicineName LIKE @SearchToken OR MedicineID LIKE @SearchToken";
@@ -386,7 +354,6 @@ namespace PharmaHealix
                         DataTable dt = new DataTable();
                         adapter.Fill(dt);
 
-                        // SUCCESS: Data bound directly to your renamed dgvInventory
                         dgvInventory.DataSource = dt;
 
                         if (dgvInventory.Columns.Count > 0)
@@ -404,19 +371,15 @@ namespace PharmaHealix
 
         private void btnStockSearch_Click(object sender, EventArgs e)
         {
-            // Reads the string typed into your search input text box directly
             LoadMedicineStock(txtSearchMedicine.Text);
         }
 
         private void dgvInventory_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Verify selection point row index is a valid data line item
             if (e.RowIndex >= 0)
             {
-                // Safely grab the selected MedicineID row cell item entry from dgvInventory
                 string selectedMedID = dgvInventory.Rows[e.RowIndex].Cells["MedicineID"].Value.ToString();
 
-                // Build a precise query target to retrieve description and side effects fields
                 string detailQuery = "SELECT MedicineName, Description, SideEffect FROM MedicineTable WHERE MedicineID = @MedicineID";
 
                 using (SqlConnection conn = new SqlConnection(new Db().connection))
@@ -432,7 +395,6 @@ namespace PharmaHealix
                             {
                                 if (reader.Read())
                                 {
-                                    // Populate text elements live on the screen layout details panel
                                     txtGenericName.Text = reader["MedicineName"].ToString();
                                     rtbDescription.Text = reader["Description"].ToString();
                                     rtbSideEffects.Text = reader["SideEffect"].ToString();
@@ -455,19 +417,16 @@ namespace PharmaHealix
 
         private void LoadPrescriptionData(string searchName = "")
         {
-            // 1. Fixed the square bracket attribute typo here
-            // Connects the PrescriptionTable to the UserTable to fetch the readable Full Name
-            string query = @"
-        SELECT 
+            string query = @"SELECT 
             p.PrescriptionID AS [Prescription ID],
             u.Name AS [Patient Name],
             p.PatientUsername AS [Patient Username],
             p.AppointmentID AS [Appointment ID],
             p.PrescriptionText AS [Prescription Details],
             p.PrescriptionDate AS [Date Prescribed]
-        FROM PrescriptionTable p
-        INNER JOIN UserTable u ON p.PatientUsername = u.Username
-        WHERE p.DoctorID = @DoctorID";
+            FROM PrescriptionTable p
+            INNER JOIN UserTable u ON p.PatientUsername = u.Username
+            WHERE p.DoctorID = @DoctorID";
 
             if (!string.IsNullOrEmpty(searchName))
             {

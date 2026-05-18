@@ -36,6 +36,8 @@
             this.patientlisttoppan = new System.Windows.Forms.Panel();
             this.patientlisttoplbl = new System.Windows.Forms.Label();
             this.orderpan = new System.Windows.Forms.Panel();
+            this.patientusernametb = new System.Windows.Forms.TextBox();
+            this.patientlbl = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.phordtotaltb = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -120,8 +122,13 @@
             this.patientlistbtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.medilogobtn = new System.Windows.Forms.Button();
-            this.patientusernametb = new System.Windows.Forms.TextBox();
-            this.patientlbl = new System.Windows.Forms.Label();
+            this.phinvimgtb = new System.Windows.Forms.Label();
+            this.instructionlbl = new System.Windows.Forms.Label();
+            this.phinvinstructiontb = new System.Windows.Forms.TextBox();
+            this.phimgtb = new System.Windows.Forms.TextBox();
+            this.searchmedtb = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.searchmedbtn = new System.Windows.Forms.Button();
             this.patientlistpan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phprdgv)).BeginInit();
             this.patientlisttoppan.SuspendLayout();
@@ -217,6 +224,9 @@
             // orderpan
             // 
             this.orderpan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
+            this.orderpan.Controls.Add(this.searchmedbtn);
+            this.orderpan.Controls.Add(this.searchmedtb);
+            this.orderpan.Controls.Add(this.label14);
             this.orderpan.Controls.Add(this.patientusernametb);
             this.orderpan.Controls.Add(this.patientlbl);
             this.orderpan.Controls.Add(this.numericUpDown1);
@@ -239,16 +249,33 @@
             this.orderpan.TabIndex = 43;
             this.orderpan.Visible = false;
             // 
+            // patientusernametb
+            // 
+            this.patientusernametb.Location = new System.Drawing.Point(572, 327);
+            this.patientusernametb.Name = "patientusernametb";
+            this.patientusernametb.Size = new System.Drawing.Size(362, 26);
+            this.patientusernametb.TabIndex = 18;
+            // 
+            // patientlbl
+            // 
+            this.patientlbl.AutoSize = true;
+            this.patientlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patientlbl.Location = new System.Drawing.Point(567, 303);
+            this.patientlbl.Name = "patientlbl";
+            this.patientlbl.Size = new System.Drawing.Size(173, 25);
+            this.patientlbl.TabIndex = 17;
+            this.patientlbl.Text = "Patient Username:";
+            // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(572, 327);
+            this.numericUpDown1.Location = new System.Drawing.Point(572, 390);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(362, 26);
             this.numericUpDown1.TabIndex = 16;
             // 
             // phordtotaltb
             // 
-            this.phordtotaltb.Location = new System.Drawing.Point(30, 671);
+            this.phordtotaltb.Location = new System.Drawing.Point(30, 700);
             this.phordtotaltb.Name = "phordtotaltb";
             this.phordtotaltb.ReadOnly = true;
             this.phordtotaltb.Size = new System.Drawing.Size(130, 26);
@@ -258,7 +285,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(25, 640);
+            this.label13.Location = new System.Drawing.Point(25, 670);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(135, 25);
             this.label13.TabIndex = 14;
@@ -270,7 +297,7 @@
             this.phordremovebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.phordremovebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phordremovebtn.ForeColor = System.Drawing.Color.White;
-            this.phordremovebtn.Location = new System.Drawing.Point(406, 359);
+            this.phordremovebtn.Location = new System.Drawing.Point(410, 401);
             this.phordremovebtn.Name = "phordremovebtn";
             this.phordremovebtn.Size = new System.Drawing.Size(151, 44);
             this.phordremovebtn.TabIndex = 13;
@@ -296,7 +323,7 @@
             // 
             this.phordcartdgv.AllowUserToOrderColumns = true;
             this.phordcartdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.phordcartdgv.Location = new System.Drawing.Point(26, 431);
+            this.phordcartdgv.Location = new System.Drawing.Point(26, 450);
             this.phordcartdgv.Name = "phordcartdgv";
             this.phordcartdgv.RowHeadersWidth = 62;
             this.phordcartdgv.RowTemplate.Height = 28;
@@ -307,7 +334,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(25, 391);
+            this.label11.Location = new System.Drawing.Point(25, 420);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(110, 25);
             this.label11.TabIndex = 10;
@@ -319,7 +346,7 @@
             this.phordaddbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.phordaddbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phordaddbtn.ForeColor = System.Drawing.Color.White;
-            this.phordaddbtn.Location = new System.Drawing.Point(406, 309);
+            this.phordaddbtn.Location = new System.Drawing.Point(410, 351);
             this.phordaddbtn.Name = "phordaddbtn";
             this.phordaddbtn.Size = new System.Drawing.Size(151, 44);
             this.phordaddbtn.TabIndex = 7;
@@ -331,7 +358,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(567, 303);
+            this.label10.Location = new System.Drawing.Point(567, 364);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(85, 25);
             this.label10.TabIndex = 5;
@@ -339,8 +366,9 @@
             // 
             // phordmedicinetb
             // 
-            this.phordmedicinetb.Location = new System.Drawing.Point(30, 327);
+            this.phordmedicinetb.Location = new System.Drawing.Point(30, 390);
             this.phordmedicinetb.Name = "phordmedicinetb";
+            this.phordmedicinetb.ReadOnly = true;
             this.phordmedicinetb.Size = new System.Drawing.Size(362, 26);
             this.phordmedicinetb.TabIndex = 4;
             // 
@@ -348,7 +376,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(25, 301);
+            this.label9.Location = new System.Drawing.Point(25, 364);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(91, 25);
             this.label9.TabIndex = 3;
@@ -391,6 +419,10 @@
             // inventorypan
             // 
             this.inventorypan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
+            this.inventorypan.Controls.Add(this.phimgtb);
+            this.inventorypan.Controls.Add(this.phinvimgtb);
+            this.inventorypan.Controls.Add(this.instructionlbl);
+            this.inventorypan.Controls.Add(this.phinvinstructiontb);
             this.inventorypan.Controls.Add(this.phinvexpirydtp);
             this.inventorypan.Controls.Add(this.label12);
             this.inventorypan.Controls.Add(this.phinvstocktb);
@@ -423,7 +455,7 @@
             // 
             // phinvexpirydtp
             // 
-            this.phinvexpirydtp.Location = new System.Drawing.Point(544, 519);
+            this.phinvexpirydtp.Location = new System.Drawing.Point(544, 470);
             this.phinvexpirydtp.Name = "phinvexpirydtp";
             this.phinvexpirydtp.Size = new System.Drawing.Size(324, 26);
             this.phinvexpirydtp.TabIndex = 23;
@@ -432,7 +464,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(544, 395);
+            this.label12.Location = new System.Drawing.Point(544, 375);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(79, 29);
             this.label12.TabIndex = 22;
@@ -441,7 +473,7 @@
             // phinvstocktb
             // 
             this.phinvstocktb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phinvstocktb.Location = new System.Drawing.Point(544, 430);
+            this.phinvstocktb.Location = new System.Drawing.Point(544, 405);
             this.phinvstocktb.Name = "phinvstocktb";
             this.phinvstocktb.Size = new System.Drawing.Size(324, 32);
             this.phinvstocktb.TabIndex = 21;
@@ -452,7 +484,7 @@
             this.phinvupdatebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.phinvupdatebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phinvupdatebtn.ForeColor = System.Drawing.Color.White;
-            this.phinvupdatebtn.Location = new System.Drawing.Point(413, 657);
+            this.phinvupdatebtn.Location = new System.Drawing.Point(425, 676);
             this.phinvupdatebtn.Name = "phinvupdatebtn";
             this.phinvupdatebtn.Size = new System.Drawing.Size(134, 47);
             this.phinvupdatebtn.TabIndex = 20;
@@ -466,7 +498,7 @@
             this.phinvremovebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.phinvremovebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phinvremovebtn.ForeColor = System.Drawing.Color.White;
-            this.phinvremovebtn.Location = new System.Drawing.Point(621, 657);
+            this.phinvremovebtn.Location = new System.Drawing.Point(625, 676);
             this.phinvremovebtn.Name = "phinvremovebtn";
             this.phinvremovebtn.Size = new System.Drawing.Size(134, 47);
             this.phinvremovebtn.TabIndex = 19;
@@ -480,7 +512,7 @@
             this.phinvaddbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.phinvaddbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phinvaddbtn.ForeColor = System.Drawing.Color.White;
-            this.phinvaddbtn.Location = new System.Drawing.Point(201, 657);
+            this.phinvaddbtn.Location = new System.Drawing.Point(225, 676);
             this.phinvaddbtn.Name = "phinvaddbtn";
             this.phinvaddbtn.Size = new System.Drawing.Size(134, 47);
             this.phinvaddbtn.TabIndex = 18;
@@ -492,7 +524,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(544, 567);
+            this.label8.Location = new System.Drawing.Point(544, 510);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(147, 29);
             this.label8.TabIndex = 17;
@@ -501,7 +533,7 @@
             // phinvsideetb
             // 
             this.phinvsideetb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phinvsideetb.Location = new System.Drawing.Point(544, 598);
+            this.phinvsideetb.Location = new System.Drawing.Point(544, 540);
             this.phinvsideetb.Name = "phinvsideetb";
             this.phinvsideetb.Size = new System.Drawing.Size(324, 32);
             this.phinvsideetb.TabIndex = 16;
@@ -510,7 +542,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(115, 567);
+            this.label7.Location = new System.Drawing.Point(115, 510);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(141, 29);
             this.label7.TabIndex = 15;
@@ -519,7 +551,7 @@
             // phinvdescriptiontb
             // 
             this.phinvdescriptiontb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phinvdescriptiontb.Location = new System.Drawing.Point(115, 598);
+            this.phinvdescriptiontb.Location = new System.Drawing.Point(115, 540);
             this.phinvdescriptiontb.Name = "phinvdescriptiontb";
             this.phinvdescriptiontb.Size = new System.Drawing.Size(324, 32);
             this.phinvdescriptiontb.TabIndex = 14;
@@ -528,7 +560,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(544, 488);
+            this.label6.Location = new System.Drawing.Point(544, 440);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(141, 29);
             this.label6.TabIndex = 13;
@@ -538,7 +570,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(115, 488);
+            this.label5.Location = new System.Drawing.Point(115, 440);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 29);
             this.label5.TabIndex = 11;
@@ -547,7 +579,7 @@
             // phinvdosetb
             // 
             this.phinvdosetb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phinvdosetb.Location = new System.Drawing.Point(115, 519);
+            this.phinvdosetb.Location = new System.Drawing.Point(115, 470);
             this.phinvdosetb.Name = "phinvdosetb";
             this.phinvdosetb.Size = new System.Drawing.Size(324, 32);
             this.phinvdosetb.TabIndex = 10;
@@ -556,7 +588,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(115, 395);
+            this.label4.Location = new System.Drawing.Point(115, 375);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(131, 29);
             this.label4.TabIndex = 9;
@@ -565,7 +597,7 @@
             // phinvspricetb
             // 
             this.phinvspricetb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phinvspricetb.Location = new System.Drawing.Point(115, 430);
+            this.phinvspricetb.Location = new System.Drawing.Point(115, 405);
             this.phinvspricetb.Name = "phinvspricetb";
             this.phinvspricetb.Size = new System.Drawing.Size(141, 32);
             this.phinvspricetb.TabIndex = 8;
@@ -574,7 +606,7 @@
             // 
             this.la.AutoSize = true;
             this.la.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.la.Location = new System.Drawing.Point(269, 395);
+            this.la.Location = new System.Drawing.Point(269, 375);
             this.la.Name = "la";
             this.la.Size = new System.Drawing.Size(123, 29);
             this.la.TabIndex = 7;
@@ -583,7 +615,7 @@
             // phinvupricetb
             // 
             this.phinvupricetb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phinvupricetb.Location = new System.Drawing.Point(274, 430);
+            this.phinvupricetb.Location = new System.Drawing.Point(274, 405);
             this.phinvupricetb.Name = "phinvupricetb";
             this.phinvupricetb.Size = new System.Drawing.Size(165, 32);
             this.phinvupricetb.TabIndex = 6;
@@ -1054,7 +1086,7 @@
             this.pharamcistprofiletoplbl.AutoSize = true;
             this.pharamcistprofiletoplbl.Font = new System.Drawing.Font("Trebuchet MS", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pharamcistprofiletoplbl.ForeColor = System.Drawing.Color.Black;
-            this.pharamcistprofiletoplbl.Location = new System.Drawing.Point(397, 20);
+            this.pharamcistprofiletoplbl.Location = new System.Drawing.Point(411, 17);
             this.pharamcistprofiletoplbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pharamcistprofiletoplbl.Name = "pharamcistprofiletoplbl";
             this.pharamcistprofiletoplbl.Size = new System.Drawing.Size(248, 70);
@@ -1190,22 +1222,72 @@
             this.medilogobtn.TabIndex = 22;
             this.medilogobtn.UseVisualStyleBackColor = false;
             // 
-            // patientusernametb
+            // phinvimgtb
             // 
-            this.patientusernametb.Location = new System.Drawing.Point(572, 390);
-            this.patientusernametb.Name = "patientusernametb";
-            this.patientusernametb.Size = new System.Drawing.Size(362, 26);
-            this.patientusernametb.TabIndex = 18;
+            this.phinvimgtb.AutoSize = true;
+            this.phinvimgtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phinvimgtb.Location = new System.Drawing.Point(544, 575);
+            this.phinvimgtb.Name = "phinvimgtb";
+            this.phinvimgtb.Size = new System.Drawing.Size(86, 29);
+            this.phinvimgtb.TabIndex = 27;
+            this.phinvimgtb.Text = "Image:";
             // 
-            // patientlbl
+            // instructionlbl
             // 
-            this.patientlbl.AutoSize = true;
-            this.patientlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patientlbl.Location = new System.Drawing.Point(567, 364);
-            this.patientlbl.Name = "patientlbl";
-            this.patientlbl.Size = new System.Drawing.Size(173, 25);
-            this.patientlbl.TabIndex = 17;
-            this.patientlbl.Text = "Patient Username:";
+            this.instructionlbl.AutoSize = true;
+            this.instructionlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.instructionlbl.Location = new System.Drawing.Point(115, 575);
+            this.instructionlbl.Name = "instructionlbl";
+            this.instructionlbl.Size = new System.Drawing.Size(140, 29);
+            this.instructionlbl.TabIndex = 25;
+            this.instructionlbl.Text = "Instructions:";
+            // 
+            // phinvinstructiontb
+            // 
+            this.phinvinstructiontb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phinvinstructiontb.Location = new System.Drawing.Point(115, 605);
+            this.phinvinstructiontb.Name = "phinvinstructiontb";
+            this.phinvinstructiontb.Size = new System.Drawing.Size(324, 32);
+            this.phinvinstructiontb.TabIndex = 24;
+            // 
+            // phimgtb
+            // 
+            this.phimgtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phimgtb.Location = new System.Drawing.Point(544, 606);
+            this.phimgtb.Name = "phimgtb";
+            this.phimgtb.Size = new System.Drawing.Size(324, 32);
+            this.phimgtb.TabIndex = 28;
+            // 
+            // searchmedtb
+            // 
+            this.searchmedtb.Location = new System.Drawing.Point(30, 327);
+            this.searchmedtb.Name = "searchmedtb";
+            this.searchmedtb.Size = new System.Drawing.Size(362, 26);
+            this.searchmedtb.TabIndex = 20;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(25, 301);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(165, 25);
+            this.label14.TabIndex = 19;
+            this.label14.Text = "Search Medicine:";
+            // 
+            // searchmedbtn
+            // 
+            this.searchmedbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
+            this.searchmedbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchmedbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchmedbtn.ForeColor = System.Drawing.Color.White;
+            this.searchmedbtn.Location = new System.Drawing.Point(410, 301);
+            this.searchmedbtn.Name = "searchmedbtn";
+            this.searchmedbtn.Size = new System.Drawing.Size(151, 44);
+            this.searchmedbtn.TabIndex = 21;
+            this.searchmedbtn.Text = "Search";
+            this.searchmedbtn.UseVisualStyleBackColor = false;
+            this.searchmedbtn.Click += new System.EventHandler(this.searchmedbtn_Click);
             // 
             // Pharmacist
             // 
@@ -1361,5 +1443,12 @@
         private System.Windows.Forms.Button pharmacistprofileupdatebtn;
         private System.Windows.Forms.TextBox patientusernametb;
         private System.Windows.Forms.Label patientlbl;
+        private System.Windows.Forms.Label phinvimgtb;
+        private System.Windows.Forms.Label instructionlbl;
+        private System.Windows.Forms.TextBox phinvinstructiontb;
+        private System.Windows.Forms.TextBox phimgtb;
+        private System.Windows.Forms.TextBox searchmedtb;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button searchmedbtn;
     }
 }

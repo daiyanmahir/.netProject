@@ -140,6 +140,54 @@ namespace PharmaHealix
             conn.Close();
         }
 
+        private bool DoctorValidation()
+        {
+            if (txtName.Text == "" ||
+                txtUsername.Text == "" ||
+                txtPhone.Text == "" ||
+                txtPassword.Text == "" ||
+                txtFee.Text == "" ||
+                txtAnswer.Text == "" ||
+                rtxtAddress.Text == "")
+            {
+                MessageBox.Show("Please Fill All Information");
+                return false;
+            }
+
+            if (rdoMale.Checked == false && rdoFemale.Checked == false)
+            {
+                MessageBox.Show("Please Select Gender");
+                return false;
+            }
+
+            if (cbMBBS.Checked == false &&
+                cbFCPS.Checked == false &&
+                cbMD.Checked == false)
+            {
+                MessageBox.Show("Please Select Degree");
+                return false;
+            }
+
+            if (cmbQuestion.Text == "")
+            {
+                MessageBox.Show("Please Select Question");
+                return false;
+            }
+
+            decimal fee;
+
+            if (decimal.TryParse(txtFee.Text, out fee) == false)
+            {
+                MessageBox.Show("Fee Must Be Number");
+                return false;
+            }
+
+            return true;
+        }
+
+
+
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string gender = "";
@@ -155,49 +203,17 @@ namespace PharmaHealix
             }
 
 
-            if (txtName.Text == "" ||
-                txtUsername.Text == "" ||
-                txtPhone.Text == "" ||
-                txtPassword.Text == "" ||
-                txtFee.Text == "" ||
-                txtAnswer.Text == "" ||
-                rtxtAddress.Text == "")
-            {
-                MessageBox.Show("Please Fill All Information");
-                return;
-            }
-
-
-            if (rdoMale.Checked == false && rdoFemale.Checked == false)
-            {
-                MessageBox.Show("Please Select Gender");
-                return;
-            }
-
-
-            if (cbMBBS.Checked == false && cbFCPS.Checked == false && cbMD.Checked == false)
-
-
-            {
-                MessageBox.Show("Please Select Degree");
-                return;
-            }
-
-
-            if (cmbQuestion.Text == "")
-            {
-                MessageBox.Show("Please Select Question");
-                return;
-            }
-
-
-
 
             SqlConnection conn = new SqlConnection(db.connection);
 
             conn.Open();
 
-            
+
+            if (DoctorValidation() == false)
+            {
+                return;
+            }
+
 
             string speciality = "";
 
@@ -303,8 +319,14 @@ namespace PharmaHealix
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-           
-        
+
+            if (DoctorValidation() == false)
+            {
+                return;
+            }
+
+
+
             SqlConnection conn = new SqlConnection(db.connection);
 
             conn.Open();

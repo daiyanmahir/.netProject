@@ -15,6 +15,8 @@ namespace PharmaHealix
     public partial class Pharmacist : Form
     {
         private string username;
+
+       
          private string PhName
          {
              get { return pharmacistprofilenametxt.Text; }
@@ -50,6 +52,7 @@ namespace PharmaHealix
         {
             this.username = n;
             InitializeComponent();
+            welcomelbl.Text = $"Welcome, {username}";
         }
 
         private void Exitbtn_Click(object sender, EventArgs e)
@@ -506,36 +509,50 @@ namespace PharmaHealix
 
         private void phordaddbtn_Click(object sender, EventArgs e)
         {
-            if (phordmeddgv.CurrentRow == null || numericUpDown1.Value <= 0)
+            if (string.IsNullOrWhiteSpace(phordmedicinetb.Text) || numericUpDown1.Value <= 0)
             {
-                MessageBox.Show("Please select a valid medicine and quantity.");
+                MessageBox.Show("Please search/select a valid medicine and enter a quantity.");
                 return;
             }
 
-            var selectedRow = phordmeddgv.CurrentRow;
-            int medId = Convert.ToInt32(selectedRow.Cells["MedicineID"].Value);
-            string medName = Convert.ToString(selectedRow.Cells["MedicineName"].Value);
-            decimal unitPrice = Convert.ToDecimal(selectedRow.Cells["UnitPrice"].Value);
-            int availableStock = Convert.ToInt32(selectedRow.Cells["Stock"].Value);
+            string selectedMedName = phordmedicinetb.Text;
             int requestedQty = Convert.ToInt32(numericUpDown1.Value);
 
-          
+            // 2. Query the database directly using the text box value to get real-time ID, Price, and Stock
+            string query = "SELECT MedicineID, UnitPrice, Stock FROM MedicineTable WHERE MedicineName = @0";
+            DataTable dt = new Db().Reader(query, selectedMedName);
+
+            if (dt == null || dt.Rows.Count == 0)
+            {
+                MessageBox.Show("The selected medicine could not be verified in the database.");
+                return;
+            }
+
+            // Safely pull database values regardless of whether the item came from a grid click or a search text box
+            int medId = Convert.ToInt32(dt.Rows[0]["MedicineID"]);
+            decimal unitPrice = Convert.ToDecimal(dt.Rows[0]["UnitPrice"]);
+            int availableStock = Convert.ToInt32(dt.Rows[0]["Stock"]);
+
+            // 3. Inventory Stock Validation Check
             if (requestedQty > availableStock)
             {
                 MessageBox.Show($"Inadequate inventory stock! Only {availableStock} items remaining.");
                 return;
             }
 
-           
             decimal linePrice = requestedQty * unitPrice;
 
-            // Optional optimization: If item exists in cart, update quantity instead of appending duplicate row
+            // 4. Cart Optimization: If the item already exists in the cart table, update its quantities
             foreach (DataRow row in cartTable.Rows)
             {
                 if (Convert.ToInt32(row["MedicineID"]) == medId)
                 {
                     int newQty = Convert.ToInt32(row["Quantity"]) + requestedQty;
-                    if (newQty > availableStock) { MessageBox.Show("Combined cart quantity exceeds stock!"); return; }
+                    if (newQty > availableStock)
+                    {
+                        MessageBox.Show("Combined cart quantity exceeds available database stock!");
+                        return;
+                    }
                     row["Quantity"] = newQty;
                     row["Price"] = newQty * unitPrice;
                     UpdateGrandTotal();
@@ -543,8 +560,8 @@ namespace PharmaHealix
                 }
             }
 
-            
-            cartTable.Rows.Add(medId, medName, requestedQty, linePrice);
+            // 5. Add new line record row to your visual Order Cart
+            cartTable.Rows.Add(medId, selectedMedName, requestedQty, linePrice);
             UpdateGrandTotal();
         }
 

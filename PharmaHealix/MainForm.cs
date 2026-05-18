@@ -479,7 +479,7 @@ namespace PharmaHealix
 
         private void orderbtn_Click(object sender, EventArgs e)
         {
-            string s= "Insert Into OrderTable(PatientUsername,OrderDate,TotalAmount,Status) values(@0,@1,@2,@3)"
+            string s = "Insert Into OrderTable(PatientUsername,OrderDate,TotalAmount,Status) values(@0,@1,@2,@3)";
         }
 
         private void deletebtn_Click(object sender, EventArgs e)

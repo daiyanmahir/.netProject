@@ -308,9 +308,17 @@ namespace PharmaHealix
 
         private void phinvaddbtn_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(phinvmnametb.Text) || string.IsNullOrWhiteSpace(phinvcategorytb.Text))
+            if (string.IsNullOrWhiteSpace(phinvmnametb.Text) ||
+                string.IsNullOrWhiteSpace(phinvcategorytb.Text) ||
+                string.IsNullOrWhiteSpace(phinvdescriptiontb.Text) ||
+                string.IsNullOrWhiteSpace(phinvspricetb.Text) ||
+                string.IsNullOrWhiteSpace(phinvupricetb.Text) ||
+                string.IsNullOrWhiteSpace(phinvdosetb.Text) ||
+                string.IsNullOrWhiteSpace(phinvsideetb.Text) ||
+                string.IsNullOrWhiteSpace(phinvstocktb.Text) ||
+                string.IsNullOrWhiteSpace(phinvinstructiontb.Text))
             {
-                MessageBox.Show("Please fill out at least the Medicine Name and Category.");
+                MessageBox.Show("Please fill out all required fields before adding the medicine.");
                 return;
             }
 

@@ -33,11 +33,9 @@
             this.btnAppointment = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.lblDoctorID = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblSpeciality = new System.Windows.Forms.Label();
             this.lblGender = new System.Windows.Forms.Label();
-            this.txtDoctorID = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.cmbQuestion = new System.Windows.Forms.ComboBox();
             this.cbMBBS = new System.Windows.Forms.CheckBox();
@@ -147,23 +145,12 @@
             this.lblTitle.Text = "ADMIN DOCTOR MANAGEMENT";
             this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
             // 
-            // lblDoctorID
-            // 
-            this.lblDoctorID.AutoSize = true;
-            this.lblDoctorID.BackColor = System.Drawing.Color.Transparent;
-            this.lblDoctorID.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDoctorID.Location = new System.Drawing.Point(287, 135);
-            this.lblDoctorID.Name = "lblDoctorID";
-            this.lblDoctorID.Size = new System.Drawing.Size(104, 28);
-            this.lblDoctorID.TabIndex = 6;
-            this.lblDoctorID.Text = "Doctor ID";
-            // 
             // lblName
             // 
             this.lblName.AutoSize = true;
             this.lblName.BackColor = System.Drawing.Color.Transparent;
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(287, 181);
+            this.lblName.Location = new System.Drawing.Point(287, 140);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(68, 28);
             this.lblName.TabIndex = 7;
@@ -174,7 +161,7 @@
             this.lblSpeciality.AutoSize = true;
             this.lblSpeciality.BackColor = System.Drawing.Color.Transparent;
             this.lblSpeciality.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSpeciality.Location = new System.Drawing.Point(289, 497);
+            this.lblSpeciality.Location = new System.Drawing.Point(289, 456);
             this.lblSpeciality.Name = "lblSpeciality";
             this.lblSpeciality.Size = new System.Drawing.Size(104, 28);
             this.lblSpeciality.TabIndex = 10;
@@ -185,27 +172,17 @@
             this.lblGender.AutoSize = true;
             this.lblGender.BackColor = System.Drawing.Color.Transparent;
             this.lblGender.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(287, 452);
+            this.lblGender.Location = new System.Drawing.Point(287, 411);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(80, 28);
             this.lblGender.TabIndex = 11;
             this.lblGender.Text = "Gender";
             // 
-            // txtDoctorID
-            // 
-            this.txtDoctorID.BackColor = System.Drawing.Color.White;
-            this.txtDoctorID.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDoctorID.Location = new System.Drawing.Point(409, 131);
-            this.txtDoctorID.Name = "txtDoctorID";
-            this.txtDoctorID.Size = new System.Drawing.Size(250, 37);
-            this.txtDoctorID.TabIndex = 12;
-            this.txtDoctorID.TextChanged += new System.EventHandler(this.txtDoctorID_TextChanged);
-            // 
             // txtName
             // 
             this.txtName.BackColor = System.Drawing.Color.White;
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(409, 177);
+            this.txtName.Location = new System.Drawing.Point(409, 136);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(250, 37);
             this.txtName.TabIndex = 13;
@@ -220,7 +197,7 @@
             "What is your pet name?",
             "",
             "What is your birthplace?"});
-            this.cmbQuestion.Location = new System.Drawing.Point(409, 548);
+            this.cmbQuestion.Location = new System.Drawing.Point(409, 507);
             this.cmbQuestion.Name = "cmbQuestion";
             this.cmbQuestion.Size = new System.Drawing.Size(250, 28);
             this.cmbQuestion.TabIndex = 15;
@@ -229,7 +206,7 @@
             // 
             this.cbMBBS.AutoSize = true;
             this.cbMBBS.BackColor = System.Drawing.Color.Transparent;
-            this.cbMBBS.Location = new System.Drawing.Point(409, 503);
+            this.cbMBBS.Location = new System.Drawing.Point(409, 462);
             this.cbMBBS.Name = "cbMBBS";
             this.cbMBBS.Size = new System.Drawing.Size(81, 24);
             this.cbMBBS.TabIndex = 16;
@@ -240,7 +217,7 @@
             // 
             this.cbFCPS.AutoSize = true;
             this.cbFCPS.BackColor = System.Drawing.Color.Transparent;
-            this.cbFCPS.Location = new System.Drawing.Point(496, 503);
+            this.cbFCPS.Location = new System.Drawing.Point(496, 462);
             this.cbFCPS.Name = "cbFCPS";
             this.cbFCPS.Size = new System.Drawing.Size(77, 24);
             this.cbFCPS.TabIndex = 17;
@@ -251,7 +228,7 @@
             // 
             this.cbMD.AutoSize = true;
             this.cbMD.BackColor = System.Drawing.Color.Transparent;
-            this.cbMD.Location = new System.Drawing.Point(585, 503);
+            this.cbMD.Location = new System.Drawing.Point(585, 462);
             this.cbMD.Name = "cbMD";
             this.cbMD.Size = new System.Drawing.Size(60, 24);
             this.cbMD.TabIndex = 18;
@@ -263,7 +240,7 @@
             // 
             this.rdoFemale.AutoSize = true;
             this.rdoFemale.BackColor = System.Drawing.Color.Transparent;
-            this.rdoFemale.Location = new System.Drawing.Point(496, 452);
+            this.rdoFemale.Location = new System.Drawing.Point(496, 411);
             this.rdoFemale.Name = "rdoFemale";
             this.rdoFemale.Size = new System.Drawing.Size(87, 24);
             this.rdoFemale.TabIndex = 1;
@@ -275,7 +252,7 @@
             // 
             this.rdoMale.AutoSize = true;
             this.rdoMale.BackColor = System.Drawing.Color.Transparent;
-            this.rdoMale.Location = new System.Drawing.Point(409, 452);
+            this.rdoMale.Location = new System.Drawing.Point(409, 411);
             this.rdoMale.Name = "rdoMale";
             this.rdoMale.Size = new System.Drawing.Size(68, 24);
             this.rdoMale.TabIndex = 0;
@@ -442,7 +419,7 @@
             this.lblFee.AutoSize = true;
             this.lblFee.BackColor = System.Drawing.Color.Transparent;
             this.lblFee.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFee.Location = new System.Drawing.Point(289, 404);
+            this.lblFee.Location = new System.Drawing.Point(289, 363);
             this.lblFee.Name = "lblFee";
             this.lblFee.Size = new System.Drawing.Size(44, 28);
             this.lblFee.TabIndex = 30;
@@ -452,17 +429,19 @@
             // 
             this.txtFee.BackColor = System.Drawing.Color.White;
             this.txtFee.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFee.Location = new System.Drawing.Point(409, 398);
+            this.txtFee.Location = new System.Drawing.Point(409, 357);
             this.txtFee.Name = "txtFee";
+            this.txtFee.ReadOnly = true;
             this.txtFee.Size = new System.Drawing.Size(250, 37);
             this.txtFee.TabIndex = 34;
+            this.txtFee.Text = "1200";
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.BackColor = System.Drawing.Color.Transparent;
             this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(287, 237);
+            this.lblUsername.Location = new System.Drawing.Point(287, 196);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(106, 28);
             this.lblUsername.TabIndex = 35;
@@ -473,7 +452,7 @@
             this.lblPhone.AutoSize = true;
             this.lblPhone.BackColor = System.Drawing.Color.Transparent;
             this.lblPhone.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.Location = new System.Drawing.Point(289, 297);
+            this.lblPhone.Location = new System.Drawing.Point(289, 256);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(71, 28);
             this.lblPhone.TabIndex = 36;
@@ -484,7 +463,7 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(287, 353);
+            this.lblPassword.Location = new System.Drawing.Point(287, 312);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(101, 28);
             this.lblPassword.TabIndex = 37;
@@ -495,7 +474,7 @@
             this.lblAddress.AutoSize = true;
             this.lblAddress.BackColor = System.Drawing.Color.Transparent;
             this.lblAddress.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(289, 648);
+            this.lblAddress.Location = new System.Drawing.Point(289, 607);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(87, 28);
             this.lblAddress.TabIndex = 38;
@@ -506,7 +485,7 @@
             this.lblQuestion.AutoSize = true;
             this.lblQuestion.BackColor = System.Drawing.Color.Transparent;
             this.lblQuestion.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuestion.Location = new System.Drawing.Point(287, 544);
+            this.lblQuestion.Location = new System.Drawing.Point(287, 503);
             this.lblQuestion.Name = "lblQuestion";
             this.lblQuestion.Size = new System.Drawing.Size(97, 28);
             this.lblQuestion.TabIndex = 39;
@@ -517,7 +496,7 @@
             this.lblAnswer.AutoSize = true;
             this.lblAnswer.BackColor = System.Drawing.Color.Transparent;
             this.lblAnswer.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAnswer.Location = new System.Drawing.Point(289, 591);
+            this.lblAnswer.Location = new System.Drawing.Point(289, 550);
             this.lblAnswer.Name = "lblAnswer";
             this.lblAnswer.Size = new System.Drawing.Size(82, 28);
             this.lblAnswer.TabIndex = 40;
@@ -527,7 +506,7 @@
             // 
             this.txtUsername.BackColor = System.Drawing.Color.White;
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(409, 233);
+            this.txtUsername.Location = new System.Drawing.Point(409, 192);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(250, 37);
             this.txtUsername.TabIndex = 41;
@@ -536,7 +515,7 @@
             // 
             this.txtPhone.BackColor = System.Drawing.Color.White;
             this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(409, 293);
+            this.txtPhone.Location = new System.Drawing.Point(409, 252);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(250, 37);
             this.txtPhone.TabIndex = 42;
@@ -545,7 +524,7 @@
             // 
             this.txtPassword.BackColor = System.Drawing.Color.White;
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(409, 349);
+            this.txtPassword.Location = new System.Drawing.Point(409, 308);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(250, 37);
             this.txtPassword.TabIndex = 43;
@@ -554,7 +533,7 @@
             // 
             this.txtAnswer.BackColor = System.Drawing.Color.White;
             this.txtAnswer.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAnswer.Location = new System.Drawing.Point(409, 587);
+            this.txtAnswer.Location = new System.Drawing.Point(409, 546);
             this.txtAnswer.Name = "txtAnswer";
             this.txtAnswer.Size = new System.Drawing.Size(250, 37);
             this.txtAnswer.TabIndex = 44;
@@ -563,7 +542,7 @@
             // 
             this.rtxtAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtxtAddress.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtAddress.Location = new System.Drawing.Point(409, 634);
+            this.rtxtAddress.Location = new System.Drawing.Point(409, 593);
             this.rtxtAddress.Name = "rtxtAddress";
             this.rtxtAddress.Size = new System.Drawing.Size(250, 48);
             this.rtxtAddress.TabIndex = 45;
@@ -604,11 +583,9 @@
             this.Controls.Add(this.cbMBBS);
             this.Controls.Add(this.cmbQuestion);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.txtDoctorID);
             this.Controls.Add(this.lblGender);
             this.Controls.Add(this.lblSpeciality);
             this.Controls.Add(this.lblName);
-            this.Controls.Add(this.lblDoctorID);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(0, 72);
             this.MaximizeBox = false;
@@ -632,11 +609,9 @@
         private System.Windows.Forms.Button btnAppointment;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Label lblDoctorID;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblSpeciality;
         private System.Windows.Forms.Label lblGender;
-        private System.Windows.Forms.TextBox txtDoctorID;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.ComboBox cmbQuestion;
         private System.Windows.Forms.CheckBox cbMBBS;

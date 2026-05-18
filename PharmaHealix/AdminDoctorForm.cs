@@ -60,7 +60,6 @@ namespace PharmaHealix
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtDoctorID.Text = "";
             txtName.Text = "";
             txtUsername.Text = "";
             txtPhone.Text = "";
@@ -141,12 +140,56 @@ namespace PharmaHealix
             conn.Close();
         }
 
+        private bool DoctorValidation()
+        {
+            if (txtName.Text == "" ||
+                txtUsername.Text == "" ||
+                txtPhone.Text == "" ||
+                txtPassword.Text == "" ||
+                txtFee.Text == "" ||
+                txtAnswer.Text == "" ||
+                rtxtAddress.Text == "")
+            {
+                MessageBox.Show("Please Fill All Information");
+                return false;
+            }
+
+            if (rdoMale.Checked == false && rdoFemale.Checked == false)
+            {
+                MessageBox.Show("Please Select Gender");
+                return false;
+            }
+
+            if (cbMBBS.Checked == false &&
+                cbFCPS.Checked == false &&
+                cbMD.Checked == false)
+            {
+                MessageBox.Show("Please Select Degree");
+                return false;
+            }
+
+            if (cmbQuestion.Text == "")
+            {
+                MessageBox.Show("Please Select Question");
+                return false;
+            }
+
+            decimal fee;
+
+            if (decimal.TryParse(txtFee.Text, out fee) == false)
+            {
+                MessageBox.Show("Fee Must Be Number");
+                return false;
+            }
+
+            return true;
+        }
+
+
+
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(db.connection);
-
-            conn.Open();
-
             string gender = "";
 
             if (rdoMale.Checked)
@@ -158,6 +201,19 @@ namespace PharmaHealix
             {
                 gender = "Female";
             }
+
+
+
+            SqlConnection conn = new SqlConnection(db.connection);
+
+            conn.Open();
+
+
+            if (DoctorValidation() == false)
+            {
+                return;
+            }
+
 
             string speciality = "";
 
@@ -193,8 +249,6 @@ namespace PharmaHealix
             conn.Close();
 
             MessageBox.Show("Doctor Added");
-
-            txtDoctorID.Text = "";
             txtName.Text = "";
             txtUsername.Text = "";
             txtPhone.Text = "";
@@ -231,8 +285,6 @@ namespace PharmaHealix
 
             txtPassword.Text = dgvDoctor.Rows[e.RowIndex].Cells[6].Value.ToString();
 
-            txtDoctorID.Text = dgvDoctor.Rows[e.RowIndex].Cells[7].Value.ToString();
-
             string gender = dgvDoctor.Rows[e.RowIndex].Cells[8].Value.ToString();
 
             if (gender == "Male")
@@ -267,8 +319,14 @@ namespace PharmaHealix
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-           
-        
+
+            if (DoctorValidation() == false)
+            {
+                return;
+            }
+
+
+
             SqlConnection conn = new SqlConnection(db.connection);
 
             conn.Open();
@@ -308,7 +366,18 @@ namespace PharmaHealix
 
             cmd1.ExecuteNonQuery();
 
-            decimal fee = Convert.ToDecimal(txtFee.Text);
+             
+
+            decimal fee;
+
+            if (decimal.TryParse(txtFee.Text, out fee) == false)
+            {
+                MessageBox.Show("Fee Must Be Number");
+                return;
+            }
+
+           
+
 
             string query2 = "Update DoctorTable set Gender='" + gender + "', Speciality='" + speciality + "', Fee=" + fee + " where DoctorID=" + id;
 

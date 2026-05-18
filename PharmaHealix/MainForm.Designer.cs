@@ -141,18 +141,23 @@
             this.patientlbl = new System.Windows.Forms.Label();
             this.appointmentlbl = new System.Windows.Forms.Label();
             this.appointmenthistorypan = new System.Windows.Forms.Panel();
-            this.appsearchbtn = new System.Windows.Forms.Button();
             this.appsearchtxt = new System.Windows.Forms.TextBox();
+            this.appsearchbtn = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.appdataGridView = new System.Windows.Forms.DataGridView();
             this.label17 = new System.Windows.Forms.Label();
             this.viewappointmenthistorylbl = new System.Windows.Forms.Label();
             this.viewcartpan = new System.Windows.Forms.Panel();
-            this.viewcartlbl = new System.Windows.Forms.Label();
-            this.cartdataGridView = new System.Windows.Forms.DataGridView();
-            this.clearbtn = new System.Windows.Forms.Button();
-            this.deletebtn = new System.Windows.Forms.Button();
             this.orderbtn = new System.Windows.Forms.Button();
+            this.deletebtn = new System.Windows.Forms.Button();
+            this.cartdataGridView = new System.Windows.Forms.DataGridView();
+            this.viewcartlbl = new System.Windows.Forms.Label();
+            this.orderhistorypan = new System.Windows.Forms.Panel();
+            this.orderhistorydataGridView = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.appdesignationtxt = new System.Windows.Forms.TextBox();
             this.headpan.SuspendLayout();
             this.editpan.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -179,6 +184,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.appdataGridView)).BeginInit();
             this.viewcartpan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cartdataGridView)).BeginInit();
+            this.orderhistorypan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.orderhistorydataGridView)).BeginInit();
+            this.panel19.SuspendLayout();
             this.SuspendLayout();
             // 
             // headpan
@@ -251,6 +259,7 @@
             this.orderhistorybtn.TabIndex = 12;
             this.orderhistorybtn.Text = "Order History";
             this.orderhistorybtn.UseVisualStyleBackColor = false;
+            this.orderhistorybtn.Click += new System.EventHandler(this.orderhistorybtn_Click);
             // 
             // appointmenhistorytbtn
             // 
@@ -1264,6 +1273,8 @@
             // 
             // appointmentpan
             // 
+            this.appointmentpan.Controls.Add(this.label18);
+            this.appointmentpan.Controls.Add(this.panel19);
             this.appointmentpan.Controls.Add(this.panel18);
             this.appointmentpan.Controls.Add(this.cancelbtn);
             this.appointmentpan.Controls.Add(this.setappointmentbtn);
@@ -1292,7 +1303,7 @@
             this.panel18.BackColor = System.Drawing.Color.White;
             this.panel18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel18.Controls.Add(this.appdateTimePicker);
-            this.panel18.Location = new System.Drawing.Point(713, 291);
+            this.panel18.Location = new System.Drawing.Point(713, 335);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(360, 50);
             this.panel18.TabIndex = 35;
@@ -1339,7 +1350,7 @@
             this.panel17.BackColor = System.Drawing.Color.White;
             this.panel17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel17.Controls.Add(this.apptimecb);
-            this.panel17.Location = new System.Drawing.Point(713, 390);
+            this.panel17.Location = new System.Drawing.Point(713, 425);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(360, 50);
             this.panel17.TabIndex = 41;
@@ -1376,7 +1387,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(718, 366);
+            this.label16.Location = new System.Drawing.Point(718, 401);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(138, 20);
             this.label16.TabIndex = 44;
@@ -1385,7 +1396,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(718, 268);
+            this.label15.Location = new System.Drawing.Point(718, 312);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(139, 20);
             this.label15.TabIndex = 42;
@@ -1394,7 +1405,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(718, 166);
+            this.label14.Location = new System.Drawing.Point(718, 145);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(106, 20);
             this.label14.TabIndex = 41;
@@ -1405,7 +1416,7 @@
             this.panel16.BackColor = System.Drawing.Color.White;
             this.panel16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel16.Controls.Add(this.appdoctorcb);
-            this.panel16.Location = new System.Drawing.Point(713, 190);
+            this.panel16.Location = new System.Drawing.Point(713, 169);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(360, 50);
             this.panel16.TabIndex = 40;
@@ -1421,11 +1432,12 @@
             this.appdoctorcb.Name = "appdoctorcb";
             this.appdoctorcb.Size = new System.Drawing.Size(348, 30);
             this.appdoctorcb.TabIndex = 29;
+            this.appdoctorcb.SelectedIndexChanged += new System.EventHandler(this.appdoctorcb_SelectedIndexChanged);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(136, 369);
+            this.label13.Location = new System.Drawing.Point(139, 405);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(68, 20);
             this.label13.TabIndex = 39;
@@ -1434,7 +1446,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(136, 270);
+            this.label12.Location = new System.Drawing.Point(136, 278);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(115, 20);
             this.label12.TabIndex = 38;
@@ -1443,7 +1455,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(136, 173);
+            this.label11.Location = new System.Drawing.Point(136, 152);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(51, 20);
             this.label11.TabIndex = 37;
@@ -1454,7 +1466,7 @@
             this.panel13.BackColor = System.Drawing.Color.White;
             this.panel13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel13.Controls.Add(this.appaddresstxt);
-            this.panel13.Location = new System.Drawing.Point(132, 392);
+            this.panel13.Location = new System.Drawing.Point(135, 428);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(360, 50);
             this.panel13.TabIndex = 36;
@@ -1477,7 +1489,7 @@
             this.panel14.BackColor = System.Drawing.Color.White;
             this.panel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel14.Controls.Add(this.appnametxt);
-            this.panel14.Location = new System.Drawing.Point(132, 196);
+            this.panel14.Location = new System.Drawing.Point(132, 175);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(360, 50);
             this.panel14.TabIndex = 34;
@@ -1499,7 +1511,7 @@
             this.panel15.BackColor = System.Drawing.Color.White;
             this.panel15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel15.Controls.Add(this.appphonetxt);
-            this.panel15.Location = new System.Drawing.Point(132, 293);
+            this.panel15.Location = new System.Drawing.Point(132, 301);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(360, 50);
             this.panel15.TabIndex = 35;
@@ -1521,7 +1533,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(717, 113);
+            this.label10.Location = new System.Drawing.Point(717, 92);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(175, 30);
             this.label10.TabIndex = 2;
@@ -1531,7 +1543,7 @@
             // 
             this.patientlbl.AutoSize = true;
             this.patientlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patientlbl.Location = new System.Drawing.Point(137, 119);
+            this.patientlbl.Location = new System.Drawing.Point(137, 98);
             this.patientlbl.Name = "patientlbl";
             this.patientlbl.Size = new System.Drawing.Size(178, 30);
             this.patientlbl.TabIndex = 1;
@@ -1562,6 +1574,14 @@
             this.appointmenthistorypan.TabIndex = 13;
             this.appointmenthistorypan.Visible = false;
             // 
+            // appsearchtxt
+            // 
+            this.appsearchtxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.appsearchtxt.Location = new System.Drawing.Point(182, 169);
+            this.appsearchtxt.Name = "appsearchtxt";
+            this.appsearchtxt.Size = new System.Drawing.Size(745, 19);
+            this.appsearchtxt.TabIndex = 5;
+            // 
             // appsearchbtn
             // 
             this.appsearchbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
@@ -1577,14 +1597,6 @@
             this.appsearchbtn.Text = "Sign up";
             this.appsearchbtn.UseVisualStyleBackColor = false;
             this.appsearchbtn.Click += new System.EventHandler(this.appsearchbtn_Click);
-            // 
-            // appsearchtxt
-            // 
-            this.appsearchtxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.appsearchtxt.Location = new System.Drawing.Point(182, 169);
-            this.appsearchtxt.Name = "appsearchtxt";
-            this.appsearchtxt.Size = new System.Drawing.Size(745, 19);
-            this.appsearchtxt.TabIndex = 5;
             // 
             // richTextBox1
             // 
@@ -1636,7 +1648,6 @@
             // 
             this.viewcartpan.Controls.Add(this.orderbtn);
             this.viewcartpan.Controls.Add(this.deletebtn);
-            this.viewcartpan.Controls.Add(this.clearbtn);
             this.viewcartpan.Controls.Add(this.cartdataGridView);
             this.viewcartpan.Controls.Add(this.viewcartlbl);
             this.viewcartpan.Location = new System.Drawing.Point(0, 110);
@@ -1645,16 +1656,35 @@
             this.viewcartpan.TabIndex = 13;
             this.viewcartpan.Visible = false;
             // 
-            // viewcartlbl
+            // orderbtn
             // 
-            this.viewcartlbl.AutoSize = true;
-            this.viewcartlbl.Font = new System.Drawing.Font("MV Boli", 20F);
-            this.viewcartlbl.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.viewcartlbl.Location = new System.Drawing.Point(501, 6);
-            this.viewcartlbl.Name = "viewcartlbl";
-            this.viewcartlbl.Size = new System.Drawing.Size(230, 52);
-            this.viewcartlbl.TabIndex = 0;
-            this.viewcartlbl.Text = "Your Cart ";
+            this.orderbtn.BackColor = System.Drawing.Color.Green;
+            this.orderbtn.FlatAppearance.BorderSize = 0;
+            this.orderbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.orderbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.orderbtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.orderbtn.Location = new System.Drawing.Point(713, 532);
+            this.orderbtn.Name = "orderbtn";
+            this.orderbtn.Size = new System.Drawing.Size(156, 40);
+            this.orderbtn.TabIndex = 37;
+            this.orderbtn.Text = "Order";
+            this.orderbtn.UseVisualStyleBackColor = false;
+            this.orderbtn.Click += new System.EventHandler(this.orderbtn_Click);
+            // 
+            // deletebtn
+            // 
+            this.deletebtn.BackColor = System.Drawing.Color.Red;
+            this.deletebtn.FlatAppearance.BorderSize = 0;
+            this.deletebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deletebtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.deletebtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.deletebtn.Location = new System.Drawing.Point(280, 536);
+            this.deletebtn.Name = "deletebtn";
+            this.deletebtn.Size = new System.Drawing.Size(156, 40);
+            this.deletebtn.TabIndex = 36;
+            this.deletebtn.Text = "Delete";
+            this.deletebtn.UseVisualStyleBackColor = false;
+            this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
             // 
             // cartdataGridView
             // 
@@ -1672,50 +1702,85 @@
             this.cartdataGridView.Size = new System.Drawing.Size(914, 373);
             this.cartdataGridView.TabIndex = 1;
             // 
-            // clearbtn
+            // viewcartlbl
             // 
-            this.clearbtn.BackColor = System.Drawing.Color.Red;
-            this.clearbtn.FlatAppearance.BorderSize = 0;
-            this.clearbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clearbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.clearbtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.clearbtn.Location = new System.Drawing.Point(193, 536);
-            this.clearbtn.Name = "clearbtn";
-            this.clearbtn.Size = new System.Drawing.Size(156, 40);
-            this.clearbtn.TabIndex = 35;
-            this.clearbtn.Text = "Cancel";
-            this.clearbtn.UseVisualStyleBackColor = false;
-            this.clearbtn.Click += new System.EventHandler(this.clearbtn_Click);
+            this.viewcartlbl.AutoSize = true;
+            this.viewcartlbl.Font = new System.Drawing.Font("MV Boli", 20F);
+            this.viewcartlbl.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.viewcartlbl.Location = new System.Drawing.Point(501, 6);
+            this.viewcartlbl.Name = "viewcartlbl";
+            this.viewcartlbl.Size = new System.Drawing.Size(230, 52);
+            this.viewcartlbl.TabIndex = 0;
+            this.viewcartlbl.Text = "Your Cart ";
             // 
-            // deletebtn
+            // orderhistorypan
             // 
-            this.deletebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
-            this.deletebtn.FlatAppearance.BorderSize = 0;
-            this.deletebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deletebtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.deletebtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.deletebtn.Location = new System.Drawing.Point(512, 536);
-            this.deletebtn.Name = "deletebtn";
-            this.deletebtn.Size = new System.Drawing.Size(156, 40);
-            this.deletebtn.TabIndex = 36;
-            this.deletebtn.Text = "Delete";
-            this.deletebtn.UseVisualStyleBackColor = false;
-            this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
+            this.orderhistorypan.Controls.Add(this.orderhistorydataGridView);
+            this.orderhistorypan.Controls.Add(this.label1);
+            this.orderhistorypan.Location = new System.Drawing.Point(0, 110);
+            this.orderhistorypan.Name = "orderhistorypan";
+            this.orderhistorypan.Size = new System.Drawing.Size(1200, 640);
+            this.orderhistorypan.TabIndex = 38;
+            this.orderhistorypan.Visible = false;
             // 
-            // orderbtn
+            // orderhistorydataGridView
             // 
-            this.orderbtn.BackColor = System.Drawing.Color.Green;
-            this.orderbtn.FlatAppearance.BorderSize = 0;
-            this.orderbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.orderbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.orderbtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.orderbtn.Location = new System.Drawing.Point(827, 536);
-            this.orderbtn.Name = "orderbtn";
-            this.orderbtn.Size = new System.Drawing.Size(156, 40);
-            this.orderbtn.TabIndex = 37;
-            this.orderbtn.Text = "Order";
-            this.orderbtn.UseVisualStyleBackColor = false;
-            this.orderbtn.Click += new System.EventHandler(this.orderbtn_Click);
+            this.orderhistorydataGridView.AllowUserToAddRows = false;
+            this.orderhistorydataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.orderhistorydataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.orderhistorydataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.orderhistorydataGridView.Location = new System.Drawing.Point(140, 145);
+            this.orderhistorydataGridView.Name = "orderhistorydataGridView";
+            this.orderhistorydataGridView.ReadOnly = true;
+            this.orderhistorydataGridView.RowHeadersVisible = false;
+            this.orderhistorydataGridView.RowHeadersWidth = 62;
+            this.orderhistorydataGridView.RowTemplate.Height = 28;
+            this.orderhistorydataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.orderhistorydataGridView.Size = new System.Drawing.Size(914, 373);
+            this.orderhistorydataGridView.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("MV Boli", 20F);
+            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label1.Location = new System.Drawing.Point(501, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(218, 52);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Order List";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(717, 231);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(76, 20);
+            this.label18.TabIndex = 48;
+            this.label18.Text = "Speciality";
+            // 
+            // panel19
+            // 
+            this.panel19.BackColor = System.Drawing.Color.White;
+            this.panel19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel19.Controls.Add(this.appdesignationtxt);
+            this.panel19.Location = new System.Drawing.Point(713, 254);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(360, 50);
+            this.panel19.TabIndex = 47;
+            // 
+            // appdesignationtxt
+            // 
+            this.appdesignationtxt.BackColor = System.Drawing.Color.White;
+            this.appdesignationtxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.appdesignationtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.appdesignationtxt.ForeColor = System.Drawing.Color.Black;
+            this.appdesignationtxt.Location = new System.Drawing.Point(11, 13);
+            this.appdesignationtxt.Name = "appdesignationtxt";
+            this.appdesignationtxt.ReadOnly = true;
+            this.appdesignationtxt.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.appdesignationtxt.Size = new System.Drawing.Size(346, 21);
+            this.appdesignationtxt.TabIndex = 18;
             // 
             // MainForm
             // 
@@ -1723,18 +1788,19 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
             this.BackgroundImage = global::PharmaHealix.Properties.Resources.BackgroundImage;
             this.ClientSize = new System.Drawing.Size(1200, 750);
-            this.Controls.Add(this.viewcartpan);
-            this.Controls.Add(this.medibackpan);
+            this.Controls.Add(this.appointmentpan);
             this.Controls.Add(this.patientpan);
             this.Controls.Add(this.headpan);
             this.Controls.Add(this.userpan);
             this.Controls.Add(this.searchpan);
             this.Controls.Add(this.Whatareyoulookinglbl);
             this.Controls.Add(this.textlbl);
-            this.Controls.Add(this.appointmentpan);
             this.Controls.Add(this.editpan);
             this.Controls.Add(this.appointmenthistorypan);
             this.Controls.Add(this.cartbtn);
+            this.Controls.Add(this.orderhistorypan);
+            this.Controls.Add(this.viewcartpan);
+            this.Controls.Add(this.medibackpan);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1780,6 +1846,11 @@
             this.viewcartpan.ResumeLayout(false);
             this.viewcartpan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cartdataGridView)).EndInit();
+            this.orderhistorypan.ResumeLayout(false);
+            this.orderhistorypan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.orderhistorydataGridView)).EndInit();
+            this.panel19.ResumeLayout(false);
+            this.panel19.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1910,6 +1981,11 @@
         private System.Windows.Forms.DataGridView cartdataGridView;
         private System.Windows.Forms.Button orderbtn;
         private System.Windows.Forms.Button deletebtn;
-        private System.Windows.Forms.Button clearbtn;
+        private System.Windows.Forms.Panel orderhistorypan;
+        private System.Windows.Forms.DataGridView orderhistorydataGridView;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.TextBox appdesignationtxt;
     }
 }

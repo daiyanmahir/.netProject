@@ -60,7 +60,6 @@ namespace PharmaHealix
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtDoctorID.Text = "";
             txtName.Text = "";
             txtUsername.Text = "";
             txtPhone.Text = "";
@@ -193,8 +192,6 @@ namespace PharmaHealix
             conn.Close();
 
             MessageBox.Show("Doctor Added");
-
-            txtDoctorID.Text = "";
             txtName.Text = "";
             txtUsername.Text = "";
             txtPhone.Text = "";
@@ -230,8 +227,6 @@ namespace PharmaHealix
             txtAnswer.Text = dgvDoctor.Rows[e.RowIndex].Cells[5].Value.ToString();
 
             txtPassword.Text = dgvDoctor.Rows[e.RowIndex].Cells[6].Value.ToString();
-
-            txtDoctorID.Text = dgvDoctor.Rows[e.RowIndex].Cells[7].Value.ToString();
 
             string gender = dgvDoctor.Rows[e.RowIndex].Cells[8].Value.ToString();
 

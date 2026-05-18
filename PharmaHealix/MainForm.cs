@@ -427,50 +427,52 @@ namespace PharmaHealix
 
         private void addtocartbtn_Click(object sender, EventArgs e)
         {
-            if (user == "Patient") { 
-            int quantity = Convert.ToInt32(numericUpDown.Value);
-            if (quantity < 1 || quantity > 10)
+            if (user == "Patient")
             {
-                MessageBox.Show("You can only add between 1 and 10 items to your cart.");
-                if (numericUpDown.Value > 10)
+                int quantity = Convert.ToInt32(numericUpDown.Value);
+                if (quantity < 1 || quantity > 10)
                 {
-                    numericUpDown.Value = 10;
-                }
-                else if (numericUpDown.Value < 1)
-                {
-                    numericUpDown.Value = 1;
-                }
-            }
-            else
-            {
-                string m = "Select Stock From MedicineTable Where MedicineName=@0";
-                int stock = Convert.ToInt32(new Db().Scalar(m, medinametxt.Text));
-                if (stock>=quantity && stock>0)
-                {
-                    string r = "Select MedicineID from MedicineTable Where MedicineName=@0";
-
-                    int medicineid = Convert.ToInt32(new Db().Scalar(r, medinametxt.Text));
-                    string q = "Insert Into CartTable (PatientUsername,MedicineID,Quantity) Values(@0,@1,@2)";
-                    new Db().NonQuery(q, username, medicineid, quantity);
-
-                    stock = stock - quantity;
-
-                    string update = "Update MedicineTable set stock=@0 where MedicineID=@1";
-                    new Db().NonQuery(update,stock,medicineid);
-                    numericUpDown.Value = 1;
-
-                    MessageBox.Show("Successfully Added to Cart!");
-
+                    MessageBox.Show("You can only add between 1 and 10 items to your cart.");
+                    if (numericUpDown.Value > 10)
+                    {
+                        numericUpDown.Value = 10;
+                    }
+                    else if (numericUpDown.Value < 1)
+                    {
+                        numericUpDown.Value = 1;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Insufficient Stock!");
+                    string m = "Select Stock From MedicineTable Where MedicineName=@0";
+                    int stock = Convert.ToInt32(new Db().Scalar(m, medinametxt.Text));
+                    if (stock >= quantity && stock > 0)
+                    {
+                        string r = "Select MedicineID from MedicineTable Where MedicineName=@0";
+
+                        int medicineid = Convert.ToInt32(new Db().Scalar(r, medinametxt.Text));
+                        string q = "Insert Into CartTable (PatientUsername,MedicineID,Quantity) Values(@0,@1,@2)";
+                        new Db().NonQuery(q, username, medicineid, quantity);
+
+                        stock = stock - quantity;
+
+                        string update = "Update MedicineTable set stock=@0 where MedicineID=@1";
+                        new Db().NonQuery(update, stock, medicineid);
+                        numericUpDown.Value = 1;
+
+                        MessageBox.Show("Successfully Added to Cart!");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Insufficient Stock!");
+                    }
                 }
             }
             else
-                {
-                    MessageBox.Show("Please Sign in First!");
-                }
+            {
+                MessageBox.Show("Please Sign in First!");
+            }
         }
 
         private void cartbtn_Click(object sender, EventArgs e)

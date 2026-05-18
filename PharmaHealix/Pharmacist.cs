@@ -780,5 +780,10 @@ namespace PharmaHealix
             RefreshRequestGrid();
             selectedOrderId = -1;
         }
+
+        private void reqexitbtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -136,6 +136,7 @@
             this.requestdgv = new System.Windows.Forms.DataGridView();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
+            this.reqexitbtn = new System.Windows.Forms.Button();
             this.patientlistpan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phprdgv)).BeginInit();
             this.patientlisttoppan.SuspendLayout();
@@ -200,9 +201,12 @@
             // phprdgv
             // 
             this.phprdgv.AllowUserToOrderColumns = true;
+            this.phprdgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.phprdgv.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.phprdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.phprdgv.Location = new System.Drawing.Point(42, 142);
             this.phprdgv.Name = "phprdgv";
+            this.phprdgv.RowHeadersVisible = false;
             this.phprdgv.RowHeadersWidth = 62;
             this.phprdgv.RowTemplate.Height = 28;
             this.phprdgv.Size = new System.Drawing.Size(879, 348);
@@ -363,9 +367,12 @@
             // phordcartdgv
             // 
             this.phordcartdgv.AllowUserToOrderColumns = true;
+            this.phordcartdgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.phordcartdgv.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.phordcartdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.phordcartdgv.Location = new System.Drawing.Point(26, 450);
             this.phordcartdgv.Name = "phordcartdgv";
+            this.phordcartdgv.RowHeadersVisible = false;
             this.phordcartdgv.RowHeadersWidth = 62;
             this.phordcartdgv.RowTemplate.Height = 28;
             this.phordcartdgv.Size = new System.Drawing.Size(908, 206);
@@ -426,9 +433,12 @@
             // phordmeddgv
             // 
             this.phordmeddgv.AllowUserToOrderColumns = true;
+            this.phordmeddgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.phordmeddgv.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.phordmeddgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.phordmeddgv.Location = new System.Drawing.Point(26, 142);
             this.phordmeddgv.Name = "phordmeddgv";
+            this.phordmeddgv.RowHeadersVisible = false;
             this.phordmeddgv.RowHeadersWidth = 62;
             this.phordmeddgv.RowTemplate.Height = 33;
             this.phordmeddgv.Size = new System.Drawing.Size(911, 150);
@@ -736,9 +746,12 @@
             // phinvdgv
             // 
             this.phinvdgv.AllowUserToOrderColumns = true;
+            this.phinvdgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.phinvdgv.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.phinvdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.phinvdgv.Location = new System.Drawing.Point(42, 115);
             this.phinvdgv.Name = "phinvdgv";
+            this.phinvdgv.RowHeadersVisible = false;
             this.phinvdgv.RowHeadersWidth = 62;
             this.phinvdgv.RowTemplate.Height = 33;
             this.phinvdgv.Size = new System.Drawing.Size(879, 177);
@@ -1321,7 +1334,7 @@
             this.requestpan.Controls.Add(this.approvebtn);
             this.requestpan.Controls.Add(this.requestdgv);
             this.requestpan.Controls.Add(this.panel12);
-            this.requestpan.Location = new System.Drawing.Point(24400, 0);
+            this.requestpan.Location = new System.Drawing.Point(244, 0);
             this.requestpan.Margin = new System.Windows.Forms.Padding(2);
             this.requestpan.Name = "requestpan";
             this.requestpan.Size = new System.Drawing.Size(956, 750);
@@ -1359,9 +1372,13 @@
             // requestdgv
             // 
             this.requestdgv.AllowUserToOrderColumns = true;
+            this.requestdgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.requestdgv.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.requestdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.requestdgv.GridColor = System.Drawing.SystemColors.GrayText;
             this.requestdgv.Location = new System.Drawing.Point(51, 142);
             this.requestdgv.Name = "requestdgv";
+            this.requestdgv.RowHeadersVisible = false;
             this.requestdgv.RowHeadersWidth = 62;
             this.requestdgv.RowTemplate.Height = 28;
             this.requestdgv.Size = new System.Drawing.Size(879, 348);
@@ -1371,6 +1388,7 @@
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
+            this.panel12.Controls.Add(this.reqexitbtn);
             this.panel12.Controls.Add(this.label16);
             this.panel12.Location = new System.Drawing.Point(0, 0);
             this.panel12.Margin = new System.Windows.Forms.Padding(2);
@@ -1389,6 +1407,22 @@
             this.label16.TabIndex = 0;
             this.label16.Text = "REQUESTS";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // reqexitbtn
+            // 
+            this.reqexitbtn.BackColor = System.Drawing.Color.White;
+            this.reqexitbtn.FlatAppearance.BorderSize = 0;
+            this.reqexitbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.reqexitbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
+            this.reqexitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reqexitbtn.Location = new System.Drawing.Point(909, 11);
+            this.reqexitbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.reqexitbtn.Name = "reqexitbtn";
+            this.reqexitbtn.Size = new System.Drawing.Size(38, 24);
+            this.reqexitbtn.TabIndex = 47;
+            this.reqexitbtn.Text = "X";
+            this.reqexitbtn.UseVisualStyleBackColor = false;
+            this.reqexitbtn.Click += new System.EventHandler(this.reqexitbtn_Click);
             // 
             // Pharmacist
             // 
@@ -1564,5 +1598,6 @@
         private System.Windows.Forms.DataGridView requestdgv;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button reqexitbtn;
     }
 }

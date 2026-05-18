@@ -89,6 +89,8 @@
             this.searchiconpan = new System.Windows.Forms.Panel();
             this.medibackpan = new System.Windows.Forms.Panel();
             this.medipan = new System.Windows.Forms.Panel();
+            this.numericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.qtlbl = new System.Windows.Forms.Label();
             this.medinametxt = new System.Windows.Forms.RichTextBox();
             this.addtocartbtn = new System.Windows.Forms.Button();
             this.sideeffectstxt = new System.Windows.Forms.RichTextBox();
@@ -113,8 +115,6 @@
             this.categorytxt = new System.Windows.Forms.RichTextBox();
             this.medinfolbl = new System.Windows.Forms.Label();
             this.mediimagepan = new System.Windows.Forms.Panel();
-            this.mediinfopan = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.categorylbl = new System.Windows.Forms.Label();
             this.appointmentpan = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
@@ -141,12 +141,18 @@
             this.patientlbl = new System.Windows.Forms.Label();
             this.appointmentlbl = new System.Windows.Forms.Label();
             this.appointmenthistorypan = new System.Windows.Forms.Panel();
-            this.viewappointmenthistorylbl = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.appdataGridView = new System.Windows.Forms.DataGridView();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.appsearchtxt = new System.Windows.Forms.TextBox();
             this.appsearchbtn = new System.Windows.Forms.Button();
+            this.appsearchtxt = new System.Windows.Forms.TextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.appdataGridView = new System.Windows.Forms.DataGridView();
+            this.label17 = new System.Windows.Forms.Label();
+            this.viewappointmenthistorylbl = new System.Windows.Forms.Label();
+            this.viewcartpan = new System.Windows.Forms.Panel();
+            this.viewcartlbl = new System.Windows.Forms.Label();
+            this.cartdataGridView = new System.Windows.Forms.DataGridView();
+            this.clearbtn = new System.Windows.Forms.Button();
+            this.deletebtn = new System.Windows.Forms.Button();
+            this.orderbtn = new System.Windows.Forms.Button();
             this.headpan.SuspendLayout();
             this.editpan.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -161,7 +167,7 @@
             this.searchpan.SuspendLayout();
             this.medibackpan.SuspendLayout();
             this.medipan.SuspendLayout();
-            this.mediinfopan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown)).BeginInit();
             this.appointmentpan.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel17.SuspendLayout();
@@ -171,6 +177,8 @@
             this.panel15.SuspendLayout();
             this.appointmenthistorypan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appdataGridView)).BeginInit();
+            this.viewcartpan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cartdataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // headpan
@@ -256,6 +264,7 @@
             this.appointmenhistorytbtn.TabIndex = 10;
             this.appointmenhistorytbtn.Text = "Appointment History";
             this.appointmenhistorytbtn.UseVisualStyleBackColor = false;
+            this.appointmenhistorytbtn.Click += new System.EventHandler(this.appointmenhistorytbtn_Click);
             // 
             // Exitbtn
             // 
@@ -833,6 +842,7 @@
             this.cartbtn.TabIndex = 21;
             this.cartbtn.Text = "       View Cart";
             this.cartbtn.UseVisualStyleBackColor = false;
+            this.cartbtn.Click += new System.EventHandler(this.cartbtn_Click);
             // 
             // searchpan
             // 
@@ -895,6 +905,8 @@
             // medipan
             // 
             this.medipan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(240)))));
+            this.medipan.Controls.Add(this.numericUpDown);
+            this.medipan.Controls.Add(this.qtlbl);
             this.medipan.Controls.Add(this.medinametxt);
             this.medipan.Controls.Add(this.addtocartbtn);
             this.medipan.Controls.Add(this.sideeffectstxt);
@@ -919,12 +931,43 @@
             this.medipan.Controls.Add(this.categorytxt);
             this.medipan.Controls.Add(this.medinfolbl);
             this.medipan.Controls.Add(this.mediimagepan);
-            this.medipan.Controls.Add(this.mediinfopan);
             this.medipan.Controls.Add(this.categorylbl);
             this.medipan.Location = new System.Drawing.Point(255, 17);
             this.medipan.Name = "medipan";
             this.medipan.Size = new System.Drawing.Size(694, 610);
             this.medipan.TabIndex = 12;
+            // 
+            // numericUpDown
+            // 
+            this.numericUpDown.BackColor = System.Drawing.SystemColors.Control;
+            this.numericUpDown.Location = new System.Drawing.Point(126, 568);
+            this.numericUpDown.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown.Name = "numericUpDown";
+            this.numericUpDown.Size = new System.Drawing.Size(120, 26);
+            this.numericUpDown.TabIndex = 35;
+            this.numericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // qtlbl
+            // 
+            this.qtlbl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.qtlbl.BackColor = System.Drawing.Color.Transparent;
+            this.qtlbl.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.qtlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
+            this.qtlbl.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.qtlbl.Location = new System.Drawing.Point(15, 562);
+            this.qtlbl.Name = "qtlbl";
+            this.qtlbl.Size = new System.Drawing.Size(109, 33);
+            this.qtlbl.TabIndex = 34;
+            this.qtlbl.Text = "Quantity";
+            this.qtlbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // medinametxt
             // 
@@ -951,6 +994,7 @@
             this.addtocartbtn.TabIndex = 13;
             this.addtocartbtn.Text = "       Add to Cart";
             this.addtocartbtn.UseVisualStyleBackColor = false;
+            this.addtocartbtn.Click += new System.EventHandler(this.addtocartbtn_Click);
             // 
             // sideeffectstxt
             // 
@@ -1203,26 +1247,6 @@
             this.mediimagepan.Name = "mediimagepan";
             this.mediimagepan.Size = new System.Drawing.Size(220, 220);
             this.mediimagepan.TabIndex = 14;
-            // 
-            // mediinfopan
-            // 
-            this.mediinfopan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(229)))));
-            this.mediinfopan.Controls.Add(this.label1);
-            this.mediinfopan.Location = new System.Drawing.Point(3, 2);
-            this.mediinfopan.Name = "mediinfopan";
-            this.mediinfopan.Size = new System.Drawing.Size(688, 57);
-            this.mediinfopan.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(685, 57);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Medicine Info";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // categorylbl
             // 
@@ -1526,8 +1550,8 @@
             // 
             // appointmenthistorypan
             // 
-            this.appointmenthistorypan.Controls.Add(this.appsearchbtn);
             this.appointmenthistorypan.Controls.Add(this.appsearchtxt);
+            this.appointmenthistorypan.Controls.Add(this.appsearchbtn);
             this.appointmenthistorypan.Controls.Add(this.richTextBox1);
             this.appointmenthistorypan.Controls.Add(this.appdataGridView);
             this.appointmenthistorypan.Controls.Add(this.label17);
@@ -1537,6 +1561,65 @@
             this.appointmenthistorypan.Size = new System.Drawing.Size(1200, 640);
             this.appointmenthistorypan.TabIndex = 13;
             this.appointmenthistorypan.Visible = false;
+            // 
+            // appsearchbtn
+            // 
+            this.appsearchbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
+            this.appsearchbtn.FlatAppearance.BorderSize = 0;
+            this.appsearchbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.AliceBlue;
+            this.appsearchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.appsearchbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.appsearchbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.appsearchbtn.Location = new System.Drawing.Point(933, 158);
+            this.appsearchbtn.Name = "appsearchbtn";
+            this.appsearchbtn.Size = new System.Drawing.Size(107, 39);
+            this.appsearchbtn.TabIndex = 26;
+            this.appsearchbtn.Text = "Sign up";
+            this.appsearchbtn.UseVisualStyleBackColor = false;
+            this.appsearchbtn.Click += new System.EventHandler(this.appsearchbtn_Click);
+            // 
+            // appsearchtxt
+            // 
+            this.appsearchtxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.appsearchtxt.Location = new System.Drawing.Point(182, 169);
+            this.appsearchtxt.Name = "appsearchtxt";
+            this.appsearchtxt.Size = new System.Drawing.Size(745, 19);
+            this.appsearchtxt.TabIndex = 5;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.White;
+            this.richTextBox1.Location = new System.Drawing.Point(171, 158);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(764, 40);
+            this.richTextBox1.TabIndex = 4;
+            this.richTextBox1.Text = "";
+            // 
+            // appdataGridView
+            // 
+            this.appdataGridView.AllowUserToAddRows = false;
+            this.appdataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.appdataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.appdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.appdataGridView.Location = new System.Drawing.Point(171, 234);
+            this.appdataGridView.Name = "appdataGridView";
+            this.appdataGridView.ReadOnly = true;
+            this.appdataGridView.RowHeadersVisible = false;
+            this.appdataGridView.RowHeadersWidth = 62;
+            this.appdataGridView.RowTemplate.Height = 28;
+            this.appdataGridView.Size = new System.Drawing.Size(869, 212);
+            this.appdataGridView.TabIndex = 3;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label17.Location = new System.Drawing.Point(177, 120);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(245, 22);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "Search Using Appointment ID";
             // 
             // viewappointmenthistorylbl
             // 
@@ -1549,57 +1632,90 @@
             this.viewappointmenthistorylbl.TabIndex = 0;
             this.viewappointmenthistorylbl.Text = "View Your Appointment History";
             // 
-            // label17
+            // viewcartpan
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label17.Location = new System.Drawing.Point(318, 86);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(245, 22);
-            this.label17.TabIndex = 1;
-            this.label17.Text = "Search Using Appointment ID";
+            this.viewcartpan.Controls.Add(this.orderbtn);
+            this.viewcartpan.Controls.Add(this.deletebtn);
+            this.viewcartpan.Controls.Add(this.clearbtn);
+            this.viewcartpan.Controls.Add(this.cartdataGridView);
+            this.viewcartpan.Controls.Add(this.viewcartlbl);
+            this.viewcartpan.Location = new System.Drawing.Point(0, 110);
+            this.viewcartpan.Name = "viewcartpan";
+            this.viewcartpan.Size = new System.Drawing.Size(1200, 640);
+            this.viewcartpan.TabIndex = 13;
+            this.viewcartpan.Visible = false;
             // 
-            // appdataGridView
+            // viewcartlbl
             // 
-            this.appdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.appdataGridView.Location = new System.Drawing.Point(321, 185);
-            this.appdataGridView.Name = "appdataGridView";
-            this.appdataGridView.RowHeadersWidth = 62;
-            this.appdataGridView.RowTemplate.Height = 28;
-            this.appdataGridView.Size = new System.Drawing.Size(567, 334);
-            this.appdataGridView.TabIndex = 3;
+            this.viewcartlbl.AutoSize = true;
+            this.viewcartlbl.Font = new System.Drawing.Font("MV Boli", 20F);
+            this.viewcartlbl.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.viewcartlbl.Location = new System.Drawing.Point(501, 6);
+            this.viewcartlbl.Name = "viewcartlbl";
+            this.viewcartlbl.Size = new System.Drawing.Size(230, 52);
+            this.viewcartlbl.TabIndex = 0;
+            this.viewcartlbl.Text = "Your Cart ";
             // 
-            // richTextBox1
+            // cartdataGridView
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(322, 123);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(458, 40);
-            this.richTextBox1.TabIndex = 4;
-            this.richTextBox1.Text = "";
+            this.cartdataGridView.AllowUserToAddRows = false;
+            this.cartdataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.cartdataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cartdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cartdataGridView.Location = new System.Drawing.Point(140, 106);
+            this.cartdataGridView.Name = "cartdataGridView";
+            this.cartdataGridView.ReadOnly = true;
+            this.cartdataGridView.RowHeadersVisible = false;
+            this.cartdataGridView.RowHeadersWidth = 62;
+            this.cartdataGridView.RowTemplate.Height = 28;
+            this.cartdataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.cartdataGridView.Size = new System.Drawing.Size(914, 373);
+            this.cartdataGridView.TabIndex = 1;
             // 
-            // appsearchtxt
+            // clearbtn
             // 
-            this.appsearchtxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.appsearchtxt.Location = new System.Drawing.Point(330, 134);
-            this.appsearchtxt.Name = "appsearchtxt";
-            this.appsearchtxt.Size = new System.Drawing.Size(441, 19);
-            this.appsearchtxt.TabIndex = 5;
+            this.clearbtn.BackColor = System.Drawing.Color.Red;
+            this.clearbtn.FlatAppearance.BorderSize = 0;
+            this.clearbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.clearbtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.clearbtn.Location = new System.Drawing.Point(193, 536);
+            this.clearbtn.Name = "clearbtn";
+            this.clearbtn.Size = new System.Drawing.Size(156, 40);
+            this.clearbtn.TabIndex = 35;
+            this.clearbtn.Text = "Cancel";
+            this.clearbtn.UseVisualStyleBackColor = false;
+            this.clearbtn.Click += new System.EventHandler(this.clearbtn_Click);
             // 
-            // appsearchbtn
+            // deletebtn
             // 
-            this.appsearchbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
-            this.appsearchbtn.FlatAppearance.BorderSize = 0;
-            this.appsearchbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.AliceBlue;
-            this.appsearchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.appsearchbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.appsearchbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.appsearchbtn.Location = new System.Drawing.Point(779, 123);
-            this.appsearchbtn.Name = "appsearchbtn";
-            this.appsearchbtn.Size = new System.Drawing.Size(107, 39);
-            this.appsearchbtn.TabIndex = 26;
-            this.appsearchbtn.Text = "Sign up";
-            this.appsearchbtn.UseVisualStyleBackColor = false;
-            this.appsearchbtn.Click += new System.EventHandler(this.appsearchbtn_Click);
+            this.deletebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
+            this.deletebtn.FlatAppearance.BorderSize = 0;
+            this.deletebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deletebtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.deletebtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.deletebtn.Location = new System.Drawing.Point(512, 536);
+            this.deletebtn.Name = "deletebtn";
+            this.deletebtn.Size = new System.Drawing.Size(156, 40);
+            this.deletebtn.TabIndex = 36;
+            this.deletebtn.Text = "Delete";
+            this.deletebtn.UseVisualStyleBackColor = false;
+            this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
+            // 
+            // orderbtn
+            // 
+            this.orderbtn.BackColor = System.Drawing.Color.Green;
+            this.orderbtn.FlatAppearance.BorderSize = 0;
+            this.orderbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.orderbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.orderbtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.orderbtn.Location = new System.Drawing.Point(827, 536);
+            this.orderbtn.Name = "orderbtn";
+            this.orderbtn.Size = new System.Drawing.Size(156, 40);
+            this.orderbtn.TabIndex = 37;
+            this.orderbtn.Text = "Order";
+            this.orderbtn.UseVisualStyleBackColor = false;
+            this.orderbtn.Click += new System.EventHandler(this.orderbtn_Click);
             // 
             // MainForm
             // 
@@ -1607,7 +1723,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
             this.BackgroundImage = global::PharmaHealix.Properties.Resources.BackgroundImage;
             this.ClientSize = new System.Drawing.Size(1200, 750);
-            this.Controls.Add(this.appointmenthistorypan);
+            this.Controls.Add(this.viewcartpan);
             this.Controls.Add(this.medibackpan);
             this.Controls.Add(this.patientpan);
             this.Controls.Add(this.headpan);
@@ -1615,9 +1731,10 @@
             this.Controls.Add(this.searchpan);
             this.Controls.Add(this.Whatareyoulookinglbl);
             this.Controls.Add(this.textlbl);
-            this.Controls.Add(this.cartbtn);
             this.Controls.Add(this.appointmentpan);
             this.Controls.Add(this.editpan);
+            this.Controls.Add(this.appointmenthistorypan);
+            this.Controls.Add(this.cartbtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1645,7 +1762,7 @@
             this.searchpan.PerformLayout();
             this.medibackpan.ResumeLayout(false);
             this.medipan.ResumeLayout(false);
-            this.mediinfopan.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown)).EndInit();
             this.appointmentpan.ResumeLayout(false);
             this.appointmentpan.PerformLayout();
             this.panel18.ResumeLayout(false);
@@ -1660,6 +1777,9 @@
             this.appointmenthistorypan.ResumeLayout(false);
             this.appointmenthistorypan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appdataGridView)).EndInit();
+            this.viewcartpan.ResumeLayout(false);
+            this.viewcartpan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cartdataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1711,8 +1831,6 @@
         private System.Windows.Forms.RichTextBox categorytxt;
         private System.Windows.Forms.Label medinfolbl;
         private System.Windows.Forms.Panel mediimagepan;
-        private System.Windows.Forms.FlowLayoutPanel mediinfopan;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label categorylbl;
         private System.Windows.Forms.Panel patientpan;
         private System.Windows.Forms.Button minimizebtn;
@@ -1785,5 +1903,13 @@
         private System.Windows.Forms.TextBox appsearchtxt;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button appsearchbtn;
+        private System.Windows.Forms.NumericUpDown numericUpDown;
+        private System.Windows.Forms.Label qtlbl;
+        private System.Windows.Forms.Panel viewcartpan;
+        private System.Windows.Forms.Label viewcartlbl;
+        private System.Windows.Forms.DataGridView cartdataGridView;
+        private System.Windows.Forms.Button orderbtn;
+        private System.Windows.Forms.Button deletebtn;
+        private System.Windows.Forms.Button clearbtn;
     }
 }

@@ -38,24 +38,13 @@
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnAppointment = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.lblPharmacistID = new System.Windows.Forms.Label();
+            this.lblStaffID = new System.Windows.Forms.Label();
             this.lblPharmacistName = new System.Windows.Forms.Label();
-            this.lblDgree = new System.Windows.Forms.Label();
             this.lblGender = new System.Windows.Forms.Label();
             this.Salary = new System.Windows.Forms.Label();
-            this.lblFavoriteColor = new System.Windows.Forms.Label();
-            this.lblPetName = new System.Windows.Forms.Label();
-            this.lblBirthPlace = new System.Windows.Forms.Label();
-            this.txtPharmacistID = new System.Windows.Forms.TextBox();
-            this.txtPharmacistName = new System.Windows.Forms.TextBox();
+            this.txtStaffID = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.txtSalary = new System.Windows.Forms.TextBox();
-            this.txtFavoriteColor = new System.Windows.Forms.TextBox();
-            this.txtPetName = new System.Windows.Forms.TextBox();
-            this.txtBirthPlace = new System.Windows.Forms.TextBox();
-            this.chkPharmD = new System.Windows.Forms.CheckBox();
-            this.chkMPharm = new System.Windows.Forms.CheckBox();
-            this.chkDiploma = new System.Windows.Forms.CheckBox();
-            this.chkBPharm = new System.Windows.Forms.CheckBox();
             this.rdoMale = new System.Windows.Forms.RadioButton();
             this.rdoFemale = new System.Windows.Forms.RadioButton();
             this.btnShow = new System.Windows.Forms.Button();
@@ -64,6 +53,18 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.dgvPharmacist = new System.Windows.Forms.DataGridView();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.lblPhone = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.lblQuestion = new System.Windows.Forms.Label();
+            this.lblAnswer = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtAnswer = new System.Windows.Forms.TextBox();
+            this.cmbQuestion = new System.Windows.Forms.ComboBox();
+            this.rtxtAddress = new System.Windows.Forms.RichTextBox();
             this.pnlHeader.SuspendLayout();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -210,46 +211,35 @@
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // lblPharmacistID
+            // lblStaffID
             // 
-            this.lblPharmacistID.AutoSize = true;
-            this.lblPharmacistID.BackColor = System.Drawing.Color.Transparent;
-            this.lblPharmacistID.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPharmacistID.Location = new System.Drawing.Point(324, 135);
-            this.lblPharmacistID.Name = "lblPharmacistID";
-            this.lblPharmacistID.Size = new System.Drawing.Size(33, 28);
-            this.lblPharmacistID.TabIndex = 31;
-            this.lblPharmacistID.Text = "ID";
-            this.lblPharmacistID.Click += new System.EventHandler(this.lblPharmacistID_Click);
+            this.lblStaffID.AutoSize = true;
+            this.lblStaffID.BackColor = System.Drawing.Color.Transparent;
+            this.lblStaffID.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStaffID.Location = new System.Drawing.Point(293, 131);
+            this.lblStaffID.Name = "lblStaffID";
+            this.lblStaffID.Size = new System.Drawing.Size(85, 28);
+            this.lblStaffID.TabIndex = 31;
+            this.lblStaffID.Text = "Staff ID";
+            this.lblStaffID.Click += new System.EventHandler(this.lblPharmacistID_Click);
             // 
             // lblPharmacistName
             // 
             this.lblPharmacistName.AutoSize = true;
             this.lblPharmacistName.BackColor = System.Drawing.Color.Transparent;
             this.lblPharmacistName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPharmacistName.Location = new System.Drawing.Point(324, 181);
+            this.lblPharmacistName.Location = new System.Drawing.Point(293, 177);
             this.lblPharmacistName.Name = "lblPharmacistName";
             this.lblPharmacistName.Size = new System.Drawing.Size(68, 28);
             this.lblPharmacistName.TabIndex = 32;
             this.lblPharmacistName.Text = "Name";
-            // 
-            // lblDgree
-            // 
-            this.lblDgree.AutoSize = true;
-            this.lblDgree.BackColor = System.Drawing.Color.Transparent;
-            this.lblDgree.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDgree.Location = new System.Drawing.Point(324, 341);
-            this.lblDgree.Name = "lblDgree";
-            this.lblDgree.Size = new System.Drawing.Size(80, 28);
-            this.lblDgree.TabIndex = 33;
-            this.lblDgree.Text = "Degree";
             // 
             // lblGender
             // 
             this.lblGender.AutoSize = true;
             this.lblGender.BackColor = System.Drawing.Color.Transparent;
             this.lblGender.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(324, 282);
+            this.lblGender.Location = new System.Drawing.Point(293, 432);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(80, 28);
             this.lblGender.TabIndex = 34;
@@ -260,148 +250,44 @@
             this.Salary.AutoSize = true;
             this.Salary.BackColor = System.Drawing.Color.Transparent;
             this.Salary.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Salary.Location = new System.Drawing.Point(324, 230);
+            this.Salary.Location = new System.Drawing.Point(293, 379);
             this.Salary.Name = "Salary";
             this.Salary.Size = new System.Drawing.Size(71, 28);
             this.Salary.TabIndex = 35;
             this.Salary.Text = "Salary";
             // 
-            // lblFavoriteColor
+            // txtStaffID
             // 
-            this.lblFavoriteColor.AutoSize = true;
-            this.lblFavoriteColor.BackColor = System.Drawing.Color.Transparent;
-            this.lblFavoriteColor.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFavoriteColor.Location = new System.Drawing.Point(324, 391);
-            this.lblFavoriteColor.Name = "lblFavoriteColor";
-            this.lblFavoriteColor.Size = new System.Drawing.Size(136, 28);
-            this.lblFavoriteColor.TabIndex = 36;
-            this.lblFavoriteColor.Text = "Favoite Color";
+            this.txtStaffID.BackColor = System.Drawing.Color.White;
+            this.txtStaffID.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStaffID.Location = new System.Drawing.Point(429, 127);
+            this.txtStaffID.Name = "txtStaffID";
+            this.txtStaffID.Size = new System.Drawing.Size(250, 37);
+            this.txtStaffID.TabIndex = 39;
             // 
-            // lblPetName
+            // txtName
             // 
-            this.lblPetName.AutoSize = true;
-            this.lblPetName.BackColor = System.Drawing.Color.Transparent;
-            this.lblPetName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPetName.Location = new System.Drawing.Point(324, 444);
-            this.lblPetName.Name = "lblPetName";
-            this.lblPetName.Size = new System.Drawing.Size(104, 28);
-            this.lblPetName.TabIndex = 37;
-            this.lblPetName.Text = "Pet Name";
-            // 
-            // lblBirthPlace
-            // 
-            this.lblBirthPlace.AutoSize = true;
-            this.lblBirthPlace.BackColor = System.Drawing.Color.Transparent;
-            this.lblBirthPlace.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBirthPlace.Location = new System.Drawing.Point(324, 490);
-            this.lblBirthPlace.Name = "lblBirthPlace";
-            this.lblBirthPlace.Size = new System.Drawing.Size(116, 28);
-            this.lblBirthPlace.TabIndex = 38;
-            this.lblBirthPlace.Text = "Birth Place";
-            // 
-            // txtPharmacistID
-            // 
-            this.txtPharmacistID.BackColor = System.Drawing.Color.White;
-            this.txtPharmacistID.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPharmacistID.Location = new System.Drawing.Point(467, 131);
-            this.txtPharmacistID.Name = "txtPharmacistID";
-            this.txtPharmacistID.Size = new System.Drawing.Size(250, 37);
-            this.txtPharmacistID.TabIndex = 39;
-            // 
-            // txtPharmacistName
-            // 
-            this.txtPharmacistName.BackColor = System.Drawing.Color.White;
-            this.txtPharmacistName.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPharmacistName.Location = new System.Drawing.Point(466, 177);
-            this.txtPharmacistName.Name = "txtPharmacistName";
-            this.txtPharmacistName.Size = new System.Drawing.Size(250, 37);
-            this.txtPharmacistName.TabIndex = 40;
+            this.txtName.BackColor = System.Drawing.Color.White;
+            this.txtName.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(429, 173);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(250, 37);
+            this.txtName.TabIndex = 40;
             // 
             // txtSalary
             // 
             this.txtSalary.BackColor = System.Drawing.Color.White;
             this.txtSalary.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSalary.Location = new System.Drawing.Point(467, 226);
+            this.txtSalary.Location = new System.Drawing.Point(429, 375);
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.Size = new System.Drawing.Size(250, 37);
             this.txtSalary.TabIndex = 41;
-            // 
-            // txtFavoriteColor
-            // 
-            this.txtFavoriteColor.BackColor = System.Drawing.Color.White;
-            this.txtFavoriteColor.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFavoriteColor.Location = new System.Drawing.Point(467, 387);
-            this.txtFavoriteColor.Name = "txtFavoriteColor";
-            this.txtFavoriteColor.Size = new System.Drawing.Size(140, 37);
-            this.txtFavoriteColor.TabIndex = 42;
-            // 
-            // txtPetName
-            // 
-            this.txtPetName.BackColor = System.Drawing.Color.White;
-            this.txtPetName.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPetName.Location = new System.Drawing.Point(466, 440);
-            this.txtPetName.Name = "txtPetName";
-            this.txtPetName.Size = new System.Drawing.Size(140, 37);
-            this.txtPetName.TabIndex = 43;
-            // 
-            // txtBirthPlace
-            // 
-            this.txtBirthPlace.BackColor = System.Drawing.Color.White;
-            this.txtBirthPlace.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBirthPlace.Location = new System.Drawing.Point(466, 486);
-            this.txtBirthPlace.Name = "txtBirthPlace";
-            this.txtBirthPlace.Size = new System.Drawing.Size(140, 37);
-            this.txtBirthPlace.TabIndex = 44;
-            // 
-            // chkPharmD
-            // 
-            this.chkPharmD.AutoSize = true;
-            this.chkPharmD.BackColor = System.Drawing.Color.Transparent;
-            this.chkPharmD.Location = new System.Drawing.Point(580, 345);
-            this.chkPharmD.Name = "chkPharmD";
-            this.chkPharmD.Size = new System.Drawing.Size(93, 24);
-            this.chkPharmD.TabIndex = 46;
-            this.chkPharmD.Text = "PharmD";
-            this.chkPharmD.UseVisualStyleBackColor = false;
-            // 
-            // chkMPharm
-            // 
-            this.chkMPharm.AutoSize = true;
-            this.chkMPharm.BackColor = System.Drawing.Color.Transparent;
-            this.chkMPharm.Location = new System.Drawing.Point(689, 345);
-            this.chkMPharm.Name = "chkMPharm";
-            this.chkMPharm.Size = new System.Drawing.Size(98, 24);
-            this.chkMPharm.TabIndex = 47;
-            this.chkMPharm.Text = "M.Pharm";
-            this.chkMPharm.UseVisualStyleBackColor = false;
-            // 
-            // chkDiploma
-            // 
-            this.chkDiploma.AutoSize = true;
-            this.chkDiploma.BackColor = System.Drawing.Color.Transparent;
-            this.chkDiploma.Location = new System.Drawing.Point(793, 345);
-            this.chkDiploma.Name = "chkDiploma";
-            this.chkDiploma.Size = new System.Drawing.Size(93, 24);
-            this.chkDiploma.TabIndex = 48;
-            this.chkDiploma.Text = "Diploma";
-            this.chkDiploma.UseVisualStyleBackColor = false;
-            // 
-            // chkBPharm
-            // 
-            this.chkBPharm.AutoSize = true;
-            this.chkBPharm.BackColor = System.Drawing.Color.Transparent;
-            this.chkBPharm.Location = new System.Drawing.Point(466, 345);
-            this.chkBPharm.Name = "chkBPharm";
-            this.chkBPharm.Size = new System.Drawing.Size(96, 24);
-            this.chkBPharm.TabIndex = 49;
-            this.chkBPharm.Text = "B.Pharm";
-            this.chkBPharm.UseVisualStyleBackColor = false;
             // 
             // rdoMale
             // 
             this.rdoMale.AutoSize = true;
             this.rdoMale.BackColor = System.Drawing.Color.Transparent;
-            this.rdoMale.Location = new System.Drawing.Point(467, 287);
+            this.rdoMale.Location = new System.Drawing.Point(429, 436);
             this.rdoMale.Name = "rdoMale";
             this.rdoMale.Size = new System.Drawing.Size(68, 24);
             this.rdoMale.TabIndex = 50;
@@ -413,7 +299,7 @@
             // 
             this.rdoFemale.AutoSize = true;
             this.rdoFemale.BackColor = System.Drawing.Color.Transparent;
-            this.rdoFemale.Location = new System.Drawing.Point(556, 287);
+            this.rdoFemale.Location = new System.Drawing.Point(520, 437);
             this.rdoFemale.Name = "rdoFemale";
             this.rdoFemale.Size = new System.Drawing.Size(87, 24);
             this.rdoFemale.TabIndex = 51;
@@ -427,12 +313,13 @@
             this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShow.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShow.ForeColor = System.Drawing.Color.White;
-            this.btnShow.Location = new System.Drawing.Point(930, 135);
+            this.btnShow.Location = new System.Drawing.Point(929, 242);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(120, 40);
             this.btnShow.TabIndex = 52;
             this.btnShow.Text = "Show";
             this.btnShow.UseVisualStyleBackColor = false;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // btnAdd
             // 
@@ -440,12 +327,13 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(930, 191);
+            this.btnAdd.Location = new System.Drawing.Point(859, 127);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(120, 40);
             this.btnAdd.TabIndex = 53;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
@@ -453,12 +341,13 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(930, 251);
+            this.btnUpdate.Location = new System.Drawing.Point(995, 127);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(120, 40);
             this.btnUpdate.TabIndex = 54;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -466,12 +355,13 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(930, 310);
+            this.btnDelete.Location = new System.Drawing.Point(859, 186);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(120, 40);
             this.btnDelete.TabIndex = 55;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnClear
             // 
@@ -479,29 +369,158 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(930, 370);
+            this.btnClear.Location = new System.Drawing.Point(995, 186);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(120, 40);
             this.btnClear.TabIndex = 56;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // dgvPharmacist
             // 
             this.dgvPharmacist.AllowUserToAddRows = false;
-            this.dgvPharmacist.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPharmacist.BackgroundColor = System.Drawing.Color.White;
             this.dgvPharmacist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPharmacist.GridColor = System.Drawing.Color.LightGray;
-            this.dgvPharmacist.Location = new System.Drawing.Point(627, 431);
+            this.dgvPharmacist.Location = new System.Drawing.Point(724, 314);
             this.dgvPharmacist.MultiSelect = false;
             this.dgvPharmacist.Name = "dgvPharmacist";
             this.dgvPharmacist.ReadOnly = true;
             this.dgvPharmacist.RowHeadersWidth = 62;
             this.dgvPharmacist.RowTemplate.Height = 28;
             this.dgvPharmacist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPharmacist.Size = new System.Drawing.Size(531, 239);
+            this.dgvPharmacist.Size = new System.Drawing.Size(448, 341);
             this.dgvPharmacist.TabIndex = 57;
+            this.dgvPharmacist.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPharmacist_CellContentClick);
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(293, 222);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(106, 28);
+            this.lblUsername.TabIndex = 58;
+            this.lblUsername.Text = "Username";
+            // 
+            // lblPhone
+            // 
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.BackColor = System.Drawing.Color.Transparent;
+            this.lblPhone.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.Location = new System.Drawing.Point(293, 273);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(71, 28);
+            this.lblPhone.TabIndex = 59;
+            this.lblPhone.Text = "Phone";
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.BackColor = System.Drawing.Color.Transparent;
+            this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Location = new System.Drawing.Point(293, 328);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(101, 28);
+            this.lblPassword.TabIndex = 60;
+            this.lblPassword.Text = "Password";
+            // 
+            // lblQuestion
+            // 
+            this.lblQuestion.AutoSize = true;
+            this.lblQuestion.BackColor = System.Drawing.Color.Transparent;
+            this.lblQuestion.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuestion.Location = new System.Drawing.Point(293, 487);
+            this.lblQuestion.Name = "lblQuestion";
+            this.lblQuestion.Size = new System.Drawing.Size(97, 28);
+            this.lblQuestion.TabIndex = 61;
+            this.lblQuestion.Text = "Question";
+            // 
+            // lblAnswer
+            // 
+            this.lblAnswer.AutoSize = true;
+            this.lblAnswer.BackColor = System.Drawing.Color.Transparent;
+            this.lblAnswer.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswer.Location = new System.Drawing.Point(296, 541);
+            this.lblAnswer.Name = "lblAnswer";
+            this.lblAnswer.Size = new System.Drawing.Size(82, 28);
+            this.lblAnswer.TabIndex = 62;
+            this.lblAnswer.Text = "Answer";
+            // 
+            // lblAddress
+            // 
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.BackColor = System.Drawing.Color.Transparent;
+            this.lblAddress.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.Location = new System.Drawing.Point(296, 597);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(87, 28);
+            this.lblAddress.TabIndex = 63;
+            this.lblAddress.Text = "Address";
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.BackColor = System.Drawing.Color.White;
+            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(429, 218);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(250, 37);
+            this.txtUsername.TabIndex = 64;
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.BackColor = System.Drawing.Color.White;
+            this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Location = new System.Drawing.Point(429, 269);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(250, 37);
+            this.txtPhone.TabIndex = 65;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.BackColor = System.Drawing.Color.White;
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(429, 324);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(250, 37);
+            this.txtPassword.TabIndex = 66;
+            // 
+            // txtAnswer
+            // 
+            this.txtAnswer.BackColor = System.Drawing.Color.White;
+            this.txtAnswer.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAnswer.Location = new System.Drawing.Point(429, 537);
+            this.txtAnswer.Name = "txtAnswer";
+            this.txtAnswer.Size = new System.Drawing.Size(250, 37);
+            this.txtAnswer.TabIndex = 67;
+            // 
+            // cmbQuestion
+            // 
+            this.cmbQuestion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbQuestion.FormattingEnabled = true;
+            this.cmbQuestion.Items.AddRange(new object[] {
+            "What is your favorite color?",
+            "",
+            "What is your pet name?",
+            "",
+            "What is your birthplace?"});
+            this.cmbQuestion.Location = new System.Drawing.Point(429, 491);
+            this.cmbQuestion.Name = "cmbQuestion";
+            this.cmbQuestion.Size = new System.Drawing.Size(250, 28);
+            this.cmbQuestion.TabIndex = 68;
+            // 
+            // rtxtAddress
+            // 
+            this.rtxtAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtxtAddress.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtxtAddress.ForeColor = System.Drawing.Color.Black;
+            this.rtxtAddress.Location = new System.Drawing.Point(429, 583);
+            this.rtxtAddress.Name = "rtxtAddress";
+            this.rtxtAddress.Size = new System.Drawing.Size(250, 65);
+            this.rtxtAddress.TabIndex = 69;
+            this.rtxtAddress.Text = "";
             // 
             // AdminPharmacistForm
             // 
@@ -509,6 +528,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PharmaHealix.Properties.Resources.BackgroundImage3;
             this.ClientSize = new System.Drawing.Size(1184, 694);
+            this.Controls.Add(this.rtxtAddress);
+            this.Controls.Add(this.cmbQuestion);
+            this.Controls.Add(this.txtAnswer);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtPhone);
+            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.lblAddress);
+            this.Controls.Add(this.lblAnswer);
+            this.Controls.Add(this.lblQuestion);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.lblPhone);
+            this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.dgvPharmacist);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDelete);
@@ -517,24 +548,13 @@
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.rdoFemale);
             this.Controls.Add(this.rdoMale);
-            this.Controls.Add(this.chkBPharm);
-            this.Controls.Add(this.chkDiploma);
-            this.Controls.Add(this.chkMPharm);
-            this.Controls.Add(this.chkPharmD);
-            this.Controls.Add(this.txtBirthPlace);
-            this.Controls.Add(this.txtPetName);
-            this.Controls.Add(this.txtFavoriteColor);
             this.Controls.Add(this.txtSalary);
-            this.Controls.Add(this.txtPharmacistName);
-            this.Controls.Add(this.txtPharmacistID);
-            this.Controls.Add(this.lblBirthPlace);
-            this.Controls.Add(this.lblPetName);
-            this.Controls.Add(this.lblFavoriteColor);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.txtStaffID);
             this.Controls.Add(this.Salary);
             this.Controls.Add(this.lblGender);
-            this.Controls.Add(this.lblDgree);
             this.Controls.Add(this.lblPharmacistName);
-            this.Controls.Add(this.lblPharmacistID);
+            this.Controls.Add(this.lblStaffID);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.pnlHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -563,24 +583,13 @@
         private System.Windows.Forms.Button btnInventory;
         private System.Windows.Forms.Button btnAppointment;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Label lblPharmacistID;
+        private System.Windows.Forms.Label lblStaffID;
         private System.Windows.Forms.Label lblPharmacistName;
-        private System.Windows.Forms.Label lblDgree;
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.Label Salary;
-        private System.Windows.Forms.Label lblFavoriteColor;
-        private System.Windows.Forms.Label lblPetName;
-        private System.Windows.Forms.Label lblBirthPlace;
-        private System.Windows.Forms.TextBox txtPharmacistID;
-        private System.Windows.Forms.TextBox txtPharmacistName;
+        private System.Windows.Forms.TextBox txtStaffID;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtSalary;
-        private System.Windows.Forms.TextBox txtFavoriteColor;
-        private System.Windows.Forms.TextBox txtPetName;
-        private System.Windows.Forms.TextBox txtBirthPlace;
-        private System.Windows.Forms.CheckBox chkPharmD;
-        private System.Windows.Forms.CheckBox chkMPharm;
-        private System.Windows.Forms.CheckBox chkDiploma;
-        private System.Windows.Forms.CheckBox chkBPharm;
         private System.Windows.Forms.RadioButton rdoMale;
         private System.Windows.Forms.RadioButton rdoFemale;
         private System.Windows.Forms.Button btnShow;
@@ -590,5 +599,17 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.DataGridView dgvPharmacist;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.Label lblPhone;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label lblQuestion;
+        private System.Windows.Forms.Label lblAnswer;
+        private System.Windows.Forms.Label lblAddress;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtAnswer;
+        private System.Windows.Forms.ComboBox cmbQuestion;
+        private System.Windows.Forms.RichTextBox rtxtAddress;
     }
 }

@@ -129,8 +129,6 @@
             this.patientlistbtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.medilogobtn = new System.Windows.Forms.Button();
-            this.welcomelbl = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.patientlistpan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phprdgv)).BeginInit();
             this.patientlisttoppan.SuspendLayout();
@@ -155,7 +153,6 @@
             this.pharmacistprofiletoppan.SuspendLayout();
             this.sidepan.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // patientlistpan
@@ -165,7 +162,7 @@
             this.patientlistpan.Controls.Add(this.preslbl);
             this.patientlistpan.Controls.Add(this.phprdgv);
             this.patientlistpan.Controls.Add(this.patientlisttoppan);
-            this.patientlistpan.Location = new System.Drawing.Point(10000, 0);
+            this.patientlistpan.Location = new System.Drawing.Point(244, 0);
             this.patientlistpan.Margin = new System.Windows.Forms.Padding(2);
             this.patientlistpan.Name = "patientlistpan";
             this.patientlistpan.Size = new System.Drawing.Size(956, 750);
@@ -245,7 +242,7 @@
             this.orderpan.Controls.Add(this.label9);
             this.orderpan.Controls.Add(this.phordmeddgv);
             this.orderpan.Controls.Add(this.ordertoppan);
-            this.orderpan.Location = new System.Drawing.Point(10000, 0);
+            this.orderpan.Location = new System.Drawing.Point(244, 0);
             this.orderpan.Margin = new System.Windows.Forms.Padding(2);
             this.orderpan.Name = "orderpan";
             this.orderpan.Size = new System.Drawing.Size(956, 750);
@@ -480,7 +477,7 @@
             this.inventorypan.Controls.Add(this.phinvmnametb);
             this.inventorypan.Controls.Add(this.phinvdgv);
             this.inventorypan.Controls.Add(this.inventorytoppan);
-            this.inventorypan.Location = new System.Drawing.Point(10000, 0);
+            this.inventorypan.Location = new System.Drawing.Point(244, 0);
             this.inventorypan.Margin = new System.Windows.Forms.Padding(2);
             this.inventorypan.Name = "inventorypan";
             this.inventorypan.Size = new System.Drawing.Size(956, 750);
@@ -790,7 +787,7 @@
             this.pharmacistprofilepan.Controls.Add(this.pharmacistprofilenamelbl);
             this.pharmacistprofilepan.Controls.Add(this.pharmacistprofiletoppan);
             this.pharmacistprofilepan.Font = new System.Drawing.Font("Stencil", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pharmacistprofilepan.Location = new System.Drawing.Point(10000, 0);
+            this.pharmacistprofilepan.Location = new System.Drawing.Point(244, 0);
             this.pharmacistprofilepan.Margin = new System.Windows.Forms.Padding(2);
             this.pharmacistprofilepan.Name = "pharmacistprofilepan";
             this.pharmacistprofilepan.Size = new System.Drawing.Size(956, 750);
@@ -1292,33 +1289,11 @@
             this.medilogobtn.TabIndex = 22;
             this.medilogobtn.UseVisualStyleBackColor = false;
             // 
-            // welcomelbl
-            // 
-            this.welcomelbl.AutoSize = true;
-            this.welcomelbl.Font = new System.Drawing.Font("Elephant", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcomelbl.Location = new System.Drawing.Point(651, 111);
-            this.welcomelbl.Name = "welcomelbl";
-            this.welcomelbl.Size = new System.Drawing.Size(0, 62);
-            this.welcomelbl.TabIndex = 48;
-            this.welcomelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::PharmaHealix.Properties.Resources.PharmaHealixLogo3;
-            this.pictureBox2.Location = new System.Drawing.Point(465, 208);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(576, 506);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 49;
-            this.pictureBox2.TabStop = false;
-            // 
             // Pharmacist
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::PharmaHealix.Properties.Resources.BackgroundImage;
             this.ClientSize = new System.Drawing.Size(1200, 750);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.welcomelbl);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Exitbtn);
             this.Controls.Add(this.pharmacistprofilepan);
@@ -1370,9 +1345,7 @@
             this.pharmacistprofiletoppan.PerformLayout();
             this.sidepan.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1477,7 +1450,5 @@
         private System.Windows.Forms.TextBox searchmedtb;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button searchmedbtn;
-        private System.Windows.Forms.Label welcomelbl;
-        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

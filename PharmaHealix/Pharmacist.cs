@@ -52,7 +52,7 @@ namespace PharmaHealix
         {
             this.username = n;
             InitializeComponent();
-            welcomelbl.Text = $"Welcome, {username}";
+          
         }
 
         private void Exitbtn_Click(object sender, EventArgs e)

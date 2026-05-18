@@ -21,9 +21,6 @@ namespace PharmaHealix
         private string user, username,doctor,appointmenttime;
         private DateTime appointmentdate;
         
-
-
-
         private string EName
         {
             get { return editnametxt.Text; }
@@ -73,9 +70,8 @@ namespace PharmaHealix
             medibackpan.Hide();
             searchtxt.Text ="Search for Medicine";
             searchtxt.ForeColor = Color.Gray;
-
-
-
+            appointmenthistorypan.Hide();
+            numericUpDown.Value = 1;
 
         }
 
@@ -108,8 +104,6 @@ namespace PharmaHealix
             this.Close();
 
         }
-
-
 
         private void searchbtn_Click(object sender, EventArgs e)
         {
@@ -370,6 +364,130 @@ namespace PharmaHealix
         }
 
         private void appsearchbtn_Click(object sender, EventArgs e)
+        {
+            string searchId = appsearchtxt.Text;
+            string s = "Select count(*) From AppointmentTable where AppointmentID=@0";
+            int count = Convert.ToInt32(new Db().Scalar(s, searchId));
+            if (count>0) {
+                string q =
+                            "SELECT A.AppointmentID, " +
+                            "U.Name AS [Doctor Name], " +
+                            "A.AppointmentDate AS [Date], " +
+                            "A.AppointmentTime AS [Time], " +
+                            "A.Status " +
+                            "FROM AppointmentTable A, DoctorTable D, UserTable U " +
+                            "WHERE A.DoctorID = D.DoctorID " +
+                            "And D.Username = U.Username " +
+                            "And A.PatientUsername = @0 " +
+                            "And A.AppointmentID=@1";
+
+                DataTable apphistorytable = new Db().Reader(q, username,searchId);
+                appdataGridView.DataSource = apphistorytable;
+                appdataGridView.AutoGenerateColumns = true;
+            }
+            else
+            {
+                appdataGridView.DataSource = null;
+                MessageBox.Show("The Appointment ID entered is not Found!");
+                return;
+            }
+        }
+
+      
+        private void appointmenhistorytbtn_Click(object sender, EventArgs e)
+        {
+            appointmenthistorypan.Visible = true;
+            appointmenthistorypan.BringToFront();
+            string q =
+                        "SELECT A.AppointmentID, " +
+                        "U.Name AS [Doctor Name], " +
+                        "A.AppointmentDate AS [Date], " +
+                        "A.AppointmentTime AS [Time], " +
+                        "A.Status " +
+                        "FROM AppointmentTable A, DoctorTable D, UserTable U " +
+                        "WHERE A.DoctorID = D.DoctorID " +
+                        "AND D.Username = U.Username " +
+                        "AND A.PatientUsername = @0";
+
+            DataTable apphistorytable = new Db().Reader(q, username);
+            appdataGridView.DataSource = apphistorytable;
+            appdataGridView.AutoGenerateColumns = true;
+            
+
+        }
+
+        private void addtocartbtn_Click(object sender, EventArgs e)
+        {
+           
+            int quantity = Convert.ToInt32(numericUpDown.Value);
+            if (quantity < 1 || quantity > 10)
+            {
+                MessageBox.Show("You can only add between 1 and 10 items to your cart.");
+                if (numericUpDown.Value > 10)
+                {
+                    numericUpDown.Value = 10;
+                }
+                else if (numericUpDown.Value < 1)
+                {
+                    numericUpDown.Value = 1;
+                }
+            }
+            else
+            {
+                string m = "Select Stock From MedicineTable Where MedicineName=@0";
+                int stock = Convert.ToInt32(new Db().Scalar(m, medinametxt.Text));
+                if (stock>=quantity && stock>0)
+                {
+                    string r = "Select MedicineID from MedicineTable Where MedicineName=@0";
+
+                    int medicineid = Convert.ToInt32(new Db().Scalar(r, medinametxt.Text));
+                    string q = "Insert Into CartTable (PatientUsername,MedicineID,Quantity) Values(@0,@1,@2)";
+                    new Db().NonQuery(q, username, medicineid, quantity);
+
+                    stock = stock - quantity;
+
+                    string update = "Update MedicineTable set stock=@0 where MedicineID=@1";
+                    new Db().NonQuery(update,stock,medicineid);
+                    numericUpDown.Value = 1;
+
+                    MessageBox.Show("Successfully Added to Cart!");
+
+                }
+                else
+                {
+                    MessageBox.Show("Insufficient Stock!");
+                }
+            }
+        }
+
+        private void cartbtn_Click(object sender, EventArgs e)
+        {
+            viewcartpan.Visible=true;
+            viewcartpan.BringToFront();
+            string q = "Select " +
+                     "C.CartId, " +
+                     "M.MedicineID, " +
+                     "M.MedicineName, " +
+                     "From CartTable C , MedicineTable M " +
+                     "And C.MedicineId=M.MedicineId " +
+                     "And PatientUsername=@0";
+
+            DataTable dt = new Db().Reader(q, username);
+            cartdataGridView.DataSource = dt;
+            cartdataGridView.AutoGenerateColumns = true;
+        }
+
+        private void orderbtn_Click(object sender, EventArgs e)
+        {
+            string s= "Insert Into OrderTable(PatientUsername,OrderDate,TotalAmount,Status) values(@0,@1,@2,@3)"
+        }
+
+        private void deletebtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clearbtn_Click(object sender, EventArgs e)
         {
 
         }

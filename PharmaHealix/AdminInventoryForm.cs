@@ -15,7 +15,7 @@ namespace PharmaHealix
     {
         Db db = new Db();
 
-        
+
 
         public AdminInventoryForm()
         {
@@ -147,7 +147,7 @@ namespace PharmaHealix
             this.Hide();
         }
 
-       
+
 
         private void btnAppointment_Click(object sender, EventArgs e)
         {
@@ -192,11 +192,13 @@ namespace PharmaHealix
             txtStock.Text = dgvInventory.Rows[e.RowIndex].Cells[8].Value.ToString();
 
             dtpExpireDate.Text = dgvInventory.Rows[e.RowIndex].Cells[9].Value.ToString();
+
+            txtImage.Text = dgvInventory.Rows[e.RowIndex].Cells[10].Value.ToString();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-           
+
             txtMedicineName.Clear();
 
             dtpExpireDate.Value = DateTime.Now;
@@ -353,7 +355,6 @@ namespace PharmaHealix
 
             int stock = Convert.ToInt32(txtStock.Text);
 
-
             string query = "Update MedicineTable set MedicineName='" + txtMedicineName.Text.Replace("'", "''") + "', Category='" + txtCategory.Text.Replace("'", "''") + "', Description='" + rtxtDescription.Text.Replace("'", "''") + "', StripPrice=" + stripPrice + ", UnitPrice=" + unitPrice + ", Dose='" + rtxtDose.Text.Replace("'", "''") + "', SideEffect='" + rtxtSideEffect.Text.Replace("'", "''") + "', Stock=" + stock + ", ExpireDate='" + dtpExpireDate.Value.ToString("yyyy-MM-dd") + "', Image='" + txtImage.Text.Replace("'", "''") + "' where MedicineName='" + txtMedicineName.Text.Replace("'", "''") + "'";
 
 
@@ -389,7 +390,8 @@ namespace PharmaHealix
 
         private void btnClear_Click_1(object sender, EventArgs e)
         {
-           
+
+            txtImage.Text = "";
 
             txtMedicineName.Text = "";
 
@@ -410,9 +412,10 @@ namespace PharmaHealix
             dtpExpireDate.Value = DateTime.Now;
 
            
+
         }
 
-        
+
     }
-    }
+}
 

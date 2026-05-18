@@ -260,6 +260,7 @@
             this.rdoMale.TabStop = true;
             this.rdoMale.Text = "Male";
             this.rdoMale.UseVisualStyleBackColor = false;
+            this.rdoMale.CheckedChanged += new System.EventHandler(this.rdoMale_CheckedChanged);
             // 
             // btnShow
             // 

@@ -511,58 +511,11 @@ namespace PharmaHealix
 
             txtFee.Text = dgvDoctor.Rows[e.RowIndex].Cells[10].Value.ToString();
         }
-            
 
-            
-        
-
-        /*private void dgvDoctor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void rdoMale_CheckedChanged(object sender, EventArgs e)
         {
-            if (e.RowIndex < 0)
-            {
-                return;
-            }
 
-            txtName.Text = dgvDoctor.Rows[e.RowIndex].Cells[0].Value.ToString();
-
-            txtPhone.Text = dgvDoctor.Rows[e.RowIndex].Cells[1].Value.ToString();
-
-            txtUsername.Text = dgvDoctor.Rows[e.RowIndex].Cells[2].Value.ToString();
-            
-            oldusername = txtUsername.Text;
-
-            rtxtAddress.Text = dgvDoctor.Rows[e.RowIndex].Cells[3].Value.ToString();
-
-            cmbQuestion.Text = dgvDoctor.Rows[e.RowIndex].Cells[4].Value.ToString();
-
-            txtAnswer.Text = dgvDoctor.Rows[e.RowIndex].Cells[5].Value.ToString();
-
-            txtPassword.Text = dgvDoctor.Rows[e.RowIndex].Cells[6].Value.ToString();
-
-            id = Convert.ToInt32(dgvDoctor.Rows[e.RowIndex].Cells[7].Value);
-
-            string gender = dgvDoctor.Rows[e.RowIndex].Cells[8].Value.ToString();
-
-            if (gender == "Male")
-            {
-                rdoMale.Checked = true;
-            }
-
-            if (gender == "Female")
-            {
-                rdoFemale.Checked = true;
-            }
-
-            string speciality = dgvDoctor.Rows[e.RowIndex].Cells[9].Value.ToString();
-
-            cbMBBS.Checked = speciality.Contains("MBBS");
-
-            cbFCPS.Checked = speciality.Contains("FCPS");
-
-            cbMD.Checked = speciality.Contains("MD");
-
-            txtFee.Text = dgvDoctor.Rows[e.RowIndex].Cells[10].Value.ToString();
-        }*/
+        }
     }
     }
 

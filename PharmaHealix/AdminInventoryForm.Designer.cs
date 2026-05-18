@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminInventoryForm));
+            
             this.lblMedicineName = new System.Windows.Forms.Label();
             this.lblExpireDate = new System.Windows.Forms.Label();
             this.txtMedicineName = new System.Windows.Forms.TextBox();
@@ -64,6 +65,7 @@
             this.rtxtDescription = new System.Windows.Forms.RichTextBox();
             this.rtxtDose = new System.Windows.Forms.RichTextBox();
             this.rtxtSideEffect = new System.Windows.Forms.RichTextBox();
+            this.btnBrowse = new System.Windows.Forms.Button();
             this.txtImage = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.panelMenu.SuspendLayout();
@@ -126,7 +128,7 @@
             this.dgvInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInventory.Size = new System.Drawing.Size(505, 327);
             this.dgvInventory.TabIndex = 19;
-            this.dgvInventory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventory__CellClick);
+            this.dgvInventory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventory_CellContentClick);
             // 
             // panelMenu
             // 
@@ -432,7 +434,7 @@
             this.lblImage.AutoSize = true;
             this.lblImage.BackColor = System.Drawing.Color.Transparent;
             this.lblImage.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblImage.Location = new System.Drawing.Point(274, 122);
+            this.lblImage.Location = new System.Drawing.Point(659, 122);
             this.lblImage.Name = "lblImage";
             this.lblImage.Size = new System.Drawing.Size(70, 28);
             this.lblImage.TabIndex = 65;
@@ -503,9 +505,23 @@
             this.rtxtSideEffect.TabIndex = 72;
             this.rtxtSideEffect.Text = "";
             // 
+            // btnBrowse
+            // 
+            this.btnBrowse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(99)))), ((int)(((byte)(35)))));
+            this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBrowse.Font = new System.Drawing.Font("Microsoft Himalaya", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrowse.ForeColor = System.Drawing.Color.White;
+            this.btnBrowse.Location = new System.Drawing.Point(637, 283);
+            this.btnBrowse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(120, 33);
+            this.btnBrowse.TabIndex = 74;
+            this.btnBrowse.Text = "Browse Image";
+            this.btnBrowse.UseVisualStyleBackColor = false;
+            // 
             // txtImage
             // 
-            this.txtImage.Location = new System.Drawing.Point(444, 126);
+            this.txtImage.Location = new System.Drawing.Point(637, 170);
             this.txtImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtImage.Name = "txtImage";
             this.txtImage.Size = new System.Drawing.Size(151, 26);
@@ -518,6 +534,7 @@
             this.BackgroundImage = global::PharmaHealix.Properties.Resources.BackgroundImage4;
             this.ClientSize = new System.Drawing.Size(1178, 694);
             this.Controls.Add(this.txtImage);
+            this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.rtxtSideEffect);
             this.Controls.Add(this.rtxtDose);
             this.Controls.Add(this.rtxtDescription);
@@ -598,6 +615,7 @@
         private System.Windows.Forms.RichTextBox rtxtDescription;
         private System.Windows.Forms.RichTextBox rtxtDose;
         private System.Windows.Forms.RichTextBox rtxtSideEffect;
+        private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.TextBox txtImage;
     }
 }

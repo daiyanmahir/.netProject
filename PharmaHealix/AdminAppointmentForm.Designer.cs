@@ -50,7 +50,6 @@
             // dgvAppointment
             // 
             this.dgvAppointment.AllowUserToAddRows = false;
-            this.dgvAppointment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAppointment.BackgroundColor = System.Drawing.Color.White;
             this.dgvAppointment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAppointment.Location = new System.Drawing.Point(378, 282);

@@ -90,7 +90,7 @@
             this.lblMedicineName.AutoSize = true;
             this.lblMedicineName.BackColor = System.Drawing.Color.Transparent;
             this.lblMedicineName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMedicineName.Location = new System.Drawing.Point(256, 181);
+            this.lblMedicineName.Location = new System.Drawing.Point(274, 170);
             this.lblMedicineName.Name = "lblMedicineName";
             this.lblMedicineName.Size = new System.Drawing.Size(161, 28);
             this.lblMedicineName.TabIndex = 9;
@@ -101,7 +101,7 @@
             this.lblExpireDate.AutoSize = true;
             this.lblExpireDate.BackColor = System.Drawing.Color.Transparent;
             this.lblExpireDate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExpireDate.Location = new System.Drawing.Point(267, 412);
+            this.lblExpireDate.Location = new System.Drawing.Point(274, 382);
             this.lblExpireDate.Name = "lblExpireDate";
             this.lblExpireDate.Size = new System.Drawing.Size(122, 28);
             this.lblExpireDate.TabIndex = 10;
@@ -109,7 +109,7 @@
             // 
             // txtMedicineID
             // 
-            this.txtMedicineID.Location = new System.Drawing.Point(431, 135);
+            this.txtMedicineID.Location = new System.Drawing.Point(442, 135);
             this.txtMedicineID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMedicineID.Name = "txtMedicineID";
             this.txtMedicineID.Size = new System.Drawing.Size(151, 26);
@@ -118,7 +118,7 @@
             // 
             // txtMedicineName
             // 
-            this.txtMedicineName.Location = new System.Drawing.Point(431, 185);
+            this.txtMedicineName.Location = new System.Drawing.Point(444, 174);
             this.txtMedicineName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMedicineName.Name = "txtMedicineName";
             this.txtMedicineName.Size = new System.Drawing.Size(151, 26);
@@ -128,7 +128,7 @@
             // 
             this.dtpExpireDate.CustomFormat = "yyyy-MM-dd";
             this.dtpExpireDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpExpireDate.Location = new System.Drawing.Point(431, 414);
+            this.dtpExpireDate.Location = new System.Drawing.Point(442, 391);
             this.dtpExpireDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpExpireDate.Name = "dtpExpireDate";
             this.dtpExpireDate.Size = new System.Drawing.Size(151, 26);
@@ -137,10 +137,9 @@
             // dgvInventory
             // 
             this.dgvInventory.AllowUserToAddRows = false;
-            this.dgvInventory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInventory.BackgroundColor = System.Drawing.Color.White;
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInventory.Location = new System.Drawing.Point(698, 444);
+            this.dgvInventory.Location = new System.Drawing.Point(637, 347);
             this.dgvInventory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvInventory.MultiSelect = false;
             this.dgvInventory.Name = "dgvInventory";
@@ -148,7 +147,7 @@
             this.dgvInventory.RowHeadersWidth = 62;
             this.dgvInventory.RowTemplate.Height = 28;
             this.dgvInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInventory.Size = new System.Drawing.Size(312, 230);
+            this.dgvInventory.Size = new System.Drawing.Size(505, 327);
             this.dgvInventory.TabIndex = 19;
             this.dgvInventory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventory_CellContentClick);
             // 
@@ -305,7 +304,7 @@
             this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShow.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShow.ForeColor = System.Drawing.Color.White;
-            this.btnShow.Location = new System.Drawing.Point(930, 158);
+            this.btnShow.Location = new System.Drawing.Point(958, 286);
             this.btnShow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(120, 40);
@@ -320,7 +319,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(930, 212);
+            this.btnAdd.Location = new System.Drawing.Point(871, 152);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(120, 40);
@@ -335,7 +334,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(930, 272);
+            this.btnUpdate.Location = new System.Drawing.Point(1022, 152);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(120, 40);
@@ -350,7 +349,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(930, 331);
+            this.btnDelete.Location = new System.Drawing.Point(871, 221);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(120, 40);
@@ -365,7 +364,7 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(930, 391);
+            this.btnClear.Location = new System.Drawing.Point(1022, 221);
             this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(120, 40);
@@ -379,7 +378,7 @@
             this.lblCategory.AutoSize = true;
             this.lblCategory.BackColor = System.Drawing.Color.Transparent;
             this.lblCategory.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategory.Location = new System.Drawing.Point(274, 225);
+            this.lblCategory.Location = new System.Drawing.Point(274, 207);
             this.lblCategory.Name = "lblCategory";
             this.lblCategory.Size = new System.Drawing.Size(98, 28);
             this.lblCategory.TabIndex = 58;
@@ -390,7 +389,7 @@
             this.lblStripPrice.AutoSize = true;
             this.lblStripPrice.BackColor = System.Drawing.Color.Transparent;
             this.lblStripPrice.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStripPrice.Location = new System.Drawing.Point(267, 272);
+            this.lblStripPrice.Location = new System.Drawing.Point(274, 251);
             this.lblStripPrice.Name = "lblStripPrice";
             this.lblStripPrice.Size = new System.Drawing.Size(104, 28);
             this.lblStripPrice.TabIndex = 59;
@@ -401,7 +400,7 @@
             this.lblUnitPrice.AutoSize = true;
             this.lblUnitPrice.BackColor = System.Drawing.Color.Transparent;
             this.lblUnitPrice.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnitPrice.Location = new System.Drawing.Point(273, 321);
+            this.lblUnitPrice.Location = new System.Drawing.Point(274, 298);
             this.lblUnitPrice.Name = "lblUnitPrice";
             this.lblUnitPrice.Size = new System.Drawing.Size(99, 28);
             this.lblUnitPrice.TabIndex = 60;
@@ -412,7 +411,7 @@
             this.lblStock.AutoSize = true;
             this.lblStock.BackColor = System.Drawing.Color.Transparent;
             this.lblStock.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStock.Location = new System.Drawing.Point(267, 362);
+            this.lblStock.Location = new System.Drawing.Point(274, 337);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(64, 28);
             this.lblStock.TabIndex = 61;
@@ -423,7 +422,7 @@
             this.lblDescription.AutoSize = true;
             this.lblDescription.BackColor = System.Drawing.Color.Transparent;
             this.lblDescription.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(273, 462);
+            this.lblDescription.Location = new System.Drawing.Point(274, 444);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(121, 28);
             this.lblDescription.TabIndex = 62;
@@ -434,7 +433,7 @@
             this.lblDose.AutoSize = true;
             this.lblDose.BackColor = System.Drawing.Color.Transparent;
             this.lblDose.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDose.Location = new System.Drawing.Point(292, 510);
+            this.lblDose.Location = new System.Drawing.Point(274, 539);
             this.lblDose.Name = "lblDose";
             this.lblDose.Size = new System.Drawing.Size(59, 28);
             this.lblDose.TabIndex = 63;
@@ -445,7 +444,7 @@
             this.lblSideEffect.AutoSize = true;
             this.lblSideEffect.BackColor = System.Drawing.Color.Transparent;
             this.lblSideEffect.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSideEffect.Location = new System.Drawing.Point(273, 561);
+            this.lblSideEffect.Location = new System.Drawing.Point(274, 630);
             this.lblSideEffect.Name = "lblSideEffect";
             this.lblSideEffect.Size = new System.Drawing.Size(114, 28);
             this.lblSideEffect.TabIndex = 64;
@@ -456,7 +455,7 @@
             this.lblImage.AutoSize = true;
             this.lblImage.BackColor = System.Drawing.Color.Transparent;
             this.lblImage.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblImage.Location = new System.Drawing.Point(608, 131);
+            this.lblImage.Location = new System.Drawing.Point(659, 122);
             this.lblImage.Name = "lblImage";
             this.lblImage.Size = new System.Drawing.Size(70, 28);
             this.lblImage.TabIndex = 65;
@@ -464,7 +463,7 @@
             // 
             // txtCategory
             // 
-            this.txtCategory.Location = new System.Drawing.Point(431, 229);
+            this.txtCategory.Location = new System.Drawing.Point(442, 211);
             this.txtCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(151, 26);
@@ -472,7 +471,7 @@
             // 
             // txtStripPrice
             // 
-            this.txtStripPrice.Location = new System.Drawing.Point(431, 288);
+            this.txtStripPrice.Location = new System.Drawing.Point(442, 255);
             this.txtStripPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtStripPrice.Name = "txtStripPrice";
             this.txtStripPrice.Size = new System.Drawing.Size(151, 26);
@@ -480,7 +479,7 @@
             // 
             // txtUnitPrice
             // 
-            this.txtUnitPrice.Location = new System.Drawing.Point(431, 325);
+            this.txtUnitPrice.Location = new System.Drawing.Point(442, 302);
             this.txtUnitPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUnitPrice.Name = "txtUnitPrice";
             this.txtUnitPrice.Size = new System.Drawing.Size(151, 26);
@@ -488,7 +487,7 @@
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(431, 368);
+            this.txtStock.Location = new System.Drawing.Point(442, 347);
             this.txtStock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(151, 26);
@@ -496,35 +495,41 @@
             // 
             // rtxtDescription
             // 
-            this.rtxtDescription.Location = new System.Drawing.Point(431, 462);
+            this.rtxtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtxtDescription.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtxtDescription.Location = new System.Drawing.Point(442, 434);
             this.rtxtDescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtxtDescription.Name = "rtxtDescription";
-            this.rtxtDescription.Size = new System.Drawing.Size(199, 42);
+            this.rtxtDescription.Size = new System.Drawing.Size(153, 60);
             this.rtxtDescription.TabIndex = 70;
             this.rtxtDescription.Text = "";
             // 
             // rtxtDose
             // 
-            this.rtxtDose.Location = new System.Drawing.Point(431, 510);
+            this.rtxtDose.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtxtDose.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtxtDose.Location = new System.Drawing.Point(442, 518);
             this.rtxtDose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtxtDose.Name = "rtxtDose";
-            this.rtxtDose.Size = new System.Drawing.Size(199, 42);
+            this.rtxtDose.Size = new System.Drawing.Size(151, 61);
             this.rtxtDose.TabIndex = 71;
             this.rtxtDose.Text = "";
             // 
             // rtxtSideEffect
             // 
-            this.rtxtSideEffect.Location = new System.Drawing.Point(431, 565);
+            this.rtxtSideEffect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtxtSideEffect.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtxtSideEffect.Location = new System.Drawing.Point(442, 609);
             this.rtxtSideEffect.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtxtSideEffect.Name = "rtxtSideEffect";
-            this.rtxtSideEffect.Size = new System.Drawing.Size(199, 42);
+            this.rtxtSideEffect.Size = new System.Drawing.Size(149, 65);
             this.rtxtSideEffect.TabIndex = 72;
             this.rtxtSideEffect.Text = "";
             // 
             // picMedicine
             // 
             this.picMedicine.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picMedicine.Location = new System.Drawing.Point(698, 135);
+            this.picMedicine.Location = new System.Drawing.Point(637, 152);
             this.picMedicine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picMedicine.Name = "picMedicine";
             this.picMedicine.Size = new System.Drawing.Size(120, 120);
@@ -538,7 +543,7 @@
             this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBrowse.Font = new System.Drawing.Font("Microsoft Himalaya", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBrowse.ForeColor = System.Drawing.Color.White;
-            this.btnBrowse.Location = new System.Drawing.Point(698, 267);
+            this.btnBrowse.Location = new System.Drawing.Point(637, 283);
             this.btnBrowse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(120, 33);

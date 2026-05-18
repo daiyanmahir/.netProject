@@ -49,7 +49,6 @@
             // dgvPatient
             // 
             this.dgvPatient.AllowUserToAddRows = false;
-            this.dgvPatient.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPatient.BackgroundColor = System.Drawing.Color.White;
             this.dgvPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPatient.Location = new System.Drawing.Point(364, 268);

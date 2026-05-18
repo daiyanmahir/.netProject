@@ -62,7 +62,7 @@
             this.dgvAppointment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAppointment.Size = new System.Drawing.Size(647, 287);
             this.dgvAppointment.TabIndex = 10;
-            this.dgvAppointment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAppointment_CellContentClick);
+            this.dgvAppointment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAppointment_CellClick);
             // 
             // pnlHeader
             // 

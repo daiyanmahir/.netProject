@@ -168,32 +168,7 @@ namespace PharmaHealix
 
         private void dgvInventory_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0)
-            {
-                return;
-            }
 
-
-
-            txtMedicineName.Text = dgvInventory.Rows[e.RowIndex].Cells[1].Value.ToString();
-
-            txtCategory.Text = dgvInventory.Rows[e.RowIndex].Cells[2].Value.ToString();
-
-            rtxtDescription.Text = dgvInventory.Rows[e.RowIndex].Cells[3].Value.ToString();
-
-            txtStripPrice.Text = dgvInventory.Rows[e.RowIndex].Cells[4].Value.ToString();
-
-            txtUnitPrice.Text = dgvInventory.Rows[e.RowIndex].Cells[5].Value.ToString();
-
-            rtxtDose.Text = dgvInventory.Rows[e.RowIndex].Cells[6].Value.ToString();
-
-            rtxtSideEffect.Text = dgvInventory.Rows[e.RowIndex].Cells[7].Value.ToString();
-
-            txtStock.Text = dgvInventory.Rows[e.RowIndex].Cells[8].Value.ToString();
-
-            dtpExpireDate.Text = dgvInventory.Rows[e.RowIndex].Cells[9].Value.ToString();
-
-            txtImage.Text = dgvInventory.Rows[e.RowIndex].Cells[10].Value.ToString();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -415,7 +390,33 @@ namespace PharmaHealix
 
         }
 
+        private void dgvInventory__CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
 
+            txtMedicineName.Text = dgvInventory.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+            txtCategory.Text = dgvInventory.Rows[e.RowIndex].Cells[2].Value.ToString();
+
+            rtxtDescription.Text = dgvInventory.Rows[e.RowIndex].Cells[3].Value.ToString();
+
+            txtStripPrice.Text = dgvInventory.Rows[e.RowIndex].Cells[4].Value.ToString();
+
+            txtUnitPrice.Text = dgvInventory.Rows[e.RowIndex].Cells[5].Value.ToString();
+
+            rtxtDose.Text = dgvInventory.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+            rtxtSideEffect.Text = dgvInventory.Rows[e.RowIndex].Cells[7].Value.ToString();
+
+            txtStock.Text = dgvInventory.Rows[e.RowIndex].Cells[8].Value.ToString();
+
+            dtpExpireDate.Text = dgvInventory.Rows[e.RowIndex].Cells[9].Value.ToString();
+
+            txtImage.Text = dgvInventory.Rows[e.RowIndex].Cells[10].Value.ToString();
+        }
     }
 }
 

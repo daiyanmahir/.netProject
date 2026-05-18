@@ -16,6 +16,8 @@ namespace PharmaHealix
     {
         Db db = new Db();
 
+        string oldusername = "";
+
         int id;
 
         public AdminPharmacistForm()
@@ -90,6 +92,22 @@ namespace PharmaHealix
                 Error = true;
             }
 
+            else if (decimal.TryParse(txtSalary.Text, out decimal salary) == false)
+            {
+                MessageBox.Show("Salary Must Be Number");
+                Error = true;
+            }
+
+
+
+            //decimal salary;
+
+            //if (decimal.TryParse(txtSalary.Text, out salary) == false)
+            //{
+            //MessageBox.Show("Salary Must Be Number");
+            //Error = true;
+            //}
+
             else if (rdoMale.Checked == false && rdoFemale.Checked == false)
             {
                 MessageBox.Show("Please Select Gender");
@@ -114,13 +132,13 @@ namespace PharmaHealix
                 Error = true;
             }
 
-            decimal salary;
+           // decimal salary;
 
-            if (decimal.TryParse(txtSalary.Text, out salary) == false)
-            {
-                MessageBox.Show("Salary Must Be Number");
-                Error = true;
-            }
+           // if (decimal.TryParse(txtSalary.Text, out salary) == false)
+            //{
+               // MessageBox.Show("Salary Must Be Number");
+               // Error = true;
+           // }
 
            
             if (Error)
@@ -321,13 +339,34 @@ namespace PharmaHealix
 
             conn.Open();
 
-            string query1 = "Update UserTable set Name='" + txtName.Text + "', Phone='" + txtPhone.Text + "', Address='" + rtxtAddress.Text + "', Question='" + cmbQuestion.Text + "', Answer='" + txtAnswer.Text + "', Password='" + txtPassword.Text + "' where Username='" + txtUsername.Text + "' AND Role='Pharmacist'";
+            string checkquery = "select * from UserTable where Username='" + txtUsername.Text + "' AND Username<>'" + oldusername + "'";
+
+            SqlCommand checkcmd = new SqlCommand(checkquery, conn);
+
+            SqlDataReader reader = checkcmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                MessageBox.Show("Username Already Exists");
+
+                conn.Close();
+
+                return;
+            }
+
+            reader.Close();
+
+
+
+            string query1 = "Update UserTable set Name='" + txtName.Text + "', Phone='" + txtPhone.Text + "', Address='" + rtxtAddress.Text + "', Question='" + cmbQuestion.Text + "', Answer='" + txtAnswer.Text + "', Password='" + txtPassword.Text + "' where Username='" + oldusername + "' AND Role='Pharmacist'";
 
             SqlCommand cmd1 = new SqlCommand(query1, conn);
 
             cmd1.ExecuteNonQuery();
 
-            string query2 = "Update StaffTable set Gender='" + gender + "', Salary='" + txtSalary.Text + "' where Username='" + txtUsername.Text + "'";
+            decimal salary = Convert.ToDecimal(txtSalary.Text);
+
+            string query2 = "Update StaffTable set Username='" + txtUsername.Text + "', Gender='" + gender + "', Salary=" + salary + " where StaffID=" + id;
 
             SqlCommand cmd2 = new SqlCommand(query2, conn);
 
@@ -461,6 +500,8 @@ namespace PharmaHealix
             txtPhone.Text = dgvPharmacist.Rows[e.RowIndex].Cells[1].Value.ToString();
 
             txtUsername.Text = dgvPharmacist.Rows[e.RowIndex].Cells[2].Value.ToString();
+
+            oldusername = txtUsername.Text;
 
             rtxtAddress.Text = dgvPharmacist.Rows[e.RowIndex].Cells[3].Value.ToString();
 

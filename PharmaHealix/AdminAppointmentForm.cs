@@ -124,10 +124,10 @@ namespace PharmaHealix
             conn.Close();
         }
 
-        private void dgvAppointment_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+       // private void dgvAppointment_CellContentClick(object sender, DataGridViewCellEventArgs e)
+       /* {
             id = Convert.ToInt32(dgvAppointment.Rows[e.RowIndex].Cells[0].Value);
-        }
+        }*/
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -140,7 +140,20 @@ namespace PharmaHealix
 
             SqlCommand statuscmd = new SqlCommand(statusquery, conn);
 
-            string status = statuscmd.ExecuteScalar().ToString();
+            //string status = statuscmd.ExecuteScalar().ToString();
+
+            object resultstatus = statuscmd.ExecuteScalar();
+
+            if (resultstatus == null)
+            {
+                MessageBox.Show("Please Select Appointment Properly");
+
+                conn.Close();
+
+                return;
+            }
+
+            string status = resultstatus.ToString();
 
             conn.Close();
 
@@ -187,6 +200,19 @@ namespace PharmaHealix
                 conn.Close();
 
             }
+        }
+
+        private void dgvAppointment_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+
+            id = Convert.ToInt32(dgvAppointment.Rows[e.RowIndex].Cells[0].Value);
+
+
         }
     }
 }

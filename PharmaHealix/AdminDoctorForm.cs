@@ -15,6 +15,7 @@ namespace PharmaHealix
     {
         Db db = new Db();
 
+        string oldusername = "";
 
         int id;
 
@@ -266,35 +267,38 @@ namespace PharmaHealix
             }
 
 
-            SqlConnection checkconn = new SqlConnection(db.connection);
-
-            checkconn.Open();
-
-            string checkquery = "select count(*) from UserTable where Username='" + txtUsername.Text + "'";
-
-            SqlCommand checkcmd = new SqlCommand(checkquery, checkconn);
-
-            int count = Convert.ToInt32(checkcmd.ExecuteScalar());
-
-            checkconn.Close();
-
-            if (count > 0)
-            {
-                MessageBox.Show("Username Already Exists");
-                return;
-            }
-
-
-
             SqlConnection conn = new SqlConnection(db.connection);
 
             conn.Open();
 
+            string checkquery = "select * from UserTable where Username='" + txtUsername.Text + "'";
 
-            /*if (DoctorValidation() == false)
+            SqlCommand checkcmd = new SqlCommand(checkquery, conn);
+
+            SqlDataReader reader = checkcmd.ExecuteReader();
+
+            if (reader.HasRows)
             {
+                MessageBox.Show("Username Already Exists");
+
+                conn.Close();
+
                 return;
-            }*/
+            }
+
+            reader.Close();
+
+
+
+
+
+
+            //SqlConnection conn = new SqlConnection(db.connection);
+
+           // conn.Open();
+
+
+       
 
 
             string speciality = "";
@@ -349,55 +353,7 @@ namespace PharmaHealix
             cmbQuestion.SelectedIndex = -1;
         }
 
-        /*private void dgvDoctor_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            id = Convert.ToInt32(dgvDoctor.Rows[e.RowIndex].Cells[7].Value);
-
-            txtName.Text = dgvDoctor.Rows[e.RowIndex].Cells[0].Value.ToString();
-
-            txtPhone.Text = dgvDoctor.Rows[e.RowIndex].Cells[1].Value.ToString();
-
-            txtUsername.Text = dgvDoctor.Rows[e.RowIndex].Cells[2].Value.ToString();
-
-            rtxtAddress.Text = dgvDoctor.Rows[e.RowIndex].Cells[3].Value.ToString();
-
-            cmbQuestion.Text = dgvDoctor.Rows[e.RowIndex].Cells[4].Value.ToString();
-
-            txtAnswer.Text = dgvDoctor.Rows[e.RowIndex].Cells[5].Value.ToString();
-
-            txtPassword.Text = dgvDoctor.Rows[e.RowIndex].Cells[6].Value.ToString();
-
-            string gender = dgvDoctor.Rows[e.RowIndex].Cells[8].Value.ToString();
-
-            if (gender == "Male")
-            {
-                rdoMale.Checked = true;
-            }
-
-            if (gender == "Female")
-            {
-                rdoFemale.Checked = true;
-            }
-
-            string speciality = dgvDoctor.Rows[e.RowIndex].Cells[9].Value.ToString();
-
-            if (speciality.Contains("MBBS"))
-            {
-                cbMBBS.Checked = true;
-            }
-
-            if (speciality.Contains("FCPS"))
-            {
-                cbFCPS.Checked = true;
-            }
-
-            if (speciality.Contains("MD"))
-            {
-                cbMD.Checked = true;
-            }
-
-            txtFee.Text = dgvDoctor.Rows[e.RowIndex].Cells[10].Value.ToString();
-        }*/
+       
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -410,6 +366,25 @@ namespace PharmaHealix
             SqlConnection conn = new SqlConnection(db.connection);
 
             conn.Open();
+
+            string checkquery = "select * from UserTable where Username='" + txtUsername.Text + "' AND Username<>'" + oldusername + "'";
+
+            SqlCommand checkcmd = new SqlCommand(checkquery, conn);
+
+            SqlDataReader reader = checkcmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                MessageBox.Show("Username Already Exists");
+
+                conn.Close();
+
+                return;
+            }
+
+            reader.Close();
+
+
 
             string query1 = "Update UserTable set Name='" + txtName.Text + "', Phone='" + txtPhone.Text + "', Address='" + rtxtAddress.Text + "', Question='" + cmbQuestion.Text + "', Answer='" + txtAnswer.Text + "', Password='" + txtPassword.Text + "' where Username='" + txtUsername.Text + "' AND Role='Doctor'";
 
@@ -491,14 +466,6 @@ namespace PharmaHealix
 
         private void dgvDoctor_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            
-
-            
-        }
-
-        private void dgvDoctor_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
             if (e.RowIndex < 0)
             {
                 return;
@@ -509,6 +476,8 @@ namespace PharmaHealix
             txtPhone.Text = dgvDoctor.Rows[e.RowIndex].Cells[1].Value.ToString();
 
             txtUsername.Text = dgvDoctor.Rows[e.RowIndex].Cells[2].Value.ToString();
+
+            oldusername = txtUsername.Text;
 
             rtxtAddress.Text = dgvDoctor.Rows[e.RowIndex].Cells[3].Value.ToString();
 
@@ -542,6 +511,58 @@ namespace PharmaHealix
 
             txtFee.Text = dgvDoctor.Rows[e.RowIndex].Cells[10].Value.ToString();
         }
+            
+
+            
+        
+
+        /*private void dgvDoctor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            txtName.Text = dgvDoctor.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+            txtPhone.Text = dgvDoctor.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+            txtUsername.Text = dgvDoctor.Rows[e.RowIndex].Cells[2].Value.ToString();
+            
+            oldusername = txtUsername.Text;
+
+            rtxtAddress.Text = dgvDoctor.Rows[e.RowIndex].Cells[3].Value.ToString();
+
+            cmbQuestion.Text = dgvDoctor.Rows[e.RowIndex].Cells[4].Value.ToString();
+
+            txtAnswer.Text = dgvDoctor.Rows[e.RowIndex].Cells[5].Value.ToString();
+
+            txtPassword.Text = dgvDoctor.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+            id = Convert.ToInt32(dgvDoctor.Rows[e.RowIndex].Cells[7].Value);
+
+            string gender = dgvDoctor.Rows[e.RowIndex].Cells[8].Value.ToString();
+
+            if (gender == "Male")
+            {
+                rdoMale.Checked = true;
+            }
+
+            if (gender == "Female")
+            {
+                rdoFemale.Checked = true;
+            }
+
+            string speciality = dgvDoctor.Rows[e.RowIndex].Cells[9].Value.ToString();
+
+            cbMBBS.Checked = speciality.Contains("MBBS");
+
+            cbFCPS.Checked = speciality.Contains("FCPS");
+
+            cbMD.Checked = speciality.Contains("MD");
+
+            txtFee.Text = dgvDoctor.Rows[e.RowIndex].Cells[10].Value.ToString();
+        }*/
     }
     }
 

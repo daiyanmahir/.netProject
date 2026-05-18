@@ -65,6 +65,7 @@ namespace PharmaHealix
             pharmacistprofilepan.Visible = false;
             inventorypan.Visible = false;
             orderpan.Visible = false;
+            requestpan.Visible = false;
             patientlistpan.Visible = true;
             RefreshPrescriptionGrid();
             phprrtb.Clear();
@@ -75,6 +76,7 @@ namespace PharmaHealix
             pharmacistprofilepan.Visible = false;
             inventorypan.Visible = false;
             patientlistpan.Visible = false;
+            requestpan.Visible = false;
             orderpan.Visible = true;
 
             InitializeOrderPage();
@@ -85,6 +87,7 @@ namespace PharmaHealix
             pharmacistprofilepan.Visible = false;
             patientlistpan.Visible = false;
             orderpan.Visible = false;
+            requestpan.Visible= false;
             inventorypan.Visible = true;
             RefreshInventoryGrid();
             ClearInventoryFields();
@@ -95,6 +98,7 @@ namespace PharmaHealix
             patientlistpan.Visible = false;
             orderpan.Visible = false;
             inventorypan.Visible = false;
+            requestpan.Visible = false;
             pharmacistprofilepan.Visible = true;
             editprofile();
         }
@@ -250,19 +254,34 @@ namespace PharmaHealix
         {
             string q = "select * from UserTable where username=@0";
             DataTable dt = new Db().Reader(q, username);
-            pharmacistprofilenametxt.Text = Convert.ToString(dt.Rows[0]["Name"]);
-            pharmacistphonetxt.Text = Convert.ToString(dt.Rows[0]["Phone"]);
-            pharmacistprofileusernametxt.Text = Convert.ToString(dt.Rows[0]["Username"]);
-            pharmacistprofileaddtxt.Text = Convert.ToString(dt.Rows[0]["Address"]);
-            comboBox1.Text = Convert.ToString(dt.Rows[0]["Question"]);
-            pharmacistprofilepasstxt.Text = Convert.ToString(dt.Rows[0]["Password"]);
-            pharmacistanswertxt.Text = Convert.ToString(dt.Rows[0]["Answer"]);
 
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                pharmacistprofilenametxt.Text = Convert.ToString(dt.Rows[0]["Name"]);
+                pharmacistphonetxt.Text = Convert.ToString(dt.Rows[0]["Phone"]);
+                pharmacistprofileusernametxt.Text = Convert.ToString(dt.Rows[0]["Username"]);
+                pharmacistprofileaddtxt.Text = Convert.ToString(dt.Rows[0]["Address"]);
+                comboBox1.Text = Convert.ToString(dt.Rows[0]["Question"]);
+                pharmacistprofilepasstxt.Text = Convert.ToString(dt.Rows[0]["Password"]);
+                pharmacistanswertxt.Text = Convert.ToString(dt.Rows[0]["Answer"]);
+            }
+
+            string salaryQuery = "SELECT Salary FROM StaffTable WHERE Username = @0";
+            object salaryResult = new Db().Scalar(salaryQuery, username);
+
+            if (salaryResult != DBNull.Value && salaryResult != null)
+            {
+                
+                phsalarytb.Text = Convert.ToDecimal(salaryResult).ToString("0.00");
+            }
+            else
+            {
+                phsalarytb.Text = "0.00"; 
+            }
         }
         //INVENTORY
         private void RefreshInventoryGrid()
         {
-            // Fetches all records from the MedicineTable to populate the DataGridView
             string query = "SELECT MedicineID, MedicineName, Category, Description, StripPrice, UnitPrice, Dose, SideEffect, Stock, ExpireDate, Image, Instruction FROM MedicineTable";
             DataTable dt = new Db().Reader(query);
 
@@ -274,7 +293,6 @@ namespace PharmaHealix
 
         private void ClearInventoryFields()
         {
-            // Resets all text boxes to empty strings
             phinvmnametb.Clear();
             phinvcategorytb.Clear();
             phinvspricetb.Clear();
@@ -305,7 +323,7 @@ namespace PharmaHealix
             if (medicineExists)
             {
                 MessageBox.Show(" Medicine already present in the inventory.");
-                return; // Stops execution so the duplicate record isn't added
+                return; 
             }
 
             // 3. Parse values carefully to prevent string-to-number exceptions
@@ -687,6 +705,72 @@ namespace PharmaHealix
                 phordmedicinetb.Clear();
                 numericUpDown1.Value = 0;
             }
+        }
+
+        //REQUESTS
+        private int selectedOrderId = -1;
+
+        private void requestbtn_Click(object sender, EventArgs e)
+        {
+            pharmacistprofilepan.Visible = false;
+            inventorypan.Visible = false;
+            patientlistpan.Visible = false;
+            orderpan.Visible = false;
+            requestpan.Visible = true;
+
+            RefreshRequestGrid();
+            selectedOrderId = -1;
+        }
+
+        private void RefreshRequestGrid()
+        {
+            string query = "SELECT OrderID, PatientUsername, OrderDate, TotalAmount, Status FROM OrderTable WHERE Status = 'Pending'";
+            DataTable dt = new Db().Reader(query);
+            requestdgv.DataSource = dt;
+        }
+
+        private void requestdgv_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = requestdgv.Rows[e.RowIndex];
+
+                selectedOrderId = Convert.ToInt32(row.Cells["OrderID"].Value);
+            }
+        }
+
+        private void approvebtn_Click(object sender, EventArgs e)
+        {
+            if (selectedOrderId == -1)
+            {
+                MessageBox.Show("Please select a pending order request from the table first.");
+                return;
+            }
+
+            string query = "UPDATE OrderTable SET Status = 'Processed' WHERE OrderID = @0";
+            new Db().NonQuery(query, selectedOrderId);
+
+            MessageBox.Show($"Order #{selectedOrderId} has been Approved!");
+
+            RefreshRequestGrid();
+            selectedOrderId = -1;
+        }
+
+        private void rejectbtn_Click(object sender, EventArgs e)
+        {
+            if (selectedOrderId == -1)
+            {
+                MessageBox.Show("Please select a pending order request from the table first.");
+                return;
+            }
+
+            string query = "UPDATE OrderTable SET Status = 'Rejected' WHERE OrderID = @0";
+            new Db().NonQuery(query, selectedOrderId);
+
+            MessageBox.Show($"Order #{selectedOrderId} has been Rejected.");
+
+            RefreshRequestGrid();
+            selectedOrderId = -1;
         }
     }
 }

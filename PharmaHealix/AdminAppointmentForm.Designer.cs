@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvAppointments = new System.Windows.Forms.DataGridView();
+            this.dgvAppointment = new System.Windows.Forms.DataGridView();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -40,27 +40,29 @@
             this.btnPatient = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
+            this.btnDelete = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointment)).BeginInit();
             this.pnlHeader.SuspendLayout();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvAppointments
+            // dgvAppointment
             // 
-            this.dgvAppointments.AllowUserToAddRows = false;
-            this.dgvAppointments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAppointments.BackgroundColor = System.Drawing.Color.White;
-            this.dgvAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAppointments.Location = new System.Drawing.Point(378, 282);
-            this.dgvAppointments.MultiSelect = false;
-            this.dgvAppointments.Name = "dgvAppointments";
-            this.dgvAppointments.ReadOnly = true;
-            this.dgvAppointments.RowHeadersWidth = 62;
-            this.dgvAppointments.RowTemplate.Height = 28;
-            this.dgvAppointments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAppointments.Size = new System.Drawing.Size(647, 287);
-            this.dgvAppointments.TabIndex = 10;
+            this.dgvAppointment.AllowUserToAddRows = false;
+            this.dgvAppointment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAppointment.BackgroundColor = System.Drawing.Color.White;
+            this.dgvAppointment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAppointment.Location = new System.Drawing.Point(378, 282);
+            this.dgvAppointment.MultiSelect = false;
+            this.dgvAppointment.Name = "dgvAppointment";
+            this.dgvAppointment.ReadOnly = true;
+            this.dgvAppointment.RowHeadersWidth = 62;
+            this.dgvAppointment.RowTemplate.Height = 28;
+            this.dgvAppointment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAppointment.Size = new System.Drawing.Size(647, 287);
+            this.dgvAppointment.TabIndex = 10;
+            this.dgvAppointment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAppointment_CellContentClick);
             // 
             // pnlHeader
             // 
@@ -110,6 +112,7 @@
             this.btnShow.TabIndex = 53;
             this.btnShow.Text = "Show";
             this.btnShow.UseVisualStyleBackColor = false;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click_1);
             // 
             // panelMenu
             // 
@@ -213,23 +216,38 @@
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click_1);
             // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(99)))), ((int)(((byte)(35)))));
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(532, 181);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(120, 50);
+            this.btnDelete.TabIndex = 55;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // AdminAppointmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PharmaHealix.Properties.Resources.BackgroundImage6;
             this.ClientSize = new System.Drawing.Size(1178, 694);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.pnlHeader);
-            this.Controls.Add(this.dgvAppointments);
+            this.Controls.Add(this.dgvAppointment);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(0, 72);
             this.Name = "AdminAppointmentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin - Appointments";
             this.Load += new System.EventHandler(this.AdminAppointmentForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointment)).EndInit();
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             this.panelMenu.ResumeLayout(false);
@@ -239,7 +257,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dgvAppointments;
+        private System.Windows.Forms.DataGridView dgvAppointment;
         private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnShow;
@@ -251,5 +269,6 @@
         private System.Windows.Forms.Button btnInventory;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace PharmaHealix
 {
     public partial class AdminPatientForm : Form
     {
+        Db db = new Db();
         public AdminPatientForm()
         {
             InitializeComponent();
@@ -86,6 +88,33 @@ namespace PharmaHealix
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection(db.connection);
+
+            conn.Open();
+
+            string query =
+                "SELECT Name, Phone, Username, Address, Question, Answer " +
+                "FROM UserTable WHERE Role='Patient'";
+
+            SqlCommand cmd = new SqlCommand(query, conn);
+
+            SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+            DataSet ds = new DataSet();
+
+            adp.Fill(ds);
+
+            DataTable dt = ds.Tables[0];
+
+            dgvPatient.DataSource = dt;
+
+            dgvPatient.AutoGenerateColumns = true;
+
+            conn.Close();
         }
     }
 }

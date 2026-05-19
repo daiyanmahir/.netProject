@@ -309,11 +309,10 @@ namespace PharmaHealix
             rdoFemale.Checked = false;
 
         }
- 
+
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
             if (PharmacistValidation() == false)
             {
                 return;
@@ -332,67 +331,70 @@ namespace PharmaHealix
             }
 
             SqlConnection conn = new SqlConnection(db.connection);
-
             conn.Open();
 
-            string checkquery = "select * from UserTable where Username='" + txtUsername.Text.Replace("'", "''") + "' AND Username<>'" + oldusername + "'";
+            // 1. Check if username exists, excluding the user currently being edited
+            string checkquery = "select Role from UserTable where Username='" + txtUsername.Text.Replace("'", "''") + "' AND Username<>'" + oldusername + "'";
 
             SqlCommand checkcmd = new SqlCommand(checkquery, conn);
-
             SqlDataReader reader = checkcmd.ExecuteReader();
 
             if (reader.HasRows)
             {
-                MessageBox.Show("Username Already Exists");
-
+                reader.Read();
+                string existingRole = reader["Role"].ToString();
                 reader.Close();
-                conn.Close();
 
+                // If the username exists and belongs to someone who is NOT a Pharmacist
+                if (existingRole != "Pharmacist")
+                {
+                    MessageBox.Show("Error: This username is already taken by a " + existingRole + "!");
+                }
+                else
+                {
+                    MessageBox.Show("Username Already Exists for another Pharmacist.");
+                }
+
+                conn.Close();
                 return;
             }
 
             reader.Close();
 
+            // 2. Update UserTable using oldusername in the WHERE clause
             string query1 = "Update UserTable set Name='" + txtName.Text.Replace("'", "''") + "', Phone='" + txtPhone.Text.Replace("'", "''") + "', Username='" + txtUsername.Text.Replace("'", "''") + "', Address='" + rtxtAddress.Text.Replace("'", "''") + "', Question='" + cmbQuestion.Text.Replace("'", "''") + "', Answer='" + txtAnswer.Text.Replace("'", "''") + "', Password='" + txtPassword.Text.Replace("'", "''") + "' where Username='" + oldusername + "' AND Role='Pharmacist'";
 
             SqlCommand cmd1 = new SqlCommand(query1, conn);
-
             cmd1.ExecuteNonQuery();
 
             decimal salary = Convert.ToDecimal(txtSalary.Text);
 
+            // 3. Update StaffTable
             string query2 = "Update StaffTable set Username='" + txtUsername.Text.Replace("'", "''") + "', Gender='" + gender + "', Salary=" + salary + " where StaffID=" + id;
 
             SqlCommand cmd2 = new SqlCommand(query2, conn);
-
             cmd2.ExecuteNonQuery();
 
             conn.Close();
 
             MessageBox.Show("Pharmacist Updated");
 
+            // 4. Refresh DataGridView Data
             conn.Open();
 
             string showquery = "select UserTable.Name, UserTable.Phone, UserTable.Username, UserTable.Address, UserTable.Question, UserTable.Answer, UserTable.Password, StaffTable.StaffID, StaffTable.Gender, StaffTable.Salary from UserTable inner join StaffTable on UserTable.Username = StaffTable.Username where UserTable.Role='Pharmacist'";
 
             SqlCommand showcmd = new SqlCommand(showquery, conn);
-
             SqlDataAdapter adp = new SqlDataAdapter(showcmd);
-
             DataSet ds = new DataSet();
-
             adp.Fill(ds);
-
             DataTable dt = ds.Tables[0];
 
             dgvPharmacist.DataSource = dt;
-
             dgvPharmacist.AutoGenerateColumns = true;
 
             conn.Close();
-
         }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
 

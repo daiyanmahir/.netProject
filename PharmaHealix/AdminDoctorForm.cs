@@ -348,69 +348,68 @@ namespace PharmaHealix
             cmbQuestion.SelectedIndex = -1;
         }
 
-       
+
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
             if (DoctorValidation() == false)
             {
                 return;
             }
 
             SqlConnection conn = new SqlConnection(db.connection);
-
             conn.Open();
 
-            string checkquery = "select * from UserTable where Username='" + txtUsername.Text + "' AND Username<>'" + oldusername + "'";
+            string checkquery = "select * from UserTable where Username='" + txtUsername.Text + "' AND Username<>' shadow" + oldusername + "'";
+            string queryCheck = "select Role from UserTable where Username='" + txtUsername.Text + "' AND Username<>'" + oldusername + "'";
 
-            SqlCommand checkcmd = new SqlCommand(checkquery, conn);
-
+            SqlCommand checkcmd = new SqlCommand(queryCheck, conn);
             SqlDataReader reader = checkcmd.ExecuteReader();
 
             if (reader.HasRows)
             {
-                MessageBox.Show("Username Already Exists");
+                reader.Read();
+                string existingRole = reader["Role"].ToString();
+                reader.Close();
 
-                conn.Close();
-
-                return;
+                if (existingRole != "Doctor")
+                {
+                    MessageBox.Show("Error: This username is already taken by a " + existingRole + "!");
+                    conn.Close();
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Username Already Exists for another Doctor.");
+                    conn.Close();
+                    return;
+                }
             }
 
             reader.Close();
-
-
-
-            string query1 = "Update UserTable set Name='" + txtName.Text + "', Phone='" + txtPhone.Text + "', Address='" + rtxtAddress.Text + "', Question='" + cmbQuestion.Text + "', Answer='" + txtAnswer.Text + "', Password='" + txtPassword.Text + "' where Username='" + txtUsername.Text + "' AND Role='Doctor'";
+            string query1 = "Update UserTable set Name='" + txtName.Text + "', Phone='" + txtPhone.Text + "', Username='" + txtUsername.Text + "', Address='" + rtxtAddress.Text + "', Question='" + cmbQuestion.Text + "', Answer='" + txtAnswer.Text + "', Password='" + txtPassword.Text + "' where Username='" + oldusername + "' AND Role='Doctor'";
 
             SqlCommand cmd1 = new SqlCommand(query1, conn);
-
             cmd1.ExecuteNonQuery();
 
             string gender = "";
-
             if (rdoMale.Checked)
             {
                 gender = "Male";
             }
-
             if (rdoFemale.Checked)
             {
                 gender = "Female";
             }
-
             string speciality = "";
-
             if (cbMBBS.Checked)
             {
                 speciality += "MBBS ";
             }
-
             if (cbFCPS.Checked)
             {
                 speciality += "FCPS ";
             }
-
             if (cbMD.Checked)
             {
                 speciality += "MD";
@@ -418,22 +417,16 @@ namespace PharmaHealix
 
             decimal fee = Convert.ToDecimal(txtFee.Text);
 
-            string query2 = "Update DoctorTable set Gender='" + gender + "', Speciality='" + speciality + "', Fee=" + fee + " where DoctorID=" + id;
+            string query2 = "Update DoctorTable set Username='" + txtUsername.Text + "', Gender='" + gender + "', Speciality='" + speciality + "', Fee=" + fee + " where DoctorID=" + id;
 
             SqlCommand cmd2 = new SqlCommand(query2, conn);
-
             cmd2.ExecuteNonQuery();
 
             conn.Close();
 
             MessageBox.Show("Doctor Updated");
-
-
-
-
-
+            btnShow.PerformClick(); 
         }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(db.connection);

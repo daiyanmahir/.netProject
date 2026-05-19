@@ -54,11 +54,6 @@ namespace PharmaHealix
             this.Hide();
         }
 
-        private void AdminUserForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtName.Text = "";

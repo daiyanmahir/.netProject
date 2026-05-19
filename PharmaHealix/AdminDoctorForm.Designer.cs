@@ -596,7 +596,6 @@
             this.Name = "AdminDoctorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin - Doctor";
-            this.Load += new System.EventHandler(this.AdminUserForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoctor)).EndInit();
             this.panelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();

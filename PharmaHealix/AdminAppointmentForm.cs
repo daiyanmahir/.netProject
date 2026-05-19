@@ -124,10 +124,7 @@ namespace PharmaHealix
             conn.Close();
         }
 
-       // private void dgvAppointment_CellContentClick(object sender, DataGridViewCellEventArgs e)
-       /* {
-            id = Convert.ToInt32(dgvAppointment.Rows[e.RowIndex].Cells[0].Value);
-        }*/
+       
 
         private void btnDelete_Click(object sender, EventArgs e)
         {

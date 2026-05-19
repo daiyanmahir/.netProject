@@ -720,11 +720,11 @@
             // 
             this.patientidlbl.AutoSize = true;
             this.patientidlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patientidlbl.Location = new System.Drawing.Point(7, 108);
+            this.patientidlbl.Location = new System.Drawing.Point(3, 108);
             this.patientidlbl.Name = "patientidlbl";
-            this.patientidlbl.Size = new System.Drawing.Size(84, 20);
+            this.patientidlbl.Size = new System.Drawing.Size(141, 20);
             this.patientidlbl.TabIndex = 2;
-            this.patientidlbl.Text = "Patient ID:";
+            this.patientidlbl.Text = "Patient Username:";
             // 
             // txtPatientName
             // 
@@ -738,7 +738,7 @@
             // 
             this.fnamelbl.AutoSize = true;
             this.fnamelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fnamelbl.Location = new System.Drawing.Point(7, 37);
+            this.fnamelbl.Location = new System.Drawing.Point(3, 37);
             this.fnamelbl.Name = "fnamelbl";
             this.fnamelbl.Size = new System.Drawing.Size(84, 20);
             this.fnamelbl.TabIndex = 0;

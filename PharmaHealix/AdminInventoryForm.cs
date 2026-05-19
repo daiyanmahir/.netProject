@@ -27,6 +27,10 @@ namespace PharmaHealix
         {
             bool Error = false;
 
+            decimal stripPrice = 0;
+            decimal unitPrice = 0;
+            int stock = 0;
+
             if (txtMedicineName.Text == "")
             {
                 MessageBox.Show("Please Enter Medicine Name");
@@ -45,61 +49,52 @@ namespace PharmaHealix
                 Error = true;
             }
 
-            else if (rtxtDescription.Text == "")
-            {
-                MessageBox.Show("Please Enter Description");
-                Error = true;
-            }
-
+            // STRIP PRICE
             else if (txtStripPrice.Text == "")
             {
                 MessageBox.Show("Please Enter Strip Price");
                 Error = true;
             }
 
+            else if (decimal.TryParse(txtStripPrice.Text, out stripPrice) == false)
+            {
+                MessageBox.Show("Strip Price Must Be Number");
+                Error = true;
+            }
+
+            else if (stripPrice < 0)
+            {
+                MessageBox.Show("Strip Price Cannot Be Negative");
+                Error = true;
+            }
+
+            // UNIT PRICE
             else if (txtUnitPrice.Text == "")
             {
                 MessageBox.Show("Please Enter Unit Price");
                 Error = true;
             }
 
+            else if (decimal.TryParse(txtUnitPrice.Text, out unitPrice) == false)
+            {
+                MessageBox.Show("Unit Price Must Be Number");
+                Error = true;
+            }
+
+            else if (unitPrice < 0)
+            {
+                MessageBox.Show("Unit Price Cannot Be Negative");
+                Error = true;
+            }
+
+            // STOCK
             else if (txtStock.Text == "")
             {
                 MessageBox.Show("Please Enter Stock");
                 Error = true;
             }
 
-            else if (rtxtDose.Text == "")
-            {
-                MessageBox.Show("Please Enter Dose");
-                Error = true;
-            }
-
-            else if (rtxtSideEffect.Text == "")
-            {
-                MessageBox.Show("Please Enter Side Effect");
-                Error = true;
-            }
-
-            decimal stripPrice;
-
-            if (decimal.TryParse(txtStripPrice.Text, out stripPrice) == false)
-            {
-                MessageBox.Show("Strip Price Must Be Number");
-                Error = true;
-            }
-
-            decimal unitPrice;
-
-            if (decimal.TryParse(txtUnitPrice.Text, out unitPrice) == false)
-            {
-                MessageBox.Show("Unit Price Must Be Number");
-                Error = true;
-            }
-
-            int stock;
-
-            if (int.TryParse(txtStock.Text, out stock) == false)
+            else if (int.TryParse(txtStock.Text, out stock) == false)
             {
                 MessageBox.Show("Stock Must Be Number");
                 Error = true;
@@ -111,15 +106,31 @@ namespace PharmaHealix
                 Error = true;
             }
 
-            else if (stripPrice < 0 || unitPrice < 0)
-            {
-                MessageBox.Show("Price Cannot Be Negative");
-                Error = true;
-            }
-
+            // EXPIRE DATE
             else if (dtpExpireDate.Value.Date <= DateTime.Now.Date)
             {
                 MessageBox.Show("Expire Date Must Be Future Date");
+                Error = true;
+            }
+
+            // DESCRIPTION
+            else if (rtxtDescription.Text == "")
+            {
+                MessageBox.Show("Please Enter Description");
+                Error = true;
+            }
+
+            // DOSE
+            else if (rtxtDose.Text == "")
+            {
+                MessageBox.Show("Please Enter Dose");
+                Error = true;
+            }
+
+            // SIDE EFFECT
+            else if (rtxtSideEffect.Text == "")
+            {
+                MessageBox.Show("Please Enter Side Effect");
                 Error = true;
             }
 
@@ -346,21 +357,29 @@ namespace PharmaHealix
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+
             SqlConnection conn = new SqlConnection(db.connection);
 
             conn.Open();
 
-            string query = "Delete from MedicineTable where MedicineName='" + txtMedicineName.Text + "'";
+            DialogResult result = MessageBox.Show("Are You Sure?", "Delete", MessageBoxButtons.YesNo);
 
-            SqlCommand cmd = new SqlCommand(query, conn);
+            if (result == DialogResult.Yes)
+            {
+                string query = "Delete from MedicineTable where MedicineName='" + txtMedicineName.Text.Replace("'", "''") + "'";
 
-            cmd.ExecuteNonQuery();
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Medicine Deleted");
+
+                btnShow.PerformClick();
+            }
 
             conn.Close();
 
-            MessageBox.Show("Medicine Deleted");
 
-            btnShow.PerformClick();
         }
 
         private void btnClear_Click_1(object sender, EventArgs e)
@@ -390,7 +409,7 @@ namespace PharmaHealix
 
         }
 
-        private void dgvInventory__CellClick(object sender, DataGridViewCellEventArgs e)
+        /*private void dgvInventory__CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
             {
@@ -415,7 +434,46 @@ namespace PharmaHealix
 
             dtpExpireDate.Text = dgvInventory.Rows[e.RowIndex].Cells[9].Value.ToString();
 
+        
             txtImage.Text = dgvInventory.Rows[e.RowIndex].Cells[10].Value.ToString();
+        
+        
+        }*/
+
+        
+
+        private void dgvInventory_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            txtMedicineName.Text = dgvInventory.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+            txtCategory.Text = dgvInventory.Rows[e.RowIndex].Cells[2].Value.ToString();
+
+            rtxtDescription.Text = dgvInventory.Rows[e.RowIndex].Cells[3].Value.ToString();
+
+            txtStripPrice.Text = dgvInventory.Rows[e.RowIndex].Cells[4].Value.ToString();
+
+            txtUnitPrice.Text = dgvInventory.Rows[e.RowIndex].Cells[5].Value.ToString();
+
+            rtxtDose.Text = dgvInventory.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+            rtxtSideEffect.Text = dgvInventory.Rows[e.RowIndex].Cells[7].Value.ToString();
+
+            txtStock.Text = dgvInventory.Rows[e.RowIndex].Cells[8].Value.ToString();
+
+            dtpExpireDate.Text = dgvInventory.Rows[e.RowIndex].Cells[9].Value.ToString();
+
+
+            txtImage.Text = dgvInventory.Rows[e.RowIndex].Cells[10].Value.ToString();
+
+
+
         }
     }
 }

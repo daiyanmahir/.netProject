@@ -371,6 +371,7 @@
             this.dgvPharmacist.Size = new System.Drawing.Size(448, 341);
             this.dgvPharmacist.TabIndex = 57;
             this.dgvPharmacist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPharmacist_CellClick);
+            this.dgvPharmacist.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPharmacist_CellContentClick);
             // 
             // lblUsername
             // 

@@ -319,9 +319,6 @@ namespace PharmaHealix
                 return;
             }
 
-
-
-
             string gender = "";
 
             if (rdoMale.Checked)
@@ -334,12 +331,11 @@ namespace PharmaHealix
                 gender = "Female";
             }
 
-
             SqlConnection conn = new SqlConnection(db.connection);
 
             conn.Open();
 
-            string checkquery = "select * from UserTable where Username='" + txtUsername.Text + "' AND Username<>'" + oldusername + "'";
+            string checkquery = "select * from UserTable where Username='" + txtUsername.Text.Replace("'", "''") + "' AND Username<>'" + oldusername + "'";
 
             SqlCommand checkcmd = new SqlCommand(checkquery, conn);
 
@@ -349,6 +345,7 @@ namespace PharmaHealix
             {
                 MessageBox.Show("Username Already Exists");
 
+                reader.Close();
                 conn.Close();
 
                 return;
@@ -356,9 +353,7 @@ namespace PharmaHealix
 
             reader.Close();
 
-
-
-            string query1 = "Update UserTable set Name='" + txtName.Text + "', Phone='" + txtPhone.Text + "', Address='" + rtxtAddress.Text + "', Question='" + cmbQuestion.Text + "', Answer='" + txtAnswer.Text + "', Password='" + txtPassword.Text + "' where Username='" + oldusername + "' AND Role='Pharmacist'";
+            string query1 = "Update UserTable set Name='" + txtName.Text.Replace("'", "''") + "', Phone='" + txtPhone.Text.Replace("'", "''") + "', Username='" + txtUsername.Text.Replace("'", "''") + "', Address='" + rtxtAddress.Text.Replace("'", "''") + "', Question='" + cmbQuestion.Text.Replace("'", "''") + "', Answer='" + txtAnswer.Text.Replace("'", "''") + "', Password='" + txtPassword.Text.Replace("'", "''") + "' where Username='" + oldusername + "' AND Role='Pharmacist'";
 
             SqlCommand cmd1 = new SqlCommand(query1, conn);
 
@@ -366,7 +361,7 @@ namespace PharmaHealix
 
             decimal salary = Convert.ToDecimal(txtSalary.Text);
 
-            string query2 = "Update StaffTable set Username='" + txtUsername.Text + "', Gender='" + gender + "', Salary=" + salary + " where StaffID=" + id;
+            string query2 = "Update StaffTable set Username='" + txtUsername.Text.Replace("'", "''") + "', Gender='" + gender + "', Salary=" + salary + " where StaffID=" + id;
 
             SqlCommand cmd2 = new SqlCommand(query2, conn);
 
@@ -395,78 +390,67 @@ namespace PharmaHealix
             dgvPharmacist.AutoGenerateColumns = true;
 
             conn.Close();
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+
             SqlConnection conn = new SqlConnection(db.connection);
 
             conn.Open();
 
-            string query1 = "Delete from UserTable where Username='" + txtUsername.Text + "' AND Role='Pharmacist'";
+            DialogResult result = MessageBox.Show("Are You Sure?", "Delete", MessageBoxButtons.YesNo);
 
-
-            SqlCommand cmd1 = new SqlCommand(query1, conn);
-
-            cmd1.ExecuteNonQuery();
-
-            string gender = "";
-
-            if (rdoMale.Checked)
+            if (result == DialogResult.Yes)
             {
-                gender = "Male";
+                string query1 = "Delete from StaffTable where Username='" + txtUsername.Text.Replace("'", "''") + "'";
+
+                SqlCommand cmd1 = new SqlCommand(query1, conn);
+
+                cmd1.ExecuteNonQuery();
+
+                string query2 = "Delete from UserTable where Username='" + txtUsername.Text.Replace("'", "''") + "' AND Role='Pharmacist'";
+
+                SqlCommand cmd2 = new SqlCommand(query2, conn);
+
+                cmd2.ExecuteNonQuery();
+
+                MessageBox.Show("Pharmacist Deleted");
+
+                txtName.Text = "";
+                txtUsername.Text = "";
+                txtPhone.Text = "";
+                txtPassword.Text = "";
+                txtSalary.Text = "";
+                txtAnswer.Text = "";
+                rtxtAddress.Text = "";
+
+                cmbQuestion.SelectedIndex = -1;
+
+                rdoMale.Checked = false;
+                rdoFemale.Checked = false;
+
+                string showquery = "select UserTable.Name, UserTable.Phone, UserTable.Username, UserTable.Address, UserTable.Question, UserTable.Answer, UserTable.Password, StaffTable.StaffID, StaffTable.Gender, StaffTable.Salary from UserTable inner join StaffTable on UserTable.Username = StaffTable.Username where UserTable.Role='Pharmacist'";
+
+                SqlCommand showcmd = new SqlCommand(showquery, conn);
+
+                SqlDataAdapter adp = new SqlDataAdapter(showcmd);
+
+                DataSet ds = new DataSet();
+
+                adp.Fill(ds);
+
+                DataTable dt = ds.Tables[0];
+
+                dgvPharmacist.DataSource = dt;
+
+                dgvPharmacist.AutoGenerateColumns = true;
             }
-
-            if (rdoFemale.Checked)
-            {
-                gender = "Female";
-            }
-
-            decimal salary = Convert.ToDecimal(txtSalary.Text);
-
-            string query2 = "Update StaffTable set Gender='" + gender + "', Salary=" + salary + " where StaffID=" + id;
-
-            SqlCommand cmd2 = new SqlCommand(query2, conn);
-
-            cmd2.ExecuteNonQuery();
 
             conn.Close();
 
-            MessageBox.Show("Pharmacist Deleted");
 
-            
-            txtName.Text = "";
-            txtUsername.Text = "";
-            txtPhone.Text = "";
-            txtPassword.Text = "";
-            txtSalary.Text = "";
-            txtAnswer.Text = "";
-            rtxtAddress.Text = "";
-
-            cmbQuestion.SelectedIndex = -1;
-
-            rdoMale.Checked = false;
-            rdoFemale.Checked = false;
-
-            conn.Open();
-
-            string showquery = "select UserTable.Name, UserTable.Phone, UserTable.Username, UserTable.Address, UserTable.Question, UserTable.Answer, UserTable.Password, StaffTable.StaffID, StaffTable.Gender, StaffTable.Salary from UserTable inner join StaffTable on UserTable.Username = StaffTable.Username where UserTable.Role='Pharmacist'";
-
-            SqlCommand showcmd = new SqlCommand(showquery, conn);
-
-            SqlDataAdapter adp = new SqlDataAdapter(showcmd);
-
-            DataSet ds = new DataSet();
-
-            adp.Fill(ds);
-
-            DataTable dt = ds.Tables[0];
-
-            dgvPharmacist.DataSource = dt;
-
-            dgvPharmacist.AutoGenerateColumns = true;
-
-            conn.Close();
 
         }
 
@@ -526,6 +510,11 @@ namespace PharmaHealix
             }
 
             txtSalary.Text = dgvPharmacist.Rows[e.RowIndex].Cells[9].Value.ToString();
+
+        }
+
+        private void dgvPharmacist_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

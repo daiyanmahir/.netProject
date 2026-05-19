@@ -65,7 +65,7 @@ namespace PharmaHealix
             txtUsername.Text = "";
             txtPhone.Text = "";
             txtPassword.Text = "";
-            txtFee.Text = "";
+           // txtFee.Text = "";
             txtAnswer.Text = "";
 
             rtxtAddress.Text = "";
@@ -445,23 +445,28 @@ namespace PharmaHealix
 
             conn.Open();
 
-            string query1 = "Delete from DoctorTable where Username='" + txtUsername.Text + "'";
+            DialogResult result = MessageBox.Show("Are You Sure?", "Delete", MessageBoxButtons.YesNo);
 
-            SqlCommand cmd1 = new SqlCommand(query1, conn);
+            if (result == DialogResult.Yes)
+            {
+                string query1 = "Delete from DoctorTable where Username='" + txtUsername.Text.Replace("'", "''") + "'";
 
-            cmd1.ExecuteNonQuery();
+                SqlCommand cmd1 = new SqlCommand(query1, conn);
 
-            string query2 = "Delete from UserTable where Username='" + txtUsername.Text + "'";
+                cmd1.ExecuteNonQuery();
 
-            SqlCommand cmd2 = new SqlCommand(query2, conn);
+                string query2 = "Delete from UserTable where Username='" + txtUsername.Text.Replace("'", "''") + "' AND Role='Doctor'";
 
-            cmd2.ExecuteNonQuery();
+                SqlCommand cmd2 = new SqlCommand(query2, conn);
+
+                cmd2.ExecuteNonQuery();
+
+                MessageBox.Show("Doctor Deleted");
+
+                btnShow.PerformClick();
+            }
 
             conn.Close();
-
-            MessageBox.Show("Doctor Deleted");
-
-            btnShow.PerformClick();
         }
 
         private void dgvDoctor_CellClick(object sender, DataGridViewCellEventArgs e)

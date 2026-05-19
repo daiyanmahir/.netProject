@@ -18,8 +18,8 @@ namespace PharmaHealix
         private string selectedAppointmentID = "";
         private string selectedPatientUsername = "";
         private Db database = new Db();
-
         private string currentDoctorId;
+        private bool isUpdatingExistingPrescription = false;
 
         public Doctor(string doctorId)
         {
@@ -134,11 +134,24 @@ namespace PharmaHealix
             
             string commaSeparatedPrescriptionText = $"{txtDiagnosis.Text.Trim()}, {txtMedicineName.Text.Trim()}, {txtDosage.Text.Trim()}, {txtFrequency.Text.Trim()}, {qty}, {cbRoute.SelectedItem}, {usageInstructions}, {pharmacistNotes}";
 
-            string insertPrescriptionQuery = @"INSERT INTO PrescriptionTable (AppointmentID, DoctorID, PatientUsername, PrescriptionText, PrescriptionDate) 
-                                               VALUES (@AppointmentID, @DoctorID, @PatientUsername, @PrescriptionText, GETDATE())";
+            string savePrescriptionQuery = "";
+
+            if (isUpdatingExistingPrescription)
+            {
+                savePrescriptionQuery = @"UPDATE PrescriptionTable 
+                                  SET PrescriptionText = @PrescriptionText, PrescriptionDate = GETDATE() 
+                                  WHERE AppointmentID = @AppointmentID";
+            }
+            else
+            {
+                savePrescriptionQuery = @"INSERT INTO PrescriptionTable (AppointmentID, DoctorID, PatientUsername, PrescriptionText, PrescriptionDate) 
+                                  VALUES (@AppointmentID, @DoctorID, @PatientUsername, @PrescriptionText, GETDATE())";
+            }
+
             string updateStatusQuery = @"UPDATE AppointmentTable 
-                                         SET Status = 'Complete' 
-                                         WHERE AppointmentID = @AppointmentID";
+                                 SET Status = 'Complete' 
+                                 WHERE AppointmentID = @AppointmentID";
+
             using (SqlConnection conn = new SqlConnection(new Db().connection))
             {
                 try
@@ -149,16 +162,20 @@ namespace PharmaHealix
                     {
                         try
                         {
-                            
                             int currentAppointmentID = Convert.ToInt32(txtSelectedID.Text.Trim());
 
-                            using (SqlCommand insertCmd = new SqlCommand(insertPrescriptionQuery, conn, transaction))
+                            using (SqlCommand saveCmd = new SqlCommand(savePrescriptionQuery, conn, transaction))
                             {
-                                insertCmd.Parameters.AddWithValue("@AppointmentID", currentAppointmentID);
-                                insertCmd.Parameters.AddWithValue("@DoctorID", currentDoctorId); // Default query identity index placeholder
-                                insertCmd.Parameters.AddWithValue("@PatientUsername", txtSelectedName.Text.Trim()); // FIX: Use txtSelectedName
-                                insertCmd.Parameters.AddWithValue("@PrescriptionText", commaSeparatedPrescriptionText);
-                                insertCmd.ExecuteNonQuery();
+                                saveCmd.Parameters.AddWithValue("@AppointmentID", currentAppointmentID);
+                                saveCmd.Parameters.AddWithValue("@PrescriptionText", commaSeparatedPrescriptionText);
+
+                                if (!isUpdatingExistingPrescription)
+                                {
+                                    saveCmd.Parameters.AddWithValue("@DoctorID", currentDoctorId);
+                                    saveCmd.Parameters.AddWithValue("@PatientUsername", txtSelectedName.Text.Trim());
+                                }
+
+                                saveCmd.ExecuteNonQuery();
                             }
 
                             using (SqlCommand updateCmd = new SqlCommand(updateStatusQuery, conn, transaction))
@@ -168,14 +185,20 @@ namespace PharmaHealix
                             }
 
                             transaction.Commit();
-                            MessageBox.Show("Prescription successfully saved and appointment status updated to 'Complete'!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            string successMsg = isUpdatingExistingPrescription
+                                ? "Prescription has been successfully updated!"
+                                : "Prescription successfully saved and appointment status updated to 'Complete'!";
+
+                            MessageBox.Show(successMsg, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            isUpdatingExistingPrescription = false;
 
                             ClearPrescriptionForm();
-
                             btnRefreshAppts_Click(sender, e);
                         }
                         catch (Exception ex)
-                        { 
+                        {
                             transaction.Rollback();
                             throw new Exception("Transaction processing execution failed. Reverting structural updates. Details: " + ex.Message);
                         }
@@ -285,10 +308,41 @@ namespace PharmaHealix
                 return;
             }
 
+            isUpdatingExistingPrescription = false;
+
+            if (dgvPatientSchedule.CurrentRow != null)
+            {
+                string currentStatus = dgvPatientSchedule.CurrentRow.Cells["Status"].Value.ToString();
+
+                if (currentStatus.Equals("Cancelled", StringComparison.OrdinalIgnoreCase))
+                {
+                    MessageBox.Show("The patient you selected has a cancelled appointment. You cannot start a consultation.",
+                                    "Consultation Blocked",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (currentStatus.Equals("Complete", StringComparison.OrdinalIgnoreCase))
+                {
+                    isUpdatingExistingPrescription = true;
+                    MessageBox.Show("This appointment is already completed. Proceeding will allow you to UPDATE the existing prescription.",
+                                    "Update Mode Active",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                }
+            }
+
             tabControl1.SelectedTab = tabPrescription;
 
             txtSelectedName.Text = selectedPatientUsername;
             txtSelectedID.Text = selectedAppointmentID;
+
+            // Optional: If you have an existing prescription loading function, call it here:
+            if (isUpdatingExistingPrescription)
+            {
+                // LoadOldPrescriptionData(selectedAppointmentID); 
+            }
 
         }
         private void btnCancelAppt_Click(object sender, EventArgs e)

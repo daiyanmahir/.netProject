@@ -224,7 +224,7 @@
             this.prescriptionhistorybtn.FlatAppearance.BorderSize = 0;
             this.prescriptionhistorybtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.prescriptionhistorybtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.prescriptionhistorybtn.Location = new System.Drawing.Point(422, 68);
+            this.prescriptionhistorybtn.Location = new System.Drawing.Point(415, 68);
             this.prescriptionhistorybtn.Name = "prescriptionhistorybtn";
             this.prescriptionhistorybtn.Size = new System.Drawing.Size(153, 40);
             this.prescriptionhistorybtn.TabIndex = 22;

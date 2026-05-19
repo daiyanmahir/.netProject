@@ -124,7 +124,7 @@ namespace PharmaHealix
                 int count = Convert.ToInt32(new Db().Scalar(q, search));
                 if (count > 0)
                 {
-                    string r = "SELECT * FROM MedicineTable WHERE MedicineName = @0";
+                    string r = "Select * From MedicineTable Where MedicineName = @0";
 
                     DataTable dt = new Db().Reader(r, search);
                     medibackpan.Visible = true;
@@ -263,7 +263,7 @@ namespace PharmaHealix
             }
             if (EUsername != "" && EUsername != username)
             {
-                string query = "SELECT COUNT(*) FROM UserTable WHERE Username = @0";
+                string query = "Select Count(*) From UserTable Where Username = @0";
                 int count = Convert.ToInt32(new Db().Scalar(query, EUsername));
                 if (count > 0)
                 {
@@ -313,7 +313,7 @@ namespace PharmaHealix
             else
             {
 
-                string query = "UPDATE UserTable SET Name = @0, Phone = @1, Username = @2, Address = @3, Question = @4, Answer = @5, Password = @6 WHERE Username = @7";
+                string query = "Update UserTable Set Name = @0, Phone = @1, Username = @2, Address = @3, Question = @4, Answer = @5, Password = @6 WHERE Username = @7";
                 new Db().NonQuery(query, EName, EPhone, EUsername, EAddress, editsecurityquestioncb.Text, EAnswer, EPass, username);
                 username = EUsername;
 
@@ -490,7 +490,7 @@ namespace PharmaHealix
             {
                 viewcartpan.Visible = true;
                 viewcartpan.BringToFront();
-                string q = "SELECT C.CartId as [Cart ID], " +
+                string q = "Select C.CartId as [Cart ID], " +
                            "M.MedicineID as [Medicine ID], " +
                            "M.MedicineName as [Medicine Name], " +
                            "C.Quantity as [Quantity], " +
@@ -719,8 +719,8 @@ namespace PharmaHealix
                 appphonetxt.Text = Convert.ToString(dt.Rows[0]["Phone"]);
                 appaddresstxt.Text = Convert.ToString(dt.Rows[0]["Address"]);
 
-                string q = "select name from UserTable where role=@0";
-                string r = "Select COUNT(*) FROM UserTable Where role=@0";
+                string q = "Select Name from UserTable where role=@0";
+                string r = "Select Count(*) From UserTable Where role=@0";
 
                 int count = Convert.ToInt32(new Db().Scalar(r, "Doctor"));
                 DataTable dt2 = new Db().Reader(q, "Doctor");
@@ -764,7 +764,7 @@ namespace PharmaHealix
                 int did = Convert.ToInt32(new Db().Scalar(p, du));
 
 
-                string q = "Select COUNT(*) From AppointmentTable WHERE DoctorId=@0 and AppointmentDate=@1 and AppointmentTime=@2 ";
+                string q = "Select Count(*) From AppointmentTable Where DoctorId=@0 and AppointmentDate=@1 and AppointmentTime=@2 ";
                 int count = Convert.ToInt32(new Db().Scalar(q, did, appointmentdate, appointmenttime));
                 if (count > 0)
                 {

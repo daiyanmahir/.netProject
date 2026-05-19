@@ -91,6 +91,8 @@ namespace PharmaHealix
 
 
         }
+
+        //Log In Page
         private void Resetcreatepan()
         {
 
@@ -195,7 +197,7 @@ namespace PharmaHealix
             }
             if (CUsername != "" && CUsername != "enter your username")
             {
-                string query = "SELECT COUNT(*) FROM UserTable WHERE Username = @0";
+                string query = "Select Count(*) FROM UserTable Where Username = @0";
                 int count = Convert.ToInt32(new Db().Scalar(query, CUsername));
                 if (count > 0)
                 {
@@ -294,12 +296,8 @@ namespace PharmaHealix
                     else if (role == "Doctor")
                     {
                         MessageBox.Show("Login Successful!");
-                        // 1. Write a query to find the DoctorID linked to this logged-in username
-                        string q3 = "SELECT DoctorID FROM DoctorTable WHERE Username = @0";
+                        string q3 = "Select DoctorID From DoctorTable Where Username = @0";
                         string doctorId = Convert.ToString(new Db().Scalar(q3, EUsername));
-
-                        // 2. Pass the doctorId directly into the updated Doctor form constructor
-                        //Doctor d = new Doctor(doctorId);
                         Doctor d = new Doctor(doctorId);
                         d.Show();
                        
@@ -466,7 +464,7 @@ namespace PharmaHealix
 
         }
 
-
+        // Forget Password
         private void forgetpasslbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             forgetpasspan.Visible = true;
@@ -496,7 +494,7 @@ namespace PharmaHealix
         {
             fpasspan.Visible = false;
 
-            string q1 = "SELECT COUNT(*) FROM UserTable WHERE Username = @0 and Question=@1 and Answer=@2";
+            string q1 = "Select Count(*) FROM UserTable Where Username = @0 and Question=@1 and Answer=@2";
             int count = Convert.ToInt32(new Db().Scalar(q1, FUsername, fsecurityquestioncb.Text, FAns));
             if (count > 0)
             {
@@ -518,7 +516,7 @@ namespace PharmaHealix
                 }
                 else
                 {
-                    string query = "UPDATE UserTable SET Password = @1 where Username=@0";
+                    string query = "Update UserTable SET Password = @1 where Username=@0";
                     new Db().NonQuery(query,FUsername, FPass);
                     MessageBox.Show("Password reset successful. You can now log in.");
 
@@ -584,9 +582,5 @@ namespace PharmaHealix
             }
         }
 
-        private void fusernametxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

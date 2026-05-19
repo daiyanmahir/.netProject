@@ -62,7 +62,7 @@ namespace PharmaHealix
                 con.Close();
             }
         }
-        public object Scalar(string query,params Object[] p)
+        public Object Scalar(string query,params Object[] p)
         {
 
             //2 Establish Connection

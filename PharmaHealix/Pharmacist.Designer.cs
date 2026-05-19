@@ -34,6 +34,7 @@
             this.preslbl = new System.Windows.Forms.Label();
             this.phprdgv = new System.Windows.Forms.DataGridView();
             this.patientlisttoppan = new System.Windows.Forms.Panel();
+            this.prescriptionexitbtn = new System.Windows.Forms.Button();
             this.patientlisttoplbl = new System.Windows.Forms.Label();
             this.orderpan = new System.Windows.Forms.Panel();
             this.searchmedbtn = new System.Windows.Forms.Button();
@@ -54,6 +55,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.phordmeddgv = new System.Windows.Forms.DataGridView();
             this.ordertoppan = new System.Windows.Forms.Panel();
+            this.orderexitbtn = new System.Windows.Forms.Button();
             this.ordertoplbl = new System.Windows.Forms.Label();
             this.inventorypan = new System.Windows.Forms.Panel();
             this.phimgtb = new System.Windows.Forms.TextBox();
@@ -136,8 +138,9 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.reqexitbtn = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
-            this.orderexitbtn = new System.Windows.Forms.Button();
-            this.prescriptionexitbtn = new System.Windows.Forms.Button();
+            this.mainlogopan = new System.Windows.Forms.Panel();
+            this.inexitbtn = new System.Windows.Forms.Button();
+            this.mainexitbtn = new System.Windows.Forms.Button();
             this.patientlistpan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phprdgv)).BeginInit();
             this.patientlisttoppan.SuspendLayout();
@@ -224,6 +227,22 @@
             this.patientlisttoppan.Name = "patientlisttoppan";
             this.patientlisttoppan.Size = new System.Drawing.Size(1012, 110);
             this.patientlisttoppan.TabIndex = 1;
+            // 
+            // prescriptionexitbtn
+            // 
+            this.prescriptionexitbtn.BackColor = System.Drawing.Color.White;
+            this.prescriptionexitbtn.FlatAppearance.BorderSize = 0;
+            this.prescriptionexitbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.prescriptionexitbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
+            this.prescriptionexitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.prescriptionexitbtn.Location = new System.Drawing.Point(909, 11);
+            this.prescriptionexitbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.prescriptionexitbtn.Name = "prescriptionexitbtn";
+            this.prescriptionexitbtn.Size = new System.Drawing.Size(38, 24);
+            this.prescriptionexitbtn.TabIndex = 48;
+            this.prescriptionexitbtn.Text = "X";
+            this.prescriptionexitbtn.UseVisualStyleBackColor = false;
+            this.prescriptionexitbtn.Click += new System.EventHandler(this.prescriptionexitbtn_Click);
             // 
             // patientlisttoplbl
             // 
@@ -457,6 +476,22 @@
             this.ordertoppan.Name = "ordertoppan";
             this.ordertoppan.Size = new System.Drawing.Size(1012, 110);
             this.ordertoppan.TabIndex = 1;
+            // 
+            // orderexitbtn
+            // 
+            this.orderexitbtn.BackColor = System.Drawing.Color.White;
+            this.orderexitbtn.FlatAppearance.BorderSize = 0;
+            this.orderexitbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.orderexitbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
+            this.orderexitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.orderexitbtn.Location = new System.Drawing.Point(909, 10);
+            this.orderexitbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.orderexitbtn.Name = "orderexitbtn";
+            this.orderexitbtn.Size = new System.Drawing.Size(38, 24);
+            this.orderexitbtn.TabIndex = 48;
+            this.orderexitbtn.Text = "X";
+            this.orderexitbtn.UseVisualStyleBackColor = false;
+            this.orderexitbtn.Click += new System.EventHandler(this.orderexitbtn_Click);
             // 
             // ordertoplbl
             // 
@@ -764,6 +799,7 @@
             // inventorytoppan
             // 
             this.inventorytoppan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
+            this.inventorytoppan.Controls.Add(this.inexitbtn);
             this.inventorytoppan.Controls.Add(this.inventorytoplbl);
             this.inventorytoppan.Location = new System.Drawing.Point(0, 0);
             this.inventorytoppan.Margin = new System.Windows.Forms.Padding(2);
@@ -1411,43 +1447,54 @@
             this.label16.Text = "REQUESTS";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // orderexitbtn
+            // mainlogopan
             // 
-            this.orderexitbtn.BackColor = System.Drawing.Color.White;
-            this.orderexitbtn.FlatAppearance.BorderSize = 0;
-            this.orderexitbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.orderexitbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
-            this.orderexitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.orderexitbtn.Location = new System.Drawing.Point(899, 13);
-            this.orderexitbtn.Margin = new System.Windows.Forms.Padding(2);
-            this.orderexitbtn.Name = "orderexitbtn";
-            this.orderexitbtn.Size = new System.Drawing.Size(38, 24);
-            this.orderexitbtn.TabIndex = 48;
-            this.orderexitbtn.Text = "X";
-            this.orderexitbtn.UseVisualStyleBackColor = false;
-            this.orderexitbtn.Click += new System.EventHandler(this.orderexitbtn_Click);
+            this.mainlogopan.BackColor = System.Drawing.Color.Transparent;
+            this.mainlogopan.BackgroundImage = global::PharmaHealix.Properties.Resources.PharmaHealixLogo3;
+            this.mainlogopan.Location = new System.Drawing.Point(623, 275);
+            this.mainlogopan.Name = "mainlogopan";
+            this.mainlogopan.Size = new System.Drawing.Size(202, 220);
+            this.mainlogopan.TabIndex = 49;
             // 
-            // prescriptionexitbtn
+            // inexitbtn
             // 
-            this.prescriptionexitbtn.BackColor = System.Drawing.Color.White;
-            this.prescriptionexitbtn.FlatAppearance.BorderSize = 0;
-            this.prescriptionexitbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.prescriptionexitbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
-            this.prescriptionexitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.prescriptionexitbtn.Location = new System.Drawing.Point(883, 13);
-            this.prescriptionexitbtn.Margin = new System.Windows.Forms.Padding(2);
-            this.prescriptionexitbtn.Name = "prescriptionexitbtn";
-            this.prescriptionexitbtn.Size = new System.Drawing.Size(38, 24);
-            this.prescriptionexitbtn.TabIndex = 48;
-            this.prescriptionexitbtn.Text = "X";
-            this.prescriptionexitbtn.UseVisualStyleBackColor = false;
-            this.prescriptionexitbtn.Click += new System.EventHandler(this.prescriptionexitbtn_Click);
+            this.inexitbtn.BackColor = System.Drawing.Color.White;
+            this.inexitbtn.FlatAppearance.BorderSize = 0;
+            this.inexitbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.inexitbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
+            this.inexitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.inexitbtn.Location = new System.Drawing.Point(908, 10);
+            this.inexitbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.inexitbtn.Name = "inexitbtn";
+            this.inexitbtn.Size = new System.Drawing.Size(38, 24);
+            this.inexitbtn.TabIndex = 48;
+            this.inexitbtn.Text = "X";
+            this.inexitbtn.UseVisualStyleBackColor = false;
+            this.inexitbtn.Click += new System.EventHandler(this.inexitbtn_Click);
+            // 
+            // mainexitbtn
+            // 
+            this.mainexitbtn.BackColor = System.Drawing.Color.White;
+            this.mainexitbtn.FlatAppearance.BorderSize = 0;
+            this.mainexitbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.mainexitbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
+            this.mainexitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mainexitbtn.Location = new System.Drawing.Point(1153, 10);
+            this.mainexitbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.mainexitbtn.Name = "mainexitbtn";
+            this.mainexitbtn.Size = new System.Drawing.Size(38, 24);
+            this.mainexitbtn.TabIndex = 50;
+            this.mainexitbtn.Text = "X";
+            this.mainexitbtn.UseVisualStyleBackColor = false;
+            this.mainexitbtn.Click += new System.EventHandler(this.mainexitbtn_Click);
             // 
             // Pharmacist
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1200, 750);
+            this.Controls.Add(this.mainexitbtn);
+            this.Controls.Add(this.mainlogopan);
             this.Controls.Add(this.requestpan);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pharmacistprofilepan);
@@ -1618,5 +1665,8 @@
         private System.Windows.Forms.Button reqexitbtn;
         private System.Windows.Forms.Button orderexitbtn;
         private System.Windows.Forms.Button prescriptionexitbtn;
+        private System.Windows.Forms.Panel mainlogopan;
+        private System.Windows.Forms.Button inexitbtn;
+        private System.Windows.Forms.Button mainexitbtn;
     }
 }

@@ -1638,7 +1638,7 @@
             // appsearchtxt
             // 
             this.appsearchtxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.appsearchtxt.Location = new System.Drawing.Point(177, 169);
+            this.appsearchtxt.Location = new System.Drawing.Point(153, 131);
             this.appsearchtxt.Name = "appsearchtxt";
             this.appsearchtxt.Size = new System.Drawing.Size(745, 19);
             this.appsearchtxt.TabIndex = 5;
@@ -1651,7 +1651,7 @@
             this.appsearchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.appsearchbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.appsearchbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.appsearchbtn.Location = new System.Drawing.Point(933, 158);
+            this.appsearchbtn.Location = new System.Drawing.Point(909, 120);
             this.appsearchbtn.Name = "appsearchbtn";
             this.appsearchbtn.Size = new System.Drawing.Size(107, 39);
             this.appsearchbtn.TabIndex = 26;
@@ -1662,7 +1662,7 @@
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.Color.White;
-            this.richTextBox1.Location = new System.Drawing.Point(171, 158);
+            this.richTextBox1.Location = new System.Drawing.Point(147, 120);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(764, 40);
@@ -1676,20 +1676,20 @@
             this.appdataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.appdataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.appdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.appdataGridView.Location = new System.Drawing.Point(171, 234);
+            this.appdataGridView.Location = new System.Drawing.Point(147, 196);
             this.appdataGridView.Name = "appdataGridView";
             this.appdataGridView.ReadOnly = true;
             this.appdataGridView.RowHeadersVisible = false;
             this.appdataGridView.RowHeadersWidth = 62;
             this.appdataGridView.RowTemplate.Height = 28;
-            this.appdataGridView.Size = new System.Drawing.Size(869, 212);
+            this.appdataGridView.Size = new System.Drawing.Size(914, 373);
             this.appdataGridView.TabIndex = 3;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label17.Location = new System.Drawing.Point(177, 120);
+            this.label17.Location = new System.Drawing.Point(153, 82);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(245, 22);
             this.label17.TabIndex = 1;
@@ -1829,9 +1829,9 @@
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label19.Location = new System.Drawing.Point(139, 74);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(245, 22);
+            this.label19.Size = new System.Drawing.Size(191, 22);
             this.label19.TabIndex = 27;
-            this.label19.Text = "Search Using Appointment ID";
+            this.label19.Text = "Search Using Order ID";
             // 
             // orderhistorydataGridView
             // 

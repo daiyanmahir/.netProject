@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.headpan = new System.Windows.Forms.Panel();
+            this.prescriptionhistorybtn = new System.Windows.Forms.Button();
             this.appointmentbtn = new System.Windows.Forms.Button();
             this.medilogobtn = new System.Windows.Forms.Button();
             this.userbtn = new System.Windows.Forms.Button();
@@ -162,6 +163,13 @@
             this.label19 = new System.Windows.Forms.Label();
             this.orderhistorydataGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.prescriptionpan = new System.Windows.Forms.Panel();
+            this.prescriptiontxt = new System.Windows.Forms.TextBox();
+            this.prescriptionsearchbtn = new System.Windows.Forms.Button();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.pdataGridView = new System.Windows.Forms.DataGridView();
+            this.label21 = new System.Windows.Forms.Label();
             this.headpan.SuspendLayout();
             this.editpan.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -191,11 +199,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.cartdataGridView)).BeginInit();
             this.orderhistorypan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.orderhistorydataGridView)).BeginInit();
+            this.prescriptionpan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pdataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // headpan
             // 
             this.headpan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
+            this.headpan.Controls.Add(this.prescriptionhistorybtn);
             this.headpan.Controls.Add(this.appointmentbtn);
             this.headpan.Controls.Add(this.medilogobtn);
             this.headpan.Controls.Add(this.userbtn);
@@ -206,6 +217,20 @@
             this.headpan.Name = "headpan";
             this.headpan.Size = new System.Drawing.Size(1200, 110);
             this.headpan.TabIndex = 0;
+            // 
+            // prescriptionhistorybtn
+            // 
+            this.prescriptionhistorybtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
+            this.prescriptionhistorybtn.FlatAppearance.BorderSize = 0;
+            this.prescriptionhistorybtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.prescriptionhistorybtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.prescriptionhistorybtn.Location = new System.Drawing.Point(422, 68);
+            this.prescriptionhistorybtn.Name = "prescriptionhistorybtn";
+            this.prescriptionhistorybtn.Size = new System.Drawing.Size(153, 40);
+            this.prescriptionhistorybtn.TabIndex = 22;
+            this.prescriptionhistorybtn.Text = "Prescription History";
+            this.prescriptionhistorybtn.UseVisualStyleBackColor = false;
+            this.prescriptionhistorybtn.Click += new System.EventHandler(this.prescriptionhistorybtn_Click);
             // 
             // appointmentbtn
             // 
@@ -1613,7 +1638,7 @@
             // appsearchtxt
             // 
             this.appsearchtxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.appsearchtxt.Location = new System.Drawing.Point(182, 169);
+            this.appsearchtxt.Location = new System.Drawing.Point(177, 169);
             this.appsearchtxt.Name = "appsearchtxt";
             this.appsearchtxt.Size = new System.Drawing.Size(745, 19);
             this.appsearchtxt.TabIndex = 5;
@@ -1643,6 +1668,7 @@
             this.richTextBox1.Size = new System.Drawing.Size(764, 40);
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.Text = "";
+            this.richTextBox1.Enter += new System.EventHandler(this.richTextBox1_Enter);
             // 
             // appdataGridView
             // 
@@ -1779,7 +1805,7 @@
             this.ordersearchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ordersearchbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.ordersearchbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ordersearchbtn.Location = new System.Drawing.Point(945, 104);
+            this.ordersearchbtn.Location = new System.Drawing.Point(945, 105);
             this.ordersearchbtn.Name = "ordersearchbtn";
             this.ordersearchbtn.Size = new System.Drawing.Size(107, 39);
             this.ordersearchbtn.TabIndex = 30;
@@ -1834,13 +1860,99 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Order List";
             // 
+            // prescriptionpan
+            // 
+            this.prescriptionpan.Controls.Add(this.prescriptiontxt);
+            this.prescriptionpan.Controls.Add(this.prescriptionsearchbtn);
+            this.prescriptionpan.Controls.Add(this.richTextBox2);
+            this.prescriptionpan.Controls.Add(this.label20);
+            this.prescriptionpan.Controls.Add(this.pdataGridView);
+            this.prescriptionpan.Controls.Add(this.label21);
+            this.prescriptionpan.Location = new System.Drawing.Point(0, 110);
+            this.prescriptionpan.Name = "prescriptionpan";
+            this.prescriptionpan.Size = new System.Drawing.Size(1200, 640);
+            this.prescriptionpan.TabIndex = 39;
+            this.prescriptionpan.Visible = false;
+            // 
+            // prescriptiontxt
+            // 
+            this.prescriptiontxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.prescriptiontxt.Location = new System.Drawing.Point(145, 122);
+            this.prescriptiontxt.Name = "prescriptiontxt";
+            this.prescriptiontxt.Size = new System.Drawing.Size(795, 19);
+            this.prescriptiontxt.TabIndex = 31;
+            // 
+            // prescriptionsearchbtn
+            // 
+            this.prescriptionsearchbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
+            this.prescriptionsearchbtn.FlatAppearance.BorderSize = 0;
+            this.prescriptionsearchbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.AliceBlue;
+            this.prescriptionsearchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.prescriptionsearchbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.prescriptionsearchbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.prescriptionsearchbtn.Location = new System.Drawing.Point(945, 112);
+            this.prescriptionsearchbtn.Name = "prescriptionsearchbtn";
+            this.prescriptionsearchbtn.Size = new System.Drawing.Size(107, 39);
+            this.prescriptionsearchbtn.TabIndex = 30;
+            this.prescriptionsearchbtn.Text = "Search";
+            this.prescriptionsearchbtn.UseVisualStyleBackColor = false;
+            this.prescriptionsearchbtn.Click += new System.EventHandler(this.prescriptionsearchbtn_Click);
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.BackColor = System.Drawing.Color.White;
+            this.richTextBox2.Location = new System.Drawing.Point(140, 112);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ReadOnly = true;
+            this.richTextBox2.Size = new System.Drawing.Size(806, 40);
+            this.richTextBox2.TabIndex = 28;
+            this.richTextBox2.Text = "";
+            this.richTextBox2.Enter += new System.EventHandler(this.richTextBox2_Enter);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label20.Location = new System.Drawing.Point(139, 81);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(240, 22);
+            this.label20.TabIndex = 27;
+            this.label20.Text = "Search Using Prescription ID";
+            // 
+            // pdataGridView
+            // 
+            this.pdataGridView.AllowUserToAddRows = false;
+            this.pdataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.pdataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.pdataGridView.Location = new System.Drawing.Point(140, 174);
+            this.pdataGridView.Name = "pdataGridView";
+            this.pdataGridView.ReadOnly = true;
+            this.pdataGridView.RowHeadersVisible = false;
+            this.pdataGridView.RowHeadersWidth = 62;
+            this.pdataGridView.RowTemplate.Height = 28;
+            this.pdataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.pdataGridView.Size = new System.Drawing.Size(914, 373);
+            this.pdataGridView.TabIndex = 1;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("MV Boli", 20F);
+            this.label21.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label21.Location = new System.Drawing.Point(369, 4);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(504, 52);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "View Prescription History";
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1200, 750);
-            this.Controls.Add(this.orderhistorypan);
+            this.Controls.Add(this.appointmenthistorypan);
             this.Controls.Add(this.patientpan);
             this.Controls.Add(this.headpan);
             this.Controls.Add(this.userpan);
@@ -1848,11 +1960,12 @@
             this.Controls.Add(this.Whatareyoulookinglbl);
             this.Controls.Add(this.textlbl);
             this.Controls.Add(this.editpan);
+            this.Controls.Add(this.cartbtn);
+            this.Controls.Add(this.prescriptionpan);
+            this.Controls.Add(this.orderhistorypan);
             this.Controls.Add(this.viewcartpan);
             this.Controls.Add(this.medibackpan);
             this.Controls.Add(this.appointmentpan);
-            this.Controls.Add(this.appointmenthistorypan);
-            this.Controls.Add(this.cartbtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
@@ -1904,6 +2017,9 @@
             this.orderhistorypan.ResumeLayout(false);
             this.orderhistorypan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.orderhistorydataGridView)).EndInit();
+            this.prescriptionpan.ResumeLayout(false);
+            this.prescriptionpan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pdataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2044,5 +2160,13 @@
         private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox ordersearchtxt;
+        private System.Windows.Forms.Button prescriptionhistorybtn;
+        private System.Windows.Forms.Panel prescriptionpan;
+        private System.Windows.Forms.TextBox prescriptiontxt;
+        private System.Windows.Forms.Button prescriptionsearchbtn;
+        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.DataGridView pdataGridView;
+        private System.Windows.Forms.Label label21;
     }
 }

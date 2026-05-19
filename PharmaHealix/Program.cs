@@ -17,8 +17,8 @@ namespace PharmaHealix
           
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-             Application.Run(new Loginform());
-             //Application.Run(new Pharmacist());
+            Application.Run(new Loginform());
+       
 
 
 

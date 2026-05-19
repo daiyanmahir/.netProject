@@ -85,6 +85,7 @@
             this.phinvmnametb = new System.Windows.Forms.TextBox();
             this.phinvdgv = new System.Windows.Forms.DataGridView();
             this.inventorytoppan = new System.Windows.Forms.Panel();
+            this.inexitbtn = new System.Windows.Forms.Button();
             this.inventorytoplbl = new System.Windows.Forms.Label();
             this.pharmacistprofilepan = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -139,7 +140,6 @@
             this.reqexitbtn = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.mainlogopan = new System.Windows.Forms.Panel();
-            this.inexitbtn = new System.Windows.Forms.Button();
             this.mainexitbtn = new System.Windows.Forms.Button();
             this.patientlistpan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phprdgv)).BeginInit();
@@ -807,6 +807,22 @@
             this.inventorytoppan.Size = new System.Drawing.Size(956, 110);
             this.inventorytoppan.TabIndex = 0;
             // 
+            // inexitbtn
+            // 
+            this.inexitbtn.BackColor = System.Drawing.Color.White;
+            this.inexitbtn.FlatAppearance.BorderSize = 0;
+            this.inexitbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.inexitbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
+            this.inexitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.inexitbtn.Location = new System.Drawing.Point(908, 10);
+            this.inexitbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.inexitbtn.Name = "inexitbtn";
+            this.inexitbtn.Size = new System.Drawing.Size(38, 24);
+            this.inexitbtn.TabIndex = 48;
+            this.inexitbtn.Text = "X";
+            this.inexitbtn.UseVisualStyleBackColor = false;
+            this.inexitbtn.Click += new System.EventHandler(this.inexitbtn_Click);
+            // 
             // inventorytoplbl
             // 
             this.inventorytoplbl.AutoSize = true;
@@ -1357,7 +1373,7 @@
             this.requestpan.Controls.Add(this.approvebtn);
             this.requestpan.Controls.Add(this.requestdgv);
             this.requestpan.Controls.Add(this.panel12);
-            this.requestpan.Location = new System.Drawing.Point(244, 0);
+            this.requestpan.Location = new System.Drawing.Point(24400, 0);
             this.requestpan.Margin = new System.Windows.Forms.Padding(2);
             this.requestpan.Name = "requestpan";
             this.requestpan.Size = new System.Drawing.Size(956, 750);
@@ -1456,22 +1472,6 @@
             this.mainlogopan.Size = new System.Drawing.Size(202, 220);
             this.mainlogopan.TabIndex = 49;
             // 
-            // inexitbtn
-            // 
-            this.inexitbtn.BackColor = System.Drawing.Color.White;
-            this.inexitbtn.FlatAppearance.BorderSize = 0;
-            this.inexitbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.inexitbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
-            this.inexitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.inexitbtn.Location = new System.Drawing.Point(908, 10);
-            this.inexitbtn.Margin = new System.Windows.Forms.Padding(2);
-            this.inexitbtn.Name = "inexitbtn";
-            this.inexitbtn.Size = new System.Drawing.Size(38, 24);
-            this.inexitbtn.TabIndex = 48;
-            this.inexitbtn.Text = "X";
-            this.inexitbtn.UseVisualStyleBackColor = false;
-            this.inexitbtn.Click += new System.EventHandler(this.inexitbtn_Click);
-            // 
             // mainexitbtn
             // 
             this.mainexitbtn.BackColor = System.Drawing.Color.White;
@@ -1494,7 +1494,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1200, 750);
             this.Controls.Add(this.mainexitbtn);
-            this.Controls.Add(this.mainlogopan);
             this.Controls.Add(this.requestpan);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pharmacistprofilepan);
@@ -1502,6 +1501,7 @@
             this.Controls.Add(this.orderpan);
             this.Controls.Add(this.patientlistpan);
             this.Controls.Add(this.sidepan);
+            this.Controls.Add(this.mainlogopan);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

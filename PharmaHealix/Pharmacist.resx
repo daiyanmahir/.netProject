@@ -121,7 +121,7 @@
   <data name="pharmacistprofilepan.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABLAAAAMgCAYAAAAz4JsCAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAA/7JJREFUeF6E/XfXL8dt/Qv6/b+OmVlz5/4sW5KVJQfZysmyJIoKTIeZPJE8zJK+
+        vAAADrwBlbxySQAA/7JJREFUeF6E/XfXL8dt/Qv6/b+OmVlz5/4sW5KVJQfZysmyJIoKTIeZPJE8zJK+
         s4C9P8Cufh75/lGru6sroFDVXcBuAP0PH77+w9vzN350e/7mjzdxXcc3fnz78I069723fnL7qNNPb8/f
         +mkfP367jsr76G3nvx35dZz0s8v1mT5++ydH+sipz9/6sa6Hhnvy+0h7176V13RVesdp+mYcSjXW529y
         /ePj3qbKV3reqer8KPLPsh93mbyv9PHbdfzRZRw7/mv6+J2fdvroHfIYi+5NOcbU+ab37Rqbae17yavl
@@ -20915,7 +20915,7 @@
   <data name="medilogobtn.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJEAAACCCAYAAABGmioWAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAACepJREFUeF7t3XmMZEUdB/Df71fXO7qney5mZgWW5ciuHIszsh6o7AIaIxBiIJLo
+        vAAADrwBlbxySQAACepJREFUeF7t3XmMZEUdB/Df71fXO7qney5mZgWW5ciuHIszsh6o7AIaIxBiIJLo
         LigRTZBj13hCjMYgIYpBA4tKEMWIJpIQXUDxwD/kFAzynyZ4RKPxSIzxAIl4xPx6unvrVc/OzvFmesHv
         J6n0dE11de++b17Xe6/qDREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAADA2hsfH29mGR2Z1gMsamaGiszb9xkjTxojz1qR+4iI03YAC8qtPcWI/IKI/ivCPy0K95K0DcAB
@@ -20963,7 +20963,7 @@
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABLAAAAMgCAYAAAAz4JsCAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAA/7JJREFUeF6E/XfXL8dt/Qv6/b+OmVlz5/4sW5KVJQfZysmyJIoKTIeZPJE8zJK+
+        vAAADrwBlbxySQAA/7JJREFUeF6E/XfXL8dt/Qv6/b+OmVlz5/4sW5KVJQfZysmyJIoKTIeZPJE8zJK+
         s4C9P8Cufh75/lGru6sroFDVXcBuAP0PH77+w9vzN350e/7mjzdxXcc3fnz78I069723fnL7qNNPb8/f
         +mkfP367jsr76G3nvx35dZz0s8v1mT5++ydH+sipz9/6sa6Hhnvy+0h7176V13RVesdp+mYcSjXW529y
         /ePj3qbKV3reqer8KPLPsh93mbyv9PHbdfzRZRw7/mv6+J2fdvroHfIYi+5NOcbU+ab37Rqbae17yavl

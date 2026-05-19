@@ -9,6 +9,7 @@ using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -77,6 +78,8 @@ namespace PharmaHealix
             orderhistorypan.Hide();
             ordersearchtxt.Text = "";
             appointmentpan.Hide();
+            prescriptionpan.Hide();
+            prescriptiontxt.Text = "";
 
         }
 
@@ -401,7 +404,7 @@ namespace PharmaHealix
             }
         }
 
-
+       //**************
         private void appointmenhistorytbtn_Click(object sender, EventArgs e)
         {
             if (user == "Patient")
@@ -413,13 +416,10 @@ namespace PharmaHealix
                             "U.Name as [Doctor Name], " +
                             "A.AppointmentDate as [Date], " +
                             "A.AppointmentTime as [Time], " +
-                            "P.PrescriptionText as[Prescription], " +
-                            "P.PrescriptionDate as [Prescription Date], " +
                             "A.Status " +
-                            "From AppointmentTable A, DoctorTable D, UserTable U, PrescriptionTable P " +
+                            "From AppointmentTable A, DoctorTable D, UserTable U "+
                             "Where A.DoctorID = D.DoctorID " +
                             "And D.Username = U.Username " +
-                            "And A.AppointmentID=P.AppointmentID " +
                             "And A.PatientUsername = @0";
 
                 DataTable apphistorytable = new Db().Reader(q, username);
@@ -675,7 +675,6 @@ namespace PharmaHealix
             }
 
         }
-        //***********************
         private void ordersearchbtn_Click(object sender, EventArgs e)
         {
             string searchId = ordersearchtxt.Text;
@@ -705,6 +704,84 @@ namespace PharmaHealix
                 MessageBox.Show("The Order ID entered is not Found!");
                 return;
             }
+        }
+
+        private void prescriptionhistorybtn_Click(object sender, EventArgs e)
+        {
+            if (user == "Patient")
+            {
+                prescriptionpan.Visible = true;
+                prescriptionpan.BringToFront();
+                string p = "select Count(*) from PrescriptionTable where patientusername=@0";
+                int count=Convert.ToInt32( new Db().Scalar(p, username));
+                if (count > 0)
+                {
+                    string q = "Select P.PrescriptionID, " +
+                                           "P.AppointmentID, " +
+                                           "P.DoctorID, " +
+                                           "U.Name AS [Doctor Name], " +      
+                                           "D.Speciality AS [Speciality], " + 
+                                           "P.PrescriptionText AS [Prescription Details], " +
+                                           "P.PrescriptionDate AS [Date Given] " +
+                                           "From PrescriptionTable P, " +
+                                           "DoctorTable D, UserTable U " +
+                                           "where P.DoctorID = D.DoctorID " +
+                                           "And  D.Username = U.Username " +
+                                           "And P.PatientUsername = @0";
+
+                   
+                    DataTable prescriptionTable = new Db().Reader(q, username);
+                    pdataGridView.DataSource = prescriptionTable;
+                    pdataGridView.AutoGenerateColumns = true;
+                }
+            }
+            else
+            {
+                pdataGridView.DataSource = null;
+                MessageBox.Show("Please Sign in First!");
+            }
+        }
+
+        private void prescriptionsearchbtn_Click(object sender, EventArgs e)
+        {
+            string searchId = prescriptiontxt.Text;
+            string s = "Select count(*) From PrescriptionTable where PrescriptionID=@0";
+            int count = Convert.ToInt32(new Db().Scalar(s, searchId));
+            if (count > 0)
+            {
+                string q = "Select P.PrescriptionID, " +
+                       "P.AppointmentID, " +
+                       "P.DoctorID, " +
+                       "U.Name AS [Doctor Name], " +
+                       "D.Speciality AS [Speciality], " +
+                       "P.PrescriptionText AS [Prescription Details], " +
+                       "P.PrescriptionDate AS [Date Given] " +
+                       "From PrescriptionTable P, " +
+                       "DoctorTable D, UserTable U " +
+                       "where P.DoctorID = D.DoctorID " +
+                       "And D.Username = U.Username " +
+                       "And P.PatientUsername = @0 " +
+                       "And P.PrescriptionID=@1";
+                DataTable prescriptionTable = new Db().Reader(q, username);
+                pdataGridView.DataSource = prescriptionTable;
+                pdataGridView.AutoGenerateColumns = true;
+
+            }
+            else
+            {
+                MessageBox.Show("ID Not Found!");
+                pdataGridView.DataSource = null;
+            }
+        }
+
+        private void richTextBox2_Enter(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
+        }
+
+        private void richTextBox1_Enter(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
         }
 
         private void appointmentbtn_Click(object sender, EventArgs e)

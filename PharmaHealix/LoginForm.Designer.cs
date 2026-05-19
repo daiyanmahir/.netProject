@@ -115,57 +115,37 @@
             // 
             // wlclbl
             // 
-            this.wlclbl.AutoSize = true;
-            this.wlclbl.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.wlclbl, "wlclbl");
             this.wlclbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
-            this.wlclbl.Location = new System.Drawing.Point(58, 168);
             this.wlclbl.Name = "wlclbl";
-            this.wlclbl.Size = new System.Drawing.Size(491, 45);
-            this.wlclbl.TabIndex = 1;
-            this.wlclbl.Text = "Welcome back to Pharma Healix";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(289, 575);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 22);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Or";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DimGray;
-            this.panel2.Location = new System.Drawing.Point(333, 584);
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(196, 2);
-            this.panel2.TabIndex = 5;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DimGray;
-            this.panel3.Location = new System.Drawing.Point(84, 585);
+            resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(193, 2);
-            this.panel3.TabIndex = 6;
             // 
             // logopan
             // 
-            this.logopan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logopan.BackgroundImage")));
-            this.logopan.Location = new System.Drawing.Point(207, 26);
+            resources.ApplyResources(this.logopan, "logopan");
             this.logopan.Name = "logopan";
-            this.logopan.Size = new System.Drawing.Size(180, 139);
-            this.logopan.TabIndex = 8;
             // 
             // picturepan
             // 
-            this.picturepan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picturepan.BackgroundImage")));
+            resources.ApplyResources(this.picturepan, "picturepan");
             this.picturepan.Controls.Add(this.Exitbtn);
-            this.picturepan.Location = new System.Drawing.Point(600, 0);
             this.picturepan.Name = "picturepan";
-            this.picturepan.Size = new System.Drawing.Size(600, 750);
-            this.picturepan.TabIndex = 7;
             // 
             // Exitbtn
             // 
@@ -173,68 +153,41 @@
             this.Exitbtn.FlatAppearance.BorderSize = 0;
             this.Exitbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.Exitbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
-            this.Exitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Exitbtn.Location = new System.Drawing.Point(537, 9);
+            resources.ApplyResources(this.Exitbtn, "Exitbtn");
             this.Exitbtn.Name = "Exitbtn";
-            this.Exitbtn.Size = new System.Drawing.Size(50, 30);
-            this.Exitbtn.TabIndex = 1;
-            this.Exitbtn.Text = "X";
             this.Exitbtn.UseVisualStyleBackColor = false;
             this.Exitbtn.Click += new System.EventHandler(this.Exitbtn_Click);
             // 
             // signinlbl
             // 
-            this.signinlbl.AutoSize = true;
-            this.signinlbl.Font = new System.Drawing.Font("Sans Serif Collection", 9.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signinlbl.Location = new System.Drawing.Point(72, 213);
+            resources.ApplyResources(this.signinlbl, "signinlbl");
             this.signinlbl.Name = "signinlbl";
-            this.signinlbl.Size = new System.Drawing.Size(468, 68);
-            this.signinlbl.TabIndex = 9;
-            this.signinlbl.Text = "Sign in to your pharmacy dashboard or inventory";
             // 
             // emaillbl
             // 
-            this.emaillbl.AutoSize = true;
-            this.emaillbl.Font = new System.Drawing.Font("Sans Serif Collection", 9.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emaillbl.Location = new System.Drawing.Point(72, 268);
+            resources.ApplyResources(this.emaillbl, "emaillbl");
             this.emaillbl.Name = "emaillbl";
-            this.emaillbl.Size = new System.Drawing.Size(126, 68);
-            this.emaillbl.TabIndex = 10;
-            this.emaillbl.Text = "Username";
             // 
             // passwordlbl
             // 
-            this.passwordlbl.AutoSize = true;
-            this.passwordlbl.Font = new System.Drawing.Font("Sans Serif Collection", 9.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordlbl.Location = new System.Drawing.Point(72, 370);
+            resources.ApplyResources(this.passwordlbl, "passwordlbl");
             this.passwordlbl.Name = "passwordlbl";
-            this.passwordlbl.Size = new System.Drawing.Size(120, 68);
-            this.passwordlbl.TabIndex = 14;
-            this.passwordlbl.Text = "Password";
             // 
             // enterusernametxt
             // 
             this.enterusernametxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.enterusernametxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.enterusernametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.enterusernametxt, "enterusernametxt");
             this.enterusernametxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.enterusernametxt.Location = new System.Drawing.Point(14, 15);
             this.enterusernametxt.Name = "enterusernametxt";
-            this.enterusernametxt.Size = new System.Drawing.Size(392, 21);
-            this.enterusernametxt.TabIndex = 17;
-            this.enterusernametxt.Text = "enter your username";
             this.enterusernametxt.Enter += new System.EventHandler(this.enterusernametxt_Enter);
             // 
             // enterpasstxt
             // 
             this.enterpasstxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.enterpasstxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.enterpasstxt, "enterpasstxt");
             this.enterpasstxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.enterpasstxt.Location = new System.Drawing.Point(11, 13);
             this.enterpasstxt.Name = "enterpasstxt";
-            this.enterpasstxt.Size = new System.Drawing.Size(395, 21);
-            this.enterpasstxt.TabIndex = 18;
-            this.enterpasstxt.Text = "Enter your password";
             this.enterpasstxt.Enter += new System.EventHandler(this.enterpasstxt_Enter);
             // 
             // loginbtn
@@ -242,14 +195,9 @@
             this.loginbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
             this.loginbtn.FlatAppearance.BorderSize = 0;
             this.loginbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.AliceBlue;
-            this.loginbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.loginbtn, "loginbtn");
             this.loginbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.loginbtn.Location = new System.Drawing.Point(84, 510);
             this.loginbtn.Name = "loginbtn";
-            this.loginbtn.Size = new System.Drawing.Size(445, 45);
-            this.loginbtn.TabIndex = 19;
-            this.loginbtn.Text = "Login";
             this.loginbtn.UseVisualStyleBackColor = false;
             this.loginbtn.Click += new System.EventHandler(this.loginbtn_Click);
             // 
@@ -258,47 +206,32 @@
             this.viewguestbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
             this.viewguestbtn.FlatAppearance.BorderSize = 0;
             this.viewguestbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.AliceBlue;
-            this.viewguestbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.viewguestbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.viewguestbtn, "viewguestbtn");
             this.viewguestbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.viewguestbtn.Location = new System.Drawing.Point(84, 617);
             this.viewguestbtn.Name = "viewguestbtn";
-            this.viewguestbtn.Size = new System.Drawing.Size(445, 45);
-            this.viewguestbtn.TabIndex = 20;
-            this.viewguestbtn.Text = "View as Guest";
             this.viewguestbtn.UseVisualStyleBackColor = false;
             this.viewguestbtn.Click += new System.EventHandler(this.viewguestbtn_Click);
             // 
             // usertxtpan
             // 
             this.usertxtpan.BackColor = System.Drawing.Color.White;
-            this.usertxtpan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            resources.ApplyResources(this.usertxtpan, "usertxtpan");
             this.usertxtpan.Controls.Add(this.enterusernametxt);
-            this.usertxtpan.Location = new System.Drawing.Point(84, 324);
             this.usertxtpan.Name = "usertxtpan";
-            this.usertxtpan.Size = new System.Drawing.Size(445, 50);
-            this.usertxtpan.TabIndex = 21;
             // 
             // passtxtpan
             // 
             this.passtxtpan.BackColor = System.Drawing.Color.White;
-            this.passtxtpan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            resources.ApplyResources(this.passtxtpan, "passtxtpan");
             this.passtxtpan.Controls.Add(this.hidebtn);
             this.passtxtpan.Controls.Add(this.enterpasstxt);
-            this.passtxtpan.Location = new System.Drawing.Point(84, 419);
             this.passtxtpan.Name = "passtxtpan";
-            this.passtxtpan.Size = new System.Drawing.Size(445, 50);
-            this.passtxtpan.TabIndex = 22;
             // 
             // hidebtn
             // 
             this.hidebtn.FlatAppearance.BorderSize = 0;
-            this.hidebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.hidebtn.Image = ((System.Drawing.Image)(resources.GetObject("hidebtn.Image")));
-            this.hidebtn.Location = new System.Drawing.Point(406, 14);
+            resources.ApplyResources(this.hidebtn, "hidebtn");
             this.hidebtn.Name = "hidebtn";
-            this.hidebtn.Size = new System.Drawing.Size(30, 25);
-            this.hidebtn.TabIndex = 19;
             this.hidebtn.UseVisualStyleBackColor = true;
             this.hidebtn.Click += new System.EventHandler(this.hidebtn_Click);
             // 
@@ -321,238 +254,156 @@
             this.createaccountpan.Controls.Add(this.label3);
             this.createaccountpan.Controls.Add(this.panel1);
             this.createaccountpan.Controls.Add(this.label4);
-            this.createaccountpan.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.createaccountpan, "createaccountpan");
             this.createaccountpan.Name = "createaccountpan";
-            this.createaccountpan.Size = new System.Drawing.Size(600, 750);
-            this.createaccountpan.TabIndex = 8;
-            this.createaccountpan.Visible = false;
             // 
             // createphonepan
             // 
-            this.createphonepan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("createphonepan.BackgroundImage")));
-            this.createphonepan.Location = new System.Drawing.Point(547, 294);
+            resources.ApplyResources(this.createphonepan, "createphonepan");
             this.createphonepan.Name = "createphonepan";
-            this.createphonepan.Size = new System.Drawing.Size(30, 30);
-            this.createphonepan.TabIndex = 31;
-            this.createphonepan.Visible = false;
             // 
             // createnamepan
             // 
-            this.createnamepan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("createnamepan.BackgroundImage")));
-            this.createnamepan.Location = new System.Drawing.Point(299, 296);
+            resources.ApplyResources(this.createnamepan, "createnamepan");
             this.createnamepan.Name = "createnamepan";
-            this.createnamepan.Size = new System.Drawing.Size(30, 30);
-            this.createnamepan.TabIndex = 31;
-            this.createnamepan.Visible = false;
             // 
             // createpasspan
             // 
-            this.createpasspan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("createpasspan.BackgroundImage")));
-            this.createpasspan.Location = new System.Drawing.Point(547, 628);
+            resources.ApplyResources(this.createpasspan, "createpasspan");
             this.createpasspan.Name = "createpasspan";
-            this.createpasspan.Size = new System.Drawing.Size(30, 30);
-            this.createpasspan.TabIndex = 30;
-            this.createpasspan.Visible = false;
             // 
             // createanspan
             // 
-            this.createanspan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("createanspan.BackgroundImage")));
-            this.createanspan.Location = new System.Drawing.Point(547, 562);
+            resources.ApplyResources(this.createanspan, "createanspan");
             this.createanspan.Name = "createanspan";
-            this.createanspan.Size = new System.Drawing.Size(30, 30);
-            this.createanspan.TabIndex = 30;
-            this.createanspan.Visible = false;
             // 
             // createaddresspan
             // 
-            this.createaddresspan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("createaddresspan.BackgroundImage")));
-            this.createaddresspan.Location = new System.Drawing.Point(547, 432);
+            resources.ApplyResources(this.createaddresspan, "createaddresspan");
             this.createaddresspan.Name = "createaddresspan";
-            this.createaddresspan.Size = new System.Drawing.Size(30, 30);
-            this.createaddresspan.TabIndex = 30;
-            this.createaddresspan.Visible = false;
             // 
             // createusernamepan
             // 
-            this.createusernamepan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("createusernamepan.BackgroundImage")));
-            this.createusernamepan.Location = new System.Drawing.Point(547, 359);
+            resources.ApplyResources(this.createusernamepan, "createusernamepan");
             this.createusernamepan.Name = "createusernamepan";
-            this.createusernamepan.Size = new System.Drawing.Size(30, 30);
-            this.createusernamepan.TabIndex = 30;
-            this.createusernamepan.Visible = false;
             // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.White;
-            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            resources.ApplyResources(this.panel9, "panel9");
             this.panel9.Controls.Add(this.createanstxt);
-            this.panel9.Location = new System.Drawing.Point(87, 555);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(445, 50);
-            this.panel9.TabIndex = 27;
             // 
             // createanstxt
             // 
             this.createanstxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.createanstxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.createanstxt, "createanstxt");
             this.createanstxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.createanstxt.Location = new System.Drawing.Point(14, 15);
             this.createanstxt.Name = "createanstxt";
-            this.createanstxt.Size = new System.Drawing.Size(426, 21);
-            this.createanstxt.TabIndex = 17;
-            this.createanstxt.Text = "Type your answer";
             this.createanstxt.Enter += new System.EventHandler(this.createanstxt_Enter);
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.White;
-            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            resources.ApplyResources(this.panel8, "panel8");
             this.panel8.Controls.Add(this.createaddresstxt);
-            this.panel8.Location = new System.Drawing.Point(87, 422);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(442, 50);
-            this.panel8.TabIndex = 28;
             // 
             // createaddresstxt
             // 
             this.createaddresstxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.createaddresstxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.createaddresstxt, "createaddresstxt");
             this.createaddresstxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.createaddresstxt.Location = new System.Drawing.Point(14, 15);
             this.createaddresstxt.Name = "createaddresstxt";
-            this.createaddresstxt.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.createaddresstxt.Size = new System.Drawing.Size(426, 21);
-            this.createaddresstxt.TabIndex = 17;
-            this.createaddresstxt.Text = "Address";
             this.createaddresstxt.Enter += new System.EventHandler(this.createaddresstxt_Enter);
             // 
             // cbpan
             // 
             this.cbpan.BackColor = System.Drawing.Color.White;
-            this.cbpan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            resources.ApplyResources(this.cbpan, "cbpan");
             this.cbpan.Controls.Add(this.securityquestioncb);
-            this.cbpan.Location = new System.Drawing.Point(87, 489);
             this.cbpan.Name = "cbpan";
-            this.cbpan.Size = new System.Drawing.Size(445, 50);
-            this.cbpan.TabIndex = 27;
             // 
             // securityquestioncb
             // 
             this.securityquestioncb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.securityquestioncb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.securityquestioncb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            resources.ApplyResources(this.securityquestioncb, "securityquestioncb");
             this.securityquestioncb.ForeColor = System.Drawing.Color.Black;
             this.securityquestioncb.FormattingEnabled = true;
             this.securityquestioncb.Items.AddRange(new object[] {
-            "What is your pet name?",
-            "What is your birthplace? ",
-            "What is your favorite color?"});
-            this.securityquestioncb.Location = new System.Drawing.Point(9, 11);
+            resources.GetString("securityquestioncb.Items"),
+            resources.GetString("securityquestioncb.Items1"),
+            resources.GetString("securityquestioncb.Items2")});
             this.securityquestioncb.Name = "securityquestioncb";
-            this.securityquestioncb.Size = new System.Drawing.Size(431, 30);
-            this.securityquestioncb.TabIndex = 29;
             // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.White;
-            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            resources.ApplyResources(this.panel7, "panel7");
             this.panel7.Controls.Add(this.createnametxt);
-            this.panel7.Location = new System.Drawing.Point(87, 287);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(206, 50);
-            this.panel7.TabIndex = 27;
             // 
             // createnametxt
             // 
             this.createnametxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.createnametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.createnametxt, "createnametxt");
             this.createnametxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.createnametxt.Location = new System.Drawing.Point(14, 15);
             this.createnametxt.Name = "createnametxt";
-            this.createnametxt.Size = new System.Drawing.Size(189, 21);
-            this.createnametxt.TabIndex = 17;
-            this.createnametxt.Text = "Name";
             this.createnametxt.Enter += new System.EventHandler(this.nametxt_Enter);
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            resources.ApplyResources(this.panel6, "panel6");
             this.panel6.Controls.Add(this.createpanhidebtn);
             this.panel6.Controls.Add(this.createpasstxt);
-            this.panel6.Location = new System.Drawing.Point(87, 619);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(445, 50);
-            this.panel6.TabIndex = 28;
             // 
             // createpanhidebtn
             // 
             this.createpanhidebtn.FlatAppearance.BorderSize = 0;
-            this.createpanhidebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.createpanhidebtn.Image = ((System.Drawing.Image)(resources.GetObject("createpanhidebtn.Image")));
-            this.createpanhidebtn.Location = new System.Drawing.Point(406, 12);
+            resources.ApplyResources(this.createpanhidebtn, "createpanhidebtn");
             this.createpanhidebtn.Name = "createpanhidebtn";
-            this.createpanhidebtn.Size = new System.Drawing.Size(30, 25);
-            this.createpanhidebtn.TabIndex = 30;
             this.createpanhidebtn.UseVisualStyleBackColor = true;
             this.createpanhidebtn.Click += new System.EventHandler(this.createpanhidebtn_Click);
             // 
             // createpasstxt
             // 
             this.createpasstxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.createpasstxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.createpasstxt, "createpasstxt");
             this.createpasstxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.createpasstxt.Location = new System.Drawing.Point(11, 15);
             this.createpasstxt.Name = "createpasstxt";
-            this.createpasstxt.Size = new System.Drawing.Size(395, 21);
-            this.createpasstxt.TabIndex = 18;
-            this.createpasstxt.Text = "Enter your password (at least 5 characters)";
             this.createpasstxt.Enter += new System.EventHandler(this.createpasstxt_Enter);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Controls.Add(this.createphonetxt);
-            this.panel4.Location = new System.Drawing.Point(333, 287);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(199, 50);
-            this.panel4.TabIndex = 27;
             // 
             // createphonetxt
             // 
             this.createphonetxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.createphonetxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.createphonetxt, "createphonetxt");
             this.createphonetxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.createphonetxt.Location = new System.Drawing.Point(11, 13);
             this.createphonetxt.Name = "createphonetxt";
-            this.createphonetxt.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.createphonetxt.Size = new System.Drawing.Size(183, 21);
-            this.createphonetxt.TabIndex = 18;
-            this.createphonetxt.Text = "Phone number";
             this.createphonetxt.Enter += new System.EventHandler(this.createphonetxt_Enter);
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            resources.ApplyResources(this.panel5, "panel5");
             this.panel5.Controls.Add(this.createusernametxt);
-            this.panel5.Location = new System.Drawing.Point(87, 352);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(445, 50);
-            this.panel5.TabIndex = 26;
             // 
             // createusernametxt
             // 
             this.createusernametxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.createusernametxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.createusernametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.createusernametxt, "createusernametxt");
             this.createusernametxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.createusernametxt.Location = new System.Drawing.Point(14, 15);
             this.createusernametxt.Name = "createusernametxt";
-            this.createusernametxt.Size = new System.Drawing.Size(404, 21);
-            this.createusernametxt.TabIndex = 17;
-            this.createusernametxt.Text = "enter your username";
             this.createusernametxt.Enter += new System.EventHandler(this.createusernametxt_Enter);
             // 
             // signupbtn
@@ -560,94 +411,56 @@
             this.signupbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
             this.signupbtn.FlatAppearance.BorderSize = 0;
             this.signupbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.AliceBlue;
-            this.signupbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.signupbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.signupbtn, "signupbtn");
             this.signupbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.signupbtn.Location = new System.Drawing.Point(84, 686);
             this.signupbtn.Name = "signupbtn";
-            this.signupbtn.Size = new System.Drawing.Size(445, 45);
-            this.signupbtn.TabIndex = 25;
-            this.signupbtn.Text = "Sign up";
             this.signupbtn.UseVisualStyleBackColor = false;
             this.signupbtn.Click += new System.EventHandler(this.signupbtn_Click);
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(230, 217);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 45);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Sign Up";
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.Location = new System.Drawing.Point(207, 26);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(180, 139);
-            this.panel1.TabIndex = 12;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.label4, "label4");
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
-            this.label4.Location = new System.Drawing.Point(91, 167);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(414, 45);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Welcome to Pharma Healix";
             // 
             // emailvallbl
             // 
-            this.emailvallbl.AutoSize = true;
-            this.emailvallbl.Font = new System.Drawing.Font("Sans Serif Collection", 9.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.emailvallbl, "emailvallbl");
             this.emailvallbl.ForeColor = System.Drawing.Color.Red;
-            this.emailvallbl.Location = new System.Drawing.Point(158, 269);
             this.emailvallbl.Name = "emailvallbl";
-            this.emailvallbl.Size = new System.Drawing.Size(0, 68);
-            this.emailvallbl.TabIndex = 23;
             // 
             // passvallbl
             // 
-            this.passvallbl.AutoSize = true;
-            this.passvallbl.Font = new System.Drawing.Font("Sans Serif Collection", 9.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.passvallbl, "passvallbl");
             this.passvallbl.ForeColor = System.Drawing.Color.Red;
-            this.passvallbl.Location = new System.Drawing.Point(195, 370);
             this.passvallbl.Name = "passvallbl";
-            this.passvallbl.Size = new System.Drawing.Size(0, 68);
-            this.passvallbl.TabIndex = 24;
             // 
             // forgetpasslbl
             // 
-            this.forgetpasslbl.AutoSize = true;
-            this.forgetpasslbl.Location = new System.Drawing.Point(400, 474);
+            resources.ApplyResources(this.forgetpasslbl, "forgetpasslbl");
             this.forgetpasslbl.Name = "forgetpasslbl";
-            this.forgetpasslbl.Size = new System.Drawing.Size(129, 20);
-            this.forgetpasslbl.TabIndex = 25;
             this.forgetpasslbl.TabStop = true;
-            this.forgetpasslbl.Text = "Forget Password";
             this.forgetpasslbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.forgetpasslbl_LinkClicked);
             // 
             // Enteruserpan
             // 
-            this.Enteruserpan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Enteruserpan.BackgroundImage")));
-            this.Enteruserpan.Location = new System.Drawing.Point(547, 330);
+            resources.ApplyResources(this.Enteruserpan, "Enteruserpan");
             this.Enteruserpan.Name = "Enteruserpan";
-            this.Enteruserpan.Size = new System.Drawing.Size(30, 30);
-            this.Enteruserpan.TabIndex = 32;
-            this.Enteruserpan.Visible = false;
             // 
             // Enterpasspan
             // 
-            this.Enterpasspan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Enterpasspan.BackgroundImage")));
-            this.Enterpasspan.Location = new System.Drawing.Point(547, 427);
+            resources.ApplyResources(this.Enterpasspan, "Enterpasspan");
             this.Enterpasspan.Name = "Enterpasspan";
-            this.Enterpasspan.Size = new System.Drawing.Size(30, 30);
-            this.Enterpasspan.TabIndex = 32;
-            this.Enterpasspan.Visible = false;
             // 
             // forgetpasspan
             // 
@@ -664,11 +477,8 @@
             this.forgetpasspan.Controls.Add(this.panel16);
             this.forgetpasspan.Controls.Add(this.panel17);
             this.forgetpasspan.Controls.Add(this.panel18);
-            this.forgetpasspan.Location = new System.Drawing.Point(8, 217);
+            resources.ApplyResources(this.forgetpasspan, "forgetpasspan");
             this.forgetpasspan.Name = "forgetpasspan";
-            this.forgetpasspan.Size = new System.Drawing.Size(587, 526);
-            this.forgetpasspan.TabIndex = 0;
-            this.forgetpasspan.Visible = false;
             // 
             // fcrossbtn
             // 
@@ -676,205 +486,135 @@
             this.fcrossbtn.FlatAppearance.BorderSize = 0;
             this.fcrossbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.fcrossbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
-            this.fcrossbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fcrossbtn.Location = new System.Drawing.Point(534, 5);
+            resources.ApplyResources(this.fcrossbtn, "fcrossbtn");
             this.fcrossbtn.Name = "fcrossbtn";
-            this.fcrossbtn.Size = new System.Drawing.Size(50, 30);
-            this.fcrossbtn.TabIndex = 33;
-            this.fcrossbtn.Text = "X";
             this.fcrossbtn.UseVisualStyleBackColor = false;
             this.fcrossbtn.Click += new System.EventHandler(this.fcrossbtn_Click);
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
+            resources.ApplyResources(this.label8, "label8");
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(51, 352);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(149, 20);
-            this.label8.TabIndex = 43;
-            this.label8.Text = "Type your password";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
+            resources.ApplyResources(this.label7, "label7");
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(52, 262);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(168, 20);
-            this.label7.TabIndex = 42;
-            this.label7.Text = "What was your answer";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
+            resources.ApplyResources(this.label6, "label6");
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(51, 167);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(211, 20);
-            this.label6.TabIndex = 41;
-            this.label6.Text = "Select your security question";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
+            resources.ApplyResources(this.label5, "label5");
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(52, 79);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(152, 20);
-            this.label5.TabIndex = 40;
-            this.label5.Text = "Type your username";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(124, 16);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(329, 45);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "Reset Your Password";
             // 
             // changepassbtn
             // 
             this.changepassbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
             this.changepassbtn.FlatAppearance.BorderSize = 0;
             this.changepassbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.AliceBlue;
-            this.changepassbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.changepassbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.changepassbtn, "changepassbtn");
             this.changepassbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.changepassbtn.Location = new System.Drawing.Point(47, 451);
             this.changepassbtn.Name = "changepassbtn";
-            this.changepassbtn.Size = new System.Drawing.Size(445, 45);
-            this.changepassbtn.TabIndex = 32;
-            this.changepassbtn.Text = "Confirm";
             this.changepassbtn.UseVisualStyleBackColor = false;
             this.changepassbtn.Click += new System.EventHandler(this.changepassbtn_Click);
             // 
             // fpasspan
             // 
-            this.fpasspan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("fpasspan.BackgroundImage")));
-            this.fpasspan.Location = new System.Drawing.Point(507, 384);
+            resources.ApplyResources(this.fpasspan, "fpasspan");
             this.fpasspan.Name = "fpasspan";
-            this.fpasspan.Size = new System.Drawing.Size(30, 30);
-            this.fpasspan.TabIndex = 36;
-            this.fpasspan.Visible = false;
             // 
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.White;
-            this.panel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            resources.ApplyResources(this.panel14, "panel14");
             this.panel14.Controls.Add(this.fanstxt);
-            this.panel14.Location = new System.Drawing.Point(47, 285);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(445, 50);
-            this.panel14.TabIndex = 32;
             // 
             // fanstxt
             // 
             this.fanstxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.fanstxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.fanstxt, "fanstxt");
             this.fanstxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.fanstxt.Location = new System.Drawing.Point(14, 15);
             this.fanstxt.Name = "fanstxt";
-            this.fanstxt.Size = new System.Drawing.Size(426, 21);
-            this.fanstxt.TabIndex = 17;
-            this.fanstxt.Text = "Type your answer";
             this.fanstxt.Enter += new System.EventHandler(this.fanstxt_Enter);
             // 
             // panel16
             // 
             this.panel16.BackColor = System.Drawing.Color.White;
-            this.panel16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            resources.ApplyResources(this.panel16, "panel16");
             this.panel16.Controls.Add(this.fsecurityquestioncb);
-            this.panel16.Location = new System.Drawing.Point(47, 193);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(445, 50);
-            this.panel16.TabIndex = 33;
             // 
             // fsecurityquestioncb
             // 
             this.fsecurityquestioncb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.fsecurityquestioncb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fsecurityquestioncb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            resources.ApplyResources(this.fsecurityquestioncb, "fsecurityquestioncb");
             this.fsecurityquestioncb.ForeColor = System.Drawing.Color.Black;
             this.fsecurityquestioncb.FormattingEnabled = true;
             this.fsecurityquestioncb.Items.AddRange(new object[] {
-            "What is your pet name?",
-            "What is your birthplace? ",
-            "What is your favorite color?"});
-            this.fsecurityquestioncb.Location = new System.Drawing.Point(9, 11);
+            resources.GetString("fsecurityquestioncb.Items"),
+            resources.GetString("fsecurityquestioncb.Items1"),
+            resources.GetString("fsecurityquestioncb.Items2")});
             this.fsecurityquestioncb.Name = "fsecurityquestioncb";
-            this.fsecurityquestioncb.Size = new System.Drawing.Size(431, 30);
-            this.fsecurityquestioncb.TabIndex = 29;
             // 
             // panel17
             // 
             this.panel17.BackColor = System.Drawing.Color.White;
-            this.panel17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            resources.ApplyResources(this.panel17, "panel17");
             this.panel17.Controls.Add(this.fhidebtn);
             this.panel17.Controls.Add(this.fpasstxt);
-            this.panel17.Location = new System.Drawing.Point(47, 375);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(445, 50);
-            this.panel17.TabIndex = 35;
             // 
             // fhidebtn
             // 
             this.fhidebtn.FlatAppearance.BorderSize = 0;
-            this.fhidebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fhidebtn.Image = ((System.Drawing.Image)(resources.GetObject("fhidebtn.Image")));
-            this.fhidebtn.Location = new System.Drawing.Point(406, 12);
+            resources.ApplyResources(this.fhidebtn, "fhidebtn");
             this.fhidebtn.Name = "fhidebtn";
-            this.fhidebtn.Size = new System.Drawing.Size(30, 25);
-            this.fhidebtn.TabIndex = 30;
             this.fhidebtn.UseVisualStyleBackColor = true;
             this.fhidebtn.Click += new System.EventHandler(this.fhidebtn_Click);
             // 
             // fpasstxt
             // 
             this.fpasstxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.fpasstxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.fpasstxt, "fpasstxt");
             this.fpasstxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.fpasstxt.Location = new System.Drawing.Point(11, 15);
             this.fpasstxt.Name = "fpasstxt";
-            this.fpasstxt.Size = new System.Drawing.Size(395, 21);
-            this.fpasstxt.TabIndex = 18;
-            this.fpasstxt.Text = "Enter your password (at least 5 characters)";
             this.fpasstxt.Enter += new System.EventHandler(this.fpasstxt_Enter);
             // 
             // panel18
             // 
             this.panel18.BackColor = System.Drawing.Color.White;
-            this.panel18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            resources.ApplyResources(this.panel18, "panel18");
             this.panel18.Controls.Add(this.fusernametxt);
-            this.panel18.Location = new System.Drawing.Point(47, 105);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(445, 50);
-            this.panel18.TabIndex = 31;
             // 
             // fusernametxt
             // 
             this.fusernametxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.fusernametxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.fusernametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.fusernametxt, "fusernametxt");
             this.fusernametxt.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.fusernametxt.Location = new System.Drawing.Point(14, 15);
             this.fusernametxt.Name = "fusernametxt";
-            this.fusernametxt.Size = new System.Drawing.Size(404, 21);
-            this.fusernametxt.TabIndex = 17;
-            this.fusernametxt.Text = "enter your username";
             this.fusernametxt.Enter += new System.EventHandler(this.fusernametxt_Enter);
             // 
             // Loginform
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
-            this.ClientSize = new System.Drawing.Size(1200, 750);
+            resources.ApplyResources(this, "$this");
             this.Controls.Add(this.createaccountpan);
             this.Controls.Add(this.forgetpasspan);
             this.Controls.Add(this.passtxtpan);
@@ -896,11 +636,7 @@
             this.Controls.Add(this.Enteruserpan);
             this.Controls.Add(this.Enterpasspan);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Loginform";
-            this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Pharma Healix";
             this.picturepan.ResumeLayout(false);
             this.usertxtpan.ResumeLayout(false);
             this.usertxtpan.PerformLayout();

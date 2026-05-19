@@ -117,7 +117,110 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="wlclbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="wlclbl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 16pt, style=Bold</value>
+  </data>
+  <data name="wlclbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>58, 168</value>
+  </data>
+  <data name="wlclbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>491, 45</value>
+  </data>
+  <data name="wlclbl.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="wlclbl.Text" xml:space="preserve">
+    <value>Welcome back to Pharma Healix</value>
+  </data>
+  <data name="&gt;&gt;wlclbl.Name" xml:space="preserve">
+    <value>wlclbl</value>
+  </data>
+  <data name="&gt;&gt;wlclbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;wlclbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;wlclbl.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10pt</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>289, 575</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 22</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Or</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>333, 584</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 2</value>
+  </data>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 585</value>
+  </data>
+  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>193, 2</value>
+  </data>
+  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
   <data name="logopan.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAALQAAAChCAYAAABu1pUaAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -179,6 +282,27 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaIH/B9K1jvRajU7qAAAAAElFTkSu
         QmCC
 </value>
+  </data>
+  <data name="logopan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>207, 26</value>
+  </data>
+  <data name="logopan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 139</value>
+  </data>
+  <data name="logopan.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;logopan.Name" xml:space="preserve">
+    <value>logopan</value>
+  </data>
+  <data name="&gt;&gt;logopan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;logopan.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;logopan.ZOrder" xml:space="preserve">
+    <value>11</value>
   </data>
   <data name="picturepan.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -11471,6 +11595,289 @@
         ImOatNEGYNAAAAAASUVORK5CYII=
 </value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Exitbtn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="Exitbtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>537, 9</value>
+  </data>
+  <data name="Exitbtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 30</value>
+  </data>
+  <data name="Exitbtn.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="Exitbtn.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="&gt;&gt;Exitbtn.Name" xml:space="preserve">
+    <value>Exitbtn</value>
+  </data>
+  <data name="&gt;&gt;Exitbtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Exitbtn.Parent" xml:space="preserve">
+    <value>picturepan</value>
+  </data>
+  <data name="&gt;&gt;Exitbtn.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="picturepan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>600, 0</value>
+  </data>
+  <data name="picturepan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>600, 750</value>
+  </data>
+  <data name="picturepan.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;picturepan.Name" xml:space="preserve">
+    <value>picturepan</value>
+  </data>
+  <data name="&gt;&gt;picturepan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;picturepan.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;picturepan.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="signinlbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="signinlbl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Sans Serif Collection, 9.999999pt</value>
+  </data>
+  <data name="signinlbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 213</value>
+  </data>
+  <data name="signinlbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>468, 68</value>
+  </data>
+  <data name="signinlbl.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="signinlbl.Text" xml:space="preserve">
+    <value>Sign in to your pharmacy dashboard or inventory</value>
+  </data>
+  <data name="&gt;&gt;signinlbl.Name" xml:space="preserve">
+    <value>signinlbl</value>
+  </data>
+  <data name="&gt;&gt;signinlbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;signinlbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;signinlbl.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="emaillbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="emaillbl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Sans Serif Collection, 9.999999pt</value>
+  </data>
+  <data name="emaillbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 268</value>
+  </data>
+  <data name="emaillbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 68</value>
+  </data>
+  <data name="emaillbl.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="emaillbl.Text" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="&gt;&gt;emaillbl.Name" xml:space="preserve">
+    <value>emaillbl</value>
+  </data>
+  <data name="&gt;&gt;emaillbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;emaillbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;emaillbl.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="passwordlbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="passwordlbl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Sans Serif Collection, 9.999999pt</value>
+  </data>
+  <data name="passwordlbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 370</value>
+  </data>
+  <data name="passwordlbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 68</value>
+  </data>
+  <data name="passwordlbl.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="passwordlbl.Text" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="&gt;&gt;passwordlbl.Name" xml:space="preserve">
+    <value>passwordlbl</value>
+  </data>
+  <data name="&gt;&gt;passwordlbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;passwordlbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;passwordlbl.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="enterusernametxt.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="enterusernametxt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 15</value>
+  </data>
+  <data name="enterusernametxt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>392, 21</value>
+  </data>
+  <data name="enterusernametxt.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="enterusernametxt.Text" xml:space="preserve">
+    <value>enter your username</value>
+  </data>
+  <data name="&gt;&gt;enterusernametxt.Name" xml:space="preserve">
+    <value>enterusernametxt</value>
+  </data>
+  <data name="&gt;&gt;enterusernametxt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;enterusernametxt.Parent" xml:space="preserve">
+    <value>usertxtpan</value>
+  </data>
+  <data name="&gt;&gt;enterusernametxt.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="enterpasstxt.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="enterpasstxt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 13</value>
+  </data>
+  <data name="enterpasstxt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>395, 21</value>
+  </data>
+  <data name="enterpasstxt.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="enterpasstxt.Text" xml:space="preserve">
+    <value>Enter your password</value>
+  </data>
+  <data name="&gt;&gt;enterpasstxt.Name" xml:space="preserve">
+    <value>enterpasstxt</value>
+  </data>
+  <data name="&gt;&gt;enterpasstxt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;enterpasstxt.Parent" xml:space="preserve">
+    <value>passtxtpan</value>
+  </data>
+  <data name="&gt;&gt;enterpasstxt.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="loginbtn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="loginbtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 11pt, style=Bold</value>
+  </data>
+  <data name="loginbtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 510</value>
+  </data>
+  <data name="loginbtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>445, 45</value>
+  </data>
+  <data name="loginbtn.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="loginbtn.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="&gt;&gt;loginbtn.Name" xml:space="preserve">
+    <value>loginbtn</value>
+  </data>
+  <data name="&gt;&gt;loginbtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;loginbtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;loginbtn.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="viewguestbtn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="viewguestbtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 11pt, style=Bold</value>
+  </data>
+  <data name="viewguestbtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 617</value>
+  </data>
+  <data name="viewguestbtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>445, 45</value>
+  </data>
+  <data name="viewguestbtn.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="viewguestbtn.Text" xml:space="preserve">
+    <value>View as Guest</value>
+  </data>
+  <data name="&gt;&gt;viewguestbtn.Name" xml:space="preserve">
+    <value>viewguestbtn</value>
+  </data>
+  <data name="&gt;&gt;viewguestbtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;viewguestbtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;viewguestbtn.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="usertxtpan.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="usertxtpan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 324</value>
+  </data>
+  <data name="usertxtpan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>445, 50</value>
+  </data>
+  <data name="usertxtpan.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;usertxtpan.Name" xml:space="preserve">
+    <value>usertxtpan</value>
+  </data>
+  <data name="&gt;&gt;usertxtpan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;usertxtpan.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;usertxtpan.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="passtxtpan.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="hidebtn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
   <data name="hidebtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -11487,10 +11894,52 @@
         ZhP4Z/Ebq8LTc2ir268AAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="hidebtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>406, 14</value>
+  </data>
+  <data name="hidebtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 25</value>
+  </data>
+  <data name="hidebtn.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;hidebtn.Name" xml:space="preserve">
+    <value>hidebtn</value>
+  </data>
+  <data name="&gt;&gt;hidebtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hidebtn.Parent" xml:space="preserve">
+    <value>passtxtpan</value>
+  </data>
+  <data name="&gt;&gt;hidebtn.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="passtxtpan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 419</value>
+  </data>
+  <data name="passtxtpan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>445, 50</value>
+  </data>
+  <data name="passtxtpan.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;passtxtpan.Name" xml:space="preserve">
+    <value>passtxtpan</value>
+  </data>
+  <data name="&gt;&gt;passtxtpan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;passtxtpan.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;passtxtpan.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="createphonepan.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
-        hgAAD4YBskHpeAAAAlJJREFUSEullr2KFEEQx9sP9BBEUJ/i0t0q5ZJhqg65wHRB9AHuI9DIQFBEEU0U
+        hQAAD4UBH/jIFQAAAlJJREFUSEullr2KFEEQx9sP9BBEUJ/i0t0q5ZJhqg65wHRB9AHuI9DIQFBEEU0U
         jAxEM5/CyDcwMRJBUdRAUHaq505vvR3puW1vdrZnpnruDxVVd/2nf9RUtzHGmOmli2czhqdC8FUY30oK
         VwtjjrjcYeRqZITrluC9MHwRxgdFkiyVyTHDOUv4RhinlrGYxa5N8WYxGh2rF9PqY5IsCeEjYZj4usK4
         lxG++rGyctoI4bOa6X4Q5lkKm31O7vaUpoR/FuoyTITwvhGCbDH539zmhOsx5iXeFG85g4V6sxCCX0YY
@@ -11502,11 +11951,35 @@
         EoKH5ufq4IxleC2Ee9WT9jX18ldqtdudaU7wsrg8OFUuypLB+XEKL4RgkhF+F4ZrhzH1cthzHm5ZgrEQ
         7mYpPvGm/wAp2jaLX/o9lQAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="createphonepan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>547, 294</value>
+  </data>
+  <data name="createphonepan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 30</value>
+  </data>
+  <data name="createphonepan.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="createphonepan.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;createphonepan.Name" xml:space="preserve">
+    <value>createphonepan</value>
+  </data>
+  <data name="&gt;&gt;createphonepan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;createphonepan.Parent" xml:space="preserve">
+    <value>createaccountpan</value>
+  </data>
+  <data name="&gt;&gt;createphonepan.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="createnamepan.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
-        hgAAD4YBskHpeAAAAlJJREFUSEullr2KFEEQx9sP9BBEUJ/i0t0q5ZJhqg65wHRB9AHuI9DIQFBEEU0U
+        hQAAD4UBH/jIFQAAAlJJREFUSEullr2KFEEQx9sP9BBEUJ/i0t0q5ZJhqg65wHRB9AHuI9DIQFBEEU0U
         jAxEM5/CyDcwMRJBUdRAUHaq505vvR3puW1vdrZnpnruDxVVd/2nf9RUtzHGmOmli2czhqdC8FUY30oK
         VwtjjrjcYeRqZITrluC9MHwRxgdFkiyVyTHDOUv4RhinlrGYxa5N8WYxGh2rF9PqY5IsCeEjYZj4usK4
         lxG++rGyctoI4bOa6X4Q5lkKm31O7vaUpoR/FuoyTITwvhGCbDH539zmhOsx5iXeFG85g4V6sxCCX0YY
@@ -11518,11 +11991,35 @@
         EoKH5ufq4IxleC2Ee9WT9jX18ldqtdudaU7wsrg8OFUuypLB+XEKL4RgkhF+F4ZrhzH1cthzHm5ZgrEQ
         7mYpPvGm/wAp2jaLX/o9lQAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="createnamepan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>299, 296</value>
+  </data>
+  <data name="createnamepan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 30</value>
+  </data>
+  <data name="createnamepan.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="createnamepan.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;createnamepan.Name" xml:space="preserve">
+    <value>createnamepan</value>
+  </data>
+  <data name="&gt;&gt;createnamepan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;createnamepan.Parent" xml:space="preserve">
+    <value>createaccountpan</value>
+  </data>
+  <data name="&gt;&gt;createnamepan.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="createpasspan.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
-        hgAAD4YBskHpeAAAAlJJREFUSEullr2KFEEQx9sP9BBEUJ/i0t0q5ZJhqg65wHRB9AHuI9DIQFBEEU0U
+        hQAAD4UBH/jIFQAAAlJJREFUSEullr2KFEEQx9sP9BBEUJ/i0t0q5ZJhqg65wHRB9AHuI9DIQFBEEU0U
         jAxEM5/CyDcwMRJBUdRAUHaq505vvR3puW1vdrZnpnruDxVVd/2nf9RUtzHGmOmli2czhqdC8FUY30oK
         VwtjjrjcYeRqZITrluC9MHwRxgdFkiyVyTHDOUv4RhinlrGYxa5N8WYxGh2rF9PqY5IsCeEjYZj4usK4
         lxG++rGyctoI4bOa6X4Q5lkKm31O7vaUpoR/FuoyTITwvhGCbDH539zmhOsx5iXeFG85g4V6sxCCX0YY
@@ -11534,11 +12031,35 @@
         EoKH5ufq4IxleC2Ee9WT9jX18ldqtdudaU7wsrg8OFUuypLB+XEKL4RgkhF+F4ZrhzH1cthzHm5ZgrEQ
         7mYpPvGm/wAp2jaLX/o9lQAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="createpasspan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>547, 628</value>
+  </data>
+  <data name="createpasspan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 30</value>
+  </data>
+  <data name="createpasspan.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="createpasspan.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;createpasspan.Name" xml:space="preserve">
+    <value>createpasspan</value>
+  </data>
+  <data name="&gt;&gt;createpasspan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;createpasspan.Parent" xml:space="preserve">
+    <value>createaccountpan</value>
+  </data>
+  <data name="&gt;&gt;createpasspan.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="createanspan.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
-        hgAAD4YBskHpeAAAAlJJREFUSEullr2KFEEQx9sP9BBEUJ/i0t0q5ZJhqg65wHRB9AHuI9DIQFBEEU0U
+        hQAAD4UBH/jIFQAAAlJJREFUSEullr2KFEEQx9sP9BBEUJ/i0t0q5ZJhqg65wHRB9AHuI9DIQFBEEU0U
         jAxEM5/CyDcwMRJBUdRAUHaq505vvR3puW1vdrZnpnruDxVVd/2nf9RUtzHGmOmli2czhqdC8FUY30oK
         VwtjjrjcYeRqZITrluC9MHwRxgdFkiyVyTHDOUv4RhinlrGYxa5N8WYxGh2rF9PqY5IsCeEjYZj4usK4
         lxG++rGyctoI4bOa6X4Q5lkKm31O7vaUpoR/FuoyTITwvhGCbDH539zmhOsx5iXeFG85g4V6sxCCX0YY
@@ -11550,11 +12071,35 @@
         EoKH5ufq4IxleC2Ee9WT9jX18ldqtdudaU7wsrg8OFUuypLB+XEKL4RgkhF+F4ZrhzH1cthzHm5ZgrEQ
         7mYpPvGm/wAp2jaLX/o9lQAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="createanspan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>547, 562</value>
+  </data>
+  <data name="createanspan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 30</value>
+  </data>
+  <data name="createanspan.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="createanspan.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;createanspan.Name" xml:space="preserve">
+    <value>createanspan</value>
+  </data>
+  <data name="&gt;&gt;createanspan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;createanspan.Parent" xml:space="preserve">
+    <value>createaccountpan</value>
+  </data>
+  <data name="&gt;&gt;createanspan.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="createaddresspan.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
-        hgAAD4YBskHpeAAAAlJJREFUSEullr2KFEEQx9sP9BBEUJ/i0t0q5ZJhqg65wHRB9AHuI9DIQFBEEU0U
+        hQAAD4UBH/jIFQAAAlJJREFUSEullr2KFEEQx9sP9BBEUJ/i0t0q5ZJhqg65wHRB9AHuI9DIQFBEEU0U
         jAxEM5/CyDcwMRJBUdRAUHaq505vvR3puW1vdrZnpnruDxVVd/2nf9RUtzHGmOmli2czhqdC8FUY30oK
         VwtjjrjcYeRqZITrluC9MHwRxgdFkiyVyTHDOUv4RhinlrGYxa5N8WYxGh2rF9PqY5IsCeEjYZj4usK4
         lxG++rGyctoI4bOa6X4Q5lkKm31O7vaUpoR/FuoyTITwvhGCbDH539zmhOsx5iXeFG85g4V6sxCCX0YY
@@ -11567,10 +12112,34 @@
         7mYpPvGm/wAp2jaLX/o9lQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="createaddresspan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>547, 432</value>
+  </data>
+  <data name="createaddresspan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 30</value>
+  </data>
+  <data name="createaddresspan.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="createaddresspan.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;createaddresspan.Name" xml:space="preserve">
+    <value>createaddresspan</value>
+  </data>
+  <data name="&gt;&gt;createaddresspan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;createaddresspan.Parent" xml:space="preserve">
+    <value>createaccountpan</value>
+  </data>
+  <data name="&gt;&gt;createaddresspan.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="createusernamepan.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
-        hgAAD4YBskHpeAAAAlJJREFUSEullr2KFEEQx9sP9BBEUJ/i0t0q5ZJhqg65wHRB9AHuI9DIQFBEEU0U
+        hQAAD4UBH/jIFQAAAlJJREFUSEullr2KFEEQx9sP9BBEUJ/i0t0q5ZJhqg65wHRB9AHuI9DIQFBEEU0U
         jAxEM5/CyDcwMRJBUdRAUHaq505vvR3puW1vdrZnpnruDxVVd/2nf9RUtzHGmOmli2czhqdC8FUY30oK
         VwtjjrjcYeRqZITrluC9MHwRxgdFkiyVyTHDOUv4RhinlrGYxa5N8WYxGh2rF9PqY5IsCeEjYZj4usK4
         lxG++rGyctoI4bOa6X4Q5lkKm31O7vaUpoR/FuoyTITwvhGCbDH539zmhOsx5iXeFG85g4V6sxCCX0YY
@@ -11582,6 +12151,252 @@
         EoKH5ufq4IxleC2Ee9WT9jX18ldqtdudaU7wsrg8OFUuypLB+XEKL4RgkhF+F4ZrhzH1cthzHm5ZgrEQ
         7mYpPvGm/wAp2jaLX/o9lQAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="createusernamepan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>547, 359</value>
+  </data>
+  <data name="createusernamepan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 30</value>
+  </data>
+  <data name="createusernamepan.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="createusernamepan.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;createusernamepan.Name" xml:space="preserve">
+    <value>createusernamepan</value>
+  </data>
+  <data name="&gt;&gt;createusernamepan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;createusernamepan.Parent" xml:space="preserve">
+    <value>createaccountpan</value>
+  </data>
+  <data name="&gt;&gt;createusernamepan.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="panel9.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="createanstxt.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="createanstxt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 15</value>
+  </data>
+  <data name="createanstxt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>426, 21</value>
+  </data>
+  <data name="createanstxt.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="createanstxt.Text" xml:space="preserve">
+    <value>Type your answer</value>
+  </data>
+  <data name="&gt;&gt;createanstxt.Name" xml:space="preserve">
+    <value>createanstxt</value>
+  </data>
+  <data name="&gt;&gt;createanstxt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;createanstxt.Parent" xml:space="preserve">
+    <value>panel9</value>
+  </data>
+  <data name="&gt;&gt;createanstxt.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>87, 555</value>
+  </data>
+  <data name="panel9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>445, 50</value>
+  </data>
+  <data name="panel9.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;panel9.Name" xml:space="preserve">
+    <value>panel9</value>
+  </data>
+  <data name="&gt;&gt;panel9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel9.Parent" xml:space="preserve">
+    <value>createaccountpan</value>
+  </data>
+  <data name="&gt;&gt;panel9.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="panel8.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="createaddresstxt.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="createaddresstxt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 15</value>
+  </data>
+  <data name="createaddresstxt.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="createaddresstxt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>426, 21</value>
+  </data>
+  <data name="createaddresstxt.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="createaddresstxt.Text" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="&gt;&gt;createaddresstxt.Name" xml:space="preserve">
+    <value>createaddresstxt</value>
+  </data>
+  <data name="&gt;&gt;createaddresstxt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;createaddresstxt.Parent" xml:space="preserve">
+    <value>panel8</value>
+  </data>
+  <data name="&gt;&gt;createaddresstxt.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>87, 422</value>
+  </data>
+  <data name="panel8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>442, 50</value>
+  </data>
+  <data name="panel8.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;panel8.Name" xml:space="preserve">
+    <value>panel8</value>
+  </data>
+  <data name="&gt;&gt;panel8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel8.Parent" xml:space="preserve">
+    <value>createaccountpan</value>
+  </data>
+  <data name="&gt;&gt;panel8.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="cbpan.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="securityquestioncb.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="securityquestioncb.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="securityquestioncb.Items" xml:space="preserve">
+    <value>What is your pet name?</value>
+  </data>
+  <data name="securityquestioncb.Items1" xml:space="preserve">
+    <value>What is your birthplace? </value>
+  </data>
+  <data name="securityquestioncb.Items2" xml:space="preserve">
+    <value>What is your favorite color?</value>
+  </data>
+  <data name="securityquestioncb.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 11</value>
+  </data>
+  <data name="securityquestioncb.Size" type="System.Drawing.Size, System.Drawing">
+    <value>431, 30</value>
+  </data>
+  <data name="securityquestioncb.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;securityquestioncb.Name" xml:space="preserve">
+    <value>securityquestioncb</value>
+  </data>
+  <data name="&gt;&gt;securityquestioncb.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;securityquestioncb.Parent" xml:space="preserve">
+    <value>cbpan</value>
+  </data>
+  <data name="&gt;&gt;securityquestioncb.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbpan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>87, 489</value>
+  </data>
+  <data name="cbpan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>445, 50</value>
+  </data>
+  <data name="cbpan.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;cbpan.Name" xml:space="preserve">
+    <value>cbpan</value>
+  </data>
+  <data name="&gt;&gt;cbpan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbpan.Parent" xml:space="preserve">
+    <value>createaccountpan</value>
+  </data>
+  <data name="&gt;&gt;cbpan.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="panel7.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="createnametxt.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="createnametxt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 15</value>
+  </data>
+  <data name="createnametxt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 21</value>
+  </data>
+  <data name="createnametxt.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="createnametxt.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="&gt;&gt;createnametxt.Name" xml:space="preserve">
+    <value>createnametxt</value>
+  </data>
+  <data name="&gt;&gt;createnametxt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;createnametxt.Parent" xml:space="preserve">
+    <value>panel7</value>
+  </data>
+  <data name="&gt;&gt;createnametxt.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>87, 287</value>
+  </data>
+  <data name="panel7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 50</value>
+  </data>
+  <data name="panel7.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;panel7.Name" xml:space="preserve">
+    <value>panel7</value>
+  </data>
+  <data name="&gt;&gt;panel7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel7.Parent" xml:space="preserve">
+    <value>createaccountpan</value>
+  </data>
+  <data name="&gt;&gt;panel7.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="panel6.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="createpanhidebtn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
   <data name="createpanhidebtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -11598,6 +12413,240 @@
         uvL7wPlhrsV3oRtusX3oIt0WuS+T52Gr+Fg4mNpsRPB50iItMJzL4iDZVT19rNz89BkVnKCLdNwh+agf
         ZhP4Z/Ebq8LTc2ir268AAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="createpanhidebtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>406, 12</value>
+  </data>
+  <data name="createpanhidebtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 25</value>
+  </data>
+  <data name="createpanhidebtn.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;createpanhidebtn.Name" xml:space="preserve">
+    <value>createpanhidebtn</value>
+  </data>
+  <data name="&gt;&gt;createpanhidebtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;createpanhidebtn.Parent" xml:space="preserve">
+    <value>panel6</value>
+  </data>
+  <data name="&gt;&gt;createpanhidebtn.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="createpasstxt.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="createpasstxt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 15</value>
+  </data>
+  <data name="createpasstxt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>395, 21</value>
+  </data>
+  <data name="createpasstxt.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="createpasstxt.Text" xml:space="preserve">
+    <value>Enter your password (at least 5 characters)</value>
+  </data>
+  <data name="&gt;&gt;createpasstxt.Name" xml:space="preserve">
+    <value>createpasstxt</value>
+  </data>
+  <data name="&gt;&gt;createpasstxt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;createpasstxt.Parent" xml:space="preserve">
+    <value>panel6</value>
+  </data>
+  <data name="&gt;&gt;createpasstxt.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>87, 619</value>
+  </data>
+  <data name="panel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>445, 50</value>
+  </data>
+  <data name="panel6.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;panel6.Name" xml:space="preserve">
+    <value>panel6</value>
+  </data>
+  <data name="&gt;&gt;panel6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel6.Parent" xml:space="preserve">
+    <value>createaccountpan</value>
+  </data>
+  <data name="&gt;&gt;panel6.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="panel4.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="createphonetxt.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="createphonetxt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 13</value>
+  </data>
+  <data name="createphonetxt.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="createphonetxt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 21</value>
+  </data>
+  <data name="createphonetxt.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="createphonetxt.Text" xml:space="preserve">
+    <value>Phone number</value>
+  </data>
+  <data name="&gt;&gt;createphonetxt.Name" xml:space="preserve">
+    <value>createphonetxt</value>
+  </data>
+  <data name="&gt;&gt;createphonetxt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;createphonetxt.Parent" xml:space="preserve">
+    <value>panel4</value>
+  </data>
+  <data name="&gt;&gt;createphonetxt.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>333, 287</value>
+  </data>
+  <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 50</value>
+  </data>
+  <data name="panel4.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;panel4.Name" xml:space="preserve">
+    <value>panel4</value>
+  </data>
+  <data name="&gt;&gt;panel4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel4.Parent" xml:space="preserve">
+    <value>createaccountpan</value>
+  </data>
+  <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="panel5.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="createusernametxt.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="createusernametxt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 15</value>
+  </data>
+  <data name="createusernametxt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>404, 21</value>
+  </data>
+  <data name="createusernametxt.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="createusernametxt.Text" xml:space="preserve">
+    <value>enter your username</value>
+  </data>
+  <data name="&gt;&gt;createusernametxt.Name" xml:space="preserve">
+    <value>createusernametxt</value>
+  </data>
+  <data name="&gt;&gt;createusernametxt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;createusernametxt.Parent" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;createusernametxt.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>87, 352</value>
+  </data>
+  <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>445, 50</value>
+  </data>
+  <data name="panel5.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;panel5.Name" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;panel5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel5.Parent" xml:space="preserve">
+    <value>createaccountpan</value>
+  </data>
+  <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="signupbtn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="signupbtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 11pt, style=Bold</value>
+  </data>
+  <data name="signupbtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 686</value>
+  </data>
+  <data name="signupbtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>445, 45</value>
+  </data>
+  <data name="signupbtn.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="signupbtn.Text" xml:space="preserve">
+    <value>Sign up</value>
+  </data>
+  <data name="&gt;&gt;signupbtn.Name" xml:space="preserve">
+    <value>signupbtn</value>
+  </data>
+  <data name="&gt;&gt;signupbtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;signupbtn.Parent" xml:space="preserve">
+    <value>createaccountpan</value>
+  </data>
+  <data name="&gt;&gt;signupbtn.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 16pt, style=Bold</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 217</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 45</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Sign Up</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>createaccountpan</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>14</value>
   </data>
   <data name="panel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -11661,10 +12710,166 @@
         QmCC
 </value>
   </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>207, 26</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 139</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>createaccountpan</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 16pt, style=Bold</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>91, 167</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>414, 45</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Welcome to Pharma Healix</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>createaccountpan</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="createaccountpan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="createaccountpan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>600, 750</value>
+  </data>
+  <data name="createaccountpan.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="createaccountpan.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;createaccountpan.Name" xml:space="preserve">
+    <value>createaccountpan</value>
+  </data>
+  <data name="&gt;&gt;createaccountpan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;createaccountpan.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;createaccountpan.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="emailvallbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="emailvallbl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Sans Serif Collection, 9.999999pt</value>
+  </data>
+  <data name="emailvallbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 269</value>
+  </data>
+  <data name="emailvallbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 68</value>
+  </data>
+  <data name="emailvallbl.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;emailvallbl.Name" xml:space="preserve">
+    <value>emailvallbl</value>
+  </data>
+  <data name="&gt;&gt;emailvallbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;emailvallbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;emailvallbl.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="passvallbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="passvallbl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Sans Serif Collection, 9.999999pt</value>
+  </data>
+  <data name="passvallbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>195, 370</value>
+  </data>
+  <data name="passvallbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 68</value>
+  </data>
+  <data name="passvallbl.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;passvallbl.Name" xml:space="preserve">
+    <value>passvallbl</value>
+  </data>
+  <data name="&gt;&gt;passvallbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;passvallbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;passvallbl.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="forgetpasslbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="forgetpasslbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>400, 474</value>
+  </data>
+  <data name="forgetpasslbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 20</value>
+  </data>
+  <data name="forgetpasslbl.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="forgetpasslbl.Text" xml:space="preserve">
+    <value>Forget Password</value>
+  </data>
+  <data name="&gt;&gt;forgetpasslbl.Name" xml:space="preserve">
+    <value>forgetpasslbl</value>
+  </data>
+  <data name="&gt;&gt;forgetpasslbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;forgetpasslbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;forgetpasslbl.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
   <data name="Enteruserpan.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
-        hgAAD4YBskHpeAAAAlJJREFUSEullr2KFEEQx9sP9BBEUJ/i0t0q5ZJhqg65wHRB9AHuI9DIQFBEEU0U
+        hQAAD4UBH/jIFQAAAlJJREFUSEullr2KFEEQx9sP9BBEUJ/i0t0q5ZJhqg65wHRB9AHuI9DIQFBEEU0U
         jAxEM5/CyDcwMRJBUdRAUHaq505vvR3puW1vdrZnpnruDxVVd/2nf9RUtzHGmOmli2czhqdC8FUY30oK
         VwtjjrjcYeRqZITrluC9MHwRxgdFkiyVyTHDOUv4RhinlrGYxa5N8WYxGh2rF9PqY5IsCeEjYZj4usK4
         lxG++rGyctoI4bOa6X4Q5lkKm31O7vaUpoR/FuoyTITwvhGCbDH539zmhOsx5iXeFG85g4V6sxCCX0YY
@@ -11676,11 +12881,35 @@
         EoKH5ufq4IxleC2Ee9WT9jX18ldqtdudaU7wsrg8OFUuypLB+XEKL4RgkhF+F4ZrhzH1cthzHm5ZgrEQ
         7mYpPvGm/wAp2jaLX/o9lQAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="Enteruserpan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>547, 330</value>
+  </data>
+  <data name="Enteruserpan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 30</value>
+  </data>
+  <data name="Enteruserpan.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="Enteruserpan.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;Enteruserpan.Name" xml:space="preserve">
+    <value>Enteruserpan</value>
+  </data>
+  <data name="&gt;&gt;Enteruserpan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Enteruserpan.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Enteruserpan.ZOrder" xml:space="preserve">
+    <value>18</value>
   </data>
   <data name="Enterpasspan.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
-        hgAAD4YBskHpeAAAAlJJREFUSEullr2KFEEQx9sP9BBEUJ/i0t0q5ZJhqg65wHRB9AHuI9DIQFBEEU0U
+        hQAAD4UBH/jIFQAAAlJJREFUSEullr2KFEEQx9sP9BBEUJ/i0t0q5ZJhqg65wHRB9AHuI9DIQFBEEU0U
         jAxEM5/CyDcwMRJBUdRAUHaq505vvR3puW1vdrZnpnruDxVVd/2nf9RUtzHGmOmli2czhqdC8FUY30oK
         VwtjjrjcYeRqZITrluC9MHwRxgdFkiyVyTHDOUv4RhinlrGYxa5N8WYxGh2rF9PqY5IsCeEjYZj4usK4
         lxG++rGyctoI4bOa6X4Q5lkKm31O7vaUpoR/FuoyTITwvhGCbDH539zmhOsx5iXeFG85g4V6sxCCX0YY
@@ -11693,10 +12922,241 @@
         7mYpPvGm/wAp2jaLX/o9lQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="Enterpasspan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>547, 427</value>
+  </data>
+  <data name="Enterpasspan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 30</value>
+  </data>
+  <data name="Enterpasspan.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="Enterpasspan.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;Enterpasspan.Name" xml:space="preserve">
+    <value>Enterpasspan</value>
+  </data>
+  <data name="&gt;&gt;Enterpasspan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Enterpasspan.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Enterpasspan.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="fcrossbtn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="fcrossbtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>534, 5</value>
+  </data>
+  <data name="fcrossbtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 30</value>
+  </data>
+  <data name="fcrossbtn.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="fcrossbtn.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="&gt;&gt;fcrossbtn.Name" xml:space="preserve">
+    <value>fcrossbtn</value>
+  </data>
+  <data name="&gt;&gt;fcrossbtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fcrossbtn.Parent" xml:space="preserve">
+    <value>forgetpasspan</value>
+  </data>
+  <data name="&gt;&gt;fcrossbtn.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8pt</value>
+  </data>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>51, 352</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 20</value>
+  </data>
+  <data name="label8.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Type your password</value>
+  </data>
+  <data name="&gt;&gt;label8.Name" xml:space="preserve">
+    <value>label8</value>
+  </data>
+  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+    <value>forgetpasspan</value>
+  </data>
+  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8pt</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>52, 262</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 20</value>
+  </data>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>What was your answer</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>forgetpasspan</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8pt</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>51, 167</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 20</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Select your security question</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>forgetpasspan</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8pt</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>52, 79</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 20</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Type your username</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>forgetpasspan</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 16pt, style=Bold</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>124, 16</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>329, 45</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Reset Your Password</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>forgetpasspan</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="changepassbtn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="changepassbtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 11pt, style=Bold</value>
+  </data>
+  <data name="changepassbtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>47, 451</value>
+  </data>
+  <data name="changepassbtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>445, 45</value>
+  </data>
+  <data name="changepassbtn.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="changepassbtn.Text" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="&gt;&gt;changepassbtn.Name" xml:space="preserve">
+    <value>changepassbtn</value>
+  </data>
+  <data name="&gt;&gt;changepassbtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;changepassbtn.Parent" xml:space="preserve">
+    <value>forgetpasspan</value>
+  </data>
+  <data name="&gt;&gt;changepassbtn.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="fpasspan.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
-        hgAAD4YBskHpeAAAAlJJREFUSEullr2KFEEQx9sP9BBEUJ/i0t0q5ZJhqg65wHRB9AHuI9DIQFBEEU0U
+        hQAAD4UBH/jIFQAAAlJJREFUSEullr2KFEEQx9sP9BBEUJ/i0t0q5ZJhqg65wHRB9AHuI9DIQFBEEU0U
         jAxEM5/CyDcwMRJBUdRAUHaq505vvR3puW1vdrZnpnruDxVVd/2nf9RUtzHGmOmli2czhqdC8FUY30oK
         VwtjjrjcYeRqZITrluC9MHwRxgdFkiyVyTHDOUv4RhinlrGYxa5N8WYxGh2rF9PqY5IsCeEjYZj4usK4
         lxG++rGyctoI4bOa6X4Q5lkKm31O7vaUpoR/FuoyTITwvhGCbDH539zmhOsx5iXeFG85g4V6sxCCX0YY
@@ -11708,6 +13168,147 @@
         EoKH5ufq4IxleC2Ee9WT9jX18ldqtdudaU7wsrg8OFUuypLB+XEKL4RgkhF+F4ZrhzH1cthzHm5ZgrEQ
         7mYpPvGm/wAp2jaLX/o9lQAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="fpasspan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>507, 384</value>
+  </data>
+  <data name="fpasspan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 30</value>
+  </data>
+  <data name="fpasspan.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="fpasspan.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;fpasspan.Name" xml:space="preserve">
+    <value>fpasspan</value>
+  </data>
+  <data name="&gt;&gt;fpasspan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fpasspan.Parent" xml:space="preserve">
+    <value>forgetpasspan</value>
+  </data>
+  <data name="&gt;&gt;fpasspan.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="panel14.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="fanstxt.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="fanstxt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 15</value>
+  </data>
+  <data name="fanstxt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>426, 21</value>
+  </data>
+  <data name="fanstxt.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="fanstxt.Text" xml:space="preserve">
+    <value>Type your answer</value>
+  </data>
+  <data name="&gt;&gt;fanstxt.Name" xml:space="preserve">
+    <value>fanstxt</value>
+  </data>
+  <data name="&gt;&gt;fanstxt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fanstxt.Parent" xml:space="preserve">
+    <value>panel14</value>
+  </data>
+  <data name="&gt;&gt;fanstxt.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>47, 285</value>
+  </data>
+  <data name="panel14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>445, 50</value>
+  </data>
+  <data name="panel14.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;panel14.Name" xml:space="preserve">
+    <value>panel14</value>
+  </data>
+  <data name="&gt;&gt;panel14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel14.Parent" xml:space="preserve">
+    <value>forgetpasspan</value>
+  </data>
+  <data name="&gt;&gt;panel14.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="panel16.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="fsecurityquestioncb.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="fsecurityquestioncb.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="fsecurityquestioncb.Items" xml:space="preserve">
+    <value>What is your pet name?</value>
+  </data>
+  <data name="fsecurityquestioncb.Items1" xml:space="preserve">
+    <value>What is your birthplace? </value>
+  </data>
+  <data name="fsecurityquestioncb.Items2" xml:space="preserve">
+    <value>What is your favorite color?</value>
+  </data>
+  <data name="fsecurityquestioncb.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 11</value>
+  </data>
+  <data name="fsecurityquestioncb.Size" type="System.Drawing.Size, System.Drawing">
+    <value>431, 30</value>
+  </data>
+  <data name="fsecurityquestioncb.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;fsecurityquestioncb.Name" xml:space="preserve">
+    <value>fsecurityquestioncb</value>
+  </data>
+  <data name="&gt;&gt;fsecurityquestioncb.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fsecurityquestioncb.Parent" xml:space="preserve">
+    <value>panel16</value>
+  </data>
+  <data name="&gt;&gt;fsecurityquestioncb.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>47, 193</value>
+  </data>
+  <data name="panel16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>445, 50</value>
+  </data>
+  <data name="panel16.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;panel16.Name" xml:space="preserve">
+    <value>panel16</value>
+  </data>
+  <data name="&gt;&gt;panel16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel16.Parent" xml:space="preserve">
+    <value>forgetpasspan</value>
+  </data>
+  <data name="&gt;&gt;panel16.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="panel17.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="fhidebtn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
   <data name="fhidebtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -11725,9 +13326,159 @@
         ZhP4Z/Ebq8LTc2ir268AAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="fhidebtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>406, 12</value>
+  </data>
+  <data name="fhidebtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 25</value>
+  </data>
+  <data name="fhidebtn.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;fhidebtn.Name" xml:space="preserve">
+    <value>fhidebtn</value>
+  </data>
+  <data name="&gt;&gt;fhidebtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fhidebtn.Parent" xml:space="preserve">
+    <value>panel17</value>
+  </data>
+  <data name="&gt;&gt;fhidebtn.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fpasstxt.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="fpasstxt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 15</value>
+  </data>
+  <data name="fpasstxt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>395, 21</value>
+  </data>
+  <data name="fpasstxt.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="fpasstxt.Text" xml:space="preserve">
+    <value>Enter your password (at least 5 characters)</value>
+  </data>
+  <data name="&gt;&gt;fpasstxt.Name" xml:space="preserve">
+    <value>fpasstxt</value>
+  </data>
+  <data name="&gt;&gt;fpasstxt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fpasstxt.Parent" xml:space="preserve">
+    <value>panel17</value>
+  </data>
+  <data name="&gt;&gt;fpasstxt.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>47, 375</value>
+  </data>
+  <data name="panel17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>445, 50</value>
+  </data>
+  <data name="panel17.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;panel17.Name" xml:space="preserve">
+    <value>panel17</value>
+  </data>
+  <data name="&gt;&gt;panel17.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel17.Parent" xml:space="preserve">
+    <value>forgetpasspan</value>
+  </data>
+  <data name="&gt;&gt;panel17.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="panel18.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="fusernametxt.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="fusernametxt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 15</value>
+  </data>
+  <data name="fusernametxt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>404, 21</value>
+  </data>
+  <data name="fusernametxt.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="fusernametxt.Text" xml:space="preserve">
+    <value>enter your username</value>
+  </data>
+  <data name="&gt;&gt;fusernametxt.Name" xml:space="preserve">
+    <value>fusernametxt</value>
+  </data>
+  <data name="&gt;&gt;fusernametxt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fusernametxt.Parent" xml:space="preserve">
+    <value>panel18</value>
+  </data>
+  <data name="&gt;&gt;fusernametxt.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel18.Location" type="System.Drawing.Point, System.Drawing">
+    <value>47, 105</value>
+  </data>
+  <data name="panel18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>445, 50</value>
+  </data>
+  <data name="panel18.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;panel18.Name" xml:space="preserve">
+    <value>panel18</value>
+  </data>
+  <data name="&gt;&gt;panel18.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel18.Parent" xml:space="preserve">
+    <value>forgetpasspan</value>
+  </data>
+  <data name="&gt;&gt;panel18.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="forgetpasspan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 217</value>
+  </data>
+  <data name="forgetpasspan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>587, 526</value>
+  </data>
+  <data name="forgetpasspan.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="forgetpasspan.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;forgetpasspan.Name" xml:space="preserve">
+    <value>forgetpasspan</value>
+  </data>
+  <data name="&gt;&gt;forgetpasspan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;forgetpasspan.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;forgetpasspan.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1200, 750</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAkAEBAAAAEAIABoBAAAlgAAABgYAAABACAAiAkAAP4EAAAgIAAAAQAgAKgQAACGDgAAMDAAAAEA
@@ -18936,5 +20687,17 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAA=
 </value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Pharma Healix</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Loginform</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

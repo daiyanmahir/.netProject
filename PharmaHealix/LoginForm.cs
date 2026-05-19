@@ -482,6 +482,7 @@ namespace PharmaHealix
 
             fusernametxt.Text = "enter your username";
             fpasstxt.Text = "Enter your password (at least 5 characters)";
+            fpasstxt.PasswordChar = '\0';
             fanstxt.Text = "Type your answer";
 
 
@@ -527,6 +528,7 @@ namespace PharmaHealix
 
                     fusernametxt.Text = "enter your username";
                     fpasstxt.Text = "Enter your password (at least 5 characters)";
+                    fpasstxt.PasswordChar = '\0';
                     fanstxt.Text = "Type your answer";
 
 

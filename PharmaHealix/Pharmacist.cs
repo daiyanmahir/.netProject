@@ -324,7 +324,7 @@ namespace PharmaHealix
 
             Db db = new Db();
 
-            // 2. Duplicate Check Logic
+            
             string checkDuplicateQuery = "SELECT COUNT(*) FROM MedicineTable WHERE MedicineName = @0";
             bool medicineExists = Convert.ToInt32(db.Scalar(checkDuplicateQuery, phinvmnametb.Text)) > 0;
 
@@ -334,12 +334,12 @@ namespace PharmaHealix
                 return; 
             }
 
-            // 3. Parse values carefully to prevent string-to-number exceptions
+            
             decimal.TryParse(phinvspricetb.Text, out decimal stripPrice);
             decimal.TryParse(phinvupricetb.Text, out decimal unitPrice);
             int.TryParse(phinvstocktb.Text, out int stock);
 
-            // 4. Proceed with Insert since it's a new medicine
+            
             string query = "INSERT INTO MedicineTable (MedicineName, Category, Description, StripPrice, UnitPrice, Dose, SideEffect, Stock, ExpireDate, Image, Instruction) " +
                            "VALUES (@0, @1, @2, @3, @4, @5, @6, @7, @8, @9, @10)";
 
@@ -364,7 +364,7 @@ namespace PharmaHealix
 
         private void phinvdgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Ensure the row index clicked belongs to actual data rows
+           
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = phinvdgv.Rows[e.RowIndex];
@@ -482,17 +482,17 @@ namespace PharmaHealix
         {
             if (cartTable != null)
             {
-                cartTable.Clear(); // Completely empties all row records from the data table memory
+                cartTable.Clear(); 
             }
 
-            // Clear all the UI TextBoxes shown in your screenshot
-            searchmedtb.Clear();          // Clears the "Search Medicine" field
-            phordmedicinetb.Clear();      // Clears the "Medicine" label/field
-            patientusernametb.Clear();    // Clears the "Patient Username" field
-            numericUpDown1.Value = 0;     // Resets the "Quantity" selector back to 0
-            phordtotaltb.Text = "0.00";   // Resets the "Total Amount" display field
+            
+            searchmedtb.Clear();          
+            phordmedicinetb.Clear();     
+            patientusernametb.Clear();   
+            numericUpDown1.Value = 0;    
+            phordtotaltb.Text = "0.00";   
 
-            // 2. Load available medicines from your database into the top DataGridView
+            
             string query = "SELECT MedicineID, MedicineName, Category, UnitPrice, Stock FROM MedicineTable";
             DataTable dt = new Db().Reader(query);
             if (dt != null)
@@ -500,16 +500,16 @@ namespace PharmaHealix
                 phordmeddgv.DataSource = dt;
             }
 
-            // 3. Rebuild the schema configuration for your Order Cart if it doesn't exist
+            
             if (cartTable.Columns.Count == 0)
             {
                 cartTable.Columns.Add("MedicineID", typeof(int));
                 cartTable.Columns.Add("MedicineName", typeof(string));
                 cartTable.Columns.Add("Quantity", typeof(int));
-                cartTable.Columns.Add("Price", typeof(decimal)); // Calculated line total
+                cartTable.Columns.Add("Price", typeof(decimal)); 
             }
 
-            // 4. Bind your cart structure to the bottom "Order Cart" DataGridView
+           
             phordcartdgv.DataSource = cartTable;
         }
 
@@ -544,7 +544,7 @@ namespace PharmaHealix
             string selectedMedName = phordmedicinetb.Text;
             int requestedQty = Convert.ToInt32(numericUpDown1.Value);
 
-            // 2. Query the database directly using the text box value to get real-time ID, Price, and Stock
+           
             string query = "SELECT MedicineID, UnitPrice, Stock FROM MedicineTable WHERE MedicineName = @0";
             DataTable dt = new Db().Reader(query, selectedMedName);
 
@@ -554,12 +554,12 @@ namespace PharmaHealix
                 return;
             }
 
-            // Safely pull database values regardless of whether the item came from a grid click or a search text box
+            
             int medId = Convert.ToInt32(dt.Rows[0]["MedicineID"]);
             decimal unitPrice = Convert.ToDecimal(dt.Rows[0]["UnitPrice"]);
             int availableStock = Convert.ToInt32(dt.Rows[0]["Stock"]);
 
-            // 3. Inventory Stock Validation Check
+            
             if (requestedQty > availableStock)
             {
                 MessageBox.Show($"Inadequate inventory stock! Only {availableStock} items remaining.");
@@ -568,7 +568,7 @@ namespace PharmaHealix
 
             decimal linePrice = requestedQty * unitPrice;
 
-            // 4. Cart Optimization: If the item already exists in the cart table, update its quantities
+            
             foreach (DataRow row in cartTable.Rows)
             {
                 if (Convert.ToInt32(row["MedicineID"]) == medId)
@@ -586,7 +586,7 @@ namespace PharmaHealix
                 }
             }
 
-            // 5. Add new line record row to your visual Order Cart
+          
             cartTable.Rows.Add(medId, selectedMedName, requestedQty, linePrice);
             UpdateGrandTotal();
         }
@@ -613,10 +613,10 @@ namespace PharmaHealix
                 return;
             }
 
-            // 2. Read the dynamic text directly from your new input control
+           
             string patientUser = patientusernametb.Text.Trim();
 
-            // 3. Validation Check: Make sure they didn't leave the patient username field blank
+          
             if (patientUser == "")
             {
                 MessageBox.Show("Please enter a Patient Username before confirming the order.");
@@ -625,7 +625,7 @@ namespace PharmaHealix
 
             Db db = new Db();
 
-            // 4. Boolean Validation: Verify this username actually exists in your UserTable
+          
             string checkUserQuery = "SELECT COUNT(*) FROM UserTable WHERE Username = @0";
             bool userExists = Convert.ToInt32(db.Scalar(checkUserQuery, patientUser)) > 0;
 
@@ -640,16 +640,16 @@ namespace PharmaHealix
 
             try
             {
-                // 5. Create the Master Ticket in OrderTable
+               
                 string insertOrderQuery = "INSERT INTO OrderTable (PatientUsername, OrderDate, TotalAmount, Status) VALUES (@0, @1, @2, @3)";
                 db.NonQuery(insertOrderQuery, patientUser, today, totalAmt, "Processed");
 
-                // 6. Fetch the newly created auto-identity ID safely
+               
                 object identityResult = db.Scalar("SELECT TOP 1 OrderID FROM OrderTable ORDER BY OrderID DESC");
                 if (identityResult == null) throw new Exception("Could not retrieve the newly generated Order ID.");
                 int newOrderId = Convert.ToInt32(identityResult);
 
-                // 7. Loop through the cart table data to insert detailed lines and deduct inventory stock
+       
                 foreach (DataRow row in cartTable.Rows)
                 {
                     int medId = Convert.ToInt32(row["MedicineID"]);
@@ -657,18 +657,18 @@ namespace PharmaHealix
                     decimal price = Convert.ToDecimal(row["Price"]);
                     decimal uPrice = price / qty;
 
-                    // Save row entry data lines into OrderDetailsTable
+                  
                     string insertDetailsQuery = "INSERT INTO OrderDetailsTable (OrderID, MedicineID, Quantity, UnitPrice) VALUES (@0, @1, @2, @3)";
                     db.NonQuery(insertDetailsQuery, newOrderId, medId, qty, uPrice);
 
-                    // Deduct purchased items directly from stock numbers
+               
                     string updateStockQuery = "UPDATE MedicineTable SET Stock = Stock - @0 WHERE MedicineID = @1";
                     db.NonQuery(updateStockQuery, qty, medId);
                 }
 
                 MessageBox.Show("Order processed and saved successfully!");
 
-                // 8. Clean up interface inputs back to default configuration states
+             
                 cartTable.Clear();
                 phordmedicinetb.Clear();
                 patientusernametb.Clear(); 
@@ -687,7 +687,7 @@ namespace PharmaHealix
         {
             string searchName = searchmedtb.Text;
 
-            // 1. Validation Check: Make sure they didn't leave the search bar empty
+            
             if (string.IsNullOrWhiteSpace(searchName))
             {
                 MessageBox.Show("Please type a medicine name to search.");
@@ -696,19 +696,18 @@ namespace PharmaHealix
                 return;
             }
 
-            // 2. Query the database for an exact match
+           
             string query = "SELECT MedicineName FROM MedicineTable WHERE MedicineName = @0";
             object result = new Db().Scalar(query, searchName);
 
             if (result != null)
             {
-                // Exact match found! Populate the read-only medicine field and set default quantity to 1
+                
                 phordmedicinetb.Text = Convert.ToString(result);
                 numericUpDown1.Value = 1;
             }
             else
             {
-                // No match found
                 MessageBox.Show("No medicine found matching that exact name. Please check your spelling.");
                 phordmedicinetb.Clear();
                 numericUpDown1.Value = 0;
@@ -782,6 +781,16 @@ namespace PharmaHealix
         }
 
         private void reqexitbtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void orderexitbtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void prescriptionexitbtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

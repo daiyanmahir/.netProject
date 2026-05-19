@@ -119,7 +119,6 @@
             this.pharmacistprofilenamelbl = new System.Windows.Forms.Label();
             this.pharmacistprofiletoppan = new System.Windows.Forms.Panel();
             this.pharamcistprofiletoplbl = new System.Windows.Forms.Label();
-            this.Exitbtn = new System.Windows.Forms.Button();
             this.orderbtn = new System.Windows.Forms.Button();
             this.inventorybtn = new System.Windows.Forms.Button();
             this.pharmacistlogoutbtn = new System.Windows.Forms.Button();
@@ -135,8 +134,10 @@
             this.approvebtn = new System.Windows.Forms.Button();
             this.requestdgv = new System.Windows.Forms.DataGridView();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
             this.reqexitbtn = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.orderexitbtn = new System.Windows.Forms.Button();
+            this.prescriptionexitbtn = new System.Windows.Forms.Button();
             this.patientlistpan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phprdgv)).BeginInit();
             this.patientlisttoppan.SuspendLayout();
@@ -216,6 +217,7 @@
             // patientlisttoppan
             // 
             this.patientlisttoppan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
+            this.patientlisttoppan.Controls.Add(this.prescriptionexitbtn);
             this.patientlisttoppan.Controls.Add(this.patientlisttoplbl);
             this.patientlisttoppan.Location = new System.Drawing.Point(0, 0);
             this.patientlisttoppan.Margin = new System.Windows.Forms.Padding(2);
@@ -448,6 +450,7 @@
             // ordertoppan
             // 
             this.ordertoppan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
+            this.ordertoppan.Controls.Add(this.orderexitbtn);
             this.ordertoppan.Controls.Add(this.ordertoplbl);
             this.ordertoppan.Location = new System.Drawing.Point(0, 0);
             this.ordertoppan.Margin = new System.Windows.Forms.Padding(2);
@@ -1185,22 +1188,6 @@
             this.pharamcistprofiletoplbl.Text = "PROFILE";
             this.pharamcistprofiletoplbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Exitbtn
-            // 
-            this.Exitbtn.BackColor = System.Drawing.Color.White;
-            this.Exitbtn.FlatAppearance.BorderSize = 0;
-            this.Exitbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.Exitbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
-            this.Exitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Exitbtn.Location = new System.Drawing.Point(1153, 11);
-            this.Exitbtn.Margin = new System.Windows.Forms.Padding(2);
-            this.Exitbtn.Name = "Exitbtn";
-            this.Exitbtn.Size = new System.Drawing.Size(38, 24);
-            this.Exitbtn.TabIndex = 46;
-            this.Exitbtn.Text = "X";
-            this.Exitbtn.UseVisualStyleBackColor = false;
-            this.Exitbtn.Click += new System.EventHandler(this.Exitbtn_Click_1);
-            // 
             // orderbtn
             // 
             this.orderbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(110)))), ((int)(((byte)(43)))));
@@ -1396,18 +1383,6 @@
             this.panel12.Size = new System.Drawing.Size(1012, 110);
             this.panel12.TabIndex = 1;
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Trebuchet MS", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(364, 20);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(298, 70);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "REQUESTS";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // reqexitbtn
             // 
             this.reqexitbtn.BackColor = System.Drawing.Color.White;
@@ -1424,6 +1399,50 @@
             this.reqexitbtn.UseVisualStyleBackColor = false;
             this.reqexitbtn.Click += new System.EventHandler(this.reqexitbtn_Click);
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Trebuchet MS", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(364, 20);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(298, 70);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "REQUESTS";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // orderexitbtn
+            // 
+            this.orderexitbtn.BackColor = System.Drawing.Color.White;
+            this.orderexitbtn.FlatAppearance.BorderSize = 0;
+            this.orderexitbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.orderexitbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
+            this.orderexitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.orderexitbtn.Location = new System.Drawing.Point(899, 13);
+            this.orderexitbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.orderexitbtn.Name = "orderexitbtn";
+            this.orderexitbtn.Size = new System.Drawing.Size(38, 24);
+            this.orderexitbtn.TabIndex = 48;
+            this.orderexitbtn.Text = "X";
+            this.orderexitbtn.UseVisualStyleBackColor = false;
+            this.orderexitbtn.Click += new System.EventHandler(this.orderexitbtn_Click);
+            // 
+            // prescriptionexitbtn
+            // 
+            this.prescriptionexitbtn.BackColor = System.Drawing.Color.White;
+            this.prescriptionexitbtn.FlatAppearance.BorderSize = 0;
+            this.prescriptionexitbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.prescriptionexitbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
+            this.prescriptionexitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.prescriptionexitbtn.Location = new System.Drawing.Point(883, 13);
+            this.prescriptionexitbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.prescriptionexitbtn.Name = "prescriptionexitbtn";
+            this.prescriptionexitbtn.Size = new System.Drawing.Size(38, 24);
+            this.prescriptionexitbtn.TabIndex = 48;
+            this.prescriptionexitbtn.Text = "X";
+            this.prescriptionexitbtn.UseVisualStyleBackColor = false;
+            this.prescriptionexitbtn.Click += new System.EventHandler(this.prescriptionexitbtn_Click);
+            // 
             // Pharmacist
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1431,7 +1450,6 @@
             this.ClientSize = new System.Drawing.Size(1200, 750);
             this.Controls.Add(this.requestpan);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.Exitbtn);
             this.Controls.Add(this.pharmacistprofilepan);
             this.Controls.Add(this.inventorypan);
             this.Controls.Add(this.orderpan);
@@ -1512,7 +1530,6 @@
         private System.Windows.Forms.TextBox pharmacistprofileusernametxt;
         private System.Windows.Forms.Label pharmacistprofileusernamelbl;
         private System.Windows.Forms.TextBox pharmacistprofilenametxt;
-        private System.Windows.Forms.Button Exitbtn;
         private System.Windows.Forms.Button orderbtn;
         private System.Windows.Forms.Button inventorybtn;
         private System.Windows.Forms.Button pharmacistlogoutbtn;
@@ -1599,5 +1616,7 @@
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button reqexitbtn;
+        private System.Windows.Forms.Button orderexitbtn;
+        private System.Windows.Forms.Button prescriptionexitbtn;
     }
 }

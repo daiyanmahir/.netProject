@@ -1373,7 +1373,7 @@
             this.requestpan.Controls.Add(this.approvebtn);
             this.requestpan.Controls.Add(this.requestdgv);
             this.requestpan.Controls.Add(this.panel12);
-            this.requestpan.Location = new System.Drawing.Point(24400, 0);
+            this.requestpan.Location = new System.Drawing.Point(244, 0);
             this.requestpan.Margin = new System.Windows.Forms.Padding(2);
             this.requestpan.Name = "requestpan";
             this.requestpan.Size = new System.Drawing.Size(956, 750);

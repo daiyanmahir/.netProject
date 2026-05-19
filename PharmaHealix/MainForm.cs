@@ -784,6 +784,11 @@ namespace PharmaHealix
             this.ActiveControl = null;
         }
 
+        private void richTextBox3_Enter(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
+        }
+
         private void appointmentbtn_Click(object sender, EventArgs e)
         {
             if (user == "Patient")

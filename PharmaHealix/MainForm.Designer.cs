@@ -1822,6 +1822,7 @@
             this.richTextBox3.Size = new System.Drawing.Size(806, 40);
             this.richTextBox3.TabIndex = 28;
             this.richTextBox3.Text = "";
+            this.richTextBox3.Enter += new System.EventHandler(this.richTextBox3_Enter);
             // 
             // label19
             // 
@@ -1952,7 +1953,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1200, 750);
-            this.Controls.Add(this.appointmenthistorypan);
+            this.Controls.Add(this.orderhistorypan);
             this.Controls.Add(this.patientpan);
             this.Controls.Add(this.headpan);
             this.Controls.Add(this.userpan);
@@ -1961,11 +1962,11 @@
             this.Controls.Add(this.textlbl);
             this.Controls.Add(this.editpan);
             this.Controls.Add(this.cartbtn);
-            this.Controls.Add(this.prescriptionpan);
-            this.Controls.Add(this.orderhistorypan);
             this.Controls.Add(this.viewcartpan);
             this.Controls.Add(this.medibackpan);
             this.Controls.Add(this.appointmentpan);
+            this.Controls.Add(this.appointmenthistorypan);
+            this.Controls.Add(this.prescriptionpan);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";

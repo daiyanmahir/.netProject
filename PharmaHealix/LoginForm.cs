@@ -107,7 +107,8 @@ namespace PharmaHealix
             createnametxt.Text = "Name";
             createaddresstxt.Text = "Address";
             createusernametxt.Text = "enter your username";
-            createpasstxt.Text = "Enter your password (at least 5 characters)";
+            createpasstxt.Text = "Enter your password (at least 5 characters)";////////
+            createpasstxt.PasswordChar='\0';
             createanstxt.Text = "Type your answer";
             createphonetxt.Text = "Phone number";
 
@@ -253,6 +254,7 @@ namespace PharmaHealix
 
                 MessageBox.Show("Signup Successful!");
                 Resetcreatepan();
+
             }
 
 
@@ -355,6 +357,7 @@ namespace PharmaHealix
         private void signupbtn_Click(object sender, EventArgs e)
         {
             FormValidation();
+            createaccountpan.Hide();
 
         }
 

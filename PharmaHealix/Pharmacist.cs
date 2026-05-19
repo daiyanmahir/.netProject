@@ -399,13 +399,31 @@ namespace PharmaHealix
                 MessageBox.Show("Please click a medicine row from the table to update first.");
                 return;
             }
+            if (string.IsNullOrWhiteSpace(phinvmnametb.Text) ||
+                string.IsNullOrWhiteSpace(phinvcategorytb.Text) ||
+                string.IsNullOrWhiteSpace(phinvdescriptiontb.Text) ||
+                string.IsNullOrWhiteSpace(phinvspricetb.Text) ||
+                string.IsNullOrWhiteSpace(phinvupricetb.Text) ||
+                string.IsNullOrWhiteSpace(phinvdosetb.Text) ||
+                string.IsNullOrWhiteSpace(phinvsideetb.Text) ||
+                string.IsNullOrWhiteSpace(phinvstocktb.Text) ||
+                string.IsNullOrWhiteSpace(phinvinstructiontb.Text))
+            {
+                MessageBox.Show("Please fill out all required fields before updating the medicine.");
+                return;
+            }
 
+            if (!decimal.TryParse(phinvspricetb.Text.Trim(), out decimal stripPrice) ||
+                !decimal.TryParse(phinvupricetb.Text.Trim(), out decimal unitPrice) ||
+                !int.TryParse(phinvstocktb.Text.Trim(), out int stock))
+            {
+                MessageBox.Show("Please enter valid numeric values for Strip Price, Unit Price, and Stock.");
+                return;
+            }
             var currentRow = phinvdgv.CurrentRow;
             int medicineId = Convert.ToInt32(currentRow.Cells["MedicineID"].Value);
 
-            decimal.TryParse(phinvspricetb.Text, out decimal stripPrice);
-            decimal.TryParse(phinvupricetb.Text, out decimal unitPrice);
-            int.TryParse(phinvstocktb.Text, out int stock);
+           
 
             string query = "UPDATE MedicineTable SET MedicineName = @0, Category = @1, Description = @2, StripPrice = @3, " +
                            "UnitPrice = @4, Dose = @5, SideEffect = @6, Stock = @7, ExpireDate = @8, Image = @9, Instruction = @10 WHERE MedicineID = @11";

@@ -77,9 +77,13 @@ namespace PharmaHealix
             viewcartpan.Hide();
             orderhistorypan.Hide();
             ordersearchtxt.Text = "";
+            totalbilltxt.Text = "";
             appointmentpan.Hide();
+            appdoctorcb.SelectedIndex = -1;
+            apptimecb.SelectedIndex = -1;
             prescriptionpan.Hide();
             prescriptiontxt.Text = "";
+            prescriptiondetailstxt.Text = "";
 
         }
 
@@ -678,34 +682,54 @@ namespace PharmaHealix
         private void ordersearchbtn_Click(object sender, EventArgs e)
         {
             string searchId = ordersearchtxt.Text;
-            string s = "Select count(*) From OrderTable where OrderID=@0";
-            int count = Convert.ToInt32(new Db().Scalar(s, searchId));
-            if (count > 0)
-            {
-                string q = "Select O.OrderID as [Order ID], " +
-                   "O.OrderDate as [Date], " +
-                   "M.MedicineName as [Medicine Name], " +
-                   "D.Quantity as [Quantity], " +
-                   "(D.Quantity * D.UnitPrice) as [Total Price], " +
-                   "O.Status as [Status] " +
-                   "From OrderTable O, OrderDetailsTable D, MedicineTable M " +
-                   "Where O.OrderID = D.OrderID " +
-                   "And D.MedicineID = M.MedicineID " +
-                   "And O.PatientUsername = @0 " +
-                   "And O.OrderId=@1";
 
-                DataTable dt = new Db().Reader(q, username,searchId);
+            string q =
+            "Select O.OrderID as [Order ID], " +
+            "O.OrderDate as [Date], " +
+            "M.MedicineName as [Medicine Name], " +
+            "D.Quantity as [Quantity], " +
+            "(D.Quantity * D.UnitPrice) as [Total Price], " +
+            "O.Status as [Status] " +
+            "From OrderTable O, OrderDetailsTable D, MedicineTable M " +
+            "Where O.OrderID = D.OrderID " +
+            "AND D.MedicineID = M.MedicineID " +
+            "AND O.PatientUsername = @0 " +
+            "AND O.OrderID = @1";
+
+            DataTable dt = new Db().Reader(q, username, searchId);
+
+            if (dt.Rows.Count > 0)
+            {
                 orderhistorydataGridView.DataSource = dt;
                 orderhistorydataGridView.AutoGenerateColumns = true;
+
+
+                string totalquery =
+                "Select SUM(D.Quantity * D.UnitPrice) " +
+                "From OrderTable O, OrderDetailsTable D " +
+                "Where O.OrderID = D.OrderID " +
+                "AND O.PatientUsername = @0 " +
+                "AND O.OrderID = @1 " +
+                "AND O.Status != 'Rejected'";
+
+                object total = new Db().Scalar(totalquery, username, searchId);
+
+                if (total == DBNull.Value || total == null)
+                {
+                    totalbilltxt.Text = "0";
+                }
+                else
+                {
+                    totalbilltxt.Text = total.ToString();
+                }
             }
             else
             {
                 orderhistorydataGridView.DataSource = null;
-                MessageBox.Show("The Order ID entered is not Found!");
-                return;
+                totalbilltxt.Text = "";
+                MessageBox.Show("Order Not Found!");
             }
         }
-
         private void prescriptionhistorybtn_Click(object sender, EventArgs e)
         {
             if (user == "Patient")
@@ -745,32 +769,43 @@ namespace PharmaHealix
         private void prescriptionsearchbtn_Click(object sender, EventArgs e)
         {
             string searchId = prescriptiontxt.Text;
+
             string s = "Select count(*) From PrescriptionTable where PrescriptionID=@0";
             int count = Convert.ToInt32(new Db().Scalar(s, searchId));
+
             if (count > 0)
             {
-                string q = "Select P.PrescriptionID, " +
-                       "P.AppointmentID, " +
-                       "P.DoctorID, " +
-                       "U.Name AS [Doctor Name], " +
-                       "D.Speciality AS [Speciality], " +
-                       "P.PrescriptionText AS [Prescription Details], " +
-                       "P.PrescriptionDate AS [Date Given] " +
-                       "From PrescriptionTable P, " +
-                       "DoctorTable D, UserTable U " +
-                       "where P.DoctorID = D.DoctorID " +
-                       "And D.Username = U.Username " +
-                       "And P.PatientUsername = @0 " +
-                       "And P.PrescriptionID=@1";
-                DataTable prescriptionTable = new Db().Reader(q, username);
+                string q =
+                "Select P.PrescriptionID, " +
+                "P.AppointmentID, " +
+                "P.DoctorID, " +
+                "U.Name AS [Doctor Name], " +
+                "D.Speciality AS [Speciality], " +
+                "P.PrescriptionText AS [Prescription Details], " +
+                "P.PrescriptionDate AS [Date Given] " +
+                "From PrescriptionTable P, DoctorTable D, UserTable U " +
+                "where P.DoctorID = D.DoctorID " +
+                "And D.Username = U.Username " +
+                "And P.PatientUsername = @0 " +
+                "And P.PrescriptionID = @1";
+
+                DataTable prescriptionTable =
+                    new Db().Reader(q, username, searchId);
+
                 pdataGridView.DataSource = prescriptionTable;
                 pdataGridView.AutoGenerateColumns = true;
 
+                if (prescriptionTable.Rows.Count > 0)
+                {
+                    prescriptiondetailstxt.Text =
+                        Convert.ToString(prescriptionTable.Rows[0]["Prescription Details"]);
+                }
             }
             else
             {
                 MessageBox.Show("ID Not Found!");
                 pdataGridView.DataSource = null;
+                prescriptiondetailstxt.Text = "";
             }
         }
 
@@ -785,6 +820,111 @@ namespace PharmaHealix
         }
 
         private void richTextBox3_Enter(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
+        }
+
+        private void orderbackbtn_Click(object sender, EventArgs e)
+        {
+            appointmenthistorypan.Hide();
+            appsearchtxt.Text = "";
+            numericUpDown.Value = 1;
+            viewcartpan.Hide();
+            orderhistorypan.Hide();
+            ordersearchtxt.Text = "";
+            totalbilltxt.Text = "";
+            appointmentpan.Hide();
+            appdoctorcb.SelectedIndex = -1;
+            apptimecb.SelectedIndex = -1;
+            prescriptionpan.Hide();
+            prescriptiontxt.Text = "";
+            prescriptiondetailstxt.Text = "";
+        }
+
+        private void cartbackbtn_Click(object sender, EventArgs e)
+        {
+            appointmenthistorypan.Hide();
+            appsearchtxt.Text = "";
+            numericUpDown.Value = 1;
+            viewcartpan.Hide();
+            orderhistorypan.Hide();
+            ordersearchtxt.Text = "";
+            totalbilltxt.Text = "";
+            appointmentpan.Hide();
+            appdoctorcb.SelectedIndex = -1;
+            apptimecb.SelectedIndex = -1;
+            prescriptionpan.Hide();
+            prescriptiontxt.Text = "";
+            prescriptiondetailstxt.Text = "";
+        }
+
+        private void appbackbtn_Click(object sender, EventArgs e)
+        {
+            appointmenthistorypan.Hide();
+            appsearchtxt.Text = "";
+            numericUpDown.Value = 1;
+            viewcartpan.Hide();
+            orderhistorypan.Hide();
+            ordersearchtxt.Text = "";
+            totalbilltxt.Text = "";
+            appointmentpan.Hide();
+            appdoctorcb.SelectedIndex = -1;
+            apptimecb.SelectedIndex = -1;
+            prescriptionpan.Hide();
+            prescriptiontxt.Text = "";
+            prescriptiondetailstxt.Text = "";
+        }
+
+        private void apphistorybackbtn_Click(object sender, EventArgs e)
+        {
+            appointmenthistorypan.Hide();
+            appsearchtxt.Text = "";
+            numericUpDown.Value = 1;
+            viewcartpan.Hide();
+            orderhistorypan.Hide();
+            ordersearchtxt.Text = "";
+            totalbilltxt.Text = "";
+            appointmentpan.Hide();
+            appdoctorcb.SelectedIndex = -1;
+            apptimecb.SelectedIndex = -1;
+            prescriptionpan.Hide();
+            prescriptiontxt.Text = "";
+            prescriptiondetailstxt.Text = "";
+        }
+
+        private void pdataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                prescriptiondetailstxt.Text =
+                Convert.ToString(pdataGridView.Rows[e.RowIndex].Cells["Prescription Details"].Value);
+            }
+        }
+
+        private void prescriptionbackbtn_Click(object sender, EventArgs e)
+        {
+
+            appointmenthistorypan.Hide();
+            appsearchtxt.Text = "";
+            numericUpDown.Value = 1;
+            viewcartpan.Hide();
+            orderhistorypan.Hide();
+            ordersearchtxt.Text = "";
+            totalbilltxt.Text = "";
+            appointmentpan.Hide();
+            appdoctorcb.SelectedIndex = -1;
+            apptimecb.SelectedIndex = -1;
+            prescriptionpan.Hide();
+            prescriptiontxt.Text = "";
+            prescriptiondetailstxt.Text = "";
+        }
+
+        private void prescriptiondetailstxt_Enter(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
+        }
+
+        private void totalbilltxt_Enter(object sender, EventArgs e)
         {
             this.ActiveControl = null;
         }
@@ -818,65 +958,72 @@ namespace PharmaHealix
             }
             
         }
-        
+
         private void setappointmentbtn_Click(object sender, EventArgs e)
         {
             doctor = appdoctorcb.Text;
             appointmentdate = appdateTimePicker.Value.Date;
-            appointmenttime=apptimecb.Text;
+            appointmenttime = apptimecb.Text;
 
-            bool flag=false;
+            bool flag = false;
+
             if (doctor == "")
-            {
                 flag = true;
-            }
-            if(appointmenttime == "")
-            {
+
+            if (appointmenttime == "")
                 flag = true;
-            }
+
             if (flag)
             {
                 MessageBox.Show("Doctor or Appointment Time not selected!");
                 return;
             }
-            else {
-                string m = "Select username from usertable where name=@0";
-                string du = Convert.ToString(new Db().Scalar(m, doctor));
-                string p = "Select DoctorId from DoctorTable where username=@0";
-                int did = Convert.ToInt32(new Db().Scalar(p, du));
 
 
-                string q = "Select Count(*) From AppointmentTable Where DoctorId=@0 and AppointmentDate=@1 and AppointmentTime=@2 ";
-                int count = Convert.ToInt32(new Db().Scalar(q, did, appointmentdate, appointmenttime));
-                if (count > 0)
-                {
-                    MessageBox.Show("No Appointments Available At This Time!");
-                    return;
-                }
-                else if (appointmentdate < DateTime.Today)
-                {
-                    MessageBox.Show("Invalid Date");
-                    return;
-                }
-                else
-                {
-                    string r = "Insert Into AppointmentTable(PatientUsername,DoctorID,AppointmentDate,AppointmentTime,Status) Values(@0,@1,@2,@3,@4)";
-                    new Db().NonQuery(r, username, did, appointmentdate, appointmenttime, "Pending");
+            TimeSpan selectedTime = TimeSpan.Parse(appointmenttime);
 
-                    MessageBox.Show("Appointment Requested!\n" +
-                        "Fee-->1200Tk");
-                    //Reset
-
-                    appdoctorcb.SelectedIndex = -1;
-                    apptimecb.SelectedIndex = -1;
-                    appdateTimePicker.Value = DateTime.Today;
-
-                    appointmentdate = DateTime.Today;
-                    appointmenttime = "";
-                    doctor = "";
-
-                }
+            DateTime selectedDateTime = appointmentdate.Add(selectedTime);
+            if (appointmentdate < DateTime.Today)
+            {
+                MessageBox.Show("Invalid Date");
+                return;
             }
+
+
+            if (appointmentdate == DateTime.Today && selectedDateTime <= DateTime.Now)
+            {
+                MessageBox.Show("You cannot book an appointment for a past time!");
+                return;
+            }
+
+            string m = "Select username from usertable where name=@0";
+            string du = Convert.ToString(new Db().Scalar(m, doctor));
+
+            string p = "Select DoctorId from DoctorTable where username=@0";
+            int did = Convert.ToInt32(new Db().Scalar(p, du));
+
+            string q = "Select Count(*) From AppointmentTable Where DoctorId=@0 and AppointmentDate=@1 and AppointmentTime=@2";
+            int count = Convert.ToInt32(new Db().Scalar(q, did, appointmentdate, appointmenttime));
+
+            if (count > 0)
+            {
+                MessageBox.Show("No Appointments Available At This Time!");
+                return;
+            }
+
+            string r = "Insert Into AppointmentTable(PatientUsername,DoctorID,AppointmentDate,AppointmentTime,Status) Values(@0,@1,@2,@3,@4)";
+            new Db().NonQuery(r, username, did, appointmentdate, appointmenttime, "Pending");
+
+            MessageBox.Show("Appointment Requested!\nFee-->1200Tk");
+
+            // Reset
+            appdoctorcb.SelectedIndex = -1;
+            apptimecb.SelectedIndex = -1;
+            appdateTimePicker.Value = DateTime.Today;
+
+            appointmentdate = DateTime.Today;
+            appointmenttime = "";
+            doctor = "";
         }
 
         private void cancelbtn_Click(object sender, EventArgs e)

@@ -145,7 +145,8 @@ namespace PharmaHealix
                     dosetxt.Text = dt.Rows[0]["Dose"].ToString();
                     instructiontxt.Text = dt.Rows[0]["Instruction"].ToString();
                     sideeffectstxt.Text = dt.Rows[0]["SideEffect"].ToString();
-                    if (dt.Rows[0]["Image"] != DBNull.Value) {
+                    if (dt.Rows[0]["Image"] != DBNull.Value)
+                    {
                         mediimagepan.BackgroundImage = Image.FromFile(dt.Rows[0]["Image"].ToString());
                     }
                     else
@@ -417,7 +418,7 @@ namespace PharmaHealix
                             "A.AppointmentDate as [Date], " +
                             "A.AppointmentTime as [Time], " +
                             "A.Status " +
-                            "From AppointmentTable A, DoctorTable D, UserTable U "+
+                            "From AppointmentTable A, DoctorTable D, UserTable U " +
                             "Where A.DoctorID = D.DoctorID " +
                             "And D.Username = U.Username " +
                             "And A.PatientUsername = @0";
@@ -733,14 +734,14 @@ namespace PharmaHealix
                 prescriptionpan.Visible = true;
                 prescriptionpan.BringToFront();
                 string p = "select Count(*) from PrescriptionTable where patientusername=@0";
-                int count=Convert.ToInt32( new Db().Scalar(p, username));
+                int count = Convert.ToInt32(new Db().Scalar(p, username));
                 if (count > 0)
                 {
                     string q = "Select P.PrescriptionID, " +
                                            "P.AppointmentID, " +
                                            "P.DoctorID, " +
-                                           "U.Name AS [Doctor Name], " +      
-                                           "D.Speciality AS [Speciality], " + 
+                                           "U.Name AS [Doctor Name], " +
+                                           "D.Speciality AS [Speciality], " +
                                            "P.PrescriptionText AS [Prescription Details], " +
                                            "P.PrescriptionDate AS [Date Given] " +
                                            "From PrescriptionTable P, " +
@@ -749,7 +750,7 @@ namespace PharmaHealix
                                            "And  D.Username = U.Username " +
                                            "And P.PatientUsername = @0";
 
-                   
+
                     DataTable prescriptionTable = new Db().Reader(q, username);
                     pdataGridView.DataSource = prescriptionTable;
                     pdataGridView.AutoGenerateColumns = true;
@@ -972,7 +973,7 @@ namespace PharmaHealix
             {
                 MessageBox.Show("Please Sign in First!");
             }
-            
+
         }
 
         private void setappointmentbtn_Click(object sender, EventArgs e)
@@ -1046,7 +1047,7 @@ namespace PharmaHealix
         {
             //Reset
             appointmentpan.Hide();
-     
+
             appdoctorcb.SelectedIndex = -1;
             apptimecb.SelectedIndex = -1;
             appdateTimePicker.Value = DateTime.Today;
@@ -1054,9 +1055,9 @@ namespace PharmaHealix
             appointmentdate = DateTime.Today;
             appointmenttime = "";
             doctor = "";
-            appdesignationtxt.Text ="";
+            appdesignationtxt.Text = "";
 
         }
     }
-    
+
 }

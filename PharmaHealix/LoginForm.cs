@@ -108,7 +108,7 @@ namespace PharmaHealix
             createaddresstxt.Text = "Address";
             createusernametxt.Text = "enter your username";
             createpasstxt.Text = "Enter your password (at least 5 characters)";////////
-            createpasstxt.PasswordChar='\0';
+            createpasstxt.PasswordChar = '\0';
             createanstxt.Text = "Type your answer";
             createphonetxt.Text = "Phone number";
 
@@ -122,7 +122,7 @@ namespace PharmaHealix
 
         }
 
-        private void FormValidation()
+        private bool FormValidation()
         {
 
             createphonepan.Visible = false;
@@ -233,7 +233,7 @@ namespace PharmaHealix
             if (Error)
             {
                 MessageBox.Show("Please fill all required fields");
-                return;
+                return false;
             }
             else if (Flag)
             {
@@ -244,6 +244,7 @@ namespace PharmaHealix
                                 "-> Name: letters only (no numbers)\n" +
                                 "-> Phone (11 digits, starts with 01)"
                                 );
+                return false;
             }
             else
             {
@@ -254,6 +255,7 @@ namespace PharmaHealix
 
                 MessageBox.Show("Signup Successful!");
                 Resetcreatepan();
+                return true;
 
             }
 
@@ -282,17 +284,17 @@ namespace PharmaHealix
             }
             else
             {
-                    
+
                 string q1 = "SELECT COUNT(*) FROM UserTable WHERE Username = @0 AND Password = @1";
-                int count = Convert.ToInt32(new Db().Scalar(q1, EUsername,EPass));
-                if (count >0)
+                int count = Convert.ToInt32(new Db().Scalar(q1, EUsername, EPass));
+                if (count > 0)
                 {
                     string q2 = "SELECT Role FROM UserTable WHERE Username = @0";
                     string role = Convert.ToString(new Db().Scalar(q2, EUsername));
                     if (role == "Patient")
                     {
                         MessageBox.Show("Login Successful!");
-                        MainForm m = new MainForm(role,EUsername);
+                        MainForm m = new MainForm(role, EUsername);
                         m.Show();
                     }
                     else if (role == "Doctor")
@@ -302,9 +304,9 @@ namespace PharmaHealix
                         string doctorId = Convert.ToString(new Db().Scalar(q3, EUsername));
                         Doctor d = new Doctor(doctorId);
                         d.Show();
-                       
+
                     }
-                    else if(role == "Pharmacist")
+                    else if (role == "Pharmacist")
                     {
                         MessageBox.Show("Login Successful!");
                         Pharmacist p = new Pharmacist(EUsername);
@@ -347,7 +349,7 @@ namespace PharmaHealix
 
         private void viewguestbtn_Click(object sender, EventArgs e)
         {
-            MainForm guestdashboard = new MainForm("Guest","");
+            MainForm guestdashboard = new MainForm("Guest", "");
             guestdashboard.Show();
             this.Hide();
 
@@ -356,8 +358,10 @@ namespace PharmaHealix
 
         private void signupbtn_Click(object sender, EventArgs e)
         {
-            FormValidation();
-            createaccountpan.Hide();
+            if (FormValidation())
+            {
+                createaccountpan.Hide();
+            }
 
         }
 
@@ -473,7 +477,7 @@ namespace PharmaHealix
             forgetpasspan.Visible = true;
             forgetpasspan.BringToFront();
 
-          
+
         }
 
         private void fcrossbtn_Click(object sender, EventArgs e)
@@ -521,7 +525,7 @@ namespace PharmaHealix
                 else
                 {
                     string query = "Update UserTable SET Password = @1 where Username=@0";
-                    new Db().NonQuery(query,FUsername, FPass);
+                    new Db().NonQuery(query, FUsername, FPass);
                     MessageBox.Show("Password reset successful. You can now log in.");
 
                     forgetpasspan.Hide();

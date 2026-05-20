@@ -89,6 +89,7 @@
             this.searchtxt = new System.Windows.Forms.TextBox();
             this.searchiconpan = new System.Windows.Forms.Panel();
             this.medibackpan = new System.Windows.Forms.Panel();
+            this.medibackpanbackbtn = new System.Windows.Forms.Button();
             this.medipan = new System.Windows.Forms.Panel();
             this.numericUpDown = new System.Windows.Forms.NumericUpDown();
             this.qtlbl = new System.Windows.Forms.Label();
@@ -146,6 +147,7 @@
             this.patientlbl = new System.Windows.Forms.Label();
             this.appointmentlbl = new System.Windows.Forms.Label();
             this.appointmenthistorypan = new System.Windows.Forms.Panel();
+            this.apphistorybackbtn = new System.Windows.Forms.Button();
             this.appsearchtxt = new System.Windows.Forms.TextBox();
             this.appsearchbtn = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -169,16 +171,15 @@
             this.orderhistorydataGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.prescriptionpan = new System.Windows.Forms.Panel();
+            this.prescriptionbackbtn = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
+            this.prescriptiondetailstxt = new System.Windows.Forms.RichTextBox();
             this.prescriptiontxt = new System.Windows.Forms.TextBox();
             this.prescriptionsearchbtn = new System.Windows.Forms.Button();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.pdataGridView = new System.Windows.Forms.DataGridView();
             this.label21 = new System.Windows.Forms.Label();
-            this.apphistorybackbtn = new System.Windows.Forms.Button();
-            this.prescriptiondetailstxt = new System.Windows.Forms.RichTextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.prescriptionbackbtn = new System.Windows.Forms.Button();
             this.headpan.SuspendLayout();
             this.editpan.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -942,12 +943,28 @@
             // 
             this.medibackpan.AutoScroll = true;
             this.medibackpan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("medibackpan.BackgroundImage")));
+            this.medibackpan.Controls.Add(this.medibackpanbackbtn);
             this.medibackpan.Controls.Add(this.medipan);
             this.medibackpan.Location = new System.Drawing.Point(0, 110);
             this.medibackpan.Name = "medibackpan";
             this.medibackpan.Size = new System.Drawing.Size(1200, 640);
             this.medibackpan.TabIndex = 29;
             this.medibackpan.Visible = false;
+            // 
+            // medibackpanbackbtn
+            // 
+            this.medibackpanbackbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
+            this.medibackpanbackbtn.FlatAppearance.BorderSize = 0;
+            this.medibackpanbackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.medibackpanbackbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.medibackpanbackbtn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.medibackpanbackbtn.Location = new System.Drawing.Point(50, 584);
+            this.medibackpanbackbtn.Name = "medibackpanbackbtn";
+            this.medibackpanbackbtn.Size = new System.Drawing.Size(156, 40);
+            this.medibackpanbackbtn.TabIndex = 36;
+            this.medibackpanbackbtn.Text = "Back";
+            this.medibackpanbackbtn.UseVisualStyleBackColor = false;
+            this.medibackpanbackbtn.Click += new System.EventHandler(this.medibackpanbackbtn_Click);
             // 
             // medipan
             // 
@@ -1661,6 +1678,22 @@
             this.appointmenthistorypan.TabIndex = 13;
             this.appointmenthistorypan.Visible = false;
             // 
+            // apphistorybackbtn
+            // 
+            this.apphistorybackbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
+            this.apphistorybackbtn.FlatAppearance.BorderSize = 0;
+            this.apphistorybackbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.AliceBlue;
+            this.apphistorybackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.apphistorybackbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.apphistorybackbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.apphistorybackbtn.Location = new System.Drawing.Point(146, 585);
+            this.apphistorybackbtn.Name = "apphistorybackbtn";
+            this.apphistorybackbtn.Size = new System.Drawing.Size(107, 39);
+            this.apphistorybackbtn.TabIndex = 27;
+            this.apphistorybackbtn.Text = "Back";
+            this.apphistorybackbtn.UseVisualStyleBackColor = false;
+            this.apphistorybackbtn.Click += new System.EventHandler(this.apphistorybackbtn_Click);
+            // 
             // appsearchtxt
             // 
             this.appsearchtxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -1962,6 +1995,44 @@
             this.prescriptionpan.TabIndex = 39;
             this.prescriptionpan.Visible = false;
             // 
+            // prescriptionbackbtn
+            // 
+            this.prescriptionbackbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
+            this.prescriptionbackbtn.FlatAppearance.BorderSize = 0;
+            this.prescriptionbackbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.AliceBlue;
+            this.prescriptionbackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.prescriptionbackbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.prescriptionbackbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.prescriptionbackbtn.Location = new System.Drawing.Point(138, 584);
+            this.prescriptionbackbtn.Name = "prescriptionbackbtn";
+            this.prescriptionbackbtn.Size = new System.Drawing.Size(107, 39);
+            this.prescriptionbackbtn.TabIndex = 34;
+            this.prescriptionbackbtn.Text = "Back";
+            this.prescriptionbackbtn.UseVisualStyleBackColor = false;
+            this.prescriptionbackbtn.Click += new System.EventHandler(this.prescriptionbackbtn_Click);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label23.Location = new System.Drawing.Point(139, 436);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(165, 22);
+            this.label23.TabIndex = 33;
+            this.label23.Text = "Prescription Details";
+            // 
+            // prescriptiondetailstxt
+            // 
+            this.prescriptiondetailstxt.BackColor = System.Drawing.Color.White;
+            this.prescriptiondetailstxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.prescriptiondetailstxt.Location = new System.Drawing.Point(138, 461);
+            this.prescriptiondetailstxt.Name = "prescriptiondetailstxt";
+            this.prescriptiondetailstxt.ReadOnly = true;
+            this.prescriptiondetailstxt.Size = new System.Drawing.Size(915, 96);
+            this.prescriptiondetailstxt.TabIndex = 32;
+            this.prescriptiondetailstxt.Text = "";
+            this.prescriptiondetailstxt.Enter += new System.EventHandler(this.prescriptiondetailstxt_Enter);
+            // 
             // prescriptiontxt
             // 
             this.prescriptiontxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -2035,67 +2106,13 @@
             this.label21.TabIndex = 0;
             this.label21.Text = "View Prescription History";
             // 
-            // apphistorybackbtn
-            // 
-            this.apphistorybackbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
-            this.apphistorybackbtn.FlatAppearance.BorderSize = 0;
-            this.apphistorybackbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.AliceBlue;
-            this.apphistorybackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.apphistorybackbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.apphistorybackbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.apphistorybackbtn.Location = new System.Drawing.Point(146, 585);
-            this.apphistorybackbtn.Name = "apphistorybackbtn";
-            this.apphistorybackbtn.Size = new System.Drawing.Size(107, 39);
-            this.apphistorybackbtn.TabIndex = 27;
-            this.apphistorybackbtn.Text = "Back";
-            this.apphistorybackbtn.UseVisualStyleBackColor = false;
-            this.apphistorybackbtn.Click += new System.EventHandler(this.apphistorybackbtn_Click);
-            // 
-            // prescriptiondetailstxt
-            // 
-            this.prescriptiondetailstxt.BackColor = System.Drawing.Color.White;
-            this.prescriptiondetailstxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.prescriptiondetailstxt.Location = new System.Drawing.Point(138, 461);
-            this.prescriptiondetailstxt.Name = "prescriptiondetailstxt";
-            this.prescriptiondetailstxt.ReadOnly = true;
-            this.prescriptiondetailstxt.Size = new System.Drawing.Size(915, 96);
-            this.prescriptiondetailstxt.TabIndex = 32;
-            this.prescriptiondetailstxt.Text = "";
-            this.prescriptiondetailstxt.Enter += new System.EventHandler(this.prescriptiondetailstxt_Enter);
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label23.Location = new System.Drawing.Point(139, 436);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(165, 22);
-            this.label23.TabIndex = 33;
-            this.label23.Text = "Prescription Details";
-            // 
-            // prescriptionbackbtn
-            // 
-            this.prescriptionbackbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(222)))));
-            this.prescriptionbackbtn.FlatAppearance.BorderSize = 0;
-            this.prescriptionbackbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.AliceBlue;
-            this.prescriptionbackbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.prescriptionbackbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.prescriptionbackbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.prescriptionbackbtn.Location = new System.Drawing.Point(138, 584);
-            this.prescriptionbackbtn.Name = "prescriptionbackbtn";
-            this.prescriptionbackbtn.Size = new System.Drawing.Size(107, 39);
-            this.prescriptionbackbtn.TabIndex = 34;
-            this.prescriptionbackbtn.Text = "Back";
-            this.prescriptionbackbtn.UseVisualStyleBackColor = false;
-            this.prescriptionbackbtn.Click += new System.EventHandler(this.prescriptionbackbtn_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(219)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1200, 750);
-            this.Controls.Add(this.orderhistorypan);
+            this.Controls.Add(this.medibackpan);
             this.Controls.Add(this.patientpan);
             this.Controls.Add(this.headpan);
             this.Controls.Add(this.userpan);
@@ -2104,11 +2121,11 @@
             this.Controls.Add(this.textlbl);
             this.Controls.Add(this.editpan);
             this.Controls.Add(this.cartbtn);
-            this.Controls.Add(this.viewcartpan);
-            this.Controls.Add(this.medibackpan);
             this.Controls.Add(this.appointmentpan);
             this.Controls.Add(this.appointmenthistorypan);
             this.Controls.Add(this.prescriptionpan);
+            this.Controls.Add(this.orderhistorypan);
+            this.Controls.Add(this.viewcartpan);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
@@ -2320,5 +2337,6 @@
         private System.Windows.Forms.RichTextBox prescriptiondetailstxt;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button prescriptionbackbtn;
+        private System.Windows.Forms.Button medibackpanbackbtn;
     }
 }

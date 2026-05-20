@@ -378,25 +378,24 @@ namespace PharmaHealix
         private void appsearchbtn_Click(object sender, EventArgs e)
         {
             string searchId = appsearchtxt.Text;
-            string s = "Select count(*) From AppointmentTable where AppointmentID=@0";
-            int count = Convert.ToInt32(new Db().Scalar(s, searchId));
-            if (count > 0) {
-                string q =
-                            "SELECT A.AppointmentID, " +
-                            "U.Name as [Doctor Name], " +
-                            "A.AppointmentDate as [Date], " +
-                            "A.AppointmentTime as [Time], " +
-                            "P.PrescriptionText as[Prescription], " +
-                            "P.PrescriptionDate as [Prescription Date], " +
-                            "A.Status " +
-                            "From AppointmentTable A, DoctorTable D, UserTable U, PrescriptionTable P " +
-                            "Where A.DoctorID = D.DoctorID " +
-                            "And D.Username = U.Username " +
-                            "And A.AppointmentID=P.AppointmentID " +
-                            "And A.PatientUsername = @0 " +
-                            "And A.AppointmentID=@1";
 
-                DataTable apphistorytable = new Db().Reader(q, username, searchId);
+            string q =
+            "SELECT A.AppointmentID, " +
+            "U.Name as [Doctor Name], " +
+            "A.AppointmentDate as [Date], " +
+            "A.AppointmentTime as [Time], " +
+            "A.Status " +
+            "From AppointmentTable A, DoctorTable D, UserTable U " +
+            "Where A.DoctorID = D.DoctorID " +
+            "And D.Username = U.Username " +
+            "And A.PatientUsername = @0 " +
+            "And A.AppointmentID = @1";
+
+            DataTable apphistorytable =
+                new Db().Reader(q, username, searchId);
+
+            if (apphistorytable.Rows.Count > 0)
+            {
                 appdataGridView.DataSource = apphistorytable;
                 appdataGridView.AutoGenerateColumns = true;
             }
@@ -404,11 +403,8 @@ namespace PharmaHealix
             {
                 appdataGridView.DataSource = null;
                 MessageBox.Show("The Appointment ID entered is not Found!");
-                return;
             }
         }
-
-       //**************
         private void appointmenhistorytbtn_Click(object sender, EventArgs e)
         {
             if (user == "Patient")
@@ -927,6 +923,26 @@ namespace PharmaHealix
         private void totalbilltxt_Enter(object sender, EventArgs e)
         {
             this.ActiveControl = null;
+        }
+
+        private void medibackpanbackbtn_Click(object sender, EventArgs e)
+        {
+            medibackpan.Hide();
+            searchtxt.Text = "Search for Medicine";
+            searchtxt.ForeColor = Color.Gray;
+            appointmenthistorypan.Hide();
+            appsearchtxt.Text = "";
+            numericUpDown.Value = 1;
+            viewcartpan.Hide();
+            orderhistorypan.Hide();
+            ordersearchtxt.Text = "";
+            totalbilltxt.Text = "";
+            appointmentpan.Hide();
+            appdoctorcb.SelectedIndex = -1;
+            apptimecb.SelectedIndex = -1;
+            prescriptionpan.Hide();
+            prescriptiontxt.Text = "";
+            prescriptiondetailstxt.Text = "";
         }
 
         private void appointmentbtn_Click(object sender, EventArgs e)
